@@ -1,0 +1,450 @@
+ポケモンクイズ！
+
+グリーン『よお
+さっそく　オレの　クイズに
+ちょうせん　しにきた　ってわけだな
+オレの　クイズは　おまえが
+いくら　このせかいを　まわってみても
+わからないことが　いっぱいだぜ
+なにせ　３ねんまえの　はなしだからな
+まあ　とにかく　はじめようぜ
+クイズは　ぜんぶで　１０もん！
+いくぜ！
+
+マサラタウンで　ポケモンの
+たいりょくを　かいふく
+する　ばしょは？
+
+１　けんきゅうじょ　２　レッドのいえ
+３　グリーンのいえ
+
+トキワシティで　かわれている
+オニスズメの　なまえは？
+
+１　オニチャン　２　スズチャン
+３　オニスチャン
+
+ニビシティの　はくぶつかんの
+にゅうじょうりょうは　いくら？
+
+１　５０えん　２　１００えん
+３　２００えん
+
+はじめて　みさきのこやに
+いったとき　マサキに　なにが
+おきていた？
+
+１　ポケモンとくっつく　２　びょうき
+３　ポケモンをとられた
+
+シオン　ポケモンタワーの　ゆうれいは
+しょうたいが　わからない　とき
+せんとうで　なんと　いっていた？
+
+１　ヒキカエセ　２　チカヨルナ
+３　タチサレ
+
+タマムシマンションの　おくじょうの
+こやの　いちぐちの　かんばん
+わしは　なんでも　……　なに？
+
+１　おてのもの　２　おみとおし
+３　もっている
+
+ヤマブキシティの　かくとうどうじょう
+しはんが　しょうぶに　はいる　まえ
+だす　かけごえは？
+
+１　トオリャー！　２　オッス！
+３　どりゃぁぁ！
+
+サファリゾーンの　えんちょうの
+ひみつと　いったら？
+
+１　かつら　２　いれば
+３　ムシがこわい
+
+ポケモンリーグで　にげだそうと
+すると　だれかの　こえが…！
+なんと　いわれる？
+
+１　にげられはせん　２　にげるのか
+３　にげてはならん
+
+レッドは　てもちの　ポケモンが
+すべて　たたかえなく　なると
+めのまえが　どうなった？
+
+１　まっしろ　２　まっくら
+３　クラクラした
+
+クイズ　しゅうりょう
+ひょうかを　うけて　ください！
+
+グリーンのひょうか
+
+グリーン『いくつ　わかったか
+オレが　みてやるよ！
+……　……
+
+（正解無し）
+
+おいおい　ひとつも
+あたって　ないぜー！
+やっぱり　おまえには
+とても　むり　だったな
+ごくろうさん！
+
+（正解が一つ）
+
+ひとつ　あたってるな！
+
+まあ　ひとつ　あたったくらいじゃ
+ぜんぜん　わかってないのと
+おなじだぜ
+また　でなおすんだな
+
+（正解が２つ）
+
+２もん　せいかい！
+
+おいおい　ほんきで　やってる？
+オレの　あいてには
+まだまだ　ふそくだな！
+
+（正解が３つ）
+
+３もん　せいかい　だぜ！
+
+ポケモンしょうぶは　つよいのかも
+しれねえ　けど　ほかは
+たいしたこと　ねーな！
+
+（正解が４つ）
+
+せいかいは　４つ！
+
+まあ　まぐれで　これだけ
+わかれば　たいした　もんだ
+
+（正解が５つ）
+
+５もん　せいかい！
+
+なかなか　くろう　してるようだな
+まあ　オレが　かんがえたからな！
+あと　５もんの　かべは　あついぜ！
+
+（正解が６つ）
+
+６もん　あたってたぜ！
+
+まあまあって　ところだな
+まあ　オレには　ぜんぜん
+およばないけどな！
+
+（正解が７つ）
+
+せいかいは　７もん　だぜ！
+
+こんなに　あたる　はず
+ねえって　おもって
+いたんだけどな…
+
+（正解が８つ）
+
+８もん　せいかい！
+
+なかなか　やるじゃ　ねえか
+おれの　つぎ　くらいには
+すごい　きおくりょく　だぜ！
+
+（正解が９つ）
+
+おっと　９もん　せいかい！
+
+おしいな！　あと　ひとつで
+ぜんもん　せいかい　だったのにな
+もういちど　がんばって　みろよ！
+
+（全問正解以外なら、以下のメッセージがあり）
+
+グリーン『どうだ？　オレの
+クイズは　むずかしいだろ？
+しかたねえな　もういちど
+チャンスを　やると　するか…
+どうする？
+もういちど　やって　みるか？
+（はい/いいえ）
+（「いいえ」と答えたとき）
+またな！
+
+（全問正解）
+ぜんもん　せいかい……！
+
+おまえ　すごいな
+３ねんも　まえの　ことを
+これだけ　おぼえている　なんてな！
+かんぜんに　オレの　まけだ！
+
+（以下、記録を忘れたが、始めて勝ったときのみ
+「おまえすごいな　じしんもっていいぜ」みたいなメッセージが。）
+
+賞品：技マシン２６（１回のみ）
+
+　
+
+管理人的コメント：
+
+相変わらずバトルタワーのランキングは常連揃い。
+ポケモン捕獲数では見慣れない名前がちらほら。
+本当は７月号の配信終了直前に収集したかったのだが、
+すっかり忘れて１週間前になってしまった。激しく後悔。
+
+それにしても、クイズ終了時のメッセージ、まさか１０通りもあるとは。
+ちなみに自分が初挑戦時は一問だけ間違えた。格闘道場のやつ。答えは自分で調べて。
+「まっしろ」と「まっくら」は良い問題。
+地震と自信をかけたのはポケスタ金銀の地震グライガーの二番煎じだが目をつぶろう。
+しかし、初勝利時のメッセージの記録を忘れたのは大失敗だったな。
+来月こそはそんな凡ミスをしないように。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pokémon Quiz!
+
+Blue: "Yo!
+So you're here to take on my quiz, huh?
+My quiz has tons of questions
+you won't know the answers to,
+no matter how much you've traveled around this world.
+After all, it's about stuff from three years ago.
+Anyway, let's get started!
+There are ten questions in total!
+Here we go!
+
+Where in Pallet Town
+can you restore
+a Pokémon's HP?
+
+1. Research Lab
+2. Red's House
+3. Blue's House
+
+What is the name of the Spearow
+found in Viridian City?
+
+1. Oni-chan 
+2. Suzu-chan
+3. Onisu-chan
+
+How much is the admission fee for the museum in Pewter City?
+
+1. 50¥ 
+2. 100¥
+3. 200¥
+
+What happened to Bill when you first went to Bill's house?
+
+1. He got attached to a Pokémon 
+2. He got sick
+3. His Pokémon were stolen
+
+When Shion didn't know the Ghost's move at the Pokémon Tower,
+what did he say during the battle?
+
+1. “Turn around!” 
+2. “Chika Yoruna”
+3. “Stand down!”
+
+The sign at the entrance to the room in the Celadon Mansion's upper floor
+says, “I am everything...?”
+
+1. ...In my possession 
+2. ...Under my control
+3. ...I have
+
+At the Fighting Dojo in Saffron City
+Before the referee starts the match
+What battle cry do they shout?
+
+1. Toh-rya! 2. Ossu!
+3. Doryaaah!
+
+The director of the Safari Zone
+What's his secret?
+
+1. Wig 
+2. If there are any
+3. He's afraid of bugs
+
+When you try to run away from the Pokémon League,
+someone's voice calls out...!
+What do they say?
+
+1. You can't run away 
+2. Are you running away?
+3. You mustn't run away
+
+When all of Red's Pokémon
+become unable to battle,
+what happens to his vision?
+
+1. Completely white 
+2. Completely dark
+3. Dizzy
+
+Quiz over.
+Please receive your evaluation!
+
+Blue's Evaluation
+
+Blue: "How many did you get right?
+I'll check them for you!......
+
+
+(No correct answers)
+
+Hey, hey, you didn't get a single one right!
+As I thought, it was too difficult for you.
+Good job!
+Good job!
+
+(One correct answer)
+
+You got one right!
+
+Well, getting one right
+is the same as not knowing anything at all.
+You'll have to try again.
+
+(Two correct answers)
+
+Two correct!
+
+Hey, hey, are you serious?
+You're still no match
+for me!
+
+(Three correct answers)
+
+Three correct!
+
+You might be good at Pokémon battles,
+but everything else?
+Not so great!
+
+(Four correct answers)
+
+Four correct!
+
+Well, getting this many
+by luck is pretty impressive.
+
+(Five correct answers)
+
+Five correct!
+
+Looks like you're putting in some effort.
+Well, I did come up with them myself!
+And the next 5 walls are tough!
+
+(6 correct answers)
+
+You got 6 right!
+
+Not bad, I guess.
+But you're nowhere near
+my level!
+
+(7 correct answers)
+
+The correct answer is 7!
+
+I never thought
+...
+
+(Correct answer: 8)
+
+Eight correct!
+
+Not bad at all.
+You're almost as good as me.
+That's some serious memory power!
+
+(9 correct answers)
+
+Whoa, 9 correct!
+
+So close! Just one more
+and you would've gotten them all right.
+Try again!
+
+(If not all questions are correct, the following message appears)
+
+Blue: "How'd you do?
+My quiz's tough, huh?
+Well, I guess I'll give you another chance...
+What do you say?
+Wanna try again?
+(Yes/No)
+(When answering “No”)
+See ya!
+
+(All questions correct)
+All questions correct...!
+
+You're amazing.
+To remember so much
+from three years ago!
+I'm completely defeated!
+
+(I forgot the rest of the record, but only when I won for the first time,
+a message like “You're amazing. You can be proud of yourself” appeared.)
+
+Prize: TM26 (one-time only)
+
+　
+
+Administrator's Comment:
+
+As usual, the Battle Tower rankings are packed with regulars.
+Some unfamiliar names are popping up in the Pokémon capture counts.
+I really wanted to collect these right before the July issue's distribution ended,
+but I completely forgot and it ended up being a week ago. I deeply regret it.
+
+Still, I never imagined there'd be ten different messages at the quiz's end.
+By the way, when I first tried it, I only got one question wrong. The one about the Fighting Dojo. Look up the answer yourself.
+“Pure white” and “Pitch black” were good questions.
+The one punning on Earthquake and confidence was just a rehash of the Earthquake Gligar from PokéStar Gold/Silver, but let's overlook that.
+However, forgetting to record the message for my first win was a huge mistake.
+Next month, I won't make such a rookie error
+

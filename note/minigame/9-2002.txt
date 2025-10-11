@@ -1,0 +1,439 @@
+
+ポケモン　れんそうクイズ！
+
+がめんの　ひだりがわに
+３つの　ヒントが　でます
+ヒントに　あてはまる　ポケモンを
+がめんの　みぎがわから　えらんで
+エーボタンで　こたえて　ください
+５もん　つづけて　あたれば　クリア！
+それでは　はじめよう！
+
+（選択肢）
+
+ケンタロス
+ワニノコ
+ニューラ
+サンド
+ガラガラ
+スリーパー
+ヤドン
+カモネギ
+
+（以下の問題がランダムで出題。同じ問題が続いて出ることもある。３連続もあった）
+ノーマル　ではない
+しっぽが　わかれてる
+いあいぎり　できる
+
+ノーマル　ではない
+みみが　とがっている
+フラッシュ　できる
+
+ノーマル　ではない
+しんか　できる
+なみのり　できない
+
+ノーマル　ではない
+なにか　かぶっている
+かいりき　できる
+
+ノーマル　ではない
+なにか　かぶっている
+フラッシュ　できない
+
+ノーマル　ではない
+なにか　もっている
+フラッシュ　できない
+
+ノーマル　ではない
+なにか　もっている
+かいりき　できる
+
+ノーマル　ではない
+なにか　もっている
+フラッシュ　できる
+
+ノーマル　ではない
+きばが　ある
+かいりき　できない
+
+ノーマル　ではない
+きばが　ある
+フラッシュ　できる
+
+ノーマル　ではない
+おでこにワンポイント
+いあいぎり　できる
+	ひこう　ではない
+なにかを　もっている
+かいりき　できる
+
+ひこう　ではない
+なにかを　もっている
+フラッシュ　できない
+
+ひこう　ではない
+なにかを　もっている
+かいりき　できない
+
+ひこう　ではない
+なにかを　もっている
+フラッシュ　できる
+
+ひこう　ではない
+なにか　かぶっている
+かいりき　できる
+
+ひこう　ではない
+タマゴから　うまれる
+うずしお　できる
+
+ひこう　ではない
+タマゴから　うまれる
+かいりき　できない
+
+ひこう　ではない
+しっぽが　わかれてる
+いあいぎり　できる
+
+ひこう　ではない
+きばが　ある
+うずしお　できる
+
+ひこう　ではない
+きばが　ある
+かいりき　できない
+
+ひこう　ではない
+おでこにワンポイント
+いあいぎり　できる
+
+ひこう　ではない
+みみが　とがっている
+フラッシュ　できる
+
+ひこう　ではない
+みみが　とがっている
+かいりき　できない
+	こおり　ではない
+しっぽが　わかれてる
+なみのり　できる
+
+こおり　ではない
+しっぽが　わかれてる
+たいあたり　できる
+
+こおり　ではない
+おでこにワンポイント
+かいりき　できない
+
+こおり　ではない
+おでこにワンポイント
+いあいぎり　できる
+
+こおり　ではない
+しんか　できない
+なみのり　できる
+
+あく　ではない
+おでこにワンポイント
+かいりき　できない
+
+あく　ではない
+おでこにワンポイント
+いあいぎり　できる
+
+あく　ではない
+しっぽが　わかれてる
+なみのり　できる
+
+あく　ではない
+きばが　ある
+たいあたり　できる
+
+あく　ではない
+きばが　ある
+フラッシュ　できる
+
+あく　ではない
+しんか　できない
+なみのり　できる
+
+あく　ではない
+しんか　できない
+たいあたり　できる
+
+（まだパターンがありそうだが割愛）
+
+　
+
+ざんねん！　はずれだよ…
+
+せいかい！
+つぎの　もんだい　だよ
+
+５もんせいかい　おめでとう！
+わざマシン３５を　プレゼント！
+（２回目以降はすごいキズ薬）
+
+　
+
+管理人的コメント：
+
+前回の反動か、今回のミニゲームはすぐに終わる。
+すごいキズ薬がいくつも入手できていい感じだ。
+このゲームをやるまで、スリーパーは怪力を覚えられるものだと思っていた。
+何で出来ないんだろう、地獄車とかは出来るのに。
+
+バトルタワーランキング、千葉県の方に自分の名前（あんじゅ）が出ていることに注目。
+木の実ランキングとバトルタワーランキングの「あんじゅ」は別人なので注意。
+今月から、本格的にモバイルに入り始める。
+
+しかし、木の実ランキングには見たことのない名前が多い。
+メッセージも「こんにちは！　よろしく！！」から変えていない人も多い。
+なお、「あ　お　い」と「あおい」は別人物である。
+
+それにしても、千葉県ではクリスタル氏がずば抜けているな。
+自分もモバイル発売当時から始めていたら…
+いや、真っ先に買うことを選んだものの勝ちだろう。
+
+ところで、郵便番号270の木の実ランキング、クリス４連続は…
+オンラインゲームなのにデフォルト名を用意してしまったゲーフリの責任だ。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pokémon Chain Quiz!
+
+On the left side of the screen
+three hints will appear.
+Choose the Pokémon that fits the hints
+from the right side of the screen.
+Press the A button to answer.
+Get five in a row right to clear!
+Alright, let's begin!
+
+(Choices)
+
+Tauros
+Totodile
+Sneasel
+Sandshrew
+Marowak
+Hypno
+Slowpoke
+Farfetch'd
+
+(The following questions appear randomly. The same question may appear consecutively. Three in a row happened too.)
+
+Not Normal
+Tail is split
+Can use Slash
+
+Not Normal
+Ears are pointed
+Can use Flash
+
+Not Normal
+Can evolve
+Cannot use Surf
+
+Not Normal
+Wearing something
+Can use Strength
+
+Not Normal
+Wearing something
+Cannot use Flash
+
+Not Normal
+It holds something
+It cannot use Flash
+
+It is not Normal
+It holds something
+It can use Strength
+
+It is not Normal
+It holds something
+It can use Flash
+
+It is not Normal
+It has fangs
+It cannot use Strength
+
+It is not Normal
+It has fangs
+It can use Flash
+
+It is not Normal
+It has a mark on its forehead
+It can use Slash
+
+
+
+
+
+Not flying
+Has something
+Can use strength
+
+Not flying
+Has something
+Can't flash
+
+Not flying
+Has something
+Can't use strength
+
+Not flying
+Has something
+Can flash
+
+Not flying
+Wears something
+Can use strength
+
+Not flying
+Hatches from an egg
+Can use Whirlpool
+
+Not flying
+Hatches from an egg
+Can't use Strength
+
+Not flying
+Has a split tail
+Can use Slash
+
+Not flying
+Has fangs
+Can use Whirlpool
+
+Not flying
+Has fangs
+Can't use Strength
+
+Not flying
+One spot on forehead
+Can use Slash
+
+Not flying
+Pointed ears
+Can use Flash
+
+Not flying
+Pointed ears
+Can't use Strength
+
+
+
+
+Not Ice
+Tail splits
+Surfing possible
+
+Not Ice
+Tail splits
+Body Slam possible
+
+Not Ice
+One-point mark on forehead
+Strength move impossible
+
+Not Ice
+One-point mark on forehead
+Slash possible
+
+Not Ice
+Evolution impossible
+Surfing possible
+
+Not Dark
+One mark on forehead
+Cannot use Strength
+
+Not Dark
+One mark on forehead
+Can use Slash
+
+Not Dark
+Tail is split
+Can use Surf
+
+Not Dark
+Has fangs
+Can use Body Slam
+
+Not Dark
+Has fangs
+Can use Flash
+
+Not Dark
+Cannot evolve
+Can use Surf
+
+Not Dark
+Cannot evolve
+Can use Body Slam
+
+
+
+
+(More patterns likely exist but omitted)
+
+Oh no! You missed...
+
+Correct!
+Here's the next question.
+
+Five correct answers! Congratulations!
+Here's TM35 as a gift!
+(Super Potion from the second time onward)
+
+Administrator's Comment:
+
+Maybe as a reaction to last time, this minigame ends quickly.
+Getting multiple Super Potions feels great.
+Before playing this game, I thought Snorlax could learn Hyper Cutter.
+Why can't it? It can learn moves like Hell Cart, after all.
+
+Noticed my name (Anju) appearing in the Battle Tower rankings for Chiba Prefecture.
+Note: The “Anju” in the Berry Rankings and Battle Tower Rankings are different people.
+Starting this month, I'm diving into Mobile properly.
+
+However, the Berry Rankings have many unfamiliar names.
+Many people still haven't changed their messages from “Hello! Nice to meet you!!”.
+Also, “Aoi” and “あ　お　い” are different people.
+
+Still, Mr. Crystal is head and shoulders above everyone else in Chiba Prefecture.
+If only I'd started playing when the mobile version launched...
+Nah, it's the ones who chose to buy it first who win.
+
+By the way, the Berry Ranking for postal code 270, クリス four times in a row...
+It's Game Freak's fault for providing default names in an online game.
+
+
+
+
+
+
+
+
+
+
+
+
+

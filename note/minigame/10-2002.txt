@@ -1,0 +1,388 @@
+トレーナー　しんだん！
+
+トレーナーしんだんを　はじめます！
+さいしょの　１かい　だけ　しんだんが
+おわると　プレゼントが　もらえます！
+けっかに　よって　プレゼントが
+ちがうので　きをつけてね！
+それでは　スタート！
+
+（１）
+ポケモンを　つかまえたら
+かならず　ニックネームを　つける
+（はい→２　いいえ→５）
+
+（２）
+ポケモンの　なまえを　よぶときは
+「ちゃん」を　つけて　よんでしまう
+（はい→３　いいえ→１０）
+
+（３）
+ポケモンに　おぼえさせる　わざは
+ポケモンの　イメージに　あっていれば
+つよく　なくても　きにしない
+（はい→４　いいえ→１２）
+
+（４）
+すきな　ポケモンは　よわくても
+１０ひき　いじょう　あつめてしまう
+（はい→Ａ　いいえ→１３）
+
+（５）
+こうげきが　つよければ
+ぼうぎょは　あまり　きにしない
+（はい→６　いいえ→８）
+
+（６）
+じぶんより　よわい　あいてに
+かつと　きもちがいい？
+（はい→７　いいえ→９）
+
+（７）
+だいじに　そだてた　ポケモンでも
+たかい　おかねでなら　うってもいい
+（はい→Ｂ　いいえ→１３）
+
+（８）
+わざマシンの　わざの　しゅるいを
+なにも　みないで
+３０こ　いじょう　いえる
+（はい→９　いいえ→１６）
+
+（９）
+てにいれた　わざマシンは
+そのとき　もっている　ポケモンに
+すぐに　つかってしまう
+（はい→Ｅ　いいえ→１４）
+
+（１０）
+いつも　くすりは　おおめに
+もちあるく　ように　している
+（はい→１１　いいえ→１３）
+
+（１１）
+すきな　どうぐは　やっぱり
+きせきのみ　より　きあいのハチマキ！
+（はい→１２　いいえ→１５）
+
+（１２）
+たいりょくが　あと　すこし　でも
+つぎの　こうげきで　かてそうなら
+かいふくは　しない
+（はい→Ｅ　いいえ→Ａ）
+
+（１３）
+ともだちが　あまり　つかわないような
+ポケモンを　つかうのが　だいすきだ
+（はい→Ｆ　いいえ→１４）
+
+（１４）
+しらない　まちに　ついたら　まずは
+ポケモンセンターで　かいふくする
+（はい→１６　いいえ→１５）
+
+（１５）
+どうくつの　なかを　たんけんするより
+へやで　ゆっくり　さくせんを
+ねる　ほうが　すきだ
+（はい→１６　いいえ→Ｄ）
+
+（１６）
+パソコンの　ボックスに
+あずけてある　ポケモンは
+きれいに　せいり　している
+（はい→Ｃ　いいえ→Ｄ）
+
+（Ａ）
+あなたの　トレーナータイプは
+だいすきクラブ　ですわ！
+ポケモンちゃんを　おかしいほど
+あいする　あなたの　おきもち
+しかと　つたわって　きましたわ！
+しょうぶに　まけても　かわいい
+ポケモンちゃんを　もっている
+ほうが　かちよ！　わすれないでネ！
+（以下、一度のみ）
+あなたの　ポケモンちゃんには
+この　わざマシン２７　おんがえしが
+ぴったり！　つかって　くださいな！
+
+（Ｂ）
+アナタは　ロケットだんに
+ふさわしい　タイプ　みたいよ！
+なんというか　アナタ　じぶんの
+ことしか　かんがえて　ないのね！
+いつも　そんな　わがままだと
+しゅっせ　できないんじゃないの？
+まあ　しょうらい　きがむいたら
+ロケットだんに　いらっしゃい！
+（以下、一度のみ）
+ロケットだんとの　おちかづきの
+きねんひんを　アナタにあげるわ！
+わざマシン２１　やつあたりよ！
+
+（Ｃ）
+キミは　エリートトレーナー　タイプ！
+ポケモンも　だいじに　しているし
+しょうぶ　にも　つよい　みたいだし
+なんでも　しっている　キミは
+きっと　ともだちからも
+そんけい　されて　いるんだろうね！
+（以下、一度のみ）
+キミが　さらに　ゆうりに
+しょうぶが　できる　ように
+ポイントアップを　あげるよ！
+
+（Ｄ）
+キミは　ピクニックガール　タイプ！
+おとこのこ　なら　キャンプボーイよ！
+ポケモンとの　ぼうけんを　とても
+たのしめる　ひと　なのね！
+キミと　いっしょに　たびを　している
+ポケモンも　きっと　すごく
+たのしいって　おもって　いるはずよ！
+（以下、一度のみ）
+それと　プレゼントを　あげちゃうわ！
+ぎんのこな　よ！
+これからも　がんばってね！
+
+（Ｅ）
+ウッス！
+きみは　からておう　タイプッス！
+その　だいたんな　たたかいっぷり
+すごく　かっこいいッス！
+これからも　がんがん
+あせくさい　しょうぶを　して
+つよく　なって　くださいッス！
+（以下、一度のみ）
+わざマシン２０　あげるッス！
+こらえるッス！　カンバレッス！
+
+（Ｆ）
+…オマエの　トレーナータイプは…
+はぐれけんきゅういん…
+オマエ　まわりから　いつも
+ヘンな　やつって　いわれてるだろ…
+きにするな　いわせておけば　いいのさ
+そして　なんと　いわれようが
+すきな　こに　ふられようが
+そのまま　じぶんを　つらぬいてくれ…
+（以下、一度のみ）
+きれいな　ひかりのこなを　やるから
+これでも　みて　オマエの　こどくを
+まぎらわせたら　いいさ…
+
+　
+
+管理人的コメント：
+
+なんと言ってもトレーナー診断だろう。
+結果が６通りあり、しかも賞品はどれか一つが一度きりだから、
+６回もニュースをダウンロードしなくてはならない。
+もらえるアイテムがリュックに入らない状態（つまり、リュックが一杯）なら、
+メッセージを見ただけでイベントは消化されないようだが、
+もらえるアイテム６種類のうちの３つが技マシンなのでこの手も使えない。
+３００円も自腹を切ってこのことに気付いたので、
+それ以降は邪道ながらバックアップツールを使ってしまった。
+なお、僕が初めてやったときははぐれ研究員になった。
+
+ランキングのほうはあまり変わりばえのしないメンバー。
+進化ランキングのほうには見慣れない名前がちらほらと。
+ちなみに、あんじゅとは僕のことである。
+
+
+
+
+
+
+
+
+
+
+Trainer Check!
+
+Starting the Trainer Check!
+Only the very first check
+will earn you a present!
+The present changes
+depending on your results, so be careful!
+Alright, let's begin!
+
+(1)
+When you catch a Pokémon,
+you always give it a nickname.
+(Yes → 2   No → 5)
+
+(2)
+When calling your Pokémon's name,
+you end up adding “-chan” to it
+(Yes → 3  No → 10)
+
+(3)
+When teaching moves to Pokémon,
+if they fit the Pokémon's image,
+you don't mind if they aren't strong
+(Yes → 4  No → 12)
+
+(4)
+Even if they're weak,
+I end up collecting over ten of my favorite Pokémon.
+(Yes → A / No → 13)
+
+(5)
+If an attack is strong,
+I don't worry too much about defense.
+(Yes → 6 / No → 8)
+
+(6)
+Does defeating opponents weaker than you feel good?
+(Yes → 7   No → 9)
+
+(7)
+Even Pokémon you've raised carefully,
+if offered a high price, you'd be willing to sell them.
+(Yes → B   No → 13)
+
+(8)
+You can name over 30 TM moves
+without looking at their types.
+(Yes → 9   No → 16)
+
+(9)
+When you get a TM,
+you immediately use it
+on the Pokémon you have with you.
+(Yes → E   No → 14)
+
+(10)
+I always make sure to carry
+plenty of medicine with me.
+(Yes → 11   No → 13)
+
+(11)
+My favorite item is definitely
+the Focus Band over the Miracle Berry!
+(Yes → 12   No → 15)
+
+(12)
+If my HP is just barely enough
+to win with the next attack,
+I won't heal.
+(Yes → E  No → A)
+
+(13)
+I really love using Pokémon
+that my friends don't use much.
+(Yes → F  No → 14)
+
+(14)
+When arriving in an unfamiliar town, I first
+recover at the Pokémon Center.
+(Yes → 16  No → 15)
+
+(15)
+Rather than exploring caves,
+I prefer relaxing in my room
+and strategizing.
+(Yes → 16  No → D)
+
+(16)
+The Pokémon stored
+in the PC's boxes
+are neatly organized
+(Yes → C  No → D)
+
+(A)
+Your Trainer Type is
+the Super Fan Club!
+Your feelings for your Pokémon,
+loved to an absurd degree,
+have come through loud and clear!
+Even if you lose a battle,
+having a cute Pokémon
+is the real victory! Don't forget that!
+(Below, once only)
+This TM27, Payback,
+is perfect for your Pokémon!
+Please use it!
+
+(B)
+You seem like the perfect type
+for Team Rocket!
+How should I put it... you only
+think about yourself!
+If you're always so selfish,
+won't you ever succeed?
+Well, if you change your mind in the future,
+come join Team Rocket!
+(Below, once only)
+I'll give you a commemorative gift
+for your closeness to Team Rocket!
+TM21: Payback!
+
+(C)
+You're the Elite Trainer type!
+You treat your Pokémon well,
+and you seem strong in battle too.
+Knowing everything like you do,
+your friends must
+respect you a lot!
+(Only once)
+To help you fight
+even more easily,
+here's a Point Up!
+
+(D)
+You're the Picnic Girl type!
+If you were a boy, you'd be a Camp Boy!
+You're someone who really enjoys
+adventures with Pokémon!
+The Pokémon traveling with you
+must be having an amazing time too!
+(Only once)
+And I'll give you a present!
+It's Silver Powder!
+Keep up the great work!
+
+(E)
+Yeah!
+You're the Karate King type!
+That generous fighting spirit
+is super cool!
+Keep going strong,
+fighting fiercely,
+and get even stronger!
+(Only once)
+Here, have TM20!
+Hang in there! Keep fighting!
+
+(F)
+...Your Trainer Type is...
+Lone Researcher...
+People around you always call you
+a weirdo, right...
+Don't worry about it. Just let them talk.
+And no matter what they say,
+no matter if the girl you like dumps you,
+just stay true to yourself...
+(Only once)
+Here, take this beautiful light powder.
+Use it to distract yourself from your loneliness...
+
+　
+
+Administrator's Comment:
+
+The Trainer Diagnosis is definitely the main event.
+There are six possible results, and since the prize is a one-time-only item,
+you have to download the news six times.
+If your backpack is full (meaning it can't hold any more items),
+it seems the event doesn't count just by reading the message,
+but since three of the six possible items are TM, this trick doesn't work either.
+After shelling out 300 yen to figure this out,
+I resorted to using backup tools, even if it's a bit underhanded.
+By the way, the first time I did it, I became a Stray Researcher.
+
+The ranking list features the usual suspects.
+The evolution ranking has a few unfamiliar names here and there.
+Incidentally, “Anju” is me.

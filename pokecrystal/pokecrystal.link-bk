@@ -1,0 +1,54 @@
+WRAM0
+	"Stack"
+	"Audio RAM"
+	"WRAM"
+	"wSpriteAnims"
+	align 8
+	"Sprites"
+	"Tilemap"
+;	"Battle"
+	"Overworld Map"
+	"Video"
+WRAMX 1
+	"WRAM 1"
+	"Enemy Party"
+	"Party"
+WRAMX 2
+	"Pic Animations"
+WRAMX 3
+	"Battle Tower RAM"
+WRAMX 5
+	"GBC Video"
+	org $d300
+	"Battle Animations"
+	org $d800
+	"Mobile RAM"
+WRAMX 6
+	"Scratch RAM"
+WRAMX 7
+	"Stack RAM"
+SRAM $00
+	"Scratch"
+	org $a600
+	"SRAM Bank 0"
+	org $b200
+	"Backup Save"
+SRAM $01
+	"Save"
+	"Active Box"
+	"Link Battle Data"
+	"SRAM Hall of Fame"
+	"SRAM Crystal Data"
+	"SRAM Battle Tower"
+SRAM $02
+	"Boxes 1-7"
+SRAM $03
+	"Boxes 8-14"
+SRAM $04
+	"SRAM Mobile 1"
+SRAM $05
+	"SRAM Mobile 2"
+SRAM $06
+	"SRAM Mobile 3"
+SRAM $07
+	"SRAM Mobile 4"

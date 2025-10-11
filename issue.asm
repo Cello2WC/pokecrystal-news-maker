@@ -75,31 +75,41 @@ SECTION "News", ROM0[$0000]
 	news_menuitem_descs   .menuTrainerRankingsDesc,   .menuitem4_desc,   .menuitem5_desc
 
 .a_button
-	nsc_playsound SFX_READ_TEXT;db $03, $07
-	nsc_select;db $17
-	nsc_ret;db $FF
+	nsc_playsound SFX_READ_TEXT
+	nsc_select
+	nsc_ret
 
 .b_button
-	nsc_playsound SFX_MENU;db $03, $06
-	nsc_exit;db $30
-	nsc_ret;db $FF
+	nsc_playsound SFX_MENU
+	nsc_exit
+	nsc_ret
 
 .up_button
-	nsc_up;db $0E
-	nsc_ret;db $FF
+	nsc_up
+	nsc_ret
 
 .down_button
-	nsc_down;db $0F
-	nsc_ret;db $FF
+	nsc_down
+	nsc_ret
 
 .menuTrainerRankingsName
-	trans_string "ランキング　<WO>みる", "TRAINER RANKINGS", "?", "?", "?", "?"
+	lang J, "ランキング　<WO>みる"
+	lang E, "TRAINER RANKINGS"
+	lang D, "BESTENLISTE"
+	lang F, "QUIZ #MANIA"
+	lang I, "QUIZ #FANATICO"
+	lang S, "?"
 	db "@"
 .menuitem4_name
 	minigame_name
 	db "@"
 .menuitem5_name
-	trans_string "やめる", "CANCEL", "?", "?", "?", "?"
+	lang J, "やめる"
+	lang E, "CANCEL"
+	lang D, "ZURÜCK"
+	lang F, "RETOUR"
+	lang I, "ESCI"
+	lang S, "?"
 	db "@"
 
 .menuTrainerRankingsScript
@@ -108,16 +118,12 @@ SECTION "News", ROM0[$0000]
 
 	
 .menuitem4_script
-	;nsc_page $06d9;db $01, $D9, $06
-;	nsc_ret
-;	nsc_ret
-;	nsc_ret
 	minigame_start
-	nsc_ret;db $FF
+	nsc_ret
 	
 .menuitem5_script
-	nsc_exit;db $30
-	nsc_ret;db $FF
+	nsc_exit
+	nsc_ret
 	
 	
 	
@@ -138,15 +144,30 @@ SECTION "News", ROM0[$0000]
 	lang_line I, "atore a tema."
 	
 	lang      S, "?"
-	lang_line S, "?"
 	
 	db "@"
 .menuitem4_desc
 	minigame_desc
 	db "@"
+	
 .menuitem5_desc
-	trans_string "ニュース<WO>みるのを", "Finish reading", "?", "?", "?", "?"
-	trans_line   "やめます",              "the NEWS.",      "?", "?", "?", "?"
+	lang      J, "ニュース<WO>みるのを"
+	lang_line J, "やめます"
+	
+	lang      E, "Finish reading"
+	lang_line E, "the NEWS."
+	
+	lang      D, "Lesen der NACH-"
+	lang_line D, "RICHTEN beenden."
+	
+	lang      F, "Arrêter de lire"
+	lang_line F, "les INFOS."
+	
+	lang      I, "Stop lettura"
+	lang_line I, "NOTIZIE."
+	
+	lang      S, "?"
+	
 	db "@"
 
 

@@ -1,4 +1,4 @@
-; Janken variant
+; Dice variant
 
 IF DEF(_MINIGAME_H)
 
@@ -70,8 +70,26 @@ MinigameStart::
 	nsc_clear 1, 13, 18, 4
 	nsc_drawtrainer 6, 2, COOLTRAINERF, 7
 	nsc_select
+	
+	
+		
+.retry
+	; player's roll
+	nsc_delay 1 ; wait for new RNG rolls
+	nsc_ramcopy hRandomAdd, wMinigameRam0, 1
+	nsc_flagop wMinigameRam0, FLAG_CLEAR, 3
+	nsc_flagop wMinigameRam0, FLAG_CLEAR, 4
+	nsc_flagop wMinigameRam0, FLAG_CLEAR, 5
+	nsc_flagop wMinigameRam0, FLAG_CLEAR, 6
+	nsc_flagop wMinigameRam0, FLAG_CLEAR, 7 ; wMinigameRam0 &= %00000111
+	nsc_compare wMinigameRam0, .continue, .retry, .retry, 1, 6 ; retry if generated a 7 or 8
+.continue
+	;nsc_add wMinigameRam0, 1
+	
+	
+	
 	nsc_waitbutton
-	nsc_page LuckTest ; should be janken or dice, _then_ quiz
+	nsc_page LuckTest
 	nsc_ret
 	
 .menuItemText
@@ -124,10 +142,10 @@ MinigameStart::
 	news_def_boxes
 	news_box 0,  1, 20, 14, NEWSBORDER_BLOCKY, 4
 	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
-	news_box 4,  4, 12,  8, NEWSBORDER_BLOCKY, 5
+	news_box 4,  6, 12,  6, NEWSBORDER_BLOCKY, 5
 	news_def_strings
 	news_string 0, 0, "@" ; ......why?
-	news_menu 6, 6,   1, 3,   0, 2,   -1, $00, $00, $00, $02, $01
+	news_menu 6, 8,   1, 2,   0, 2,   -1, $00, $00, $00, $02, $01
 	
 	news_buttonscript .aButton    ; script pointer a button
 	news_buttonscript .bButton    ; script pointer b button
@@ -142,9 +160,9 @@ MinigameStart::
 	news_menudescription 1, 14, 18, 4
 	news_norankingstable
 	
-	news_menuitem_names   .menuRockText,   .menuPaperText,   .menuScissorsText
-	news_menuitem_scripts .menuRockScript, .menuPaperScript, .menuScissorsScript
-	news_menuitem_descs   .menuDummyDesc,  .menuDummyDesc,   .menuDummyDesc
+	news_menuitem_names   .menuHigherText,   .menuLowerText
+	news_menuitem_scripts .menuHigherScript, .menuLowerScript
+	news_menuitem_descs   .textYouRolled,    .textYouRolled ; .menuDummyDesc, .menuDummyDesc;
 
 .bButton
 	nsc_playsound SFX_MENU
@@ -157,54 +175,47 @@ MinigameStart::
 	nsc_clear 1, 13, 18,  4
 	nsc_drawtrainer 6, 2, COOLTRAINERF, 7
 	
-.retry
-	; CHIE's choice
+.retry2
+	; player's roll
 	nsc_delay 1 ; wait for new RNG rolls
-	nsc_ramcopy hRandomAdd, wMinigameRam0, 1
-	nsc_flagop wMinigameRam0, FLAG_CLEAR, 2
-	nsc_flagop wMinigameRam0, FLAG_CLEAR, 3
-	nsc_flagop wMinigameRam0, FLAG_CLEAR, 4
-	nsc_flagop wMinigameRam0, FLAG_CLEAR, 5
-	nsc_flagop wMinigameRam0, FLAG_CLEAR, 6
-	nsc_flagop wMinigameRam0, FLAG_CLEAR, 7 ; wMinigameRam0 &= %00000011
-	nsc_compare wMinigameRam0, .continue, .retry, .retry, 1, 3 ; retry if generated a 3
-.continue
+	nsc_ramcopy hRandomAdd, wMinigameRam1, 1
+	nsc_flagop wMinigameRam1, FLAG_CLEAR, 3
+	nsc_flagop wMinigameRam1, FLAG_CLEAR, 4
+	nsc_flagop wMinigameRam1, FLAG_CLEAR, 5
+	nsc_flagop wMinigameRam1, FLAG_CLEAR, 6
+	nsc_flagop wMinigameRam1, FLAG_CLEAR, 7 ; wMinigameRam0 &= %00000111
+	nsc_compare wMinigameRam1, .continue2, .retry2, .retry2, 1, 6 ; retry if generated a 7 or 8
+.continue2
+	;nsc_add wMinigameRam1, 1
 	nsc_clear 1, 13, 18, 4
-	nsc_printstring 1, 14, .textChieDeclare
+	nsc_printstring 1, 14, .textMaizieRolled
 	nsc_waitbutton
 	nsc_select
 	nsc_ret
 	
 .upButton
 	nsc_up
+	;nsc_printstring 1, 14, .textYouRolled
 	nsc_ret
 	
 .downButton
 	nsc_down
+	;nsc_printstring 1, 14, .textYouRolled
 	nsc_ret
 	
 	
-.menuRockText
-	lang J, "グー"
-	lang E, "ROCK"
+.menuHigherText
+	lang J, "？"
+	lang E, "HIGHER"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 	
-.menuPaperText
-	lang J, "パー"
-	lang E, "PAPER"
-	lang D, "?"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
-	db "@"
-	
-.menuScissorsText
-	lang J, "チョキ"
-	lang E, "SCISSORS"
+.menuLowerText
+	lang J, "？"
+	lang E, "LOWER"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -213,51 +224,117 @@ MinigameStart::
 	db "@"
 	
 	
-.textChieDeclare
+.textYouRolled
 	nts_start
-	nts_switch wMinigameRam0, .textChieRock, .textChiePaper, .textChieScissors
+	nts_player_name 0
 	nts_end
-	done
+	lang J, ""
+	lang E, " rolled"
+	lang_line E, "a "
+	lang D, "?"
+	lang F, "?"
+	lang I, "?"
+	lang S, "?"
+	nts_start
+	nts_switch wMinigameRam0, .one, .two, .three, .four, .five, .six
+	nts_end
+	db "@"
 	
-.textChieRock
-	lang J, "チエコ『グー"
-	lang E, "MAIZIE: ROCK"
+.textMaizieRolled
+	lang J, ""
+	lang E, "MAIZIE rolled"
+	lang_line E, "a "
+	lang D, "?"
+	lang F, "?"
+	lang I, "?"
+	lang S, "?"
+	;line
+	nts_start
+	nts_switch wMinigameRam1, .one, .two, .three, .four, .five, .six
+	nts_end
+	db "@"
+	
+.one
+	lang J, "いち"
+	lang E, "one"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 	
-.textChiePaper
-	lang J, "チエコ『パー"
-	lang E, "MAIZIE: PAPER"
+.two
+	lang J, "に"
+	lang E, "two"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 	
-.textChieScissors
-	lang J, "チエコ『チョキ"
-	lang E, "MAIZIE: SCISSORS"
+.three
+	lang J, "さん"
+	lang E, "three"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
+	
+.four
+	lang J, "し"
+	lang E, "four"
+	lang D, "?"
+	lang F, "?"
+	lang I, "?"
+	lang S, "?"
+	db "@"
+	
+.five
+	lang J, "ご"
+	lang E, "five"
+	lang D, "?"
+	lang F, "?"
+	lang I, "?"
+	lang S, "?"
+	db "@"
+	
+.six
+	lang J, "ろく"
+	lang E, "six"
+	lang D, "?"
+	lang F, "?"
+	lang I, "?"
+	lang S, "?"
+	db "@"
+	
 
-.menuRockScript
-	nsc_compare wMinigameRam0, .jankenTie, .jankenLose, .jankenWin, 1, 1
 
-.menuPaperScript
-	nsc_compare wMinigameRam0, .jankenWin, .jankenTie, .jankenLose, 1, 1
+.menuHigherScript
+	nsc_compareram wMinigameRam1, 1, wMinigameRam0, .jankenLose, .jankenTie, .jankenWin
 
-.menuScissorsScript
-	nsc_compare wMinigameRam0, .jankenLose, .jankenWin, .jankenTie, 1, 1
+.menuLowerScript
+	nsc_compareram wMinigameRam1, 1, wMinigameRam0, .jankenWin, .jankenTie, .jankenLose
 	
 .jankenTie
 	nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, .jankenTieText
+	
+.retry3
+	; player's roll
+	nsc_delay 1 ; wait for new RNG rolls
+	nsc_ramcopy hRandomAdd, wMinigameRam0, 1
+	nsc_flagop wMinigameRam0, FLAG_CLEAR, 3
+	nsc_flagop wMinigameRam0, FLAG_CLEAR, 4
+	nsc_flagop wMinigameRam0, FLAG_CLEAR, 5
+	nsc_flagop wMinigameRam0, FLAG_CLEAR, 6
+	nsc_flagop wMinigameRam0, FLAG_CLEAR, 7 ; wMinigameRam0 &= %00000111
+	nsc_compare wMinigameRam0, .continue3, .retry3, .retry3, 1, 6 ; retry if generated a 7 or 8
+.continue3
+	;nsc_add wMinigameRam0, 1
+	
+	
+	
 	nsc_waitbutton
 	nsc_page LuckTest
 	nsc_ret
@@ -316,7 +393,10 @@ MinigameStart::
 		.question2Text, \
 		.question3Text, \
 		.question4Text, \
-		.question5Text
+		.question5Text, \
+		.question6Text, \
+		.question7Text, \
+		.question8Text
 	nts_end
 	
 	news_menu  2, 16, 3, 1, 5, 2, -1, $00, $00, $00, $00, $04
@@ -411,8 +491,8 @@ ENDR
 	nsc_ret
 ENDM
 	
-	quiz_answers 1,    1, 1, 1, 0, 0
-	quiz_answers 2,    0, 0, 0, 1, 1
+	quiz_answers 1,    1, 1, 1, 0, 0, 0, 0, 0
+	quiz_answers 2,    0, 0, 0, 1, 1, 1, 1, 1
 	
 
 .menuItemQuitScript
@@ -424,13 +504,14 @@ ENDM
 	db "@"
 	
 .question1Text
-	lang J,      "ポケモンはしたし　いがいのひとでも"
-	lang_next J, "まもった りすけたり　してくれる？"
+	lang J,      "コガネのちかつうろでしょうばいを"
+	lang_next J, "しているひとはぜんぶで４にん？"
 	
-	lang E,      "Can #MON help"
-	lang_next E, "and protect people" 
-	lang_next E, "other than their"
-	lang_next E, "<TRAINER>S?"
+	lang E,      "Are there a total"
+	lang_next E, "of four people"
+	lang_next E, "doing business"
+	lang_next E, "in the GOLDENROD"
+	lang_next E, "UNDERGROUND?"
 	
 	lang D,      "?"
 	
@@ -443,14 +524,13 @@ ENDM
 	next "@"
 	
 .question2Text
-	lang J,      "にんげんを　こわがる"
-	lang_next J, "ポケモンがいれば"
-	lang_next J, "それはにんげんのせい？"
+	lang J,      "ラジオばんぐみ　アオイのあいことばに"
+	lang_next J, "イトマルというあいことばはある？"
 
-	lang E,      "If #MON are"
-	lang_next E, "afraid of humans,"
-	lang_next E, "is that the fault"
-	lang_next E, "of humans?"
+	lang E,      "Is SPINARAK one"
+	lang_next E, "of the passwords"
+	lang_next E, "in the radio show"
+	lang_next E, "BUENA'S PASSWORD?"
 	
 	lang D,      "?"
 	
@@ -463,15 +543,13 @@ ENDM
 	next "@"
 	
 .question3Text
-	lang J,      "ポケモンをすきなひとが"
-	lang_next J, "ポケモントレーナー　いがいに"
-	lang_next J, "めざすものはある？"
+	lang J,      "しぜんこうえんに　はなが"
+	lang_line J, "さいているところはある？"
 	
-	lang E,      "Can people who"
-	lang_next E, "love #MON be"
-	lang_next E, "something aside"
-	lang_next E, "from a #MON"
-	lang_next E, "<TRAINER>?"
+	lang E,      "Are there any"
+	lang_next E, "flowers in bloom"
+	lang_next E, "at the NATIONAL"
+	lang_next E, "PARK?"
 	
 	lang D,      "?"
 	
@@ -484,13 +562,12 @@ ENDM
 	next "@"
 	
 .question4Text
-	lang J,      "こどものトレーナーは"
-	lang_next J, "やっぱりおとなのトレーナー"
-	lang_next J, "より　よわい？"
+	lang J,      "アサギの　とうだいで　アカリチャンが"
+	lang_line J, "いるのはとうだいの５かい？"
 	
-	lang E,      "Are young <TRAINER>S"
-	lang_next E, "weaker than adult "
-	lang_next E, "<TRAINER>S?"
+	lang E,      "Is AMPHY found on"
+	lang_next E, "OLIVINE LIGHTHOUSE"
+	lang_next E, "5F?"
 	
 	lang D,      "?"
 	
@@ -503,12 +580,68 @@ ENDM
 	next "@"
 	
 .question5Text
-	lang J,      "むかしからの　いいつたえは"
-	lang_next J, "すべてウソだとおもう？"
+	lang J,      "いかりまんじゅうのねだんは４００円"
 	
-	lang E,      "Do you think the" 
-	lang_next E, "legends of old"
-	lang_next E, "are made-up?"
+	lang E,      "Is the price of"
+	lang_next E, "a RAGECANDYBAR"
+	lang_next E, "¥400?"
+	
+	lang D,      "?"
+	
+	lang F,      "?"
+	
+	lang I,      "?"
+	
+	lang S,      "?"
+	
+	next "@"
+	
+.question6Text
+	lang J,      "ロケットだんのアジトの　パスワードは"
+	lang_line J, "ヤドンのしっぽ　と　オタチのしっぽ？"
+	
+	lang E,      "Are SLOWPOKETAIL"
+	lang_next E, "and SENTRETTAIL"
+	lang_next E, "the passwords"
+	lang_next E, "used to access the"
+	lang_next E, "boss's room in the"
+	lang_next E, "ROCKET HIDEOUT?"
+	
+	lang D,      "?"
+	
+	lang F,      "?"
+	
+	lang I,      "?"
+	
+	lang S,      "?"
+	
+	next "@"
+	
+.question7Text
+	lang J,      "たきのぼりをしたのちは"
+	lang_line J, "うしろをむいている？"
+	
+	lang E,      "Do you face"
+	lang_next E, "backwards after"
+	lang_next E, "using WATERFALL?"
+	
+	lang D,      "?"
+	
+	lang F,      "?"
+	
+	lang I,      "?"
+	
+	lang S,      "?"
+	
+	next "@"
+	
+.question8Text
+	lang J,      "ポケモンを４たいくりだしてくる"
+	lang_line J, "ジムリーダーはマツバだけ？"
+	
+	lang E,      "Is MORTY the only"
+	lang_next E, "GYM LEADER to use"
+	lang_next E, "four #MON?"
 	
 	lang D,      "?"
 	
@@ -534,7 +667,7 @@ ENDM
 	news_def_strings
 	news_string 0, 0, "@" ; ......why?
 	
-	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
+	news_menu  3, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
 	
 	news_buttonscript .aButton ; script pointer a button
 	news_buttonscript .aButton ; script pointer b button
@@ -588,7 +721,7 @@ ENDM
 	
 .menuItemScript
 	nsc_textbox 1, 14, .textScoreIntro
-	nsc_compare wQuizScore, .fail, .pass, .pass, 1, 5
+	nsc_compare wQuizScore, .fail, .pass, .pass, 1, 8
 .fail
 	nsc_textbox 1, 14, .textFail
 	nsc_playsound SFX_DEX_FANFARE_LESS_THAN_20
@@ -598,7 +731,7 @@ ENDM
 	nsc_playsound SFX_DEX_FANFARE_230_PLUS
 	nsc_waitbutton
 	
-	nsc_compare sGSBallFlag, .done, .gift, .done, 1,    0
+	nsc_compare sGSBallFlag, .noGSBall, .gift, .noGSBall, 1,    0
 .gift
 	nsc_set wGSBallFlagRam, 1
 	nsc_ramcopy wGSBallFlagRam, sGSBallFlag, $0001
@@ -606,11 +739,28 @@ ENDM
 	nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, .textGiveGift
 	nsc_waitbutton
-.done
+
 	;nsc_clear 1, 13, 18, 4
 	;nsc_textbox 1, 14, .textFarewell
 	;nsc_waitbutton
 	
+	nsc_page NewsRoot
+	nsc_ret
+	
+.noGSBall
+	nsc_compare_newsvar sMinigameFlag, .done, .TMgift, .done, 1, 0
+.TMgift
+	nsc_waitbutton
+	nsc_clear 1, 13, 18, 4
+	nsc_textbox 1, 14, .textGiveTMGift
+	nsc_giveitem TM_SOLARBEAM, .gotGift, .noGift
+.gotGift
+	nsc_playsound SFX_GET_TM
+	nsc_set wGSBallFlagRam, 1
+	nsc_ramcopy_newsvar wGSBallFlagRam, sMinigameFlag, 1
+.noGift
+	nsc_waitbutton
+.done
 	nsc_page NewsRoot
 	nsc_ret
 
@@ -704,6 +854,21 @@ ENDM
 	done
 
 .textGiveGift
+	lang_text J, "？"
+	
+	lang_text E, "?"
+	
+	lang_text D, "?"
+	
+	lang_text F, "?"
+	
+	lang_text I, "?"
+	
+	lang_text S, "?"
+	
+	done
+	
+.textGiveTMGift
 	lang_text J, "？"
 	
 	lang_text E, "?"

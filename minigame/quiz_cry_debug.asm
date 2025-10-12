@@ -55,7 +55,7 @@ MinigameStart::
 	lang S, "?"
 	db "@"
 	
-	news_menu 2, 5, 1, 4, 0, 2, $12, $04, $07, $04, $03, $04
+	news_menu 2, 5, 1, 4, 0, 2, $10, $04, $07, $04, $03, $04
 	
 	news_buttonscript .a_button
 	news_buttonscript .b_button
@@ -300,7 +300,7 @@ ENDR
 	;$0506, $0513, $051F, $052D, $0539, $0546, $0553, $0561, $056E, $057C
 	nts_end
 	
-	news_menu 2, 5, 1, 4, 0, 2, $12, $04, $07, $04, $02, $04
+	news_menu 2, 5, 1, 4, 0, 2, $10, $04, $07, $04, $02, $04
 	
 	news_buttonscript .a_button
 	news_buttonscript .b_button

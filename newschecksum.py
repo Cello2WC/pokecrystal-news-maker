@@ -14,7 +14,8 @@ with open(args.filename, 'rb') as issue:
 	issue.seek(4)
 	newslen = struct.unpack('<H', issue.read(2))[0]
 	issue.seek(0)
-	newsdata = bytearray(issue.read(newslen+6))
+	# + 6 for header, + 1 for persistent minigame var
+	newsdata = bytearray(issue.read(newslen+6 + 1))
 	#last_nonzero_byte = 1
 	#curbyte = 0
 	for data in newsdata[6:]:

@@ -7,3 +7,5 @@ ELSE
 INCLUDE "pokecrystal/ram/wram_int.asm"
 INCLUDE "pokecrystal/ram/sram_int.asm"
 ENDC
+
+INCLUDE "pokecrystal/ram/hram.asm"

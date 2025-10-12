@@ -59,7 +59,7 @@ MinigameStart::
 		.question10Text
 	nts_end
 	
-	news_menu  2, 16, 4, 1, 4, 2, $01, $00, $00, $00, $00, $04
+	news_menu  2, 16, 4, 1, 4, 2, -1, $00, $00, $00, $00, $04
 	
 	news_buttonscript .aButton ; script pointer a button
 	news_buttonscript .bButton ; script pointer b button
@@ -583,7 +583,7 @@ ENDM
 	news_def_strings
 	news_string 0, 0, "@" ; ......why?
 	
-	news_menu  2, 10, 1, 1, 0, 0, $03, $00, $00, $00, $02, $01
+	news_menu  2, 10, 1, 1, 0, 0, 1, $00, $00, $00, $02, $01
 	
 	news_buttonscript .aButton ; script pointer a button
 	news_buttonscript .aButton ; script pointer b button

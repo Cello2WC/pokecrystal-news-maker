@@ -329,6 +329,7 @@
 	charmap "ハ", $99
 	charmap "ヒ", $9a
 	charmap "フ", $9b
+	charmap "ヘ", $cd
 	charmap "ホ", $9c
 	charmap "マ", $9d
 	charmap "ミ", $9e

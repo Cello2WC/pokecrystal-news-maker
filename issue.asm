@@ -55,7 +55,7 @@ SECTION "News", ROM0[$0000]
 	lang S, "?"
 	db "@"
 
-	news_menu 2, 5, 1, 4, 0, 2, $12, $04, $07, $04, $02, $04
+	news_menu 2, 5, 1, 4, 0, 2, $10, $04, $07, $04, $02, $04
 
 	news_buttonscript .a_button			; [a] script
 	news_buttonscript .b_button			; [b] script
@@ -182,3 +182,9 @@ INCLUDE "ranking_table_common.asm"
 INCLUDE "{MINIGAME_FILE}"
 
 	news_end
+
+
+; extra byte at the end of news data for persistent storage
+; used by minigames to check whether you've already received the game's prize
+; overwritten when the next issue comes in
+sMinigameFlag:: db 0

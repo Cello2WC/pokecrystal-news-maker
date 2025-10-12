@@ -49,7 +49,7 @@
 RANKING_1 ?= BATTLE_TOWER_WINS
 RANKING_2 ?= FRUIT_PICKED
 RANKING_3 ?= MONEY_EARNED
-MINIGAME  ?= minigame/quiz_cry_debug.asm
+MINIGAME  ?= minigame/game_personality.asm
 
 
 

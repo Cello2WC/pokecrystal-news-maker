@@ -802,7 +802,8 @@ ENDM
 	lang_line E, "one right is the" 
 	lang_cont E, "same as not"
 	lang_cont E, "knowing anything."
-	lang_cont E, "Try again."
+	
+	lang_para E, "Try again."
 	
 	lang_text D, "?"
 	

@@ -22,8 +22,8 @@ ENDM
 MACRO minigame_desc
 	lang      J, "#<NO>なきごえ<WO>あててね！"
 	
-	lang      E, "Guess #MON"
-	lang_line E, "cries!"
+	lang      E, "Guess the"
+	lang_line E, "#MON cry!"
 	
 	lang      D, "?"
 	

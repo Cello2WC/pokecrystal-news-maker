@@ -2,6 +2,8 @@
 
 IF DEF(_MINIGAME_H)
 
+DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 1
+
 MACRO minigame_start
 	nsc_set wQuizQuestionNo, 0
 	nsc_set wQuizScore, 0

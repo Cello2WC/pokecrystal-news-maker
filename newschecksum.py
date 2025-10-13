@@ -13,9 +13,11 @@ with open(args.filename, 'rb') as issue:
 	chk = 0
 	issue.seek(4)
 	newslen = struct.unpack('<H', issue.read(2))[0]
+	issue.seek(0x2000)
+	extrasram = struct.unpack('B', issue.read(1))[0]
 	issue.seek(0)
 	# + 6 for header, + 1 for persistent minigame var
-	newsdata = bytearray(issue.read(newslen+6 + 1))
+	newsdata = bytearray(issue.read(newslen+6 + extrasram)) #  + 1
 	#last_nonzero_byte = 1
 	#curbyte = 0
 	for data in newsdata[6:]:
@@ -26,7 +28,7 @@ with open(args.filename, 'rb') as issue:
 		#data = issue.read(1)
 		#curbyte += 1
 		
-	issue.seek(0x2000)
+	issue.seek(0x2001)
 	newsdesc = issue.read(1)
 	newsdescstr = b""
 	while newsdesc != b'\x00':

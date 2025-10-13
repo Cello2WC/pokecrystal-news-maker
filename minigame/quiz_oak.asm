@@ -1,5 +1,7 @@
 IF DEF(_MINIGAME_H)
 
+DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 0
+
 MACRO minigame_start
 	nsc_set wQuizQuestionNo, 0
 	nsc_set wQuizScore, 0
@@ -583,7 +585,11 @@ ENDM
 	news_def_strings
 	news_string 0, 0, "@" ; ......why?
 	
-	news_menu  2, 10, 1, 1, 0, 0, 1, $00, $00, $00, $02, $01
+IF DEF(_LANG_J)
+	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
+ELSE
+	news_menu  2, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
+ENDC
 	
 	news_buttonscript .aButton ; script pointer a button
 	news_buttonscript .aButton ; script pointer b button

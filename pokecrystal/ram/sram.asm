@@ -289,10 +289,10 @@ sOfferGender::     db
 sOfferSpecies::    db
 sOfferReqGender::  db
 sOfferReqSpecies:: db
-sOfferMonSender::  ds PLAYER_NAME_LENGTH - 1
+sOfferMonSender::  ds NAME_LENGTH_JAPANESE - 1
 sOfferMon::        party_struct sOfferMon
-sOfferMonOT::      ds PLAYER_NAME_LENGTH - 1
-sOfferMonNick::    ds MON_NAME_LENGTH - 1
+sOfferMonOT::      ds NAME_LENGTH_JAPANESE - 1
+sOfferMonNick::    ds NAME_LENGTH_JAPANESE - 1
 sOfferMonMail::    mailmsg sOfferMonMail
 s5_a890:: ds 4
 s5_a894:: ds 6 ; a894
@@ -301,7 +301,11 @@ s5_a89c:: ds 22 ; a89c honor roll level and room string
 
 s5_a8b2:: ds HONOR_ROLL_DATA_LENGTH ; a8b2 honor roll downloaded names
 
-s5_a948:: ds BATTLE_TOWER_DATA_UPLOAD_LENGTH ; a948 battle tower data to upload
+s5_a948:: ds $EA;BATTLE_TOWER_DATA_UPLOAD_LENGTH ; a948 battle tower data to upload
+
+sNewsId:: ds 12
+sNewsIdBackup:: ds BATTLE_TOWER_DATA_UPLOAD_LENGTH - $EA - 12
+
 
 ; Battle Tower data must be in SRAM because you can save and leave between battles
 sBattleTowerChallengeState::
@@ -329,8 +333,8 @@ s5_aa5d:: ds MOBILE_LOGIN_PASSWORD_LENGTH
 	ds $4
 
 s5_aa72:: db
-sNewsId:: ds 12
-sNewsIdBackup:: ds 12
+sNewsIdKG:: ds 12
+sNewsIdBackupKG:: ds 12
 
 s5_aa8b:: db
 s5_aa8c:: db

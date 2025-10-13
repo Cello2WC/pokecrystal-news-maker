@@ -224,18 +224,19 @@
 	charmap "<KOKO_WA>", $37 ; "ここは"
 	charmap "<GA>",      $4a ; "が　"
 
-	charmap "ノ゛",           $18 ; "ノ゛"? (ungrammatical)
-	charmap "に　",           $1d ; "に　"
-	charmap "って",           $1e ; "って"
-	charmap "を　",           $1f ; "を　"
-	charmap "た！",           $22 ; "た！"
-	charmap "こうげき",       $23 ; "こうげき"
-	charmap "は　",           $24 ; "は　"
-	charmap "の　",           $25 ; "の　"
-	charmap "ばん　どうろ",   $35 ; "ばん　どうろ"
-	charmap "わたし",         $36 ; "わたし"
-	charmap "ここは",         $37 ; "ここは"
-	charmap "が　",           $4a ; "が　"
+	; uncomment if you dont care about matching
+	;charmap "ノ゛",           $18 ; "ノ゛"? (ungrammatical)
+	;charmap "に　",           $1d ; "に　"
+	;charmap "って",           $1e ; "って"
+	;charmap "を　",           $1f ; "を　"
+	;charmap "た！",           $22 ; "た！"
+	;charmap "こうげき",       $23 ; "こうげき"
+	;charmap "は　",           $24 ; "は　"
+	;charmap "の　",           $25 ; "の　"
+	;charmap "ばん　どうろ",   $35 ; "ばん　どうろ"
+	;charmap "わたし",         $36 ; "わたし"
+	;charmap "ここは",         $37 ; "ここは"
+	;charmap "が　",           $4a ; "が　"
 
 ; Japanese kana, for those bits of text that were not translated to English
 

@@ -1,6 +1,7 @@
 IF DEF(_MINIGAME_H)
 
 
+DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 0
 ;DEF wCryQuizQuestionNo EQU wMinigameRam0
 ;DEF wCryQuizAnswerCorrect EQU wMinigameRam1
 

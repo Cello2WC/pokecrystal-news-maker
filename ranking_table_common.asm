@@ -244,14 +244,19 @@ ENDC
 	text "{RANKING_{RANKING_1}_FULLNAME}"
 	lang J, "は"
 	line "{RANKING_{RANKING_1}_DESC}"
+	
+	; matching weirdness in JP issue 1
+	para "{RANKING_{RANKING_3}_FULLNAME}"
+	lang J, "は"
+	line "{RANKING_{RANKING_3}_DESC}"
 
 	para "{RANKING_{RANKING_2}_FULLNAME}"
 	lang J, "は"
 	line "{RANKING_{RANKING_2}_DESC}"
 
-	para "{RANKING_{RANKING_3}_FULLNAME}"
-	lang J, "は"
-	line "{RANKING_{RANKING_3}_DESC}"
+	;para "{RANKING_{RANKING_3}_FULLNAME}"
+	;lang J, "は"
+	;line "{RANKING_{RANKING_3}_DESC}"
 	done
 
 .noRankingsDataText
@@ -539,7 +544,7 @@ ENDC
 	nsc_ret
 .start_button
 	nsc_playsound SFX_MENU
-	nsc_page openingScreen
+	nsc_page TrainerRankings;RankingsCategories
 	nsc_ret
 
 .menuitem1_name
@@ -704,7 +709,7 @@ ENDR
 	nsc_ret
 .start_button
 	nsc_playsound SFX_MENU
-	nsc_page openingScreen
+	nsc_page TrainerRankings
 	nsc_ret
 .menuitems_name
 	nts_start
@@ -1023,7 +1028,11 @@ ENDC
 	db "{RANKING_{RANKING_3}_UNIT}";$8D, $AB, $90, 
 	para "@";$51, $50, 
 .menuitems_desc
-	lang      J, "えらんだ　ひと<NO>データを"
+	; cry quiz debug issue text
+;	lang      J, "えらんだ　ひと<NO>データを"
+;	lang_line J, "みること<GA>できます"
+	; first issue text
+	lang      J, "えらんだ　ひと<NO>プロフィールを"
 	lang_line J, "みること<GA>できます"
 	
 	lang      E, "View the profile"

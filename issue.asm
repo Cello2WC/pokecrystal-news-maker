@@ -15,6 +15,9 @@ INCLUDE "{MINIGAME_FILE}"
 PURGE _MINIGAME_H
 
 SECTION "Download Text", ROM0[$2000]
+
+	db PERSISTENT_MINIGAME_DATA_SIZE
+	
 	lang      J, ""
 	lang_line J, __DATE__
 	
@@ -47,11 +50,11 @@ SECTION "News", ROM0[$0000]
 
 	news_def_strings
 	news_string 1, 2, "";"<TRAINER> RANKING@"
-	lang J, "ポケモンニュース"
-	lang E, "#MON NEWS No.0"
-	lang D, "NACHRICHTEN Nr. 0"
-	lang F, "INFOS PKMN No.0"
-	lang I, "NOTIZIE PKMN Nº0"
+	lang J, "ポケモンニュース　そうかんごう";"ポケモンニュース"
+	lang E, "#MON NEWS No.1";"#MON NEWS No.0"
+	lang D, "NACHRICHTEN Nr. 1";"NACHRICHTEN Nr. 0"
+	lang F, "INFOS PKMN No.1";"INFOS PKMN No.0"
+	lang I, "NOTIZIE PKMN Nº1";"NOTIZIE PKMN Nº0"
 	lang S, "?"
 	db "@"
 
@@ -70,9 +73,9 @@ SECTION "News", ROM0[$0000]
 	news_menudescription 1, 14, 18, 4
 	news_loadrankingstable RANKINGS_TABLE_DO_NOT
 
-	news_menuitem_names   .menuTrainerRankingsName,   .menuitem4_name,   .menuitem5_name
-	news_menuitem_scripts .menuTrainerRankingsScript, .menuitem4_script, .menuitem5_script
-	news_menuitem_descs   .menuTrainerRankingsDesc,   .menuitem4_desc,   .menuitem5_desc
+	news_menuitem_names   .menuNewsGuideName,   .menuTrainerRankingsName,   .menuMinigameName,   .menuQuitName
+	news_menuitem_scripts .menuNewsGuideScript, .menuTrainerRankingsScript, .menuMinigameScript, .menuQuitScript
+	news_menuitem_descs   .menuNewsGuideDesc,   .menuTrainerRankingsDesc,   .menuMinigameDesc,   .menuQuitDesc
 
 .a_button
 	nsc_playsound SFX_READ_TEXT
@@ -92,18 +95,27 @@ SECTION "News", ROM0[$0000]
 	nsc_down
 	nsc_ret
 
+.menuNewsGuideName
+	lang J, "ニュースガイド"
+	lang E, "NEWS GUIDE"
+	lang D, "NACHRICHTEN-INFO"
+	lang F, "GUIDE des INFOS"
+	lang I, "GUIDA NOTIZIE"
+	lang S, "?"
+	db "@"
+	
 .menuTrainerRankingsName
-	lang J, "ランキング　<WO>みる"
+	lang J, "トレーナーランキング";"ランキング　<WO>みる"
 	lang E, "TRAINER RANKINGS"
 	lang D, "BESTENLISTE"
 	lang F, "QUIZ #MANIA"
 	lang I, "QUIZ #FANATICO"
 	lang S, "?"
 	db "@"
-.menuitem4_name
+.menuMinigameName
 	minigame_name
 	db "@"
-.menuitem5_name
+.menuQuitName
 	lang J, "やめる"
 	lang E, "CANCEL"
 	lang D, "ZURÜCK"
@@ -112,20 +124,111 @@ SECTION "News", ROM0[$0000]
 	lang S, "?"
 	db "@"
 
+.menuNewsGuideScript
+	nsc_clear 1, 13, 18, 4
+	nsc_textbox 1, 14, .newsGuideText
+	nsc_waitbutton
+	nsc_ret
+	
 .menuTrainerRankingsScript
 	nsc_page TrainerRankings
 	nsc_ret
 
 	
-.menuitem4_script
+.menuMinigameScript
 	minigame_start
 	nsc_ret
 	
-.menuitem5_script
+.menuQuitScript
 	nsc_exit
 	nsc_ret
 	
+.newsGuideText
+	lang_text J, "#ニュース　そうかんごうでは"
+	lang_line J, "<TRAINER>ランキングと"
+	lang_cont J, "#カルトクイズで"
+	lang_cont J, "おたのしみ　ください！"
+	lang_para J, "あなた<NO>ランキング<NO>せいせきは"
+	lang_line J, "ランキング<NO>こうしん<WO>すれば"
+	lang_cont J, "なんどでも　かきかえられるので"
+	lang_cont J, "がんばれば　トップ<NI>なれるかも！"
+
+	lang_text E, "We hope you enjoy"
+	lang_line E, "the TRAINER RANK-"
+	lang_cont E, "INGS and #MANIA"
+	lang_cont E, "QUIZ in issue No.1"
+	lang_para E, "You can update"
+	lang_line E, "your ranking at"
+	lang_cont E, "any time."
+	lang_para E, "If you work hard"
+	lang_line E, "you can reach the"
+	lang_cont E, "top!"
 	
+	lang_text D, "Wir hoffen, dir"
+	lang_line D, "gefallen die"
+	lang_para D, "TRAINER-BESTEN-"
+	lang_line D, "LISTE und das"
+	lang_para D, "#MANIAC-QUIZ"
+	lang_line D, "in Ausgabe Nr. 1!"
+	lang_para D, "Du kannst deinen"
+	lang_line D, "Rang jederzeit"
+	lang_cont D, "aktualisieren."
+	lang_para D, "Gib dein Bestes,"
+	lang_line D, "um einen hohen"
+	lang_cont D, "Rang zu erreichen!"
+	
+	lang_text F, "Nous espérons que"
+	lang_line F, "vous apprécierez"
+	lang_para F, "Le CLASSEMENT"
+	lang_line F, "et le QUIZ #-"
+	lang_cont F, "MANIA dans la"
+	lang_cont F, "parution No.1"
+	lang_para F, "Vous pouvez mettre"
+	lang_line F, "à jour votre"
+	lang_cont F, "classement"
+	lang_cont F, "n'importe quand."
+	lang_para F, "Si vous"
+	lang_line F, "travaillez dur"
+	lang_cont F, "vous atteindrez"
+	lang_cont F, "le sommet!"
+	
+	lang_text I, "Ci auguriamo che"
+	lang_line I, "la CLASSIFICA"
+	lang_para I, "ALLENATORI e il"
+	lang_line I, "QUIZ #MANIA"
+	lang_para I, "nella prima"
+	lang_line I, "edizione ti"
+	lang_cont I, "piacciano."
+	lang_para I, "Puoi aggiornare"
+	lang_line I, "la classifica"
+	lang_cont I, "quando vuoi."
+	lang_para I, "Se lavori sodo,"
+	lang_line I, "raggiungerai la"
+	lang_cont I, "vetta!"
+	
+	lang      S, "?"
+	
+	done
+
+.menuNewsGuideDesc
+	lang      J, "よみこんだ　ニュースを"
+	lang_line J, "かんたん<NI>せつめいします"
+
+	lang      E, "Read an explan-"
+	lang_line E, "ation of the NEWS."
+	
+	lang      D, "Eine Erklärung zu"
+	lang_line D, "den NACHRICHTEN."
+	
+	lang      F, "Lire les explica-"
+	lang_line F, "tions des INFOS."
+	
+	lang      I, "Leggi la spiegazi-"
+	lang_line I, "one delle NOTIZIE."
+	
+	lang      S, "?"
+	
+	db "@"
 	
 .menuTrainerRankingsDesc
 	lang      J, "３つ<NO>テーマで"
@@ -146,11 +249,11 @@ SECTION "News", ROM0[$0000]
 	lang      S, "?"
 	
 	db "@"
-.menuitem4_desc
+.menuMinigameDesc
 	minigame_desc
 	db "@"
 	
-.menuitem5_desc
+.menuQuitDesc
 	lang      J, "ニュース<WO>みるのを"
 	lang_line J, "やめます"
 	
@@ -171,15 +274,19 @@ SECTION "News", ROM0[$0000]
 	db "@"
 
 
+INCLUDE "{MINIGAME_FILE}"
+
 ; NOTE: these are currently defined to the compiler in the Makefile
 ;DEF RANKING_1 EQUS "BATTLE_TOWER_WINS"
 ;DEF RANKING_2 EQUS "BUG_CONTEST_SCORE"
 ;DEF RANKING_3 EQUS "LONGEST_MAGIKARP"
 
-
 INCLUDE "ranking_table_common.asm"
 
-INCLUDE "{MINIGAME_FILE}"
+	; this is... just for matching.
+	; it makes no sense.
+	; it doesnt need to be here.
+	db 4
 
 	news_end
 

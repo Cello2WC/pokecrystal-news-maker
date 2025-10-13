@@ -61,3 +61,6 @@ SRAM $06
 	"SRAM Mobile 3"
 SRAM $07
 	"SRAM Mobile 4"
+HRAM
+	"OAM DMA"
+	"HRAM"

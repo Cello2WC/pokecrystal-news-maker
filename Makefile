@@ -49,7 +49,7 @@
 RANKING_1 ?= BATTLE_TOWER_WINS
 RANKING_2 ?= FRUIT_PICKED
 RANKING_3 ?= MONEY_EARNED
-MINIGAME  ?= minigame/quiz_blaine.asm
+MINIGAME  ?= minigame/timeless_gift_2.asm
 
 
 

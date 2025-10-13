@@ -47,7 +47,7 @@ MinigameStart::
 	news_def_strings
 	news_string 0, 0, "@" ; ......why?
 	
-	news_menu  4, 10, 1, 1, 0, 0, $03, $00, $00, $00, $02, $01
+	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
 	
 	news_buttonscript .aButton ; script pointer a button
 	news_buttonscript .aButton ; script pointer b button
@@ -192,7 +192,7 @@ MinigameStart::
 		.question10Text
 	nts_end
 	
-	news_menu  2, 16, 4, 1, 4, 2, $01, $00, $00, $00, $00, $04
+	news_menu  2, 16, 4, 1, 4, 2, -1, $00, $00, $00, $00, $04
 	
 	news_buttonscript .aButton ; script pointer a button
 	news_buttonscript .bButton ; script pointer b button
@@ -586,7 +586,7 @@ ENDM
 	news_def_strings
 	news_string 0, 0, "@" ; ......why?
 	
-	news_menu  4, 10, 1, 1, 0, 0, $03, $00, $00, $00, $02, $01
+	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
 	
 	news_buttonscript .aButton ; script pointer a button
 	news_buttonscript .aButton ; script pointer b button
@@ -698,7 +698,7 @@ ENDM
 	nsc_playsound SFX_DEX_FANFARE_230_PLUS
 	nsc_waitbutton
 	
-	nsc_compare sMinigameFlag, .done, .gift, .done, 1, 0
+	nsc_compare_newsvar sMinigameFlag, .done, .gift, .done, 1, 0
 .gift
 	nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, .textGiveGift
@@ -706,7 +706,7 @@ ENDM
 .gotGift
 	nsc_playsound SFX_GET_TM
 	nsc_set wGSBallFlagRam, 1
-	nsc_ramcopy wGSBallFlagRam, sMinigameFlag, 1
+	nsc_ramcopy_newsvar wGSBallFlagRam, sMinigameFlag, 1
 .noGift
 .done
 	; TODO: no space in pack error message
@@ -1127,10 +1127,5 @@ ENDM
 	lang_text S, "?"
 	
 	done
-	
-
-
-sMinigameFlag:: db 1
-	
 
 ENDC

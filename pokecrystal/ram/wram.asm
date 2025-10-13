@@ -1502,7 +1502,9 @@ wRankingsCategory::
 wcd63:: ds 1
 wRankingsType::
 wcd64:: ds 1
+wMinigameRam0::
 wcd65:: ds 1
+wMinigameRam1::
 wcd66:: ds 1
 wQuizQuestionNo::
 wcd67:: ds 1

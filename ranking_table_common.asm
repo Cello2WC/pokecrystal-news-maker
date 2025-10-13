@@ -41,7 +41,7 @@ ENDC
 	lang S, "?"
 	db "@"
 	
-	news_menu 2, 5, 1, 4, 0, 2, $12, $04, $07, $04, $02, $04
+	news_menu 2, 5, 1, 4, 0, 2, $10, $04, $07, $04, $02, $04
 	
 	news_buttonscript .a_button
 	news_buttonscript .b_button
@@ -401,7 +401,7 @@ ENDC
 	lang S, "?"
 	db "@"
 	
-	news_menu 2, 5, 1, 4, 0, 2, $12, $04, $07, $04, $02, $04
+	news_menu 2, 5, 1, 4, 0, 2, $10, $04, $07, $04, $02, $04
 	
 	
 	news_buttonscript .a_button
@@ -508,7 +508,7 @@ ENDC
 	nts_switch wRankingsCategory, .ranking1_label, .ranking2_label, .ranking3_label
 	nts_end
 	
-	news_menu 2, 5, 1, 4, 0, 2, $12, $04, $07, $04, $02, $04
+	news_menu 2, 5, 1, 4, 0, 2, $10, $04, $07, $04, $02, $04
 	
 	news_buttonscript .a_button
 	news_buttonscript .b_button
@@ -657,9 +657,9 @@ ENDC
 	nts_end
 
 IF DEF(_LANG_J)
-	news_menu 2, 7, 1, 3, 0, 2, $12, $04, $07, $03, $02, $03
+	news_menu 2, 7, 1, 3, 0, 2, $10, $04, $07, $03, $02, $03
 ELSE
-	news_menu 2, 6, 1, 3, 0, 2, $12, $04, $07, $03, $02, $03
+	news_menu 2, 6, 1, 3, 0, 2, $10, $04, $07, $03, $02, $03
 ENDC
 	
 	news_buttonscript .a_button

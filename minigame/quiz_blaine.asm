@@ -110,33 +110,44 @@ MinigameStart::
 	db "@"
 
 .blaineIntroText
+	; Japanese
 	lang_text J, "カツラ『うおおーす！"
 	lang_line J, "わしは　ねっけつ　クイズ　おやじ！"
+	
 	lang_para J, "グレン…　いや　ふたごじまの"
 	lang_line J, "リーダー　カツラなのだー！"
+	
 	lang_para J, "いままで　なんで　わしの　でばんが"
 	lang_line J, "なかったのか　ふしぎな　くらい！"
+	
 	lang_para J, "やっぱり　クイズと　いえば　わし！"
 	lang_line J, "もえる　おとこの　クイズ"
 	lang_cont J, "いくぞー！　うおおーす！！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK.
-	lang_text E, "BLAINE: Hah!"
-	lang_line E, "I'm the hotheaded"
-	lang_cont E, "quiz master!"
+	; English
+	lang_para E, "BLAINE: Hah!"
 	
-	lang_para E, "I'm BLAINE, LEADER"
-	lang_line E, "of CINNAB--"
-	lang_line E, "of the SEAFOAM" ; TODO: funny gag, but game freak wouldn't do this...
-	lang_cont E, "ISLANDS!"
+	lang_para E, "I am BLAINE! The"
+	lang_line E, "hotheaded quiz"
+	lang_cont E, "master!"
+	
+	lang_para E, "I'm the LEADER of"
+	lang_line E, "the CINNABAR…"
+	
+	lang_para E, "no, of the SEAFOAM"
+	lang_line E, "ISLANDS GYM!"
+	
 	lang_para E, "It's a mystery why"
 	lang_line E, "I haven't had my"
-	lang_cont E, "turn yet!"
+	lang_cont E, "turn until now!"
+	
 	lang_para E, "When it comes to"
 	lang_line E, "quizzes, it's"
 	lang_cont E, "gotta be me!"
-	lang_para E, "Let's do the"
-	lang_line E, "blazing man's quiz!"
+	
+	lang_para E, "This is a blazing"
+	lang_line E, "man's quiz!"
+	
 	lang_para E, "Hah!"
 	
 	lang_text D, "?"

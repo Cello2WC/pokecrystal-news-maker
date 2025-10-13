@@ -87,7 +87,7 @@ MinigameStart::
 	db "@"
 	
 .menuItemScript
-	nsc_textbox 1, 14, .greenIntroText
+	nsc_textbox 1, 14, .blaineIntroText
 	nsc_ret
 
 .menuItemDescription
@@ -111,33 +111,45 @@ MinigameStart::
 	
 	db "@"
 
-.greenIntroText
+.blaineIntroText
+	; Japanese
 	lang_text J, "カツラ『うおおーす！"
 	lang_line J, "わしは　ねっけつ　クイズ　おやじ！"
+	
 	lang_para J, "グレン…　いや　ふたごじまの"
 	lang_line J, "リーダー　カツラなのだー！"
+	
 	lang_para J, "いままで　なんで　わしの　でばんが"
 	lang_line J, "なかったのか　ふしぎな　くらい！"
+	
 	lang_para J, "やっぱり　クイズと　いえば　わし！"
 	lang_line J, "もえる　おとこの　クイズ"
 	lang_cont J, "いくぞー！　うおおーす！！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK.
-	lang_text E, "BLAINE: Hah!"
-	lang_line E, "I'm the Hot-Headed"
-	lang_cont E, "Quiz Master!"
-	lang_para E, "I'm BLAINE, LEADER"
-	lang_line E, "of CINNAB--"
-	lang_line E, "of the SEAFOAM" ; TODO: funny gag, but game freak wouldn't do this...
-	lang_cont E, "ISLANDS!"
+	; English
+	lang_para E, "BLAINE: Hah!"
+	
+	lang_para E, "I am BLAINE! The"
+	lang_line E, "hotheaded quiz"
+	lang_cont E, "master!"
+	
+	lang_para E, "I'm the LEADER of"
+	lang_line E, "the CINNABAR…"
+	
+	lang_para E, "no, of the SEAFOAM"
+	lang_line E, "ISLANDS GYM!"
+	
 	lang_para E, "It's a mystery why"
 	lang_line E, "I haven't had my"
-	lang_cont E, "turn yet!"
+	lang_cont E, "turn until now!"
+	
 	lang_para E, "When it comes to"
 	lang_line E, "quizzes, it's"
 	lang_cont E, "gotta be me!"
-	lang_para E, "Let's do the"
-	lang_line E, "blazing man's quiz!"
+	
+	lang_para E, "This is a blazing"
+	lang_line E, "man's quiz!"
+	
 	lang_para E, "Hah!"
 	
 	lang_text D, "?"
@@ -309,12 +321,12 @@ ENDM
 	lang_next J, "３　ほかの　のりものも　あるかもね！"
 	
 	; TODO: _VERY_ ROUGH TRANSLATION. PLEASE REWORK
-	lang E,      "When ELM gave you"
-	lang_next E, "the S.S.TICKET, he"
-	lang_next E, "told you to ..."
-	lang_next E, "1. Get stronger"
-	lang_next E, "2. Say “Hi” to OAK"
-	lang_next E, "3. Explore KANTO"
+	lang E,      "When PROF.ELM gave"
+	lang_next E, "you the S.S.TICKET"
+	lang_next E, "he told you to…"
+	lang_next E, "1. Get stronger!"
+	lang_next E, "2. Say hi to OAK!"
+	lang_next E, "3. "
 	
 	lang D,      "?"
 	
@@ -339,9 +351,8 @@ ENDM
 	lang E,      "Where did the old"
 	lang_next E, "man on the S.S."
 	lang_next E, "AQUA come from?"
-	lang_next E, "1. From the side"
-	lang_next E, "2. From above"
-	lang_next E, "3. From a cabin"
+	lang_next E, "1. Side 2. Above"
+	lang_next E, "3. Inside a cabin"
 	
 	lang D,      "?"
 	
@@ -354,6 +365,7 @@ ENDM
 	next "@"
 	
 .question3Text
+	;Japanese
 	lang J,      "ぼうそうぞくの　３にんぐみ"
 	lang_next J, "「カントー　ポケモン　れんごう」の"
 	lang_next J, "なわばりは　もともと　どこだった？"
@@ -362,11 +374,11 @@ ENDM
 	lang_next J, "２　サイクリングロード"
 	lang_next J, "３　ちかつうろ"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang E,      "Where was the"
-	lang_next E, "KANTO #MON FED-"
-	lang_next E, "ERATION's hideout?"
-	lang_next E, "1.DIGLETT's CAVE"
+	;English
+	lang E,      "Where'd the KANTO"
+	lang_next E, "#MON FEDERATION"
+	lang_next E, "first hang out?"
+	lang_next E, "1.DIGLETT'S CAVE"
 	lang_next E, "2.CYCLING ROAD"
 	lang_next E, "3.UNDERGROUND PATH"
 	
@@ -381,6 +393,7 @@ ENDM
 	next "@"
 	
 .question4Text
+	;Japanese
 	lang J,      "きよめのおふだを　もらえたのは"
 	lang_next J, "なにが　とりついて　いたから？"
 	lang_next J, ""
@@ -388,12 +401,12 @@ ENDM
 	lang_next J, "２　よくない　たましい"
 	lang_next J, "３　ふきつな　カゲ"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang E,      "What possessed"
-	lang_next E, "you when you got"
-	lang_next E, "the CLEANSE TAG?"
-	lang_next E, "1. #MON ghost"
-	lang_next E, "2. Evil spirit"
+	;English
+	lang E,      "When you got the"
+	lang_next E, "CLEANSE TAG what"
+	lang_next E, "hovered over you?"
+	lang_next E, "1. A ghost #MON"
+	lang_next E, "2. An evil spirit"
 	lang_next E, "3. Sinister shadow"
 	
 	lang D,      "?"
@@ -443,12 +456,12 @@ ENDM
 	lang_next J, "３　カスミが　１ぽ　まえに　いた"
 	
 	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang E,      "How did MISTY and"
+	lang E,      "How were MISTY and"
 	lang_next E, "her boyfriend line"
 	lang_next E, "up on their date?"
-	lang_next E, "1.Side by side"
-	lang_next E, "2.Facing eachother"
-	lang_next E, "3.MISTY in front"
+	lang_next E, "1. Side by side"
+	lang_next E, "2. Facing apart"
+	lang_next E, "3. MISTY 1 step up"
 	
 	lang D,      "?"
 	
@@ -461,6 +474,7 @@ ENDM
 	next "@"
 	
 .question7Text
+	;Japanese
 	lang J,      "はつでんしょの　しょちょうは"
 	lang_next J, "はつでんきの　ぶひんの　ことを"
 	lang_next J, "どう　いっていた？"
@@ -469,13 +483,13 @@ ENDM
 	lang_next J, "２　かわいい"
 	lang_next J, "３　わしの　すべて"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang E,      "What did the MAN-"
-	lang_next E, "AGER say about the"
-	lang_next E, "generator?"
+	;English
+	lang E,      "What did the POWER"
+	lang_next E, "PLANT MANAGER call"
+	lang_next E, "the generator?"
 	lang_next E, "1. Most important"
-	lang_next E, "2. Beloved"
-	lang_next E, "3. My everything"
+	lang_next E, "2. Cute"
+	lang_next E, "3. My beloved"
 	
 	lang D,      "?"
 	
@@ -488,6 +502,7 @@ ENDM
 	next "@"
 	
 .question8Text
+	;Japanese
 	lang J,      "ポケモン　だいすき　クラブの"
 	lang_next J, "かいちょうが　そだてた　ポケモンの"
 	lang_next J, "かずは　なんひき　いじょう？"
@@ -496,7 +511,7 @@ ENDM
 	lang_next J, "２　２５０"
 	lang_next J, "３　１０００"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
+	;English
 	lang E,      "How many #MON"
 	lang_next E, "has the CHAIRMAN"
 	lang_next E, "of the #MON FAN"
@@ -515,6 +530,7 @@ ENDM
 	next "@"
 	
 .question9Text
+	;Japanese
 	lang J,      "モノマネむすめの　ピッピにんぎょうは"
 	lang_next J, "どこに　キズが　ある？"
 	lang_next J, ""
@@ -522,10 +538,10 @@ ENDM
 	lang_next J, "２　ひだりみみの　さき"
 	lang_next J, "３　みぎあしの　つけね"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang E,      "Where is the"
-	lang_next E, "damage on the COPY"
-	lang_next E, "CAT's LOST ITEM?"
+	;English
+	lang E,      "Where was the"
+	lang_next E, "tear on COPYCAT's"
+	lang_next E, "CLEFAIRY DOLL?"
 	lang_next E, "1. Right wing"
 	lang_next E, "2. Left ear"
 	lang_next E, "3. Right leg"
@@ -550,12 +566,15 @@ ENDM
 	lang_next J, "３　しっかりと　めを　とじる"
 	
 	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang E,      "How do you get the"
-	lang_next E, "ABRA at the LEAGUE"
-	lang_next E, "to send you home?"
+	lang E,      "How does ABRA send"
+	lang_next E, "you home from the"
+	lang_next E, "POKEMON LEAGUE?"
 	lang_next E, "1. Touch ABRA"
-	lang_next E, "2. Picture home"
+	lang_next E, "2. Picturing home"
 	lang_next E, "3. Close your eyes"
+	
+How'd you get ABRA
+to send you home
 	
 	lang D,      "?"
 	
@@ -566,8 +585,6 @@ ENDM
 	lang S,      "?"
 	
 	next "@"
-
-	
 	
 	news_screen QuizScoreEvaluation, MUSIC_GYM
 
@@ -739,21 +756,26 @@ ENDM
 	db "@"
 	
 .textScoreIntro
+	; Japanese
 	lang_text J, "カツラ『ごくろうさん！！"
 	lang_line J, "わいの　クイズは　やっぱり"
 	lang_cont J, "ひとあじ　ちがう　むずかしさ！"
+	
 	lang_para J, "なやみまくり　だった　だろー！！"
 	lang_line J, "いくつ　あたったかな？"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
+	; English
 	lang_text E, "BLAINE: Good work!"
-	lang_line E, "My quizzes are a"
-	lang_cont E, "cut above in terms"
+	
+	lang_para E, "My quizzes are a"
+	lang_line E, "cut above in terms"
 	lang_cont E, "of difficulty!"
-	lang_para E, "You were strugg-"
-	lang_line E, "ling, weren't you?"
-	lang_para E, "How many did you"
-	lang_line E, "get right?"
+	
+	lang_para E, "Must've had you"
+	lang_line E, "struggling hard!"
+	
+	lang_para E, "So, how many did"
+	lang_line E, "you get right?"
 	
 	lang_text D, "?"
 	
@@ -767,17 +789,21 @@ ENDM
 	para ""
 	done
 .textScore0
+	; Japanese
 	lang_text J, "カツラ『ハッハッハ！"
 	lang_line J, "わせいかいは　０こ！！"
 	lang_para J, "やっぱり　わしの　クイズは"
 	lang_line J, "てんか　むてきなのだー！！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "BLAINE: Ahahaha!"
-	lang_line E, "The answer is 0!"
-	lang_para E, "My quizzes are"
-	lang_line E, "truly impossible,"
-	lang_cont E, "you see!"
+	; English
+	lang_text E, "BLAINE: Hahaha!"
+	
+	lang_para E, "Zero correct"
+	lang_line E, "answers!"
+	
+	lang_para E, "Just as I thought,"
+	lang_line E, "my quiz is" 
+	cont_line E, "unbeatable!"
 	
 	lang_text D, "?"
 	
@@ -790,17 +816,19 @@ ENDM
 	done
 
 .textScore1
+	; Japanese
 	lang_text J, "カツラ『１こだけ　あたってたぞー！"
 	lang_line J, "そんな　ちゅうとはんぱな"
 	lang_cont J, "あたしかた　しとかんで"
 	lang_cont J, "いっそ　ぜんぶ　はずれとけー！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
+	; English
 	lang_text E, "BLAINE: You only"
-	lang_line E, "got 1 right!"
-	lang_para E, "Don't settle for"
-	lang_line E, "such a half-baked"
-	lang_cont E, "effort!"
+	lang_line E, "got one right!"
+	
+	lang_para E, "Don't give me that"
+	lang_line E, "half-baked effort!"
+	
 	lang_para E, "You may as well"
 	lang_line E, "have gotten them"
 	lang_cont E, "all wrong!"
@@ -816,18 +844,23 @@ ENDM
 	done
 
 .textScore2
+	; Japanese
 	lang_text J, "カツラ『２つ　あたってるぞ！"
+	
 	lang_para J, "いいかえれば　８つ　まえがえたって"
 	lang_line J, "ことに　なるのだー！！"
+	
 	lang_para J, "つまり　ダメダメって　ことだ！！！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "BLAINE: You got"
-	lang_line E, "2 right!"
-	lang_para E, "In other words,"
-	lang_line E, "you got 8 wrong!"
-	lang_para E, "Which means you're"
-	lang_line E, "a total failure!"
+	; English
+	lang_text E, "BLAINE: Two"
+	lang_line E, "correct answers!"
+	
+	lang_para E, "That means you got"
+	lang_line E, "eight wrong!"
+	
+	lang_para E, "In short, you're"
+	lang_line E, "hopeless!"
 	
 	lang_text D, "?"
 	
@@ -840,17 +873,23 @@ ENDM
 	done
 
 .textScore3
+	; Japanese
 	lang_text J, "カツラ『３もん　せいかいだった！！"
+	
 	lang_para J, "たいしたこと　ないなあ！！"
 	lang_line J, "たいしたこと　ないぞう！！！"
 	lang_cont J, "ワッハッハッハ！！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "BLAINE: 3 correct!"
-	lang_para E, "Not impressive!"
-	lang_line E, "Not impressive"
-	lang_cont E, "at all!"
-	lang_para E, "Wahahaha!"
+	; English
+	lang_text E, "BLAINE: Three"
+	lang_line E, "correct answers!"
+	
+	lang_line E, "Not so impressive!"
+
+	lang_para E, "That's nothing"
+	lang_line E, "special!"
+	
+	lang_para E, "Hahaha!"
 	
 	lang_text D, "?"
 	
@@ -863,14 +902,19 @@ ENDM
 	done
 
 .textScore4
+	; Japanese
 	lang_text J, "カツラ『せいかいは　４もんだぞー！"
-	lang_para J, "そんなんじゃ　まだまだ　きあいが"
+	l
+	ang_para J, "そんなんじゃ　まだまだ　きあいが"
 	lang_line J, "たりないのだー！！！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "BLAINE: 4 correct!"
-	lang_para E, "That still shows"
-	lang_line E, "you lack spirit!"
+	; English
+	lang_text E, "BLAINE: Four"
+	lang_line E, "correct answers!"
+	
+	lang_para E, "Your fighting"
+	lang_line E, "spirit is still"
+	lang_cont E, "lacking!"
 	
 	lang_text D, "?"
 	
@@ -883,16 +927,21 @@ ENDM
 	done
 	
 .textScore5
+	; Japanese
 	lang_text J, "カツラ『うおおーす！"
 	lang_line J, "５もん　せいかいだったぞ！！"
+	
 	lang_para J, "ねらったように　ちょうど　はんぶん！"
 	lang_line J, "ポケモン　しょうぶなら　ひきわけだ！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
+	; English
 	lang_text E, "BLAINE: Whoa!"
-	lang_line E, "5 correct answers!"
-	lang_para E, "Perfectly, exactly"
-	lang_line E, "half!"
+	lang_line E, "Five correct"
+	lang_cont E, "answers!"
+	
+	lang_para E, "Right on target--"
+	lang_line E, "exactly half!"
+	
 	lang_para E, "In a #MON"
 	lang_line E, "battle, that'd"
 	lang_cont E, "be a draw!"
@@ -908,14 +957,19 @@ ENDM
 	done
 	
 .textScore6
+	; Japanese
 	lang_text J, "カツラ『せいかいは　６もんだー！！"
+	
 	lang_para J, "いまの　あつい　こたえっぷり"
 	lang_line J, "なかなか　よかったぞーー！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "BLAINE: 6 correct!"
-	lang_para E, "Your firey answers"
-	lang_line E, "were pretty good!"
+	; English
+	lang_text E, "BLAINE: Six"
+	lang_line E, "correct answers!"
+	
+	lang_para E, "The fiery way you"
+	lang_line E, "answered just now"
+	lang_cont E, "was pretty good!"
 	
 	lang_text D, "?"
 	
@@ -928,18 +982,23 @@ ENDM
 	done
 	
 .textScore7
+	; Japanese
 	lang_text J, "カツラ『７つ　せいかい　なのだ！"
+	
 	lang_para J, "なかなか　きおくりょくが　よいぞ！"
 	lang_line J, "こら！　とくいそうな　かお　するな！"
 	lang_cont J, "わしから　みれば　まだまだ　なのだ！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "BLAINE: That's 7"
+	; English
+	lang_text E, "BLAINE: Seven"
 	lang_line E, "correct answers!"
+	
 	lang_para E, "Your memory's"
 	lang_line E, "pretty sharp!"
-	lang_para E, "…Hey! Don't look"
+	
+	lang_para E, "Hey! Don't look"
 	lang_line E, "so smug!"
+	
 	lang_para E, "The way I see it,"
 	lang_line E, "you still have a"
 	lang_cont E, "long way to go!"
@@ -955,20 +1014,23 @@ ENDM
 	done
 	
 .textScore8
+	; Japanese
 	lang_text J, "カツラ『せいかい　８もん！"
+	
 	lang_para J, "わしの　クイズが　こんなに"
 	lang_line J, "あてられる　はず　ないのだ！"
 	lang_cont J, "これは　まぐれ　だったのだ！！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "BLAINE: 8 correct!"
-	lang_para E, "There's no way you"
-	lang_line E, "should have been"
-	lang_cont E, "able to get that"
-	lang_cont E, "many of my quest-"
-	lang_cont E, "ions right!"
-	lang_para E, "This was"
-	lang_line E, "pure luck!"
+	; English
+	lang_text E, "BLAINE: Eight"
+	lang_line E, "correct answers!"
+	
+	lang_para E, "My quiz isn't"
+	lang_line E, "supposed to be"
+	lang_cont E, "this easy to beat!"
+	
+	lang_para E, "It must be a"
+	lang_line E, "fluke!"
 	
 	lang_text D, "?"
 	
@@ -981,18 +1043,23 @@ ENDM
 	done
 	
 .textScore9
+	; Japanese
 	lang_text J, "カツラ『あら！"
 	lang_line J, "９つ　あたってるぞー！！！"
+	
 	lang_para J, "あ…　あと　ひとつで　まんてん"
 	lang_line J, "あぶない　ところだった！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
+	; English
 	lang_text E, "BLAINE: Oh!"
-	lang_line E, "You got 9 right!"
+	lang_line E, "You got nine"
+	lang_cont E, "correct!"
+	
 	lang_para E, "Ah… just one more"
 	lang_line E, "for a perfect"
 	lang_cont E, "score!"
-	lang_para E, "So close!"
+	
+	lang_para E, "You were close!"
 	
 	lang_text D, "?"
 	
@@ -1005,17 +1072,19 @@ ENDM
 	done
 	
 .textScore10
+	; Japanese
 	lang_text J, "カツラ『うおおー！"
 	lang_line J, "ぜんもん　せいかい　だとー！？"
+	
 	lang_para J, "み　……　みごと！"
 	lang_line J, "わしは　もえつきた……！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "BLAINE: Wahoo!"
-	lang_line E, "You got every"
-	lang_cont E, "single one right!?"
-	lang_para E, "I-- Impressive!"
-	lang_line E, "I'm finished!"
+	; English
+	lang_text E, "BLAINE: Whoa!"
+	lang_line E, "A perfect score?!"
+	
+	lang_para E, "Wow… impressive!"
+	lang_line E, "I'm burned out…"
 	
 	lang_text D, "?"
 	
@@ -1028,15 +1097,18 @@ ENDM
 	done
 
 .textNotAllCorrect
+	; Japanese
 	lang_text J, "どうだ？　もう　もえつきたか？"
 	lang_line J, "もういちど　やってみるかー！？"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "BLAINE: How"
-	lang_line E, "about it?"
-	lang_cont E, "Finished yet?"
-	lang_para E, "Want to try"
-	lang_line E, "again?"
+	; English
+	lang_text E, "BLAINE: How about"
+	lang_line E, "it?"
+	
+	lang_para E, "Feeling burned"
+	lang_line E, "out already?"
+	
+	lang_para E, "Wanna try again?"
 	
 	lang_text D, "?"
 	
@@ -1049,8 +1121,9 @@ ENDM
 	done
 
 .textTryAgain
+	; Japanese
 	lang_text J, "カツラ『いくぞー！"
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
+	; English
 	lang_text E, "BLAINE: Let's go!"
 	lang_text D, "?"
 	lang_text F, "?"
@@ -1059,21 +1132,28 @@ ENDM
 	done
 
 .textGiveGift1
+	; Japanese
 	lang_text J, "まけたものは　しかたがない"
 	lang_line J, "ほうびを　やろう！"
+	
 	lang_para J, "わざマシン　しねしねこうせんを"
 	lang_line J, "うけとって　くれい！"
+	
 	lang_para J, "しねしねこうせんを　もらった！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "Losers have no"
-	lang_line E, "choice."
-	lang_para E, "Here's your"
-	lang_line E, "reward!"
-	lang_para E, "Take this TM:"
-	lang_line E, "TOMBSTONER!"
-	lang_para E, "Received TM28"
-	lang_line E, "TOMBSTONER!"
+	; English
+	lang_text E, "I lost, no use"
+	lang_line E, "fighting it!"
+	
+	lang_para E, "I'll give you"
+	lang_line E, "a reward!"
+	
+	lang_para E, "Take this TM,"
+	lang_line E, "it contains"
+	lang_cont E, "TOMBSTONER!"
+	
+	lang_para E, "<PLAYER> received"
+	lang_line E, "TM28."
 	
 	lang_text D, "?"
 	
@@ -1085,22 +1165,28 @@ ENDM
 	
 	done
 .textGiveGift2
+	; Japanese
 	lang_text J, "カツラ『<……>　<……>　<……>"
+	
 	lang_para J, "<……>　<……>　<……>"
 	lang_line J, "<……>　<……>　<……>"
+	
 	lang_para J, "なんて　うそ　うそ！！"
 	lang_line J, "わざマシン３８を"
 	lang_cont J, "うけとってくれい！"
+	
 	lang_para J, "わざマシン３８を　もらった！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "BLAINE: <……> <……> <……>"
-	lang_para E, "<……>　<……>　<……>"
-	lang_line E, "<……>　<……>　<……>"
-	lang_para E, "My mistake,"
-	lang_line E, "my mistake!"
-	lang_para E, "Take this TM38!"
-	lang_para E, "Received TM38!"
+	; English
+	lang_text E, "BLAINE: <……><……><……>"
+	lang_para E, "<……><……><……>"
+	lang_line E, "<……><……><……>"
+	
+	lang_para E, "Just kidding!"
+	lang_line E, "Take this."
+	
+	lang_para E, "<PLAYER> received"
+	lang_line E, "TM38."
 	
 	lang_text D, "?"
 	
@@ -1113,14 +1199,18 @@ ENDM
 	done
 
 .textFarewell
+	; Japanese
 	lang_text J, "カツラ『また　いつか"
 	lang_line J, "パワーアップして　もどってくるぞー！"
 	lang_cont J, "うおおーす！！！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
+	; English
 	lang_text E, "BLAINE: I'll be"
 	lang_line E, "back someday,"
-	lang_para E, "power-up and all!"
+	
+	lang_para E, "stronger than"
+	lang_line E, "ever!"
+	
 	lang_para E, "Hah!"
 	
 	lang_text D, "?"

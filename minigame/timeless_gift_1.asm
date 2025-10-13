@@ -634,8 +634,10 @@ ENDM
 	
 .textScoreIntro
 	lang_text J, "チエコ『？"
+	lang_para J, "<……>　<……>　<……>"
 	
 	lang_text E, "MAIZIE: ?"
+	lang_para E, "…"
 	
 	lang_text D, "?"
 	
@@ -645,7 +647,6 @@ ENDM
 	
 	lang_text S, "?"
 
-	para "<……>　<……>　<……>"
 	para ""
 	done
 .textFail

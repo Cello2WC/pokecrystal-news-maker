@@ -736,13 +736,14 @@ ENDM
 	db "@"
 	
 .textScoreIntro
+	; Japanese
 	lang_text J, "グリーン『いくつ　わかったか"
 	lang_line J, "オレが　みてやるよ！"
 	
 	lang_para J, "<……>　<……>"
 	
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
+	; English
 	lang_text E, "BLUE: How'd you do?"
 	lang_line E, "Lemme check!"
 	

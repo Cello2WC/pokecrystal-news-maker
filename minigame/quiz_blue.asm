@@ -2,8 +2,8 @@ IF DEF(_MINIGAME_H)
 
 DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 1
 
-DEF wQuizQuestionNo EQU wNewsScratch2
-DEF wQuizScore      EQU wNewsScratch3
+DEF wQuizQuestionNo EQUS "wNewsScratch2"
+DEF wQuizScore      EQUS "wNewsScratch3"
 
 MACRO minigame_start
 	nsc_set wQuizQuestionNo, 0
@@ -46,7 +46,8 @@ MinigameStart::
 	news_def_pals
 
 	news_def_boxes
-	news_box 0, 12, 20, 6, NEWSBORDER_GLOWY, 4
+	news_box  0,  1, 20, 12, NEWSBORDER_INVERTED, 3
+	news_box  0, 12, 20,  6, NEWSBORDER_GLOWY,    4
 	
 	
 	news_def_strings
@@ -585,7 +586,8 @@ ENDM
 	news_def_pals
 
 	news_def_boxes
-	news_box 0, 12, 20, 6, NEWSBORDER_GLOWY, 4
+	news_box  0,  1, 20, 12, NEWSBORDER_INVERTED, 3
+	news_box  0, 12, 20,  6, NEWSBORDER_GLOWY,    4
 	
 	
 	news_def_strings

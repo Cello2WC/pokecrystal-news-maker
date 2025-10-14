@@ -2,7 +2,7 @@ IF DEF(_MINIGAME_H)
 
 DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 1
 
-DEF wPersonalityPage EQU wNewsScratch2
+DEF wPersonalityPage EQUS "wNewsScratch2"
 
 MACRO minigame_start
 	nsc_set wPersonalityPage, 0

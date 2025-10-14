@@ -73,12 +73,12 @@ SECTION "News", ROM0[$0000]
 	news_menudescription 1, 14, 18, 4
 	news_loadrankingstable RANKINGS_TABLE_DO_NOT
 
-	;news_menuitem_names   .menuNewsGuideName,   .menuTrainerRankingsName,   .menuMinigameName,   .menuQuitName
-	news_menuitem_names   .menuNewsGuideName,   .menuTrainerRankingsName,   .menuMinigameName,   .menuMinigame2Name,   .menuQuitName
-	;news_menuitem_scripts .menuNewsGuideScript, .menuTrainerRankingsScript, .menuMinigameScript, .menuQuitScript
-	news_menuitem_scripts .menuNewsGuideScript, .menuTrainerRankingsScript, .menuMinigameScript, .menuMinigame2Script, .menuQuitScript
-	;news_menuitem_descs   .menuNewsGuideDesc,   .menuTrainerRankingsDesc,   .menuMinigameDesc,   .menuQuitDesc
-	news_menuitem_descs   .menuNewsGuideDesc,   .menuTrainerRankingsDesc,   .menuMinigameDesc,   .menuMinigame2Desc,   .menuQuitDesc
+	news_menuitem_names   .menuNewsGuideName,   .menuTrainerRankingsName,   .menuMinigameName,   .menuQuitName
+	;news_menuitem_names   .menuNewsGuideName,   .menuTrainerRankingsName,   .menuMinigameName,   .menuMinigame2Name,   .menuQuitName
+	news_menuitem_scripts .menuNewsGuideScript, .menuTrainerRankingsScript, .menuMinigameScript, .menuQuitScript
+	;news_menuitem_scripts .menuNewsGuideScript, .menuTrainerRankingsScript, .menuMinigameScript, .menuMinigame2Script, .menuQuitScript
+	news_menuitem_descs   .menuNewsGuideDesc,   .menuTrainerRankingsDesc,   .menuMinigameDesc,   .menuQuitDesc
+	;news_menuitem_descs   .menuNewsGuideDesc,   .menuTrainerRankingsDesc,   .menuMinigameDesc,   .menuMinigame2Desc,   .menuQuitDesc
 
 .a_button
 	nsc_playsound SFX_READ_TEXT
@@ -118,9 +118,9 @@ SECTION "News", ROM0[$0000]
 .menuMinigameName
 	minigame_name
 	db "@"
-.menuMinigame2Name
-	minigame_name_2
-	db "@"
+;.menuMinigame2Name
+;	minigame_name_2
+;	db "@"
 .menuQuitName
 	lang J, "やめる"
 	lang E, "CANCEL"
@@ -145,9 +145,9 @@ SECTION "News", ROM0[$0000]
 	minigame_start
 	nsc_ret
 		
-.menuMinigame2Script
-	minigame_start_2
-	nsc_ret
+;.menuMinigame2Script
+;	minigame_start_2
+;	nsc_ret
 	
 .menuQuitScript
 	nsc_exit
@@ -262,9 +262,9 @@ SECTION "News", ROM0[$0000]
 .menuMinigameDesc
 	minigame_desc
 	db "@"
-.menuMinigame2Desc
-	minigame_desc_2
-	db "@"
+;.menuMinigame2Desc
+;	minigame_desc_2
+;	db "@"
 	
 .menuQuitDesc
 	lang      J, "ニュース<WO>みるのを"

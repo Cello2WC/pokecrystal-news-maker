@@ -2,8 +2,8 @@ IF DEF(_MINIGAME_H)
 
 DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 1
 
-DEF wQuizQuestionNo EQU wNewsScratch2
-DEF wQuizScore      EQU wNewsScratch3
+DEF wQuizQuestionNo EQUS "wNewsScratch2"
+DEF wQuizScore      EQUS "wNewsScratch3"
 
 MACRO minigame_start
 	nsc_set wQuizQuestionNo, 0
@@ -46,7 +46,8 @@ MinigameStart::
 	news_def_pals
 
 	news_def_boxes
-	news_box 0, 12, 20, 6, NEWSBORDER_GLOWY, 4
+	news_box  0,  1, 20, 12, NEWSBORDER_INVERTED, 3
+	news_box  0, 12, 20,  6, NEWSBORDER_GLOWY,    4
 	
 	
 	news_def_strings
@@ -130,7 +131,7 @@ MinigameStart::
 	lang_cont J, "いくぞー！　うおおーす！！"
 	
 	; English
-	lang_para E, "BLAINE: Hah!"
+	lang_text E, "BLAINE: Hah!"
 	
 	lang_para E, "I am BLAINE! The"
 	lang_line E, "hotheaded quiz"
@@ -491,8 +492,13 @@ ENDM
 	lang_next E, "PLANT MANAGER call"
 	lang_next E, "the generator?"
 	lang_next E, "1. Most important"
-	lang_next E, "2. Cute"
-	lang_next E, "3. My beloved"
+	; "Cute" is the literal translation, but would
+	; be the wrong answer in english, while it's
+	; the right answer in japanese.
+	;lang_next E, "2. Cute"
+	;lang_next E, "3. My beloved"
+	lang_next E, "2. My beloved"
+	lang_next E, "3. My everything"
 	
 	lang D,      "?"
 	
@@ -576,8 +582,8 @@ ENDM
 	lang_next E, "2. Picturing home"
 	lang_next E, "3. Close your eyes"
 	
-How'd you get ABRA
-to send you home
+;How'd you get ABRA
+;to send you home
 	
 	lang D,      "?"
 	
@@ -594,7 +600,8 @@ to send you home
 	news_def_pals
 
 	news_def_boxes
-	news_box 0, 12, 20, 6, NEWSBORDER_GLOWY, 4
+	news_box  0,  1, 20, 12, NEWSBORDER_INVERTED, 3
+	news_box  0, 12, 20,  6, NEWSBORDER_GLOWY,    4
 	
 	
 	news_def_strings
@@ -806,7 +813,7 @@ to send you home
 	
 	lang_para E, "Just as I thought,"
 	lang_line E, "my quiz is" 
-	cont_line E, "unbeatable!"
+	lang_cont E, "unbeatable!"
 	
 	lang_text D, "?"
 	
@@ -907,8 +914,7 @@ to send you home
 .textScore4
 	; Japanese
 	lang_text J, "カツラ『せいかいは　４もんだぞー！"
-	l
-	ang_para J, "そんなんじゃ　まだまだ　きあいが"
+	lang_para J, "そんなんじゃ　まだまだ　きあいが"
 	lang_line J, "たりないのだー！！！"
 	
 	; English

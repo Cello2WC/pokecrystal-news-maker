@@ -1379,9 +1379,11 @@ wcd23::
 wEZChatBlinkingMask:: ds 1 ; bit set = blink
 
 wcd24::
+wNewsMenuCursorX::
 wEZChatSpritesMask:: ds 1 ; bit set = hide
 
 wEZChatWordSelection::
+wNewsMenuCursorY::
 wMobileCommsJumptableIndex:: ds 1
 
 wEZChatPageOffset::
@@ -1450,6 +1452,9 @@ wEZChatWord6:: dw
 
 ENDU
 
+
+
+
 wcd42:: ds 1
 wcd43:: ds 1
 
@@ -1478,45 +1483,48 @@ wcd50:: ds 1
 wcd51:: ds 1
 wcd52:: ds 1
 
+
 wMobileOpponentBattleMessage:: ; ds 12
 wcd53:: ds 1
-wNumRankedPlayers::
+
+UNION
+;wNumRankedPlayers::
 wcd54:: ds 1
 wcd55:: ds 1
 wcd56:: ds 1
 wcd57:: ds 1
-wOwnRank::
+;wOwnRank::
 wcd58:: ds 1
 wcd59:: ds 1
 wcd5a:: ds 1
 wcd5b:: ds 1
-wNumListedPlayers::
+;wNumListedPlayers::
 wcd5c:: ds 1
 wcd5d:: ds 1
 wcd5e:: ds 1
 wcd5f:: ds 1
 wcd60:: ds 2
-wRankingsTable::
+;wRankingsTable::
 wcd62:: ds 1
-wRankingsCategory::
+;wRankingsCategory::
 wcd63:: ds 1
-wRankingsType::
+;wRankingsType::
 wcd64:: ds 1
-wMinigameRam0::
+;wNewsScratch0::
 wcd65:: ds 1
-wMinigameRam1::
+;wNewsScratch1::
 wcd66:: ds 1
-wQuizQuestionNo::
+;wQuizQuestionNo::
 wcd67:: ds 1
-wQuizScore::
+;wQuizScore::
 wcd68:: ds 1
 wcd69:: ds 1
-wGSBallFlagRam::
+;wNewsScratch5::
 wcd6a:: ds 1
 wcd6b:: ds 1
 wcd6c:: ds 1
 wcd6d:: ds 1
-wRankingsUpdateResult::
+;wRankingsUpdateResult::
 wcd6e:: ds 1
 wcd6f:: ds 1
 wcd70:: ds 1
@@ -1545,6 +1553,39 @@ wcd8a:: ds 1
 wcd8b:: ds 1
 wcd8c:: ds 1
 wcd8d:: ds 11
+
+
+NEXTU
+
+wNumRankedPlayers:: ds 4
+wOwnRank:: ds 4
+wNumListedPlayers:: ds 1
+
+ds 5 ; ???
+
+wRankingsTable:: ds 1
+wRankingsCategory:: ds 1
+wRankingsType:: ds 1
+
+wNewsScratch0:: ds 1
+wNewsScratch1:: ds 1
+wNewsScratch2:: ds 1
+wNewsScratch3:: ds 1
+wNewsScratch4:: ds 1
+wNewsScratch5:: ds 1
+wNewsScratch6:: ds 1
+wNewsScratch7:: ds 1
+;wNewsScratch8:: 
+ds 1
+
+
+wRankingsUpdateResult:: ds 1
+
+ENDU
+
+
+
+
 ENDU
 
 wDefaultSGBLayout:: db

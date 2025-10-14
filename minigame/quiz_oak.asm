@@ -2,6 +2,9 @@ IF DEF(_MINIGAME_H)
 
 DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 0
 
+DEF wQuizQuestionNo EQU wNewsScratch2
+DEF wQuizScore      EQU wNewsScratch3
+
 MACRO minigame_start
 	nsc_set wQuizQuestionNo, 0
 	nsc_set wQuizScore, 0
@@ -67,8 +70,8 @@ MinigameStart::
 	news_buttonscript .bButton ; script pointer b button
 	news_buttonscript ; script pointer select button
 	news_buttonscript .bButton ; script pointer start button
-	news_buttonscript .leftButton ; script pointer left button
 	news_buttonscript .rightButton ; script pointer right button
+	news_buttonscript .leftButton ; script pointer left button
 	news_buttonscript ; script pointer up button
 	news_buttonscript ; script pointer down button
 	
@@ -85,12 +88,12 @@ MinigameStart::
 	nsc_select
 	nsc_ret
 
-.leftButton
-	nsc_left
-	nsc_ret
-
 .rightButton
 	nsc_right
+	nsc_ret
+
+.leftButton
+	nsc_left
 	nsc_ret
 
 .bButton
@@ -595,8 +598,8 @@ ENDC
 	news_buttonscript .aButton ; script pointer b button
 	news_buttonscript          ; script pointer select button
 	news_buttonscript .aButton ; script pointer start button
-	news_buttonscript          ; script pointer left button
 	news_buttonscript          ; script pointer right button
+	news_buttonscript          ; script pointer left button
 	news_buttonscript          ; script pointer up button
 	news_buttonscript          ; script pointer down button
 	

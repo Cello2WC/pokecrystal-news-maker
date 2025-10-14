@@ -32,7 +32,6 @@ ENDC
 	
 	news_def_strings
 	news_string	1, 2, ""
-	;trans_string "トレーナーランキング", "<TRAINER> RANKINGS", "BESTENLISTE", "?", "?", "?"
 	lang J, "トレーナーランキング"
 	lang E, "<TRAINER> RANKINGS"
 	lang D, "BESTENLISTE"
@@ -244,7 +243,6 @@ ENDC
 	text "{RANKING_{RANKING_1}_FULLNAME}"
 	lang J, "は"
 	line "{RANKING_{RANKING_1}_DESC}"
-	
 	; matching weirdness in JP issue 1
 	para "{RANKING_{RANKING_3}_FULLNAME}"
 	lang J, "は"
@@ -296,12 +294,6 @@ ENDC
 	
 	para
 	done
-
-	
-	
-	
-	
-	
 
 .menuViewRankingsDesc
 	lang      J, "いろいろな　ランキングが"
@@ -386,10 +378,8 @@ ENDC
 	db "@"
 
 
-; rankings choice screen
 	news_screen RankingsCategories, MUSIC_PROF_ELM
-	news_def_pals				
-; -- no pal data --
+	news_def_pals
 
 	news_def_boxes
 	news_box 0,  3, 20, 10, NEWSBORDER_STRIPED, 3
@@ -397,7 +387,6 @@ ENDC
 
 	news_def_strings
 	news_string	1, 2, ""
-	;trans_string "トレーナーランキング", "<TRAINER> RANKINGS", "BESTENLISTE", "?", "?", "?"
 	lang J, "トレーナーランキング"
 	lang E, "<TRAINER> RANKINGS"
 	lang D, "BESTENLISTE"
@@ -462,17 +451,17 @@ ENDC
 .menuitem1_script
 	nsc_set wRankingsTable, 0
 	nsc_set wRankingsCategory, 0
-	nsc_page RankingsAreaChoice;$02d5
+	nsc_page RankingsAreaChoice
 	nsc_ret
 .menuitem2_script
 	nsc_set wRankingsTable, 3
 	nsc_set wRankingsCategory, 1
-	nsc_page RankingsAreaChoice;$02d5
+	nsc_page RankingsAreaChoice
 	nsc_ret
 .menuitem3_script
 	nsc_set wRankingsTable, 6
 	nsc_set wRankingsCategory, 2
-	nsc_page RankingsAreaChoice;$02d5
+	nsc_page RankingsAreaChoice
 	nsc_ret
 	
 .menuitem1_desc
@@ -544,7 +533,7 @@ ENDC
 	nsc_ret
 .start_button
 	nsc_playsound SFX_MENU
-	nsc_page TrainerRankings;RankingsCategories
+	nsc_page TrainerRankings
 	nsc_ret
 
 .menuitem1_name
@@ -590,23 +579,23 @@ ENDC
 	
 .menuitem1_script
 	nsc_set wRankingsType, 0
-	nsc_page Rankings;$03ce
+	nsc_page Rankings
 	nsc_ret
 .menuitem2_script
 	nsc_add wRankingsTable, 1
 	nsc_set wRankingsType, 1
-	nsc_page Rankings;$03ce
+	nsc_page Rankings
 	nsc_ret
 .menuitem3_script
 	nsc_add wRankingsTable, 2
 	nsc_set wRankingsType, 2
-	nsc_page Rankings;$03ce
+	nsc_page Rankings
 	nsc_ret
 .b_button
 	nsc_playsound SFX_MENU
 	; fall through
 .menuitem4_script
-	nsc_page RankingsCategories;$0203
+	nsc_page RankingsCategories
 	nsc_ret
 	
 .menuitem1_desc
@@ -768,19 +757,17 @@ ENDC
 	lang S, "?"
 	db "@"
 .menuitems_script
-	;nsc_compareram wcd22, 1, wcd5c, .less, .notless, .notless;$22, $00, $22, $CD, $01, $00, $5C, $CD, $0E, $01, $23, $01, $23, $01,  ; original
-	;nsc_compareram wcd22, 1, wcd5c, .less, .less, .notless ; TEMP: compensating for... i guess zero-indexing on the server??
 	nsc_compareram wNewsMenuOption, 1, wNumListedPlayers, .less, .notless, .notless
 .less
-	nsc_clear  1, 13, 18, 4;$19, $05, $01, $12, $04, 
-	nsc_printstring 1, 14, .ranked_player_info;$06, $19, $01, $C7, $01, 
-	nsc_clear  1, 13, 18, 4;$19, $05, $01, $12, $04, 
-	nsc_printstring 1, 14, .ranked_player_ezchat;$06, $19, $01, $E0, $01, 
-	nsc_ret;$FF, 
+	nsc_clear  1, 13, 18, 4
+	nsc_printstring 1, 14, .ranked_player_info
+	nsc_clear  1, 13, 18, 4
+	nsc_printstring 1, 14, .ranked_player_ezchat
+	nsc_ret
 .notless
-	nsc_clear  1, 13, 18, 4;$19, $05, $01, $12, $04, 
+	nsc_clear  1, 13, 18, 4
 	nsc_printstring 1, 14, .no_one_is_ranked_here_text
-	nsc_ret;$FF, 
+	nsc_ret
 
 .no_one_is_ranked_here_text
 	lang      J, "ここに<WA>だれも"
@@ -813,8 +800,8 @@ ENDC
 .playerplaced_first
 	nsc_compare sGSBallFlag, .playerplaced_ret, .not_received_gs_ball, .playerplaced_ret, 1,    0
 .not_received_gs_ball
-	nsc_set wGSBallFlagRam, 1
-	nsc_ramcopy wGSBallFlagRam, sGSBallFlag, $0001
+	nsc_set wNewsScratch5, 1
+	nsc_ramcopy wNewsScratch5, sGSBallFlag, $0001
 	nsc_clear 1, 13, 18, 4 
 	nsc_textbox 1, 14, .gs_ball_present_text
 	nsc_waitbutton
@@ -860,7 +847,7 @@ ENDC
 	
 	done
 .ranked_player_info
-;IF DEF(_LANG_J) ; TODOne :c   : check how the team feels about this
+;IF DEF(_LANG_J)
 	nts_start 
 	nts_ranking_gender $000B, 4
 	nts_ranking_number $000A, 1, 3, 4 
@@ -895,12 +882,12 @@ ENDC
 ;	nts_ranking_region $0007, $7, 
 ;	nts_end
 ;ENDC
-	para "@";$51, $50, 
+	para "@"
 .ranked_player_ezchat
 	nts_start
 	nts_ranking_ezchat $000C
 	nts_end
-	para "@";$51, $50, 
+	para "@"
 .players_ranking_placed
 	nts_start
 	nts_switch wRankingsCategory, .players_ranking1, .players_ranking2, .players_ranking3
@@ -915,7 +902,7 @@ ENDC
 	lang F, "<NEXT>est…"
 	lang I, "è…"
 	lang S, "?"
-	para ;$51, 
+	para
 	lang E, "RANK "
 	nts_start
 	nts_number wOwnRank, 4, 4
@@ -987,7 +974,7 @@ ENDC
 	nts_start
 	nts_number {RANKING_{RANKING_1}_ADDR}, {RANKING_{RANKING_1}_FMT}
 	nts_end
-	db   "{RANKING_{RANKING_1}_UNIT}"
+	db "{RANKING_{RANKING_1}_UNIT}"
 	para "@" 
 	
 .players_ranking2
@@ -1002,12 +989,12 @@ ENDC
 	lang F, ":"
 	lang I, ":"
 	lang S, "?"
-	line;$4F, 
+	line
 	nts_start
 	nts_number {RANKING_{RANKING_2}_ADDR}, {RANKING_{RANKING_2}_FMT}
 	nts_end
-	db "{RANKING_{RANKING_2}_UNIT}";$C3, $DE, 
-	para "@";$51, $50, 
+	db "{RANKING_{RANKING_2}_UNIT}"
+	para "@"
 	
 .players_ranking3
 	lang F, "SCORE de "
@@ -1025,8 +1012,8 @@ ENDC
 	nts_start
 	nts_number {RANKING_{RANKING_3}_ADDR}, {RANKING_{RANKING_3}_FMT}
 	nts_end 
-	db "{RANKING_{RANKING_3}_UNIT}";$8D, $AB, $90, 
-	para "@";$51, $50, 
+	db "{RANKING_{RANKING_3}_UNIT}"
+	para "@"
 .menuitems_desc
 	; cry quiz debug issue text
 ;	lang      J, "えらんだ　ひと<NO>データを"

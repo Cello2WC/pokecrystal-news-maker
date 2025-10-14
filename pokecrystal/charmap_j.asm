@@ -259,6 +259,7 @@
 	charmap "バ", $19
 	charmap "ビ", $1a
 	charmap "ブ", $1b
+	charmap "ベ", $3d
 	charmap "ボ", $1c
 
 	charmap "が", $26
@@ -286,6 +287,7 @@
 	charmap "パ", $40
 	charmap "ピ", $41
 	charmap "プ", $42
+	charmap "ペ", $47
 	charmap "ポ", $43
 	charmap "ぱ", $44
 	charmap "ぴ", $45

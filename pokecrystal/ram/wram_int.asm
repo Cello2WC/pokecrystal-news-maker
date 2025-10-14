@@ -1409,7 +1409,9 @@ wcd2d:: ds 1
 wNewsMenuOption::
 wcd2e:: ds 1
 wcd2f:: ds 1
+wNewsMenuCursorX::
 wcd30:: ds 1
+wNewsMenuCursorY::
 wcd31:: ds 1
 wcd32:: ds 1
 wcd33:: ds 1
@@ -1478,8 +1480,11 @@ wcd50:: ds 1
 wcd51:: ds 1
 wcd52:: ds 1
 
+
 wMobileOpponentBattleMessage:: ; ds 12
 wcd53:: ds 1
+
+UNION
 wcd54:: ds 1
 wcd55:: ds 1
 wcd56:: ds 1
@@ -1492,44 +1497,45 @@ wcd5c:: ds 1
 wcd5d:: ds 1
 wcd5e:: ds 1
 wcd5f:: ds 1
-wNumRankedPlayers::
+;wNumRankedPlayers::
 wcd60:: ds 2
 wcd62:: ds 1
 wcd63:: ds 1
-wOwnRank::
+;wOwnRank::
 wcd64:: ds 1
 wcd65:: ds 1
 wcd66:: ds 1
 wcd67:: ds 1
-wNumListedPlayers::
+;wNumListedPlayers::
 wcd68:: ds 1
 wcd69:: ds 1
 wcd6a:: ds 1
 wcd6b:: ds 1
 wcd6c:: ds 1
 wcd6d:: ds 1
-wRankingsTable::
+;wRankingsTable::
 wcd6e:: ds 1
-wRankingsCategory::
+;wRankingsCategory::
 wcd6f:: ds 1
-wRankingsType::
+;wRankingsType::
 wcd70:: ds 1
-wMinigameRam0::
+;wNewsScratch0::
 wcd71:: ds 1
-wMinigameRam1::
+;wNewsScratch1::
 wcd72:: ds 1
-wQuizQuestionNo::
+;wQuizQuestionNo::
 wcd73:: ds 1
-wQuizScore::
+;wQuizScore::
 wcd74:: ds 1
 
 wOTMonSelection:: ds 1 ; ds BATTLETOWER_PARTY_LENGTH
-wGSBallFlagRam:: ds 1
+;wNewsScratch5:: ds 1
+ds 1
 wcd77:: ds 1
 
-wMobileCrashCheckPointer:: dw
+;wMobileCrashCheckPointer:: dw
 wcd7a:: ds 1
-wRankingsUpdateResult:: ds 1
+;wRankingsUpdateResult:: ds 1
 wcd7c:: ds 3
 wcd7f:: ds 1
 wcd80:: ds 1
@@ -1543,6 +1549,39 @@ wcd8a:: ds 1
 wcd8b:: ds 1
 wcd8c:: ds 1
 wcd8d:: ds 11
+
+NEXTU
+; news issue memory
+ds 12 ; everything is shifted over by 12 bytes in english for some reason....
+
+wNumRankedPlayers:: ds 4
+wOwnRank:: ds 4
+wNumListedPlayers:: ds 1
+
+ds 5 ; ???
+
+wRankingsTable:: ds 1
+wRankingsCategory:: ds 1
+wRankingsType:: ds 1
+
+wNewsScratch0:: ds 1
+wNewsScratch1:: ds 1
+wNewsScratch2:: ds 1
+wNewsScratch3:: ds 1
+wNewsScratch4:: ds 1
+wNewsScratch5:: ds 1
+wNewsScratch6:: ds 1
+wNewsScratch7:: ds 1
+wMobileCrashCheckPointer:: dw
+
+
+wRankingsUpdateResult:: ds 1
+
+ENDU
+
+
+
+
 ENDU
 
 wDefaultSGBLayout:: db

@@ -130,7 +130,7 @@ ENDM
 
 DEF FLAG_SET EQU 0
 DEF FLAG_CLEAR EQU %1000_0000
-		; symbol, flag | operation
+		; symbol, flag, operation
 	const nsc_flagop_command	; 0d
 MACRO nsc_flagop
 	db nsc_flagop_command
@@ -148,14 +148,14 @@ MACRO nsc_down
 	db nsc_down_command
 ENDM
 
-	const nsc_left_command	; 10
-MACRO nsc_left
-	db nsc_left_command
-ENDM
-
-	const nsc_right_command	; 11
+	const nsc_right_command	; 10
 MACRO nsc_right
 	db nsc_right_command
+ENDM
+
+	const nsc_left_command	; 11
+MACRO nsc_left
+	db nsc_left_command
 ENDM
 
 	; 12 and 13 move the cursor, but im not entirely sure how
@@ -245,6 +245,15 @@ MACRO nsc_bit
 	db nsc_bit_command
 	db BANK(\1)
 	dw \1
+	db \2
+	relativepointer \3, \4
+ENDM
+
+		; symbol, bit, trueptr, falseptr
+MACRO nsc_bit_newsvar
+	db nsc_bit_command
+	db 6
+	dw \1 + $A000
 	db \2
 	relativepointer \3, \4
 ENDM
@@ -543,6 +552,9 @@ ENDM
 MACRO nsc_exit
 	db nsc_exit_command
 ENDM
+	
+; any non-FF command ID after this point results in a freeze due to....
+; bounds checking?? in MY game freak code???
 
 DEF nsc_ret_command EQU $FF
 MACRO nsc_ret

@@ -2,8 +2,8 @@ IF DEF(_MINIGAME_H)
 
 
 DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 0
-;DEF wCryQuizQuestionNo EQU wMinigameRam0
-;DEF wCryQuizAnswerCorrect EQU wMinigameRam1
+;DEF wCryQuizQuestionNo EQU wNewsScratch0
+;DEF wCryQuizAnswerCorrect EQU wNewsScratch1
 
 MACRO minigame_start
 	;nsc_set wQuizQuestionNo, 0
@@ -191,52 +191,52 @@ ENDR
 	db "@"
 	
 .menuitem1_script
-	nsc_set wMinigameRam0, 0
+	nsc_set wNewsScratch0, 0
 	nsc_page CryQuizQuestion
 	nsc_ret
 	
 .menuitem2_script
-	nsc_set wMinigameRam0, 1
+	nsc_set wNewsScratch0, 1
 	nsc_page CryQuizQuestion
 	nsc_ret
 	
 .menuitem3_script
-	nsc_set wMinigameRam0, 2
+	nsc_set wNewsScratch0, 2
 	nsc_page CryQuizQuestion
 	nsc_ret
 	
 .menuitem4_script
-	nsc_set wMinigameRam0, 3
+	nsc_set wNewsScratch0, 3
 	nsc_page CryQuizQuestion
 	nsc_ret
 	
 .menuitem5_script
-	nsc_set wMinigameRam0, 4
+	nsc_set wNewsScratch0, 4
 	nsc_page CryQuizQuestion
 	nsc_ret
 	
 .menuitem6_script
-	nsc_set wMinigameRam0, 5
+	nsc_set wNewsScratch0, 5
 	nsc_page CryQuizQuestion
 	nsc_ret
 	
 .menuitem7_script
-	nsc_set wMinigameRam0, 6
+	nsc_set wNewsScratch0, 6
 	nsc_page CryQuizQuestion
 	nsc_ret
 	
 .menuitem8_script
-	nsc_set wMinigameRam0, 7
+	nsc_set wNewsScratch0, 7
 	nsc_page CryQuizQuestion
 	nsc_ret
 	
 .menuitem9_script
-	nsc_set wMinigameRam0, 8
+	nsc_set wNewsScratch0, 8
 	nsc_page CryQuizQuestion
 	nsc_ret
 	
 .menuitem10_script
-	nsc_set wMinigameRam0, 9
+	nsc_set wNewsScratch0, 9
 	nsc_page CryQuizQuestion
 	nsc_ret
 	
@@ -287,7 +287,7 @@ ENDR
 	news_def_strings
 	news_string 1, 2, ""
 	nts_start
-	nts_switch wMinigameRam0, \
+	nts_switch wNewsScratch0, \
 		.cryquizlabel_suicune, \
 		.cryquizlabel_clefairy, \
 		.cryquizlabel_spearow, \
@@ -386,17 +386,16 @@ MACRO cry_quiz_answers
 DEF _ANSWER_NUMBER = \1
 .menuitem\1_script
 DEF _QUESTION_NUMBER = 1
-	;nsc_add wQuizQuestionNo, 1
 	nsc_clear 1, 13, 16, 4
 	nsc_printstring 1, 14, .this_cry_question;$04E2 
 REPT _NARG - 1
-	nsc_compare wMinigameRam0, .answer{_ANSWER_NUMBER}notquestion{_QUESTION_NUMBER}, .answer{_ANSWER_NUMBER}question{_QUESTION_NUMBER}, .answer{_ANSWER_NUMBER}notquestion{_QUESTION_NUMBER}, 1, _QUESTION_NUMBER - 1
+	nsc_compare wNewsScratch0, .answer{_ANSWER_NUMBER}notquestion{_QUESTION_NUMBER}, .answer{_ANSWER_NUMBER}question{_QUESTION_NUMBER}, .answer{_ANSWER_NUMBER}notquestion{_QUESTION_NUMBER}, 1, _QUESTION_NUMBER - 1
 .answer{_ANSWER_NUMBER}question{_QUESTION_NUMBER}
 	nsc_playcry \2;$92
 IF CRY_QUIZ_ANSWER_{_QUESTION_NUMBER} == \2
-	nsc_set wMinigameRam1, 0
+	nsc_set wNewsScratch1, 0
 ELSE
-	nsc_set wMinigameRam1, 1
+	nsc_set wNewsScratch1, 1
 ENDC
 	nsc_yesno 13, 7, .submitAnswer, .dontSubmit
 	nsc_ret
@@ -417,7 +416,7 @@ ENDM
 	nsc_page CryQuizMain;$06D9 
 	nsc_ret
 .submitAnswer ; $03B9
-	nsc_compare wMinigameRam1, .wrongAnswer, .correctAnswer, .wrongAnswer, 1, 0
+	nsc_compare wNewsScratch1, .wrongAnswer, .correctAnswer, .wrongAnswer, 1, 0
 .correctAnswer ; $03C5
 	nsc_delay 20
 	nsc_clear 1, 13, 16, 4, 
@@ -427,7 +426,7 @@ ENDM
 	
 DEF _QUESTION_NUMBER = 1
 REPT 10
-	nsc_compare wMinigameRam0, .answerNotQ{_QUESTION_NUMBER}, .answerQ{_QUESTION_NUMBER}, .answerNotQ{_QUESTION_NUMBER}, 1, _QUESTION_NUMBER-1
+	nsc_compare wNewsScratch0, .answerNotQ{_QUESTION_NUMBER}, .answerQ{_QUESTION_NUMBER}, .answerNotQ{_QUESTION_NUMBER}, 1, _QUESTION_NUMBER-1
 .answerQ{_QUESTION_NUMBER} ; $03DF
 	nsc_drawmon 11, 5, CRY_QUIZ_ANSWER_{_QUESTION_NUMBER}, $03, $07
 	nsc_waitbutton

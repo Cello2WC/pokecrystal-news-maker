@@ -4,6 +4,11 @@ IF DEF(_MINIGAME_H)
 
 DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 1
 
+DEF wPlayersRoll    EQU wNewsScratch0
+DEF wChiekosRoll    EQU wNewsScratch1
+DEF wQuizQuestionNo EQU wNewsScratch2
+DEF wQuizScore      EQU wNewsScratch3
+
 MACRO minigame_start
 	nsc_set wQuizQuestionNo, 0
 	nsc_set wQuizScore, 0
@@ -40,7 +45,7 @@ MinigameStart::
 	news_def_pals
 
 	news_def_boxes
-	news_box 0,  1, 20, 14, NEWSBORDER_BLOCKY, 4
+	;news_box 0,  1, 20, 14, NEWSBORDER_BLOCKY, 4
 	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
 	
 	
@@ -54,8 +59,8 @@ MinigameStart::
 	news_buttonscript .aButton ; script pointer b button
 	news_buttonscript          ; script pointer select button
 	news_buttonscript .aButton ; script pointer start button
-	news_buttonscript          ; script pointer left button
 	news_buttonscript          ; script pointer right button
+	news_buttonscript          ; script pointer left button
 	news_buttonscript          ; script pointer up button
 	news_buttonscript          ; script pointer down button
 	
@@ -78,19 +83,19 @@ MinigameStart::
 .retry
 	; player's roll
 	nsc_delay 1 ; wait for new RNG rolls
-	nsc_ramcopy hRandomAdd, wMinigameRam0, 1
-	nsc_flagop wMinigameRam0, FLAG_CLEAR, 3
-	nsc_flagop wMinigameRam0, FLAG_CLEAR, 4
-	nsc_flagop wMinigameRam0, FLAG_CLEAR, 5
-	nsc_flagop wMinigameRam0, FLAG_CLEAR, 6
-	nsc_flagop wMinigameRam0, FLAG_CLEAR, 7 ; wMinigameRam0 &= %00000111
-	nsc_compare wMinigameRam0, .continue, .retry, .retry, 1, 6 ; retry if generated a 7 or 8
+	nsc_ramcopy hRandomAdd, wPlayersRoll, 1
+	nsc_flagop wPlayersRoll, FLAG_CLEAR, 3
+	nsc_flagop wPlayersRoll, FLAG_CLEAR, 4
+	nsc_flagop wPlayersRoll, FLAG_CLEAR, 5
+	nsc_flagop wPlayersRoll, FLAG_CLEAR, 6
+	nsc_flagop wPlayersRoll, FLAG_CLEAR, 7 ; wPlayersRoll &= %00000111
+	nsc_compare wPlayersRoll, .continue, .retry, .retry, 1, 6 ; retry if generated a 7 or 8
 .continue
-	;nsc_add wMinigameRam0, 1
+	nsc_add wPlayersRoll, 1
 	
 	
 	
-	nsc_waitbutton
+	;nsc_waitbutton
 	nsc_page LuckTest
 	nsc_ret
 	
@@ -99,7 +104,14 @@ MinigameStart::
 	db "@"
 	
 .menuItemScript
-	nsc_textbox 1, 14, .greenIntroText
+	nsc_textbox 1, 14, .maizieIntroText
+	nsc_yesno 13, 7, .done, .quit
+.done
+	nsc_ret
+.quit
+	; quit text potentially goes here
+	nsc_playsound SFX_MENU
+	nsc_page NewsRoot
 	nsc_ret
 
 .menuItemDescription
@@ -117,10 +129,19 @@ MinigameStart::
 	
 	db "@"
 
-.greenIntroText
-	lang_text J, "チエコ『?"
+.maizieIntroText
+	; TODO: PLACEHOLDER TEXT
+	lang_text J, "チエコ『かくかくしかじか 　ヒワダ"
+	lang_line J, "タウン　かくかくしかじか　ガンテツ"
+	lang_cont J, "かくかくしかじか　タイムトラベル"
 	
-	lang_text E, "MAIZIE: ?"
+	lang_text E, "MAIZIE: something"
+	lang_line E, "something AZALEA"
+	lang_para E, "something some-"
+	lang_line E, "thing KURT's"
+	lang_cont E, "granddaughter"
+	lang_para E, "something some-"
+	lang_line E, "thing time travel"
 	
 	lang_text D, "?"
 	
@@ -142,29 +163,65 @@ MinigameStart::
 	news_screen LuckTest, MUSIC_AZALEA_TOWN
 	news_def_pals
 	news_def_boxes
-	news_box 0,  1, 20, 14, NEWSBORDER_BLOCKY, 4
+;	news_box 0,  1, 20, 14, NEWSBORDER_BLOCKY, 4
+	;news_box 0, 14, 20,  4, NEWSBORDER_GLOWY,  4
 	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
-	news_box 4,  6, 12,  6, NEWSBORDER_BLOCKY, 5
+;	news_box 4,  6, 12,  6, NEWSBORDER_BLOCKY, 5
 	news_def_strings
-	news_string 0, 0, "@" ; ......why?
-	news_menu 6, 8,   1, 2,   0, 2,   -1, $00, $00, $00, $02, $01
+	news_string 1, 2, ""
+	
+	; TODO: PLACEHOLDER TEXT
+	
+	nts_start
+	nts_player_name 0
+	nts_end
+	lang J, "は　"
+	lang      E, " rolled"
+	lang_next E, "a"
+	lang D, "?"
+	lang F, "?"
+	lang I, "?"
+	lang S, "?"
+	nts_start
+	nts_number wPlayersRoll, 1, 2
+	nts_end
+	lang J,      "を"
+	lang_next J, "だしました！"
+	lang E, "!"
+	lang D, "!"
+	lang F, "!"
+	lang I, "!"
+	lang S, "!"
+	
+	lang_next J, "チエコの　ロール？"
+	lang_next E, "MAIZIE will roll…"
+	lang_next D, "?"
+	lang_next F, "?"
+	lang_next I, "?"
+	lang_next S, "?"
+	
+	db "@"
+	
+	
+	
+	news_menu 2, 16,   2, 1,   8, 0,   -1, $00, $00, $00, $02, $01
 	
 	news_buttonscript .aButton    ; script pointer a button
 	news_buttonscript .bButton    ; script pointer b button
 	news_buttonscript             ; script pointer select button
 	news_buttonscript .aButton    ; script pointer start button
-	news_buttonscript             ; script pointer left button
-	news_buttonscript             ; script pointer right button
-	news_buttonscript .upButton   ; script pointer up button
-	news_buttonscript .downButton ; script pointer down button
+	news_buttonscript .rightButton  ; script pointer right button
+	news_buttonscript .leftButton ; script pointer left button
+	news_buttonscript ;.upButton   ; script pointer up button
+	news_buttonscript ;.downButton ; script pointer down button
 	
 	news_def_menuitems
-	news_menudescription 1, 14, 18, 4
+	news_menudescription 1, 14, 1, 1
 	news_norankingstable
 	
 	news_menuitem_names   .menuHigherText,   .menuLowerText
 	news_menuitem_scripts .menuHigherScript, .menuLowerScript
-	news_menuitem_descs   .textYouRolled,    .textYouRolled ; .menuDummyDesc, .menuDummyDesc;
+	news_menuitem_descs   .menuDummyDesc,    .menuDummyDesc ;.textYouRolled,    .textYouRolled
 
 .bButton
 	nsc_playsound SFX_MENU
@@ -173,41 +230,72 @@ MinigameStart::
 	
 .aButton
 	nsc_playsound SFX_READ_TEXT
-	nsc_clear 1,  2, 17, 10
-	nsc_clear 1, 13, 18,  4
+	
+	
+	
+	
+	nsc_clear 1, 15, 18, 2
+	;nsc_clear 1,  2, 18, 12
+
+	nsc_delay 20
+	nsc_printstring 1, 8, .textDot
+	nsc_delay 20
+	nsc_printstring 2, 8, .textDot
+	nsc_delay 20
+	nsc_printstring 3, 8, .textDot
+	
+	nsc_delay 60
+	
+.retry2b
+	; maizie's roll
+	nsc_delay 1 ; wait for new RNG rolls
+	nsc_ramcopy hRandomAdd, wChiekosRoll, 1
+	nsc_flagop wChiekosRoll, FLAG_CLEAR, 3
+	nsc_flagop wChiekosRoll, FLAG_CLEAR, 4
+	nsc_flagop wChiekosRoll, FLAG_CLEAR, 5
+	nsc_flagop wChiekosRoll, FLAG_CLEAR, 6
+	nsc_flagop wChiekosRoll, FLAG_CLEAR, 7 ; wPlayersRoll &= %00000111
+	nsc_compare wChiekosRoll, .continue2b, .retry2b, .retry2b, 1, 6 ; retry if generated a 7 or 8
+.continue2b
+	nsc_add wChiekosRoll, 1
+	nsc_printstring 1, 10, .textMaizieRolled
+	
+	
+	;nsc_printstring 1, 2, .textMaizieRolled
+	nsc_waitbutton
+;	nsc_clear 1,  2, 17, 10
+;	nsc_clear 1, 13, 18,  4
+	nsc_clear 1,  2, 18, 10
+	;nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
 	nsc_drawtrainer 6, 2, COOLTRAINERF, 7
 	
-.retry2
-	; player's roll
-	nsc_delay 1 ; wait for new RNG rolls
-	nsc_ramcopy hRandomAdd, wMinigameRam1, 1
-	nsc_flagop wMinigameRam1, FLAG_CLEAR, 3
-	nsc_flagop wMinigameRam1, FLAG_CLEAR, 4
-	nsc_flagop wMinigameRam1, FLAG_CLEAR, 5
-	nsc_flagop wMinigameRam1, FLAG_CLEAR, 6
-	nsc_flagop wMinigameRam1, FLAG_CLEAR, 7 ; wMinigameRam0 &= %00000111
-	nsc_compare wMinigameRam1, .continue2, .retry2, .retry2, 1, 6 ; retry if generated a 7 or 8
-.continue2
-	;nsc_add wMinigameRam1, 1
-	nsc_clear 1, 13, 18, 4
-	nsc_printstring 1, 14, .textMaizieRolled
-	nsc_waitbutton
+	
+	
+	
 	nsc_select
+	
+	
+	
 	nsc_ret
 	
-.upButton
-	nsc_up
+;.upButton
+	;nsc_up
 	;nsc_printstring 1, 14, .textYouRolled
+	
+.rightButton
+	nsc_right
 	nsc_ret
 	
-.downButton
-	nsc_down
+;.downButton
+	;nsc_down
 	;nsc_printstring 1, 14, .textYouRolled
+.leftButton
+	nsc_left
 	nsc_ret
 	
 	
 .menuHigherText
-	lang J, "？"
+	lang J, "うえ"
 	lang E, "HIGHER"
 	lang D, "?"
 	lang F, "?"
@@ -216,7 +304,7 @@ MinigameStart::
 	db "@"
 	
 .menuLowerText
-	lang J, "？"
+	lang J, "した"
 	lang E, "LOWER"
 	lang D, "?"
 	lang F, "?"
@@ -226,122 +314,88 @@ MinigameStart::
 	db "@"
 	
 	
-.textYouRolled
-	nts_start
-	nts_player_name 0
-	nts_end
-	lang J, ""
-	lang E, " rolled"
-	lang_line E, "a "
-	lang D, "?"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
-	nts_start
-	nts_switch wMinigameRam0, .one, .two, .three, .four, .five, .six
-	nts_end
-	db "@"
-	
-.textMaizieRolled
-	lang J, ""
-	lang E, "MAIZIE rolled"
-	lang_line E, "a "
-	lang D, "?"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
-	;line
-	nts_start
-	nts_switch wMinigameRam1, .one, .two, .three, .four, .five, .six
-	nts_end
-	db "@"
-	
-.one
-	lang J, "いち"
-	lang E, "one"
-	lang D, "?"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
-	db "@"
-	
-.two
-	lang J, "に"
-	lang E, "two"
-	lang D, "?"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
-	db "@"
-	
-.three
-	lang J, "さん"
-	lang E, "three"
-	lang D, "?"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
-	db "@"
-	
-.four
-	lang J, "し"
-	lang E, "four"
-	lang D, "?"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
-	db "@"
-	
-.five
-	lang J, "ご"
-	lang E, "five"
-	lang D, "?"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
-	db "@"
-	
-.six
-	lang J, "ろく"
-	lang E, "six"
-	lang D, "?"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
-	db "@"
-	
+;.textYouRolled
+;	nts_start
+;	nts_player_name 0
+;	nts_end
+;	lang J, ""
+;	lang E, " rolled"
+;	lang_line E, "a "
+;	lang D, "?"
+;	lang F, "?"
+;	lang I, "?"
+;	lang S, "?"
+;	nts_start
+;	nts_switch wPlayersRoll, .one, .two, .three, .four, .five, .six
+;	nts_end
+;	db "@"
 
 
 .menuHigherScript
-	nsc_compareram wMinigameRam1, 1, wMinigameRam0, .jankenLose, .jankenTie, .jankenWin
+	;nsc_playmusic MUSIC_RIVAL_BATTLE
+	nsc_compareram wChiekosRoll, 1, wPlayersRoll, .jankenLose, .jankenTie, .jankenWin
 
 .menuLowerScript
-	nsc_compareram wMinigameRam1, 1, wMinigameRam0, .jankenWin, .jankenTie, .jankenLose
+	;nsc_playmusic MUSIC_RIVAL_BATTLE
+	nsc_compareram wChiekosRoll, 1, wPlayersRoll, .jankenWin, .jankenTie, .jankenLose
+	
+	
+.textDot
+	db "<DOT>"
+	db "@"
+	
+	; BUG: sometimes maizie's roll doesnt print and i have no clue why
+	;      please help it is the same exact code that prints the player's roll
+.textMaizieRolled
+	lang J, "チエコは　"
+	lang      E, "MAIZIE rolled a"
+	;lang_next E, "a"
+	lang D, "?"
+	lang F, "?"
+	lang I, "?"
+	lang S, "?"
+	nts_start
+	nts_number wChiekosRoll, 1, 2
+	nts_end
+	lang J,      "を"
+	lang_next J, "だしました！"
+	lang E, "!"
+	lang D, "!"
+	lang F, "!"
+	lang I, "!"
+	lang S, "!"
+	
+	db "@"
+	
+	
+	
 	
 .jankenTie
-	nsc_clear 1, 13, 18, 4
+	;nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, .jankenTieText
 	
 .retry3
 	; player's roll
 	nsc_delay 1 ; wait for new RNG rolls
-	nsc_ramcopy hRandomAdd, wMinigameRam0, 1
-	nsc_flagop wMinigameRam0, FLAG_CLEAR, 3
-	nsc_flagop wMinigameRam0, FLAG_CLEAR, 4
-	nsc_flagop wMinigameRam0, FLAG_CLEAR, 5
-	nsc_flagop wMinigameRam0, FLAG_CLEAR, 6
-	nsc_flagop wMinigameRam0, FLAG_CLEAR, 7 ; wMinigameRam0 &= %00000111
-	nsc_compare wMinigameRam0, .continue3, .retry3, .retry3, 1, 6 ; retry if generated a 7 or 8
+	nsc_ramcopy hRandomAdd, wPlayersRoll, 1
+	nsc_flagop wPlayersRoll, FLAG_CLEAR, 3
+	nsc_flagop wPlayersRoll, FLAG_CLEAR, 4
+	nsc_flagop wPlayersRoll, FLAG_CLEAR, 5
+	nsc_flagop wPlayersRoll, FLAG_CLEAR, 6
+	nsc_flagop wPlayersRoll, FLAG_CLEAR, 7 ; wPlayersRoll &= %00000111
+	nsc_compare wPlayersRoll, .continue3, .retry3, .retry3, 1, 6 ; retry if generated a 7 or 8
 .continue3
-	;nsc_add wMinigameRam0, 1
+	nsc_add wPlayersRoll, 1
 	
 	
 	
 	nsc_waitbutton
 	nsc_page LuckTest
 	nsc_ret
+	
+	; TODO: PLACEHOLDER TEXT
 .jankenTieText
-	lang_text J, "?"
+	lang_text J, "チエコ『ひきわけ"
 	lang_text E, "MAIZIE: We tied…"
 	lang_text D, "?"
 	lang_text F, "?"
@@ -350,13 +404,15 @@ MinigameStart::
 	done
 	
 .jankenLose
-	nsc_clear 1, 13, 18, 4
+	;nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, .jankenLoseText
 	nsc_waitbutton
 	nsc_page NewsRoot
 	nsc_ret
+	
+	; TODO: PLACEHOLDER TEXT
 .jankenLoseText
-	lang_text J, "?"
+	lang_text J, "チエコ『あたしの　かち"
 	lang_text E, "MAIZIE: I win!"
 	lang_text D, "?"
 	lang_text F, "?"
@@ -365,13 +421,15 @@ MinigameStart::
 	done
 		
 .jankenWin
-	nsc_clear 1, 13, 18, 4
+	;nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, .jankenWinText
 	nsc_waitbutton
 	nsc_page PokemonQuiz
 	nsc_ret
+	
+	; TODO: PLACEHOLDER TEXT
 .jankenWinText
-	lang_text J, "?"
+	lang_text J, "チエコ『あなたの　かち"
 	lang_text E, "MAIZIE: You win!"
 	lang_text D, "?"
 	lang_text F, "?"
@@ -384,8 +442,9 @@ MinigameStart::
 	news_def_pals
 
 	news_def_boxes
-	news_box 0,  0, 20, 15, NEWSBORDER_BLOCKY, 1
-	news_box 0, 14, 20,  4, NEWSBORDER_BLOCKY, 5
+	;news_box 0,  0, 20, 15, NEWSBORDER_BLOCKY, 1
+	;news_box 0, 14, 20,  4, NEWSBORDER_BLOCKY, 5
+	news_box 0, 14, 20,  4, NEWSBORDER_GLOWY,  4
 	
 	news_def_strings
 	news_string 1, 2, ""
@@ -407,8 +466,8 @@ MinigameStart::
 	news_buttonscript .bButton ; script pointer b button
 	news_buttonscript ; script pointer select button
 	news_buttonscript .bButton ; script pointer start button
-	news_buttonscript .leftButton ; script pointer left button
 	news_buttonscript .rightButton ; script pointer right button
+	news_buttonscript .leftButton ; script pointer left button
 	news_buttonscript ; script pointer up button
 	news_buttonscript ; script pointer down button
 	
@@ -425,12 +484,12 @@ MinigameStart::
 	nsc_select
 	nsc_ret
 
-.leftButton
-	nsc_left
-	nsc_ret
-
 .rightButton
 	nsc_right
+	nsc_ret
+
+.leftButton
+	nsc_left
 	nsc_ret
 
 .bButton
@@ -546,7 +605,7 @@ ENDM
 	
 .question3Text
 	lang J,      "しぜんこうえんに　はなが"
-	lang_line J, "さいているところはある？"
+	lang_next J, "さいているところはある？"
 	
 	lang E,      "Are there any"
 	lang_next E, "flowers in bloom"
@@ -565,7 +624,7 @@ ENDM
 	
 .question4Text
 	lang J,      "アサギの　とうだいで　アカリチャンが"
-	lang_line J, "いるのはとうだいの５かい？"
+	lang_next J, "いるのはとうだいの５かい？"
 	
 	lang E,      "Is AMPHY found on"
 	lang_next E, "OLIVINE LIGHTHOUSE"
@@ -600,7 +659,7 @@ ENDM
 	
 .question6Text
 	lang J,      "ロケットだんのアジトの　パスワードは"
-	lang_line J, "ヤドンのしっぽ　と　オタチのしっぽ？"
+	lang_next J, "ヤドンのしっぽ　と　オタチのしっぽ？"
 	
 	lang E,      "Are SLOWPOKETAIL"
 	lang_next E, "and SENTRETTAIL"
@@ -621,7 +680,7 @@ ENDM
 	
 .question7Text
 	lang J,      "たきのぼりをしたのちは"
-	lang_line J, "うしろをむいている？"
+	lang_next J, "うしろをむいている？"
 	
 	lang E,      "Do you face"
 	lang_next E, "backwards after"
@@ -639,7 +698,7 @@ ENDM
 	
 .question8Text
 	lang J,      "ポケモンを４たいくりだしてくる"
-	lang_line J, "ジムリーダーはマツバだけ？"
+	lang_next J, "ジムリーダーはマツバだけ？"
 	
 	lang E,      "Is MORTY the only"
 	lang_next E, "GYM LEADER to use"
@@ -662,21 +721,25 @@ ENDM
 	news_def_pals
 
 	news_def_boxes
-	news_box 0,  1, 20, 14, NEWSBORDER_BLOCKY, 4
+;	news_box 0,  1, 20, 14, NEWSBORDER_BLOCKY, 4
 	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
 	
 	
 	news_def_strings
 	news_string 0, 0, "@" ; ......why?
 	
+IF DEF(_LANG_J)
+	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
+ELSE
 	news_menu  3, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
+ENDC
 	
 	news_buttonscript .aButton ; script pointer a button
 	news_buttonscript .aButton ; script pointer b button
 	news_buttonscript          ; script pointer select button
 	news_buttonscript .aButton ; script pointer start button
-	news_buttonscript          ; script pointer left button
 	news_buttonscript          ; script pointer right button
+	news_buttonscript          ; script pointer left button
 	news_buttonscript          ; script pointer up button
 	news_buttonscript          ; script pointer down button
 	
@@ -735,8 +798,9 @@ ENDM
 	
 	nsc_compare sGSBallFlag, .noGSBall, .gift, .noGSBall, 1,    0
 .gift
-	nsc_set wGSBallFlagRam, 1
-	nsc_ramcopy wGSBallFlagRam, sGSBallFlag, $0001
+	nsc_set wNewsScratch5, 1
+	nsc_ramcopy wNewsScratch5, sGSBallFlag, 1
+	nsc_ramcopy_newsvar wNewsScratch5, sMinigameFlag, 1
 	
 	nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, .textGiveGift
@@ -758,8 +822,8 @@ ENDM
 	nsc_giveitem TM_SOLARBEAM, .gotGift, .noGift
 .gotGift
 	nsc_playsound SFX_GET_TM
-	nsc_set wGSBallFlagRam, 1
-	nsc_ramcopy_newsvar wGSBallFlagRam, sMinigameFlag, 1
+	nsc_set wNewsScratch5, 1
+	nsc_ramcopy_newsvar wNewsScratch5, sMinigameFlag, 1
 .noGift
 	nsc_waitbutton
 .done
@@ -799,7 +863,8 @@ ENDM
 	para ""
 	done
 .textFail
-	lang_text J, "チエコ『？"
+	; TODO: PLACEHOLDER TEXT
+	lang_text J, "チエコ『すべる"
 	
 	lang_text E, "MAIZIE:"
 	lang_line E, "quiz failed text"
@@ -816,7 +881,8 @@ ENDM
 
 	
 .textPass
-	lang_text J, "チエコ『？"
+	; TODO: PLACEHOLDER TEXT
+	lang_text J, "チエコ『ごうかく"
 	
 	lang_text E, "MAIZIE:"
 	lang_line E, "quiz passed text"
@@ -872,8 +938,17 @@ ENDM
 	
 .textGiveTMGift
 	lang_text J, "？"
+	lang_para J, "わざマシン２２を　もらった！"
 	
 	lang_text E, "?"
+	lang_para E, ""
+IF DEF(_LANG_E)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      E, " received"
+	lang_line E, "TM22."
 	
 	lang_text D, "?"
 	

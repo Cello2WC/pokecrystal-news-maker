@@ -2,6 +2,9 @@ IF DEF(_MINIGAME_H)
 
 DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 1
 
+DEF wQuizQuestionNo EQU wNewsScratch2
+DEF wQuizScore      EQU wNewsScratch3
+
 MACRO minigame_start
 	nsc_set wQuizQuestionNo, 0
 	nsc_set wQuizScore, 0
@@ -55,8 +58,8 @@ MinigameStart::
 	news_buttonscript .aButton ; script pointer b button
 	news_buttonscript          ; script pointer select button
 	news_buttonscript .aButton ; script pointer start button
-	news_buttonscript          ; script pointer left button
 	news_buttonscript          ; script pointer right button
+	news_buttonscript          ; script pointer left button
 	news_buttonscript          ; script pointer up button
 	news_buttonscript          ; script pointer down button
 	
@@ -91,7 +94,7 @@ MinigameStart::
 	nsc_ret
 
 .menuItemDescription
-	; TODO: this is the wrong text. i dont think the right text was preserved....
+	; TODO: this is the wrong text. i dont think the left text was preserved....
 	lang      J, "クイズ　しゅうりょう"
 	lang_line J, "ひょうか<WO>うけて　ください！"
 
@@ -203,8 +206,8 @@ MinigameStart::
 	news_buttonscript .bButton ; script pointer b button
 	news_buttonscript ; script pointer select button
 	news_buttonscript .bButton ; script pointer start button
-	news_buttonscript .leftButton ; script pointer left button
 	news_buttonscript .rightButton ; script pointer right button
+	news_buttonscript .leftButton ; script pointer left button
 	news_buttonscript ; script pointer up button
 	news_buttonscript ; script pointer down button
 	
@@ -221,12 +224,12 @@ MinigameStart::
 	nsc_select
 	nsc_ret
 
-.leftButton
-	nsc_left
-	nsc_ret
-
 .rightButton
 	nsc_right
+	nsc_ret
+
+.leftButton
+	nsc_left
 	nsc_ret
 
 .bButton
@@ -603,8 +606,8 @@ to send you home
 	news_buttonscript .aButton ; script pointer b button
 	news_buttonscript          ; script pointer select button
 	news_buttonscript .aButton ; script pointer start button
-	news_buttonscript          ; script pointer left button
 	news_buttonscript          ; script pointer right button
+	news_buttonscript          ; script pointer left button
 	news_buttonscript          ; script pointer up button
 	news_buttonscript          ; script pointer down button
 	
@@ -720,8 +723,8 @@ to send you home
 	nsc_giveitem TM_FIRE_BLAST, .gotGift, .noGift
 .gotGift
 	nsc_playsound SFX_GET_TM
-	nsc_set wGSBallFlagRam, 1
-	nsc_ramcopy_newsvar wGSBallFlagRam, sMinigameFlag, 1
+	nsc_set wNewsScratch5, 1
+	nsc_ramcopy_newsvar wNewsScratch5, sMinigameFlag, 1
 .noGift
 .done
 	; TODO: no space in pack error message
@@ -1151,8 +1154,13 @@ to send you home
 	lang_para E, "Take this TM,"
 	lang_line E, "it contains"
 	lang_cont E, "TOMBSTONER!"
-	
-	lang_para E, "<PLAYER> received"
+	lang_para E, ""
+IF DEF(_LANG_E)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      E, " received"
 	lang_line E, "TM28."
 	
 	lang_text D, "?"
@@ -1184,8 +1192,13 @@ to send you home
 	
 	lang_para E, "Just kidding!"
 	lang_line E, "Take this."
-	
-	lang_para E, "<PLAYER> received"
+	lang_para E, ""
+IF DEF(_LANG_E)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      E, " received"
 	lang_line E, "TM38."
 	
 	lang_text D, "?"

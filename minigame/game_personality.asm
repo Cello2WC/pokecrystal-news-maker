@@ -2,8 +2,10 @@ IF DEF(_MINIGAME_H)
 
 DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 1
 
+DEF wPersonalityPage EQU wNewsScratch2
+
 MACRO minigame_start
-	nsc_set wQuizQuestionNo, 0
+	nsc_set wPersonalityPage, 0
 	nsc_page MinigameStart
 ENDM
 
@@ -50,8 +52,8 @@ MinigameStart::
 	news_buttonscript .aButton ; script pointer b button
 	news_buttonscript          ; script pointer select button
 	news_buttonscript .aButton ; script pointer start button
-	news_buttonscript          ; script pointer left button
 	news_buttonscript          ; script pointer right button
+	news_buttonscript          ; script pointer left button
 	news_buttonscript          ; script pointer up button
 	news_buttonscript          ; script pointer down button
 	
@@ -135,7 +137,7 @@ MinigameStart::
 	news_def_strings
 	news_string 1, 2, ""
 	nts_start
-	nts_switch wQuizQuestionNo, \
+	nts_switch wPersonalityPage, \
 	.page1, \
 	.page2, \
 	.page3, \
@@ -160,8 +162,8 @@ MinigameStart::
 	news_buttonscript .bButton     ; script pointer b button
 	news_buttonscript              ; script pointer select button
 	news_buttonscript .bButton     ; script pointer start button
-	news_buttonscript .leftButton  ; script pointer left button
-	news_buttonscript .rightButton ; script pointer right button
+	news_buttonscript .rightButton  ; script pointer right button
+	news_buttonscript .leftButton ; script pointer left button
 	news_buttonscript              ; script pointer up button
 	news_buttonscript              ; script pointer down button
 	
@@ -178,12 +180,12 @@ MinigameStart::
 	nsc_select
 	nsc_ret
 
-.leftButton
-	nsc_left
-	nsc_ret
-
 .rightButton
 	nsc_right
+	nsc_ret
+
+.leftButton
+	nsc_left
 	nsc_ret
 
 .bButton
@@ -226,12 +228,12 @@ DEF _ANSWER_NUMBER = \1
 .menuItemAnswer\1Script
 SHIFT
 DEF _QUESTION_NUMBER = 1
-	nsc_add wQuizQuestionNo, 1
+	nsc_add wPersonalityPage, 1
 REPT _NARG
-	nsc_compare wQuizQuestionNo, .answer{_ANSWER_NUMBER}notquestion{_QUESTION_NUMBER}, .answer{_ANSWER_NUMBER}question{_QUESTION_NUMBER}, .answer{_ANSWER_NUMBER}notquestion{_QUESTION_NUMBER}, 1, {_QUESTION_NUMBER}
+	nsc_compare wPersonalityPage, .answer{_ANSWER_NUMBER}notquestion{_QUESTION_NUMBER}, .answer{_ANSWER_NUMBER}question{_QUESTION_NUMBER}, .answer{_ANSWER_NUMBER}notquestion{_QUESTION_NUMBER}, 1, {_QUESTION_NUMBER}
 
 .answer{_ANSWER_NUMBER}question{_QUESTION_NUMBER}
-	nsc_set wQuizQuestionNo, (\1 & %0111_1111)-1
+	nsc_set wPersonalityPage, (\1 & %0111_1111)-1
 IF \1 & %1000_0000 == 0
 	nsc_page PersonalityTest
 ELSE
@@ -595,7 +597,7 @@ ENDM
 	news_def_strings
 	news_string 0, 0, "@"
 ;	nts_start
-;	nts_switch wQuizQuestionNo, \
+;	nts_switch wPersonalityPage, \
 ;	.result1, \
 ;	.result2, \
 ;	.result3, \
@@ -610,8 +612,8 @@ ENDM
 	news_buttonscript .aButton ; script pointer b button
 	news_buttonscript          ; script pointer select button
 	news_buttonscript .aButton ; script pointer start button
-	news_buttonscript          ; script pointer left button
 	news_buttonscript          ; script pointer right button
+	news_buttonscript          ; script pointer left button
 	news_buttonscript          ; script pointer up button
 	news_buttonscript          ; script pointer down button
 	
@@ -642,11 +644,11 @@ ENDM
 	db "@"
 	
 .menuItemScript
-	nsc_compare wQuizQuestionNo, .result1, .result2, .greater, 1, 1
+	nsc_compare wPersonalityPage, .result1, .result2, .greater, 1, 1
 .greater
-	nsc_compare wQuizQuestionNo, .result3, .result4, .greater2, 1, 3
+	nsc_compare wPersonalityPage, .result3, .result4, .greater2, 1, 3
 .greater2
-	nsc_compare wQuizQuestionNo, .result5, .result6, .result6, 1, 5
+	nsc_compare wPersonalityPage, .result5, .result6, .result6, 1, 5
 	
 
 ; \1 - result ID
@@ -678,8 +680,8 @@ IF STRCMP(STRSLICE("{\3}", 0, 3), "TM_") == 0
 ELSE
 	nsc_playsound SFX_ITEM
 ENDC
-	nsc_set wGSBallFlagRam, 1
-	nsc_ramcopy_newsvar wGSBallFlagRam, sMinigameFlag, 1
+	nsc_set wNewsScratch5, 1
+	nsc_ramcopy_newsvar wNewsScratch5, sMinigameFlag, 1
 .result\1noGift
 .result\1done
 	nsc_ret

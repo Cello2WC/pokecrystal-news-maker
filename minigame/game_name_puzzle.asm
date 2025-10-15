@@ -613,7 +613,11 @@ DEF puzzleindex = 1
 REPT 5
 .puzzle{d:puzzleindex}GFX
 DEF loopindex = 1
+IF DEF(_LANG_J)
+	db "× "
+ELSE
 	db "×   "
+ENDC
 REPT (4*4) - 2
 	db "{{PUZZLE{d:puzzleindex}_GFX{02d:loopindex}}}"
 IF loopindex % 4 != 3
@@ -773,7 +777,7 @@ ENDR
 	
 .getGiftText
 	; TODO: potentially the wrong string? plz check
-	lang_text J, "あおからメールを　もらった！"
+	lang_text J, "あおそらメールを　もらった！"
 	
 	lang_text E, ""
 IF DEF(_LANG_E)

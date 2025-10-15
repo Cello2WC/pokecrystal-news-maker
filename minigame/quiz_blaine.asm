@@ -675,8 +675,16 @@ ENDM
 	lang      J, "クイズ　しゅうりょう"
 	lang_line J, "ひょうか<WO>うけて　ください！"
 
-	lang      E, "Take the QUIZ to"
-	lang_line E, "receive a rating!"
+; i believe this to be a mistranslation due to the string's placement...
+;	lang      E, "Take the QUIZ to"
+;	lang_line E, "receive a rating!"
+; i think the japanese text reads more like...
+;	lang      E, "Quiz complete!"
+;	lang_line E, "Please be rated!"
+; but that's clunky, so we'll go with
+	lang      E, "Quiz complete!"
+	lang_line E, "How did you do?"
+; TODO: potentially revise, and match in other languages
 	
 	lang      D, "Die Bewertung"
 	lang_line D, "deiner Antworten!"

@@ -26,42 +26,50 @@ MACRO minigame_start
 	
 	
 .gameIntroText
+	; Japanese
 	lang_text J, "じゅうじボタンを　つかって"
 	lang_line J, "さんかく　の　カーソルを　うごかし"
 	lang_cont J, "がめんに　ばらばらに　ならんだ"
 	lang_cont J, "ポケモンの　なまえの　もじを"
 	lang_cont J, "ただしい　なまえの　じゅんばんで"
 	lang_cont J, "たどって　いきます"
+
 	lang_para J, "なまえが　とちゅうで　きれたり"
 	lang_line J, "おなじ　もじを　２ど　とおったり"
 	lang_cont J, "しないように　ちゅうい　してね！"
+
 	lang_para J, "スタートのマークの　×　から"
 	lang_line J, "ゴールのマークの　！　に　いけたら"
 	lang_cont J, "エーボタンを　おして"
 	lang_cont J, "こたえあわせを　して　みよう"
 	lang_cont J, "それでは　スタート！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "Use the D-PAD to" ; would they have called it a D-PAD?
-	lang_line E, "move the triangle"
-	lang_cont E, "cursor across the"
-	lang_cont E, "screen where parts"
-	lang_cont E, "of #MON names"
-	lang_cont E, "are scattered."
-	lang_para E, "Trace them in"
-	lang_line E, "order to spell the"
-	lang_cont E, "#MON's name."
-	lang_para E, "Don't go out of"
-	lang_line E, "order, or use the"
-	lang_cont E, "same tile twice!"
-	lang_para E, "If you can get"
-	lang_line E, "from the start"
-	lang_cont E, "mark [×] to the"
-	lang_cont E, "goal mark [!],"
-	lang_cont E, "press the A BUTTON"
-	lang_cont E, "to check your"
-	lang_cont E, "answer!"
-	lang_para E, "So, let's start!"
+	; English
+	lang_text E, "Use the Control" 
+	lang_line E, "Pad to move the" 
+	lang_cont E, "cursor."
+
+	lang_para E, "Trace the letters"
+	lang_line E, "of a #MON name"
+	lang_cont E, "in the correct"
+	lang_cont E, "order."
+
+	lang_para E, "Be careful not"
+	lang_line E, "to stop halfway"
+	lang_cont E, "through a name or"
+	lang_cont E, "go over the same"
+	lang_cont E, "space twice!"
+
+	lang_para E, "Start at the ×"
+	lang_line E, "mark and go to"
+	lang_cont E, "the ! mark to"
+	lang_cont E, "reach the goal."
+
+	lang_para E, "Press the A Button"
+	lang_line E, "to check your "
+	lang_cont E, "answer."
+
+	lang_para E, "Let's get started!"
 	
 	lang_text D, "?"
 	
@@ -90,7 +98,7 @@ ENDM
 
 MACRO minigame_name
 	lang J, "ポケモンもじめいろ　かんたん"
-	lang E, "<PKMN> NAME MAZE EASY"
+	lang E, "EASY <PKMN> NAME MAZE"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -99,7 +107,7 @@ ENDM
 
 MACRO minigame_name_2
 	lang J, "ポケモンもじめいろ　むずかしい"
-	lang E, "<PKMN> NAME MAZE HARD"
+	lang E, "HARD <PKMN> NAME MAZE"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"

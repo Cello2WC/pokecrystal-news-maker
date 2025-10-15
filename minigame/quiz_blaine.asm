@@ -41,15 +41,15 @@ MACRO minigame_start
 	; English
 	lang_text E, "BLAINE: Hah!"
 	
-	lang_para E, "I am BLAINE! The"
-	lang_line E, "hotheaded quiz"
-	lang_cont E, "master!"
+	lang_para E, "I'm the hotheaded"
+	lang_line E, "quiz master!"
 	
-	lang_para E, "I'm the LEADER of"
-	lang_line E, "the CINNABAR…"
+	lang_para E, "From CINNABAR…"
+	lang_line E, "no, from the"
+	lang_cont E, "SEAFOAM ISLANDS!"	
 	
-	lang_para E, "no, of the SEAFOAM"
-	lang_line E, "ISLANDS GYM!"
+	lang_para E, "I am BLAINE, the"
+	lang_line E, "GYM LEADER!"
 	
 	lang_para E, "It's a mystery why"
 	lang_line E, "I haven't had my"
@@ -245,6 +245,7 @@ ENDM
 	db "@"
 	
 .question1Text
+	;Japanese
 	lang J,      "ウツギはかせが　ふねのチケットを"
 	lang_next J, "くれるときの　セリフの　さいごは"
 	lang_next J, "「カントーに　いったら…」　なに？"
@@ -253,13 +254,13 @@ ENDM
 	lang_next J, "２　オーキドはかせに　よろしく！"
 	lang_next J, "３　ほかの　のりものも　あるかもね！"
 	
-	; TODO: _VERY_ ROUGH TRANSLATION. PLEASE REWORK
+	;English
 	lang E,      "When PROF.ELM gave"
 	lang_next E, "you the S.S.TICKET"
-	lang_next E, "he told you to…"
+	lang_next E, "he told you to…?"
 	lang_next E, "1. Get stronger!"
 	lang_next E, "2. Say hi to OAK!"
-	lang_next E, "3. "
+	lang_next E, "3. Try other rides"
 	
 	lang D,      "?"
 	
@@ -353,6 +354,7 @@ ENDM
 	next "@"
 	
 .question5Text
+	;Japanese
 	lang J,      "ハナダシティの　そばで　たたかう"
 	lang_next J, "６にんぬきとは　まったく　かんけいの"
 	lang_next J, "ない　おとこは　なぜ　いどんでくる？"
@@ -361,13 +363,13 @@ ENDM
 	lang_next J, "２　トレーナーの　おかねを　うばう"
 	lang_next J, "３　ロケットだんの　ために"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang E,      "Why did an extra"
-	lang_next E, "fight with the"
-	lang_next E, "six-pack <TRAINER>s?"
+	;English
+	lang E,      "After the six-pack"
+	lang_next E, "trainers, why did"
+	lang_next E, "the man fight you?"
 	lang_next E, "1. Easy wins"
 	lang_next E, "2. Stealing money"
-	lang_next E, "3. For TEAM <ROCKET>"
+	lang_next E, "3. For TEAM ROCKET"
 	
 	lang D,      "?"
 	
@@ -421,13 +423,8 @@ ENDM
 	lang_next E, "PLANT MANAGER call"
 	lang_next E, "the generator?"
 	lang_next E, "1. Most important"
-	; "Cute" is the literal translation, but would
-	; be the wrong answer in english, while it's
-	; the right answer in japanese.
-	;lang_next E, "2. Cute"
-	;lang_next E, "3. My beloved"
 	lang_next E, "2. My beloved"
-	lang_next E, "3. My everything"
+	lang_next E, "3. Cute"
 	
 	lang D,      "?"
 	

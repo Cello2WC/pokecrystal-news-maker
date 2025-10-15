@@ -1051,8 +1051,9 @@ ENDM
 	lang_line J, "もういちど　やって　みるか？"
 	
 	; English
-	lang_text E, "BLUE: Well? My quiz"
-	lang_line E, "is hard, isn't it?"
+	lang_text E, "BLUE: Well? My"
+	lang_line E, "quiz is hard isn't"
+	lang_cont E, "it?"
 	
 	lang_para E, "I guess I'll give"
 	lang_line E, "you another chance…"

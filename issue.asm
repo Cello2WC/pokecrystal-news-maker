@@ -1,5 +1,3 @@
-;include "macros.asm"
-
 include "pokecrystal/constants.asm"
 
 include "macros/news_macros.asm"
@@ -14,23 +12,25 @@ include "pokecrystal/ram.asm"
 DEF NEWS_MAIN_BORDER EQUS "NEWSBORDER_BLOCKY, 4"
 
 
-; NOTE: can also be defined by Makefile
+; NOTE: these are currently defined to the compiler in the Makefile
+;DEF RANKING_1 EQUS "BATTLE_TOWER_WINS"
+;DEF RANKING_2 EQUS "BUG_CONTEST_SCORE"
+;DEF RANKING_3 EQUS "LONGEST_MAGIKARP"
+
+; NOTE: this is also currently defined by the Makefile
 ;DEF MINIGAME_FILE EQUS "minigame/quiz_blue.asm"
 
 DEF _MINIGAME_H EQU 1
 INCLUDE "{MINIGAME_FILE}"
 PURGE _MINIGAME_H
-;IF !DEF(NUM_MINIGAMES)
-;DEF NUM_MINIGAMES EQU 1
-;ENDC
 
 
 SECTION "Download Text", ROM0[$2000]
 
 	db PERSISTENT_MINIGAME_DATA_SIZE
 	
-	lang      J, ""
-	lang_line J, __DATE__
+	lang      J, "ディバグ！ {__UTC_YEAR__}とし"
+	lang_line J, "{__UTC_MONTH__}がつ {__UTC_DAY__}にち はっこう"
 	
 	lang      E, "Debug Issue"
 	lang_line E, __DATE__
@@ -153,7 +153,7 @@ ENDC
 	db "@"
 	
 .menuTrainerRankingsName
-	lang J, "トレーナーランキング";"ランキング　<WO>みる"
+	lang J, "トレーナーランキング"
 	lang E, "TRAINER RANKINGS"
 	lang D, "BESTENLISTE"
 	lang F, "QUIZ #MANIA"
@@ -235,7 +235,7 @@ ENDC
 	lang_cont J, "がんばれば　トップ<NI>なれるかも！"
 
 	lang_text E, "We hope you enjoy"
-	lang_line E, "the TRAINER RANK-"
+	lang_line E, "the <TRAINER> RANK-"
 	lang_cont E, "INGS and #MANIA"
 	lang_cont E, "QUIZ in issue No.1"
 	lang_para E, "You can update"
@@ -247,7 +247,7 @@ ENDC
 	
 	lang_text D, "Wir hoffen, dir"
 	lang_line D, "gefallen die"
-	lang_para D, "TRAINER-BESTEN-"
+	lang_para D, "<TRAINER>-BESTEN-"
 	lang_line D, "LISTE und das"
 	lang_para D, "#MANIAC-QUIZ"
 	lang_line D, "in Ausgabe Nr. 1!"
@@ -292,17 +292,17 @@ ENDC
 	done
 	
 .aboutFeesText
-	lang      J, "？"
+	lang_text J, "？"
 	
-	lang      E, "?"
+	lang_text E, "?"
 	
-	lang      D, "?"
+	lang_text D, "?"
 	
-	lang      F, "?"
+	lang_text F, "?"
 	
-	lang      I, "?"
+	lang_text I, "?"
 	
-	lang      S, "?"
+	lang_text S, "?"
 	
 	done
 
@@ -323,6 +323,10 @@ ENDC
 	
 	db "@"
 	
+; NOTE: these unique descriptions are present in the EN ROM "first issue" data.
+;       however, magazine scans don't line up with this, and i can't find 
+;       record of descriptions of minigames, etc. from published issues
+
 ;.menuNewsGuideDesc
 ;	lang      J, "よみこんだ　ニュースを"
 ;	lang_line J, "かんたん<NI>せつめいします"
@@ -397,11 +401,6 @@ ENDC
 
 
 INCLUDE "{MINIGAME_FILE}"
-
-; NOTE: these are currently defined to the compiler in the Makefile
-;DEF RANKING_1 EQUS "BATTLE_TOWER_WINS"
-;DEF RANKING_2 EQUS "BUG_CONTEST_SCORE"
-;DEF RANKING_3 EQUS "LONGEST_MAGIKARP"
 
 INCLUDE "ranking_table_common.asm"
 

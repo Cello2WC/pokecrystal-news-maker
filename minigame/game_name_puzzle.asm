@@ -170,10 +170,10 @@ ENDC
 	news_norankingstable
 	
 	news_menuitem_names   \
-	textXX, .txt01, .txt02, .txt03, \
-	.txt04, .txt05, .txt06, .txt07, \
-	.txt08, .txt09, .txt10, .txt11, \
-	.txt12, .txt13, .txt14, txtEND
+	.puzzleGFX, .dummyGFX, .dummyGFX, .dummyGFX, \
+	.dummyGFX, .dummyGFX, .dummyGFX, .dummyGFX, \
+	.dummyGFX, .dummyGFX, .dummyGFX, .dummyGFX, \
+	.dummyGFX, .dummyGFX, .dummyGFX, .dummyGFX
 	
 	news_menuitem_scripts  \
 	.scr00, .scr01, .scr02, .scr03, \
@@ -304,7 +304,11 @@ ENDC
 	nsc_playsound SFX_STOP_SLOT
 	nsc_ret
 	
-	
+MACRO lang_def
+IF DEF(_LANG_\1)
+DEF \2 EQUS \3
+ENDC
+ENDM
 
 .textMARILL
 	lang J, "『マリル』"
@@ -314,30 +318,27 @@ ENDC
 	lang I, "MARILL"
 	lang S, "MARILL"
 	db "@"
-.textMARILL_MA
-	lang J, "マ"
-	lang E, "MA"
-	lang D, "MA"
-	lang F, "MA"
-	lang I, "MA"
-	lang S, "MA"
-	db "@"
-.textMARILL_RI
-	lang J, "リ"
-	lang E, "RI"
-	lang D, "RI"
-	lang F, "RI"
-	lang I, "RI"
-	lang S, "RI"
-	db "@"
-.textMARILL_LL
-	lang J, "ル"
-	lang E, "LL"
-	lang D, "LL"
-	lang F, "LL"
-	lang I, "LL"
-	lang S, "LL"
-	db "@"
+	
+	lang_def J, MARILL_MA, "マ"
+	lang_def E, MARILL_MA, "MA"
+	lang_def D, MARILL_MA, "MA"
+	lang_def F, MARILL_MA, "MA"
+	lang_def I, MARILL_MA, "MA"
+	lang_def S, MARILL_MA, "MA"
+	
+	lang_def J, MARILL_RI, "リ"
+	lang_def E, MARILL_RI, "RI"
+	lang_def D, MARILL_RI, "RI"
+	lang_def F, MARILL_RI, "RI"
+	lang_def I, MARILL_RI, "RI"
+	lang_def S, MARILL_RI, "RI"
+
+	lang_def J, MARILL_LL, "ル"
+	lang_def E, MARILL_LL, "LL"
+	lang_def D, MARILL_LL, "LL"
+	lang_def F, MARILL_LL, "LL"
+	lang_def I, MARILL_LL, "LL"
+	lang_def S, MARILL_LL, "LL"
 	
 
 .textMUUMA
@@ -348,30 +349,27 @@ ENDC
 	lang I, "GASTLY"
 	lang S, "GASTLY"
 	db "@"
-.textMUUMA_MU
-	lang J, "ム"
-	lang E, "GA"
-	lang D, "1?"
-	lang F, "FEU"
-	lang I, "GA"
-	lang S, "GA"
-	db "@"
-.textMUUMA_UU
-	lang J, "ウ"
-	lang E, "ST"
-	lang D, "2?"
-	lang F, "FOR"
-	lang I, "ST"
-	lang S, "ST"
-	db "@"
-.textMUUMA_MA
-	lang J, "マ"
-	lang E, "LY"
-	lang D, "3?"
-	lang F, "EVE"
-	lang I, "LY"
-	lang S, "LY"
-	db "@"
+
+	lang_def J, MUUMA_MU, "ム"
+	lang_def E, MUUMA_MU, "GA"
+	lang_def D, MUUMA_MU, "1?"
+	lang_def F, MUUMA_MU, "FEU"
+	lang_def I, MUUMA_MU, "GA"
+	lang_def S, MUUMA_MU, "GA"
+
+	lang_def J, MUUMA_UU, "ウ"
+	lang_def E, MUUMA_UU, "ST"
+	lang_def D, MUUMA_UU, "2?"
+	lang_def F, MUUMA_UU, "FOR"
+	lang_def I, MUUMA_UU, "ST"
+	lang_def S, MUUMA_UU, "ST"
+
+	lang_def J, MUUMA_MA, "マ"
+	lang_def E, MUUMA_MA, "LY"
+	lang_def D, MUUMA_MA, "3?"
+	lang_def F, MUUMA_MA, "EVE"
+	lang_def I, MUUMA_MA, "LY"
+	lang_def S, MUUMA_MA, "LY"
 
 .textMOKOKO
 	lang J, "『モココ』"
@@ -381,55 +379,85 @@ ENDC
 	lang I, "RATTATA"
 	lang S, "RATTATA"
 	db "@"
-.textMOKOKO_MO
-	lang J, "モ"
-	lang E, "RAT"
-	lang D, "1?"
-	lang F, "RAT"
-	lang I, "RAT"
-	lang S, "RAT"
-	db "@"
-.textMOKOKO_KO
-	lang J, "コ"
-	lang E, "TA"
-	lang D, "2?"
-	lang F, "TA"
-	lang I, "TA"
-	lang S, "TA"
-	db "@"
+
+	lang_def J, MOKOKO_MO, "モ"
+	lang_def E, MOKOKO_MO, "RAT"
+	lang_def D, MOKOKO_MO, "1?"
+	lang_def F, MOKOKO_MO, "RAT"
+	lang_def I, MOKOKO_MO, "RAT"
+	lang_def S, MOKOKO_MO, "RAT"
+
+	lang_def J, MOKOKO_KO, "コ"
+	lang_def E, MOKOKO_KO, "TA"
+	lang_def D, MOKOKO_KO, "2?"
+	lang_def F, MOKOKO_KO, "TA"
+	lang_def I, MOKOKO_KO, "TA"
+	lang_def S, MOKOKO_KO, "TA"
 	
+; old DODRIO version
+;.textPUTERA
+;	lang J, "『プテラ』"
+;	lang E, "DODRIO"
+;	lang D, "?"
+;	lang F, "DODRIO"
+;	lang I, "DODRIO"
+;	lang S, "DODRIO"
+;	db "@"
+;.textPUTERA_PU
+;	lang J, "プ"
+;	lang E, "DO"
+;	lang D, "1?"
+;	lang F, "DO"
+;	lang I, "DO"
+;	lang S, "DO"
+;	db "@"
+;.textPUTERA_TE
+;	lang J, "テ"
+;	lang E, "DR"
+;	lang D, "2?"
+;	lang F, "DR"
+;	lang I, "DR"
+;	lang S, "DR"
+;	db "@"
+;.textPUTERA_RA
+;	lang J, "ラ"
+;	lang E, "IO"
+;	lang D, "3?"
+;	lang F, "IO"
+;	lang I, "IO"
+;	lang S, "IO"
+;	db "@"
+
+; new SUDOWOODO version
 .textPUTERA
 	lang J, "『プテラ』"
-	lang E, "DODRIO"
+	lang E, "SUDOWOODO"
 	lang D, "?"
-	lang F, "DODRIO"
-	lang I, "DODRIO"
-	lang S, "DODRIO"
+	lang F, "?"
+	lang I, "SUDOWOODO"
+	lang S, "SUDOWOODO"
 	db "@"
-.textPUTERA_PU
-	lang J, "プ"
-	lang E, "DO"
-	lang D, "1?"
-	lang F, "DO"
-	lang I, "DO"
-	lang S, "DO"
-	db "@"
-.textPUTERA_TE
-	lang J, "テ"
-	lang E, "DR"
-	lang D, "2?"
-	lang F, "DR"
-	lang I, "DR"
-	lang S, "DR"
-	db "@"
-.textPUTERA_RA
-	lang J, "ラ"
-	lang E, "IO"
-	lang D, "3?"
-	lang F, "IO"
-	lang I, "IO"
-	lang S, "IO"
-	db "@"
+	
+	lang_def J, PUTERA_PU, "プ"
+	lang_def E, PUTERA_PU, "SUD"
+	lang_def D, PUTERA_PU, "1?"
+	lang_def F, PUTERA_PU, "1?"
+	lang_def I, PUTERA_PU, "SUD"
+	lang_def S, PUTERA_PU, "SUD"
+	
+	lang_def J, PUTERA_TE, "テ"
+	lang_def E, PUTERA_TE, "OWO"
+	lang_def D, PUTERA_TE, "2?"
+	lang_def F, PUTERA_TE, "2?"
+	lang_def I, PUTERA_TE, "OWO"
+	lang_def S, PUTERA_TE, "OWO"
+	
+	lang_def J, PUTERA_RA, "ラ"
+	lang_def E, PUTERA_RA, "ODO"
+	lang_def D, PUTERA_RA, "3?"
+	lang_def F, PUTERA_RA, "3?"
+	lang_def I, PUTERA_RA, "ODO"
+	lang_def S, PUTERA_RA, "ODO"
 	
 .textPIPPI
 	lang J, "『ピッピ』"
@@ -439,32 +467,31 @@ ENDC
 	lang I, "EEVEE"
 	lang S, "EEVEE"
 	db "@"
-.textPIPPI_PI
-	lang J, "ピ"
-	lang E, "EE"
-	lang D, "PI"
-	lang F, "1?"
-	lang I, "EE"
-	lang S, "EE"
-	db "@"
-.textPIPPI_PP
-	lang J, "ッ"
-	lang E, "V"
-	lang D, "E"
-	lang F, "2?"
-	lang I, "V"
-	lang S, "V"
-	db "@"
+	
+	lang_def J, PIPPI_PI, "ピ"
+	lang_def E, PIPPI_PI, "EE"
+	lang_def D, PIPPI_PI, "PI"
+	lang_def F, PIPPI_PI, "1?"
+	lang_def I, PIPPI_PI, "EE"
+	lang_def S, PIPPI_PI, "EE"
+	
+	lang_def J, PIPPI_PP, "ッ"
+	lang_def E, PIPPI_PP, "V"
+	lang_def D, PIPPI_PP, "E"
+	lang_def F, PIPPI_PP, "2?"
+	lang_def I, PIPPI_PP, "V"
+	lang_def S, PIPPI_PP, "V"
 
 DEF PUZZLE_COUNT = 0
 
 MACRO define_puzzle
 DEF PUZZLE_COUNT = PUZZLE_COUNT + 1
-DEF PUZZLE{d:PUZZLE_COUNT}_MON_NAME EQUS "\1"
+DEF PUZZLE{d:PUZZLE_COUNT}_MON_NAME EQUS ".text\1"
+DEF PUZZLE{d:PUZZLE_COUNT}_MON_NAME_2 EQUS "\1"
 SHIFT 1
 DEF loopindex = 1
 REPT 16 - 2
-DEF PUZZLE{d:PUZZLE_COUNT}_GFX{02d:loopindex} EQU {PUZZLE{d:PUZZLE_COUNT}_MON_NAME}_\1
+DEF PUZZLE{d:PUZZLE_COUNT}_GFX{02d:loopindex} EQUS "{PUZZLE{d:PUZZLE_COUNT}_MON_NAME_2}_\1"
 DEF loopindex = loopindex + 1
 SHIFT 1
 ENDR
@@ -476,7 +503,7 @@ SHIFT 1
 ENDR
 ENDM
 
-	define_puzzle .textMARILL,\
+	define_puzzle MARILL,\
 				\
 				    LL, MA, MA, \
 				MA, RI, RI, LL, \
@@ -488,7 +515,7 @@ ENDM
 				XX, XX, DN, LF, \
 				XX, XX, RT
 				
-	define_puzzle .textMUUMA,\
+	define_puzzle MUUMA,\
 				\
 				    MU, UU, MA, \
 				MU, MA, MA, MU, \
@@ -500,7 +527,7 @@ ENDM
 				DN, LF, LF, XX, \
 				RT, RT, RT
 				
-	define_puzzle .textMOKOKO,\
+	define_puzzle MOKOKO,\
 				\
 				    MO, MO, KO, \
 				KO, KO, KO, KO, \
@@ -512,7 +539,7 @@ ENDM
 				XX, XX, DN, LF, \
 				XX, XX, RT
 				
-	define_puzzle .textPUTERA,\
+	define_puzzle PUTERA,\
 				\
 					RA, PU, TE, \
 				PU, TE, TE, RA, \
@@ -524,7 +551,7 @@ ENDM
 				DN, LF, RT, DN, \
 				RT, RT, UP
 				
-	define_puzzle .textPIPPI,\
+	define_puzzle PIPPI,\
 				\
 				    PI, PP, PI, \
 				PI, PP, PI, PP, \
@@ -549,24 +576,68 @@ ENDM
 	db "@"
 	
 	
-	
+;textXX:
+;	db "×"
+;	db "@"
+;txtEND:
+;	db "!"
+;	db "@"
 		
 		
 ; include puzzles that were defined earlier
-DEF loopindex = 1
-REPT 16 - 2
-.txt{02d:loopindex}
+
+;DEF loopindex = 1
+.puzzleGFX
 	nts_start
 	nts_switch wCurrentPuzzle, \
-	PUZZLE1_GFX{02d:loopindex}, \
-	PUZZLE2_GFX{02d:loopindex}, \
-	PUZZLE3_GFX{02d:loopindex}, \
-	PUZZLE4_GFX{02d:loopindex}, \
-	PUZZLE5_GFX{02d:loopindex}
+	.puzzle1GFX, \
+	.puzzle2GFX, \
+	.puzzle3GFX, \
+	.puzzle4GFX, \
+	.puzzle5GFX
 	nts_end
+.dummyGFX
 	db "@"
-DEF loopindex = loopindex + 1
+
+
+
+DEF puzzleindex = 1
+REPT 5
+.puzzle{d:puzzleindex}GFX
+DEF loopindex = 1
+	db "×   "
+REPT (4*4) - 2
+	db "{{PUZZLE{d:puzzleindex}_GFX{02d:loopindex}}}"
+IF loopindex % 4 != 3
+IF DEF(_LANG_J)
+	db " "
+ELSE
+REPT 4 - STRLEN("{{PUZZLE{d:puzzleindex}_GFX{02d:loopindex}}}")
+	db " "
 ENDR
+ENDC
+ELSE
+	next
+ENDC
+	DEF loopindex = loopindex + 1
+ENDR
+	db "!"
+	db "@"
+DEF puzzleindex = puzzleindex + 1
+ENDR
+;REPT 16 - 2
+;.txt{02d:loopindex}
+;	nts_start
+;	nts_switch wCurrentPuzzle, \
+;	PUZZLE1_GFX{02d:loopindex}, \
+;	PUZZLE2_GFX{02d:loopindex}, \
+;	PUZZLE3_GFX{02d:loopindex}, \
+;	PUZZLE4_GFX{02d:loopindex}, \
+;	PUZZLE5_GFX{02d:loopindex}
+;	nts_end
+;	db "@"
+;DEF loopindex = loopindex + 1
+;ENDR
 
 DEF loopindex = 0
 REPT 16 - 1
@@ -607,12 +678,10 @@ ENDR
 	news_menudescription 1, 14, 18, 4
 	news_norankingstable
 	
-	news_menuitem_names   \
-	textXX, .txt01, .txt02, .txt03, .txt04, .txt05, .txt06, .txt07, .txt08, \
-	.txt09, .txt10, .txt11, .txt12, .txt13, .txt14, .txt15, .txt16, .txt17, \
-	.txt18, .txt19, .txt20, .txt21, .txt22, .txt23, .txt24, .txt25, .txt26, \
-	.txt27, .txt28, .txt29, .txt30, .txt31, .txt32, .txt33, .txt34, .txt35, \
-	.txt36, .txt37, .txt38, .txt39, .txt40, .txt41, .txt42, .txt43, txtEND
+	news_menuitem_names .puzzleGFX
+REPT 9*5 - 1
+	news_menuitem_names .dummyGFX
+ENDR
 	
 	news_menuitem_scripts  \
 	.scr00, .scr01, .scr02, .scr03, .scr04, .scr05, .scr06, .scr07, .scr08, \
@@ -754,46 +823,41 @@ ENDC
 	lang I, "PICHU"
 	lang S, "PICHU"
 	db "@"
-.textPIKACHU_P
-	lang J, "ピ"
-	lang E, "P"
-	lang D, "P"
-	lang F, "P"
-	lang I, "P"
-	lang S, "P"
-	db "@"
-.textPIKACHU_I
-	lang J, "カ"
-	lang E, "I"
-	lang D, "I"
-	lang F, "I"
-	lang I, "I"
-	lang S, "I"
-	db "@"
-.textPIKACHU_C
-	lang J, "チ"
-	lang E, "C"
-	lang D, "C"
-	lang F, "C"
-	lang I, "C"
-	lang S, "C"
-	db "@"
-.textPIKACHU_H
-	lang J, "ュ"
-	lang E, "H"
-	lang D, "H"
-	lang F, "H"
-	lang I, "H"
-	lang S, "H"
-	db "@"
-.textPIKACHU_U
-	lang J, "ウ"
-	lang E, "U"
-	lang D, "U"
-	lang F, "U"
-	lang I, "U"
-	lang S, "U"
-	db "@"
+	
+	lang_def J, PIKACHU_P, "ピ"
+	lang_def E, PIKACHU_P, "P"
+	lang_def D, PIKACHU_P, "P"
+	lang_def F, PIKACHU_P, "P"
+	lang_def I, PIKACHU_P, "P"
+	lang_def S, PIKACHU_P, "P"
+	
+	lang_def J, PIKACHU_I, "カ"
+	lang_def E, PIKACHU_I, "I"
+	lang_def D, PIKACHU_I, "I"
+	lang_def F, PIKACHU_I, "I"
+	lang_def I, PIKACHU_I, "I"
+	lang_def S, PIKACHU_I, "I"
+	
+	lang_def J, PIKACHU_C, "チ"
+	lang_def E, PIKACHU_C, "C"
+	lang_def D, PIKACHU_C, "C"
+	lang_def F, PIKACHU_C, "C"
+	lang_def I, PIKACHU_C, "C"
+	lang_def S, PIKACHU_C, "C"
+	
+	lang_def J, PIKACHU_H, "ュ"
+	lang_def E, PIKACHU_H, "H"
+	lang_def D, PIKACHU_H, "H"
+	lang_def F, PIKACHU_H, "H"
+	lang_def I, PIKACHU_H, "H"
+	lang_def S, PIKACHU_H, "H"
+	
+	lang_def J, PIKACHU_U, "ウ"
+	lang_def E, PIKACHU_U, "U"
+	lang_def D, PIKACHU_U, "U"
+	lang_def F, PIKACHU_U, "U"
+	lang_def I, PIKACHU_U, "U"
+	lang_def S, PIKACHU_U, "U"
 	
 	
 
@@ -805,65 +869,59 @@ ENDC
 	lang I, "HO-OH"
 	lang S, "HO-OH"
 	db "@"
-.textKIRINRIKI_H
-	lang J, "キ"
-	lang E, "H"
-	lang D, "H"
-	lang F, "H"
-	lang I, "H"
-	lang S, "H"
-	db "@"
-.textKIRINRIKI_O
-	lang J, "リ"
-	lang E, "O"
-	lang D, "O"
-	lang F, "O"
-	lang I, "O"
-	lang S, "O"
-	db "@"
-.textKIRINRIKI__
-	lang J, "ン"
-	lang E, "-"
-	lang D, "-"
-	lang F, "-"
-	lang I, "-"
-	lang S, "-"
-	db "@"
+
+	lang_def J, KIRINRIKI_H, "キ"
+	lang_def E, KIRINRIKI_H, "H"
+	lang_def D, KIRINRIKI_H, "H"
+	lang_def F, KIRINRIKI_H, "H"
+	lang_def I, KIRINRIKI_H, "H"
+	lang_def S, KIRINRIKI_H, "H"
+	
+	lang_def J, KIRINRIKI_O, "リ"
+	lang_def E, KIRINRIKI_O, "O"
+	lang_def D, KIRINRIKI_O, "O"
+	lang_def F, KIRINRIKI_O, "O"
+	lang_def I, KIRINRIKI_O, "O"
+	lang_def S, KIRINRIKI_O, "O"
+	
+	lang_def J, KIRINRIKI__, "ン"
+	lang_def E, KIRINRIKI__, "-"
+	lang_def D, KIRINRIKI__, "-"
+	lang_def F, KIRINRIKI__, "-"
+	lang_def I, KIRINRIKI__, "-"
+	lang_def S, KIRINRIKI__, "-"
 	
 
 
 .textYANMA
 	lang J, "『ヤンヤンマ』"
-	lang E, "MUMUK"
+	lang E, "DODUO"
 	lang D, "?"
-	lang F, "?"
-	lang I, "MUMUK"
-	lang S, "MUMUK"
+	lang F, "DODUO"
+	lang I, "DODUO"
+	lang S, "DODUO"
 	db "@"
-.textYANMA_M
-	lang J, "ヤ"
-	lang E, "M"
-	lang D, "1"
-	lang F, "1"
-	lang I, "M"
-	lang S, "M"
-	db "@"
-.textYANMA_U
-	lang J, "ン"
-	lang E, "U"
-	lang D, "2"
-	lang F, "2"
-	lang I, "K"
-	lang S, "K"
-	db "@"
-.textYANMA_K
-	lang J, "マ"
-	lang E, "K"
-	lang D, "3"
-	lang F, "3"
-	lang I, "K"
-	lang S, "K"
-	db "@"
+	
+	lang_def J, YANMA_M, "ヤ"
+	lang_def E, YANMA_D, "D"
+	lang_def D, YANMA_D, "1"
+	lang_def F, YANMA_D, "D"
+	lang_def I, YANMA_D, "D"
+	lang_def S, YANMA_D, "D"
+	
+	lang_def J, YANMA_U, "ン"
+	lang_def E, YANMA_O, "O"
+	lang_def D, YANMA_O, "2"
+	lang_def F, YANMA_O, "O"
+	lang_def I, YANMA_O, "O"
+	lang_def S, YANMA_O, "O"
+	
+	lang_def J, YANMA_K, "マ"
+	lang_def E, YANMA_U, "U"
+	lang_def D, YANMA_U, "3"
+	lang_def F, YANMA_U, "U"
+	lang_def I, YANMA_U, "U"
+	lang_def S, YANMA_U, "U"
 	
 
 .textHARIISEN
@@ -874,46 +932,41 @@ ENDC
 	lang I, "ZUBAT"
 	lang S, "ZUBAT"
 	db "@"
-.textHARIISEN_Z
-	lang J, "ハ"
-	lang E, "Z"
-	lang D, "Z"
-	lang F, "1"
-	lang I, "Z"
-	lang S, "Z"
-	db "@"
-.textHARIISEN_U
-	lang J, "リ"
-	lang E, "U"
-	lang D, "U"
-	lang F, "2"
-	lang I, "U"
-	lang S, "U"
-	db "@"
-.textHARIISEN_B
-	lang J, "ー"
-	lang E, "B"
-	lang D, "B"
-	lang F, "3"
-	lang I, "B"
-	lang S, "B"
-	db "@"
-.textHARIISEN_A
-	lang J, "セ"
-	lang E, "A"
-	lang D, "A"
-	lang F, "4"
-	lang I, "A"
-	lang S, "A"
-	db "@"
-.textHARIISEN_T
-	lang J, "ン"
-	lang E, "T"
-	lang D, "T"
-	lang F, "5"
-	lang I, "T"
-	lang S, "T"
-	db "@"
+	
+	lang_def J, HARIISEN_Z, "ハ"
+	lang_def E, HARIISEN_Z, "Z"
+	lang_def D, HARIISEN_Z, "Z"
+	lang_def F, HARIISEN_Z, "1"
+	lang_def I, HARIISEN_Z, "Z"
+	lang_def S, HARIISEN_Z, "Z"
+	
+	lang_def J, HARIISEN_U, "リ"
+	lang_def E, HARIISEN_U, "U"
+	lang_def D, HARIISEN_U, "U"
+	lang_def F, HARIISEN_U, "2"
+	lang_def I, HARIISEN_U, "U"
+	lang_def S, HARIISEN_U, "U"
+	
+	lang_def J, HARIISEN_B, "ー"
+	lang_def E, HARIISEN_B, "B"
+	lang_def D, HARIISEN_B, "B"
+	lang_def F, HARIISEN_B, "3"
+	lang_def I, HARIISEN_B, "B"
+	lang_def S, HARIISEN_B, "B"
+	
+	lang_def J, HARIISEN_A, "セ"
+	lang_def E, HARIISEN_A, "A"
+	lang_def D, HARIISEN_A, "A"
+	lang_def F, HARIISEN_A, "4"
+	lang_def I, HARIISEN_A, "A"
+	lang_def S, HARIISEN_A, "A"
+	
+	lang_def J, HARIISEN_T, "ン"
+	lang_def E, HARIISEN_T, "T"
+	lang_def D, HARIISEN_T, "T"
+	lang_def F, HARIISEN_T, "5"
+	lang_def I, HARIISEN_T, "T"
+	lang_def S, HARIISEN_T, "T"
 	
 
 .textWINDY
@@ -924,57 +977,53 @@ ENDC
 	lang I, "ARBOK"
 	lang S, "ARBOK"
 	db "@"
-.textWINDY_A
-	lang J, "ウ"
-	lang E, "A"
-	lang D, "A"
-	lang F, "A"
-	lang I, "A"
-	lang S, "A"
-	db "@"
-.textWINDY_R
-	lang J, "イ"
-	lang E, "R"
-	lang D, "R"
-	lang F, "R"
-	lang I, "R"
-	lang S, "R"
-	db "@"
-.textWINDY_B
-	lang J, "ン"
-	lang E, "B"
-	lang D, "B"
-	lang F, "B"
-	lang I, "B"
-	lang S, "B"
-	db "@"
-.textWINDY_O
-	lang J, "デ"
-	lang E, "O"
-	lang D, "O"
-	lang F, "O"
-	lang I, "O"
-	lang S, "O"
-	db "@"
-.textWINDY_K
-	lang J, "ィ"
-	lang E, "K"
-	lang D, "K"
-	lang F, "K"
-	lang I, "K"
-	lang S, "K"
-	db "@"
+.text
+	lang_def J, WINDY_A, "ウ"
+	lang_def E, WINDY_A, "A"
+	lang_def D, WINDY_A, "A"
+	lang_def F, WINDY_A, "A"
+	lang_def I, WINDY_A, "A"
+	lang_def S, WINDY_A, "A"
+	
+	lang_def J, WINDY_R, "イ"
+	lang_def E, WINDY_R, "R"
+	lang_def D, WINDY_R, "R"
+	lang_def F, WINDY_R, "R"
+	lang_def I, WINDY_R, "R"
+	lang_def S, WINDY_R, "R"
+	
+	lang_def J, WINDY_B, "ン"
+	lang_def E, WINDY_B, "B"
+	lang_def D, WINDY_B, "B"
+	lang_def F, WINDY_B, "B"
+	lang_def I, WINDY_B, "B"
+	lang_def S, WINDY_B, "B"
+	
+	lang_def J, WINDY_O, "デ"
+	lang_def E, WINDY_O, "O"
+	lang_def D, WINDY_O, "O"
+	lang_def F, WINDY_O, "O"
+	lang_def I, WINDY_O, "O"
+	lang_def S, WINDY_O, "O"
+	
+	lang_def J, WINDY_K, "ィ"
+	lang_def E, WINDY_K, "K"
+	lang_def D, WINDY_K, "K"
+	lang_def F, WINDY_K, "K"
+	lang_def I, WINDY_K, "K"
+	lang_def S, WINDY_K, "K"
 	
 
 DEF PUZZLE_COUNT = 0
 
 MACRO define_hpuzzle
 DEF PUZZLE_COUNT = PUZZLE_COUNT + 1
-DEF HPUZZLE{d:PUZZLE_COUNT}_MON_NAME EQUS "\1"
+DEF HPUZZLE{d:PUZZLE_COUNT}_MON_NAME EQUS ".text\1"
+DEF HPUZZLE{d:PUZZLE_COUNT}_MON_NAME_2 EQUS "\1"
 SHIFT 1
 DEF loopindex = 1
 REPT (5*9) - 2
-DEF HPUZZLE{d:PUZZLE_COUNT}_GFX{02d:loopindex} EQU {HPUZZLE{d:PUZZLE_COUNT}_MON_NAME}_\1
+DEF HPUZZLE{d:PUZZLE_COUNT}_GFX{02d:loopindex} EQUS "{HPUZZLE{d:PUZZLE_COUNT}_MON_NAME_2}_\1"
 DEF loopindex = loopindex + 1
 SHIFT 1
 ENDR
@@ -986,7 +1035,7 @@ SHIFT 1
 ENDR
 ENDM
 
-	define_hpuzzle .textPIKACHU,\
+	define_hpuzzle PIKACHU,\
 				\
 				   P, I, C, H, U, P, I, C,\
 				C, I, U, H, P, C, H, U, U,\
@@ -1000,7 +1049,7 @@ ENDM
 				DN, UP, XX, DN, UP, XX, DN, LF, XX, \
 				RT, UP, XX, RT, UP, XX, RT, RT
 				
-	define_hpuzzle .textKIRINRIKI,\
+	define_hpuzzle KIRINRIKI,\
 				\
 				   H, O, _, H, O, H, H, O,\
 				_, O, _, O, O, _, H, _, H,\
@@ -1014,7 +1063,8 @@ ENDM
 				XX, DN, XX, XX, XX, RT, RT, UP, DN, \
 				XX, RT, RT, RT, RT, UP, XX, XX
 				
-	define_hpuzzle .textYANMA,\
+IF DEF(_LANG_J)
+	define_hpuzzle YANMA,\
 				\
 				   M, U, U, M, U, M, U, K,\
 				M, K, M, U, K, M, U, M, U,\
@@ -1027,8 +1077,23 @@ ENDM
 				XX, XX, XX, XX, XX, XX, DN, LF, LF, \
 				XX, XX, XX, XX, XX, XX, RT, RT, DN, \
 				XX, XX, XX, XX, XX, XX, XX, XX
+ELSE
+	define_hpuzzle YANMA,\
+				\
+				   D, O, O, D, O, D, U, O, \
+				D, U, D, U, O, D, O, D, U, \
+				O, D, U, O, D, O, O, D, O, \
+				D, D, O, D, O, U, D, U, O, \
+				U, O, O, U, O, U, O, D, \
+				\
+				RT, RT, DN, XX, XX, XX, XX, XX, XX, \
+				XX, XX, RT, RT, RT, RT, RT, RT, DN, \
+				XX, XX, XX, XX, XX, XX, DN, LF, LF, \
+				XX, XX, XX, XX, XX, XX, RT, RT, DN, \
+				XX, XX, XX, XX, XX, XX, XX, XX
+ENDC
 				
-	define_hpuzzle .textHARIISEN,\
+	define_hpuzzle HARIISEN,\
 				\
 				   Z, A, T, Z, B, A, T, Z,\
 				Z, U, B, U, Z, U, U, Z, U,\
@@ -1042,7 +1107,7 @@ ENDM
 				DN, XX, XX, UP, XX, DN, RT, RT, DN, \
 				RT, RT, RT, UP, XX, RT, UP, XX
 				
-	define_hpuzzle .textWINDY,\
+	define_hpuzzle WINDY,\
 				\
 				   A, K, B, O, K, A, R, B,\
 				B, R, K, A, R, B, O, R, A,\
@@ -1073,20 +1138,58 @@ ENDM
 		
 		
 ; include puzzles that were defined earlier
-DEF loopindex = 1
-REPT (9*5) - 2
-.txt{02d:loopindex}
+;DEF loopindex = 1
+;REPT (9*5) - 2
+;.txt{02d:loopindex}
+;	nts_start
+;	nts_switch wCurrentPuzzle, \
+;	HPUZZLE1_GFX{02d:loopindex}, \
+;	HPUZZLE2_GFX{02d:loopindex}, \
+;	HPUZZLE3_GFX{02d:loopindex}, \
+;	HPUZZLE4_GFX{02d:loopindex}, \
+;	HPUZZLE5_GFX{02d:loopindex}
+;	nts_end
+;	db "@"
+;DEF loopindex = loopindex + 1
+;ENDR
+
+
+.puzzleGFX
 	nts_start
 	nts_switch wCurrentPuzzle, \
-	HPUZZLE1_GFX{02d:loopindex}, \
-	HPUZZLE2_GFX{02d:loopindex}, \
-	HPUZZLE3_GFX{02d:loopindex}, \
-	HPUZZLE4_GFX{02d:loopindex}, \
-	HPUZZLE5_GFX{02d:loopindex}
+	.puzzle1GFX, \
+	.puzzle2GFX, \
+	.puzzle3GFX, \
+	.puzzle4GFX, \
+	.puzzle5GFX
 	nts_end
+.dummyGFX
 	db "@"
-DEF loopindex = loopindex + 1
+
+
+
+DEF puzzleindex = 1
+REPT 5
+.puzzle{d:puzzleindex}GFX
+DEF loopindex = 1
+	db "× "
+REPT (9*5) - 2
+	db "{{HPUZZLE{d:puzzleindex}_GFX{02d:loopindex}}}"
+;REPT 4 - STRLEN(PUZZLE{d:puzzleindex}_GFX{02d:loopindex})
+IF loopindex % 9 != 8
+	db " "
+;ENDR
+;ENDR
+ELSE
+	next
+ENDC
+	DEF loopindex = loopindex + 1
 ENDR
+	db "!"
+	db "@"
+DEF puzzleindex = puzzleindex + 1
+ENDR
+
 
 DEF loopindex = 0
 REPT (9*5) - 1
@@ -1116,12 +1219,12 @@ Quit:
 	
 
 	
-textXX:
-	db "×"
-	db "@"
-txtEND:
-	db "!"
-	db "@"
+;textXX:
+;	db "×"
+;	db "@"
+;txtEND:
+;	db "!"
+;	db "@"
 	
 	
 	

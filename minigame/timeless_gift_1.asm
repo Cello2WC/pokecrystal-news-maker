@@ -8,11 +8,51 @@ DEF wChiekosChoice  EQUS "wNewsScratch0"
 DEF wQuizQuestionNo EQUS "wNewsScratch2"
 DEF wQuizScore      EQUS "wNewsScratch3"
 
+
+MACRO minigame_abuttonhook
+;	nsc_drawbox 0,  3, 20, 10, NEWSBORDER_INVERTED, 3
+;	nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY,    4
+
+	nsc_clear 1, 4, 18, 8
+	nsc_clear 1, 13, 18, 4
+	nsc_drawtrainer 6, 4, COOLTRAINERF, 7
+ENDM
+
 MACRO minigame_start
+	; fake page transition
+	nsc_playmusic MUSIC_AZALEA_TOWN
 	nsc_set wQuizQuestionNo, 0
 	nsc_set wQuizScore, 0
-	nsc_page MinigameStart
+	
+	nsc_textbox 1, 14, .maizieIntroText
+	nsc_waitbutton
+	nsc_page LuckTest
+	
+.maizieIntroText
+	; TODO: PLACEHOLDER TEXT
+	lang_text J, "チエコ『かくかくしかじか 　ヒワダ"
+	lang_line J, "タウン　かくかくしかじか　ガンテツ"
+	lang_cont J, "かくかくしかじか　タイムトラベル"
+	
+	lang_text E, "MAIZIE: something"
+	lang_line E, "something AZALEA"
+	lang_para E, "something some-"
+	lang_line E, "thing KURT's"
+	lang_cont E, "granddaughter"
+	lang_para E, "something some-"
+	lang_line E, "thing time travel"
+	
+	lang_text D, "?"
+	
+	lang_text F, "?"
+	
+	lang_text I, "?"
+	
+	lang_text S, "?"
+
+	done
 ENDM
+	
 
 MACRO minigame_name
 	lang J, "ときをこえたプレゼント"
@@ -39,116 +79,16 @@ ENDM
 
 ELSE
 MinigameStart::
-	news_screen PokemonQuizIntro, MUSIC_AZALEA_TOWN;MUSIC_DANCING_HALL;MUSIC_SAGE_ENCOUNTER
-
-	news_def_pals
-
-	news_def_boxes
-	;news_box 0,  1, 20, 14, NEWSBORDER_BLOCKY, 4
-	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
-	
-	
-	news_def_strings
-	news_string 0, 0, "@" ; ......why?
-	
-	news_menu  3, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
-	;news_menu  1, 10, 1, 1, 0, 0, $03, $00, $00, $00, $02, $01
-	
-	news_buttonscript .aButton ; script pointer a button
-	news_buttonscript .aButton ; script pointer b button
-	news_buttonscript          ; script pointer select button
-	news_buttonscript .aButton ; script pointer start button
-	news_buttonscript          ; script pointer right button
-	news_buttonscript          ; script pointer left button
-	news_buttonscript          ; script pointer up button
-	news_buttonscript          ; script pointer down button
-	
-	news_def_menuitems
-	news_menudescription 1, 14, 18, 4
-	news_norankingstable
-	
-	news_menuitem_names   .menuItemText
-	news_menuitem_scripts .menuItemScript
-	news_menuitem_descs   .menuItemDescription
-	
-.aButton
-	nsc_playsound SFX_READ_TEXT
-	nsc_clear 1, 13, 18, 4
-	nsc_drawtrainer 6, 2, COOLTRAINERF, 7
-	nsc_select
-	nsc_page LuckTest ; should be janken or dice, _then_ quiz
-	nsc_ret
-	
-.menuItemText
-	minigame_name
-	db "@"
-	
-.menuItemScript
-	nsc_textbox 1, 14, .maizieIntroText
-	nsc_yesno 13, 7, .done, .quit
-.done
-	nsc_ret
-.quit
-	; quit text potentially goes here
-	nsc_playsound SFX_MENU
-	nsc_page NewsRoot
-	nsc_ret
-
-.menuItemDescription
-	lang      J, "?"
-	
-	lang      E, "?"
-	
-	lang      D, "?"
-	
-	lang      F, "?"
-	
-	lang      I, "?"
-	
-	lang      S, "?"
-	
-	db "@"
-
-.maizieIntroText
-	; TODO: PLACEHOLDER TEXT
-	lang_text J, "チエコ『かくかくしかじか 　ヒワダ"
-	lang_line J, "タウン　かくかくしかじか　ガンテツ"
-	lang_cont J, "かくかくしかじか　タイムトラベル"
-	
-	lang_text E, "MAIZIE: something"
-	lang_line E, "something AZALEA"
-	lang_para E, "something some-"
-	lang_line E, "thing KURT's"
-	lang_cont E, "granddaughter"
-	lang_para E, "something some-"
-	lang_line E, "thing time travel"
-	
-	lang_text D, "?"
-	
-	lang_text F, "?"
-	
-	lang_text I, "?"
-	
-	lang_text S, "?"
-
-	done
-
-
-
-
-
-
-
-
-	news_screen LuckTest, MUSIC_AZALEA_TOWN
+	news_screen LuckTest, MUSIC_GAME_CORNER
 	news_def_pals
 	news_def_boxes
 ;	news_box 0,  1, 20, 14, NEWSBORDER_BLOCKY, 4
-	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
-	news_box 4,  4, 12,  8, NEWSBORDER_BLOCKY, 1
+	news_box 0,  3, 20, 10, {NEWS_MAIN_BORDER}
+	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,    4
+	;news_box 4,  4, 12,  8, NEWSBORDER_BLOCKY,   3
 	news_def_strings
 	news_string 0, 0, "@" ; ......why?
-	news_menu 6, 6,   1, 3,   0, 2,   -1, $00, $00, $00, $02, $01
+	news_menu 6, 6,   1, 3,   0, 2,   -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
 	
 	news_buttonscript .aButton    ; script pointer a button
 	news_buttonscript .bButton    ; script pointer b button
@@ -174,9 +114,9 @@ MinigameStart::
 	
 .aButton
 	nsc_playsound SFX_READ_TEXT
-	nsc_clear 1,  2, 17, 10
-	nsc_clear 1, 13, 18,  4
-	nsc_drawtrainer 6, 2, COOLTRAINERF, 7
+	nsc_clear 1,  4, 17,  8
+;	nsc_clear 1, 13, 18,  4
+	nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY,    4
 	
 .retry
 	; CHIE's choice
@@ -191,6 +131,7 @@ MinigameStart::
 	nsc_compare wChiekosChoice, .continue, .retry, .retry, 1, 3 ; retry if generated a 3
 .continue
 	nsc_clear 1, 13, 18, 4
+	nsc_drawtrainer 6, 4, COOLTRAINERF, 7
 	nsc_printstring 1, 14, .textChieDeclare
 	nsc_waitbutton
 	nsc_select
@@ -324,7 +265,7 @@ MinigameStart::
 	lang_text S, "?"
 	done
 
-	news_screen PokemonQuiz, MUSIC_TIN_TOWER
+	news_screen PokemonQuiz, MUSIC_GAME_CORNER
 
 	news_def_pals
 
@@ -344,7 +285,7 @@ MinigameStart::
 		.question5Text
 	nts_end
 	
-	news_menu  2, 16, 3, 1, 5, 2, -1, $00, $00, $00, $00, $04
+	news_menu  2, 16, 3, 1, 5, 2, -1, $00, $00, $00, 0, $04
 	
 	news_buttonscript .aButton ; script pointer a button
 	news_buttonscript .bButton ; script pointer b button
@@ -552,16 +493,16 @@ ENDM
 	news_def_pals
 
 	news_def_boxes
-	;news_box 0,  1, 20, 14, NEWSBORDER_BLOCKY, 4
+	news_box  0,  1, 20, 12, {NEWS_MAIN_BORDER}
 	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
 	
 	
 	news_def_strings
 	news_string 0, 0, "@" ; ......why?
 IF DEF(_LANG_J)
-	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
+	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
 ELSE
-	news_menu  3, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
+	news_menu  3, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
 ENDC
 	
 	news_buttonscript .aButton ; script pointer a button

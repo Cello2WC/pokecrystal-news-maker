@@ -7,12 +7,23 @@ include "macros/news_script_commands.asm"
 include "macros/mobile_text_script.asm"
 include "pokecrystal/ram.asm"
 
+
+	; used in "first issue" seen in EN ROM data
+;DEF NEWS_MAIN_BORDER EQUS "NEWSBORDER_STRIPED, 3"
+	; used in "first issue" seen in magazine scan
+DEF NEWS_MAIN_BORDER EQUS "NEWSBORDER_BLOCKY, 4"
+
+
 ; NOTE: can also be defined by Makefile
 ;DEF MINIGAME_FILE EQUS "minigame/quiz_blue.asm"
 
 DEF _MINIGAME_H EQU 1
 INCLUDE "{MINIGAME_FILE}"
 PURGE _MINIGAME_H
+;IF !DEF(NUM_MINIGAMES)
+;DEF NUM_MINIGAMES EQU 1
+;ENDC
+
 
 SECTION "Download Text", ROM0[$2000]
 
@@ -45,7 +56,8 @@ SECTION "News", ROM0[$0000]
 	news_def_pals
 	
 	news_def_boxes
-	news_box  0,  3, 20, 10, NEWSBORDER_STRIPED, 3
+	news_box  0,  3, 20, 10, {NEWS_MAIN_BORDER}
+	
 	news_box  0, 12, 20,  6, NEWSBORDER_GLOWY,   4
 
 	news_def_strings
@@ -58,7 +70,8 @@ SECTION "News", ROM0[$0000]
 	lang S, "?"
 	db "@"
 
-	news_menu 2, 5, 1, 4, 0, 2, $10, $04, $07, $04, $02, $04
+	;news_menu 2, 5, 1, 4, 0, 2, $10, $04, $07, $04, $02, $04
+	news_menu 2, 5, 1, 4, 0, 2, 16, 4, 7, 4, SHOW_ARROWS | SHOW_DESCRIPTIONS, $04
 
 	news_buttonscript .a_button			; [a] script
 	news_buttonscript .b_button			; [b] script
@@ -73,15 +86,47 @@ SECTION "News", ROM0[$0000]
 	news_menudescription 1, 14, 18, 4
 	news_loadrankingstable RANKINGS_TABLE_DO_NOT
 
-	news_menuitem_names   .menuNewsGuideName,   .menuTrainerRankingsName,   .menuMinigameName,   .menuQuitName
-	;news_menuitem_names   .menuNewsGuideName,   .menuTrainerRankingsName,   .menuMinigameName,   .menuMinigame2Name,   .menuQuitName
-	news_menuitem_scripts .menuNewsGuideScript, .menuTrainerRankingsScript, .menuMinigameScript, .menuQuitScript
-	;news_menuitem_scripts .menuNewsGuideScript, .menuTrainerRankingsScript, .menuMinigameScript, .menuMinigame2Script, .menuQuitScript
-	news_menuitem_descs   .menuNewsGuideDesc,   .menuTrainerRankingsDesc,   .menuMinigameDesc,   .menuQuitDesc
-	;news_menuitem_descs   .menuNewsGuideDesc,   .menuTrainerRankingsDesc,   .menuMinigameDesc,   .menuMinigame2Desc,   .menuQuitDesc
-
+	news_menuitem_names   .menuNewsGuideName,   .menuTrainerRankingsName
+	news_menuitem_names   .menuMinigameName
+IF DEF(NUM_MINIGAMES)
+DEF loopindex = 2
+REPT NUM_MINIGAMES-1
+	news_menuitem_names   .menuMinigame{d:loopindex}Name
+ENDR
+ENDC
+	news_menuitem_names   .menuAboutFeesName, .menuQuitName
+	
+	news_menuitem_scripts .menuNewsGuideScript, .menuTrainerRankingsScript
+	news_menuitem_scripts .menuMinigameScript
+IF DEF(NUM_MINIGAMES)
+DEF loopindex = 2
+REPT NUM_MINIGAMES-1
+	news_menuitem_scripts   .menuMinigame{d:loopindex}Script
+ENDR
+ENDC
+	news_menuitem_scripts .menuAboutFeesScript, .menuQuitScript
+	
+	news_menuitem_descs   .menuDesc,.menuDesc;.menuNewsGuideDesc,   .menuTrainerRankingsDesc
+	news_menuitem_descs   .menuDesc;.menuMinigameDesc
+IF DEF(NUM_MINIGAMES)
+DEF loopindex = 2
+REPT NUM_MINIGAMES-1
+	news_menuitem_descs   .menuDesc;.menuMinigame{d:loopindex}Desc
+ENDR
+ENDC
+	news_menuitem_descs   .menuDesc,.menuDesc;.menuQuitDesc
+DEF MINIGAME_MENU_POS EQU 2
 .a_button
 	nsc_playsound SFX_READ_TEXT
+	
+	; the news is very finicky about when it chooses to update palettes....
+IF DEF(minigame_abuttonhook)
+	nsc_compare wNewsMenuOption, .nohook, .hook, .nohook, 1, MINIGAME_MENU_POS
+.hook
+	minigame_abuttonhook
+.nohook
+ENDC
+	
 	nsc_select
 	nsc_ret
 
@@ -118,9 +163,24 @@ SECTION "News", ROM0[$0000]
 .menuMinigameName
 	minigame_name
 	db "@"
-;.menuMinigame2Name
-;	minigame_name_2
-;	db "@"
+IF DEF(NUM_MINIGAMES)
+DEF loopindex = 2
+REPT NUM_MINIGAMES-1
+.menuMinigame{d:loopindex}Name
+	minigame_name_{d:loopindex}
+	db "@"
+ENDR
+ENDC
+
+.menuAboutFeesName
+	lang J, "りょうきんについて"
+	lang E, "ABOUT FEES"
+	lang D, "?"
+	lang F, "?"
+	lang I, "?"
+	lang S, "?"
+	db "@"
+
 .menuQuitName
 	lang J, "やめる"
 	lang E, "CANCEL"
@@ -145,9 +205,20 @@ SECTION "News", ROM0[$0000]
 	minigame_start
 	nsc_ret
 		
-;.menuMinigame2Script
-;	minigame_start_2
-;	nsc_ret
+IF DEF(NUM_MINIGAMES)
+DEF loopindex = 2
+REPT NUM_MINIGAMES-1
+.menuMinigame{d:loopindex}Script
+	minigame_start_{d:loopindex}
+	nsc_ret
+ENDR
+ENDC
+
+.menuAboutFeesScript
+	nsc_clear 1, 13, 18, 4
+	nsc_textbox 1, 14, .aboutFeesText
+	nsc_waitbutton
+	nsc_ret
 	
 .menuQuitScript
 	nsc_exit
@@ -219,72 +290,110 @@ SECTION "News", ROM0[$0000]
 	lang      S, "?"
 	
 	done
+	
+.aboutFeesText
+	lang      J, "？"
+	
+	lang      E, "?"
+	
+	lang      D, "?"
+	
+	lang      F, "?"
+	
+	lang      I, "?"
+	
+	lang      S, "?"
+	
+	done
 
-.menuNewsGuideDesc
-	lang      J, "よみこんだ　ニュースを"
-	lang_line J, "かんたん<NI>せつめいします"
-
-	lang      E, "Read an explan-"
-	lang_line E, "ation of the NEWS."
+	; TODO: translation not yet approved
+.menuDesc
+	lang      J, "メニュー<WO>えらんでください"
 	
-	lang      D, "Eine Erklärung zu"
-	lang_line D, "den NACHRICHTEN."
+	lang      E, "Please choose"
+	lang_line E, "a menu."
 	
-	lang      F, "Lire les explica-"
-	lang_line F, "tions des INFOS."
+	lang      D, "?"
 	
-	lang      I, "Leggi la spiegazi-"
-	lang_line I, "one delle NOTIZIE."
+	lang      F, "?"
+	
+	lang      I, "?"
 	
 	lang      S, "?"
 	
 	db "@"
 	
-.menuTrainerRankingsDesc
-	lang      J, "３つ<NO>テーマで"
-	lang_line J, "ランキング<WO>します！"
-	
-	lang      E, "Triple-theme"
-	lang_line E, "<TRAINER> ranking!"
-	
-	lang      D, "Dreifache Trainer-"
-	lang_line D, "Bestenliste!"
-	
-	lang      F, "Classement des"
-	lang_line F, "dresseurs!"
-	
-	lang      I, "Classifiche allen-"
-	lang_line I, "atore a tema."
-	
-	lang      S, "?"
-	
-	db "@"
-.menuMinigameDesc
-	minigame_desc
-	db "@"
-;.menuMinigame2Desc
-;	minigame_desc_2
+;.menuNewsGuideDesc
+;	lang      J, "よみこんだ　ニュースを"
+;	lang_line J, "かんたん<NI>せつめいします"
+;
+;	lang      E, "Read an explan-"
+;	lang_line E, "ation of the NEWS."
+;	
+;	lang      D, "Eine Erklärung zu"
+;	lang_line D, "den NACHRICHTEN."
+;	
+;	lang      F, "Lire les explica-"
+;	lang_line F, "tions des INFOS."
+;	
+;	lang      I, "Leggi la spiegazi-"
+;	lang_line I, "one delle NOTIZIE."
+;	
+;	lang      S, "?"
+;	
 ;	db "@"
 	
-.menuQuitDesc
-	lang      J, "ニュース<WO>みるのを"
-	lang_line J, "やめます"
-	
-	lang      E, "Finish reading"
-	lang_line E, "the NEWS."
-	
-	lang      D, "Lesen der NACH-"
-	lang_line D, "RICHTEN beenden."
-	
-	lang      F, "Arrêter de lire"
-	lang_line F, "les INFOS."
-	
-	lang      I, "Stop lettura"
-	lang_line I, "NOTIZIE."
-	
-	lang      S, "?"
-	
-	db "@"
+;.menuTrainerRankingsDesc
+;	lang      J, "３つ<NO>テーマで"
+;	lang_line J, "ランキング<WO>します！"
+;	
+;	lang      E, "Triple-theme"
+;	lang_line E, "<TRAINER> ranking!"
+;	
+;	lang      D, "Dreifache Trainer-"
+;	lang_line D, "Bestenliste!"
+;	
+;	lang      F, "Classement des"
+;	lang_line F, "dresseurs!"
+;	
+;	lang      I, "Classifiche allen-"
+;	lang_line I, "atore a tema."
+;	
+;	lang      S, "?"
+;	
+;	db "@"
+;.menuMinigameDesc
+;	minigame_desc
+;	db "@"
+;
+;IF DEF(NUM_MINIGAMES)
+;DEF loopindex = 2
+;REPT NUM_MINIGAMES-1
+;.menuMinigame{d:loopindex}Desc
+;	minigame_desc_{d:loopindex}
+;	db "@"
+;ENDR
+;ENDC
+;	
+;.menuQuitDesc
+;	lang      J, "ニュース<WO>みるのを"
+;	lang_line J, "やめます"
+;	
+;	lang      E, "Finish reading"
+;	lang_line E, "the NEWS."
+;	
+;	lang      D, "Lesen der NACH-"
+;	lang_line D, "RICHTEN beenden."
+;	
+;	lang      F, "Arrêter de lire"
+;	lang_line F, "les INFOS."
+;	
+;	lang      I, "Stop lettura"
+;	lang_line I, "NOTIZIE."
+;	
+;	lang      S, "?"
+;	
+;	db "@"
 
 
 INCLUDE "{MINIGAME_FILE}"

@@ -5,115 +5,23 @@ DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 1
 DEF wQuizQuestionNo EQUS "wNewsScratch2"
 DEF wQuizScore      EQUS "wNewsScratch3"
 
+MACRO minigame_abuttonhook
+	;nsc_drawbox 0,  3, 20, 10, NEWSBORDER_INVERTED, 3
+	;nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY,    4
+	nsc_clear 1, 4, 18, 8
+	nsc_clear 1, 13, 18, 4
+	nsc_drawtrainer 6, 4, BLAINE, 7
+ENDM
+
 MACRO minigame_start
+	; fake page transition
+	nsc_playmusic MUSIC_GYM
 	nsc_set wQuizQuestionNo, 0
 	nsc_set wQuizScore, 0
-	nsc_page MinigameStart
-ENDM
-
-MACRO minigame_name
-	lang J, "ポケモンクイズ！"
-	lang E, "#MON QUIZ!"
-	lang D, "?"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
-ENDM
-
-MACRO minigame_desc
-	lang      J, "これまで<NO>ぼうけん<WO>どこまで"
-	lang_line J, "おもいだせるか　テストします！"
 	
-	lang      E, "Test your memory"
-	lang_line E, "of your adventure!"
-	
-	lang      D, "Erinnerst du dich"
-	lang_line D, "an dein Abenteuer?"
-	
-	lang      F, "Testez vos souve-"
-	lang_line F, "nirs d'aventures!"
-	
-	lang      I, "Quiz dei ricordi"
-	lang_line I, "sull'avventura!"
-	
-	lang S, "?"
-ENDM
-
-ELSE
-MinigameStart::
-	news_screen PokemonQuizIntro, MUSIC_GYM
-
-	news_def_pals
-
-	news_def_boxes
-	news_box  0,  1, 20, 12, NEWSBORDER_INVERTED, 3
-	news_box  0, 12, 20,  6, NEWSBORDER_GLOWY,    4
-	
-	
-	news_def_strings
-	news_string 0, 0, "@" ; ......why?
-	
-	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
-	
-	news_buttonscript .aButton ; script pointer a button
-	news_buttonscript .aButton ; script pointer b button
-	news_buttonscript          ; script pointer select button
-	news_buttonscript .aButton ; script pointer start button
-	news_buttonscript          ; script pointer right button
-	news_buttonscript          ; script pointer left button
-	news_buttonscript          ; script pointer up button
-	news_buttonscript          ; script pointer down button
-	
-	news_def_menuitems
-	news_menudescription 1, 14, 18, 4
-	news_norankingstable
-	
-	news_menuitem_names   .menuItemText ; pointers to text for each menu item
-	news_menuitem_scripts .menuItemScript ; pointers to script for each menu item
-	news_menuitem_descs   .menuItemDescription ; pointers to description text for each menu item
-	
-.aButton
-	nsc_playsound SFX_READ_TEXT
-	nsc_clear 1, 13, 18, 4
-	nsc_drawtrainer 6, 2, BLAINE, 7
-	nsc_select
+	nsc_textbox 1, 14, .blaineIntroText
 	nsc_waitbutton
 	nsc_page PokemonQuiz
-	nsc_ret
-	
-.menuItemText
-	lang J, "ポケモンクイズ！"
-	lang E, "#MON QUIZ!"
-	lang D, "?"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
-	db "@"
-	
-.menuItemScript
-	nsc_textbox 1, 14, .blaineIntroText
-	nsc_ret
-
-.menuItemDescription
-	; TODO: this is the wrong text. i dont think the left text was preserved....
-	lang      J, "クイズ　しゅうりょう"
-	lang_line J, "ひょうか<WO>うけて　ください！"
-
-	lang      E, "Take the QUIZ to"
-	lang_line E, "receive a rating!"
-	
-	lang      D, "Die Bewertung"
-	lang_line D, "deiner Antworten!"
-	
-	lang      F, "Faites le quiz et"
-	lang_line F, "recevez un Avis!"
-	
-	lang      I, "Fai il quiz per"
-	lang_line I, "una valutazione!"
-	
-	lang S, "?"
-	
-	db "@"
 
 .blaineIntroText
 	; Japanese
@@ -166,18 +74,39 @@ MinigameStart::
 
 	done
 
+ENDM
 
+MACRO minigame_name
+	lang J, "ポケモンクイズ！"
+	lang E, "#MON QUIZ!"
+	lang D, "?"
+	lang F, "?"
+	lang I, "?"
+	lang S, "?"
+ENDM
 
+MACRO minigame_desc
+	lang      J, "これまで<NO>ぼうけん<WO>どこまで"
+	lang_line J, "おもいだせるか　テストします！"
+	
+	lang      E, "Test your memory"
+	lang_line E, "of your adventure!"
+	
+	lang      D, "Erinnerst du dich"
+	lang_line D, "an dein Abenteuer?"
+	
+	lang      F, "Testez vos souve-"
+	lang_line F, "nirs d'aventures!"
+	
+	lang      I, "Quiz dei ricordi"
+	lang_line I, "sull'avventura!"
+	
+	lang S, "?"
+ENDM
 
-
-
-
-
-
-
-
-
-
+ELSE
+MinigameStart::
+	
 	news_screen PokemonQuiz, MUSIC_GAME_CORNER
 
 	news_def_pals
@@ -201,7 +130,7 @@ MinigameStart::
 		.question10Text
 	nts_end
 	
-	news_menu  2, 16, 4, 1, 4, 2, -1, $00, $00, $00, $00, $04
+	news_menu  2, 16, 4, 1, 4, 2, -1, $00, $00, $00, 0, $04
 	
 	news_buttonscript .aButton ; script pointer a button
 	news_buttonscript .bButton ; script pointer b button
@@ -600,14 +529,14 @@ ENDM
 	news_def_pals
 
 	news_def_boxes
-	news_box  0,  1, 20, 12, NEWSBORDER_INVERTED, 3
+	news_box  0,  1, 20, 12, {NEWS_MAIN_BORDER}
 	news_box  0, 12, 20,  6, NEWSBORDER_GLOWY,    4
 	
 	
 	news_def_strings
 	news_string 0, 0, "@" ; ......why?
 	
-	news_menu  3, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
+	news_menu  3, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
 	
 	news_buttonscript .aButton ; script pointer a button
 	news_buttonscript .aButton ; script pointer b button

@@ -1404,6 +1404,7 @@ wEZChatCategoryMode::
 wTempOddEggNickname:: ds MON_NAME_LENGTH
 NEXTU
 wcd2b:: ds 1
+wNewsMenuFlags::
 wcd2c:: ds 1
 wcd2d:: ds 1
 wNewsMenuOption::

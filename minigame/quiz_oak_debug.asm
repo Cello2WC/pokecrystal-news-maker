@@ -1,11 +1,3 @@
-; this file does NOT match the version seen in the "first issue"
-; stored in the english ROM!
-; it has been tweaked to more closely
-; match magazine scans featuring the first issue.
-; for a version matching the ROM, see minigame/oak_quiz_debug.asm
-
-
-
 IF DEF(_MINIGAME_H)
 
 DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 0
@@ -13,57 +5,18 @@ DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 0
 DEF wQuizQuestionNo EQUS "wNewsScratch2"
 DEF wQuizScore      EQUS "wNewsScratch3"
 
-
-MACRO minigame_abuttonhook
-	nsc_clear 1, 4, 18, 8
-	nsc_clear 1, 13, 18, 4
-	nsc_drawtrainer 6, 4, POKEMON_PROF, 7
-ENDM
-
 MACRO minigame_start
-	; fake page transition
-	nsc_playmusic MUSIC_POKEMON_TALK
 	nsc_set wQuizQuestionNo, 0
 	nsc_set wQuizScore, 0
-	
-	nsc_textbox 1, 14, .oakIntroText
-	nsc_waitbutton
-	nsc_page PokemonQuiz
-
-.oakIntroText
-	; NOTE: record only exists for one box of this text.......
-	; Japanese
-	lang_text J, "オーキド『こ<NO>コーナーは"
-	lang_line J, "わし<GA>あんない　しよう！"
-	lang_para J, "<……> <……>"
-	lang_line J, "<……> <……>"
-	lang_para J, "２エラー"
-	
-	; English
-	lang_text E, "OAK: I'll guide you"
-	lang_line E, "through this part!"
-	lang_para E, "<……> <……>"
-	lang_line E, "<……> <……>"
-	lang_para E, "２エラー"
-	
-	lang_text D, "?"
-	
-	lang_text F, "?"
-	
-	lang_text I, "?"
-	
-	lang S,      "?"
-
-	done
-
+	nsc_page MinigameStart
 ENDM
 
 MACRO minigame_name
-	lang J, "ポケモンクイズ！"
-	lang E, "#MON QUIZ!"
-	lang D, "?"
-	lang F, "?"
-	lang I, "?"
+	lang J, "ポケモンカルト"
+	lang E, "#MANIA QUIZ"
+	lang D, "#MANIAC-QUIZ"
+	lang F, "QUIZ #MANIA"
+	lang I, "QUIZ #FANATICO"
 	lang S, "?"
 ENDM
 
@@ -111,7 +64,7 @@ MinigameStart::
 		.question10Text
 	nts_end
 	
-	news_menu  2, 16, 4, 1, 4, 2, -1, $00, $00, $00, 0, $04
+	news_menu  2, 16, 4, 1, 4, 2, -1, $00, $00, $00, $00, $04
 	
 	news_buttonscript .aButton ; script pointer a button
 	news_buttonscript .bButton ; script pointer b button
@@ -629,7 +582,6 @@ ENDM
 	news_def_pals
 
 	news_def_boxes
-	news_box  0,  1, 20, 12, {NEWS_MAIN_BORDER}
 	news_box 0, 12, 20, 6, NEWSBORDER_GLOWY, 4
 	
 	
@@ -637,9 +589,9 @@ ENDM
 	news_string 0, 0, "@" ; ......why?
 	
 IF DEF(_LANG_J)
-	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
+	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
 ELSE
-	news_menu  2, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
+	news_menu  2, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
 ENDC
 	
 	news_buttonscript .aButton ; script pointer a button

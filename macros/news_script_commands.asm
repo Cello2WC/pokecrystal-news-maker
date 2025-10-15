@@ -44,7 +44,7 @@ DEF NEWSBORDER_INVERTED EQU 5
 	const nsc_drawbox_command	; 05
 MACRO nsc_drawbox
 	db nsc_drawbox_command
-	db \1, \2, \3, \4, \5
+	db \1, \2, \3, \4, \5, \6
 ENDM
 
 	const nsc_printstring_command	; 06
@@ -158,19 +158,16 @@ MACRO nsc_left
 	db nsc_left_command
 ENDM
 
-	; 12 and 13 move the cursor, but im not entirely sure how
-	const nsc_12_command	; 12
-MACRO nsc_12
-	db nsc_12_command
-	; TODO
+	; 12 and 13 scroll the _entire menu_ to the right and left, respectively
+	const nsc_menuright_command	; 12
+MACRO nsc_menuright
+	db nsc_menuright_command
 ENDM
 
-	const nsc_13_command	; 13
-MACRO nsc_13
-	db nsc_13_command
-	; TODO
+	const nsc_menuleft_command	; 13
+MACRO nsc_menuleft
+	db nsc_menuleft_command
 ENDM
-
 		; x, y, yesptr, noptr
 	const nsc_yesno_command	; 14
 MACRO nsc_yesno

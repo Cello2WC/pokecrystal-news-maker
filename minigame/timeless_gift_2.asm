@@ -9,10 +9,73 @@ DEF wChiekosRoll    EQUS "wNewsScratch1"
 DEF wQuizQuestionNo EQUS "wNewsScratch2"
 DEF wQuizScore      EQUS "wNewsScratch3"
 
+MACRO minigame_abuttonhook
+	nsc_clear 1, 4, 18, 8
+	nsc_clear 1, 13, 18, 4
+	nsc_drawtrainer 6, 4, COOLTRAINERF, 7
+ENDM
+
 MACRO minigame_start
+	; fake page transition
+	nsc_playmusic MUSIC_AZALEA_TOWN
 	nsc_set wQuizQuestionNo, 0
 	nsc_set wQuizScore, 0
-	nsc_page MinigameStart
+	
+	; dumb dumb dumb dumb stupid dumb
+	; certain news text script commands arent processed unless
+	; you currently have the final menu option highlighted,
+	; or the menu option you have highlighted is < wNumListedPlayers
+	nsc_set wNumListedPlayers, 16
+	
+	nsc_textbox 1, 14, .maizieIntroText
+	nsc_yesno 13, 7, .maiziedone, .maiziequit
+.maiziequit
+	; quit text potentially goes here
+	nsc_playsound SFX_MENU
+	nsc_page NewsRoot
+	nsc_ret
+.maiziedone
+	
+.retry
+	; player's roll
+	nsc_delay 1 ; wait for new RNG rolls
+	nsc_ramcopy hRandomAdd, wPlayersRoll, 1
+	nsc_flagop wPlayersRoll, FLAG_CLEAR, 3
+	nsc_flagop wPlayersRoll, FLAG_CLEAR, 4
+	nsc_flagop wPlayersRoll, FLAG_CLEAR, 5
+	nsc_flagop wPlayersRoll, FLAG_CLEAR, 6
+	nsc_flagop wPlayersRoll, FLAG_CLEAR, 7 ; wPlayersRoll &= %00000111
+	nsc_compare wPlayersRoll, .continue, .retry, .retry, 1, 6 ; retry if generated a 7 or 8
+.continue
+	nsc_add wPlayersRoll, 1
+	
+	
+	;nsc_waitbutton
+	nsc_page LuckTest
+	
+.maizieIntroText
+	; TODO: PLACEHOLDER TEXT
+	lang_text J, "チエコ『かくかくしかじか 　ヒワダ"
+	lang_line J, "タウン　かくかくしかじか　ガンテツ"
+	lang_cont J, "かくかくしかじか　タイムトラベル"
+	
+	lang_text E, "MAIZIE: something"
+	lang_line E, "something AZALEA"
+	lang_para E, "something some-"
+	lang_line E, "thing KURT's"
+	lang_cont E, "granddaughter"
+	lang_para E, "something some-"
+	lang_line E, "thing time travel"
+	
+	lang_text D, "?"
+	
+	lang_text F, "?"
+	
+	lang_text I, "?"
+	
+	lang_text S, "?"
+
+	done
 ENDM
 
 MACRO minigame_name
@@ -40,135 +103,18 @@ ENDM
 
 ELSE
 MinigameStart::
-	news_screen PokemonQuizIntro, MUSIC_AZALEA_TOWN;MUSIC_DANCING_HALL;MUSIC_SAGE_ENCOUNTER
 
-	news_def_pals
-
-	news_def_boxes
-	;news_box 0,  1, 20, 14, NEWSBORDER_BLOCKY, 4
-	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
-	
-	
-	news_def_strings
-	news_string 0, 0, "@" ; ......why?
-	
-	news_menu  3, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
-	;news_menu  1, 10, 1, 1, 0, 0, $03, $00, $00, $00, $02, $01
-	
-	news_buttonscript .aButton ; script pointer a button
-	news_buttonscript .aButton ; script pointer b button
-	news_buttonscript          ; script pointer select button
-	news_buttonscript .aButton ; script pointer start button
-	news_buttonscript          ; script pointer right button
-	news_buttonscript          ; script pointer left button
-	news_buttonscript          ; script pointer up button
-	news_buttonscript          ; script pointer down button
-	
-	news_def_menuitems
-	news_menudescription 1, 14, 18, 4
-	news_norankingstable
-	
-	news_menuitem_names   .menuItemText
-	news_menuitem_scripts .menuItemScript
-	news_menuitem_descs   .menuItemDescription
-	
-.aButton
-	nsc_playsound SFX_READ_TEXT
-	nsc_clear 1, 13, 18, 4
-	nsc_drawtrainer 6, 2, COOLTRAINERF, 7
-	nsc_select
-	
-	
-		
-.retry
-	; player's roll
-	nsc_delay 1 ; wait for new RNG rolls
-	nsc_ramcopy hRandomAdd, wPlayersRoll, 1
-	nsc_flagop wPlayersRoll, FLAG_CLEAR, 3
-	nsc_flagop wPlayersRoll, FLAG_CLEAR, 4
-	nsc_flagop wPlayersRoll, FLAG_CLEAR, 5
-	nsc_flagop wPlayersRoll, FLAG_CLEAR, 6
-	nsc_flagop wPlayersRoll, FLAG_CLEAR, 7 ; wPlayersRoll &= %00000111
-	nsc_compare wPlayersRoll, .continue, .retry, .retry, 1, 6 ; retry if generated a 7 or 8
-.continue
-	nsc_add wPlayersRoll, 1
-	
-	
-	
-	;nsc_waitbutton
-	nsc_page LuckTest
-	nsc_ret
-	
-.menuItemText
-	minigame_name
-	db "@"
-	
-.menuItemScript
-	nsc_textbox 1, 14, .maizieIntroText
-	nsc_yesno 13, 7, .done, .quit
-.done
-	nsc_ret
-.quit
-	; quit text potentially goes here
-	nsc_playsound SFX_MENU
-	nsc_page NewsRoot
-	nsc_ret
-
-.menuItemDescription
-	lang      J, "?"
-	
-	lang      E, "?"
-	
-	lang      D, "?"
-	
-	lang      F, "?"
-	
-	lang      I, "?"
-	
-	lang      S, "?"
-	
-	db "@"
-
-.maizieIntroText
-	; TODO: PLACEHOLDER TEXT
-	lang_text J, "チエコ『かくかくしかじか 　ヒワダ"
-	lang_line J, "タウン　かくかくしかじか　ガンテツ"
-	lang_cont J, "かくかくしかじか　タイムトラベル"
-	
-	lang_text E, "MAIZIE: something"
-	lang_line E, "something AZALEA"
-	lang_para E, "something some-"
-	lang_line E, "thing KURT's"
-	lang_cont E, "granddaughter"
-	lang_para E, "something some-"
-	lang_line E, "thing time travel"
-	
-	lang_text D, "?"
-	
-	lang_text F, "?"
-	
-	lang_text I, "?"
-	
-	lang_text S, "?"
-
-	done
-
-
-
-
-
-
-
-
-	news_screen LuckTest, MUSIC_AZALEA_TOWN
+	news_screen LuckTest, MUSIC_GAME_CORNER
 	news_def_pals
 	news_def_boxes
+	; only required because maizie's sprite shows up
+	news_box 0,  1, 20, 12, {NEWS_MAIN_BORDER}
 ;	news_box 0,  1, 20, 14, NEWSBORDER_BLOCKY, 4
 	;news_box 0, 14, 20,  4, NEWSBORDER_GLOWY,  4
 	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
 ;	news_box 4,  6, 12,  6, NEWSBORDER_BLOCKY, 5
 	news_def_strings
-	news_string 1, 2, ""
+	news_string 1, 3, ""
 	
 	; TODO: PLACEHOLDER TEXT
 	
@@ -204,7 +150,7 @@ MinigameStart::
 	
 	
 	
-	news_menu 2, 16,   2, 1,   8, 0,   -1, $00, $00, $00, $02, $01
+	news_menu 2, 14,   2, 1,   8, 0,   -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
 	
 	news_buttonscript .aButton    ; script pointer a button
 	news_buttonscript .bButton    ; script pointer b button
@@ -234,15 +180,15 @@ MinigameStart::
 	
 	
 	
-	nsc_clear 1, 15, 18, 2
+	nsc_clear 1, 13, 18, 4
 	;nsc_clear 1,  2, 18, 12
 
 	nsc_delay 20
-	nsc_printstring 1, 8, .textDot
+	nsc_printstring 1, 9, .textDot
 	nsc_delay 20
-	nsc_printstring 2, 8, .textDot
+	nsc_printstring 2, 9, .textDot
 	nsc_delay 20
-	nsc_printstring 3, 8, .textDot
+	nsc_printstring 3, 9, .textDot
 	
 	nsc_delay 60
 	
@@ -258,7 +204,7 @@ MinigameStart::
 	nsc_compare wChiekosRoll, .continue2b, .retry2b, .retry2b, 1, 6 ; retry if generated a 7 or 8
 .continue2b
 	nsc_add wChiekosRoll, 1
-	nsc_printstring 1, 10, .textMaizieRolled
+	nsc_printstring 1, 11, .textMaizieRolled
 	
 	
 	;nsc_printstring 1, 2, .textMaizieRolled
@@ -267,7 +213,7 @@ MinigameStart::
 ;	nsc_clear 1, 13, 18,  4
 	nsc_clear 1,  2, 18, 10
 	;nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
-	nsc_drawtrainer 6, 2, COOLTRAINERF, 7
+	nsc_drawtrainer 6, 3, COOLTRAINERF, 7
 	
 	
 	
@@ -437,7 +383,7 @@ MinigameStart::
 	lang_text S, "?"
 	done
 
-	news_screen PokemonQuiz, MUSIC_TIN_TOWER
+	news_screen PokemonQuiz, MUSIC_GAME_CORNER
 
 	news_def_pals
 
@@ -460,7 +406,7 @@ MinigameStart::
 		.question8Text
 	nts_end
 	
-	news_menu  2, 16, 3, 1, 5, 2, -1, $00, $00, $00, $00, $04
+	news_menu  2, 16, 3, 1, 5, 2, -1, 0, 0, 0, 0, $04
 	
 	news_buttonscript .aButton ; script pointer a button
 	news_buttonscript .bButton ; script pointer b button
@@ -721,7 +667,7 @@ ENDM
 	news_def_pals
 
 	news_def_boxes
-;	news_box 0,  1, 20, 14, NEWSBORDER_BLOCKY, 4
+	news_box  0,  1, 20, 12, {NEWS_MAIN_BORDER}
 	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
 	
 	
@@ -729,9 +675,9 @@ ENDM
 	news_string 0, 0, "@" ; ......why?
 	
 IF DEF(_LANG_J)
-	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
+	news_menu  4, 10, 1, 1, 0, 0, -1, 0, 0, 0, SHOW_DESCRIPTIONS, $01
 ELSE
-	news_menu  3, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
+	news_menu  3, 10, 1, 1, 0, 0, -1, 0, 0, 0, SHOW_DESCRIPTIONS, $01
 ENDC
 	
 	news_buttonscript .aButton ; script pointer a button

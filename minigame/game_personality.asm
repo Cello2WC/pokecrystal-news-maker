@@ -5,96 +5,20 @@ DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 1
 DEF wPersonalityPage EQUS "wNewsScratch2"
 
 MACRO minigame_start
+
+	;nsc_playmusic MUSIC_SHOW_ME_AROUND
+	nsc_clear 1, 13, 18, 4
+	nsc_compare_newsvar sMinigameFlag, .noIntro, .doIntro, .noIntro, 1, 0
+.doIntro
+	nsc_textbox 1, 14, .gameIntroText
+	nsc_waitbutton
+.noIntro
 	nsc_set wPersonalityPage, 0
 	nsc_page MinigameStart
-ENDM
-
-MACRO minigame_name
-	lang J, "トレーナー　しんだん！"
-	lang E, "<TRAINER> CHECK!"
-	lang D, "?"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
-ENDM
-
-MACRO minigame_desc
-	lang      J, "?"
-	
-	lang      E, "?"
-	
-	lang      D, "?"
-	
-	lang      F, "?"
-	
-	lang      I, "?"
-	
-	lang      S, "?"
-ENDM
-
-ELSE
-MinigameStart::
-	news_screen PersonalityTestIntro, MUSIC_SHOW_ME_AROUND
-
-	news_def_pals
-
-	news_def_boxes
-	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
 	
 	
-	news_def_strings
-	news_string 0, 0, "@" ; ......why?
 	
-	news_menu  3, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
-	;news_menu  1, 10, 1, 1, 0, 0, $03, $00, $00, $00, $02, $01
 	
-	news_buttonscript .aButton ; script pointer a button
-	news_buttonscript .aButton ; script pointer b button
-	news_buttonscript          ; script pointer select button
-	news_buttonscript .aButton ; script pointer start button
-	news_buttonscript          ; script pointer right button
-	news_buttonscript          ; script pointer left button
-	news_buttonscript          ; script pointer up button
-	news_buttonscript          ; script pointer down button
-	
-	news_def_menuitems
-	news_menudescription 1, 14, 18, 4
-	news_norankingstable
-	
-	news_menuitem_names   .menuItemText
-	news_menuitem_scripts .menuItemScript
-	news_menuitem_descs   .menuItemDescription
-	
-.aButton
-	nsc_playsound SFX_READ_TEXT
-	nsc_clear 1, 13, 18, 4
-	nsc_select
-	nsc_waitbutton
-	nsc_page PersonalityTest
-	nsc_ret
-	
-.menuItemText
-	minigame_name
-	db "@"
-	
-.menuItemScript
-	nsc_textbox 1, 14, .gameIntroText
-	nsc_ret
-
-.menuItemDescription
-	lang      J, "?"
-	
-	lang      E, "?"
-	
-	lang      D, "?"
-	
-	lang      F, "?"
-	
-	lang      I, "?"
-	
-	lang      S, "?"
-	
-	db "@"
 
 .gameIntroText
 	lang_text J, "トレーナーしんだんを　はじめます！"
@@ -126,7 +50,34 @@ MinigameStart::
 	lang_text S, "?"
 
 	done
+	
+ENDM
 
+MACRO minigame_name
+	lang J, "トレーナー　しんだん！"
+	lang E, "<TRAINER> CHECK!"
+	lang D, "?"
+	lang F, "?"
+	lang I, "?"
+	lang S, "?"
+ENDM
+
+MACRO minigame_desc
+	lang      J, "?"
+	
+	lang      E, "?"
+	
+	lang      D, "?"
+	
+	lang      F, "?"
+	
+	lang      I, "?"
+	
+	lang      S, "?"
+ENDM
+
+ELSE
+MinigameStart::
 	news_screen PersonalityTest, MUSIC_SHOW_ME_AROUND
 	
 	news_def_pals
@@ -156,7 +107,7 @@ MinigameStart::
 	.page16
 	nts_end
 	
-	news_menu  2, 16, 3, 1, 5, 2, -1, $00, $00, $00, $00, $04
+	news_menu  2, 16, 3, 1, 5, 2, -1, $00, $00, $00, 0, $04
 	
 	news_buttonscript .aButton     ; script pointer a button
 	news_buttonscript .bButton     ; script pointer b button
@@ -591,8 +542,9 @@ ENDM
 	news_def_pals
 	
 	news_def_boxes
-	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
-	news_box 5,  1,  9,  9, NEWSBORDER_NONE,   7
+	news_box  0,  1, 20, 12, {NEWS_MAIN_BORDER}
+	news_box  0, 12, 20,  6, NEWSBORDER_GLOWY,    4
+	;news_box 5,  1,  9,  9, NEWSBORDER_NONE,   7
 	
 	news_def_strings
 	news_string 0, 0, "@"
@@ -606,7 +558,7 @@ ENDM
 ;	.result6, \
 ;	nts_end
 	
-	news_menu  6, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01
+	news_menu  6, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
 	
 	news_buttonscript .aButton ; script pointer a button
 	news_buttonscript .aButton ; script pointer b button
@@ -622,28 +574,14 @@ ENDM
 	news_norankingstable
 	
 	news_menuitem_names   .menuItemText
-	news_menuitem_scripts .menuItemScript
+	news_menuitem_scripts .result1done;.menuItemScript
 	news_menuitem_descs   .menuItemDesc
 	
 .aButton
 	nsc_playsound SFX_READ_TEXT
 	nsc_clear 1, 13, 18, 4
-	nsc_select
-	nsc_waitbutton
-	nsc_page NewsRoot
-	nsc_ret
+	;nsc_select
 	
-.menuItemText
-	lang J, "？"
-	lang E, "RESULTS"
-	lang D, "?"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
-.menuItemDesc
-	db "@"
-	
-.menuItemScript
 	nsc_compare wPersonalityPage, .result1, .result2, .greater, 1, 1
 .greater
 	nsc_compare wPersonalityPage, .result3, .result4, .greater2, 1, 3
@@ -684,6 +622,8 @@ ENDC
 	nsc_ramcopy_newsvar wNewsScratch5, sMinigameFlag, 1
 .result\1noGift
 .result\1done
+	nsc_waitbutton
+	nsc_page NewsRoot
 	nsc_ret
 ENDM
 	
@@ -699,6 +639,31 @@ ENDM
 	
 	
 	
+	
+	
+	
+;	nsc_waitbutton
+;	nsc_page NewsRoot
+;	nsc_ret
+	
+.menuItemText
+	lang J, "？"
+	lang E, "RESULTS"
+	lang D, "?"
+	lang F, "?"
+	lang I, "?"
+	lang S, "?"
+.menuItemDesc
+	db "@"
+	
+;.menuItemScript
+;	nsc_compare wPersonalityPage, .result1, .result2, .greater, 1, 1
+;.greater
+;	nsc_compare wPersonalityPage, .result3, .result4, .greater2, 1, 3
+;.greater2
+;	nsc_compare wPersonalityPage, .result5, .result6, .result6, 1, 5
+	
+
 	
 	
 .result1textM

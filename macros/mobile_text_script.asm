@@ -15,7 +15,7 @@ ENDM
 	const nts_ranking_number_command ; 01
 	; \1: offset
 	; \2: Bits 0-4 = # bytes
-	;     Bit 7 = set if negative
+	;     Bit 7 = set if leading zeroes
 	; \3: Number of digits
 	; \4: Horizontal space
 	; \5: Separator place
@@ -170,7 +170,9 @@ ENDM
 	const nts_number_command ; 0f
 	; \1: Symbol
 	; \2: Bits 0-4 = # bytes
-	;     Bit 7 = set if negative
+	;     Bit 7 = set if leading zeroes 
+	;     ^ possibly bugged? not checked for high bit when 
+	;       used for length for copying to ram....
 	; \3: Number of digits
 	; \4: Horizontal space
 	; \5: Separator place

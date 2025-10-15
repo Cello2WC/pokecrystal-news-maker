@@ -1366,6 +1366,7 @@ wMobileMonMailPointer:: dw
 NEXTU
 ; more mobile data
 wcd20::
+wNewsMenuFlags::
 wEZChatSelection:: ds 1
 
 wcd21::

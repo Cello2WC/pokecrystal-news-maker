@@ -1,16 +1,78 @@
 IF DEF(_MINIGAME_H)
 
 DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 1
+DEF NUM_MINIGAMES EQU 2
 
 DEF wSolutionInvalid EQUS "wNewsScratch0"
 DEF wCurrentMove     EQUS "wNewsScratch1"
 DEF wCurrentPuzzle   EQUS "wNewsScratch2"
 
 MACRO minigame_start
+
+	nsc_clear 1, 13, 18, 4
+	nsc_compare_newsvar sMinigameFlag, .noIntro, .doIntro, .noIntro, 1, 0
+.doIntro
+	nsc_textbox 1, 14, .gameIntroText
+	nsc_waitbutton
+.noIntro
+
+
+
 	nsc_set wSolutionInvalid, 0
 	nsc_set wCurrentPuzzle, 0
 	;nsc_set wQuizScore, 0
 	nsc_page MinigameStart
+	
+	
+	
+.gameIntroText
+	lang_text J, "じゅうじボタンを　つかって"
+	lang_line J, "さんかく　の　カーソルを　うごかし"
+	lang_cont J, "がめんに　ばらばらに　ならんだ"
+	lang_cont J, "ポケモンの　なまえの　もじを"
+	lang_cont J, "ただしい　なまえの　じゅんばんで"
+	lang_cont J, "たどって　いきます"
+	lang_para J, "なまえが　とちゅうで　きれたり"
+	lang_line J, "おなじ　もじを　２ど　とおったり"
+	lang_cont J, "しないように　ちゅうい　してね！"
+	lang_para J, "スタートのマークの　×　から"
+	lang_line J, "ゴールのマークの　！　に　いけたら"
+	lang_cont J, "エーボタンを　おして"
+	lang_cont J, "こたえあわせを　して　みよう"
+	lang_cont J, "それでは　スタート！"
+	
+	; TODO: ROUGH TRANSLATION. PLEASE REWORK
+	lang_text E, "Use the D-PAD to" ; would they have called it a D-PAD?
+	lang_line E, "move the triangle"
+	lang_cont E, "cursor across the"
+	lang_cont E, "screen where parts"
+	lang_cont E, "of #MON names"
+	lang_cont E, "are scattered."
+	lang_para E, "Trace them in"
+	lang_line E, "order to spell the"
+	lang_cont E, "#MON's name."
+	lang_para E, "Don't go out of"
+	lang_line E, "order, or use the"
+	lang_cont E, "same tile twice!"
+	lang_para E, "If you can get"
+	lang_line E, "from the start"
+	lang_cont E, "mark [×] to the"
+	lang_cont E, "goal mark [!],"
+	lang_cont E, "press the A BUTTON"
+	lang_cont E, "to check your"
+	lang_cont E, "answer!"
+	lang_para E, "So, let's start!"
+	
+	lang_text D, "?"
+	
+	lang_text F, "?"
+	
+	lang_text I, "?"
+	
+	lang_text S, "?"
+	
+	done
+
 	
 ;	nsc_clear 1, 13, 18, 4
 ;	nsc_textbox 1, 14, PokemonMazeEasy.introText
@@ -78,127 +140,6 @@ ELSE
 
 
 MinigameStart::
-
-	news_screen MinigameIntro, MUSIC_SHOW_ME_AROUND
-	news_def_pals
-
-	news_def_boxes
-	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
-	
-	
-	news_def_strings
-	news_string 0, 0, "@" ; ......why?
-	
-	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, $02, $01 ; "","";
-	;dw .aButton - currentScreen
-	;news_menu  1, 10, 1, 1, 0, 0, $03, $00, $00, $00, $02, $01
-	
-	news_buttonscript .aButton ; script pointer a button
-	news_buttonscript .aButton ; script pointer b button
-	news_buttonscript          ; script pointer select button
-	news_buttonscript .aButton ; script pointer start button
-	news_buttonscript          ; script pointer right button
-	news_buttonscript          ; script pointer left button
-	news_buttonscript          ; script pointer up button
-	news_buttonscript          ; script pointer down button
-	
-	news_def_menuitems
-	news_menudescription 1, 14, 18, 4
-	news_norankingstable
-	
-	news_menuitem_names   .menuItemText
-	news_menuitem_scripts .menuItemScript
-	news_menuitem_descs   .menuItemDescription
-	
-.aButton
-	nsc_playsound SFX_READ_TEXT
-	nsc_clear 1, 13, 18, 4
-	nsc_select
-	nsc_waitbutton
-	nsc_page PokemonMazeEasy
-	nsc_ret
-	
-.menuItemText
-	lang J, "ポケモンもじめいろ"
-	lang E, "<PKMN> NAME MAZE"
-	lang D, "?"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
-	db "@"
-	
-.menuItemScript
-	nsc_textbox 1, 14, .gameIntroText
-	nsc_ret
-
-.menuItemDescription
-	lang      J, "?"
-	
-	lang      E, "?"
-	
-	lang      D, "?"
-	
-	lang      F, "?"
-	
-	lang      I, "?"
-	
-	lang      S, "?"
-	
-	db "@"
-
-.gameIntroText
-	lang_text J, "じゅうじボタンを　つかって"
-	lang_line J, "さんかく　の　カーソルを　うごかし"
-	lang_cont J, "がめんに　ばらばらに　ならんだ"
-	lang_cont J, "ポケモンの　なまえの　もじを"
-	lang_cont J, "ただしい　なまえの　じゅんばんで"
-	lang_cont J, "たどって　いきます"
-	lang_para J, "なまえが　とちゅうで　きれたり"
-	lang_line J, "おなじ　もじを　２ど　とおったり"
-	lang_cont J, "しないように　ちゅうい　してね！"
-	lang_para J, "スタートのマークの　×　から"
-	lang_line J, "ゴールのマークの　！　に　いけたら"
-	lang_cont J, "エーボタンを　おして"
-	lang_cont J, "こたえあわせを　して　みよう"
-	lang_cont J, "それでは　スタート！"
-	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "Use the D-PAD to" ; would they have called it a D-PAD?
-	lang_line E, "move the triangle"
-	lang_cont E, "cursor across the"
-	lang_cont E, "screen where parts"
-	lang_cont E, "of #MON names"
-	lang_cont E, "are scattered."
-	lang_para E, "Trace them in"
-	lang_line E, "order to spell the"
-	lang_cont E, "#MON's name."
-	lang_para E, "Don't go out of"
-	lang_line E, "order, or use the"
-	lang_cont E, "same tile twice!"
-	lang_para E, "If you can get"
-	lang_line E, "from the start"
-	lang_cont E, "mark [×] to the"
-	lang_cont E, "goal mark [!],"
-	lang_cont E, "press the A BUTTON"
-	lang_cont E, "to check your"
-	lang_cont E, "answer!"
-	lang_para E, "So, let's start!"
-	
-	lang_text D, "?"
-	
-	lang_text F, "?"
-	
-	lang_text I, "?"
-	
-	lang_text S, "?"
-	
-	done
-
-
-
-
-
-
 	news_screen PokemonMazeEasy, MUSIC_SHOW_ME_AROUND
 	news_def_pals
 
@@ -210,9 +151,9 @@ MinigameStart::
 	news_string 0, 0, "@" ; potentially label or instructions here
 	
 IF DEF(_LANG_J)
-	news_menu  6, 4, 4, 4, 2, 2, -1, $00, $00, $00, $02, $01
+	news_menu  6, 4, 4, 4, 2, 2, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
 ELSE
-	news_menu  3, 4, 4, 4, 4, 2, -1, $00, $00, $00, $02, $01
+	news_menu  3, 4, 4, 4, 4, 2, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
 ENDC
 	
 	news_buttonscript .checkEasy   ; script pointer a button
@@ -651,7 +592,7 @@ ENDR
 	news_def_strings
 	news_string 0, 0, "@" ; potentially label or instructions here
 	
-	news_menu  2, 2, 9, 5, 2, 2, -1, $00, $00, $00, $02, $01
+	news_menu  2, 2, 9, 5, 2, 2, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
 	
 	news_buttonscript .checkHard   ; script pointer a button
 	news_buttonscript Quit        ; script pointer b button

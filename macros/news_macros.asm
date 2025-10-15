@@ -161,7 +161,27 @@ MACRO news_string
 DEF {_NUM_STRINGS} += 1
 ENDM
 
-; x, y, colums, rows, colums width, row height, ?+x, ?, ?, ?, ?, ?
+DEF SHOW_ARROWS       EQU %0001
+DEF SHOW_DESCRIPTIONS EQU %0010
+; x, y, colums, rows, colums width, row height, width+x, ?, ?, max before scrolling, ?, ?
+	;  \1: menu X
+	;  \2: menu Y
+	;  \3: menu columns
+	;  \4: menu rows
+	;  \5: colums width
+	;  \6: row height
+	;  \7: width to clear when scrolling? 
+	;      (could probably default to (\3*\5) + \1)
+	;      (but seems to   default to -1      + \1 in non-scrolling menus)
+	;  \8: height for up arrow when FLAG_SHOW_ARROWS
+	;  \9: vertical offset from \8 for down arrow when FLAG_SHOW_ARROWS
+	; \10: cursor Y at which scrolling starts (default to \4 ?)
+	; \11: flags
+	;      bit 0 - FLAG_SHOW_ARROWS
+	;      bit 1 - FLAG_SHOW_DESCRIPTIONS
+	; \12: related to horizontal menu scrolling
+	
+	
 MACRO news_menu
 	db \1, \2, \3, \4, \5, \6, \7+\1, \8, \9, 
 SHIFT 9

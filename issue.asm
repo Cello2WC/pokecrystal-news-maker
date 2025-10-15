@@ -29,8 +29,8 @@ SECTION "Download Text", ROM0[$2000]
 
 	db PERSISTENT_MINIGAME_DATA_SIZE
 	
-	lang      J, "ディバグ！ {__UTC_YEAR__}とし"
-	lang_line J, "{__UTC_MONTH__}がつ {__UTC_DAY__}にち はっこう"
+	lang      J, "ディバグ　はっこう！"
+	lang_line J, "{d:__UTC_YEAR__}とし　{d:__UTC_MONTH__}がつ　{d:__UTC_DAY__}にち"
 	
 	lang      E, "Debug Issue"
 	lang_line E, __DATE__

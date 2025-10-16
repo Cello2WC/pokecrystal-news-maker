@@ -1134,8 +1134,8 @@ ENDC
 	lang_line E, "BRIGHTPOWDER."
 	
 	lang_para E, "Try using it to"
-	lang_line E, "ease your"
-	lang_cont E, "loneliness…"
+	lang_line E, "distract you from"
+	lang_cont E, "your loneliness…"
 	
 IF DEF(_LANG_E)
 	nts_start

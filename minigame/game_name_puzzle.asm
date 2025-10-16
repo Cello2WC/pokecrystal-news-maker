@@ -1262,7 +1262,6 @@ ENDC
 	; TODO: potentially the wrong string? plz check
 	lang_text J, "あおそらメールを　もらった！"
 	
-	lang_text E, ""
 IF DEF(_LANG_E)
 	nts_start
 	nts_player_name 0

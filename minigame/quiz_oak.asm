@@ -756,6 +756,7 @@ ENDC
 	
 	lang_text E, "It's not enough to"
 	lang_cont E, "memorize things."
+	
 	lang_para E, "A true #MANIAC"
 	lang_line E, "can memorize"
 	lang_cont E, "things they don't"
@@ -765,6 +766,7 @@ ENDC
 	lang_text D, "Es genügt nicht,"
 	lang_line D, "Dinge bloß aus-"
 	lang_cont D, "wendig zu lernen."
+	
 	lang_para D, "#MANIACs können"
 	lang_line D, "sich Dinge merken,"
 	lang_cont D, "ohne dafür lernen"
@@ -773,8 +775,10 @@ ENDC
 	lang_text F, "Ce n'est pas assez"
 	lang_line F, "de mémoriser des"
 	lang_cont F, "trucs."
+	
 	lang_para F, "Les #MANIACs"
 	lang_line F, "peuvent mémoriser"
+	
 	lang_para F, "des choses dont"
 	lang_line F, "ils n'ont même pas"
 	lang_cont F, "besoin de se"
@@ -782,8 +786,10 @@ ENDC
 	
 	lang_text I, "Imparare a memoria"
 	lang_line I, "non basta."
+	
 	lang_para I, "I #FANATICI"
 	lang_line I, "memorizzano cose"
+	
 	lang_para I, "che non hanno"
 	lang_line I, "nemmeno bisogno"
 	lang_cont I, "di ricordare!"
@@ -802,6 +808,7 @@ ENDC
 	lang_line E, "lots to do."
 	lang_cont E, "#MANIACs have a"
 	lang_cont E, "lot more passion!"
+	
 	lang_para E, "Be sure to look in"
 	lang_line E, "every nook and"
 	lang_cont E, "cranny!"
@@ -809,9 +816,11 @@ ENDC
 	lang_text D, "Du hast noch eine"
 	lang_line D, "Menge Arbeit vor"
 	lang_cont D, "dir."
+	
 	lang_para D, "Echte #MANIACs"
 	lang_line D, "sind da noch mehr"
 	lang_cont D, "bei der Sache!"
+	
 	lang_para D, "Sieh dich genau"
 	lang_line D, "in allen Ecken"
 	lang_cont D, "und Winkeln um!"
@@ -820,15 +829,18 @@ ENDC
 	lang_line F, "coup à faire."
 	lang_cont F, "Les #MANIAC ont"
 	lang_cont F, "plus de passion!"
+	
 	lang_para F, "Sois sûr de bien"
 	lang_line F, "vérifier tous les"
 	lang_cont F, "coins et recoins!"
 	
 	lang_text I, "Hai ancora"
 	lang_line I, "molto da fare."
+	
 	lang_para I, "I #FANATICI"
 	lang_line I, "hanno molta più"
 	lang_cont I, "passione!"
+	
 	lang_para I, "Assicurati di"
 	lang_line I, "guardare in ogni"
 	lang_cont I, "angolo!"
@@ -841,15 +853,18 @@ ENDC
 	lang_text J, "ふむ　がんば<TTE>おるな"
 	lang_line J, "それなり<NI>#マニア"
 	lang_cont J, "らしく　な<TTE>きておるよ！"
+	
 	lang_para J, "ともだちと　そうだん　しているかな？"
 	lang_line J, "ひとりで<WA>たいへん　だからな"
 	
 	lang_text E, "You're trying--I"
 	lang_line E, "can see that."
+	
 	lang_para E, "You're really"
 	lang_line E, "starting to earn"	
 	lang_cont E, "the title of" 
 	lang_cont E, "#MANIAC!"
+	
 	lang_para E, "Are you talking"
 	lang_line E, "with your friends?"
 	lang_para E, "It's tough to" 
@@ -857,21 +872,26 @@ ENDC
 	
 	lang_text D, "Du gibst dir Mühe."
 	lang_line D, ""
+	
 	lang_para D, "Du bist fast"
 	lang_line D, "schon sowas wie"
 	lang_cont D, "ein #MANIAC!"
+	
 	lang_para D, "Tauschst du dich"
 	lang_line D, "auch mit deinen"
 	lang_cont D, "Freunden aus?"
+	
 	lang_para D, "Zusammen ist man"
 	lang_line D, "immer stärker!"
 	
 	lang_text F, "Tu te donnes du"
 	lang_line F, "mal, ça se voit."
+	
 	lang_para F, "Tu commences à"
 	lang_line F, "vraiment mériter"
 	lang_cont F, "le titre de"
 	lang_cont F, "#MANIAC!"
+	
 	lang_para F, "Est-ce que tu"
 	lang_line F, "vois des gens?"
 	lang_para F, "Il faut se faire"
@@ -879,11 +899,14 @@ ENDC
 	
 	lang_text I, "Ti impegni, si"
 	lang_line I, "vede."
+	
 	lang_para I, "Stai tentando"
 	lang_line I, "di diventare un"
 	lang_cont I, "#FANATICO."
+	
 	lang_para I, "Stai parlando"
 	lang_line I, "coi tuoi amici?"
+	
 	lang_para I, "È dura farcela"
 	lang_line I, "da soli!"
 	
@@ -898,6 +921,7 @@ ENDC
 	
 	lang_text E, "Excellent! You"
 	lang_line E, "really like to"
+	
 	lang_para E, "poke around in"
 	lang_line E, "those nooks and"
 	lang_cont E, "crannies, don't"
@@ -905,17 +929,20 @@ ENDC
 	
 	lang_text D, "Exzellent! Du"
 	lang_line D, "beobachtest wirk-"
+	
 	lang_para D, "lich alles ganz"
 	lang_line D, "genau, nicht wahr?"
 	
 	lang_text F, "Super! Tu aimes"
 	lang_line F, "vraiment fouiller"
+	
 	lang_para F, "dans tous les"
 	lang_line F, "coins et recoins,"
 	lang_cont F, "hein?"
 	
 	lang_text I, "Eccellente! Ti"
 	lang_line I, "piace proprio"
+	
 	lang_para I, "ficcare il naso"
 	lang_line I, "dappertutto!"
 	
@@ -930,18 +957,22 @@ ENDC
 	
 	lang_text E, "Whoa! A perfect"
 	lang_line E, "#MANIAC! I've"
+	
 	lang_para E, "dreamt about this!"
 	lang_line E, "Congratulations!"
 	
 	lang_text D, "Wow! Du bist ein"
 	lang_line D, "wahrer #MANIAC,"
+	
 	lang_para D, "von dem man sonst"
 	lang_line D, "nur träumen kann!"
+	
 	lang_para D, "Perfekt! Herzli-"
 	lang_line D, "chen Glückwunsch!"
 	
 	lang_text F, "Whoa! Un parfait"
 	lang_line F, "#MANIAC!"
+	
 	lang_para F, "Mon rêve"
 	lang_line F, "devient réalité!"
 	lang_cont F, "Bravo! Bravo!"
@@ -949,6 +980,7 @@ ENDC
 	lang_text I, "Ma questo è un"
 	lang_line I, "#FANATICO"
 	lang_cont I, "perfetto!"
+	
 	lang_para I, "È sempre stato il"
 	lang_line I, "mio sogno."
 	lang_cont I, "Complimenti!"

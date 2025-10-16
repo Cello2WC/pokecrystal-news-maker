@@ -21,6 +21,7 @@ MACRO minigame_start
 	
 
 .gameIntroText
+	; Japanese
 	lang_text J, "トレーナーしんだんを　はじめます！"
 	lang_para J, "さいしょの　１かい　だけ　しんだんが"
 	lang_line J, "おわると　プレゼントが　もらえます！"
@@ -28,18 +29,21 @@ MACRO minigame_start
 	lang_line J, "ちがうので　きをつけてね！"
 	lang_para J, "それでは　スタート！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "Starting the"
-	lang_line E, "<TRAINER> CHECK!"
-	lang_para E, "Only your very"
-	lang_line E, "first check"
-	lang_cont E, "will earn you"
-	lang_cont E, "a gift!"
-	lang_para E, "You'll get a diff-"
-	lang_line E, "erent gift based"
-	lang_cont E, "on your answers,"
-	lang_cont E, "so be careful!"
-	lang_para E, "So, let's start!"
+	; English
+	lang_text E, "Starting your"
+	lang_line E, "<TRAINER> CHECKUP!"
+
+	lang_para E, "You'll only get"
+	lang_line E, "a gift after your"
+	lang_cont E, "first checkup!"
+	
+	lang_para E, "The gift differs"
+	lang_line E, "based on your"
+	lang_cont E, "results, so be"
+	lang_cont E, "careful!"
+	
+	lang_para E, "Alright, let's"
+	lang_line E, "get started!"
 	
 	lang_text D, "?"
 	
@@ -54,8 +58,10 @@ MACRO minigame_start
 ENDM
 
 MACRO minigame_name
+	; Japanese
 	lang J, "トレーナー　しんだん！"
-	lang E, "<TRAINER> CHECK!"
+	; English
+	lang E, "<TRAINER> CHECKUP!"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -211,12 +217,15 @@ ENDM
 	db "@"
 
 .page1
+	; Japanese
 	lang      J, "ポケモンを　つかまえたら"
 	lang_next J, "かならず　ニックネームを　つける"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang      E, "You always nick-"
-	lang_next E, "name your #MON."
+	; English
+	lang      E, "Whenever I catch"
+	lang_next E, "a #MON,"
+	lang_next E, "I always give it a"
+	lang_next E, "nickname."	
 	
 	lang      D, "?"
 	
@@ -229,15 +238,15 @@ ENDM
 	db "@"
 
 .page2
+	; Japanese
 	lang      J, "ポケモンの　なまえを　よぶときは"
 	lang_next J, "「ちゃん」を　つけて　よんでしまう"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang      E, "When calling your"
-	lang_next E, "#MON's name, you"
-	lang_next E, "always end up"
-	lang_next E, "adding “-chan”."
-	lang_next E, "(plz localize…)"
+	; English
+	lang      E, "When I call my"
+	lang_next E, "#MON's name,"
+	lang_next E, "I always end up"
+	lang_next E, "adding “darling”."
 	
 	lang      D, "?"
 	
@@ -250,17 +259,17 @@ ENDM
 	db "@"
 
 .page3
+	; Japanese
 	lang      J, "ポケモンに　おぼえさせる　わざは"
 	lang_next J, "ポケモンの　イメージに　あっていれば"
 	lang_next J, "つよく　なくても　きにしない"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang      E, "It's OK if your"
-	lang_next E, "#MON's moves"
-	lang_next E, "aren't strong, as"
-	lang_next E, "long as they fit"
-	lang_next E, "your #MON's"
-	lang_next E, "image."
+	; English
+	lang      E, "As long as a move"
+	lang_next E, "matches my"
+	lang_next E, "#MON's image,"
+	lang_next E, "I don't care if"
+	lang_next E, "it's not strong."
 	
 	lang      D, "?"
 	
@@ -273,14 +282,16 @@ ENDM
 	db "@"
 
 .page4
+	; Japanese
 	lang      J, "すきな　ポケモンは　よわくても"
 	lang_next J, "１０ひき　いじょう　あつめてしまう"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang      E, "Even if they're"
-	lang_next E, "weak, you'd catch"
-	lang_next E, "over 10 of your"
-	lang_next E, "favorite #MON."
+	; English
+	lang      E, "I'll collect more"
+	lang_next E, "than ten of my"
+	lang_next E, "favorite #MON,"
+	lang_next E, "even if they're"
+	lang_next E, "weak."
 	
 	lang      D, "?"
 	
@@ -293,14 +304,15 @@ ENDM
 	db "@"
 
 .page5
+	; Japanese
 	lang      J, "こうげきが　つよければ"
 	lang_next J, "ぼうぎょは　あまり　きにしない"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang      E, "If an attack is"
-	lang_next E, "strong, you don't"
-	lang_next E, "care too much"
-	lang_next E, "about DEFENSE."
+	; English
+	lang      E, "If a #MON has"
+	lang_next E, "high attack,"
+	lang_next E, "I don't care"
+	lang_next E, "much for defense."
 	
 	lang      D, "?"
 	
@@ -313,13 +325,15 @@ ENDM
 	db "@"
 
 .page6
+	; Japanese
 	lang      J, "じぶんより　よわい　あいてに"
 	lang_next J, "かつと　きもちがいい？"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang      E, "You enjoy beating"
-	lang_next E, "<TRAINER>S weaker"
-	lang_next E, "than yourself."
+	; English
+	lang      E, "Does it feel good"
+	lang_next E, "to win against an"
+	lang_next E, "opponent weaker"
+	lang_next E, "than me?"
 	
 	lang      D, "?"
 	
@@ -332,13 +346,16 @@ ENDM
 	db "@"
 
 .page7
+	; Japanese
 	lang      J, "だいじに　そだてた　ポケモンでも"
 	lang_next J, "たかい　おかねでなら　うってもいい"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang      E, "You'd sell any of"
-	lang_next E, "your #MON, for"
-	lang_next E, "the right price."
+	; English
+	lang      E, "I'd sell even the"
+	lang_next E, "#MON I've"
+	lang_next E, "raised with care"
+	lang_next E, "if the price was"
+	lang_next E, "high enough."		
 	
 	lang      D, "?"
 	
@@ -351,15 +368,16 @@ ENDM
 	db "@"
 
 .page8
+	; Japanese
 	lang      J, "わざマシンの　わざの　しゅるいを"
 	lang_next J, "なにも　みないで"
 	lang_next J, "３０こ　いじょう　いえる"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang      E, "You could name the"
-	lang_next E, "MOVES on at least"
-	lang_next E, "30 TMs, without"
-	lang_next E, "looking."
+	; English
+	lang      E, "I can name thirty"
+	lang_next E, "or more different"
+	lang_next E, "kinds of TM moves"	
+	lang_next E, "without looking."
 	
 	lang      D, "?"
 	
@@ -372,15 +390,16 @@ ENDM
 	db "@"
 
 .page9
+	; Japanese
 	lang      J, "てにいれた　わざマシンは"
 	lang_next J, "そのとき　もっている　ポケモンに"
 	lang_next J, "すぐに　つかってしまう"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang      E, "When you get a TM,"
-	lang_next E, "you teach it"
-	lang_next E, "to a #MON"
-	lang_next E, "immediately."
+	; English
+	lang      E, "When I get a TM,"
+	lang_next E, "I teach it to"
+	lang_next E, "my #MON right" 
+	lang_next E, "away!"
 	
 	lang      D, "?"
 	
@@ -393,13 +412,14 @@ ENDM
 	db "@"
 
 .page10
+	; Japanese
 	lang      J, "いつも　くすりは　おおめに"
 	lang_next J, "もちあるく　ように　している"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang      E, "You always carry"
-	lang_next E, "plenty of healing"
-	lang_next E, "items."
+	; English
+	lang      E, "I always try to"
+	lang_next E, "carry plenty of"
+	lang_next E, "medicine with me."
 	
 	lang      D, "?"
 	
@@ -412,13 +432,15 @@ ENDM
 	db "@"
 
 .page11
+	; Japanese
 	lang      J, "すきな　どうぐは　やっぱり"
 	lang_next J, "きせきのみ　より　きあいのハチマキ！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang      E, "You prefer the"
-	lang_next E, "FOCUS BAND over"
-	lang_next E, "the MIRACLEBERRY"
+	; English
+	lang      E, "When it comes to"
+	lang_next E, "items, I prefer"
+	lang_next E, "a FOCUS BAND over"
+	lang_next E, "a MIRACLEBERRY!"	
 	
 	lang      D, "?"
 	
@@ -431,16 +453,17 @@ ENDM
 	db "@"
 
 .page12
+	; Japanese
 	lang      J, "たいりょくが　あと　すこし　でも"
 	lang_next J, "つぎの　こうげきで　かてそうなら"
 	lang_next J, "かいふくは　しない"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang      E, "If you have just"
-	lang_next E, "enough HP to win"
-	lang_next E, "with your next"
-	lang_next E, "attack, you won't"
-	lang_next E, "heal."
+	; English
+	lang      E, "Even if my #MON"
+	lang_next E, "has low HP,"
+	lang_next E, "I won't heal if"
+	lang_next E, "I think I can win"
+	lang_next E, "next turn."
 	
 	lang      D, "?"
 	
@@ -453,13 +476,15 @@ ENDM
 	db "@"
 
 .page13
+	; Japanese
 	lang      J, "ともだちが　あまり　つかわないような"
 	lang_next J, "ポケモンを　つかうのが　だいすきだ"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang      E, "You prefer using"
-	lang_next E, "#MON that your"
-	lang_next E, "friends don't use."
+	; English
+	lang      E, "I love using"
+	lang_next E, "#MON that my"
+	lang_next E, "friends don't"
+	lang_next E, "often use."
 	
 	lang      D, "?"
 	
@@ -472,14 +497,15 @@ ENDM
 	db "@"
 
 .page14
+	; Japanese
 	lang      J, "しらない　まちに　ついたら　まずは"
 	lang_next J, "ポケモンセンターで　かいふくする"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang      E, "When first reach-"
-	lang_next E, "ing a new town,"
-	lang_next E, "you immediately"
-	lang_next E, "heal at the"
+	; English
+	lang      E, "When I arrive in"
+	lang_next E, "a new town, the"
+	lang_next E, "first thing I do"
+	lang_next E, "is heal at a"	
 	lang_next E, "#MON CENTER."
 	
 	lang      D, "?"
@@ -493,15 +519,16 @@ ENDM
 	db "@"
 
 .page15
+	; Japanese
 	lang      J, "どうくつの　なかを　たんけんするより"
 	lang_next J, "へやで　ゆっくり　さくせんを"
 	lang_next J, "ねる　ほうが　すきだ"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang      E, "You'd rather strat-"
-	lang_next E, "egize in your room"
-	lang_next E, "than explore"
-	lang_next E, "a cave."
+	; English
+	lang      E, "I'd rather plan"
+	lang_next E, "strategies in my"
+	lang_next E, "room than go out"
+	lang_next E, "exploring caves."
 	
 	lang      D, "?"
 	
@@ -514,12 +541,15 @@ ENDM
 	db "@"
 
 .page16
+	; Japanese
 	lang      J, "パソコンの　ボックスに"
 	lang_next J, "あずけてある　ポケモンは"
 	lang_next J, "きれいに　せいり　している"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang      E, "Your PC BOXES are"
+	; English
+	lang      E, "The #MON"
+	lang_next E, "stored in my PC"
+	lang_next E, "BOXES are all"
 	lang_next E, "neatly organized."
 	
 	lang      D, "?"
@@ -648,7 +678,8 @@ ENDM
 	
 .menuItemText
 	lang J, "？"
-	lang E, "RESULTS"
+	; Guess
+	lang E, "<PLAYER>'s RESULTS"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -668,30 +699,31 @@ ENDM
 	
 .result1textM
 .result1textF
+	; Japanese
 	lang_text J, "あなたの　トレーナータイプは"
 	lang_line J, "だいすきクラブ　ですわ！"
+	
 	lang_para J, "ポケモンちゃんを　おかしいほど"
 	lang_line J, "あいする　あなたの　おきもち"
 	lang_cont J, "しかと　つたわって　きましたわ！"
+	
 	lang_para J, "しょうぶに　まけても　かわいい"
 	lang_line J, "ポケモンちゃんを　もっている"
 	lang_cont J, "ほうが　かちよ！　わすれないでネ！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "Your <TRAINER> CLASS"
+	; English
+	lang_text E, "Your <TRAINER> type"
 	lang_line E, "is #FAN!"
-	lang_para E, "Your feelings for"
-	lang_line E, "you #MON, which"
-	lang_cont E, "you love to an"
-	lang_cont E, "absurd degree,"
-	lang_para E, "have come through"
-	lang_line E, "loud and clear!"
+	
+	lang_para E, "Your feelings of"
+	lang_line E, "adoration for your"
+	lang_cont E, "#MON are clear!"
+	
 	lang_para E, "Even if you lose"
-	lang_line E, "in battle, it's"
-	lang_cont E, "having a cute"
-	lang_cont E, "#MON that's the"
-	lang_cont E, "real victory!"
-	lang_cont E, "Don't forget that!"
+	lang_line E, "in battle, having"
+	lang_cont E, "cute #MON is"
+	lang_cont E, "still a win! Don't"
+	lang_cont E, "forget that!"
 	
 	lang_text D, "?"
 	
@@ -715,6 +747,14 @@ ENDM
 	lang_cont E, "for your #MON!"
 	lang_cont E, "Please use it!"
 	
+IF DEF(_LANG_E)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      E, " received"
+	lang_line E, "TM27."	
+	
 	lang_text D, "?"
 	
 	lang_text F, "?"
@@ -727,27 +767,31 @@ ENDM
 	
 .result2textM
 .result2textF
+	; Japanese
 	lang_text J, "アナタは　ロケットだんに"
 	lang_line J, "ふさわしい　タイプ　みたいよ！"
+	
 	lang_para J, "なんというか　アナタ　じぶんの"
 	lang_line J, "ことしか　かんがえて　ないのね！"
+	
 	lang_para J, "いつも　そんな　わがままだと"
 	lang_line J, "しゅっせ　できないんじゃないの？"
 	lang_para J, "まあ　しょうらい　きがむいたら"
 	lang_line J, "ロケットだんに　いらっしゃい！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
+	; English
 	lang_text E, "You seem like the"
 	lang_line E, "perfect type for"
 	lang_cont E, "TEAM <ROCKET>!"
-	lang_para E, "How do I put this…"
-	lang_para E, "You only really"
-	lang_line E, "care about"
-	lang_cont E, "yourself!"
-	lang_para E, "But if you're"
-	lang_line E, "always so selfish,"
-	lang_cont E, "will you ever"
-	lang_cont E, "really succeed…?"
+	
+	lang_para E, "I mean, you only"
+	lang_para E, "ever think about"
+	lang_line E, "yourself, huh?"
+	
+	lang_para E, "If you're always"
+	lang_line E, "so selfish, you "
+	lang_cont E, "won't get far!"
+	
 	lang_para E, "Well, if you ever"
 	lang_line E, "change your mind,"
 	lang_para E, "come join"
@@ -764,16 +808,27 @@ ENDM
 	done
 
 .result2text_gift
+	; Japanese
 	lang_text J, "ロケットだんとの　おちかづきの"
 	lang_line J, "きねんひんを　アナタにあげるわ！"
 	lang_cont J, "わざマシン２１　やつあたりよ！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "For your closeness"
-	lang_line E, "to TEAM <ROCKET>,"
-	lang_cont E, "Here's a gift!"
-	lang_para E, "It's TM21,"
-	lang_line E, "FRUSTRATION!"
+	; English
+	lang_text E, "Here's a gift to"
+	lang_line E, "celebrate your new"
+	lang_cont E, "friendship with"
+	lang_cont E, "TEAM <ROCKET>!"
+	
+	lang_para E, "TM21, FRUSTRATION."
+	lang_line E, "Just for you!"
+	
+IF DEF(_LANG_E)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      E, " received"
+	lang_line E, "TM21."	
 	
 	lang_text D, "?"
 	
@@ -787,24 +842,29 @@ ENDM
 	
 .result3textM
 .result3textF
+	; Japanese
 	lang_text J, "キミは　エリートトレーナー　タイプ！"
 	lang_line J, "ポケモンも　だいじに　しているし"
 	lang_cont J, "しょうぶ　にも　つよい　みたいだし"
+	
 	lang_para J, "なんでも　しっている　キミは"
 	lang_line J, "きっと　ともだちからも"
 	lang_cont J, "そんけい　されて　いるんだろうね！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
+	; English
 	lang_text E, "You're a"
 	lang_line E, "COOLTRAINER!"
-	lang_para E, "You treat your"
-	lang_line E, "#MON well, and"
-	lang_cont E, "you're strong in"
-	lang_cont E, "battle, too!"
-	lang_para E, "Knowing everything"
-	lang_line E, "like you do…"
-	lang_para E, "Your friends must"
-	lang_line E, "respect you a lot!"
+	
+	lang_para E, "You take great"
+	lang_line E, "care of your"
+	lang_cont E, "#MON, and you"
+	lang_cont E, "seem strong in"
+	lang_cont E, "battle too."
+	
+	lang_para E, "You know so much,"
+	lang_line E, "your friends must"
+	lang_cont E, "really look up to"
+	lang_cont E, "you!"
 	
 	lang_text D, "?"
 	
@@ -817,14 +877,24 @@ ENDM
 	done
 	
 .result3text_gift
+	; Japanese
 	lang_text J, "キミが　さらに　ゆうりに"
 	lang_line J, "しょうぶが　できる　ように"
 	lang_cont J, "ポイントアップを　あげるよ！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "To help you fight"
-	lang_line E, "even better,"
-	lang_cont E, "here's a PP UP!"
+	; English
+	lang_text E, "To help give you"
+	lang_line E, "an even bigger"
+	lang_line E, "edge in battle,"	
+	lang_cont E, "take this PP UP!"
+	
+IF DEF(_LANG_E)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      E, " received"
+	lang_line E, "PP UP."	
 	
 	lang_text D, "?"
 	
@@ -838,27 +908,31 @@ ENDM
 	
 .result4textM
 	; NOTE: speculative
+	; Japanese
 	lang_text J, "キミは　キャンプボーイ　タイプ！"
 	lang_line J, "おんなのこ　なら　ピクニックガール！";よ
+	
 	lang_para J, "ポケモンとの　ぼうけんを　とても"
 	lang_line J, "たのしめる　ひと　なのね！"
+	
 	lang_para J, "キミと　いっしょに　たびを　している"
 	lang_line J, "ポケモンも　きっと　すごく"
 	lang_cont J, "たのしいって　おもって　いるはずよ！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
+	; English
 	lang_text E, "You're a CAMPER!"
-	lang_line E, "If you were a girl,"
-	lang_cont E, "You'd be a"
-	lang_cont E, "PICNICKER!"
-	lang_para E, "You're the sort who"
-	lang_line E, "really likes to go"
-	lang_cont E, "on adventures with"
+	lang_line E, "If you were a"
+	lang_cont E, "girl, you'd be a"
+	lang_cont E, "PICKNICKER!"
+	
+	lang_para E, "You really enjoy"
+	lang_line E, "adventuring with"
 	lang_cont E, "your #MON!"
-	lang_para E, "Your #MON com-"
-	lang_line E, "panions must be"
-	lang_cont E, "having a blast,"
-	lang_cont E, "too!"
+	
+	lang_para E, "Your #MON must"
+	lang_line E, "have a great time"
+	lang_cont E, "traveling with"
+	lang_cont E, "you!"
 	
 	lang_text D, "?"
 	
@@ -870,27 +944,30 @@ ENDM
 	
 	done
 .result4textF
+	; Japanese
 	lang_text J, "キミは　ピクニックガール　タイプ！"
 	lang_line J, "おとこのこ　なら　キャンプボーイよ！"
+	
 	lang_para J, "ポケモンとの　ぼうけんを　とても"
 	lang_line J, "たのしめる　ひと　なのね！"
+	
 	lang_para J, "キミと　いっしょに　たびを　している"
 	lang_line J, "ポケモンも　きっと　すごく"
 	lang_cont J, "たのしいって　おもって　いるはずよ！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	
+	; English
 	lang_text E, "You're a PICNICKER!"
 	lang_line E, "If you were a boy,"
-	lang_cont E, "You'd be a CAMPER!"
-	lang_para E, "You're the sort who"
-	lang_line E, "really likes to go"
-	lang_cont E, "on adventures with"
+	lang_cont E, "you'd be a CAMPER!"
+	
+	lang_para E, "You really enjoy"
+	lang_line E, "adventuring with"
 	lang_cont E, "your #MON!"
-	lang_para E, "Your #MON com-"
-	lang_line E, "panions must be"
-	lang_cont E, "having a blast,"
-	lang_cont E, "too!"
+	
+	lang_para E, "Your #MON must"
+	lang_line E, "have a great time"
+	lang_cont E, "traveling with"
+	lang_cont E, "you!"
 	
 	lang_text D, "?"
 	
@@ -903,16 +980,27 @@ ENDM
 	done
 
 .result4text_gift
+	; Japanese
 	lang_text J, "それと　プレゼントを　あげちゃうわ！"
 	lang_line J, "ぎんのこな　よ！"
 	lang_cont J, "これからも　がんばってね！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
+	; English
 	lang_text E, "Also, here's"
-	lang_line E, "a gift!"
+	lang_line E, "a gift for you!"
+	
 	lang_para E, "It's SILVERPOWDER!"
-	lang_para E, "Keep up the"
-	lang_line E, "great work!"
+	lang_para E, "Keep up the great"
+	lang_line E, "work from here on"
+	lang_line E, "out!"
+	
+IF DEF(_LANG_E)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      E, " received"
+	lang_line E, "SILVERPOWDER."	
 	
 	lang_text D, "?"
 	
@@ -926,22 +1014,29 @@ ENDM
 	
 .result5textM
 .result5textF
+	; Japanese
 	lang_text J, "ウッス！"
 	lang_line J, "きみは　からておう　タイプッス！"
+	
 	lang_para J, "その　だいたんな　たたかいっぷり"
 	lang_line J, "すごく　かっこいいッス！"
+	
 	lang_para J, "これからも　がんがん"
 	lang_line J, "あせくさい　しょうぶを　して"
 	lang_cont J, "つよく　なって　くださいッス！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
+	; English
 	lang_text E, "Grunt!"
-	lang_line E, "You're a BLACKBELT!"
-	lang_para E, "Your fighting spir-"
-	lang_line E, "it is super cool!"
-	lang_para E, "Keep going strong,"
-	lang_line E, "fighting hard,"
-	lang_cont E, "and toughing up!"
+	lang_line E, "You're the"
+	lang_line E, "BLACKBELT type!"
+	
+	lang_para E, "Your bold fighting"
+	lang_line E, "style is seriously"
+	lang_cont E, "cool!"
+	
+	lang_para E, "Keep charging into"
+	lang_line E, "battle and get"
+	lang_cont E, "even stronger!"
 	
 	lang_text D, "?"
 	
@@ -954,13 +1049,22 @@ ENDM
 	done
 
 .result5text_gift
+	; Japanese
 	lang_text J, "わざマシン２０　あげるッス！"
 	lang_line J, "こらえるッス！　カンバレッス！"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "Take this TM20!"
-	lang_line E, "Hang in there!"
-	lang_cont E, "Do your best!"
+	; English
+	lang_text E, "You can have TM20!"
+	lang_text E, "It teaches ENDURE!"
+	lang_cont E, "Hang in there!"
+	
+IF DEF(_LANG_E)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      E, " received"
+	lang_line E, "TM20."	
 	
 	lang_text D, "?"
 	
@@ -974,10 +1078,13 @@ ENDM
 	
 .result6textM
 .result6textF
+	; Japanese
 	lang_text J, "…オマエの　トレーナータイプは…"
 	lang_line J, "はぐれけんきゅういん…"
+	
 	lang_para J, "オマエ　まわりから　いつも"
 	lang_line J, "ヘンな　やつって　いわれてるだろ…"
+	
 	lang_para J, "きにするな　いわせておけば　いいのさ"
 	lang_line J, "そして　なんと　いわれようが"
 	lang_cont J, "すきな　こに　ふられようが"
@@ -985,20 +1092,26 @@ ENDM
 	
 	; NOTE: this text works better with the JP name
 	;       of this class, "researcher gone astray"
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "Your <TRAINER> CLASS"
-	lang_line E, "is… the SCIENTIST…"
-	lang_para E, "People always say"
-	lang_line E, "you're a weirdo,"
-	lang_cont E, "right…?"
-	lang_para E, "Don't worry about"
-	lang_line E, "it. Let them talk."
-	lang_para E, "And no matter what"
-	lang_line E, "they say,"
-	lang_para E, "No matter if your"
+	; English
+	lang_text E, "Your <TRAINER> type"
+	lang_line E, "is SCIENTIST…"
+
+	lang_para E, "People probably"
+	lang_line E, "call you weird"
+	lang_cont E, "sometimes."
+
+	lang_para E, "Don't let it"
+	lang_line E, "bother you."
+	lang_cont E, "Let them talk."
+
+	lang_para E, "No matter what"
+	lang_line E, "anyone says—"
+
+	lang_cont E, "even if your"
 	lang_line E, "crush rejects you,"
-	lang_para E, "just stay true"
-	lang_line E, "to yourself…"
+
+	lang_para E, "stay true to"
+	lang_line E, "yourself…"
 	
 	lang_text D, "?"
 	
@@ -1011,16 +1124,26 @@ ENDM
 	done
 	
 .result6text_gift
+	; Japanese
 	lang_text J, "きれいな　ひかりのこなを　やるから"
 	lang_line J, "これでも　みて　オマエの　こどくを"
 	lang_cont J, "まぎらわせたら　いいさ…"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
+	; English
 	lang_text E, "Here, take this"
 	lang_line E, "BRIGHTPOWDER."
-	lang_para E, "Use it to distract"
-	lang_line E, "yourself from"
-	lang_cont E, "your loneliness…"
+	
+	lang_para E, "Try using it to"
+	lang_line E, "ease your"
+	lang_cont E, "loneliness…"
+	
+IF DEF(_LANG_E)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      E, " received"
+	lang_line E, "BRIGHTPOWDER."	
 	
 	lang_text D, "?"
 	

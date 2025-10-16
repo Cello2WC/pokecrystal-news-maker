@@ -59,7 +59,7 @@ ENDM
 
 MACRO minigame_name
 	; Japanese
-	lang J, "トレーナー　しんだん！"
+	lang J, "<TRAINER> しんだん！"
 	; English
 	lang E, "<TRAINER> CHECKUP!"
 	lang D, "?"
@@ -588,7 +588,7 @@ ENDM
 ;	.result6, \
 ;	nts_end
 	
-	news_menu  6, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
+	news_menu  2, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
 	
 	news_buttonscript .aButton ; script pointer a button
 	news_buttonscript .aButton ; script pointer b button
@@ -679,7 +679,12 @@ ENDM
 .menuItemText
 	lang J, "？"
 	; Guess
-	lang E, "<PLAYER>'s RESULTS"
+IF DEF(_LANG_E)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang E, "'s RESULTS"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -742,11 +747,12 @@ ENDM
 	lang_cont J, "ぴったり！　つかって　くださいな！"
 	
 	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "This TM27, RETURN"
+	lang_text E, "This TM27, RETURN,"
 	lang_line E, "will be perfect"
 	lang_cont E, "for your #MON!"
 	lang_cont E, "Please use it!"
 	
+	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
 	nts_player_name 0
@@ -785,8 +791,8 @@ ENDC
 	lang_cont E, "TEAM <ROCKET>!"
 	
 	lang_para E, "I mean, you only"
-	lang_para E, "ever think about"
-	lang_line E, "yourself, huh?"
+	lang_line E, "ever think about"
+	lang_cont E, "yourself, huh?"
 	
 	lang_para E, "If you're always"
 	lang_line E, "so selfish, you "
@@ -822,6 +828,7 @@ ENDC
 	lang_para E, "TM21, FRUSTRATION."
 	lang_line E, "Just for you!"
 	
+	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
 	nts_player_name 0
@@ -885,9 +892,10 @@ ENDC
 	; English
 	lang_text E, "To help give you"
 	lang_line E, "an even bigger"
-	lang_line E, "edge in battle,"	
+	lang_cont E, "edge in battle,"	
 	lang_cont E, "take this PP UP!"
 	
+	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
 	nts_player_name 0
@@ -990,10 +998,11 @@ ENDC
 	lang_line E, "a gift for you!"
 	
 	lang_para E, "It's SILVERPOWDER!"
-	lang_para E, "Keep up the great"
-	lang_line E, "work from here on"
-	lang_line E, "out!"
+	lang_line E, "Keep up the great"
+	lang_cont E, "work from here on"
+	lang_cont E, "out!"
 	
+	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
 	nts_player_name 0
@@ -1028,7 +1037,7 @@ ENDC
 	; English
 	lang_text E, "Grunt!"
 	lang_line E, "You're the"
-	lang_line E, "BLACKBELT type!"
+	lang_cont E, "BLACKBELT type!"
 	
 	lang_para E, "Your bold fighting"
 	lang_line E, "style is seriously"
@@ -1055,9 +1064,10 @@ ENDC
 	
 	; English
 	lang_text E, "You can have TM20!"
-	lang_text E, "It teaches ENDURE!"
+	lang_line E, "It teaches ENDURE!"
 	lang_cont E, "Hang in there!"
 	
+	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
 	nts_player_name 0
@@ -1105,9 +1115,9 @@ ENDC
 	lang_cont E, "Let them talk."
 
 	lang_para E, "No matter what"
-	lang_line E, "anyone says—"
+	lang_line E, "anyone says-"
 
-	lang_cont E, "even if your"
+	lang_para E, "even if your"
 	lang_line E, "crush rejects you,"
 
 	lang_para E, "stay true to"
@@ -1137,6 +1147,7 @@ ENDC
 	lang_line E, "distract you from"
 	lang_cont E, "your loneliness…"
 	
+	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
 	nts_player_name 0

@@ -138,6 +138,12 @@ MACRO nsc_flagop
 	db BANK(\1), (\2) | (\3)
 ENDM
 
+MACRO nsc_flagop_newsvar
+	db nsc_flagop_command
+	dw \1 + $A000
+	db 6, (\2) | (\3)
+ENDM
+
 	const nsc_up_command	; 0e
 MACRO nsc_up
 	db nsc_up_command

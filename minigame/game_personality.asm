@@ -643,7 +643,7 @@ MACRO quizresult
 	nsc_textbox 1, 14, .result\1text_gift
 	nsc_giveitem \4, .result\1gotGift, .result\1noGift
 .result\1gotGift
-IF STRCMP(STRSLICE("{\4}", 0, 3), "TM_") == 0
+IF STRCMP(STRSLICE("\4", 0, 3), "TM_") == 0
 	nsc_playsound SFX_GET_TM
 ELSE
 	nsc_playsound SFX_ITEM
@@ -745,6 +745,7 @@ ENDC
 	lang_text J, "あなたの　ポケモンちゃんには"
 	lang_line J, "この　わざマシン２７　おんがえしが"
 	lang_cont J, "ぴったり！　つかって　くださいな！"
+	lang_para J, "わざマシン０４を　もらった！"
 	
 	; TODO: ROUGH TRANSLATION. PLEASE REWORK
 	lang_text E, "This TM27, RETURN,"
@@ -818,6 +819,7 @@ ENDC
 	lang_text J, "ロケットだんとの　おちかづきの"
 	lang_line J, "きねんひんを　アナタにあげるわ！"
 	lang_cont J, "わざマシン２１　やつあたりよ！"
+	lang_para J, "わざマシン２１を　もらった！"
 	
 	; English
 	lang_text E, "Here's a gift to"
@@ -888,6 +890,7 @@ ENDC
 	lang_text J, "キミが　さらに　ゆうりに"
 	lang_line J, "しょうぶが　できる　ように"
 	lang_cont J, "ポイントアップを　あげるよ！"
+	lang_para J, "ポイントアップを　もらった！"
 	
 	; English
 	lang_text E, "To help give you"
@@ -992,6 +995,7 @@ ENDC
 	lang_text J, "それと　プレゼントを　あげちゃうわ！"
 	lang_line J, "ぎんのこな　よ！"
 	lang_cont J, "これからも　がんばってね！"
+	lang_para J, "ぎんのこなを　もらった！"
 	
 	; English
 	lang_text E, "Also, here's"
@@ -1061,6 +1065,7 @@ ENDC
 	; Japanese
 	lang_text J, "わざマシン２０　あげるッス！"
 	lang_line J, "こらえるッス！　カンバレッス！"
+	lang_para J, "わざマシン２０を　もらった！"
 	
 	; English
 	lang_text E, "You can have TM20!"
@@ -1138,6 +1143,7 @@ ENDC
 	lang_text J, "きれいな　ひかりのこなを　やるから"
 	lang_line J, "これでも　みて　オマエの　こどくを"
 	lang_cont J, "まぎらわせたら　いいさ…"
+	lang_para J, "ひかりのこなを　もらった！"
 	
 	; English
 	lang_text E, "Here, take this"

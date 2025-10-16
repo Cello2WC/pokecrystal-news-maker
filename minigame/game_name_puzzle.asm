@@ -229,9 +229,14 @@ ENDR
 	nsc_ret
 
 
+.wrongPath
+	nsc_playsound SFX_WRONG
+	nsc_clear 1, 13, 18, 4
+	nsc_textbox 1, 14, IncorrectText
+	nsc_waitbutton
 .resetPuzzle
-	nsc_white
-	nsc_playsound SFX_WARP_FROM
+	;nsc_white
+	;nsc_playsound SFX_WARP_FROM
 	nsc_set wSolutionInvalid, 0
 	nsc_page currentScreen
 	nsc_ret
@@ -562,14 +567,14 @@ ENDM
 	nsc_compare wNewsMenuCursorX, .nothing, .checkAnswer, .nothing, 2, 4, 4
 .checkAnswer
 	;nsc_playsound SFX_TRANSACTION	
-	nsc_compare wSolutionInvalid, .resetPuzzle, .pass, .resetPuzzle, 1, 0
+	nsc_compare wSolutionInvalid, .wrongPath, .pass, .wrongPath, 1, 0
 .pass
 	nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, CorrectText
 
 	nsc_playsound SFX_TRANSACTION
 	
-	nsc_drawbox 5, 3, 9, 9, {NEWS_MAIN_BORDER}
+	nsc_drawbox 5, 3, 9, 9, NEWSBORDER_STRIPED, 5;{NEWS_MAIN_BORDER}
 	
 	
 	nsc_add wCurrentPuzzle, 1
@@ -607,14 +612,9 @@ ENDM
 .puzzle5complete
 	nsc_drawmon 6, 4, PUZZLE5_MON,  $03, $07
 	nsc_waitbutton
-;	nsc_page currentScreen
-;	nsc_ret
-	
-;.puzzle5
 .gift
 	nsc_bit_newsvar sMinigameFlag, 0, .noGift, .giveGift
 .giveGift	
-	;nsc_give_item BLUESKYMAIL, 3, 
 	nsc_giveitem TM_ROLLOUT, .recordGift, .noGift
 .recordGift
 	nsc_clear 1, 13, 18, 4
@@ -816,10 +816,14 @@ ENDR
 	nsc_left
 	nsc_ret
 
-
+.wrongPath
+	nsc_playsound SFX_WRONG
+	nsc_clear 1, 13, 18, 4
+	nsc_textbox 1, 14, IncorrectText
+	nsc_waitbutton
 .resetPuzzle
-	nsc_white
-	nsc_playsound SFX_WARP_FROM
+	;nsc_white
+	;nsc_playsound SFX_WARP_FROM
 	nsc_set wSolutionInvalid, 0
 	nsc_page currentScreen
 	nsc_ret
@@ -1200,13 +1204,13 @@ ENDC
 	nsc_compare wNewsMenuCursorX, .nothing, .checkAnswer, .nothing, 2, 9, 5
 .checkAnswer
 	;nsc_playsound SFX_TRANSACTION	
-	nsc_compare wSolutionInvalid, .resetPuzzle, .pass, .resetPuzzle, 1, 0
+	nsc_compare wSolutionInvalid, .wrongPath, .pass, .wrongPath, 1, 0
 .pass
 	nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, CorrectText
 	nsc_playsound SFX_TRANSACTION
 	
-	nsc_drawbox 5, 3, 9, 9, {NEWS_MAIN_BORDER}
+	nsc_drawbox 5, 3, 9, 9, NEWSBORDER_STRIPED, 5;{NEWS_MAIN_BORDER}
 	
 	
 	nsc_add wCurrentPuzzle, 1
@@ -1366,7 +1370,7 @@ ENDR
 	
 	
 CorrectText:
-	lang_text J, "せいかい！"
+	lang_text J, "せいかい！！"
 	lang_text E, "Correct!"
 	lang_text D, "?"
 	lang_text F, "?"
@@ -1374,9 +1378,16 @@ CorrectText:
 	lang_text S, "?"
 	done
 
-; TODO: "incorrect" text
-	
-	
+IncorrectText:
+	lang_text J, "ざんねん…まちがえちゃった！"
+	; TODO: ROUGH
+	lang_text E, "Sorry… You made"
+	lang_line E, "a mistake!"
+	lang_text D, "?"
+	lang_text F, "?"
+	lang_text I, "?"
+	lang_text S, "?"
+	done
 	
 	
 Quit:

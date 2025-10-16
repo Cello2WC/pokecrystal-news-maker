@@ -349,8 +349,8 @@ wBattle::
 wEnemyMoveStruct::  move_struct wEnemyMoveStruct
 wPlayerMoveStruct:: move_struct wPlayerMoveStruct
 
-wEnemyMonNickname::  ds MON_NAME_LENGTH
-wBattleMonNickname:: ds MON_NAME_LENGTH
+wEnemyMonNickname::  ds NAME_LENGTH_JAPANESE
+wBattleMonNickname:: ds NAME_LENGTH_JAPANESE
 
 wBattleMon:: battle_struct wBattleMon
 
@@ -649,8 +649,8 @@ wHallOfFameTemp:: hall_of_fame wHallOfFameTemp
 NEXTU
 ; odd egg
 wOddEgg:: party_struct wOddEgg
-wOddEggName:: ds MON_NAME_LENGTH
-wOddEggOT:: ds NAME_LENGTH
+wOddEggName:: ds NAME_LENGTH_JAPANESE
+wOddEggOT:: ds NAME_LENGTH_JAPANESE
 
 NEXTU
 ; debug mon color picker
@@ -674,7 +674,7 @@ NEXTU
 wMobileMonSender:: ds PLAYER_NAME_LENGTH - 1
 wMobileMon::       party_struct wMobileMon
 wMobileMonOT::     ds PLAYER_NAME_LENGTH - 1
-wMobileMonNick::   ds MON_NAME_LENGTH - 1
+wMobileMonNick::   ds NAME_LENGTH_JAPANESE - 1
 wMobileMonMail::   mailmsg_jp wMobileMonMail
 
 NEXTU
@@ -688,7 +688,7 @@ wOfferReqSpecies:: db
 wOfferMonSender::  ds PLAYER_NAME_LENGTH - 1
 wOfferMon::        party_struct wOfferMon
 wOfferMonOT::      ds PLAYER_NAME_LENGTH - 1
-wOfferMonNick::    ds MON_NAME_LENGTH - 1
+wOfferMonNick::    ds NAME_LENGTH_JAPANESE - 1
 wOfferMonMail::    mailmsg_jp wOfferMonMail
 
 NEXTU
@@ -699,7 +699,7 @@ wUnknownReqSpecies:: db
 wUnknownMonSender::  ds PLAYER_NAME_LENGTH - 1
 wUnknownMon::        party_struct wUnknownMon
 wUnknownMonOT::      ds PLAYER_NAME_LENGTH - 1
-wUnknownMonNick::    ds MON_NAME_LENGTH - 1
+wUnknownMonNick::    ds NAME_LENGTH_JAPANESE - 1
 wUnknownMonMail::    mailmsg_jp wUnknownMonMail
 
 NEXTU
@@ -715,7 +715,7 @@ wc6a8:: ds 40
 
 NEXTU
 
-wEZChatWordBuffer:: ds NAME_LENGTH + 1
+wEZChatWordBuffer:: ds NAME_LENGTH_JAPANESE + 1
 wEZChatPokemonNameRendered:: ds 1
 
 	ds 51
@@ -782,8 +782,8 @@ NEXTU
 wPlayerTrademon:: trademon wPlayerTrademon
 wOTTrademon::     trademon wOTTrademon
 wTradeAnimAddress:: dw
-wLinkPlayer1Name:: ds NAME_LENGTH
-wLinkPlayer2Name:: ds NAME_LENGTH
+wLinkPlayer1Name:: ds NAME_LENGTH_JAPANESE
+wLinkPlayer2Name:: ds NAME_LENGTH_JAPANESE
 wLinkTradeSendmonSpecies:: db
 wLinkTradeGetmonSpecies::  db
 
@@ -976,7 +976,7 @@ wLinkDataEnd::
 SECTION UNION "Overworld Map", WRAM0
 
 ; link data members
-wLinkPlayerName:: ds NAME_LENGTH
+wLinkPlayerName:: ds NAME_LENGTH_JAPANESE
 wLinkPartyCount:: db
 wLinkPartySpecies:: ds PARTY_LENGTH
 wLinkPartyEnd:: db ; older code doesn't check PartyCount
@@ -992,13 +992,13 @@ endr
 wLinkPlayerPartyMonOTs::
 ; wLinkPlayerPartyMon1OT - wLinkPlayerPartyMon6OT
 for n, 1, PARTY_LENGTH + 1
-wLinkPlayerPartyMon{d:n}OT:: ds NAME_LENGTH
+wLinkPlayerPartyMon{d:n}OT:: ds NAME_LENGTH_JAPANESE
 endr
 
 wLinkPlayerPartyMonNicknames::
 ; wLinkPlayerPartyMon1Nickname - wLinkPlayerPartyMon6Nickname
 for n, 1, PARTY_LENGTH + 1
-wLinkPlayerPartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
+wLinkPlayerPartyMon{d:n}Nickname:: ds NAME_LENGTH_JAPANESE
 endr
 
 NEXTU
@@ -1012,13 +1012,13 @@ endr
 wTimeCapsulePartyMonOTs::
 ; wTimeCapsulePartyMon1OT - wTimeCapsulePartyMon6OT
 for n, 1, PARTY_LENGTH + 1
-wTimeCapsulePartyMon{d:n}OT:: ds NAME_LENGTH
+wTimeCapsulePartyMon{d:n}OT:: ds NAME_LENGTH_JAPANESE
 endr
 
 wTimeCapsulePartyMonNicknames::
 ; wTimeCapsulePartyMon1Nickname - wTimeCapsulePartyMon6Nickname
 for n, 1, PARTY_LENGTH + 1
-wTimeCapsulePartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
+wTimeCapsulePartyMon{d:n}Nickname:: ds NAME_LENGTH_JAPANESE
 endr
 
 ENDU
@@ -1114,7 +1114,7 @@ ENDU
 wMysteryGiftPartnerData::
 wMysteryGiftPartnerGameVersion:: db
 wMysteryGiftPartnerID:: dw
-wMysteryGiftPartnerName:: ds NAME_LENGTH
+wMysteryGiftPartnerName:: ds NAME_LENGTH_JAPANESE
 wMysteryGiftPartnerDexCaught:: db
 wMysteryGiftPartnerSentDeco:: db
 wMysteryGiftPartnerWhichItem:: db
@@ -1128,7 +1128,7 @@ wMysteryGiftPartnerDataEnd::
 wMysteryGiftPlayerData::
 wMysteryGiftPlayerGameVersion:: db
 wMysteryGiftPlayerID:: dw
-wMysteryGiftPlayerName:: ds NAME_LENGTH
+wMysteryGiftPlayerName:: ds NAME_LENGTH_JAPANESE
 wMysteryGiftPlayerDexCaught:: db
 wMysteryGiftPlayerSentDeco:: db
 wMysteryGiftPlayerWhichItem:: db
@@ -1405,7 +1405,7 @@ UNION
 wEZChatCategoryMode::
 	; bit 0 = grouped (0) or sorted (1)
 	; bit 7 = is "ABC mode" previously selected?
-wTempOddEggNickname:: ds MON_NAME_LENGTH
+wTempOddEggNickname:: ds NAME_LENGTH_JAPANESE
 NEXTU
 wcd2b:: ds 1
 wcd2c:: ds 1
@@ -1976,22 +1976,22 @@ wDefaultSpawnpoint:: db
 SECTION UNION "Miscellaneous WRAM 1", WRAMX
 
 ; mon buffer
-wBufferMonNickname:: ds MON_NAME_LENGTH
-wBufferMonOT:: ds NAME_LENGTH
+wBufferMonNickname:: ds NAME_LENGTH_JAPANESE
+wBufferMonOT:: ds NAME_LENGTH_JAPANESE
 wBufferMon:: party_struct wBufferMon
 	ds 8
-wMonOrItemNameBuffer:: ds NAME_LENGTH
-	ds NAME_LENGTH
+wMonOrItemNameBuffer:: ds NAME_LENGTH_JAPANESE
+	ds NAME_LENGTH_JAPANESE
 
 
 SECTION UNION "Miscellaneous WRAM 1", WRAMX
 
 ; poke seer
 wSeerAction:: db
-wSeerNickname:: ds MON_NAME_LENGTH
+wSeerNickname:: ds NAME_LENGTH_JAPANESE
 wSeerCaughtLocation:: ds 17
-wSeerTimeOfDay:: ds NAME_LENGTH
-wSeerOT:: ds NAME_LENGTH
+wSeerTimeOfDay:: ds NAME_LENGTH_JAPANESE
+wSeerOT:: ds NAME_LENGTH_JAPANESE
 wSeerOTGrammar:: db
 wSeerCaughtLevelString:: ds 4
 wSeerCaughtLevel:: db
@@ -2015,7 +2015,7 @@ wBugContestResults::
 wBugContestWinnersEnd::
 	bugcontestwinner wBugContestTemp
 	ds 4
-wBugContestWinnerName:: ds NAME_LENGTH
+wBugContestWinnerName:: ds NAME_LENGTH_JAPANESE
 
 
 SECTION UNION "Miscellaneous WRAM 1", WRAMX
@@ -2111,9 +2111,9 @@ SECTION UNION "Miscellaneous WRAM 1", WRAMX
 
 ; mobile participant nicknames
 	ds 4
-wMobileParticipant1Nickname:: ds NAME_LENGTH;_JAPANESE
-wMobileParticipant2Nickname:: ds NAME_LENGTH;_JAPANESE
-wMobileParticipant3Nickname:: ds NAME_LENGTH;_JAPANESE
+wMobileParticipant1Nickname:: ds NAME_LENGTH_JAPANESE;_JAPANESE
+wMobileParticipant2Nickname:: ds NAME_LENGTH_JAPANESE;_JAPANESE
+wMobileParticipant3Nickname:: ds NAME_LENGTH_JAPANESE;_JAPANESE
 
 
 SECTION UNION "Miscellaneous WRAM 1", WRAMX
@@ -2140,7 +2140,7 @@ SECTION UNION "Miscellaneous WRAM 1", WRAMX
 ; may store a name, partymon, or mail
 wSwitchMonBuffer::
 UNION
-	ds NAME_LENGTH
+	ds NAME_LENGTH_JAPANESE
 NEXTU
 	ds PARTYMON_STRUCT_LENGTH
 NEXTU
@@ -2189,14 +2189,14 @@ SECTION UNION "Miscellaneous WRAM 1", WRAMX
 ; trade
 wCurTradePartyMon:: db
 wCurOTTradePartyMon:: db
-wBufferTrademonNickname:: ds MON_NAME_LENGTH
+wBufferTrademonNickname:: ds NAME_LENGTH_JAPANESE
 
 
 SECTION UNION "Miscellaneous WRAM 1", WRAMX
 
 ; link battle record data
 wLinkBattleRecordBuffer::
-wLinkBattleRecordName::   ds NAME_LENGTH
+wLinkBattleRecordName::   ds NAME_LENGTH_JAPANESE
 wLinkBattleRecordWins::   dw
 wLinkBattleRecordLosses:: dw
 wLinkBattleRecordDraws::  dw
@@ -2906,7 +2906,7 @@ wUnusedEggHatchFlag:: db
 NEXTU
 ; enemy party
 wOTPartyData::
-wOTPlayerName:: ds NAME_LENGTH
+wOTPlayerName:: ds NAME_LENGTH_JAPANESE
 wOTPlayerID:: dw
 	ds 8
 wOTPartyCount::   db
@@ -2925,13 +2925,13 @@ endr
 wOTPartyMonOTs::
 ; wOTPartyMon1OT - wOTPartyMon6OT
 for n, 1, PARTY_LENGTH + 1
-wOTPartyMon{d:n}OT:: ds NAME_LENGTH
+wOTPartyMon{d:n}OT:: ds NAME_LENGTH_JAPANESE
 endr
 
 wOTPartyMonNicknames::
 ; wOTPartyMon1Nickname - wOTPartyMon6Nickname
 for n, 1, PARTY_LENGTH + 1
-wOTPartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
+wOTPartyMon{d:n}Nickname:: ds NAME_LENGTH_JAPANESE
 endr
 wOTPartyDataEnd::
 
@@ -3024,6 +3024,8 @@ wMapStatusEnd::
 
 ;	ds 1 ; Moved to wZipCode.
 	ds 1
+	
+	ds $35 ; symbol file doesnt need to be perfect, i guess...
 
 wCrystalData::
 wPlayerGender::
@@ -3050,11 +3052,11 @@ wGameData::
 wPlayerData::
 wPlayerID:: dw
 
-wPlayerName:: ds NAME_LENGTH
-wMomsName::   ds NAME_LENGTH
-wRivalName::  ds NAME_LENGTH
-wRedsName::   ds NAME_LENGTH
-wGreensName:: ds NAME_LENGTH
+wPlayerName:: ds NAME_LENGTH_JAPANESE
+wMomsName::   ds NAME_LENGTH_JAPANESE
+wRivalName::  ds NAME_LENGTH_JAPANESE
+wRedsName::   ds NAME_LENGTH_JAPANESE
+wGreensName:: ds NAME_LENGTH_JAPANESE
 
 wSavedAtLeastOnce:: db
 wSpawnAfterChampion:: db
@@ -3479,13 +3481,13 @@ endr
 wPartyMonOTs::
 ; wPartyMon1OT - wPartyMon6OT
 for n, 1, PARTY_LENGTH + 1
-wPartyMon{d:n}OT:: ds NAME_LENGTH
+wPartyMon{d:n}OT:: ds NAME_LENGTH_JAPANESE
 endr
 
 wPartyMonNicknames::
 ; wPartyMon1Nickname - wPartyMon6Nickname
 for n, 1, PARTY_LENGTH + 1
-wPartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
+wPartyMon{d:n}Nickname:: ds NAME_LENGTH_JAPANESE
 endr
 wPartyMonNicknamesEnd::
 
@@ -3508,8 +3510,8 @@ wDayCareMan::
 ; bit 0: monster 1 in day-care
 	db
 
-wBreedMon1Nickname:: ds MON_NAME_LENGTH
-wBreedMon1OT:: ds NAME_LENGTH
+wBreedMon1Nickname:: ds NAME_LENGTH_JAPANESE
+wBreedMon1OT:: ds NAME_LENGTH_JAPANESE
 wBreedMon1:: box_struct wBreedMon1
 
 wDayCareLady::
@@ -3524,12 +3526,12 @@ wBreedMotherOrNonDitto::
 ; nz: no
 	db
 
-wBreedMon2Nickname:: ds MON_NAME_LENGTH
-wBreedMon2OT:: ds NAME_LENGTH
+wBreedMon2Nickname:: ds NAME_LENGTH_JAPANESE
+wBreedMon2OT:: ds NAME_LENGTH_JAPANESE
 wBreedMon2:: box_struct wBreedMon2
 
-wEggMonNickname:: ds MON_NAME_LENGTH
-wEggMonOT:: ds NAME_LENGTH
+wEggMonNickname:: ds NAME_LENGTH_JAPANESE
+wEggMonOT:: ds NAME_LENGTH_JAPANESE
 wEggMon:: box_struct wEggMon
 
 wBugContestSecondPartySpecies:: db
@@ -3550,7 +3552,7 @@ wRoamMons_LastMapGroup:: db
 
 wBestMagikarpLengthFeet:: db
 wBestMagikarpLengthInches:: db
-wMagikarpRecordHoldersName:: ds NAME_LENGTH
+wMagikarpRecordHoldersName:: ds NAME_LENGTH_JAPANESE
 
 wPokemonDataEnd::
 wGameDataEnd::

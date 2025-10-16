@@ -108,10 +108,10 @@ MinigameStart::
 	news_def_pals
 	news_def_boxes
 	; only required because maizie's sprite shows up
-	news_box 0,  1, 20, 12, {NEWS_MAIN_BORDER}
+	news_box 0,  1, 20, 14, {NEWS_MAIN_BORDER}
 ;	news_box 0,  1, 20, 14, NEWSBORDER_BLOCKY, 4
-	;news_box 0, 14, 20,  4, NEWSBORDER_GLOWY,  4
-	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
+	news_box 0, 14, 20,  4, NEWSBORDER_GLOWY,  4
+	;news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
 ;	news_box 4,  6, 12,  6, NEWSBORDER_BLOCKY, 5
 	news_def_strings
 	news_string 1, 3, ""
@@ -121,7 +121,7 @@ MinigameStart::
 	nts_start
 	nts_player_name 0
 	nts_end
-	lang J, "は　"
+	lang J, "は"
 	lang      E, " rolled"
 	lang_next E, "a"
 	lang D, "?"
@@ -131,8 +131,7 @@ MinigameStart::
 	nts_start
 	nts_number wPlayersRoll, 1, 2
 	nts_end
-	lang J,      "を"
-	lang_next J, "だしました！"
+	lang J,      "を　だしました！"
 	lang E, "!"
 	lang D, "!"
 	lang F, "!"
@@ -150,7 +149,7 @@ MinigameStart::
 	
 	
 	
-	news_menu 2, 14,   2, 1,   8, 0,   -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
+	news_menu 2, 16,   2, 1,   8, 0,   -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
 	
 	news_buttonscript .aButton    ; script pointer a button
 	news_buttonscript .bButton    ; script pointer b button
@@ -180,7 +179,8 @@ MinigameStart::
 	
 	
 	
-	nsc_clear 1, 13, 18, 4
+	;nsc_clear 1, 13, 18, 4
+	nsc_clear 1, 15, 18, 2
 	;nsc_clear 1,  2, 18, 12
 
 	nsc_delay 20
@@ -213,6 +213,7 @@ MinigameStart::
 ;	nsc_clear 1, 13, 18,  4
 	nsc_clear 1,  2, 18, 10
 	;nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
+	nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
 	nsc_drawtrainer 6, 3, COOLTRAINERF, 7
 	
 	
@@ -293,7 +294,7 @@ MinigameStart::
 	; BUG: sometimes maizie's roll doesnt print and i have no clue why
 	;      please help it is the same exact code that prints the player's roll
 .textMaizieRolled
-	lang J, "チエコは　"
+	lang J, "チエコは"
 	lang      E, "MAIZIE rolled a"
 	;lang_next E, "a"
 	lang D, "?"
@@ -303,8 +304,7 @@ MinigameStart::
 	nts_start
 	nts_number wChiekosRoll, 1, 2
 	nts_end
-	lang J,      "を"
-	lang_next J, "だしました！"
+	lang J,      "を だしました！"
 	lang E, "!"
 	lang D, "!"
 	lang F, "!"
@@ -675,7 +675,7 @@ ENDM
 	news_string 0, 0, "@" ; ......why?
 	
 IF DEF(_LANG_J)
-	news_menu  4, 10, 1, 1, 0, 0, -1, 0, 0, 0, SHOW_DESCRIPTIONS, $01
+	news_menu  6, 10, 1, 1, 0, 0, -1, 0, 0, 0, SHOW_DESCRIPTIONS, $01
 ELSE
 	news_menu  3, 10, 1, 1, 0, 0, -1, 0, 0, 0, SHOW_DESCRIPTIONS, $01
 ENDC

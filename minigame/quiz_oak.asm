@@ -732,7 +732,7 @@ ENDC
 ;	lang_line E, "Please be rated!"
 ; but that's clunky, so we'll go with
 	lang      E, "Quiz complete!"
-	lang_line E, "How did you do?"
+	lang_line E, "Here's the rating!"
 ; TODO: potentially revise, and match in other languages
 	
 	lang      D, "Die Bewertung"

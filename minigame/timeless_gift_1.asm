@@ -455,7 +455,7 @@ ENDM
 	lang_next J, "より　よわい？"
 	
 	lang E,      "Are young <TRAINER>S"
-	lang_next E, "weaker than adult "
+	lang_next E, "weaker than adult"
 	lang_next E, "<TRAINER>S?"
 	
 	lang D,      "?"

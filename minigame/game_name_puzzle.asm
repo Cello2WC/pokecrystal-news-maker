@@ -152,7 +152,8 @@ MinigameStart::
 	news_def_pals
 
 	news_def_boxes
-	news_box 0, 12, 20, 6, NEWSBORDER_GLOWY, 4
+	news_box 0,  0, 20, 13, {NEWS_MAIN_BORDER}
+	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
 	
 	
 	news_def_strings
@@ -235,58 +236,6 @@ ENDR
 	nsc_page currentScreen
 	nsc_ret
 	
-.checkEasy
-	nsc_compare wNewsMenuCursorX, .nothing, .checkAnswer, .nothing, 2, 4, 4
-.checkAnswer
-	;nsc_playsound SFX_TRANSACTION	
-	nsc_compare wSolutionInvalid, .resetPuzzle, .pass, .resetPuzzle, 1, 0
-.pass
-	nsc_playsound SFX_TRANSACTION
-	nsc_add wCurrentPuzzle, 1
-	nsc_compare wCurrentPuzzle, .nextPuzzle, .gift, .gift, 1, 5 ; 5 easy puzzles
-.nextPuzzle
-	nsc_page currentScreen
-.nothing
-	nsc_ret
-	
-.gift
-	nsc_bit_newsvar sMinigameFlag, 0, .noGift, .giveGift
-.giveGift	
-	;nsc_give_item BLUESKYMAIL, 3, 
-	nsc_giveitem TM_ROLLOUT, .recordGift, .noGift
-.recordGift
-	nsc_clear 1, 13, 18, 4
-	nsc_textbox 1, 14, .getGiftText
-	nsc_flagop sMinigameFlag, 0, FLAG_SET
-	nsc_playsound SFX_GET_TM
-	nsc_waitbutton
-.noGift
-	nsc_page NewsRoot ; TODO: maze selection?
-	
-.getGiftText
-	lang_text J, "わざマシン０４を　もらった！"
-	
-	lang_text E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "TM04."
-	
-	lang_text D, "?"
-	
-	lang_text F, "?"
-	
-	lang_text I, "?"
-	
-	lang_text S, "?"
-	
-	done
-	
-	
-	
 	
 .scrUP
 	; tile where correct direction is up
@@ -327,6 +276,13 @@ ENDM
 	lang S, "MARILL"
 	db "@"
 	
+	lang_def J, PUZZLE1_MON, "MARILL"
+	lang_def E, PUZZLE1_MON, "MARILL"
+	lang_def D, PUZZLE1_MON, "MARILL"
+	lang_def F, PUZZLE1_MON, "MARILL"
+	lang_def I, PUZZLE1_MON, "MARILL"
+	lang_def S, PUZZLE1_MON, "MARILL"
+	
 	lang_def J, MARILL_MA, "マ"
 	lang_def E, MARILL_MA, "MA"
 	lang_def D, MARILL_MA, "MA"
@@ -358,6 +314,13 @@ ENDM
 	lang S, "GASTLY"
 	db "@"
 
+	lang_def J, PUZZLE2_MON, "MISDREAVUS"
+	lang_def E, PUZZLE2_MON, "GASTLY"
+	lang_def D, PUZZLE2_MON, "0"
+	lang_def F, PUZZLE2_MON, "MISDREAVUS"
+	lang_def I, PUZZLE2_MON, "GASTLY"
+	lang_def S, PUZZLE2_MON, "GASTLY"
+	
 	lang_def J, MUUMA_MU, "ム"
 	lang_def E, MUUMA_MU, "GA"
 	lang_def D, MUUMA_MU, "1?"
@@ -387,6 +350,13 @@ ENDM
 	lang I, "RATTATA"
 	lang S, "RATTATA"
 	db "@"
+
+	lang_def J, PUZZLE3_MON, "FLAAFFY"
+	lang_def E, PUZZLE3_MON, "RATTATA"
+	lang_def D, PUZZLE3_MON, "0"
+	lang_def F, PUZZLE3_MON, "RATTATA"
+	lang_def I, PUZZLE3_MON, "RATTATA"
+	lang_def S, PUZZLE3_MON, "RATTATA"
 
 	lang_def J, MOKOKO_MO, "モ"
 	lang_def E, MOKOKO_MO, "RAT"
@@ -445,6 +415,13 @@ ENDM
 	lang I, "SUDOWOODO"
 	lang S, "SUDOWOODO"
 	db "@"
+
+	lang_def J, PUZZLE4_MON, "AERODACTYL"
+	lang_def E, PUZZLE4_MON, "SUDOWOODO"
+	lang_def D, PUZZLE4_MON, "0"
+	lang_def F, PUZZLE4_MON, "0"
+	lang_def I, PUZZLE4_MON, "SUDOWOODO"
+	lang_def S, PUZZLE4_MON, "SUDOWOODO"
 	
 	lang_def J, PUTERA_PU, "プ"
 	lang_def E, PUTERA_PU, "SUD"
@@ -475,6 +452,13 @@ ENDM
 	lang I, "EEVEE"
 	lang S, "EEVEE"
 	db "@"
+
+	lang_def J, PUZZLE5_MON, "CLEFAIRY"
+	lang_def E, PUZZLE5_MON, "EEVEE"
+	lang_def D, PUZZLE5_MON, "CLEFAIRY"
+	lang_def F, PUZZLE5_MON, "0"
+	lang_def I, PUZZLE5_MON, "EEVEE"
+	lang_def S, PUZZLE5_MON, "EEVEE"
 	
 	lang_def J, PIPPI_PI, "ピ"
 	lang_def E, PIPPI_PI, "EE"
@@ -574,6 +558,97 @@ ENDM
 	
 	
 	
+.checkEasy
+	nsc_compare wNewsMenuCursorX, .nothing, .checkAnswer, .nothing, 2, 4, 4
+.checkAnswer
+	;nsc_playsound SFX_TRANSACTION	
+	nsc_compare wSolutionInvalid, .resetPuzzle, .pass, .resetPuzzle, 1, 0
+.pass
+	nsc_clear 1, 13, 18, 4
+	nsc_textbox 1, 14, CorrectText
+
+	nsc_playsound SFX_TRANSACTION
+	
+	nsc_drawbox 5, 3, 9, 9, {NEWS_MAIN_BORDER}
+	
+	
+	nsc_add wCurrentPuzzle, 1
+;	nsc_compare wCurrentPuzzle, .nextPuzzle, .gift, .gift, 1, 5 ; 5 easy puzzles
+	nsc_compare wCurrentPuzzle, .puzzle1complete, .puzzle2complete, .higher, 1, 2
+.higher
+	nsc_compare wCurrentPuzzle, .puzzle3complete, .puzzle4complete, .puzzle5complete, 1, 4
+
+.puzzle1complete
+	nsc_drawmon 6, 4, PUZZLE1_MON,  $03, $07
+	nsc_waitbutton
+.nextPuzzle
+	nsc_page currentScreen
+.nothing
+	nsc_ret
+	
+.puzzle2complete
+	nsc_drawmon 6, 4, PUZZLE2_MON,  $03, $07
+	nsc_waitbutton
+	nsc_page currentScreen
+	nsc_ret
+	
+.puzzle3complete
+	nsc_drawmon 6, 4, PUZZLE3_MON,  $03, $07
+	nsc_waitbutton
+	nsc_page currentScreen
+	nsc_ret
+	
+.puzzle4complete
+	nsc_drawmon 6, 4, PUZZLE4_MON,  $03, $07
+	nsc_waitbutton
+	nsc_page currentScreen
+	nsc_ret
+	
+.puzzle5complete
+	nsc_drawmon 6, 4, PUZZLE5_MON,  $03, $07
+	nsc_waitbutton
+;	nsc_page currentScreen
+;	nsc_ret
+	
+;.puzzle5
+.gift
+	nsc_bit_newsvar sMinigameFlag, 0, .noGift, .giveGift
+.giveGift	
+	;nsc_give_item BLUESKYMAIL, 3, 
+	nsc_giveitem TM_ROLLOUT, .recordGift, .noGift
+.recordGift
+	nsc_clear 1, 13, 18, 4
+	nsc_textbox 1, 14, .getGiftText
+	nsc_flagop sMinigameFlag, 0, FLAG_SET
+	nsc_playsound SFX_GET_TM
+	nsc_waitbutton
+.noGift
+	nsc_page NewsRoot
+	
+.getGiftText
+	lang_text J, "わざマシン０４を　もらった！"
+	
+	lang_text E, ""
+IF DEF(_LANG_E)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      E, " received"
+	lang_line E, "TM04."
+	
+	lang_text D, "?"
+	
+	lang_text F, "?"
+	
+	lang_text I, "?"
+	
+	lang_text S, "?"
+	
+	done
+	
+
+	
 	
 					
 				
@@ -669,7 +744,8 @@ ENDR
 	news_def_pals
 
 	news_def_boxes
-	news_box 0, 12, 20, 6, NEWSBORDER_GLOWY, 4
+	news_box 0,  0, 20, 13, {NEWS_MAIN_BORDER}
+	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
 	
 	
 	news_def_strings
@@ -748,58 +824,6 @@ ENDR
 	nsc_page currentScreen
 	nsc_ret
 	
-.checkHard
-	nsc_compare wNewsMenuCursorX, .nothing, .checkAnswer, .nothing, 2, 9, 5
-.checkAnswer
-	;nsc_playsound SFX_TRANSACTION	
-	nsc_compare wSolutionInvalid, .resetPuzzle, .pass, .resetPuzzle, 1, 0
-.pass
-	nsc_playsound SFX_TRANSACTION
-	nsc_add wCurrentPuzzle, 1
-	nsc_compare wCurrentPuzzle, .nextPuzzle, .gift, .gift, 1, 5 ; 5 easy puzzles
-.nextPuzzle
-	nsc_page currentScreen
-.nothing
-	nsc_ret
-	
-.gift
-	nsc_bit_newsvar sMinigameFlag, 1, .noGift, .giveGift
-.giveGift	
-	nsc_giveitem BLUESKY_MAIL, 3, .recordGift, .noGift
-.recordGift
-	nsc_clear 1, 13, 18, 4
-	nsc_textbox 1, 14, .getGiftText
-	nsc_flagop sMinigameFlag, 1, FLAG_SET
-	nsc_playsound SFX_ITEM
-	nsc_waitbutton
-.noGift
-	nsc_page NewsRoot ; TODO: maze selection?
-	
-.getGiftText
-	; TODO: potentially the wrong string? plz check
-	lang_text J, "あおそらメールを　もらった！"
-	
-	lang_text E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "BLUESKY MAIL."
-	
-	lang_text D, "?"
-	
-	lang_text F, "?"
-	
-	lang_text I, "?"
-	
-	lang_text S, "?"
-	
-	done
-	
-	
-	
 	
 .scrUP
 	; tile where correct direction is up
@@ -835,6 +859,13 @@ ENDC
 	lang I, "PICHU"
 	lang S, "PICHU"
 	db "@"
+
+	lang_def J, HPUZZLE1_MON, "PIKACHU"
+	lang_def E, HPUZZLE1_MON, "PICHU"
+	lang_def D, HPUZZLE1_MON, "PICHU"
+	lang_def F, HPUZZLE1_MON, "PICHU"
+	lang_def I, HPUZZLE1_MON, "PICHU"
+	lang_def S, HPUZZLE1_MON, "PICHU"
 	
 	lang_def J, PIKACHU_P, "ピ"
 	lang_def E, PIKACHU_P, "P"
@@ -882,6 +913,13 @@ ENDC
 	lang S, "HO-OH"
 	db "@"
 
+	lang_def J, HPUZZLE2_MON, "GIRAFARIG"
+	lang_def E, HPUZZLE2_MON, "HO_OH"
+	lang_def D, HPUZZLE2_MON, "HO_OH"
+	lang_def F, HPUZZLE2_MON, "HO_OH"
+	lang_def I, HPUZZLE2_MON, "HO_OH"
+	lang_def S, HPUZZLE2_MON, "HO_OH"
+
 	lang_def J, KIRINRIKI_H, "キ"
 	lang_def E, KIRINRIKI_H, "H"
 	lang_def D, KIRINRIKI_H, "H"
@@ -913,6 +951,13 @@ ENDC
 	lang I, "DODUO"
 	lang S, "DODUO"
 	db "@"
+
+	lang_def J, HPUZZLE3_MON, "YANMA"
+	lang_def E, HPUZZLE3_MON, "DODUO"
+	lang_def D, HPUZZLE3_MON, "0"
+	lang_def F, HPUZZLE3_MON, "DODUO"
+	lang_def I, HPUZZLE3_MON, "DODUO"
+	lang_def S, HPUZZLE3_MON, "DODUO"
 	
 	lang_def J, YANMA_M, "ヤ"
 	lang_def E, YANMA_D, "D"
@@ -944,6 +989,13 @@ ENDC
 	lang I, "ZUBAT"
 	lang S, "ZUBAT"
 	db "@"
+
+	lang_def J, HPUZZLE4_MON, "QWILFISH"
+	lang_def E, HPUZZLE4_MON, "ZUBAT"
+	lang_def D, HPUZZLE4_MON, "ZUBAT"
+	lang_def F, HPUZZLE4_MON, "0"
+	lang_def I, HPUZZLE4_MON, "ZUBAT"
+	lang_def S, HPUZZLE4_MON, "ZUBAT"
 	
 	lang_def J, HARIISEN_Z, "ハ"
 	lang_def E, HARIISEN_Z, "Z"
@@ -989,7 +1041,14 @@ ENDC
 	lang I, "ARBOK"
 	lang S, "ARBOK"
 	db "@"
-.text
+
+	lang_def J, HPUZZLE5_MON, "ARCANINE"
+	lang_def E, HPUZZLE5_MON, "ARBOK"
+	lang_def D, HPUZZLE5_MON, "ARBOK"
+	lang_def F, HPUZZLE5_MON, "ARBOK"
+	lang_def I, HPUZZLE5_MON, "ARBOK"
+	lang_def S, HPUZZLE5_MON, "ARBOK"
+
 	lang_def J, WINDY_A, "ウ"
 	lang_def E, WINDY_A, "A"
 	lang_def D, WINDY_A, "A"
@@ -1136,6 +1195,93 @@ ENDC
 	
 	
 	
+
+.checkHard
+	nsc_compare wNewsMenuCursorX, .nothing, .checkAnswer, .nothing, 2, 9, 5
+.checkAnswer
+	;nsc_playsound SFX_TRANSACTION	
+	nsc_compare wSolutionInvalid, .resetPuzzle, .pass, .resetPuzzle, 1, 0
+.pass
+	nsc_clear 1, 13, 18, 4
+	nsc_textbox 1, 14, CorrectText
+	nsc_playsound SFX_TRANSACTION
+	
+	nsc_drawbox 5, 3, 9, 9, {NEWS_MAIN_BORDER}
+	
+	
+	nsc_add wCurrentPuzzle, 1
+;	nsc_compare wCurrentPuzzle, .nextPuzzle, .gift, .gift, 1, 5 ; 5 easy puzzles
+	nsc_compare wCurrentPuzzle, .puzzle1complete, .puzzle2complete, .higher, 1, 2
+.higher
+	nsc_compare wCurrentPuzzle, .puzzle3complete, .puzzle4complete, .puzzle5complete, 1, 4
+
+.puzzle1complete
+	nsc_drawmon 6, 4, HPUZZLE1_MON,  $03, $07
+	nsc_waitbutton
+.nextPuzzle
+	nsc_page currentScreen
+.nothing
+	nsc_ret
+	
+.puzzle2complete
+	nsc_drawmon 6, 4, HPUZZLE2_MON,  $03, $07
+	nsc_waitbutton
+	nsc_page currentScreen
+	nsc_ret
+	
+.puzzle3complete
+	nsc_drawmon 6, 4, HPUZZLE3_MON,  $03, $07
+	nsc_waitbutton
+	nsc_page currentScreen
+	nsc_ret
+	
+.puzzle4complete
+	nsc_drawmon 6, 4, HPUZZLE4_MON,  $03, $07
+	nsc_waitbutton
+	nsc_page currentScreen
+	nsc_ret
+	
+.puzzle5complete
+	nsc_drawmon 6, 4, HPUZZLE5_MON,  $03, $07
+	nsc_waitbutton
+	
+.gift
+	nsc_bit_newsvar sMinigameFlag, 1, .noGift, .giveGift
+.giveGift	
+	nsc_giveitem BLUESKY_MAIL, 3, .recordGift, .noGift
+.recordGift
+	nsc_clear 1, 13, 18, 4
+	nsc_textbox 1, 14, .getGiftText
+	nsc_flagop sMinigameFlag, 1, FLAG_SET
+	nsc_playsound SFX_ITEM
+	nsc_waitbutton
+.noGift
+	nsc_page NewsRoot ; TODO: maze selection?
+	
+.getGiftText
+	; TODO: potentially the wrong string? plz check
+	lang_text J, "あおそらメールを　もらった！"
+	
+	lang_text E, ""
+IF DEF(_LANG_E)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      E, " received"
+	lang_line E, "BLUESKY MAIL."
+	
+	lang_text D, "?"
+	
+	lang_text F, "?"
+	
+	lang_text I, "?"
+	
+	lang_text S, "?"
+	
+	done
+	
+	
 	
 					
 				
@@ -1219,7 +1365,16 @@ ENDR
 	
 	
 	
-	
+CorrectText:
+	lang_text J, "せいかい！"
+	lang_text E, "Correct!"
+	lang_text D, "?"
+	lang_text F, "?"
+	lang_text I, "?"
+	lang_text S, "?"
+	done
+
+; TODO: "incorrect" text
 	
 	
 	

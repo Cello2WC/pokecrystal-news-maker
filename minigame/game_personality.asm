@@ -641,9 +641,9 @@ MACRO quizresult
 	nsc_waitbutton
 	nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, .result\1text_gift
-	nsc_giveitem \3, .result\1gotGift, .result\1noGift
+	nsc_giveitem \4, .result\1gotGift, .result\1noGift
 .result\1gotGift
-IF STRCMP(STRSLICE("{\3}", 0, 3), "TM_") == 0
+IF STRCMP(STRSLICE("{\4}", 0, 3), "TM_") == 0
 	nsc_playsound SFX_GET_TM
 ELSE
 	nsc_playsound SFX_ITEM

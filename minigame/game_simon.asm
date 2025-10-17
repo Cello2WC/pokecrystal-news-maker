@@ -10,21 +10,12 @@ DEF wCrySequence2  EQUS "wNewsScratch4"
 DEF wCrySequence3  EQUS "wRankingsCategory"
 DEF wCrySequence4  EQUS "wRankingsType"
 DEF wCrySequence5  EQUS "wRankingsTable"
-;DEF wMathScratch   EQUS "wRankingsCategory"
 DEF wCurDirection  EQUS "wNumListedPlayers"
 DEF wMathScratch   EQUS "wOwnRank"
 DEF wMathScratch2  EQUS "wNumRankedPlayers"
 
 MACRO minigame_start
-	
-;	nsc_compare_newsvar sMinigameFlag, .noIntro, .doIntro, .noIntro, 1, 0
-;.doIntro
-;	nsc_textbox 1, 14, .gameIntroText
-;	nsc_waitbutton
-;.noIntro
 	nsc_page CrySetSelect
-
-
 ENDM
 
 MACRO minigame_name
@@ -48,7 +39,6 @@ MinigameStart::
 	news_def_pals
 	
 	news_def_boxes
-	news_box  0, 0, 20, 18, {NEWS_MAIN_BORDER}
 	news_box  0,  3, 20, 10, {NEWS_MAIN_BORDER}
 	news_box  0, 12, 20,  6, NEWSBORDER_GLOWY,    4
 	
@@ -120,7 +110,7 @@ MinigameStart::
 	db "@"
 .menuGameInstructionName
 	lang J, "ゲームの　せつめい"
-	lang E, "INSTRUCTIONS"
+	lang E, "GAME INSTRUCTIONS"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -149,88 +139,25 @@ ENDM
 	def_cryset 3, POLIWAG,   POLITOED, POLIWRATH,  POLIWHIRL, TM_REST,   YLW_APRICORN
 	
 .menuCrySet1Script
-	nsc_drawbox  0, 0, 20, 18, {NEWS_MAIN_BORDER}
-	nsc_drawmon  6, 1, CRYSET1_UP_MON,     ANIM_MON_NORMAL, 7
-	nsc_clear    6, 1, 7, 7
-	nsc_delay 3
-	nsc_drawmon  6, 9, CRYSET1_DOWN_MON,   ANIM_MON_NORMAL, 7
-	nsc_clear    6, 9, 7, 7
-	nsc_delay 3
-	nsc_drawmon  1, 5, CRYSET1_LEFT_MON,   ANIM_MON_NORMAL, 7
-	nsc_clear    1, 5, 7, 7
-	nsc_delay 3
-	nsc_drawmon 11, 5, CRYSET1_RIGHT_MON,  ANIM_MON_NORMAL, 7
-	nsc_clear   11, 5, 7, 7
-	nsc_delay 3
-	nsc_set wCurrentCrySet, 0
-.menuCrySetScriptCommon
-	nsc_set wCurrentStreak, 0
-	nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY,    4
-	nsc_delay 3
-	nsc_textbox 1, 14, .thisSetText
-	;nsc_yesno 13, 7, CrySimonStart, .notThisSet
-	nsc_yesno 13, 7, .useThisSet, .notThisSet
-.notThisSet
-	nsc_page currentScreen
-	
-	
-.menuCrySet2Script
-	nsc_drawbox  0, 0, 20, 18, {NEWS_MAIN_BORDER}
-	nsc_drawmon  6, 1, CRYSET2_UP_MON,     ANIM_MON_NORMAL, 7
-	nsc_clear    6, 1, 7, 7
-	nsc_delay 3
-	nsc_drawmon  6, 9, CRYSET2_DOWN_MON,   ANIM_MON_NORMAL, 7
-	nsc_clear    6, 9, 7, 7
-	nsc_delay 3
-	nsc_drawmon  1, 5, CRYSET2_LEFT_MON,   ANIM_MON_NORMAL, 7
-	nsc_clear    1, 5, 7, 7
-	nsc_delay 3
-	nsc_drawmon 11, 5, CRYSET2_RIGHT_MON,  ANIM_MON_NORMAL, 7
-	nsc_clear   11, 5, 7, 7
-	nsc_delay 3
 	nsc_set wCurrentCrySet, 1
-	nsc_compare wCurrentCrySet, .menuCrySetScriptCommon, .menuCrySetScriptCommon, .menuCrySetScriptCommon, 1, 0
-.menuCrySet3Script
-	nsc_drawbox  0, 0, 20, 18, {NEWS_MAIN_BORDER}
-	nsc_drawmon  6, 1, CRYSET3_UP_MON,     ANIM_MON_NORMAL, 7
-	nsc_clear    6, 1, 7, 7
-	nsc_delay 3
-	nsc_drawmon  6, 9, CRYSET3_DOWN_MON,   ANIM_MON_NORMAL, 7
-	nsc_clear    6, 9, 7, 7
-	nsc_delay 3
-	nsc_drawmon  1, 5, CRYSET3_LEFT_MON,   ANIM_MON_NORMAL, 7
-	nsc_clear    1, 5, 7, 7
-	nsc_delay 3
-	nsc_drawmon 11, 5, CRYSET3_RIGHT_MON,  ANIM_MON_NORMAL, 7
-	nsc_clear   11, 5, 7, 7
-	nsc_delay 3
-	nsc_set wCurrentCrySet, 2
-	nsc_compare wCurrentCrySet, .menuCrySetScriptCommon, .menuCrySetScriptCommon, .menuCrySetScriptCommon, 1, 0
-.useThisSet
-
-	nsc_set wCurrentIndex, -1
-
-	; generate cry sequence
-	; (thankfully the powers of two are kind to us)
-	nsc_ramcopy hRandomAdd, wCrySequence1, 2
-	nsc_delay 1 ; wait for new RNG rolls
-	nsc_ramcopy hRandomAdd, wCrySequence3, 2
-	nsc_delay 1 ; wait for new RNG rolls
-	nsc_ramcopy hRandomAdd, wCrySequence5, 1
-
-
+	nsc_set wCurrentIndex, -2
+	nsc_set wNumListedPlayers, 16
 	nsc_page CryGame
 	nsc_ret
 	
-	; COMPLETE guess.....
-.thisSetText
-	lang_text J, "このなきごえセットを　つかいますか？"
-	lang_text E, "Use this cry set?"
-	lang_text D, "?"
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
-	done
+.menuCrySet2Script
+	nsc_set wCurrentCrySet, 2
+	nsc_set wCurrentIndex, -2
+	nsc_set wNumListedPlayers, 16
+	nsc_page CryGame
+	nsc_ret
+.menuCrySet3Script
+	nsc_set wCurrentCrySet, 3
+	nsc_set wCurrentIndex, -2
+	nsc_set wNumListedPlayers, 16
+	nsc_page CryGame
+	nsc_ret
+	
 	
 .menuGameInstructionScript
 	nsc_clear 1, 13, 18, 4
@@ -323,16 +250,18 @@ ENDM
 
 	
 	
-	news_screen CryGame, MUSIC_VIRIDIAN_CITY
+	news_screen CryGame, MUSIC_SHOW_ME_AROUND;MUSIC_VIRIDIAN_CITY
 	news_def_pals
 	
 	news_def_boxes
-	news_box  0, 0, 20, 18, {NEWS_MAIN_BORDER}
+	news_box  0,  0, 20, 18, {NEWS_MAIN_BORDER}
+	news_box  0, 12, 20,  6, NEWSBORDER_GLOWY,    4
 	
 	news_def_strings
 	news_string 0, 0, "@"
 	
-	news_menu 4, 9, 1, 1, 0, 0, -1, 0, 0, 0, 0, 0
+	;news_menu 4, 9, 1, 1, 0, 0, -1, 0, 0, 0, 0, 0
+	news_menu 2, 14, 1, 1, 0, 0, -1, 0, 0, 0, 0, 0
 	
 	news_buttonscript .a_button
 	news_buttonscript .b_button
@@ -355,12 +284,25 @@ ENDM
 	; no record of this text actually existing.
 	; maybe the whole game worked differently??
 .pressStartText
-	lang J, "スタートボタンを　おして！"
-	lang E, "PRESS START!"
+;	lang J, "スタートボタンを　おして！"
+;	lang E, "PRESS START!"
+;	lang D, "?"
+;	lang F, "?"
+;	lang I, "?"
+;	lang S, "?"
+
+	lang J, "なきごえセット"
+	lang E, "CRY SET"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
+	
+	nts_start
+	nts_number wCurrentCrySet, 1, 2
+	nts_end
+	
+	
 .menuDummyName
 	db "@"
 	
@@ -376,7 +318,7 @@ DEF LEFT_BITS  EQU %10_10_10_10
 DEF RIGHT_BITS EQU %11_11_11_11
 
 .up_button
-	nsc_compare wCurrentIndex, .up_button_continue, .nothing, .up_button_continue, 1, -1
+	nsc_compare wCurrentIndex, .up_button_continue, .nothing, .nothing, 1, -2
 .up_button_continue
 	nsc_drawbox 0, 0, 20, 18, {NEWS_MAIN_BORDER}
 	nsc_set wNewsMenuOption, 0
@@ -387,7 +329,7 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_ret
 	
 .cry_up
-	nsc_compare wCurrentCrySet, .cryset1_up, .cryset2_up, .cryset3_up, 1, 1
+	nsc_compare wCurrentCrySet, .cryset1_up, .cryset2_up, .cryset3_up, 1, 2
 .cryset1_up
 	nsc_drawmon  6, 1, CRYSET1_UP_MON, ANIM_MON_NORMAL, 7
 	nsc_clear    6, 1, 7, 7
@@ -403,7 +345,7 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_ret
 	
 .down_button
-	nsc_compare wCurrentIndex, .down_button_continue, .nothing, .down_button_continue, 1, -1
+	nsc_compare wCurrentIndex, .down_button_continue, .nothing, .nothing, 1, -2
 .down_button_continue
 	nsc_drawbox 0, 0, 20, 18, {NEWS_MAIN_BORDER}
 	nsc_set wNewsMenuOption, 1
@@ -414,7 +356,7 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_ret
 	
 .cry_down
-	nsc_compare wCurrentCrySet, .cryset1_down, .cryset2_down, .cryset3_down, 1, 1
+	nsc_compare wCurrentCrySet, .cryset1_down, .cryset2_down, .cryset3_down, 1, 2
 .cryset1_down
 	nsc_drawmon  6, 9, CRYSET1_DOWN_MON, ANIM_MON_NORMAL, 7
 	nsc_clear    6, 9, 7, 7
@@ -429,7 +371,7 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_ret
 	
 .left_button
-	nsc_compare wCurrentIndex, .left_button_continue, .nothing, .left_button_continue, 1, -1
+	nsc_compare wCurrentIndex, .left_button_continue, .nothing, .nothing, 1, -2
 .left_button_continue
 	nsc_drawbox 0, 0, 20, 18, {NEWS_MAIN_BORDER}
 	nsc_set wNewsMenuOption, 2
@@ -440,7 +382,7 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_ret
 	
 .cry_left
-	nsc_compare wCurrentCrySet, .cryset1_left, .cryset2_left, .cryset3_left, 1, 1
+	nsc_compare wCurrentCrySet, .cryset1_left, .cryset2_left, .cryset3_left, 1, 2
 .cryset1_left
 	nsc_drawmon  1, 5, CRYSET1_LEFT_MON, ANIM_MON_NORMAL, 7
 	nsc_clear    1, 5, 7, 7
@@ -455,7 +397,7 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_ret
 	
 .right_button
-	nsc_compare wCurrentIndex, .right_button_continue, .nothing, .right_button_continue, 1, -1
+	nsc_compare wCurrentIndex, .right_button_continue, .nothing, .nothing, 1, -2
 .right_button_continue
 	nsc_drawbox 0, 0, 20, 18, {NEWS_MAIN_BORDER}
 	nsc_set wNewsMenuOption, 3
@@ -466,7 +408,7 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_ret
 	
 .cry_right
-	nsc_compare wCurrentCrySet, .cryset1_right, .cryset2_right, .cryset3_right, 1, 1
+	nsc_compare wCurrentCrySet, .cryset1_right, .cryset2_right, .cryset3_right, 1, 2
 .cryset1_right
 	nsc_drawmon  11, 5, CRYSET1_RIGHT_MON, ANIM_MON_NORMAL, 7
 	nsc_clear    11, 5, 7, 7
@@ -480,9 +422,41 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_clear    11, 5, 7, 7
 	nsc_ret
 	
+.preview
+	nsc_drawbox 0, 0, 20, 18, {NEWS_MAIN_BORDER}
+	nsc_set wNewsMenuOption, 0
+	nsc_select
+	nsc_set wNewsMenuOption, 1
+	nsc_select
+	nsc_set wNewsMenuOption, 2
+	nsc_select
+	nsc_set wNewsMenuOption, 3
+	nsc_select
+	
+	nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY,    4
+	nsc_textbox 1, 14, .thisSetText
+	nsc_yesno 13, 7, .useThisSet, .notThisSet
+.notThisSet
+	nsc_page CrySetSelect
+	
+.useThisSet
+	nsc_set wCurrentStreak, 0
+	nsc_set wCurrentIndex, -1
+
+	; generate cry sequence
+	; (thankfully the powers of two are kind to us)
+	nsc_ramcopy hRandomAdd, wCrySequence1, 2
+	nsc_delay 1 ; wait for new RNG rolls
+	nsc_ramcopy hRandomAdd, wCrySequence3, 2
+	nsc_delay 1 ; wait for new RNG rolls
+	nsc_ramcopy hRandomAdd, wCrySequence5, 1
+	
+	nsc_playmusic MUSIC_VIRIDIAN_CITY
+	
+	; fall thru
 .a_button
 .start_button
-	nsc_compare wCurrentIndex, .nothing, .start_button_continue, .nothing, 1, -1
+	nsc_compare wCurrentIndex, .nothing, .preview, .start_button_continue, 1, -2
 .start_button_continue
 	nsc_drawbox 0, 0, 20, 18, {NEWS_MAIN_BORDER}
 		
@@ -517,15 +491,16 @@ ENDR
 .cry20
 .yourTurn
 
-IF DEF(_LANG_J)
-	nsc_printstring 3, 8, .textYourTurn
-ELSE
-	nsc_printstring 2, 8, .textYourTurn
-ENDC
+;IF DEF(_LANG_J)
+;	nsc_printstring 3, 8, .textYourTurn
+;ELSE
+;	nsc_printstring 2, 8, .textYourTurn
+;ENDC
+
+	nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY,    4
+	nsc_printstring 1, 14, .textYourTurn
 
 	nsc_playsound SFX_TWINKLE;SFX_HIT_END_OF_EXP_BAR;SFX_TWO_PC_BEEPS
-	;nsc_add wCurrentStreak, 1
-	;nsc_compare wCurrentStreak, .cry0, .cry0, .cry0, 1, 1
 	nsc_set wCurrentIndex, 0
 	nsc_ret
 	
@@ -538,7 +513,7 @@ ENDC
 	
 	nsc_compare wMathScratch, .sequence00to03, .sequence04to07, .higher, 1, 1 << 2
 .higher
-	nsc_compare wMathScratch, .sequence08to11, .sequence12to15, .sequence16to19, 1, 4 << 2
+	nsc_compare wMathScratch, .sequence08to11, .sequence12to15, .sequence16to19, 1, 3 << 2
 .sequence00to03
 	nsc_ramcopy wCrySequence1, wMathScratch2, 1
 	nsc_bit wMathScratch2, 0, .sequenceCheckRejoin, .sequenceCheckRejoin
@@ -627,12 +602,12 @@ ENDC
 	nsc_compareram wCurDirection, 1, wMathScratch2, .sequenceWrong, .sequenceRight, .sequenceWrong
 	
 .sequenceWrong
-	nsc_playsound SFX_WRONG
 	nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
 	nsc_textbox 1, 14, .textWrong
+	nsc_playsound SFX_WRONG
 	nsc_waitbutton
 	
-	; TODO: intermediate rewards
+	; intermediate rewards
 	nsc_compare wCurrentStreak, .prizeDone, .prize5, .prizeGreater1, 1, 5
 .prizeGreater1
 	nsc_compare wCurrentStreak, .prize5, .prize10, .prizeGreater2, 1, 10
@@ -645,6 +620,7 @@ ENDC
 	nsc_textbox 1, 14, .textPresent1
 	nsc_playsound SFX_ITEM
 	nsc_waitbutton
+	nsc_playmusic MUSIC_SHOW_ME_AROUND
 	nsc_page CrySetSelect
 .prize10
 	nsc_giveitem POKE_DOLL, .doPrize10, .prizeDone
@@ -653,6 +629,7 @@ ENDC
 	nsc_textbox 1, 14, .textPresent2
 	nsc_playsound SFX_ITEM
 	nsc_waitbutton
+	nsc_playmusic MUSIC_SHOW_ME_AROUND
 	nsc_page CrySetSelect
 .prize15
 	nsc_giveitem PEARL, .doPrize15, .prizeDone
@@ -662,6 +639,7 @@ ENDC
 	nsc_playsound SFX_ITEM
 	nsc_waitbutton
 .prizeDone
+	nsc_playmusic MUSIC_SHOW_ME_AROUND
 	nsc_page CrySetSelect
 	
 .sequenceRight
@@ -671,9 +649,9 @@ ENDC
 	
 
 	nsc_add wCurrentStreak, 1
-	nsc_playsound SFX_TRANSACTION
 	nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
 	nsc_textbox 1, 14, .textRight
+	nsc_playsound SFX_LEVEL_UP
 	;nsc_waitbutton
 	nsc_compare wCurrentStreak, .nextSequence, .allClear, .allClear, 1, 20
 .nextSequence
@@ -686,7 +664,7 @@ ENDC
 	nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, .textAllClear
 	nsc_waitbutton
-	nsc_compare wCurrentCrySet, .allClearCrySet1, .allClearCrySet2, .allClearCrySet3, 1, 1
+	nsc_compare wCurrentCrySet, .allClearCrySet1, .allClearCrySet2, .allClearCrySet3, 1, 2
 .allClearCrySet1
 	nsc_bit_newsvar sMinigameFlag, 0, .prize20_1_2, .prize20_1_1
 .prize20_1_1
@@ -697,6 +675,7 @@ ENDC
 	nsc_textbox 1, 14, .textPresent4A1
 	nsc_playsound SFX_ITEM
 	nsc_waitbutton
+	nsc_playmusic MUSIC_SHOW_ME_AROUND
 	nsc_page CrySetSelect
 .prize20_1_2
 	nsc_giveitem CRYSET1_BIG_PRIZE_2, 5, .doPrize20_1_2, .prizeDone
@@ -705,6 +684,7 @@ ENDC
 	nsc_textbox 1, 14, .textPresent4A2
 	nsc_playsound SFX_ITEM
 	nsc_waitbutton
+	nsc_playmusic MUSIC_SHOW_ME_AROUND
 	nsc_page CrySetSelect
 .allClearCrySet2
 	nsc_bit_newsvar sMinigameFlag, 1, .prize20_2_2, .prize20_2_1
@@ -716,6 +696,7 @@ ENDC
 	nsc_textbox 1, 14, .textPresent4B1
 	nsc_playsound SFX_ITEM
 	nsc_waitbutton
+	nsc_playmusic MUSIC_SHOW_ME_AROUND
 	nsc_page CrySetSelect
 .prize20_2_2
 	nsc_giveitem CRYSET2_BIG_PRIZE_2, 5, .doPrize20_2_2, .prizeDone
@@ -724,6 +705,7 @@ ENDC
 	nsc_textbox 1, 14, .textPresent4B2
 	nsc_playsound SFX_ITEM
 	nsc_waitbutton
+	nsc_playmusic MUSIC_SHOW_ME_AROUND
 	nsc_page CrySetSelect
 .allClearCrySet3
 	nsc_bit_newsvar sMinigameFlag, 2, .prize20_3_2, .prize20_3_1
@@ -735,6 +717,7 @@ ENDC
 	nsc_textbox 1, 14, .textPresent4C1
 	nsc_playsound SFX_ITEM
 	nsc_waitbutton
+	nsc_playmusic MUSIC_SHOW_ME_AROUND
 	nsc_page CrySetSelect
 .prize20_3_2
 	nsc_giveitem CRYSET3_BIG_PRIZE_2, 5, .doPrize20_3_2, .prizeDone
@@ -743,16 +726,43 @@ ENDC
 	nsc_textbox 1, 14, .textPresent4C2
 	nsc_playsound SFX_ITEM
 	nsc_waitbutton
+	nsc_playmusic MUSIC_SHOW_ME_AROUND
 	nsc_page CrySetSelect
 	
 	
+.thisSetText
+	lang_text J, "このなきごえセットを　つかいますか？"
+	lang_text E, "Use this cry set?"
+	lang_text D, "?"
+	lang_text F, "?"
+	lang_text I, "?"
+	lang_text S, "?"
+	done
 	
-; NOTE: i'm center-aligning this text. dunno how else to use it
+; center-aligned version
+;.textYourTurn
+;	lang J,      "　　あなたの　ばんです！"
+;	lang_next J, "じゅうじボタンを　おしてね！"
+;	
+;	lang E,      " Your turn! Use"
+;	lang_next E, "the Control Pad!"
+;	
+;	lang D,      "?"
+;	
+;	lang F,      "?"
+;	
+;	lang I,      "?"
+;	
+;	lang S,      "?"
+;	
+;	db "@"
+	
+; left-aligned version
 .textYourTurn
-	lang J,      "　　あなたの　ばんです！"
+	lang J,      "あなたの　ばんです！"
 	lang_next J, "じゅうじボタンを　おしてね！"
 	
-	lang E,      " Your turn! Use"
+	lang E,      "Your turn! Use"
 	lang_next E, "the Control Pad!"
 	
 	lang D,      "?"

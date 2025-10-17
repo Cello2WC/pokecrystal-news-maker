@@ -572,7 +572,7 @@ ENDM
 	nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, CorrectText
 
-	nsc_playsound SFX_TRANSACTION
+	nsc_playsound SFX_LEVEL_UP
 	
 	nsc_drawbox 5, 3, 9, 9, NEWSBORDER_STRIPED, 5;{NEWS_MAIN_BORDER}
 	
@@ -1208,7 +1208,7 @@ ENDC
 .pass
 	nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, CorrectText
-	nsc_playsound SFX_TRANSACTION
+	nsc_playsound SFX_LEVEL_UP
 	
 	nsc_drawbox 5, 3, 9, 9, NEWSBORDER_STRIPED, 5;{NEWS_MAIN_BORDER}
 	

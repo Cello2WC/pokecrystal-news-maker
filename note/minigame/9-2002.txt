@@ -437,3 +437,347 @@ It's Game Freak's fault for providing default names in an online game.
 
 
 
+
+ノーマル　ではない
+Not NORMAL
+	しっぽが　わかれてる
+	Tail is split
+		いあいぎり　できる
+		Can use CUT
+	みみが　とがっている
+	Pointy ears
+		フラッシュ　できる
+		Can use FLASH
+	しんか　できる
+	Evolves
+		なみのり　できない
+		Can't use SURF
+	なにか　かぶっている
+	Wearing something
+		かいりき　できる
+		Can use STRENGTH
+		フラッシュ　できない
+		Can't use FLASH
+	なにか　もっている
+	Holding something
+		フラッシュ　できない
+		Can't use FLASH
+		かいりき　できる
+		Can use STRENGTH
+		フラッシュ　できる
+		Can use FLASH
+	きばが　ある
+	Pointy teeth
+		かいりき　できない
+		Can't use STRENGTH
+		フラッシュ　できる
+		Can use FLASH
+	おでこにワンポイント
+	Forehead marking
+		いあいぎり　できる
+		Can use CUT
+	
+
+
+
+
+ひこう　ではない
+Not FLYING
+	なにかを　もっている
+	Holding something
+		かいりき　できる
+		Can use STRENGTH
+		フラッシュ　できない
+		Can't use FLASH
+		かいりき　できない
+		Can't use STRENGTH
+		フラッシュ　できる
+		Can use FLASH
+	なにか　かぶっている
+	Wearing something
+		かいりき　できる
+		Can use STRENGTH
+	タマゴから　うまれる
+	Hatched from EGG
+		うずしお　できる
+		Can use WHIRLPOOL
+		かいりき　できない
+		Can't use STRENGTH
+	しっぽが　わかれてる
+	Tail is split
+		いあいぎり　できる
+		Can use CUT
+	きばが　ある
+	Pointy teeth
+		うずしお　できる
+		Can use WHIRLPOOL
+		かいりき　できない
+		Can't use STRENGTH
+	おでこにワンポイント
+	Forehead marking
+		いあいぎり　できる
+		Can use CUT
+	みみが　とがっている
+	Pointy ears
+		フラッシュ　できる
+		Can use FLASH
+	みみが　とがっている
+	Pointy ears
+		かいりき　できない
+		Can't use STRENGTH
+
+
+こおり　ではない
+Not ICE
+	しっぽが　わかれてる
+	Tail is split
+		なみのり　できる
+		Can use SURF
+		たいあたり　できる
+		Can use TACKLE
+	おでこにワンポイント
+	Forehead marking
+		かいりき　できない
+		Can't use STRENGTH
+		いあいぎり　できる
+		Can use CUT
+	しんか　できない
+	Evolves
+		なみのり　できる
+		Can use SURF
+
+あく　ではない
+Not DARK
+	おでこにワンポイント
+	Forehead marking
+		かいりき　できない
+		Can't use STRENGTH
+		いあいぎり　できる
+		Can use CUT
+	しっぽが　わかれてる
+	Tail is split
+		なみのり　できる
+		Can use SURF
+	きばが　ある
+	Pointy teeth
+		たいあたり　できる
+		Can use TACKLE
+		フラッシュ　できる
+		Can use FLASH
+	しんか　できない
+	Evolves
+		なみのり　できる
+		Can use SURF
+		たいあたり　できる
+		Can use TACKLE
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+
+
+
+
+
+
+
+
+
+
+ノーマル　ではない
+Not NORMAL
+ひこう　ではない
+Not FLYING
+こおり　ではない
+Not ICE
+あく　ではない
+Not DARK
+	しっぽが　わかれてる
+	Tail is split
+	しっぽが　わかれてる
+	Tail is split
+	しっぽが　わかれてる
+	Tail is split
+	しっぽが　わかれてる
+	Tail is split
+	みみが　とがっている
+	Pointy ears
+	みみが　とがっている
+	Pointy ears
+	みみが　とがっている
+	Pointy ears
+	きばが　ある
+	Pointy teeth
+	きばが　ある
+	Pointy teeth
+	きばが　ある
+	Pointy teeth
+	しんか　できる
+	Evolves
+	しんか　できない
+	Evolves
+	しんか　できない
+	Evolves
+	なにか　かぶっている
+	Wearing something
+	なにか　かぶっている
+	Wearing something
+	なにか　もっている
+	Holding something
+	なにかを　もっている
+	Holding something
+	おでこにワンポイント
+	Forehead marking
+	おでこにワンポイント
+	Forehead marking
+	おでこにワンポイント
+	Forehead marking
+	おでこにワンポイント
+	Forehead marking
+	タマゴから　うまれる
+	Hatched from EGG
+		いあいぎり　できる
+		Can use CUT
+		いあいぎり　できる
+		Can use CUT
+		いあいぎり　できる
+		Can use CUT
+		いあいぎり　できる
+		Can use CUT
+		いあいぎり　できる
+		Can use CUT
+		いあいぎり　できる
+		Can use CUT
+		なみのり　できる
+		Can use SURF
+		なみのり　できる
+		Can use SURF
+		なみのり　できる
+		Can use SURF
+		なみのり　できる
+		Can use SURF
+		なみのり　できない
+		Can't use SURF
+		かいりき　できる
+		Can use STRENGTH
+		かいりき　できる
+		Can use STRENGTH
+		かいりき　できる
+		Can use STRENGTH
+		かいりき　できる
+		Can use STRENGTH
+		かいりき　できない
+		Can't use STRENGTH
+		かいりき　できない
+		Can't use STRENGTH
+		かいりき　できない
+		Can't use STRENGTH
+		かいりき　できない
+		Can't use STRENGTH
+		かいりき　できない
+		Can't use STRENGTH
+		かいりき　できない
+		Can't use STRENGTH
+		かいりき　できない
+		Can't use STRENGTH
+		フラッシュ　できる
+		Can use FLASH
+		フラッシュ　できる
+		Can use FLASH
+		フラッシュ　できる
+		Can use FLASH
+		フラッシュ　できる
+		Can use FLASH
+		フラッシュ　できる
+		Can use FLASH
+		フラッシュ　できる
+		Can use FLASH
+		フラッシュ　できない
+		Can't use FLASH
+		フラッシュ　できない
+		Can't use FLASH
+		フラッシュ　できない
+		Can't use FLASH
+		うずしお　できる
+		Can use WHIRLPOOL
+		うずしお　できる
+		Can use WHIRLPOOL
+		たいあたり　できる
+		Can use TACKLE
+		たいあたり　できる
+		Can use TACKLE
+		たいあたり　できる
+		Can use TACKLE
+
+
+		
+		
+		
+		
+
+
+ノーマル　ではない
+Not NORMAL
+ひこう　ではない
+Not FLYING
+こおり　ではない
+Not ICE
+あく　ではない
+Not DARK
+	しっぽが　わかれてる
+	Tail is split
+	みみが　とがっている
+	Pointy ears
+	きばが　ある
+	Pointy teeth
+	しんか　できる
+	Evolves
+	なにか　かぶっている
+	Wearing something
+	なにか　もっている
+	Holding something
+	おでこにワンポイント
+	Forehead marking
+	タマゴから　うまれる
+	Hatched from EGG
+		いあいぎり　できる
+		Can use CUT
+		なみのり　できる
+		Can use SURF
+		なみのり　できない
+		Can't use SURF
+		かいりき　できる
+		Can use STRENGTH
+		かいりき　できない
+		Can't use STRENGTH
+		フラッシュ　できる
+		Can use FLASH
+		フラッシュ　できない
+		Can't use FLASH
+		うずしお　できる
+		Can use WHIRLPOOL
+		たいあたり　できる
+		Can use TACKLE

@@ -49,7 +49,7 @@
 RANKING_1 ?= BATTLE_TOWER_WINS
 RANKING_2 ?= BUG_CONTEST_SCORE
 RANKING_3 ?= LONGEST_MAGIKARP
-MINIGAME  ?= minigame/game_simon.asm
+MINIGAME  ?= minigame/quiz_chain.asm
 
 
 

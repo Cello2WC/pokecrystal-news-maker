@@ -337,7 +337,7 @@ ENDR
 
 .menuitem1_name
 	lang J, "なきごえ１"
-	lang E, "Cry 1"
+	lang E, "CRY 1"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -345,7 +345,7 @@ ENDR
 	db "@"
 .menuitem2_name
 	lang J, "なきごえ２"
-	lang E, "Cry 2"
+	lang E, "CRY 2"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -353,7 +353,7 @@ ENDR
 	db "@"
 .menuitem3_name
 	lang J, "なきごえ３"
-	lang E, "Cry 3"
+	lang E, "CRY 3"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -494,7 +494,7 @@ ENDR
 	db "@"
 .cryquizlabel_suicune
 	lang J, "なきごえクイズ　スイクン"
-	lang E, "Cry Quiz:SUICUNE"
+	lang E, "SUICUNE CRY QUIZ"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -502,7 +502,7 @@ ENDR
 	db "@"
 .cryquizlabel_clefairy
 	lang J, "なきごえクイズ　ピッピ"
-	lang E, "Cry Quiz:CLEFAIRY"
+	lang E, "CLEFAIRY CRY QUIZ"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -510,7 +510,7 @@ ENDR
 	db "@"
 .cryquizlabel_spearow
 	lang J, "なきごえクイズ　オニスズメ"
-	lang E, "Cry Quiz:SPEAROW"
+	lang E, "SPEAROW CRY QUIZ"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -518,7 +518,7 @@ ENDR
 	db "@"
 .cryquizlabel_gastly
 	lang J, "なきごえクイズ　ゴース"
-	lang E, "Cry Quiz:GASTLY"
+	lang E, "GASTLY CRY QUIZ"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -526,7 +526,7 @@ ENDR
 	db "@"
 .cryquizlabel_togepi
 	lang J, "なきごえクイズ　トゲピー"
-	lang E, "Cry Quiz:TOGEPI"
+	lang E, "TOGEPI CRY QUIZ"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -534,7 +534,7 @@ ENDR
 	db "@"
 .cryquizlabel_zubat
 	lang J, "なきごえクイズ　ズバット"
-	lang E, "Cry Quiz:ZUBAT"
+	lang E, "ZUBAT CRY QUIZ"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -542,7 +542,7 @@ ENDR
 	db "@"
 .cryquizlabel_jynx
 	lang J, "なきごえクイズ　ルージュラ"
-	lang E, "Cry Quiz:JYNX"
+	lang E, "JYNX CRY QUIZ"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -550,7 +550,7 @@ ENDR
 	db "@"
 .cryquizlabel_espeon
 	lang J, "なきごえクイズ　エーフィ"
-	lang E, "Cry Quiz:ESPEON"
+	lang E, "ESPEON CRY QUIZ"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -558,7 +558,7 @@ ENDR
 	db "@"
 .cryquizlabel_mewtwo
 	lang J, "なきごえクイズ　ミュウツー"
-	lang E, "Cry Quiz:MEWTWO"
+	lang E, "MEWTWO CRY QUIZ"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -566,7 +566,7 @@ ENDR
 	db "@"
 .cryquizlabel_dunsparce
 	lang J, "なきごえクイズ　ノコッチ"
-	lang E, "Cry Quiz:DUNSPARCE"
+	lang E, "DUNSPARCE CRY QUIZ"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"

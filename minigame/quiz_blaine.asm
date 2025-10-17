@@ -255,12 +255,12 @@ ENDM
 	lang_next J, "３　ほかの　のりものも　あるかもね！"
 	
 	;English
-	lang E,      "When PROF.ELM gave"
-	lang_next E, "you the S.S.TICKET"
-	lang_next E, "he told you to…?"
-	lang_next E, "1. Get stronger!"
-	lang_next E, "2. Say hi to OAK!"
-	lang_next E, "3. Try other rides"
+	lang E,      "When ELM gave you"
+	lang_next E, "the S.S.TICKET he"
+	lang_next E, "said “… in KANTO!”"
+	lang_next E, "1. Get stronger"
+	lang_next E, "2. Say hi to OAK"
+	lang_next E, "3. Try transport"
 	
 	lang D,      "?"
 	
@@ -273,6 +273,7 @@ ENDM
 	next "@"
 	
 .question2Text
+	;Japanese
 	lang J,      "アクアごうの　なかで　まごを"
 	lang_next J, "さがしている　おじさん"
 	lang_next J, "どこから　でてきた？"
@@ -281,12 +282,13 @@ ENDM
 	lang_next J, "２　うえから　でてきた"
 	lang_next J, "３　へやの　なかから　でてきた"
 
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang E,      "Where did the old"
-	lang_next E, "man on the S.S."
-	lang_next E, "AQUA come from?"
-	lang_next E, "1. Side 2. Above"
-	lang_next E, "3. Inside a cabin"
+	;English
+	lang E,      "Where did the lost"
+	lang_next E, "girl’s grandfather"
+	lang_next E, "appear from on"
+	lang_next E, "the S.S.AQUA?"
+	lang_next E, "1. The side"
+	lang_next E, "2. Above 3. A room"
 	
 	lang D,      "?"
 	
@@ -382,6 +384,7 @@ ENDM
 	next "@"
 	
 .question6Text
+	;Japanese
 	lang J,      "カスミと　カスミの　ボーイフレンドは"
 	lang_next J, "どのような　ならびかたで"
 	lang_next J, "デート　していた？"
@@ -390,13 +393,13 @@ ENDM
 	lang_next J, "２　むかいあって　いた"
 	lang_next J, "３　カスミが　１ぽ　まえに　いた"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang E,      "How were MISTY and"
-	lang_next E, "her boyfriend line"
-	lang_next E, "up on their date?"
+	;English
+	lang E,      "How did MISTY and"
+	lang_next E, "her boyfriend stand"
+	lang_next E, "on their date?"
 	lang_next E, "1. Side by side"
-	lang_next E, "2. Facing apart"
-	lang_next E, "3. MISTY 1 step up"
+	lang_next E, "2. Face to face"
+	lang_next E, "3. MISTY in front"
 	
 	lang D,      "?"
 	
@@ -509,7 +512,11 @@ ENDM
 	lang_next E, "3. Close your eyes"
 	
 ;How'd you get ABRA
-;to send you home
+;to teleport you at
+;the POKEMON LEAGUE?
+
+;What makes ABRA
+;teleport you at the
 	
 	lang D,      "?"
 	

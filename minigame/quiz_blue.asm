@@ -296,9 +296,9 @@ ENDM
 	lang E,      "Where in PALLET"
 	lang_next E, "TOWN can you heal"
 	lang_next E, "your #MON?"
-	lang_next E, "1. OAK's LAB"
-	lang_next E, "2. RED's HOUSE"
-	lang_next E, "3. BLUE's HOUSE"
+	lang_next E, "1. OAK'S LAB"
+	lang_next E, "2. RED'S HOUSE"
+	lang_next E, "3. BLUE'S HOUSE"
 	
 	lang D,      "?"
 	

@@ -894,7 +894,7 @@ ENDC
 	lang_line E, "ten rounds!"
 	
 	lang_para E, "Here! Take this"
-	lang_line E, "# DOLL as a"
+	lang_line E, "PEARL as a"
 	lang_cont E, "reward!"
 	lang_para E, ""
 IF DEF(_LANG_E)

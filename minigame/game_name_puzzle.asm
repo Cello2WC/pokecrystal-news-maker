@@ -98,7 +98,7 @@ ENDM
 
 MACRO minigame_name
 	lang J, "ポケモンもじめいろ　かんたん"
-	lang E, "EASY <PKMN> NAME MAZE"
+	lang E, "EASY #MON MAZE"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -107,7 +107,7 @@ ENDM
 
 MACRO minigame_name_2
 	lang J, "ポケモンもじめいろ　むずかしい"
-	lang E, "HARD <PKMN> NAME MAZE"
+	lang E, "HARD #MON MAZE"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"

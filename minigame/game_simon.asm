@@ -19,8 +19,11 @@ MACRO minigame_start
 ENDM
 
 MACRO minigame_name
+	; Japanese
 	lang J, "ポケモン　つづくかな？"
-	lang E, "cry simon"
+	
+	; English
+	lang E, "#RAP IT UP!"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -110,7 +113,7 @@ MinigameStart::
 	db "@"
 .menuGameInstructionName
 	lang J, "ゲームの　せつめい"
-	lang E, "GAME INSTRUCTIONS"
+	lang E, "GAME EXPLANATION"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -191,41 +194,43 @@ ENDM
 	lang_cont J, "それでは　はじめよう！"
 	
 	; English
-	; TODO: ROUGH
-	lang_text E, "First, pick your"
-	lang_line E, "favorite cry set!"
-	
-	lang_para E, "Then, the game"
-	lang_line E, "will begin."
-	
-	lang_para E, "From the center of"
-	lang_line E, "the screen, a"
-	lang_cont E, "#MON will app-"
-	lang_cont E, "ear and let out"
-	lang_cont E, "it's cry somewhere"
-	lang_cont E, "above, below,"
-	lang_cont E, "left, or right."
-	
-	lang_para E, "Then, if you can"
-	lang_line E, "use the Control"
-	lang_cont E, "Pad to indicate"
-	lang_cont E, "where each #MON"
-	lang_cont E, "appeared, you"
-	lang_cont E, "get it right!"
-	
-	lang_para E, "The number of"
-	lang_line E, "#MON that"
-	lang_cont E, "appear gradually"
-	lang_cont E, "increases, so"
-	lang_cont E, "try to memorize"
-	lang_cont E, "the sequence!"
-	
-	lang_para E, "If you correctly"
-	lang_line E, "repeat it 20"
-	lang_cont E, "times in total,"
-	lang_cont E, "you clear it!"
-	
-	lang_para E, "Now, let's begin!"
+	lang_text E, "First, choose a"
+	lang_line E, "cry set to use."
+
+	lang_para E, "Pick the one"
+	lang_line E, "you like best."
+
+	lang_para E, "Once chosen, the"
+	lang_line E, "game will begin!"
+
+	lang_para E, "Watch the center"
+	lang_line E, "of the screen."
+
+	lang_para E, "A #MON will let"
+	lang_line E, "out a loud cry!"
+
+	lang_para E, "It will come from"
+	lang_line E, "up, down, left or"
+	lang_cont E, "right--so listen"
+	lang_cont E, "up!"
+
+	lang_para E, "Press the matching"
+	lang_line E, "direction on the"
+	lang_cont E, "Control Pad."
+
+	lang_para E, "Get it right and"
+	lang_line E, "you’ll move ahead!"
+
+	lang_para E, "More #MON will"
+	lang_line E, "show up each round"
+	lang_cont E, "so try to remember"
+	lang_cont E, "how they appear!"
+
+	lang_para E, "Wrap up twenty"
+	lang_line E, "rounds in a row"
+	lang_cont E, "to win the game!"
+
+	lang_para E, "Let's get started!"
 	
 	lang_text D, "?"
 	
@@ -731,8 +736,12 @@ ENDR
 	
 	
 .thisSetText
+	; Japanese
 	lang_text J, "このなきごえセットを　つかいますか？"
-	lang_text E, "Use this cry set?"
+	
+	; English
+	lang_text E, "Do you want to use"
+	lang_line E, "this cry set?"
 	lang_text D, "?"
 	lang_text F, "?"
 	lang_text I, "?"
@@ -759,9 +768,11 @@ ENDR
 	
 ; left-aligned version
 .textYourTurn
+	; Japanese
 	lang J,      "あなたの　ばんです！"
 	lang_next J, "じゅうじボタンを　おしてね！"
 	
+	; English
 	lang E,      "Your turn! Use"
 	lang_next E, "the Control Pad!"
 	
@@ -774,9 +785,12 @@ ENDR
 	lang S,      "?"
 	
 	db "@"
-	
+
 .textRight
+	; Japanese
 	lang_text J, "せいかい！！"
+	
+	; English
 	lang_text E, "Correct!"
 	lang_text D, "?"
 	lang_text F, "?"
@@ -785,9 +799,12 @@ ENDR
 	done
 	
 .textWrong
+	; Japanese
 	lang_text J, "ざんねん…まちがえちゃった！"
-	lang_text E, "Sorry… You made"
-	lang_line E, "a mistake!"
+	
+	; English
+	lang_text E, "Too bad…"
+	lang_line E, "That was wrong!"
 	lang_text D, "?"
 	lang_text F, "?"
 	lang_text I, "?"
@@ -795,9 +812,12 @@ ENDR
 	done
 	
 .textAllClear
+	; Japanese
 	lang_text J, "２０もんクリア！　おめでとう！"
-	lang_text E, "20 rounds clear!"
-	lang_line E, "Congratulations!"
+	
+	; English
+	lang_text E, "You wrapped up all"
+	lang_line E, "twenty! Well done!"
 	lang_text D, "?"
 	lang_text F, "?"
 	lang_text I, "?"
@@ -809,13 +829,17 @@ ENDR
 	;       as in the minigame title. literally it would be smth like
 	;       "since you continued × times", if the minigame's name is "will it continue?"
 .textPresent1
+	; Japanese
 	lang_text J, "５かい　いじょう　つづいたので"
 	lang_line J, "きのみを　プレゼント！"
 	lang_para J, "きのみを　もらった！"
 	
-	lang_text E, "Since you cleared"
-	lang_line E, "5 rounds, here's"
-	lang_cont E, "BERRY!"
+	; English
+	lang_text E, "You wrapped up"
+	lang_line E, "five rounds!"
+	
+	lang_para E, "Here! Take this"
+	lang_line E, "BERRY as a reward!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -832,13 +856,18 @@ ENDC
 	done
 	
 .textPresent2
+	; Japanese
 	lang_text J, "１０かい　いじょう　つづいたので"
 	lang_line J, "ピッピにんぎょうを　プレゼント！"
 	lang_para J, "ピッピにんぎょうを　もらった！"
 	
-	lang_text E, "Since you cleared"
-	lang_line E, "10 rounds, here's"
-	lang_cont E, "# DOLL!"
+	; English
+	lang_text E, "You wrapped up"
+	lang_line E, "ten rounds!"
+	
+	lang_para E, "Here! Take this"
+	lang_line E, "# DOLL as a"
+	lang_cont E, "reward!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -855,13 +884,18 @@ ENDC
 	done
 
 .textPresent3
+	; Japanese
 	lang_text J, "１５かい　いじょう　つづいたので"
 	lang_line J, "しんじゅを　プレゼント！"
 	lang_para J, "しんじゅを　もらった！"
 	
-	lang_text E, "Since you cleared"
-	lang_line E, "15 rounds, here's"
-	lang_cont E, "PEARL!"
+	; English
+	lang_text E, "You wrapped up"
+	lang_line E, "ten rounds!"
+	
+	lang_para E, "Here! Take this"
+	lang_line E, "# DOLL as a"
+	lang_cont E, "reward!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -878,13 +912,18 @@ ENDC
 	done
 	
 .textPresent4A1
+	; Japanese
 	lang_text J, "２０かい　いじょう　つづいたので"
 	lang_line J, "おおきなしんじゅを　プレゼント！"
 	lang_para J, "おおきなしんじゅを　もらった！"
 	
-	lang_text E, "Since you cleared"
-	lang_line E, "20 rounds, here's"
-	lang_cont E, "BIG PEARL!"
+	; English
+	lang_text E, "You wrapped up"
+	lang_line E, "twenty rounds!"
+	
+	lang_para E, "Here! Take this"
+	lang_line E, "BIG PEARL as a"
+	lang_cont E, "reward!"	
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -901,13 +940,18 @@ ENDC
 	done
 	
 .textPresent4A2
+	; Japanese
 	lang_text J, "２０かい　いじょう　つづいたので"
 	lang_line J, "ももぼんぐりを　プレゼント！"
 	lang_para J, "ももぼんぐりを　もらった！"
 	
-	lang_text E, "Since you cleared"
-	lang_line E, "20 rounds, here's"
-	lang_cont E, "PNK APRICORN!"
+	; English
+	lang_text E, "You wrapped up"
+	lang_line E, "twenty rounds!"
+	
+	lang_para E, "Here! Take this"
+	lang_line E, "PNK APRICORN"
+	lang_cont E, "as a reward!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -925,13 +969,18 @@ ENDC
 	
 	
 .textPresent4B1
+	; Japanese
 	lang_text J, "２０かい　いじょう　つづいたので"
 	lang_line J, "ほしのすなを　プレゼント！"
 	lang_para J, "ほしのすなを　もらった！"
 	
-	lang_text E, "Since you cleared"
-	lang_line E, "20 rounds, here's"
-	lang_cont E, "STARDUST!"
+	; English
+	lang_text E, "You wrapped up"
+	lang_line E, "twenty rounds!"
+	
+	lang_para E, "Here! Take this"
+	lang_line E, "STARDUST as a"
+	lang_cont E, "reward!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -948,13 +997,18 @@ ENDC
 	done
 	
 .textPresent4B2
+	; Japanese
 	lang_text J, "２０かい　いじょう　つづいたので"
 	lang_line J, "みどぼんぐりを　プレゼント！"
 	lang_para J, "みどぼんぐりを　もらった！"
+
+	; English	
+	lang_text E, "You wrapped up"
+	lang_line E, "twenty rounds!"
 	
-	lang_text E, "Since you cleared"
-	lang_line E, "20 rounds, here's"
-	lang_cont E, "GRN APRICORN!"
+	lang_para E, "Here! Take this"
+	lang_line E, "GRN APRICORN"
+	lang_cont E, "as a reward!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -972,13 +1026,17 @@ ENDC
 	
 	
 .textPresent4C1
+	; Japanese
 	lang_text J, "２０かい　いじょう　つづいたので"
 	lang_line J, "わざマシン４４を　プレゼント！"
 	lang_para J, "わざマシン４４を　もらった！"
+
+	; English	
+	lang_text E, "You wrapped up"
+	lang_line E, "twenty rounds!"
 	
-	lang_text E, "Since you cleared"
-	lang_line E, "20 rounds, here's"
-	lang_cont E, "TM44!"
+	lang_para E, "Here! Take this"
+	lang_line E, "TM44 as a reward!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -995,13 +1053,18 @@ ENDC
 	done
 	
 .textPresent4C2
+	; Japanese
 	lang_text J, "２０かい　いじょう　つづいたので"
 	lang_line J, "きぼんぐりを　プレゼント！"
 	lang_para J, "きぼんぐりを　もらった！"
+
+	; English		
+	lang_text E, "You wrapped up"
+	lang_line E, "twenty rounds!"
 	
-	lang_text E, "Since you cleared"
-	lang_line E, "20 rounds, here's"
-	lang_cont E, "YLW APRICORN!"
+	lang_para E, "Here! Take this"
+	lang_line E, "YLW APRICORN"
+	lang_cont E, "as a reward!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start

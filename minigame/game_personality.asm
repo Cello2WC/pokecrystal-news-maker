@@ -330,10 +330,9 @@ ENDM
 	lang_next J, "かつと　きもちがいい？"
 	
 	; English
-	lang      E, "Does it feel good"
-	lang_next E, "to win against an"
-	lang_next E, "opponent weaker"
-	lang_next E, "than me?"
+	lang      E, "Winning against a"
+	lang_next E, "weaker opponent"
+	lang_next E, "feels great!"
 	
 	lang      D, "?"
 	

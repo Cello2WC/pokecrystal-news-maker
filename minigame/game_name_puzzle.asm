@@ -1382,8 +1382,8 @@ IncorrectText:
 	; Japanese
 	lang_text J, "ざんねん…まちがえちゃった！"
 	; English
-	lang_text E, "Too bad…"
-	lang_line E, "That was wrong!"
+	lang_text E, "Oops…"
+	lang_line E, "You messed up!"
 	lang_text D, "?"
 	lang_text F, "?"
 	lang_text I, "?"

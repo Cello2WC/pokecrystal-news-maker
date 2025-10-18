@@ -803,8 +803,8 @@ ENDR
 	lang_text J, "ざんねん…まちがえちゃった！"
 	
 	; English
-	lang_text E, "Too bad…"
-	lang_line E, "That was wrong!"
+	lang_text E, "Oops…"
+	lang_line E, "You messed up!"
 	lang_text D, "?"
 	lang_text F, "?"
 	lang_text I, "?"
@@ -839,7 +839,7 @@ ENDR
 	lang_line E, "five rounds!"
 	
 	lang_para E, "Here! Take this"
-	lang_line E, "BERRY as a reward!"
+	lang_line E, "BERRY as a gift!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -867,7 +867,7 @@ ENDC
 	
 	lang_para E, "Here! Take this"
 	lang_line E, "# DOLL as a"
-	lang_cont E, "reward!"
+	lang_cont E, "gift!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -895,7 +895,7 @@ ENDC
 	
 	lang_para E, "Here! Take this"
 	lang_line E, "PEARL as a"
-	lang_cont E, "reward!"
+	lang_cont E, "gift!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -923,7 +923,7 @@ ENDC
 	
 	lang_para E, "Here! Take this"
 	lang_line E, "BIG PEARL as a"
-	lang_cont E, "reward!"	
+	lang_cont E, "gift!"	
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -951,7 +951,7 @@ ENDC
 	
 	lang_para E, "Here! Take this"
 	lang_line E, "PNK APRICORN"
-	lang_cont E, "as a reward!"
+	lang_cont E, "as a gift!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -980,7 +980,7 @@ ENDC
 	
 	lang_para E, "Here! Take this"
 	lang_line E, "STARDUST as a"
-	lang_cont E, "reward!"
+	lang_cont E, "gift!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -1008,7 +1008,7 @@ ENDC
 	
 	lang_para E, "Here! Take this"
 	lang_line E, "GRN APRICORN"
-	lang_cont E, "as a reward!"
+	lang_cont E, "as a gift!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -1036,7 +1036,7 @@ ENDC
 	lang_line E, "twenty rounds!"
 	
 	lang_para E, "Here! Take this"
-	lang_line E, "TM44 as a reward!"
+	lang_line E, "TM44 as a gift!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -1064,7 +1064,7 @@ ENDC
 	
 	lang_para E, "Here! Take this"
 	lang_line E, "YLW APRICORN"
-	lang_cont E, "as a reward!"
+	lang_cont E, "as a gift!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start

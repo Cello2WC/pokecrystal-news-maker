@@ -93,6 +93,7 @@ MACRO minigame_start
 	
 	
 .gameIntroText
+	; Japanese
 	lang_text J, "がめんの　ひだりがわに"
 	lang_line J, "３つの　ヒントが　でます"
 	
@@ -103,21 +104,24 @@ MACRO minigame_start
 	lang_para J, "５もん　つづけて　あたれば　クリア！"
 	lang_line J, "それでは　はじめよう！"
 	
-	; TODO: ROUGH
+	; English
 	lang_text E, "Three hints will"
-	lang_line E, "appear on the top"
+	lang_line E, "appear at the top"
 	lang_cont E, "of the screen."
 	
-	lang_para E, "Choose the #MON"
-	lang_line E, "that fits these"
-	lang_cont E, "hints from the"
-	lang_cont E, "bottom with the"
-	lang_cont E, "A BUTTON!"
+	lang_para E, "Pick the #MON"
+	lang_line E, "that fits the"
+	lang_cont E, "hints."
+	
+	lang_para E, "Choose from the" 
+	lang_line E, "bottom and Press A"
+	lang_cont E, "to answer."	
 	
 	lang_para E, "Get five right in"
-	lang_line E, "a row to clear!"
+	lang_line E, "a row to clear"
+	lang_cont E, "the quiz!"
 	
-	lang_para E, "Alright, let's go!"
+	lang_para E, "Let's get started!"
 	
 	lang_text D, "?"
 	
@@ -131,8 +135,11 @@ MACRO minigame_start
 ENDM
 
 MACRO minigame_name
+	; Japanese
 	lang J, "#　れんそうクイズ！"
-	lang E, "<POKE>MON CHAIN QUIZ"
+	
+	; English
+	lang E, "#MON WORD QUIZ"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -548,32 +555,42 @@ ENDM
 
 
 .textHintA1
+	; Japanese
 	lang J, "ノーマル　ではない"
-	lang E, "Not NORMAL"
+	lang E, "Not NORMAL type."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintA2
+	; Japanese
 	lang J, "ひこう　ではない"
-	lang E, "Not FLYING"
+	
+	; English
+	lang E, "Not FLYING type."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintA3
+	; Japanese
 	lang J, "こおり　ではない"
-	lang E, "Not ICE"
+	
+	; English
+	lang E, "Not ICE type."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintA4
+	; Japanese
 	lang J, "あく　ではない"
-	lang E, "Not DARK"
+	
+	; English
+	lang E, "Not DARK type."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -581,64 +598,88 @@ ENDM
 	db "@"
 
 .textHintB1
+	; Japanese
 	lang J, "しっぽが　わかれてる"
-	lang E, "Tail is split"
+	
+	; English
+	lang E, "Its tail is split."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintB2
+	; Japanese
 	lang J, "みみが　とがっている"
-	lang E, "Pointy ears"
+	
+	; English
+	lang E, "Has pointy ears."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintB3
+	; Japanese
 	lang J, "きばが　ある"
-	lang E, "Pointy teeth"
+	
+	; English
+	lang E, "Has pointy teeth."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintB4
+	; Japanese
 	lang J, "しんか　できる"
-	lang E, "Evolves"
+	
+	; English
+	lang E, "It evolves."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintB5
+	; Japanese
 	lang J, "なにか　かぶっている"
-	lang E, "Wearing something"
+	
+	; English
+	lang E, "Wears a headpiece."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintB6
+	; Japanese
 	lang J, "なにか　もっている"
-	lang E, "Holding something"
+	
+	; English
+	lang E, "Holds something."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintB7
+	; Japanese
 	lang J, "おでこにワンポイント"
-	lang E, "Forehead marking"
+	
+	; English
+	lang E, "Has forehead mark."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintB8
+	; Japanese
 	lang J, "タマゴから　うまれる"
-	lang E, "Hatched from EGG"
+	
+	; English
+	lang E, "Comes from an EGG."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -646,96 +687,133 @@ ENDM
 	db "@"
 
 .textHintC01
+	; Japanese
 	lang J, "いあいぎり　できる"
-	lang E, "Can use CUT"
+	
+	; English
+	lang E, "Can use CUT."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintC02 ; NOTE: Not recorded as existing
+	; Japanese
 	lang J, "いあいぎり　できない"
-	lang E, "Can't use CUT"
+	
+	; English
+	lang E, "Can't use CUT."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintC03
+	; Japanese
 	lang J, "なみのり　できる"
-	lang E, "Can use SURF"
+	
+	; English
+	lang E, "Can use SURF."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintC04
+	; Japanese
 	lang J, "なみのり　できない"
-	lang E, "Can't use SURF"
+	
+	; English
+	lang E, "Can't use SURF."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintC05
+	; Japanese
 	lang J, "かいりき　できる"
-	lang E, "Can use STRENGTH"
+	
+	; English
+	lang E, "Can use STRENGTH."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintC06
+	; Japanese
 	lang J, "かいりき　できない"
-	lang E, "Can't use STRENGTH"
+	
+	; English
+	lang E, "Can't use STRENGTH."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintC07
+	; Japanese
 	lang J, "フラッシュ　できる"
-	lang E, "Can use FLASH"
+	
+	; English
+	lang E, "Can use FLASH."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintC08
+	; Japanese
 	lang J, "フラッシュ　できない"
-	lang E, "Can't use FLASH"
+	
+	; English
+	lang E, "Can't use FLASH."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintC09
+	; Japanese
 	lang J, "うずしお　できる"
-	lang E, "Can use WHIRLPOOL"
+	
+	; English
+	lang E, "Can use WHIRLPOOL."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintC10 ; NOTE: Not recorded as existing
+	; Japanese
 	lang J, "うずしお　できない"
-	lang E, "Can't use WHIRLPOOL"
+	
+	; English
+	lang E, "Can't use"
+	lang_next E, "WHIRLPOOL."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintC11
+	; Japanese
 	lang J, "たいあたり　できる"
-	lang E, "Can use TACKLE"
+	
+	; English
+	lang E, "Can use TACKLE."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
 	db "@"
 .textHintC12 ; NOTE: Not recorded as existing
+	; Japanese
 	lang J, "たいあたり　できない"
-	lang E, "Can't use TACKLE"
+	
+	; English
+	lang E, "Can't use TACKLE."
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -745,9 +823,12 @@ ENDM
 	
 	
 .textWrongAnswer
+	; Japanese
 	lang_text J, "ざんねん！　はずれだよ…"
 	
-	lang_text E, "Sorry! You missed…"
+	; English	
+	lang_text E, "Too bad…"
+	lang_line E, "That was wrong!"
 	
 	lang_text D, "?"
 	
@@ -759,12 +840,13 @@ ENDM
 	
 	done
 .textRightAnswer
+	; Japanese
 	lang_text J, "せいかい！"
 	lang_line J, "つぎの　もんだい　だよ"
 	
-	; TODO: ROUGH
-	lang_text E, "Correct! Here's"
-	lang_line E, "the next question…"
+	; English
+	lang_text E, "Correct! "
+	lang_line E, "Next question!"
 	
 	lang_text D, "?"
 	
@@ -776,12 +858,13 @@ ENDM
 	
 	done
 .textChainComplete
+	; Japanese
 	lang_text J, "５もんせいかい　おめでとう！"
 	lang_line J, "わざマシン３５を　プレゼント！"
 	lang_para J, "わざマシン３５を　もらった！"
 	
-	; TODO: ROUGH
-	lang_text E, "5 in a row!"
+	; English
+	lang_text E, "Five in a row!"
 	lang_line E, "Congratulations!"
 	
 	lang_para E, "Here's TM35 as"
@@ -806,12 +889,13 @@ ENDC
 	done
 	
 .textChainComplete2
+	; Japanese
 	lang_text J, "５もんせいかい　おめでとう！"
 	lang_line J, "すごいキズぐすりを　プレゼント！"
 	lang_para J, "すごいキズぐすりを　もらった！"
 	
-	; TODO: ROUGH
-	lang_text E, "5 in a row!"
+	; English
+	lang_text E, "Five in a row!"
 	lang_line E, "Congratulations!"
 	
 	lang_para E, "Here's a HYPER"

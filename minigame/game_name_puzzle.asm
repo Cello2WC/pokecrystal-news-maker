@@ -1379,10 +1379,11 @@ CorrectText:
 	done
 
 IncorrectText:
+	; Japanese
 	lang_text J, "ざんねん…まちがえちゃった！"
-	; TODO: ROUGH
-	lang_text E, "Sorry… You made"
-	lang_line E, "a mistake!"
+	; English
+	lang_text E, "Too bad…"
+	lang_line E, "That was wrong!"
 	lang_text D, "?"
 	lang_text F, "?"
 	lang_text I, "?"

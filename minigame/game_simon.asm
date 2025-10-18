@@ -201,7 +201,7 @@ ENDM
 	lang_line E, "you like best."
 
 	lang_para E, "Once chosen, the"
-	lang_line E, "game will start!"
+	lang_line E, "game will begin!"
 
 	lang_para E, "Watch the center"
 	lang_line E, "of the screen."
@@ -230,7 +230,7 @@ ENDM
 	lang_line E, "rounds in a row"
 	lang_cont E, "to win the game!"
 
-	lang_para E, "Let’s begin!"
+	lang_para E, "Let's get started!"
 	
 	lang_text D, "?"
 	

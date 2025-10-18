@@ -570,7 +570,7 @@ ENDC
 	nsc_compare sGSBallFlag, .noGSBall, .gift, .noGSBall, 1,    0
 .gift
 	nsc_set wNewsScratch5, 1
-	nsc_ramcopy wNewsScratch5, sGSBallFlag, $0001
+	;nsc_ramcopy wNewsScratch5, sGSBallFlag, $0001
 	nsc_ramcopy_newsvar wNewsScratch5, sMinigameFlag, 1
 	
 	nsc_clear 1, 13, 18, 4

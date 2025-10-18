@@ -51,6 +51,17 @@
 
 
 
+
+
+
+
+
+
+ネイティ　カビゴン　オオタチ
+ダグトリオ　メタモン　ギャラドス
+アーボック　ハクリュー　ブラッキー
+ツボツボ　ラフレシア　イワーク
+
 Pokémon: Higher or Lower?
 
 When you start the game,
@@ -73,10 +84,10 @@ Let's begin!
 List
 
 The Pokémon that appear are:
-Natu, Snorlax, Otachi
-Dugtrio, Ditto, Gyarados
-Arbok, Hakuryu, Blissey
-Tubotubo, Rafflesia, Iwark
+NATU, SNORLAX, FURRET
+DUGTRIO, DITTO, GYARADOS
+ARBOK, DRAGONAIR, UMBREON
+SHUCKLE, VILEPLUME, ONIX
 
 Is the Pokémon that appears next
 taller or shorter than this one?
@@ -97,3 +108,52 @@ Administrator's Comment:
 
 Finally, the last news.
 It feels a bit sad that the final gift is just wallpaper (Suicune & Unown for PC, Celebi for mobile. Currently unavailable).
+
+
+
+
+
+NATU		   8
+SNORLAX		 611
+FURRET		 511
+DUGTRIO		 204
+DITTO		 100
+GYARADOS	2104
+ARBOK		1106
+DRAGONAIR	1301
+UMBREON		 303
+SHUCKLE		 200
+VILEPLUME	 311
+ONIX		2810
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NATU		   8
+DITTO		 100
+SHUCKLE		 200
+DUGTRIO		 204
+UMBREON		 303
+VILEPLUME	 311
+FURRET		 511
+SNORLAX		 611
+ARBOK		1106
+DRAGONAIR	1301
+GYARADOS	2104
+ONIX		2810
+
+
+

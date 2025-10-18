@@ -838,8 +838,8 @@ ENDR
 	lang_text E, "You wrapped up"
 	lang_line E, "five rounds!"
 	
-	lang_para E, "Here, take this"
-	lang_line E, "BERRY as a gift!"
+	lang_para E, "Here! Take this"
+	lang_line E, "BERRY as a reward!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -865,9 +865,9 @@ ENDC
 	lang_text E, "You wrapped up"
 	lang_line E, "ten rounds!"
 	
-	lang_para E, "Here, take this"
+	lang_para E, "Here! Take this"
 	lang_line E, "# DOLL as a"
-	lang_cont E, "gift!"
+	lang_cont E, "reward!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -893,9 +893,9 @@ ENDC
 	lang_text E, "You wrapped up"
 	lang_line E, "ten rounds!"
 	
-	lang_para E, "Here, take this"
+	lang_para E, "Here! Take this"
 	lang_line E, "# DOLL as a"
-	lang_cont E, "gift!"
+	lang_cont E, "reward!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -921,9 +921,9 @@ ENDC
 	lang_text E, "You wrapped up"
 	lang_line E, "twenty rounds!"
 	
-	lang_para E, "Here, take this"
+	lang_para E, "Here! Take this"
 	lang_line E, "BIG PEARL as a"
-	lang_cont E, "gift!"	
+	lang_cont E, "reward!"	
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -949,9 +949,9 @@ ENDC
 	lang_text E, "You wrapped up"
 	lang_line E, "twenty rounds!"
 	
-	lang_para E, "Here, take this"
+	lang_para E, "Here! Take this"
 	lang_line E, "PNK APRICORN"
-	lang_cont E, "as a gift!"
+	lang_cont E, "as a reward!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -978,9 +978,9 @@ ENDC
 	lang_text E, "You wrapped up"
 	lang_line E, "twenty rounds!"
 	
-	lang_para E, "Here, take this"
+	lang_para E, "Here! Take this"
 	lang_line E, "STARDUST as a"
-	lang_cont E, "gift!"
+	lang_cont E, "reward!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -1006,9 +1006,9 @@ ENDC
 	lang_text E, "You wrapped up"
 	lang_line E, "twenty rounds!"
 	
-	lang_para E, "Here, take this"
+	lang_para E, "Here! Take this"
 	lang_line E, "GRN APRICORN"
-	lang_cont E, "as a gift!"
+	lang_cont E, "as a reward!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -1035,8 +1035,8 @@ ENDC
 	lang_text E, "You wrapped up"
 	lang_line E, "twenty rounds!"
 	
-	lang_para E, "Here, take this"
-	lang_line E, "TM44 as a gift!"
+	lang_para E, "Here! Take this"
+	lang_line E, "TM44 as a reward!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start
@@ -1062,9 +1062,9 @@ ENDC
 	lang_text E, "You wrapped up"
 	lang_line E, "twenty rounds!"
 	
-	lang_para E, "Here, take this"
+	lang_para E, "Here! Take this"
 	lang_line E, "YLW APRICORN"
-	lang_cont E, "as a gift!"
+	lang_cont E, "as a reward!"
 	lang_para E, ""
 IF DEF(_LANG_E)
 	nts_start

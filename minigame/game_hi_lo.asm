@@ -125,13 +125,13 @@ ENDM
 
 ELSE
 MinigameStart::
-	news_screen PokemonHiLo, MUSIC_GAME_CORNER
+	news_screen PokemonHiLo, MUSIC_VIRIDIAN_CITY;MUSIC_GAME_CORNER
 	news_def_pals
 	
 	news_def_boxes
 	news_box 0,  0, 20, 15, {NEWS_MAIN_BORDER}
-	;news_box 0, 14, 20,  4, NEWSBORDER_GLOWY, 4
-	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
+	news_box 0, 14, 20,  4, NEWSBORDER_GLOWY, 4
+	;news_box 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
 	
 	news_def_strings
 	news_string 0, 0, "@"
@@ -156,8 +156,8 @@ MinigameStart::
 ;	lang      S, "?"
 ;	db "@"
 	
-	;news_menu  2, 16, 3, 1, 6, 2, -1, 0, 0, 0, 0, $04
-	news_menu  2, 14, 3, 1, 6, 2, -1, 0, 0, 0, 0, $04
+	news_menu  2, 16, 3, 1, 6, 2, -1, 0, 0, 0, 0, $04
+	;news_menu  2, 14, 3, 1, 6, 2, -1, 0, 0, 0, 0, $04
 	
 	news_buttonscript .aButton     ; a button
 	news_buttonscript .bButton     ; b button
@@ -172,7 +172,7 @@ MinigameStart::
 	news_menudescription 1, 14, 18, 4
 	news_norankingstable
 	
-	news_menuitem_names   .pressStartText, .dummyDescription, .dummyDescription;.menuHiText,   .menuLoText,   .menuListText
+	news_menuitem_names   .menuHiText,   .menuLoText,   .menuListText;.pressStartText, .dummyDescription, .dummyDescription;
 	news_menuitem_scripts .menuHiScript, .menuLoScript, .menuListScript
 	news_menuitem_descs   .dummyDescription, .dummyDescription, .dummyDescription
 
@@ -198,8 +198,9 @@ MinigameStart::
 
 .abutton_ingame
 	nsc_playsound SFX_READ_TEXT
+	;nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
 	
-	nsc_clear 6, 5, 7, 7
+	;nsc_clear 6, 5, 7, 7
 	
 	
 	
@@ -211,6 +212,7 @@ ELSE
 	nsc_printstring 1, 2, .textQuestion
 ENDC
 .rollNextMon
+	nsc_clear 6, 5, 7, 7
 	nsc_ramcopy hRandomAdd, wNextMon, 1
 	nsc_flagop wNextMon, 4, FLAG_CLEAR
 	nsc_flagop wNextMon, 5, FLAG_CLEAR
@@ -221,23 +223,27 @@ ENDC
 	nsc_compare wNextMon, .rollContinue, .rollNextMon, .rollNextMon, 1, NUM_HILO_MONS ; reroll if rolled invalid mon
 
 	
-.noRoll
-IF DEF(_LANG_J)
-	nsc_clear 1,  1, 18, 11
-ELSE
-	nsc_drawbox 0, 0, 20, 18, {NEWS_MAIN_BORDER}
-ENDC
-	nsc_select
-IF DEF(_LANG_J)
-	nsc_printstring 2, 2, .textQuestion
-ELSE
-	nsc_printstring 1, 2, .textQuestion
-ENDC
-	nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
-	nsc_clear 1, 13, 18, 4
-	nsc_printstring 1, 14, .textAnswers
+;.noRoll
+;IF DEF(_LANG_J)
+;	nsc_clear 1,  1, 18, 11
+;ELSE
+;	nsc_drawbox 0, 0, 20, 18, {NEWS_MAIN_BORDER}
+;ENDC
+	;nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
+	;nsc_select
+;IF DEF(_LANG_J)
+;	nsc_printstring 2, 2, .textQuestion
+;ELSE
+;	nsc_printstring 1, 2, .textQuestion
+;ENDC
+	;nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
+	;nsc_clear 1, 13, 18, 4
+	;nsc_printstring 1, 14, .textAnswers
 	
-	nsc_ramcopy wCurrentMon, wNextMon, 1
+	;nsc_drawbox 0, 14, 20,  4, NEWSBORDER_GLOWY, 4
+	;nsc_printstring 1, 16, .textAnswers
+	
+	;nsc_ramcopy wCurrentMon, wNextMon, 1
 	
 .rollContinue
 	nsc_compare wNextMon, .rolledMon1, .rolledMon2, .rolledHigher, 1, 1
@@ -259,10 +265,15 @@ REPT NUM_HILO_MONS
 	nsc_compare wNewsMenuOption, .aButtonSelect, .aButtonSelect, .aButtonDone, 1, 1
 DEF loopindex = loopindex + 1
 ENDR
+.noRoll
+	nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
+	nsc_select
+	nsc_set wCurrentMon, -1 ; kinda hacky code flow...
 	
 .aButtonSelect
 	nsc_compare wCurrentMon, .actually_do, .actually_dont, .actually_dont, 1, -1
 .actually_do
+	nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
 	nsc_select
 .actually_dont
 	nsc_ramcopy wNextMon, wCurrentMon, 1
@@ -270,14 +281,19 @@ ENDR
 	
 	;nsc_drawbox 0,  0, 20, 15, {NEWS_MAIN_BORDER}
 	;nsc_drawbox 0, 14, 20,  4, NEWSBORDER_GLOWY, 4
+	
+
 
 
 	nsc_set wNewsMenuOption, 0
 	nsc_set wNewsMenuCursorX, 1
-	;nsc_printstring 1, 16, .textAnswers
+	nsc_printstring 0, 12, .textEraseLine
+	nsc_printstring 0, 13, .textEraseLine
+	nsc_drawbox 0, 14, 20,  4, NEWSBORDER_GLOWY, 4
+	nsc_printstring 1, 16, .textAnswers
 	;nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
-	nsc_clear 1, 13, 18, 4
-	nsc_printstring 1, 14, .textAnswers
+	;nsc_clear 1, 13, 18, 4
+	;nsc_printstring 1, 14, .textAnswers
 	nsc_ret
 	
 
@@ -334,28 +350,31 @@ ENDR
 	
 	
 .menuListScript
-	nsc_printstring 1, 2, .listText
+	;nsc_printstring 1, 2, .listText
+	;nsc_clear 1, 13, 18, 4
+	nsc_textbox 1, 14, .listText
 	nsc_waitbutton
-	nsc_clear 1,  1, 18, 16
+	nsc_clear 1, 13, 18, 4
+	;nsc_clear 1,  1, 18, 16
 	nsc_ret
 	
 	
 	
 .listText
 	; Japanese
-	lang      J, "でてくる　ポケモンは"
-	lang_next J, "ネイティ　カビゴン　オオタチ"
-	lang_next J, "ダグトリオ　メタモン　ギャラドス"
-	lang_next J, "アーボック　ハクリュー　ブラッキー"
-	lang_next J, "ツボツボ　ラフレシア　イワーク　です"
+	lang_text J, "でてくる　ポケモンは"
+	lang_line J, "ネイティ　カビゴン　オオタチ"
+	lang_cont J, "ダグトリオ　メタモン　ギャラドス"
+	lang_cont J, "アーボック　ハクリュー　ブラッキー"
+	lang_cont J, "ツボツボ　ラフレシア　イワーク　です"
 	
 	; English	
-	lang      E, "The #MON shown:"
-	lang      J, "NATU, ARBOK, ONIX,"
-	lang_next J, "GYARADOS, FURRET," 
-	lang_next J, "DUGTRIO, SHUCKLE," 
-	lang_next J, "SNORLAX, UMBREON," 
-	lang_next J, "DITTO & DRAGONAIR"
+	lang_text E, "The #MON shown:"
+	lang_line E, "NATU, ARBOK, ONIX,"
+	lang_cont E, "GYARADOS, FURRET," 
+	lang_cont E, "DUGTRIO, SHUCKLE," 
+	lang_cont E, "SNORLAX, UMBREON," 
+	lang_cont E, "DITTO & DRAGONAIR"
 	
 	lang      D, "?"
 	
@@ -365,7 +384,8 @@ ENDR
 	
 	lang      S, "?"
 	
-	db "@"
+	done
+	;db "@"
 	
 	
 	
@@ -406,6 +426,15 @@ ENDR
 	lang F, "▶?"
 	lang I, "▶?"
 	lang S, "▶?"
+	db "@"
+	
+	; as is this
+.textEraseLine
+	db $B3
+REPT 18
+	db $7F
+ENDR
+	db $B4
 	db "@"
 	
 .textQuestion
@@ -484,17 +513,17 @@ ENDC
 	
 	done
 	
-.pressStartText
-	; Japanese
-	lang J, "スタートボタンを　おして！"
-	
-	; English
-	lang E, "Press START!"
-	lang D, "?"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
-	db "@"
+;.pressStartText
+;	; Japanese
+;	lang J, "スタートボタンを　おして！"
+;	
+;	; English
+;	lang E, "Press START!"
+;	lang D, "?"
+;	lang F, "?"
+;	lang I, "?"
+;	lang S, "?"
+;	db "@"
 	
 	
 ENDC

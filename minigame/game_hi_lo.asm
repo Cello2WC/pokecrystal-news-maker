@@ -43,6 +43,7 @@ MACRO minigame_start
 	
 	
 .gameIntroText
+	; Japanese
 	lang_text J, "ゲームを　はじめると　まず"
 	lang_line J, "１ぴきの　ポケモンが　でてきます"
 	lang_cont J, "このあとに　また　１ぴき　ポケモンが"
@@ -62,35 +63,36 @@ MACRO minigame_start
 	lang_cont J, "ゲーム　クリアです！"
 	lang_cont J, "それでは　はじめよう！"
 	
-	; TODO: ROUGH
+	; English
 	lang_text E, "When the game"
 	lang_line E, "starts, a #MON"
-	lang_cont E, "will appear."
+	lang_cont E, "will be shown."
 	
-	lang_para E, "After that another"
-	lang_line E, "will follow!"
+	lang_para E, "Then, another"
+	lang_line E, "appears!"
 	
-	lang_para E, "You have to guess"
-	lang_line E, "whether the next"
-	lang_cont E, "#MON will be"
-	lang_cont E, "taller or shorter!"
+	lang_para E, "Guess whether the"
+	lang_line E, "next #MON will"
+	lang_cont E, "be taller or"
+	lang_cont E, "shorter than the"
+	lang_cont E, "one before!"
 	
-	lang_para E, "Only 12 species"
-	lang_line E, "of #MON will"
-	lang_cont E, "appear in the"
-	lang_cont E, "game. You can see"
-	lang_cont E, "them at any time"
-	lang_cont E, "by picking LIST,"
-	lang_cont E, "so you can make"
-	lang_cont E, "an informed"
-	lang_cont E, "prediction!"
+	lang_para E, "Only twelve kinds"
+	lang_line E, "of #MON can"
+	lang_cont E, "appear in this"
+	lang_cont E, "game."
+
+	lang_para E, "Pick LIST to check"
+	lang_line E, "them at any time."
+	lang_cont E, "That may help you"
+	lang_cont E, "guess the answer."
 	
-	lang_para E, "A #MON's height"
-	lang_line E, "is that listed in"
-	lang_cont E, "the #DEX."
+	lang_para E, "#DEX height is"
+	lang_line E, "used when making"
+	lang_cont E, "a decision."
 	
-	lang_para E, "Get 7 in a row to"
-	lang_line E, "win the game!"
+	lang_para E, "Get seven right"
+	lang_line E, "in a row to win!"
 	
 	lang_para E, "Let's get started!"
 	
@@ -108,7 +110,7 @@ ENDM
 
 MACRO minigame_name
 	lang J, "#　たかいか　ひくいか？"
-	lang E, "#MON HI-LO"
+	lang E, "TALLER OR SHORTER"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -340,18 +342,20 @@ ENDR
 	
 	
 .listText
+	; Japanese
 	lang      J, "でてくる　ポケモンは"
 	lang_next J, "ネイティ　カビゴン　オオタチ"
 	lang_next J, "ダグトリオ　メタモン　ギャラドス"
 	lang_next J, "アーボック　ハクリュー　ブラッキー"
 	lang_next J, "ツボツボ　ラフレシア　イワーク　です"
 	
-	lang      E, "The #MON are:"
-	lang_next E, "NATU FURRET ARBOK"
-	lang_next E, "DITTO SNORLAX ONIX"
-	lang_next E, "UMBREON DRAGONAIR"
-	lang_next E, "VILEPLUME DUGTRIO"
-	lang_next E, "SHUCKLE & GYARADOS"
+	; English	
+	lang      E, "The #MON shown:"
+	lang      J, "NATU, ARBOK, ONIX,"
+	lang_next J, "GYARADOS, FURRET," 
+	lang_next J, "DUGTRIO, SHUCKLE," 
+	lang_next J, "SNORLAX, UMBREON," 
+	lang_next J, "DITTO & DRAGONAIR"
 	
 	lang      D, "?"
 	
@@ -405,10 +409,12 @@ ENDR
 	db "@"
 	
 .textQuestion
+	; Japanese
 	lang      J, "この　あとに　でる　ポケモンは"
 	lang_next J, "これより　たかいか　ひくいか？"
-	; TODO: ROUGH
-	lang      E, "Next #MON'll be"
+	
+	; English
+	lang      E, "Is the next one"
 	lang_next E, "taller or shorter?"
 	
 	lang      D, "?"
@@ -421,18 +427,22 @@ ENDR
 	db "@"
 	
 .textCorrect
+	; Japanese
 	lang_text J, "あたり！"
-	; TODO: ROUGH
-	lang_text E, "Success!"
+	
+	; English
+	lang_text E, "Correct!"
 	lang_text D, "?"
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
 	done
 .textIncorrect
+	; Japanese
 	lang_text J, "はずれ！"
-	; TODO: ROUGH
-	lang_text E, "Failure!"
+	
+	; English
+	lang_text E, "Incorrect!"
 	lang_text D, "?"
 	lang_text F, "?"
 	lang_text I, "?"
@@ -440,16 +450,19 @@ ENDR
 	done
 
 .textGift
+	; Japanese
 	lang_text J, "おめでとう！"
 	lang_next J, "７かい　つづいた　ごほうびに"
 	lang_cont J, "ほしのかけらを　プレゼント！"
 
 	lang_para J, "ほしのかけらを　もらった！"
-	; TODO: ROUGH
-	lang_text E, "Well done!"
-	lang_line E, "As a reward for"
-	lang_cont E, "getting 7 in a"
-	lang_cont E, "row, take this"
+	
+	; English
+	lang_text E, "Congratulations!"
+	
+	lang_para E, "As a reward for"
+	lang_line E, "getting seven in"
+	lang_cont E, "a row, take this"
 	lang_cont E, "STAR PIECE!"
 	
 	lang_para E, ""
@@ -472,8 +485,11 @@ ENDC
 	done
 	
 .pressStartText
+	; Japanese
 	lang J, "スタートボタンを　おして！"
-	lang E, "PRESS START!"
+	
+	; English
+	lang E, "Press START!"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"

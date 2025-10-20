@@ -7,7 +7,7 @@ DEF wQuizScore      EQUS "wNewsScratch3"
 
 MACRO minigame_abuttonhook
 	;nsc_drawbox 0,  3, 20, 10, NEWSBORDER_INVERTED, 3
-	;nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY,    4
+	;nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	nsc_clear 1, 4, 18, 8
 	nsc_clear 1, 13, 18, 4
 	nsc_drawtrainer 6, 4, BLUE, 7
@@ -23,7 +23,7 @@ MACRO minigame_start
 	
 ;	nsc_drawbox 0,  3, 20, 10, NEWSBORDER_INVERTED, 3
 ;	nsc_drawtrainer 6, 4, BLUE, 7
-;	nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY,    4
+;	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	nsc_playmusic MUSIC_GYM
 	nsc_set wQuizQuestionNo, 0
 	nsc_set wQuizScore, 0
@@ -32,7 +32,7 @@ MACRO minigame_start
 	
 	;nsc_drawbox 0,  3, 20, 10, NEWSBORDER_INVERTED, 3
 	;nsc_drawtrainer 6, 4, BLUE, 7
-	;nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY,    4
+	;nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	;nsc_playmusic MUSIC_GYM
 	;nsc_set wQuizQuestionNo, 0
 	;nsc_set wQuizScore, 0
@@ -151,7 +151,7 @@ MinigameStart::
 	news_def_pals
 
 	news_def_boxes
-	news_box 0, 14, 20, 4, NEWSBORDER_GLOWY, 4
+	news_box 0, 14, 20, 4, {NEWS_TEXT_BORDER}
 	
 	news_def_strings
 	news_string 1, 2, ""
@@ -558,7 +558,7 @@ ENDM
 
 	news_def_boxes
 	news_box  0,  1, 20, 12, {NEWS_MAIN_BORDER}
-	news_box  0, 12, 20,  6, NEWSBORDER_GLOWY,    4
+	news_box  0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	
 	
 	news_def_strings

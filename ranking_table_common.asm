@@ -28,7 +28,7 @@ ENDC
 	
 	news_def_boxes
 	news_box 0,  3, 20, 10, {NEWS_MAIN_BORDER}
-	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,   4
+	news_box 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	
 	news_def_strings
 	news_string	1, 2, ""
@@ -383,7 +383,7 @@ ENDC
 
 	news_def_boxes
 	news_box 0,  3, 20, 10, {NEWS_MAIN_BORDER}
-	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,   4
+	news_box 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 
 	news_def_strings
 	news_string	1, 2, ""
@@ -494,7 +494,7 @@ ENDC
 	
 	news_def_boxes
 	news_box 0,  3, 20, 10, {NEWS_MAIN_BORDER}
-	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,   4
+	news_box 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	
 	news_def_strings
 	news_string 1, 2, ""
@@ -634,7 +634,7 @@ ENDC
 	
 	news_def_boxes
 	news_box 0,  3, 20, 10, {NEWS_MAIN_BORDER}
-	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,   4
+	news_box 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	
 	news_def_strings
 	news_string 1, 2, ""

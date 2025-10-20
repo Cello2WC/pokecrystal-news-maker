@@ -130,8 +130,11 @@ MinigameStart::
 	
 	news_def_boxes
 	news_box 0,  0, 20, 15, {NEWS_MAIN_BORDER}
-	news_box 0, 14, 20,  4, NEWSBORDER_GLOWY, 4
-	;news_box 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
+IF DEF(_LANG_J)
+	news_box 0, 14, 20,  4, {NEWS_TEXT_BORDER}
+ELSE
+	news_box 0, 12, 20,  6, {NEWS_TEXT_BORDER}
+ENDC
 	
 	news_def_strings
 	news_string 0, 0, "@"
@@ -156,7 +159,11 @@ MinigameStart::
 ;	lang      S, "?"
 ;	db "@"
 	
-	news_menu  2, 16, 3, 1, 6, 2, -1, 0, 0, 0, 0, $04
+IF DEF(_LANG_J)
+	news_menu  2, 16, 4, 1,  4, 2, -1, 0, 0, 0, 0, $04
+ELSE
+	news_menu  2, 14, 2, 2, 10, 2, -1, 0, 0, 0, 0, $04
+ENDC
 	;news_menu  2, 14, 3, 1, 6, 2, -1, 0, 0, 0, 0, $04
 	
 	news_buttonscript .aButton     ; a button
@@ -165,17 +172,36 @@ MinigameStart::
 	news_buttonscript .aButton     ; start button
 	news_buttonscript .rightButton ; right button
 	news_buttonscript .leftButton  ;  left button
-	news_buttonscript              ; up button
-	news_buttonscript              ; down button
+IF DEF(_LANG_J)
+	news_buttonscript
+	news_buttonscript
+ELSE
+	news_buttonscript .upButton    ; up button
+	news_buttonscript .downButton  ; down button
+ENDC
 	
 	news_def_menuitems
 	news_menudescription 1, 14, 18, 4
 	news_norankingstable
 	
-	news_menuitem_names   .menuHiText,   .menuLoText,   .menuListText;.pressStartText, .dummyDescription, .dummyDescription;
-	news_menuitem_scripts .menuHiScript, .menuLoScript, .menuListScript
-	news_menuitem_descs   .dummyDescription, .dummyDescription, .dummyDescription
+	news_menuitem_names   .menuHiText,   .menuLoText,   .menuListText, .menuQuitText;.pressStartText, .dummyDescription, .dummyDescription;
+	news_menuitem_scripts .menuHiScript, .menuLoScript, .menuListScript, .menuQuitScript
+	news_menuitem_descs   .dummyDescription, .dummyDescription, .dummyDescription, .dummyDescription
 
+IF !DEF(_LANG_J)
+.upButton
+	nsc_compare wCurrentMon, .upButton_ingame, .nothing, .nothing, 1, -1
+.upButton_ingame
+	nsc_up
+	nsc_ret
+.downButton
+	nsc_compare wCurrentMon, .downButton_ingame, .nothing, .nothing, 1, -1
+.downButton_ingame
+	nsc_down
+	nsc_ret
+ENDC
+	
+	
 .rightButton
 	nsc_compare wCurrentMon, .rightButton_ingame, .nothing, .nothing, 1, -1
 .rightButton_ingame
@@ -187,6 +213,7 @@ MinigameStart::
 .leftButton_ingame
 	nsc_left
 	nsc_ret
+.menuQuitScript
 .bButton
 	nsc_playsound SFX_MENU
 	nsc_page NewsRoot
@@ -198,7 +225,7 @@ MinigameStart::
 
 .abutton_ingame
 	nsc_playsound SFX_READ_TEXT
-	;nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
+	;nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	
 	;nsc_clear 6, 5, 7, 7
 	
@@ -229,18 +256,18 @@ ENDC
 ;ELSE
 ;	nsc_drawbox 0, 0, 20, 18, {NEWS_MAIN_BORDER}
 ;ENDC
-	;nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
+	;nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	;nsc_select
 ;IF DEF(_LANG_J)
 ;	nsc_printstring 2, 2, .textQuestion
 ;ELSE
 ;	nsc_printstring 1, 2, .textQuestion
 ;ENDC
-	;nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
+	;nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	;nsc_clear 1, 13, 18, 4
 	;nsc_printstring 1, 14, .textAnswers
 	
-	;nsc_drawbox 0, 14, 20,  4, NEWSBORDER_GLOWY, 4
+	;nsc_drawbox 0, 14, 20,  4, {NEWS_TEXT_BORDER}
 	;nsc_printstring 1, 16, .textAnswers
 	
 	;nsc_ramcopy wCurrentMon, wNextMon, 1
@@ -266,32 +293,42 @@ REPT NUM_HILO_MONS
 DEF loopindex = loopindex + 1
 ENDR
 .noRoll
-	nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
+IF DEF(_LANG_J)
+	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
+ENDC
 	nsc_select
 	nsc_set wCurrentMon, -1 ; kinda hacky code flow...
 	
 .aButtonSelect
 	nsc_compare wCurrentMon, .actually_do, .actually_dont, .actually_dont, 1, -1
 .actually_do
-	nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
+IF DEF(_LANG_J)
+	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
+ENDC
 	nsc_select
 .actually_dont
 	nsc_ramcopy wNextMon, wCurrentMon, 1
 .aButtonDone
 	
 	;nsc_drawbox 0,  0, 20, 15, {NEWS_MAIN_BORDER}
-	;nsc_drawbox 0, 14, 20,  4, NEWSBORDER_GLOWY, 4
+	;nsc_drawbox 0, 14, 20,  4, {NEWS_TEXT_BORDER}
 	
 
 
 
 	nsc_set wNewsMenuOption, 0
 	nsc_set wNewsMenuCursorX, 1
+IF DEF(_LANG_J)
 	nsc_printstring 0, 12, .textEraseLine
 	nsc_printstring 0, 13, .textEraseLine
-	nsc_drawbox 0, 14, 20,  4, NEWSBORDER_GLOWY, 4
+	nsc_drawbox 0, 14, 20,  4, {NEWS_TEXT_BORDER}
 	nsc_printstring 1, 16, .textAnswers
-	;nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
+ELSE
+	nsc_set wNewsMenuCursorY, 1
+	nsc_clear 1, 13, 18, 4
+	nsc_printstring 1, 14, .textAnswers
+ENDC
+	;nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	;nsc_clear 1, 13, 18, 4
 	;nsc_printstring 1, 14, .textAnswers
 	nsc_ret
@@ -307,20 +344,28 @@ ENDR
 .incorrect
 	nsc_set wChain, 0
 	nsc_playsound SFX_WRONG
-	;nsc_drawbox 0, 12, 20, 6, NEWSBORDER_GLOWY, 4
+	;nsc_drawbox 0, 12, 20, 6, {NEWS_TEXT_BORDER}
 	;nsc_clear 1, 15, 18, 2
 	;nsc_textbox 1, 16, .textIncorrect
-	nsc_clear 1, 13, 18, 2
+IF DEF(_LANG_J)
+	nsc_clear 1, 15, 18, 2
+ELSE
+	nsc_clear 1, 13, 18, 4
+ENDC
 	nsc_textbox 1, 14, .textIncorrect
 	nsc_waitbutton
 	nsc_ret
 .correct
 	nsc_add wChain, 1
 	nsc_playsound SFX_LEVEL_UP
-	;nsc_drawbox 0, 12, 20, 6, NEWSBORDER_GLOWY, 4
+	;nsc_drawbox 0, 12, 20, 6, {NEWS_TEXT_BORDER}
 	;nsc_clear 1, 15, 18, 2
 	;nsc_textbox 1, 16, .textCorrect
-	nsc_clear 1, 13, 18, 2
+IF DEF(_LANG_J)
+	nsc_clear 1, 15, 18, 2
+ELSE
+	nsc_clear 1, 13, 18, 4
+ENDC
 	nsc_textbox 1, 14, .textCorrect
 	nsc_waitbutton
 	
@@ -333,7 +378,7 @@ ENDR
 .giftSuccess
 	nsc_set wNewsScratch5, 1
 	nsc_ramcopy_newsvar wNewsScratch5, sMinigameFlag, 1
-	;nsc_drawbox 0, 12, 20, 6, NEWSBORDER_GLOWY, 4
+	;nsc_drawbox 0, 12, 20, 6, {NEWS_TEXT_BORDER}
 	nsc_clear 1, 13, 18, 2
 	nsc_textbox 1, 14, .textGift
 	nsc_playsound SFX_ITEM
@@ -351,7 +396,9 @@ ENDR
 	
 .menuListScript
 	;nsc_printstring 1, 2, .listText
-	;nsc_clear 1, 13, 18, 4
+IF !DEF(_LANG_J)
+	nsc_clear 1, 13, 18, 4
+ENDC
 	nsc_textbox 1, 14, .listText
 	nsc_waitbutton
 	nsc_clear 1, 13, 18, 4
@@ -392,7 +439,7 @@ ENDR
 	
 .menuHiText
 	lang J, "たかい"
-	lang E, "TALL"
+	lang E, "TALLER"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -402,7 +449,7 @@ ENDR
 	
 .menuLoText
 	lang J, "ひくい"
-	lang E, "SHORT"
+	lang E, "SHORTER"
 	lang D, "?"
 	lang F, "?"
 	lang I, "?"
@@ -418,10 +465,20 @@ ENDR
 	lang S, "?"
 	db "@"
 	
+.menuQuitText
+	lang J, "やめる"
+	lang E, "CANCEL"
+	lang D, "ZURÜCK"
+	lang F, "RETOUR"
+	lang I, "ESCI"
+	lang S, "?"
+	db "@"
+	
 	; this is a bodge and i know it...
 .textAnswers
-	lang J, "▶たかい　　　ひくい　　　リスト"
-	lang E, "▶TALL  SHORT LIST"
+	lang J, "▶たかい　ひくい　リスト　やめる"
+	lang      E, "▶TALLER    SHORTER"
+	lang_next E, " LIST      CANCEL"
 	lang D, "▶?"
 	lang F, "▶?"
 	lang I, "▶?"
@@ -429,6 +486,7 @@ ENDR
 	db "@"
 	
 	; as is this
+IF DEF(_LANG_J)
 .textEraseLine
 	db $B3
 REPT 18
@@ -436,6 +494,7 @@ REPT 18
 ENDR
 	db $B4
 	db "@"
+ENDC
 	
 .textQuestion
 	; Japanese

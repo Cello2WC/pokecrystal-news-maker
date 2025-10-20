@@ -153,7 +153,7 @@ MinigameStart::
 
 	news_def_boxes
 	news_box 0,  0, 20, 13, {NEWS_MAIN_BORDER}
-	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
+	news_box 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	
 	
 	news_def_strings
@@ -745,7 +745,7 @@ ENDR
 
 	news_def_boxes
 	news_box 0,  0, 20, 13, {NEWS_MAIN_BORDER}
-	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
+	news_box 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	
 	
 	news_def_strings

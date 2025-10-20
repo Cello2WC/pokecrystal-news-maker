@@ -89,7 +89,7 @@ MinigameStart::
 	news_def_pals
 	
 	news_def_boxes
-	news_box 0, 14, 20,  4, NEWSBORDER_GLOWY,  4
+	news_box 0, 14, 20,  4, {NEWS_TEXT_BORDER}
 	
 	news_def_strings
 	news_string 1, 2, ""
@@ -572,7 +572,7 @@ ENDM
 	
 	news_def_boxes
 	news_box  0,  1, 20, 12, {NEWS_MAIN_BORDER}
-	news_box  0, 12, 20,  6, NEWSBORDER_GLOWY,    4
+	news_box  0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	;news_box 5,  1,  9,  9, NEWSBORDER_NONE,   7
 	
 	news_def_strings

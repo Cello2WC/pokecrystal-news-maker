@@ -6,6 +6,7 @@ include "macros/mobile_text_script.asm"
 include "pokecrystal/ram.asm"
 
 
+DEF NEWS_TEXT_BORDER EQUS "NEWSBORDER_GLOWY, 4"
 	; used in "first issue" seen in EN ROM data
 ;DEF NEWS_MAIN_BORDER EQUS "NEWSBORDER_STRIPED, 3"
 	; used in "first issue" seen in magazine scan
@@ -58,7 +59,7 @@ SECTION "News", ROM0[$0000]
 	news_def_boxes
 	news_box  0,  3, 20, 10, {NEWS_MAIN_BORDER}
 	
-	news_box  0, 12, 20,  6, NEWSBORDER_GLOWY,   4
+	news_box  0, 12, 20,  6, {NEWS_TEXT_BORDER}
 
 	news_def_strings
 	news_string 1, 2, "";"<TRAINER> RANKING@"

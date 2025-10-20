@@ -28,13 +28,14 @@ MACRO minigame_start
 	nsc_set wNumListedPlayers, 16
 	
 	nsc_textbox 1, 14, .maizieIntroText
-	nsc_yesno 13, 7, .maiziedone, .maiziequit
-.maiziequit
-	; quit text potentially goes here
-	nsc_playsound SFX_MENU
-	nsc_page NewsRoot
-	nsc_ret
-.maiziedone
+	nsc_waitbutton
+;	nsc_yesno 13, 7, .maiziedone, .maiziequit
+;.maiziequit
+;	; quit text potentially goes here
+;	nsc_playsound SFX_MENU
+;	nsc_page NewsRoot
+;	nsc_ret
+;.maiziedone
 	
 .retry
 	; player's roll
@@ -110,8 +111,8 @@ MinigameStart::
 	; only required because maizie's sprite shows up
 	news_box 0,  1, 20, 14, {NEWS_MAIN_BORDER}
 ;	news_box 0,  1, 20, 14, NEWSBORDER_BLOCKY, 4
-	news_box 0, 14, 20,  4, NEWSBORDER_GLOWY,  4
-	;news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
+	news_box 0, 14, 20,  4, {NEWS_TEXT_BORDER}
+	;news_box 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 ;	news_box 4,  6, 12,  6, NEWSBORDER_BLOCKY, 5
 	news_def_strings
 	news_string 1, 3, ""
@@ -183,14 +184,14 @@ MinigameStart::
 	nsc_clear 1, 15, 18, 2
 	;nsc_clear 1,  2, 18, 12
 
-	nsc_delay 20
-	nsc_printstring 1, 9, .textDot
-	nsc_delay 20
-	nsc_printstring 2, 9, .textDot
-	nsc_delay 20
-	nsc_printstring 3, 9, .textDot
+;	nsc_delay 20
+;	nsc_printstring 1, 9, .textDot
+;;	nsc_delay 20
+;	nsc_printstring 2, 9, .textDot
+;	nsc_delay 20
+;	nsc_printstring 3, 9, .textDot
 	
-	nsc_delay 60
+;	nsc_delay 60
 	
 .retry2b
 	; maizie's roll
@@ -212,8 +213,8 @@ MinigameStart::
 ;	nsc_clear 1,  2, 17, 10
 ;	nsc_clear 1, 13, 18,  4
 	nsc_clear 1,  2, 18, 10
-	;nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
-	nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
+	;nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
+	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	nsc_drawtrainer 6, 3, COOLTRAINERF, 7
 	
 	
@@ -287,12 +288,10 @@ MinigameStart::
 	nsc_compareram wChiekosRoll, 1, wPlayersRoll, .jankenWin, .jankenTie, .jankenLose
 	
 	
-.textDot
-	db "<DOT>"
-	db "@"
+;.textDot
+;	db "<DOT>"
+;	db "@"
 	
-	; BUG: sometimes maizie's roll doesnt print and i have no clue why
-	;      please help it is the same exact code that prints the player's roll
 .textMaizieRolled
 	lang J, "チエコは"
 	lang      E, "MAIZIE rolled a"
@@ -390,7 +389,7 @@ MinigameStart::
 	news_def_boxes
 	;news_box 0,  0, 20, 15, NEWSBORDER_BLOCKY, 1
 	;news_box 0, 14, 20,  4, NEWSBORDER_BLOCKY, 5
-	news_box 0, 14, 20,  4, NEWSBORDER_GLOWY,  4
+	news_box 0, 14, 20,  4, {NEWS_TEXT_BORDER}
 	
 	news_def_strings
 	news_string 1, 2, ""
@@ -668,7 +667,7 @@ ENDM
 
 	news_def_boxes
 	news_box  0,  1, 20, 12, {NEWS_MAIN_BORDER}
-	news_box 0, 12, 20,  6, NEWSBORDER_GLOWY,  4
+	news_box 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	
 	
 	news_def_strings

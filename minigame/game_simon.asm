@@ -43,7 +43,7 @@ MinigameStart::
 	
 	news_def_boxes
 	news_box  0,  3, 20, 10, {NEWS_MAIN_BORDER}
-	news_box  0, 12, 20,  6, NEWSBORDER_GLOWY,    4
+	news_box  0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	
 	news_def_strings
 	news_string 1, 2, ""
@@ -260,7 +260,7 @@ ENDM
 	
 	news_def_boxes
 	news_box  0,  0, 20, 18, {NEWS_MAIN_BORDER}
-	news_box  0, 12, 20,  6, NEWSBORDER_GLOWY,    4
+	news_box  0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	
 	news_def_strings
 	news_string 0, 0, "@"
@@ -438,7 +438,7 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_set wNewsMenuOption, 3
 	nsc_select
 	
-	nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY,    4
+	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	nsc_textbox 1, 14, .thisSetText
 	nsc_yesno 13, 7, .useThisSet, .notThisSet
 .notThisSet
@@ -502,7 +502,7 @@ ENDR
 ;	nsc_printstring 2, 8, .textYourTurn
 ;ENDC
 
-	nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY,    4
+	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	nsc_printstring 1, 14, .textYourTurn
 
 	nsc_playsound SFX_TWINKLE;SFX_HIT_END_OF_EXP_BAR;SFX_TWO_PC_BEEPS
@@ -607,7 +607,7 @@ ENDR
 	nsc_compareram wCurDirection, 1, wMathScratch2, .sequenceWrong, .sequenceRight, .sequenceWrong
 	
 .sequenceWrong
-	nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
+	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	nsc_textbox 1, 14, .textWrong
 	nsc_playsound SFX_WRONG
 	nsc_waitbutton
@@ -654,7 +654,7 @@ ENDR
 	
 
 	nsc_add wCurrentStreak, 1
-	nsc_drawbox 0, 12, 20,  6, NEWSBORDER_GLOWY, 4
+	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	nsc_textbox 1, 14, .textRight
 	nsc_playsound SFX_LEVEL_UP
 	;nsc_waitbutton

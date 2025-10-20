@@ -159,7 +159,7 @@ MinigameStart::
 	
 	news_def_boxes
 	;news_box  0,  0, 20, 18, {NEWS_MAIN_BORDER}
-;	news_box  0, 12, 20,  6, NEWSBORDER_GLOWY,    4
+;	news_box  0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	
 IF DEF(_LANG_J)
 	news_def_strings
@@ -230,7 +230,7 @@ ENDC
 	
 .a_button
 	nsc_playsound SFX_READ_TEXT
-	nsc_drawbox 0, 12, 20, 6, NEWSBORDER_GLOWY, 4
+	nsc_drawbox 0, 12, 20, 6, {NEWS_TEXT_BORDER}
 	nsc_select
 	nsc_ret
 .up_button

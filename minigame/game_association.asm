@@ -123,7 +123,25 @@ MACRO minigame_start
 	
 	lang_para E, "Let's get started!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Du erhältst drei"
+	lang_line D, "Hinweise am oberen"
+	lang_cont D, "Bildschirmrand."
+
+	lang_para D, "Wähle das #MON,"
+	lang_line D, "das zu den"
+	lang_cont D, "Hinweisen passt."
+
+	lang_para D, "Wähle unten deine"
+	lang_line D, "Antwort und drücke"
+	lang_cont D, "dann den A-Knopf."
+
+	lang_para D, "Um zu gewinnen,"
+	lang_line D, "musst du fünf Mal"
+	lang_cont D, "hintereinander"
+	lang_cont D, "richtig liegen."
+
+	lang_para D, "Und los geht's!"
 	
 	lang_text F, "?"
 	
@@ -140,7 +158,8 @@ MACRO minigame_name
 	
 	; English
 	lang E, "#MON WORD QUIZ"
-	lang D, "?"
+	; German
+	lang D, "#MON WORT-QUIZ"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -457,7 +476,7 @@ ENDM
 .answer1Name
 	lang J, "ケンタロス"
 	lang E, "TAUROS"
-	lang D, "?"
+	lang D, "TAUROS"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -474,7 +493,7 @@ ENDM
 .answer2Name
 	lang J, "ワニノコ"
 	lang E, "TOTODILE"
-	lang D, "?"
+	lang D, "KARNIMANI"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -483,7 +502,7 @@ ENDM
 .answer3Name
 	lang J, "ニューラ"
 	lang E, "SNEASEL"
-	lang D, "?"
+	lang D, "SNIEBEL"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -492,7 +511,7 @@ ENDM
 .answer4Name
 	lang J, "サンド"
 	lang E, "SANDSHREW"
-	lang D, "?"
+	lang D, "SANDAN"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -501,7 +520,7 @@ ENDM
 .answer5Name
 	lang J, "ガラガラ"
 	lang E, "MAROWAK"
-	lang D, "?"
+	lang D, "KNOGGA"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -510,7 +529,7 @@ ENDM
 .answer6Name
 	lang J, "スリーパー"
 	lang E, "HYPNO"
-	lang D, "?"
+	lang D, "HYPNO"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -519,7 +538,7 @@ ENDM
 .answer7Name
 	lang J, "ヤドン"
 	lang E, "SLOWPOKE"
-	lang D, "?"
+	lang D, "FLEGMON"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -528,7 +547,7 @@ ENDM
 .answer8Name
 	lang J, "カモネギ"
 	lang E, "FARFETCH'D"
-	lang D, "?"
+	lang D, "PORENTA"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -558,7 +577,7 @@ ENDM
 	; Japanese
 	lang J, "ノーマル　ではない"
 	lang E, "Not NORMAL type."
-	lang D, "?"
+	lang D, "Kein NORMAL-Typ."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -569,7 +588,8 @@ ENDM
 	
 	; English
 	lang E, "Not FLYING type."
-	lang D, "?"
+	; German
+	lang D, "Kein FLUG-Typ."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -580,7 +600,8 @@ ENDM
 	
 	; English
 	lang E, "Not ICE type."
-	lang D, "?"
+	; German
+	lang D, "Kein EIS-Typ."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -591,7 +612,8 @@ ENDM
 	
 	; English
 	lang E, "Not DARK type."
-	lang D, "?"
+	; German
+	lang D, "Kein UNLICHT-Typ."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -603,7 +625,8 @@ ENDM
 	
 	; English
 	lang E, "Its tail is split."
-	lang D, "?"
+	; German
+	lang D, "Schweif gespalten."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -614,7 +637,8 @@ ENDM
 	
 	; English
 	lang E, "Has pointy ears."
-	lang D, "?"
+	; German
+	lang D, "Spitze Ohren."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -625,7 +649,8 @@ ENDM
 	
 	; English
 	lang E, "Has pointy teeth."
-	lang D, "?"
+	; German
+	lang D, "Spitze Zähne."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -636,7 +661,8 @@ ENDM
 	
 	; English
 	lang E, "It evolves."
-	lang D, "?"
+	; German
+	lang D, "Entwickelt sich."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -647,7 +673,8 @@ ENDM
 	
 	; English
 	lang E, "Wears a headpiece."
-	lang D, "?"
+	; German
+	lang D, "Hat Kopfbedeckung."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -658,7 +685,8 @@ ENDM
 	
 	; English
 	lang E, "Holds something."
-	lang D, "?"
+	; German
+	lang D, "Trägt etwas."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -669,7 +697,8 @@ ENDM
 	
 	; English
 	lang E, "Has forehead mark."
-	lang D, "?"
+	; German
+	lang D, "Stirn-Markerung."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -680,7 +709,8 @@ ENDM
 	
 	; English
 	lang E, "Comes from an EGG."
-	lang D, "?"
+	; German
+	lang D, "Schlüpft aus EI."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -692,7 +722,8 @@ ENDM
 	
 	; English
 	lang E, "Can use CUT."
-	lang D, "?"
+	; German
+	lang D, "Kann ZERSCHNEIDER."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -703,7 +734,8 @@ ENDM
 	
 	; English
 	lang E, "Can't use CUT."
-	lang D, "?"
+	; German
+	lang D, "Kein ZERSCHNEIDER."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -714,7 +746,8 @@ ENDM
 	
 	; English
 	lang E, "Can use SURF."
-	lang D, "?"
+	; German
+	lang D, "Kann SURFER."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -725,7 +758,8 @@ ENDM
 	
 	; English
 	lang E, "Can't use SURF."
-	lang D, "?"
+	; German
+	lang D, "Kein SURFER."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -736,7 +770,8 @@ ENDM
 	
 	; English
 	lang E, "Can use STRENGTH."
-	lang D, "?"
+	; German
+	lang D, "Kann STÄRKE."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -747,7 +782,8 @@ ENDM
 	
 	; English
 	lang E, "Can't use STRENGTH."
-	lang D, "?"
+	; German
+	lang D, "Kein STÄRKE."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -758,7 +794,8 @@ ENDM
 	
 	; English
 	lang E, "Can use FLASH."
-	lang D, "?"
+	; German
+	lang D, "Kann BLITZ."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -769,7 +806,8 @@ ENDM
 	
 	; English
 	lang E, "Can't use FLASH."
-	lang D, "?"
+	; German
+	lang D, "Kein BLITZ."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -780,7 +818,8 @@ ENDM
 	
 	; English
 	lang E, "Can use WHIRLPOOL."
-	lang D, "?"
+	; German
+	lang D, "Kann KASKADE."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -792,7 +831,8 @@ ENDM
 	; English
 	lang E, "Can't use"
 	lang_next E, "WHIRLPOOL."
-	lang D, "?"
+	; German
+	lang D, "Kein KASKADE."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -803,7 +843,8 @@ ENDM
 	
 	; English
 	lang E, "Can use TACKLE."
-	lang D, "?"
+	; German
+	lang D, "Kann TACKLE."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -814,7 +855,8 @@ ENDM
 	
 	; English
 	lang E, "Can't use TACKLE."
-	lang D, "?"
+	; German
+	lang D, "Kein TACKLE."
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -830,7 +872,9 @@ ENDM
 	lang_text E, "Too bad…"
 	lang_line E, "That was wrong!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Schade…"
+	lang_line D, "Falsche Antwort!"
 	
 	lang_text F, "?"
 	
@@ -848,7 +892,9 @@ ENDM
 	lang_text E, "Correct! "
 	lang_line E, "Next question!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Richtig!"
+	lang_line D, "Nächste Frage!"
 	
 	lang_text F, "?"
 	
@@ -878,7 +924,20 @@ ENDC
 	lang      E, " received"
 	lang_line E, "TM35."
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Fünf Richtige!"
+	lang_line D, "Glückwunsch!"
+	
+	lang_para D, "Du erhältst TM35"
+	lang_line D, "als Geschenk!"
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "TM35."
 	
 	lang_text F, "?"
 	
@@ -909,7 +968,21 @@ ENDC
 	lang      E, " received"
 	lang_line E, "HYPER POTION."
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Fünf Richtige!"
+	lang_line D, "Glückwunsch!"
+	
+	lang_para D, "Du erhältst einen"
+	lang_line D, "HYPERTRANK"
+	lang_cont D, "als Geschenk!"
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "HYPERTRANK."
 	
 	lang_text F, "?"
 	

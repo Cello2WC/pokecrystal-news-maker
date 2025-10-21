@@ -252,19 +252,19 @@ ENDC
 .rankingsDescriptionText
 	text "{RANKING_{RANKING_1}_FULLNAME}"
 	lang J, "は"
-	line "{RANKING_{RANKING_1}_DESC}"
+	describe_ranking_{RANKING_1}
 	; matching weirdness in JP issue 1
 	para "{RANKING_{RANKING_3}_FULLNAME}"
 	lang J, "は"
-	line "{RANKING_{RANKING_3}_DESC}"
+	describe_ranking_{RANKING_3}
 
 	para "{RANKING_{RANKING_2}_FULLNAME}"
 	lang J, "は"
-	line "{RANKING_{RANKING_2}_DESC}"
+	describe_ranking_{RANKING_2}
 
 	;para "{RANKING_{RANKING_3}_FULLNAME}"
 	;lang J, "は"
-	;line "{RANKING_{RANKING_3}_DESC}"
+	;describe_ranking_{RANKING_3}
 	done
 
 .noRankingsDataText

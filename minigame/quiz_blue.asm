@@ -372,12 +372,12 @@ ENDM
 	lang_next J, "３　ポケモンをとられた"
 	
 	; English
-	lang E,      "What happened"
-	lang_next E, "to BILL at the"
-	lang_next E, "SEA COTTAGE?"
-	lang_next E, "1. #MON fusion"
-	lang_next E, "2. He was sick"
-	lang_next E, "3. #MON stolen"
+    lang E,      "When you met BILL"
+    lang_next E, "at the SEA COTTAGE"
+    lang_next E, "what happened?"
+    lang_next E, "1. #MON fusion"
+    lang_next E, "2. He was sick"
+    lang_next E, "3. #MON stolen"
 	
 	lang D,      "?"
 	

@@ -421,7 +421,7 @@ ENDC
 	lang_cont E, "GYARADOS, FURRET," 
 	lang_cont E, "DUGTRIO, SHUCKLE," 
 	lang_cont E, "SNORLAX, UMBREON," 
-	lang_cont E, "DITTO & DRAGONAIR"
+	lang_cont E, "DITTO & DRAGONAIR."
 	
 	lang      D, "?"
 	

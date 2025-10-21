@@ -157,8 +157,8 @@ ENDC
 	lang J, "トレーナーランキング"
 	lang E, "TRAINER RANKINGS"
 	lang D, "BESTENLISTE"
-	lang F, "QUIZ #MANIA"
-	lang I, "QUIZ #FANATICO"
+	lang F, "CLASSEMENTE"
+	lang I, "CLASSIFICA ALLEN."
 	lang S, "?"
 	db "@"
 .menuMinigameName
@@ -237,7 +237,7 @@ ENDC
 
 	lang_text E, "We hope you enjoy"
 	lang_line E, "the <TRAINER> RANK-"
-	lang_cont E, "INGS and #MANIA"
+	lang_cont E, "INGS and #MON"
 	lang_cont E, "QUIZ in issue No.1"
 	lang_para E, "You can update"
 	lang_line E, "your ranking at"
@@ -250,8 +250,8 @@ ENDC
 	lang_line D, "gefallen die"
 	lang_para D, "<TRAINER>-BESTEN-"
 	lang_line D, "LISTE und das"
-	lang_para D, "#MANIAC-QUIZ"
-	lang_line D, "in Ausgabe Nr. 1!"
+	lang_para D, "#MON-QUIZ in"
+	lang_line D, "Ausgabe Nr. 1!"
 	lang_para D, "Du kannst deinen"
 	lang_line D, "Rang jederzeit"
 	lang_cont D, "aktualisieren."
@@ -263,7 +263,7 @@ ENDC
 	lang_line F, "vous apprécierez"
 	lang_para F, "Le CLASSEMENT"
 	lang_line F, "et le QUIZ #-"
-	lang_cont F, "MANIA dans la"
+	lang_cont F, "MON dans la"
 	lang_cont F, "parution No.1"
 	lang_para F, "Vous pouvez mettre"
 	lang_line F, "à jour votre"
@@ -277,7 +277,7 @@ ENDC
 	lang_text I, "Ci auguriamo che"
 	lang_line I, "la CLASSIFICA"
 	lang_para I, "ALLENATORI e il"
-	lang_line I, "QUIZ #MANIA"
+	lang_line I, "QUIZ #MON"
 	lang_para I, "nella prima"
 	lang_line I, "edizione ti"
 	lang_cont I, "piacciano."
@@ -307,10 +307,10 @@ ENDC
 	
 	done
 
-	; TODO: translation not yet approved
 .menuDesc
+	; Japanese
 	lang      J, "メニュー<WO>えらんでください"
-	
+	; English
 	lang      E, "Please choose"
 	lang_line E, "a menu."
 	

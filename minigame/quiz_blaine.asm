@@ -260,7 +260,7 @@ ENDM
 	lang_next E, "said “… in KANTO!”"
 	lang_next E, "1. Get stronger"
 	lang_next E, "2. Say hi to OAK"
-	lang_next E, "3. Try transport"
+	lang_next E, "3. Try other rides"
 	
 	lang D,      "?"
 	
@@ -495,6 +495,7 @@ ENDM
 	next "@"
 	
 .question10Text
+	; Japanese
 	lang J,      "ポケモンリーグで　ケーシィに"
 	lang_next J, "いえまで　おくりとばして　もらうには"
 	lang_next J, "どうすれば　いい？"
@@ -503,20 +504,13 @@ ENDM
 	lang_next J, "２　じぶんの　いえを　おもいうかべる"
 	lang_next J, "３　しっかりと　めを　とじる"
 	
-	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang E,      "How does ABRA send"
-	lang_next E, "you home from the"
-	lang_next E, "POKEMON LEAGUE?"
+	; English
+	lang E,      "The #MON LEAGUE"
+	lang_next E, "ABRA will send"
+	lang_next E, "you home if you…?"
 	lang_next E, "1. Touch ABRA"
-	lang_next E, "2. Picturing home"
+	lang_next E, "2. Picture home"
 	lang_next E, "3. Close your eyes"
-	
-;How'd you get ABRA
-;to teleport you at
-;the POKEMON LEAGUE?
-
-;What makes ABRA
-;teleport you at the
 	
 	lang D,      "?"
 	
@@ -691,7 +685,7 @@ ENDM
 ; but that's clunky, so we'll go with
 	lang      E, "Quiz complete!"
 	lang_line E, "Here's the rating!"
-; TODO: potentially revise, and match in other languages
+; Rework in other languages
 	
 	lang      D, "Die Bewertung"
 	lang_line D, "deiner Antworten!"

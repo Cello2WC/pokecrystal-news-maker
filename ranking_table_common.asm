@@ -14,6 +14,16 @@ IF !DEF(RANKING_{RANKING_3}_FULLNAME)
 DEF RANKING_{RANKING_3}_FULLNAME EQUS "{RANKING_{RANKING_3}_NAME}"
 ENDC
 
+IF !DEF(RANKING_{RANKING_1}_FMT_PLAYER)
+DEF RANKING_{RANKING_1}_FMT_PLAYER EQUS "{RANKING_{RANKING_1}_FMT}"
+ENDC
+IF !DEF(RANKING_{RANKING_2}_FMT_PLAYER)
+DEF RANKING_{RANKING_2}_FMT_PLAYER EQUS "{RANKING_{RANKING_2}_FMT}"
+ENDC
+IF !DEF(RANKING_{RANKING_3}_FMT_PLAYER)
+DEF RANKING_{RANKING_3}_FMT_PLAYER EQUS "{RANKING_{RANKING_3}_FMT}"
+ENDC
+
 
 
 
@@ -709,10 +719,10 @@ ENDR
 	nts_start
 	nts_placement 2, 3
 IF DEF(_LANG_J)
-	nts_ranking_string $0000, 6, 6
+	nts_ranking_string $0000, 6, 5+{RANKING_{RANKING_1}_SPACING};6
 	nts_ranking_number $0018, {RANKING_{RANKING_1}_FMT}
 ELSE
-	nts_ranking_string $0000, 8, 20
+	nts_ranking_string $0000, 8, SCREEN_WIDTH+{RANKING_{RANKING_1}_SPACING}
 	nts_ranking_number $0014, {RANKING_{RANKING_1}_FMT} ; compensating for smaller EZChat messages
 ENDC
 	nts_end
@@ -722,10 +732,10 @@ ENDC
 	nts_start
 	nts_placement 2, 3
 IF DEF(_LANG_J)
-	nts_ranking_string $0000, 6, 6
+	nts_ranking_string $0000, 6, 5+{RANKING_{RANKING_2}_SPACING}
 	nts_ranking_number $0018, {RANKING_{RANKING_2}_FMT}
 ELSE
-	nts_ranking_string $0000, 8, 20
+	nts_ranking_string $0000, 8, SCREEN_WIDTH+{RANKING_{RANKING_2}_SPACING};20
 	nts_ranking_number $0014, {RANKING_{RANKING_2}_FMT} ; compensating for smaller EZChat messages
 ENDC
 	nts_end
@@ -735,10 +745,10 @@ ENDC
 	nts_start
 	nts_placement 2, 3
 IF DEF(_LANG_J)
-	nts_ranking_string $0000, 6, 6
+	nts_ranking_string $0000, 6, 5+{RANKING_{RANKING_3}_SPACING}
 	nts_ranking_number $0018, {RANKING_{RANKING_3}_FMT}
 ELSE
-	nts_ranking_string $0000, 8, 20
+	nts_ranking_string $0000, 8, SCREEN_WIDTH+{RANKING_{RANKING_3}_SPACING}
 	nts_ranking_number $0014, {RANKING_{RANKING_3}_FMT} ; compensating for smaller EZChat messages
 ENDC
 	nts_end
@@ -972,7 +982,7 @@ ENDC
 	lang S, "?"
 	line ""
 	nts_start
-	nts_number {RANKING_{RANKING_1}_ADDR}, {RANKING_{RANKING_1}_FMT}
+	nts_number {RANKING_{RANKING_1}_ADDR}, {RANKING_{RANKING_1}_FMT_PLAYER}
 	nts_end
 	db "{RANKING_{RANKING_1}_UNIT}"
 	para "@" 
@@ -991,7 +1001,7 @@ ENDC
 	lang S, "?"
 	line
 	nts_start
-	nts_number {RANKING_{RANKING_2}_ADDR}, {RANKING_{RANKING_2}_FMT}
+	nts_number {RANKING_{RANKING_2}_ADDR}, {RANKING_{RANKING_2}_FMT_PLAYER}
 	nts_end
 	db "{RANKING_{RANKING_2}_UNIT}"
 	para "@"
@@ -1010,7 +1020,7 @@ ENDC
 	lang S, "?"
 	line
 	nts_start
-	nts_number {RANKING_{RANKING_3}_ADDR}, {RANKING_{RANKING_3}_FMT}
+	nts_number {RANKING_{RANKING_3}_ADDR}, {RANKING_{RANKING_3}_FMT_PLAYER}
 	nts_end 
 	db "{RANKING_{RANKING_3}_UNIT}"
 	para "@"

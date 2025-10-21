@@ -229,7 +229,10 @@ SECTION "SRAM Mobile 2", SRAM
 sGSBallFlagJP:: db
 
 sTrainerRankings::
-sTrainerRankingGameTimeHOF:: ds 4
+sTrainerRankingGameTimeHOF:: 
+sTrainerRankingGameTimeHOFHours:: ds 2
+sTrainerRankingGameTimeHOFMinutes:: ds 1
+sTrainerRankingGameTimeHOFSeconds:: ds 1
 sTrainerRankingStepCountHOF:: ds 4
 sTrainerRankingHealingsHOF:: ds 4
 sTrainerRankingBattlesHOF:: ds 3
@@ -268,8 +271,10 @@ sTrainerRankingCurrentSlotsStreak:: ds 2
 sTrainerRankingLongestSlotsStreak:: ds 2
 sTrainerRankingTotalSlotsPayouts:: ds 4
 sTrainerRankingTotalBattlePayouts:: ds 4
-sTrainerRankingLongestMagikarp:: ds 2
-sTrainerRankingShortestMagikarp:: ds 2
+sTrainerRankingLongestMagikarp:: ds 1
+sTrainerRankingLongestMagikarpLow:: ds 1
+sTrainerRankingShortestMagikarp:: ds 1
+sTrainerRankingShortestMagikarpLow:: ds 1
 sTrainerRankingBugContestScore:: ds 2
 sTrainerRankingsChecksum:: ds 2
 sTrainerRankingsEnd::

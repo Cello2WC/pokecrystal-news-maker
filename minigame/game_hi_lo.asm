@@ -96,9 +96,42 @@ MACRO minigame_start
 	
 	lang_para E, "Let's get started!"
 	
+	; German
+	lang_text D, "Bei Spielbeginn"
+	lang_line D, "wird dir ein"
+	lang_cont D, "#MON gezeigt."
 	
-	lang_text D, "?"
+	lang_para D, "Danach erscheint"
+	lang_line D, "ein weiteres!"
 	
+	lang_para D, "Errate, ob das"
+	lang_line D, "nächste #MON"
+	lang_cont D, "größer oder"
+	lang_cont D, "kleiner ist als"
+	lang_cont D, "das vorherige!"
+	
+	lang_para D, "Nur zwölf ver-"
+	lang_line D, "schiedene #MON"
+	lang_cont D, "tauchen in"
+	lang_cont D, "diesem Spiel auf."
+
+	lang_para D, "Als Hinweis zeigt"
+	lang_line D, "dir die LISTE alle"
+	lang_cont D, "möglichen #MON-"
+	lang_cont D, "Spezies an."
+	
+	lang_para D, "Es zählt die im"
+	lang_line D, "#DEX verzeichnete"
+	lang_cont D, "Größe."
+	
+	lang_para D, "Um zu gewinnen,"
+	lang_line D, "musst du sieben"
+	lang_cont D, "Mal hintereinander"
+	lang_cont D, "richtig liegen."
+
+	lang_para D, "Und los geht's!"
+
+
 	lang_text F, "?"
 	
 	lang_text I, "?"
@@ -111,7 +144,7 @@ ENDM
 MACRO minigame_name
 	lang J, "#　たかいか　ひくいか？"
 	lang E, "TALLER OR SHORTER"
-	lang D, "?"
+	lang D, "GRÖSSER? KLEINER?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -150,7 +183,8 @@ ENDC
 ;	lang      E, "Next #MON'll be"
 ;	lang_next E, "taller or shorter?"
 ;	
-;	lang      D, "?"
+;	lang      D, "Wie groß ist wohl"
+;   lang_next D, "das nächste PKMN?"
 ;	
 ;	lang      F, "?"
 ;	
@@ -423,7 +457,13 @@ ENDC
 	lang_cont E, "SNORLAX, UMBREON," 
 	lang_cont E, "DITTO & DRAGONAIR."
 	
-	lang      D, "?"
+	; German
+	lang_text D, "Erscheinen werden:"
+	lang_cont D, "NATU RELAXO DIGDRI"
+	lang_cont D, "WIESENIOR DITTO"
+	lang_cont D, "GARADOS ARBOK ONIX"
+	lang_cont D, "DRAGONIR NACHTARA"
+	lang_cont D, "POTTROTT GIFLOR"
 	
 	lang      F, "?"
 	
@@ -440,7 +480,7 @@ ENDC
 .menuHiText
 	lang J, "たかい"
 	lang E, "TALLER"
-	lang D, "?"
+	lang D, "GRÖSSER"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -450,7 +490,7 @@ ENDC
 .menuLoText
 	lang J, "ひくい"
 	lang E, "SHORTER"
-	lang D, "?"
+	lang D, "KLEINER"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -459,7 +499,7 @@ ENDC
 .menuListText
 	lang J, "リスト"
 	lang E, "LIST"
-	lang D, "?"
+	lang D, "LISTE"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -479,7 +519,8 @@ ENDC
 	lang J, "▶たかい　ひくい　リスト　やめる"
 	lang      E, "▶TALLER    SHORTER"
 	lang_next E, " LIST      CANCEL"
-	lang D, "▶?"
+	lang      D, "▶GRÖSSER   KLEINER"
+	lang_next D, " LISTE     ZURÜCK"
 	lang F, "▶?"
 	lang I, "▶?"
 	lang S, "▶?"
@@ -505,7 +546,9 @@ ENDC
 	lang      E, "Is the next one"
 	lang_next E, "taller or shorter?"
 	
-	lang      D, "?"
+	; German
+	lang      D, "Wie groß ist wohl"
+	lang_next D, "das nächste PKMN?"
 	
 	lang      F, "?"
 	
@@ -520,7 +563,7 @@ ENDC
 	
 	; English
 	lang_text E, "Correct!"
-	lang_text D, "?"
+	lang_text D, "Richtig!"
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -531,7 +574,7 @@ ENDC
 	
 	; English
 	lang_text E, "Incorrect!"
-	lang_text D, "?"
+	lang_text D, "Leider falsch!"
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -562,8 +605,23 @@ ENDC
 	lang      E, " received"
 	lang_line E, "STAR PIECE."
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Glückwunsch!"
+
+	lang_para D, "Für 7 Richtige in"
+	lang_line D, "in Folge gewinnst"
+	lang_cont D, "du dieses"
+	lang_cont D, "STERNENSTÜCK!"
 	
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "STERNENSTÜCK."
+
 	lang_text F, "?"
 	
 	lang_text I, "?"
@@ -578,7 +636,7 @@ ENDC
 ;	
 ;	; English
 ;	lang E, "Press START!"
-;	lang D, "?"
+;	lang D, "Drücke START!"
 ;	lang F, "?"
 ;	lang I, "?"
 ;	lang S, "?"

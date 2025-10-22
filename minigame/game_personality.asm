@@ -45,8 +45,24 @@ MACRO minigame_start
 	lang_para E, "Alright, let's"
 	lang_line E, "get started!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Beginnen wir mit"
+	lang_line D, "dem <TRAINER>-"
+	lang_cont D, "CHECK-UP!"
+
+	lang_para D, "Du erhältst nach"
+	lang_line D, "nur deinem ersten"
+	lang_cont D, "Check-Up ein"
+	lang_cont D, "Geschenk!"
 	
+	lang_para D, "Das Ergebnis be-"
+	lang_line D, "einflusst die Art"
+	lang_cont D, "deines Geschenks,"
+	lang_cont D, "also pass gut auf!"
+	
+	lang_para D, "Und damit geht's"
+	lang_line D, "jetzt los!"
+
 	lang_text F, "?"
 	
 	lang_text I, "?"
@@ -62,7 +78,8 @@ MACRO minigame_name
 	lang J, "<TRAINER> しんだん！"
 	; English
 	lang E, "<TRAINER> CHECKUP!"
-	lang D, "?"
+	; German
+	lang D, "<TRAINER>-CHECK-UP!"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -153,7 +170,7 @@ MinigameStart::
 .menuItemAnswer1Text
 	lang J, "はい"
 	lang E, "YES"
-	lang D, "?"
+	lang D, "JA"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -162,7 +179,7 @@ MinigameStart::
 .menuItemAnswer2Text
 	lang J, "いいえ"
 	lang E, "NO"
-	lang D, "?"
+	lang D, "NEIN"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -227,7 +244,11 @@ ENDM
 	lang_next E, "I always give it a"
 	lang_next E, "nickname."	
 	
-	lang      D, "?"
+	; German
+	lang      D, "Ich gebe jedem"
+	lang_next D, "meiner #MON"
+	lang_next D, "sofort einen"
+	lang_next D, "Spitznamen."
 	
 	lang      F, "?"
 	
@@ -248,7 +269,13 @@ ENDM
 	lang_next E, "I always end up"
 	lang_next E, "adding “darling”."
 	
-	lang      D, "?"
+	; German
+	lang      D, "Wenn ich den"
+	lang_next D, "Namen meines"
+	lang_next D, "#MON rufe, füge"
+	lang_next D, "ich immer ein"
+	lang_next D, "“-lein” oder ein"
+	lang_next D, "“-chen” hinzu.
 	
 	lang      F, "?"
 	
@@ -271,7 +298,12 @@ ENDM
 	lang_next E, "I don't care if"
 	lang_next E, "it's not strong."
 	
-	lang      D, "?"
+	; German
+	lang      D, "Solange eine"
+	lang_next D, "Attacke zu meinem"
+	lang_next D, "#MON passt,"
+	lang_next D, "ist es egal, ob"
+	lang_next D, "sie stark ist."
 	
 	lang      F, "?"
 	
@@ -293,7 +325,12 @@ ENDM
 	lang_next E, "even if they're"
 	lang_next E, "weak."
 	
-	lang      D, "?"
+	; German
+	lang      D, "Ich fange mehr als"
+	lang_next D, "zehn meiner Lieb-"
+	lang_next D, "lings-#MON,"
+	lang_next D, "selbst wenn sie"
+	lang_next D, "schwach sind."
 	
 	lang      F, "?"
 	
@@ -314,7 +351,12 @@ ENDM
 	lang_next E, "I don't care"
 	lang_next E, "much for defense."
 	
-	lang      D, "?"
+	; German
+	lang      D, "Solange ein #-"
+	lang_next D, "MON gute Angriffs-"
+	lang_next D, "werte hat, ist mir"
+	lang_next D, "die Verteidigung"
+	lang_next D, "nicht wichtig."
 	
 	lang      F, "?"
 	
@@ -334,7 +376,11 @@ ENDM
 	lang_next E, "weaker opponent"
 	lang_next E, "feels great!"
 	
-	lang      D, "?"
+	; German
+	lang      D, "Es fühlt sich gut"
+	lang_next D, "an, gegen schwä-"
+	lang_next D, "chere Gegner zu"
+	lang_next D, "gewinnen!"
 	
 	lang      F, "?"
 	
@@ -356,7 +402,13 @@ ENDM
 	lang_next E, "if the price was"
 	lang_next E, "high enough."		
 	
-	lang      D, "?"
+	; German
+	lang      D, "Solange der Preis"
+	lang_next D, "stimmt, würde ich"
+	lang_next D, "auch #MON ver-"
+	lang_next D, "kaufen, um die"
+	lang_next D, "ich mich lange"
+	lang_next D, "gekümmert habe."
 	
 	lang      F, "?"
 	
@@ -378,8 +430,13 @@ ENDM
 	lang_next E, "kinds of TM moves"	
 	lang_next E, "without looking."
 	
-	lang      D, "?"
-	
+	; German
+	lang      D, "Ich kann dreißig"
+	lang_next D, "oder mehr Arten"
+	lang_next D, "von TM-Attacken"
+	lang_next D, "aus dem Gedächtnis"
+	lang_next D, "aufzählen."
+		
 	lang      F, "?"
 	
 	lang      I, "?"
@@ -400,8 +457,13 @@ ENDM
 	lang_next E, "my #MON right" 
 	lang_next E, "away!"
 	
-	lang      D, "?"
-	
+	; German
+	lang      D, "Sobald ich eine"
+	lang_next D, "TM erhalte, bringe"
+	lang_next D, "ich sie sofort"
+	lang_next D, "meinem #MON"
+	lang_next D, "bei."
+
 	lang      F, "?"
 	
 	lang      I, "?"
@@ -420,8 +482,11 @@ ENDM
 	lang_next E, "carry plenty of"
 	lang_next E, "medicine with me."
 	
-	lang      D, "?"
-	
+	; German
+	lang      D, "Ich habe immer"
+	lang_next D, "eine große Menge"
+	lang_next D, "Medizin bei mir."
+
 	lang      F, "?"
 	
 	lang      I, "?"
@@ -439,9 +504,14 @@ ENDM
 	lang      E, "When it comes to"
 	lang_next E, "items, I prefer"
 	lang_next E, "a FOCUS BAND over"
-	lang_next E, "a MIRACLEBERRY!"	
+	lang_next E, "a MIRACLEBERRY!"
 	
-	lang      D, "?"
+	; German
+	lang      D, "Ich bevorzuge"
+	lang_next D, "bei Items"
+	lang_next D, "ein FOKUSBAND"
+	lang_next D, "gegenüber einer"
+	lang_next D, "WUNDERBEERE!"
 	
 	lang      F, "?"
 	
@@ -464,7 +534,14 @@ ENDM
 	lang_next E, "I think I can win"
 	lang_next E, "next turn."
 	
-	lang      D, "?"
+	; German
+	lang      D, "Auch wenn mein"
+	lang_next D, "#MON kaum noch"
+	lang_next D, "KP übrig hat,"
+	lang_next D, "heile ich es"
+	lang_next D, "nicht, wenn ich"
+	lang_next D, "die nächste Runde"
+	lang_next D, "gewinnen könnte."
 	
 	lang      F, "?"
 	
@@ -485,7 +562,12 @@ ENDM
 	lang_next E, "friends don't"
 	lang_next E, "often use."
 	
-	lang      D, "?"
+	; German
+	lang      D, "Ich mag es sehr,"
+	lang_next D, "#MON einzu-"
+	lang_next D, "setzen, die von"
+	lang_next D, "Freunden nicht oft"
+	lang_next D, "eingesetzt werden."
 	
 	lang      F, "?"
 	
@@ -507,7 +589,12 @@ ENDM
 	lang_next E, "is heal at a"	
 	lang_next E, "#MON CENTER."
 	
-	lang      D, "?"
+	; German
+	lang      D, "In einer neuen"
+	lang_next D, "Stadt besuche ich"
+	lang_next D, "als allererstes"
+	lang_next D, "das #MON-"
+	lang_next D, "CENTER zum Heilen."
 	
 	lang      F, "?"
 	
@@ -529,7 +616,12 @@ ENDM
 	lang_next E, "room than go out"
 	lang_next E, "exploring caves."
 	
-	lang      D, "?"
+	; German
+	lang      D, "Lieber plane ich"
+	lang_next D, "daheim in Ruhe"
+	lang_next D, "meine Taktik,"
+	lang_next D, "statt draußen Höh-"
+	lang_next D, "len zu erkunden."
 	
 	lang      F, "?"
 	
@@ -551,8 +643,12 @@ ENDM
 	lang_next E, "BOXES are all"
 	lang_next E, "neatly organized."
 	
-	lang      D, "?"
-	
+	; German
+	lang      D, "Die #MON"
+	lang_next D, "in meinen PC-"
+	lang_next D, "BOXEN sind alle"
+	lang_next D, "schön geordnet."
+
 	lang      F, "?"
 	
 	lang      I, "?"
@@ -684,7 +780,7 @@ IF DEF(_LANG_E)
 	nts_end
 ENDC
 	lang E, "'s RESULTS"
-	lang D, "?"
+	lang D, "s ERGEBNIS"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -729,7 +825,20 @@ ENDC
 	lang_cont E, "still a win! Don't"
 	lang_cont E, "forget that!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Dein <TRAINER>-Typ"
+	lang_line D, "ist #FAN!"
+	
+	lang_para D, "Deine Zuneigung zu"
+	lang_line D, "#MON sind klar"
+	lang_cont D, "erkennbar!"
+	
+	lang_para D, "Auch wenn du einen"
+	lang_line D, "Kampf verlierst,"
+	lang_cont D, "ist es ein Sieg,"
+	lang_cont D, "ein süßes #MON"
+	lang_cont D, "zu besitzen!"
+	lang_cont D, "Vergiss das nicht!"
 	
 	lang_text F, "?"
 	
@@ -761,7 +870,21 @@ ENDC
 	lang      E, " received"
 	lang_line E, "TM27."	
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "TM27, RÜCKKEHR,"
+	lang_line D, "passt wunderbar zu"
+	lang_cont D, "deinen #MON!"
+	lang_cont D, "Setze sie unbe-"
+	lang_cont D, "dingt ein!"
+	
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "TM27."	
 	
 	lang_text F, "?"
 	
@@ -803,7 +926,26 @@ ENDC
 	lang_para E, "come join"
 	lang_line E, "TEAM <ROCKET>!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Du scheinst der"
+	lang_line D, "perfekte Typ für"
+	lang_cont D, "TEAM <ROCKET>"
+	lang_cont D, "zu sein!"
+	
+	lang_para D, "Ich meine, du"
+	lang_line D, "denkst eigentlich"
+	lang_cont D, "nur an dich"
+	lang_cont D, "selbst, stimmt's?"
+	
+	lang_para D, "Eine egoistische"
+	lang_line D, "Einstellung wird"
+	lang_cont D, "dich nicht weit"
+	lang_cont D, "bringen!"
+	
+	lang_para D, "Tja, wenn du deine"
+	lang_line D, "Meinung änderst,"
+	lang_para D, "komm einfach zu"
+	lang_line D, "TEAM <ROCKET>!"
 	
 	lang_text F, "?"
 	
@@ -838,7 +980,25 @@ ENDC
 	lang      E, " received"
 	lang_line E, "TM21."	
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Hier ist ein Ge-"
+	lang_line D, "schenk, um deine"
+	lang_cont D, "Freundschaft mit"
+	lang_cont D, "TEAM <ROCKET>"
+	lang_cont D, "zu feiern!"
+	
+	lang_para D, "TM21, FRUSTRATION."
+	lang_line D, "Genau das Richtige"
+	lang_cont D, "für dich!"
+	
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "TM21."	
 	
 	lang_text F, "?"
 	
@@ -874,7 +1034,21 @@ ENDC
 	lang_cont E, "really look up to"
 	lang_cont E, "you!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Du bist ein"
+	lang_line D, "ASS-TRAINER!"
+	
+	lang_para D, "Du kümmerst dich"
+	lang_line D, "beispielhaft um"
+	lang_cont D, "deine #MON"
+	lang_cont D, "und scheinst auch"
+	lang_cont D, "gut in Kämpfen"
+	lang_cont D, "zu sein."
+	
+	lang_para D, "Du weißt so viel,"
+	lang_line D, "dass du sicher ein"
+	lang_cont D, "Vorbild für deine"
+	lang_cont D, "Freunde bist!"
 	
 	lang_text F, "?"
 	
@@ -906,8 +1080,21 @@ ENDC
 	lang      E, " received"
 	lang_line E, "PP UP."	
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Damit du noch mehr"
+	lang_line D, "Vorteile im Kampf"
+	lang_cont D, "hast, nimm dieses"
+	lang_cont D, "AP-PLUS!"
 	
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "AP-PLUS."
+
 	lang_text F, "?"
 	
 	lang_text I, "?"
@@ -944,8 +1131,23 @@ ENDC
 	lang_cont E, "traveling with"
 	lang_cont E, "you!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Du bist wie ein"
+	lang_line D, "CAMPER! Als"
+	lang_cont D, "Mädchen wäre das"
+	lang_cont D, "ein PICKNICKER!"
 	
+	lang_para D, "Du hast wirklich"
+	lang_line D, "Spaß dabei, mit"
+	lang_cont D, "deinen #MON"
+	lang_cont D, "Abenteuer zu"
+	lang_cont D, "erleben!"
+	
+	lang_para D, "Deine #MON sind"
+	lang_line D, "sicher glücklich,"
+	lang_cont D, "mit dir zusammen"
+	lang_cont D, "zu reisen!"
+
 	lang_text F, "?"
 	
 	lang_text I, "?"
@@ -979,8 +1181,23 @@ ENDC
 	lang_cont E, "traveling with"
 	lang_cont E, "you!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Du bist wie ein"
+	lang_line D, "PICKNICKER! Als"
+	lang_cont D, "Junge wäre das"
+	lang_cont D, "ein CAMPER!"
+
+	lang_para D, "Du hast wirklich"
+	lang_line D, "Spaß dabei, mit"
+	lang_cont D, "deinen #MON"
+	lang_cont D, "Abenteuer zu"
+	lang_cont D, "erleben!"
 	
+	lang_para D, "Deine #MON sind"
+	lang_line D, "sicher glücklich,"
+	lang_cont D, "mit dir zusammen"
+	lang_cont D, "zu reisen!"
+
 	lang_text F, "?"
 	
 	lang_text I, "?"
@@ -1014,7 +1231,22 @@ ENDC
 	lang      E, " received"
 	lang_line E, "SILVERPOWDER."	
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Hier ist noch ein"
+	lang_line D, "Geschenk für dich!"
+	
+	lang_para D, "Es ist"
+	lang_line D, "SILBERSTAUB!"
+	lang_cont D, "Mach weiter so!"
+	
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "SILBERSTAUB."	
 	
 	lang_text F, "?"
 	
@@ -1050,7 +1282,20 @@ ENDC
 	lang_line E, "battle and get"
 	lang_cont E, "even stronger!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Hu-ha!"
+	lang_line D, "Du bist wie ein"
+	lang_cont D, "SCHWARZGURT!"
+	
+	lang_para D, "Dein kühner Kampf-"
+	lang_line D, "stil ist wahrlich"
+	lang_cont D, "cool!"
+	
+	lang_para D, "Bleib dabei, dich"
+	lang_line D, "schweißtreibenden"
+	lang_cont D, "Kämpfen auszu-"
+	lang_cont D, "setzen und werde"
+	lang_cont D, "noch stärker!"
 	
 	lang_text F, "?"
 	
@@ -1080,8 +1325,21 @@ ENDC
 	lang      E, " received"
 	lang_line E, "TM20."	
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Dir wird die TM20"
+	lang_line D, "verliehen! Sie"
+	lang_line D, "lehrt AUSDAUER!"
+	lang_cont D, "Gib dein Bestes!"
 	
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "TM20."	
+		
 	lang_text F, "?"
 	
 	lang_text I, "?"
@@ -1127,7 +1385,27 @@ ENDC
 	lang_para E, "stay true to"
 	lang_line E, "yourself…"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Dein <TRAINER>-Typ"
+	lang_line D, "lautet FORSCHERIN…"
+
+	lang_para D, "Manchmal hält man"
+	lang_line D, "dich vielleicht"
+	lang_cont D, "für sonderbar."
+
+	lang_para D, "Störe dich aber"
+	lang_line D, "nicht daran."
+	lang_cont D, "Lass sie reden."
+
+	lang_para D, "Egal, was irgend-"
+	lang_line D, "wer sagt…"
+
+	lang_para D, "Und selbst wenn"
+	lang_line D, "dein Schwarm dir"
+	lang_cont D, "einen Korb gibt…"
+
+	lang_para D, "Bleib einfach"
+	lang_line D, "du selbst…"
 	
 	lang_text F, "?"
 	
@@ -1161,8 +1439,23 @@ ENDC
 	lang      E, " received"
 	lang_line E, "BRIGHTPOWDER."	
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Hier, nimm dieses"
+	lang_line D, "BLENDPUDER."
 	
+	lang_para D, "Nutze es, um dich"
+	lang_line D, "von deiner Einsam-"
+	lang_cont D, "keit abzulenken…"
+	
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "BLENDPUDER."	
+		
 	lang_text F, "?"
 	
 	lang_text I, "?"

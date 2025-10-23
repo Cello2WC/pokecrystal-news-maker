@@ -70,9 +70,33 @@ MACRO minigame_start
 	lang_cont E, "answer."
 
 	lang_para E, "Let's get started!"
-	
-	lang_text D, "?"
-	
+
+	; German
+	lang_text D, "Bewege dich mit"
+	lang_line D, "dem Steuerkreuz"
+	lang_cont D, "über die Buchsta-"
+	lang_cont D, "ben in richtiger"
+	lang_cont D, "Reihenfolge, um"
+	lang_cont D, "den #MON-Namen"
+	lang_cont D, "zu bilden."
+
+	lang_para D, "Du darfst dabei"
+	lang_line D, "nicht stehen blei-"
+	lang_cont D, "ben oder dich"
+	lang_cont D, "zurück bewegen!"
+
+	lang_para D, "Beginne beim × und"
+	lang_line D, "bewege dich bis"
+	lang_cont D, "zum !-Zeichen,"
+	lang_cont D, "um das Ziel zu"
+	lang_cont D, "erreichen.
+
+	lang_para D, "Drücke den A-"
+	lang_line D, "Knopf, um deine"
+	lang_cont D, "Lösung zu prüfen."
+
+	lang_para D, "Und los geht's!"
+		
 	lang_text F, "?"
 	
 	lang_text I, "?"
@@ -99,7 +123,7 @@ ENDM
 MACRO minigame_name
 	lang J, "ポケモンもじめいろ　かんたん"
 	lang E, "EASY #MON MAZE"
-	lang D, "?"
+	lang D, "LEICHTES LABYRINTH"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -108,7 +132,7 @@ ENDM
 MACRO minigame_name_2
 	lang J, "ポケモンもじめいろ　むずかしい"
 	lang E, "HARD #MON MAZE"
-	lang D, "?"
+	lang D, "SCHWERES LABYRINTH"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -637,7 +661,15 @@ ENDC
 	lang      E, " received"
 	lang_line E, "TM04."
 	
-	lang_text D, "?"
+	; German
+	lang_text D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "TM04."
 	
 	lang_text F, "?"
 	
@@ -1275,8 +1307,16 @@ ENDC
 	lang      E, " received"
 	lang_line E, "BLUESKY MAIL."
 	
-	lang_text D, "?"
-	
+	; German
+	lang_text D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "KOBALTBRIEF."
+		
 	lang_text F, "?"
 	
 	lang_text I, "?"
@@ -1372,7 +1412,7 @@ ENDR
 CorrectText:
 	lang_text J, "せいかい！！"
 	lang_text E, "Correct!"
-	lang_text D, "?"
+	lang_text D, "Richtig!"
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -1384,7 +1424,8 @@ IncorrectText:
 	; English
 	lang_text E, "Oops…"
 	lang_line E, "You messed up!"
-	lang_text D, "?"
+	lang_text D, "Schade… Das war"
+	lang_line D, "nicht richtig!"
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"

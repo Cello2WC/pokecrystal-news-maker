@@ -484,7 +484,7 @@ ENDC
 	lang      E, "Please choose a"
 	lang_line E, "RANKING to view."
 	
-	lang      D, "Wähle eine"
+	lang      D, "Bitte wähle eine"
 	lang_line D, "Bestenliste."
 	
 	lang      F, "Choisir le classe-"
@@ -864,7 +864,7 @@ ENDC
 	nts_end
 	lang J, "さい　"
 	lang E, "yrs. "
-	lang D, "?"
+	lang D, " Jahre"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -876,7 +876,7 @@ ENDC
 ;	nts_ranking_number $000A, 1, 3, 3
 ;	nts_end
 ;	lang E, "-year-old "
-;	lang D, ""
+;	lang D, "-jährig "
 ;	lang F, ""
 ;	lang I, ""
 ;	lang S, ""
@@ -884,7 +884,7 @@ ENDC
 ;	nts_ranking_gender $000B, 4, 
 ;	nts_end
 ;	lang_line E, "from "
-;	lang_line D, ""
+;	lang_line D, "aus "
 ;	lang_line F, ""
 ;	lang_line I, ""
 ;	lang_line S, ""

@@ -36,7 +36,7 @@ SECTION "Download Text", ROM0[$2000]
 	lang      E, "Debug Issue"
 	lang_line E, __DATE__
 	
-	lang      D, ""
+	lang      D, "Debug-Ausgabe"
 	lang_line D, __DATE__
 	
 	lang F, ""
@@ -176,7 +176,7 @@ ENDC
 .menuAboutFeesName
 	lang J, "りょうきんについて"
 	lang E, "ABOUT FEES"
-	lang D, "?"
+	lang D, "GEBÜHREN-INFOS"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -314,7 +314,9 @@ ENDC
 	lang      E, "Please choose"
 	lang_line E, "a menu."
 	
-	lang      D, "?"
+	; German
+	lang      D, "Bitte wähle ein"
+	lang_line D, "Menü aus."
 	
 	lang      F, "?"
 	

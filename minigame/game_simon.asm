@@ -24,7 +24,7 @@ MACRO minigame_name
 	
 	; English
 	lang E, "#RAP IT UP!"
-	lang D, "?"
+	lang D, "#MON-PLAUDEREI!"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -90,7 +90,7 @@ MinigameStart::
 .menuCrySet1Name
 	lang J, "なきごえセット　１"
 	lang E, "CRY SET 1"
-	lang D, "?"
+	lang D, "RUF-SET 1"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -98,7 +98,7 @@ MinigameStart::
 .menuCrySet2Name
 	lang J, "なきごえセット　２"
 	lang E, "CRY SET 2"
-	lang D, "?"
+	lang D, "RUF-SET 2"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -106,7 +106,7 @@ MinigameStart::
 .menuCrySet3Name
 	lang J, "なきごえセット　３"
 	lang E, "CRY SET 3"
-	lang D, "?"
+	lang D, "RUF-SET 3"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -114,7 +114,7 @@ MinigameStart::
 .menuGameInstructionName
 	lang J, "ゲームの　せつめい"
 	lang E, "GAME EXPLANATION"
-	lang D, "?"
+	lang D, "SPIELREGELN"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -122,7 +122,7 @@ MinigameStart::
 .menuCancelName
 	lang J, "もどる"
 	lang E, "CANCEL"
-	lang D, "?"
+	lang D, "ZURÜCK"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -232,8 +232,50 @@ ENDM
 
 	lang_para E, "Let's get started!"
 	
-	lang_text D, "?"
-	
+	; German
+	lang_text D, "Wähle zunächst"
+	lang_line D, "ein Ruf-Set aus."
+
+	lang_para D, "Wähle dein"
+	lang_line D, "Favoriten-Set."
+
+	lang_para D, "Danach beginnt"
+	lang_line D, "das Spiel!"
+
+	lang_para D, "Konzentriere dich"
+	lang_line D, "auf die Bild-"
+	lang_cont D, "schirmmitte."
+
+	lang_para D, "Ein #MON stößt"
+	lang_line D, "seinen Ruf aus!"
+
+	lang_para D, "Es kann von oben,"
+	lang_line D, "unten, links oder"
+	lang_cont D, "rechts kommen."
+	lang_cont D, "Also hör gut zu!"
+
+	lang_para D, "Drücke die"
+	lang_line D, "passende Richtung"
+	lang_cont D, "auf dem"
+	lang_cont D, "Steuerkreuz."
+
+	lang_para D, "Liegst du richtig,"
+	lang_line D, "geht es in die"
+	lang_cont D, "nächste Runde!"
+
+	lang_para D, "Mit jeder Runde"
+	lang_line D, "erscheinen mehr"
+	lang_cont D, "#MON. Versuche,"
+	lang_cont D, "dir die Reihen-"
+	lang_cont D, "folge einzuprägen."
+
+	lang_para D, "Schaffst du es,"
+	lang_line D, "20 Runden durch-"
+	lang_cont D, "zuhalten, gewinnst"
+	lang_cont D, "du das Spiel!"
+
+	lang_para D, "Und los geht's!"
+		
 	lang_text F, "?"
 	
 	lang_text I, "?"
@@ -291,14 +333,14 @@ ENDM
 .pressStartText
 ;	lang J, "スタートボタンを　おして！"
 ;	lang E, "PRESS START!"
-;	lang D, "?"
+;	lang D, "Drücke START!"
 ;	lang F, "?"
 ;	lang I, "?"
 ;	lang S, "?"
 
 	lang J, "なきごえセット"
 	lang E, "CRY SET"
-	lang D, "?"
+	lang D, "RUF-SET"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -742,7 +784,9 @@ ENDR
 	; English
 	lang_text E, "Do you want to use"
 	lang_line E, "this cry set?"
-	lang_text D, "?"
+	; German
+	lang_text D, "Möchtest du dieses"
+	lang_line D, "Ruf-Set auswählen?"
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -756,7 +800,9 @@ ENDR
 ;	lang E,      " Your turn! Use"
 ;	lang_next E, "the Control Pad!"
 ;	
-;	lang D,      "?"
+;	lang D,      "  Du bist dran!"
+;   lang_next D, "   Drücke das"
+;   lang_next D, "  Steuerkreuz!"
 ;	
 ;	lang F,      "?"
 ;	
@@ -776,7 +822,10 @@ ENDR
 	lang E,      "Your turn! Use"
 	lang_next E, "the Control Pad!"
 	
-	lang D,      "?"
+	; German
+	lang D,      "Du bist dran!"
+	lang_next D, "Drücke das"
+	lang_next D, "Steuerkreuz!"
 	
 	lang F,      "?"
 	
@@ -792,7 +841,7 @@ ENDR
 	
 	; English
 	lang_text E, "Correct!"
-	lang_text D, "?"
+	lang_text D, "Richtig!"
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -805,7 +854,9 @@ ENDR
 	; English
 	lang_text E, "Oops…"
 	lang_line E, "You messed up!"
-	lang_text D, "?"
+	; German
+	lang_text D, "Schade… Das war"
+	lang_line D, "nicht richtig!"
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -818,7 +869,9 @@ ENDR
 	; English
 	lang_text E, "You wrapped up all"
 	lang_line E, "twenty! Well done!"
-	lang_text D, "?"
+	; German
+	lang_text D, "20 Runden ge-"
+	lang_line D, "schafft! Klasse!"
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -849,7 +902,22 @@ ENDC
 	lang      E, " received"
 	lang_line E, "BERRY."
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Du hast fünf Run-"
+	lang_line D, "den durchgehalten!"
+	
+	lang_para D, "Hier! Nimm diese"
+	lang_line D, "BEERE als"
+	lang_cont D, "Geschenk!"
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "BEERE."
+	
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -877,7 +945,22 @@ ENDC
 	lang      E, " received"
 	lang_line E, "# DOLL."
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Du hast zehn Run-"
+	lang_line D, "den durchgehalten!"
+	
+	lang_para D, "Hier! Nimm diese"
+	lang_line D, "#PUPPE als"
+	lang_cont D, "Geschenk!"
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "#PUPPE."
+	
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -891,7 +974,7 @@ ENDC
 	
 	; English
 	lang_text E, "You wrapped up"
-	lang_line E, "ten rounds!"
+	lang_line E, "fifteen rounds!"
 	
 	lang_para E, "Here! Take this"
 	lang_line E, "PEARL as a"
@@ -905,7 +988,22 @@ ENDC
 	lang      E, " received"
 	lang_line E, "PEARL."
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Du hast 15 Runden"
+	lang_line D, "durchgehalten!"
+	
+	lang_para D, "Hier! Nimm diese"
+	lang_line D, "PERLE als"
+	lang_cont D, "Geschenk!"
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "PERLE."
+
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -933,7 +1031,22 @@ ENDC
 	lang      E, " received"
 	lang_line E, "BIG PEARL."
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Du hast 20 Runden"
+	lang_line D, "durchgehalten!"
+	
+	lang_para D, "Hier! Nimm diese"
+	lang_line D, "RIESENPERLE als"
+	lang_cont D, "Geschenk!"
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "RIESENPERLE."
+
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -961,7 +1074,22 @@ ENDC
 	lang      E, " received"
 	lang_line E, "PNK APRICORN."
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Du hast 20 Runden"
+	lang_line D, "durchgehalten!"
+	
+	lang_para D, "Hier! Nimm diese"
+	lang_line D, "APRIKOKO PNK"
+	lang_cont D, "als Geschenk!"
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "APRIKOKO PNK."
+	
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -990,7 +1118,22 @@ ENDC
 	lang      E, " received"
 	lang_line E, "STARDUST."
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Du hast 20 Runden"
+	lang_line D, "durchgehalten!"
+	
+	lang_para D, "Hier! Nimm diesen"
+	lang_line D, "STERNENSTAUB als"
+	lang_cont D, "Geschenk!"
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "STERNENSTAUB."
+	
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -1017,8 +1160,23 @@ IF DEF(_LANG_E)
 ENDC
 	lang      E, " received"
 	lang_line E, "GRN APRICORN."
+
+	; German
+	lang_text D, "Du hast 20 Runden"
+	lang_line D, "durchgehalten!"
 	
-	lang_text D, "?"
+	lang_para D, "Hier! Nimm diese"
+	lang_line D, "APRIKOKO GRN"
+	lang_cont D, "als Geschenk!"
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "APRIKOKO GRN."
+	
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -1046,7 +1204,22 @@ ENDC
 	lang      E, " received"
 	lang_line E, "TM44."
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Du hast 20 Runden"
+	lang_line D, "durchgehalten!"
+	
+	lang_para D, "Hier! Nimm diese"
+	lang_line D, "TM44 als"
+	lang_cont D, "Geschenk!"
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "TM44."
+	
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -1074,7 +1247,22 @@ ENDC
 	lang      E, " received"
 	lang_line E, "YLW APRICORN."
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Du hast 20 Runden"
+	lang_line D, "durchgehalten!"
+	
+	lang_para D, "Hier! Nimm diese"
+	lang_line D, "APRIKOKO GLB"
+	lang_cont D, "als Geschenk!"
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "APRIKOKO GLB."
+	
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"

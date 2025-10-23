@@ -104,7 +104,30 @@ MACRO minigame_start
 	
 	lang_para E, "Let's go!"
 	
-	lang_text D, "?"
+; German
+	lang_text D, "BLAU: Yo!"
+	lang_line D, "Du bist hier, um"
+	lang_cont D, "mein Quiz heraus-"
+	lang_cont D, "zufordern, hm?"
+	
+	lang_para D, "Mein Quiz hat"
+	lang_line D, "Fragen, die du nie"
+	lang_cont D, "beantworten wirst,"
+	lang_cont D, "egal, wie weit du"
+	lang_cont D, "gereist bist."
+
+	lang_para D, "Es handelt sich"
+	lang_line D, "schließlich um"
+	lang_cont D, "Fakten von vor"
+	lang_cont D, "drei Jahren."
+	
+	lang_para D, "Wie dem auch sei,"
+	lang_line D, "lass uns beginnen."
+	
+	lang_para D, "Insgesamt gibt es"
+	lang_line D, "zehn Fragen!"
+	
+	lang_para D, "Also, los geht's!"
 	
 	lang_text F, "?"
 	
@@ -118,7 +141,7 @@ ENDM
 MACRO minigame_name
 	lang J, "ポケモンクイズ！"
 	lang E, "#MON QUIZ!"
-	lang D, "?"
+	lang D, "#MON-QUIZ!"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -300,7 +323,13 @@ ENDM
 	lang_next E, "2. RED'S HOUSE"
 	lang_next E, "3. BLUE'S HOUSE"
 	
-	lang D,      "?"
+	; German
+	lang D,      "Wo in ALABASTIA"
+	lang_next D, "kannst du deine"
+	lang_next D, "#MON heilen?"
+	lang_next D, "1. EICHs LABOR"
+	lang_next D, "2. Haus von ROT"
+	lang_next D, "3. Haus von BLAU"
 	
 	lang F,      "?"
 	
@@ -326,7 +355,13 @@ ENDM
 	lang_next E, "2. ROWEY"
 	lang_next E, "3. SPIKEY"
 	
-	lang D,      "?"
+	; German
+	lang D,      "Wie heißt das"
+	lang_next D, "HABITAK aus"
+	lang_next D, "VERTANIA CITY?"
+	lang_next D, "1. WILLI"
+	lang_next D, "2. HABBI"
+	lang_next D, "3. TAKKI"
 	
 	lang F,      "?"
 	
@@ -352,7 +387,13 @@ ENDM
 	lang_next E, "1. ¥50   2. ¥100"
 	lang_next E, "3. ¥200"
 	
-	lang D,      "?"
+	; German
+	lang D,      "Was kostet in MAR-"
+	lang_next D, "MORIA der Eintritt"
+	lang_next D, "für das WISSEN-"
+	lang_next D, "SCHAFTSMUSEUM?"
+	lang_next D, "1. ¥50   2. ¥100"
+	lang_next D, "3. ¥200"
 	
 	lang F,      "?"
 	
@@ -379,7 +420,13 @@ ENDM
     lang_next E, "2. He was sick"
     lang_next E, "3. #MON stolen"
 	
-	lang D,      "?"
+	; German
+    lang D,      "Was ist im KÜSTEN-"
+    lang_next D, "HAUS von BILL"
+    lang_next D, "passiert?"
+    lang_next D, "1. #MON-Fusion"
+    lang_next D, "2. Krankheit"
+    lang_next D, "3. Diebstahl"
 	
 	lang F,      "?"
 	
@@ -406,7 +453,13 @@ ENDM
 	lang_next E, "1. Shoo 2. Go away"
 	lang_next E, "3. Get out"
 	
-	lang D,      "?"
+	; German
+	lang D,      "Was sagte der"
+	lang_next D, "GEIST im #MON-"
+	lang_next D, "TURM im Kampf?"
+	lang_next D, ""
+	lang_next D, "1. Buuh 2. Geh weg"
+	lang_next D, "3. Verschwinde"
 	
 	lang F,      "?"
 	
@@ -433,7 +486,13 @@ ENDM
 	lang_next E, "1. DO 2. KNOW"
 	lang_next E, "3. HAVE"	
 	
-	lang D,      "?"
+	; German
+	lang D,      "Das Schild oben"
+	lang_next D, "auf der PRISMANIA-"
+	lang_next D, "VILLA besagt: “Ich"
+	lang_next D, "… ALLES!”"
+	lang_next D, "1. TUE 2. WEISS"
+	lang_next D, "3. HABE"
 	
 	lang F,      "?"
 	
@@ -460,7 +519,13 @@ ENDM
 	lang_next E, "1. Fwaaa!  2. Haa!"
 	lang_next E, "3. Hiyah!"
 	
-	lang D,      "?"
+	; German
+	lang D,      "Der Kampfschrei d."
+	lang_next D, "KARATE-MEISTERS in"
+	lang_next D, "SAFFRONIA CITY"
+	lang_next D, "klingt wie?"
+	lang_next D, "1. Hai!  2. Haa!"
+	lang_next D, "3. Hu-ha!"
 	
 	lang F,      "?"
 	
@@ -486,7 +551,13 @@ ENDM
 	lang_next E, "2. False teeth"
 	lang_next E, "3. Fear of bugs"
 	
-	lang D,      "?"
+	; German
+	lang D,      "Welches Geheimnis"
+	lang_next D, "hat der WÄRTER der"
+	lang_next D, "SAFARI ZONE?"
+	lang_next D, "1. Perücke"
+	lang_next D, "2. Zahnlosigkeit"
+	lang_next D, "3. Insektenphobie"
 	
 	lang F,      "?"
 	
@@ -513,7 +584,13 @@ ENDM
 	lang_next E, "2. Running away?"
 	lang_next E, "3. Don't run away!"
 	
-	lang D,      "?"
+	; German
+	lang D,      "Was sagt EINE"
+	lang_next D, "STIMME in der"
+	lang_next D, "#MON-LIGA?"
+	lang_next D, "1.Kein Entkommen!"
+	lang_next D, "2.Du verlässt uns?"
+	lang_next D, "3.Lauf nicht davon"
 	
 	lang F,      "?"
 	
@@ -540,7 +617,13 @@ ENDM
 	lang_next E, "2. Blacks out"
 	lang_next E, "3. Gets dizzy"
 	
-	lang D,      "?"
+	; German
+	lang D,      "Was passiert, wenn"
+	lang_next D, "ROTs #MON alle"
+	lang_next D, "kampfunfähig sind?"
+	lang_next D, "1. Schlechte Sicht"
+	lang_next D, "2. Ohnmacht"
+	lang_next D, "3. Schwindel"
 	
 	lang F,      "?"
 	
@@ -610,7 +693,7 @@ ENDM
 .menuItemText
 	lang J, "グリーンのひょうか"
 	lang E, "BLUE's RATING"
-	lang D, "?"
+	lang D, "BLAUs BEWERTUNG"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -735,7 +818,12 @@ ENDM
 	
 	lang_para E, "…"
 	
-	lang_text D, "?"
+	; English
+	lang_text D, "BLAU: Wie hast du"
+	lang_line D, "abgeschnitten?"
+	lang_cont D, "Mal sehen!"
+	
+	lang_para D, "…"
 	
 	lang_text F, "?"
 	
@@ -762,7 +850,15 @@ ENDM
 	lang_line E, "couldn't do it."
 	lang_cont E, "Nice try!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Hey, nicht eine"
+	lang_line D, "richtige Antwort?"
+	
+	lang_para D, "Ich wusste es,"
+	lang_line D, "du bist dem nicht"
+	lang_cont D, "gewachsen."
+	lang_cont D, "Netter Versuch!"
+
 	
 	lang_text F, "?"
 	
@@ -791,7 +887,16 @@ ENDM
 	
 	lang_para E, "Try again."
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Ein Treffer!"
+	
+	lang_para D, "Nur eine richtige"
+	lang_line D, "Antwort ist das"
+	lang_cont D, "gleiche wie gar"
+	lang_cont D, "nichts zu wissen."
+	
+	lang_para D, "Versuche es"
+	lang_line D, "noch einmal."
 	
 	lang_text F, "?"
 	
@@ -818,7 +923,14 @@ ENDM
 	lang_para E, "You're still no"
 	lang_line E, "match for me!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Zwei Treffer!"
+	
+	lang_para D, "Hey, versuchst du"
+	lang_line D, "es überhaupt?"
+	
+	lang_para D, "Du hast keine"
+	lang_line D, "Chance gegen mich!"
 	
 	lang_text F, "?"
 	
@@ -846,7 +958,16 @@ ENDM
 	lang_line E, "that?"
 	lang_cont E, "Not so much!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Drei Treffer!"
+	
+	lang_para D, "Du bist möglicher-"
+	lang_line D, "weise gut in"
+	lang_cont D, "#MON-Kämpfen,"
+	
+	lang_para D, "aber darüber"
+	lang_line D, "hinaus?"
+	lang_cont D, "Nicht wirklich!"
 	
 	lang_text F, "?"
 	
@@ -870,7 +991,12 @@ ENDM
 	lang_line E, "lucky guesses is"
 	lang_cont E, "pretty impressive!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Vier Treffer!"
+	
+	lang_para D, "So viele Zufalls-"
+	lang_line D, "treffer zu landen"
+	lang_cont D, "ist beeindruckend!"
 	
 	lang_text F, "?"
 	
@@ -901,7 +1027,21 @@ ENDM
 	lang_para E, "The next five will"
 	lang_line E, "be tough though!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Fünf Treffer!"
+	
+	lang_para D, "Du scheinst dich"
+	lang_line D, "wenigstens"
+	lang_cont D, "anzustrengen."
+	
+	lang_para D, "Na ja, immerhin"
+	lang_line D, "habe ich mir das"
+	lang_cont D, "alles ganz alleine"
+	lang_cont D, "ausgedacht!"
+	
+	lang_para D, "Die restlichen"
+	lang_line D, "fünf Fragen waren"
+	lang_cont D, "wohl zu heiß!"
 	
 	lang_text F, "?"
 	
@@ -927,7 +1067,15 @@ ENDM
 	lang_para E, "But you're nowhere"
 	lang_line E, "near my level!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Sechs Treffer!"
+	
+	lang_para D, "Nicht schlecht,"
+	lang_line D, "schätze ich."
+	
+	lang_para D, "Aber an meine"
+	lang_line D, "Fähigkeiten kommst"
+	lang_cont D, "du nicht heran!"
 	
 	lang_text F, "?"
 	
@@ -952,7 +1100,13 @@ ENDM
 	lang_line E, "you'd get this"
 	lang_cont E, "many right…"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Sieben Treffer!"
+	
+	lang_para D, "Ich hätte nicht"
+	lang_line D, "erwartet, dass du"
+	lang_cont D, "so viele Antworten"
+	lang_cont D, "weißt…"
 	
 	lang_text F, "?"
 	
@@ -979,7 +1133,14 @@ ENDM
 	lang_line E, "almost as good"
 	lang_cont E, "as mine!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Acht Treffer!"
+	
+	lang_para D, "Gar nicht übel."
+	
+	lang_para D, "Du kannst dir fast"
+	lang_line D, "so viel merken"
+	lang_cont D, "wie ich!"
 	
 	lang_text F, "?"
 	
@@ -1008,7 +1169,19 @@ ENDM
 	
 	lang_para E, "Try again!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Wow, neun"
+	lang_line D, "Treffer!"
+	
+	lang_para D, "Nah dran! Nur ein"
+	lang_line D, "weiterer Treffer"
+	lang_cont D, "und du hättest"
+	
+	lang_para D, "alles richtig"
+	lang_line D, "beantwortet."
+	
+	lang_para D, "Versuche es"
+	lang_line D, "noch einmal!"
 	
 	lang_text F, "?"
 	
@@ -1039,7 +1212,17 @@ ENDM
 	lang_para E, "I'm totally"
 	lang_line E, "beat!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Alles richtig…!"
+	
+	lang_para D, "Du bist stark."
+	
+	lang_para D, "Das alles drei"
+	lang_line D, "Jahre später noch"
+	lang_cont D, "zu wissen!"
+
+	lang_para D, "Du hast mich"
+	lang_line D, "komplett besiegt!"
 	
 	lang_text F, "?"
 	
@@ -1070,7 +1253,17 @@ ENDM
 	lang_para E, "What do you say?"
 	lang_line E, "Wanna try again?"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "BLAU: Und? Das"
+	lang_line D, "war ein schweres"
+	lang_cont D, "Quiz, nicht wahr?"
+	
+	lang_para D, "Ich schätze, ich"
+	lang_line D, "gebe dir noch eine"
+	lang_cont D, "Chance…"
+
+	lang_para D, "Was sagst du?"
+	lang_line D, "Noch ein Versuch?"
 	
 	lang_text F, "?"
 	
@@ -1086,7 +1279,7 @@ ENDM
 	
 	; English
 	lang_text E, "See ya!"
-	lang_text D, "?"
+	lang_text D, "Ciao!"
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -1114,7 +1307,20 @@ ENDC
 	lang      E, " received"
 	lang_line E, "TM26."
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Gut gemacht!"
+	
+	lang_para D, "Du kannst stolz"
+	lang_line D, "auf dich sein."
+	
+	lang_para D, ""
+IF DEF(_LANG_E)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "TM26."	
 	
 	lang_text F, "?"
 	

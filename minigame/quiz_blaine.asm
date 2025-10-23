@@ -64,7 +64,31 @@ MACRO minigame_start
 	
 	lang_para E, "Hah!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "PYRO: Wuah!"
+	
+	lang_para D, "Ich bin der hit-"
+	lang_line D, "zige Quizmaster!"
+	
+	lang_para D, "Ich bin PYRO, der"
+	lang_line D, "ARENALEITER der"
+	lang_cont D, "ZINNOBER…"
+	
+	lang_para D, "Nein, von den"
+	lang_line D, "SEESCHAUMINSELN!"
+	
+	lang_para D, "Es ist rätselhaft,"
+	lang_line D, "dass ich bisher"
+	lang_cont D, "nicht dabei war!"
+	
+	lang_para D, "Wenn es um Quiz"
+	lang_line D, "geht, denkt man"
+	lang_cont D, "zuerst an mich!"
+	
+	lang_para D, "Ich brenne für"
+	lang_line D, "dieses Quiz!"
+	
+	lang_para D, "Wuah!"
 	
 	lang_text F, "?"
 	
@@ -79,7 +103,7 @@ ENDM
 MACRO minigame_name
 	lang J, "ポケモンクイズ！"
 	lang E, "#MON QUIZ!"
-	lang D, "?"
+	lang D, "#MON-QUIZ!"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -262,7 +286,13 @@ ENDM
 	lang_next E, "2. Say hi to OAK"
 	lang_next E, "3. Try other rides"
 	
-	lang D,      "?"
+	;German
+	lang D,      "Worum bat LIND,"
+	lang_next D, "als er dir das"
+	lang_next D, "BOOTSTICKET gab?"
+	lang_next D, "1. Stärker werden"
+	lang_next D, "2. EICH grüßen"
+	lang_next D, "3. Weiter touren"
 	
 	lang F,      "?"
 	
@@ -290,8 +320,14 @@ ENDM
 	lang_next E, "1. The side"
 	lang_next E, "2. Above 3. A room"
 	
-	lang D,      "?"
-	
+	;German
+	lang D,      "Von wo tauchte der"
+	lang_next D, "Großvater des ver-"
+	lang_next D, "lor. Mädchens auf"
+	lang_next D, "der M.S. AQUA auf?"
+	lang_next D, "1. Seite"
+	lang_next D, "2. Oben  3. Kabine"
+
 	lang F,      "?"
 	
 	lang I,      "?"
@@ -318,8 +354,14 @@ ENDM
 	lang_next E, "2.CYCLING ROAD"
 	lang_next E, "3.UNDERGROUND PATH"
 	
-	lang D,      "?"
-	
+	;German
+	lang D,      "Wo befindet sich"
+	lang_next D, "die TRAINERGILDE"
+	lang_next D, "aus KANTO?"
+	lang_next D, "1. DIGDA-HÖHLE"
+	lang_next D, "2. RADWEG"
+	lang_next D, "3. UNTERFÜHRUNG"
+
 	lang F,      "?"
 	
 	lang I,      "?"
@@ -345,8 +387,14 @@ ENDM
 	lang_next E, "2. An evil spirit"
 	lang_next E, "3. Sinister shadow"
 	
-	lang D,      "?"
-	
+	;German
+	lang D,      "Was schwebte über"
+	lang_next D, "dir bei Erhalt des"
+	lang_next D, "SCHUTZBANDs?"
+	lang_next D, "1. Ein Gespenst"
+	lang_next D, "2. Ein böser Geist"
+	lang_next D, "3. Ein Schatten"
+
 	lang F,      "?"
 	
 	lang I,      "?"
@@ -373,7 +421,13 @@ ENDM
 	lang_next E, "2. Stealing money"
 	lang_next E, "3. For TEAM ROCKET"
 	
-	lang D,      "?"
+	;German
+	lang D,      "Welche Motivation"
+	lang_next D, "hatte der letzte"
+	lang_next D, "der NUGGET-BRÜCKE?"
+	lang_next D, "1. Leichtes Siegen"
+	lang_next D, "2. Geld stehlen"
+	lang_next D, "3. TEAM ROCKET"
 	
 	lang F,      "?"
 	
@@ -401,7 +455,13 @@ ENDM
 	lang_next E, "2. Face to face"
 	lang_next E, "3. MISTY in front"
 	
-	lang D,      "?"
+	;German
+	lang D,      "Wie standen MISTY"
+	lang_next D, "und ihr Freund bei"
+	lang_next D, "ihrer Verabredung?"
+	lang_next D, "1. Nebeneinander"
+	lang_next D, "2. Gegenüber"
+	lang_next D, "3. MISTY vorn"
 	
 	lang F,      "?"
 	
@@ -429,7 +489,13 @@ ENDM
 	lang_next E, "2. My beloved"
 	lang_next E, "3. Cute"
 	
-	lang D,      "?"
+	;German
+	lang D,      "Wie nannte der"
+	lang_next D, "KRAFTWERKSDIREKTOR"
+	lang_next D, "den Generator?"
+	lang_next D, "1. ultra wichtig"
+	lang_next D, "2. geliebt"
+	lang_next D, "3. ein und alles"
 	
 	lang F,      "?"
 	
@@ -457,7 +523,13 @@ ENDM
 	lang_next E, "1. 150   2. 250"
 	lang_next E, "3. 1000"
 	
-	lang D,      "?"
+	;German
+	lang D,      "Der VORSITZENDE"
+	lang_next D, "des #MON-FAN-"
+	lang_next D, "CLUBS zog wie"
+	lang_next D, "viele #MON auf?"
+	lang_next D, "1. 150   2. 250"
+	lang_next D, "3. 1000"
 	
 	lang F,      "?"
 	
@@ -483,8 +555,14 @@ ENDM
 	lang_next E, "1. Right wing"
 	lang_next E, "2. Left ear"
 	lang_next E, "3. Right leg"
-	
-	lang D,      "?"
+
+	;German
+	lang D,      "Wo war die Naht"
+	lang_next D, "an der PIEPI-PUPPE"
+	lang_next D, "der NACHAHMERIN?"
+	lang_next D, "1. Rechter Flügel"
+	lang_next D, "2. Linkes Ohr"
+	lang_next D, "3. Rechtes Bein"
 	
 	lang F,      "?"
 	
@@ -512,7 +590,13 @@ ENDM
 	lang_next E, "2. Picture home"
 	lang_next E, "3. Close your eyes"
 	
-	lang D,      "?"
+	; German
+	lang D,      "Das ABRA der PKMN-"
+	lang_next D, "LIGA schickt dich"
+	lang_next D, "wann nach Hause?"
+	lang_next D, "1. ABRA berühren"
+	lang_next D, "2. Bildlich denken"
+	lang_next D, "3. Augen schließen"
 	
 	lang F,      "?"
 	
@@ -580,7 +664,7 @@ ENDM
 .menuItemText
 	lang J, "カツラのひょうか"
 	lang E, "BLAINE's RATING"
-	lang D, "?"
+	lang D, "PYROs BEWERTUNG"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -722,8 +806,19 @@ ENDM
 	lang_para E, "So, how many did"
 	lang_line E, "you get right?"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "PYRO: Gut gemacht!"
 	
+	lang_para D, "Mein Quiz ist"
+	lang_line D, "gar nicht mal so"
+	lang_cont D, "einfach, stimmt's?"
+	
+	lang_para D, "Das hat dich be-"
+	lang_line D, "stimmt gefordert!"
+	
+	lang_para D, "Wie oft lagst du"
+	lang_line D, "wohl richtig?"
+
 	lang_text F, "?"
 	
 	lang_text I, "?"
@@ -750,7 +845,15 @@ ENDM
 	lang_line E, "my quiz is" 
 	lang_cont E, "unbeatable!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "PYRO: Hahaha!"
+	
+	lang_para D, "Nicht ein"
+	lang_line D, "Treffer!"
+	
+	lang_para D, "Wie erwartet, ist"
+	lang_line D, "meine Herausforde-"
+	lang_cont D, "rung unschlagbar!"
 	
 	lang_text F, "?"
 	
@@ -778,7 +881,17 @@ ENDM
 	lang_line E, "have gotten them"
 	lang_cont E, "all wrong!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "PYRO: Du hast nur"
+	lang_line D, "einen Treffer"
+	lang_cont D, "gelandet!"
+	
+	lang_para D, "Sei nicht so"
+	lang_line D, "halbherzig dabei!"
+	
+	lang_para D, "So hättest du auch"
+	lang_line D, "ruhig alles falsch"
+	lang_cont D, "haben können!"
 	
 	lang_text F, "?"
 	
@@ -807,7 +920,16 @@ ENDM
 	lang_para E, "In short, you're"
 	lang_line E, "hopeless!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "PYRO: Zwei rich-"
+	lang_line D, "tige Antworten!"
+	
+	lang_para D, "Also lagst du bei"
+	lang_line D, "acht daneben!"
+	
+	lang_para D, "Kurz gesagt, ein"
+	lang_line D, "hoffnungsloser"
+	lang_cont D, "Fall!"
 	
 	lang_text F, "?"
 	
@@ -836,7 +958,17 @@ ENDM
 	
 	lang_para E, "Hahaha!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "PYRO: Drei rich-"
+	lang_line D, "tige Antworten!"
+	
+	lang_para D, "Nicht sehr"
+	lang_line D, "beeindruckend!"
+
+	lang_para D, "Das ist nichts"
+	lang_line D, "Besonderes!"
+	
+	lang_para D, "Hahaha!"
 	
 	lang_text F, "?"
 	
@@ -860,7 +992,13 @@ ENDM
 	lang_line E, "spirit is still"
 	lang_cont E, "lacking!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "PYRO: Vier rich-"
+	lang_line D, "tige Antworten!"
+	
+	lang_para D, "Dein Kampfgeist"
+	lang_line D, "lässt noch zu"
+	lang_cont D, "wünschen übrig!"
 	
 	lang_text F, "?"
 	
@@ -890,7 +1028,17 @@ ENDM
 	lang_line E, "battle, that'd"
 	lang_cont E, "be a draw!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "PYRO: Oha!"
+	lang_line D, "Fünf richtige"
+	lang_cont D, "Antworten!"
+	
+	lang_para D, "Genau die Hälfte"
+	lang_line D, "erwischt!"
+	
+	lang_para D, "In einem #MON-"
+	lang_line D, "Kampf wäre dies"
+	lang_cont D, "ein Remis!"
 	
 	lang_text F, "?"
 	
@@ -915,7 +1063,12 @@ ENDM
 	lang_line E, "answered just now"
 	lang_cont E, "was pretty good!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "PYRO: Sechs rich-"
+	lang_line D, "tige Antworten!"
+	
+	lang_para D, "Eine wahrlich"
+	lang_line D, "feurige Leistung!"
 	
 	lang_text F, "?"
 	
@@ -947,7 +1100,21 @@ ENDM
 	lang_line E, "you still have a"
 	lang_cont E, "long way to go!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "PYRO: Sieben rich-"
+	lang_line D, "tige Antworten!"
+	
+	lang_para D, "Du hast ein schar-"
+	lang_line D, "fes Gedächtnis!"
+	
+	lang_para D, "Hey! Mach kein so"
+	lang_line D, "selbstgefälliges"
+	lang_cont D, "Gesicht!"
+	
+	lang_para D, "Meiner Meinung"
+	lang_line D, "nach hast du noch"
+	lang_cont D, "einen weiten Weg"
+	lang_cont D, "vor dir!"
 	
 	lang_text F, "?"
 	
@@ -976,7 +1143,17 @@ ENDM
 	lang_para E, "It must be a"
 	lang_line E, "fluke!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "PYRO: Acht rich-"
+	lang_line D, "tige Antworten!"
+	
+	lang_para D, "So einfach sollte"
+	lang_line D, "mein Quiz eigent-"
+	lang_cont D, "lich nicht zu"
+	lang_cont D, "lösen sein!"
+	
+	lang_para D, "Du hattest wohl"
+	lang_line D, "einfach nur Glück!"
 	
 	lang_text F, "?"
 	
@@ -1005,7 +1182,17 @@ ENDM
 	
 	lang_para E, "You were close!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "PYRO: Oh!"
+	lang_line D, "Du hast neun rich-"
+	lang_cont D, "tig beantwortet!"
+	
+	lang_para D, "Ah… Dir fehlte nur"
+	lang_line D, "noch ein Treffer"
+	lang_cont D, "für die perfekte"
+	lang_cont D, "Punktzahl!"
+	
+	lang_para D, "Du warst nah dran!"
 	
 	lang_text F, "?"
 	
@@ -1030,7 +1217,13 @@ ENDM
 	lang_para E, "Wow… impressive!"
 	lang_line E, "I'm burned out…"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "PYRO: Wow!"
+	lang_line D, "Perfekt gelöst?!"
+	
+	lang_para D, "G… Glückwunsch!"
+	lang_line D, "Ich bin"
+	lang_cont D, "ausgebrannt…"
 	
 	lang_text F, "?"
 	
@@ -1054,7 +1247,13 @@ ENDM
 	
 	lang_para E, "Wanna try again?"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "PYRO: Na, fühlst"
+	lang_line D, "du dich schon"
+	lang_cont D, "ausgebrannt?"
+	
+	lang_para D, "Oder versuchst du"
+	lang_line D, "es noch einmal?!"
 	
 	lang_text F, "?"
 	
@@ -1069,7 +1268,8 @@ ENDM
 	lang_text J, "カツラ『いくぞー！"
 	; English
 	lang_text E, "BLAINE: Let's go!"
-	lang_text D, "?"
+	; German
+	lang_text D, "PYRO: Los geht's!"
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -1104,7 +1304,25 @@ ENDC
 	lang      E, " received"
 	lang_line E, "TM28."
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "Ich habe verloren."
+	lang_line D, "Daran gibt es"
+	lang_cont D, "nichts zu rütteln!"
+	
+	lang_para D, "Ich gebe dir eine"
+	lang_line D, "Belohnung!"
+	
+	lang_para D, "Nimm diese TM,"
+	lang_line D, "sie enthält die"
+	lang_cont D, "FROSCH-ATTACKE!"
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "TM28."
 	
 	lang_text F, "?"
 	
@@ -1142,7 +1360,21 @@ ENDC
 	lang      E, " received"
 	lang_line E, "TM38."
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "PYRO: <……><……><……>"
+	lang_para D, "<……><……><……>"
+	lang_line D, "<……><……><……>"
+	
+	lang_para D, "Ich mache nur"
+	lang_line D, "Spaß! Nimm dies."
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "TM38."
 	
 	lang_text F, "?"
 	
@@ -1167,7 +1399,14 @@ ENDC
 	
 	lang_para E, "Hah!"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "PYRO: Irgendwann"
+	lang_line D, "kehre ich zurück,"
+	
+	lang_para D, "stärker als je"
+	lang_line D, "zuvor!"
+	
+	lang_para D, "Hah!"
 	
 	lang_text F, "?"
 	

@@ -31,8 +31,6 @@ ENDC
 
 
 
-
-
 	news_screen TrainerRankings, MUSIC_PROF_ELM
 	news_def_pals
 	

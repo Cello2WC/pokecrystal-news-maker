@@ -623,7 +623,7 @@ ENDC
 .menuItemText
 	lang J, "オーキドはかせの　ひょうか"
 	lang E, "PROF.OAK's RATING"
-	lang D, "EICHs BERICHT"
+	lang D, "EICHs BEWERTUNG"
 	lang F, "RAPPORT DE CHEN"
 	lang I, "RAPPORTO DI OAK"
 	lang S, "?"

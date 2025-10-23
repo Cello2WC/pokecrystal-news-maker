@@ -42,7 +42,12 @@ MACRO minigame_start
 	lang_para E, "something some-"
 	lang_line E, "thing time travel"
 	
-	lang_text D, "?"
+	lang_text D, "MAISY: nuschel"
+	lang_line D, "nuschel AZALEA"
+	lang_para D, "nuschel nuschel"
+	lang_line D, "KURTs Enkelin"
+	lang_para D, "nuschel nuschel"
+	lang_line D, "Zeitreise"
 	
 	lang_text F, "?"
 	
@@ -57,7 +62,7 @@ ENDM
 MACRO minigame_name
 	lang J, "ときをこえたプレゼント"
 	lang E, "A TIMELESS GIFT"
-	lang D, "?"
+	lang D, "ZEITLOSES GESCHENK"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -149,7 +154,7 @@ MinigameStart::
 .menuRockText
 	lang J, "グー"
 	lang E, "ROCK"
-	lang D, "?"
+	lang D, "STEIN"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -158,7 +163,7 @@ MinigameStart::
 .menuPaperText
 	lang J, "パー"
 	lang E, "PAPER"
-	lang D, "?"
+	lang D, "PAPIER"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -167,7 +172,7 @@ MinigameStart::
 .menuScissorsText
 	lang J, "チョキ"
 	lang E, "SCISSORS"
-	lang D, "?"
+	lang D, "SCHERE"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -184,7 +189,7 @@ MinigameStart::
 .textChieRock
 	lang J, "チエコ『グー"
 	lang E, "MAIZIE: ROCK"
-	lang D, "?"
+	lang D, "MAISY: STEIN"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -193,7 +198,7 @@ MinigameStart::
 .textChiePaper
 	lang J, "チエコ『パー"
 	lang E, "MAIZIE: PAPER"
-	lang D, "?"
+	lang D, "MAISY: PAPIER"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -202,7 +207,7 @@ MinigameStart::
 .textChieScissors
 	lang J, "チエコ『チョキ"
 	lang E, "MAIZIE: SCISSORS"
-	lang D, "?"
+	lang D, "MAISY: SCHERE"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -227,7 +232,8 @@ MinigameStart::
 	; TODO: PLACEHOLDER TEXT
 	lang_text J, "チエコ『ひきわけ"
 	lang_text E, "MAIZIE: We tied…"
-	lang_text D, "?"
+	lang_text D, "MAISY: Unent-"
+	lang_line D, "schieden…"
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -243,7 +249,8 @@ MinigameStart::
 	; TODO: PLACEHOLDER TEXT
 	lang_text J, "チエコ『あたしの　かち"
 	lang_text E, "MAIZIE: I win!"
-	lang_text D, "?"
+	lang_text D, "MAISY: Ich"
+	lang_line D, "gewinne!"
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -259,7 +266,8 @@ MinigameStart::
 	; TODO: PLACEHOLDER TEXT
 	lang_text J, "チエコ『あなたの　かち"
 	lang_text E, "MAIZIE: You win!"
-	lang_text D, "?"
+	lang_text D, "MAISY: Du"
+	lang_line D, "gewinnst!"
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -325,7 +333,7 @@ MinigameStart::
 .menuItemYesText
 	lang J, "はい"
 	lang E, "YES"
-	lang D, "?"
+	lang D, "JA"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -334,7 +342,7 @@ MinigameStart::
 .menuItemNoText
 	lang J, "いいえ"
 	lang E, "NO"
-	lang D, "?"
+	lang D, "NEIN"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -398,7 +406,10 @@ ENDM
 	lang_next E, "other than their"
 	lang_next E, "<TRAINER>S?"
 	
-	lang D,      "?"
+	lang D,      "Können #MON"
+	lang_next D, "auch Leuten, die"
+	lang_next D, "nicht ihr <TRAINER>"
+	lang_next D, "sind, helfen?"
 	
 	lang F,      "?"
 	
@@ -418,8 +429,11 @@ ENDM
 	lang_next E, "is that the fault"
 	lang_next E, "of humans?"
 	
-	lang D,      "?"
-	
+	lang D,      "Wenn #MON Angst"
+	lang_next D, "vor Menschen ha-"
+	lang_next D, "ben, sind die Men-"
+	lang_next D, "schen schuld?"
+
 	lang F,      "?"
 	
 	lang I,      "?"
@@ -439,7 +453,11 @@ ENDM
 	lang_next E, "from a #MON"
 	lang_next E, "<TRAINER>?"
 	
-	lang D,      "?"
+	lang D,      "Können Menschen,"
+	lang_next D, "#MON lieben"
+	lang_next D, "noch etwas anderes"
+	lang_next D, "sein, als ein"
+	lang_next D, "#MON-<TRAINER>?"
 	
 	lang F,      "?"
 	
@@ -458,8 +476,10 @@ ENDM
 	lang_next E, "weaker than adult"
 	lang_next E, "<TRAINER>S?"
 	
-	lang D,      "?"
-	
+	lang D,      "Sind junge <TRAINER>"
+	lang_next D, "schwächer als er-"
+	lang_next D, "wachsene <TRAINER>?"
+
 	lang F,      "?"
 	
 	lang I,      "?"
@@ -476,7 +496,10 @@ ENDM
 	lang_next E, "legends of old"
 	lang_next E, "are made-up?"
 	
-	lang D,      "?"
+	lang D,      "Glaubst du, die"
+	lang_next D, "alten Legenden"
+	lang_next D, "sind alle frei"
+	lang_next D, "erfunden?"
 	
 	lang F,      "?"
 	
@@ -549,7 +572,7 @@ ENDC
 .menuItemText
 	lang J, "チエコのひょうか"
 	lang E, "MAIZIE's RATING"
-	lang D, "?"
+	lang D, "MAISYs BEWERTUNG"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -627,7 +650,7 @@ ENDC
 	
 	lang_text E, "MAIZIE: ?"
 	
-	lang_text D, "?"
+	lang_text D, "MAISY: ?"
 	
 	lang_text F, "?"
 	
@@ -647,7 +670,8 @@ ENDC
 	lang_text E, "MAIZIE:"
 	lang_line E, "quiz failed text"
 	
-	lang_text D, "?"
+	lang_text D, "MAISY: Du hast"
+	lang_line D, "nicht bestanden."
 	
 	lang_text F, "?"
 	
@@ -665,7 +689,8 @@ ENDC
 	lang_text E, "MAIZIE:"
 	lang_line E, "quiz passed text"
 	
-	lang_text D, "?"
+	lang_text D, "MAISY: Du hast"
+	lang_line D, "bestanden!"
 	
 	lang_text F, "?"
 	
@@ -693,7 +718,8 @@ ENDC
 .textTryAgain
 	lang_text J, "チエコ『？"
 	lang_text E, "MAIZIE: ?"
-	lang_text D, "?"
+	lang_text D, "MAISY: Versuche es"
+	lang_line D, "noch einmal!"
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -729,7 +755,15 @@ ENDC
 	lang_line E, "TM22."
 	
 	lang_text D, "?"
-	
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "TM22."
+
 	lang_text F, "?"
 	
 	lang_text I, "?"

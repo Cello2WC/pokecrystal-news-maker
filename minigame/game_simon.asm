@@ -219,7 +219,7 @@ ENDM
 	lang_cont E, "Control Pad."
 
 	lang_para E, "Get it right and"
-	lang_line E, "you’ll move ahead!"
+	lang_line E, "you'll move ahead!"
 
 	lang_para E, "More #MON will"
 	lang_line E, "show up each round"

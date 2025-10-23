@@ -35,6 +35,8 @@ MACRO minigame_start
 	; Japanese
 	lang_text J, "オーキド『こ<NO>コーナーは"
 	lang_line J, "わし<GA>あんない　しよう！"
+	; this dialogue has not been recovered past this point.
+	; following is filler.
 	lang_para J, "<……> <……>"
 	lang_line J, "<……> <……>"
 	lang_para J, "２エラー"
@@ -42,6 +44,8 @@ MACRO minigame_start
 	; English
 	lang_text E, "OAK: I'll guide you"
 	lang_line E, "through this part!"
+	; this dialogue has not been recovered past this point.
+	; following is filler.
 	lang_para E, "<……> <……>"
 	lang_line E, "<……> <……>"
 	lang_para E, "２エラー"
@@ -49,7 +53,9 @@ MACRO minigame_start
 	; German
 	lang_text D, "EICH: Ich führe"
 	lang_line D, "dich durch diesen"
-	line_cont D, "Bereich!"
+	lang_cont D, "Bereich!"
+	; this dialogue has not been recovered past this point.
+	; following is filler.
 	lang_para D, "<……> <……>"
 	lang_line D, "<……> <……>"
 	lang_para D, "Fehler 2"

@@ -314,7 +314,7 @@ ENDM
 
 	;English
 	lang E,      "Where did the lost"
-	lang_next E, "girl’s grandfather"
+	lang_next E, "girl's grandfather"
 	lang_next E, "appear from on"
 	lang_next E, "the S.S.AQUA?"
 	lang_next E, "1. The side"

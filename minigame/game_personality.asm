@@ -275,7 +275,7 @@ ENDM
 	lang_next D, "#MON rufe, füge"
 	lang_next D, "ich immer ein"
 	lang_next D, "“-lein” oder ein"
-	lang_next D, "“-chen” hinzu.
+	lang_next D, "“-chen” hinzu."
 	
 	lang      F, "?"
 	

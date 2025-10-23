@@ -89,7 +89,7 @@ MACRO minigame_start
 	lang_line D, "bewege dich bis"
 	lang_cont D, "zum !-Zeichen,"
 	lang_cont D, "um das Ziel zu"
-	lang_cont D, "erreichen.
+	lang_cont D, "erreichen."
 
 	lang_para D, "Drücke den A-"
 	lang_line D, "Knopf, um deine"
@@ -982,7 +982,7 @@ ENDR
 .textYANMA
 	lang J, "『ヤンヤンマ』"
 	lang E, "DODUO"
-	lang D, "?"
+	lang D, "KOKOWEI"
 	lang F, "DODUO"
 	lang I, "DODUO"
 	lang S, "DODUO"
@@ -990,31 +990,34 @@ ENDR
 
 	lang_def J, HPUZZLE3_MON, "YANMA"
 	lang_def E, HPUZZLE3_MON, "DODUO"
-	lang_def D, HPUZZLE3_MON, "0"
+	lang_def D, HPUZZLE3_MON, "EXEGGUTOR"
 	lang_def F, HPUZZLE3_MON, "DODUO"
 	lang_def I, HPUZZLE3_MON, "DODUO"
 	lang_def S, HPUZZLE3_MON, "DODUO"
 	
 	lang_def J, YANMA_M, "ヤ"
 	lang_def E, YANMA_D, "D"
-	lang_def D, YANMA_D, "1"
+	lang_def D, YANMA_K, "K"
 	lang_def F, YANMA_D, "D"
 	lang_def I, YANMA_D, "D"
 	lang_def S, YANMA_D, "D"
 	
 	lang_def J, YANMA_U, "ン"
 	lang_def E, YANMA_O, "O"
-	lang_def D, YANMA_O, "2"
+	lang_def D, YANMA_O, "O"
 	lang_def F, YANMA_O, "O"
 	lang_def I, YANMA_O, "O"
 	lang_def S, YANMA_O, "O"
 	
 	lang_def J, YANMA_K, "マ"
 	lang_def E, YANMA_U, "U"
-	lang_def D, YANMA_U, "3"
+	lang_def D, YANMA_W, "W"
 	lang_def F, YANMA_U, "U"
 	lang_def I, YANMA_U, "U"
 	lang_def S, YANMA_U, "U"
+	
+	lang_def D, YANMA_E, "E"
+	lang_def D, YANMA_I, "I"
 	
 
 .textHARIISEN
@@ -1184,6 +1187,20 @@ IF DEF(_LANG_J)
 				XX, XX, XX, XX, XX, XX, DN, LF, LF, \
 				XX, XX, XX, XX, XX, XX, RT, RT, DN, \
 				XX, XX, XX, XX, XX, XX, XX, XX
+ELIF DEF(_LANG_D)
+	define_hpuzzle YANMA,\
+				\
+				   K, O, O, K, O, K, O, K, \
+				K, E, K, O, W, E, I, K, O, \
+				O, K, O, W, I, E, W, O, K, \
+				K, E, I, K, K, O, K, E, I, \
+				O, W, K, O, K, O, O, W, \
+				\
+				RT, RT, DN, XX, XX, XX, XX, XX, XX, \
+				XX, XX, RT, RT, RT, RT, RT, RT, DN, \
+				XX, XX, XX, XX, DN, LF, LF, LF, LF, \
+				XX, XX, XX, XX, RT, RT, DN, RT, DN, \
+				XX, XX, XX, XX, XX, XX, RT, UP
 ELSE
 	define_hpuzzle YANMA,\
 				\

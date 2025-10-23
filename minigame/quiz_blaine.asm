@@ -85,8 +85,8 @@ MACRO minigame_start
 	lang_line D, "geht, denkt man"
 	lang_cont D, "zuerst an mich!"
 	
-	lang_para D, "Ich brenne für"
-	lang_line D, "dieses Quiz!"
+	lang_para D, "Und für dieses"
+	lang_line D, "Quiz brenne ich!"
 	
 	lang_para D, "Wuah!"
 	

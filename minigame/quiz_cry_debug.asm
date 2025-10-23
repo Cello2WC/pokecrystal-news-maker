@@ -14,7 +14,7 @@ ENDM
 MACRO minigame_name
 	lang J, "ポケモンなきごえクイズ"
 	lang E, "#MON CRY QUIZ"
-	lang D, "?"
+	lang D, "#MON-RUFE-QUIZ"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -26,7 +26,8 @@ MACRO minigame_desc
 	lang      E, "Guess the"
 	lang_line E, "#MON cry!"
 	
-	lang      D, "?"
+	lang      D, "Errate den"
+	lang_line D, "#MON-Ruf!"
 	
 	lang      F, "?"
 	
@@ -50,7 +51,7 @@ MinigameStart::
 	news_string 1, 2, ""
 	lang J, "ポケモンなきごえクイズ"
 	lang E, "#MON CRY QUIZ"
-	lang D, "?"
+	lang D, "#MON-RUFE-QUIZ"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -104,7 +105,7 @@ ENDR
 .menuitem1_name
 	lang J, "スイクン"
 	lang E, "SUICUNE"
-	lang D, "?"
+	lang D, "SUICUNE"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -112,7 +113,7 @@ ENDR
 .menuitem2_name
 	lang J, "ピッピ"
 	lang E, "CLEFAIRY"
-	lang D, "?"
+	lang D, "PIEPI"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -120,7 +121,7 @@ ENDR
 .menuitem3_name
 	lang J, "オニスズメ"
 	lang E, "SPEAROW"
-	lang D, "?"
+	lang D, "HABITAK"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -128,7 +129,7 @@ ENDR
 .menuitem4_name
 	lang J, "ゴース"
 	lang E, "GASTLY"
-	lang D, "?"
+	lang D, "NEBULAK"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -136,7 +137,7 @@ ENDR
 .menuitem5_name
 	lang J, "トゲピー"
 	lang E, "TOGEPI"
-	lang D, "?"
+	lang D, "TOGEPI"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -144,7 +145,7 @@ ENDR
 .menuitem6_name
 	lang J, "ズバット"
 	lang E, "ZUBAT"
-	lang D, "?"
+	lang D, "ZUBAT"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -152,7 +153,7 @@ ENDR
 .menuitem7_name
 	lang J, "ルージュラ"
 	lang E, "JYNX"
-	lang D, "?"
+	lang D, "ROSSANA"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -160,7 +161,7 @@ ENDR
 .menuitem8_name
 	lang J, "エーフィ"
 	lang E, "ESPEON"
-	lang D, "?"
+	lang D, "PSIANA"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -168,7 +169,7 @@ ENDR
 .menuitem9_name
 	lang J, "ミュウツー"
 	lang E, "MEWTWO"
-	lang D, "?"
+	lang D, "MEWTU"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -176,7 +177,7 @@ ENDR
 .menuitem10_name
 	lang J, "ノコッチ"
 	lang E, "DUNSPARCE"
-	lang D, "?"
+	lang D, "DUMMISEL"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -184,7 +185,7 @@ ENDR
 .menuitem11_name
 	lang J, "もどる"
 	lang E, "CANCEL"
-	lang D, "?"
+	lang D, "ZURÜCK"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -251,7 +252,8 @@ ENDR
 	lang      E, "Choose the cry"
 	lang_line E, "of this #MON!"
 	
-	lang      D, "?"
+	lang      D, "Wähle den zum PKMN"
+	lang_line D, "passenden Ruf!"
 	
 	lang      F, "?"
 	
@@ -266,7 +268,7 @@ ENDR
 	
 	lang      E, "Exit the cry quiz."
 	
-	lang      D, "?"
+	lang      D, "Rufe-Quiz beenden."
 	
 	lang      F, "?"
 	
@@ -338,7 +340,7 @@ ENDR
 .menuitem1_name
 	lang J, "なきごえ１"
 	lang E, "CRY 1"
-	lang D, "?"
+	lang D, "RUF 1"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -346,7 +348,7 @@ ENDR
 .menuitem2_name
 	lang J, "なきごえ２"
 	lang E, "CRY 2"
-	lang D, "?"
+	lang D, "RUF 2"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -354,7 +356,7 @@ ENDR
 .menuitem3_name
 	lang J, "なきごえ３"
 	lang E, "CRY 3"
-	lang D, "?"
+	lang D, "RUF 3"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -455,7 +457,7 @@ ENDR
 .menuitems_desc
 	lang J, "なきごえは　どれ？"
 	lang E, "Which cry is it?"
-	lang D, "?"
+	lang D, "Wessen Ruf ist es?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -463,7 +465,7 @@ ENDR
 .this_cry_question ; $04E2 
 	lang J, "この　なきごえ　ですか？"
 	lang E, "Is it this cry?"
-	lang D, "?"
+	lang D, "Ist es dieser Ruf?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -471,7 +473,7 @@ ENDR
 .correct ; $04EF
 	lang J, "あたり！！！"
 	lang E, "Correct!"
-	lang D, "?"
+	lang D, "Richtig!"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -479,7 +481,7 @@ ENDR
 .incorrect ; $04F6
 	lang J, "はずれ<……>⋯"
 	lang E, "Incorrect…"
-	lang D, "?"
+	lang D, "Leider falsch…"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -487,7 +489,7 @@ ENDR
 .which_cry_question_duplicate ; $04FC
 	lang J, "なきごえは　どれ？"
 	lang E, "Which cry is it?"
-	lang D, "?"
+	lang D, "Wessen Ruf ist es?"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -495,7 +497,7 @@ ENDR
 .cryquizlabel_suicune
 	lang J, "なきごえクイズ　スイクン"
 	lang E, "SUICUNE CRY QUIZ"
-	lang D, "?"
+	lang D, "RUFE-QUIZ SUICUNE"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -503,7 +505,7 @@ ENDR
 .cryquizlabel_clefairy
 	lang J, "なきごえクイズ　ピッピ"
 	lang E, "CLEFAIRY CRY QUIZ"
-	lang D, "?"
+	lang D, "RUFE-QUIZ PIEPI"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -511,7 +513,7 @@ ENDR
 .cryquizlabel_spearow
 	lang J, "なきごえクイズ　オニスズメ"
 	lang E, "SPEAROW CRY QUIZ"
-	lang D, "?"
+	lang D, "RUFE-QUIZ HABITAK"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -519,7 +521,7 @@ ENDR
 .cryquizlabel_gastly
 	lang J, "なきごえクイズ　ゴース"
 	lang E, "GASTLY CRY QUIZ"
-	lang D, "?"
+	lang D, "RUFE-QUIZ NEBULAK"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -527,7 +529,7 @@ ENDR
 .cryquizlabel_togepi
 	lang J, "なきごえクイズ　トゲピー"
 	lang E, "TOGEPI CRY QUIZ"
-	lang D, "?"
+	lang D, "RUFE-QUIZ TOGEPI"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -535,7 +537,7 @@ ENDR
 .cryquizlabel_zubat
 	lang J, "なきごえクイズ　ズバット"
 	lang E, "ZUBAT CRY QUIZ"
-	lang D, "?"
+	lang D, "RUFE-QUIZ ZUBAT"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -543,7 +545,7 @@ ENDR
 .cryquizlabel_jynx
 	lang J, "なきごえクイズ　ルージュラ"
 	lang E, "JYNX CRY QUIZ"
-	lang D, "?"
+	lang D, "RUFE-QUIZ ROSSANA"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -551,7 +553,7 @@ ENDR
 .cryquizlabel_espeon
 	lang J, "なきごえクイズ　エーフィ"
 	lang E, "ESPEON CRY QUIZ"
-	lang D, "?"
+	lang D, "RUF-QUIZ PSIANA"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -559,7 +561,7 @@ ENDR
 .cryquizlabel_mewtwo
 	lang J, "なきごえクイズ　ミュウツー"
 	lang E, "MEWTWO CRY QUIZ"
-	lang D, "?"
+	lang D, "RUFE-QUIZ MEWTU"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -567,7 +569,7 @@ ENDR
 .cryquizlabel_dunsparce
 	lang J, "なきごえクイズ　ノコッチ"
 	lang E, "DUNSPARCE CRY QUIZ"
-	lang D, "?"
+	lang D, "RUFE-QUIZ DUMMISEL"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"

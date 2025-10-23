@@ -46,7 +46,13 @@ MACRO minigame_start
 	lang_line E, "<……> <……>"
 	lang_para E, "２エラー"
 	
-	lang_text D, "?"
+	; German
+	lang_text D, "EICH: Ich führe"
+	lang_line D, "dich durch diesen"
+	line_cont D, "Bereich!"
+	lang_para D, "<……> <……>"
+	lang_line D, "<……> <……>"
+	lang_para D, "Fehler 2"
 	
 	lang_text F, "?"
 	
@@ -61,7 +67,7 @@ ENDM
 MACRO minigame_name
 	lang J, "ポケモンクイズ！"
 	lang E, "#MON QUIZ!"
-	lang D, "?"
+	lang D, "#MON-QUIZ!"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -672,7 +678,7 @@ ENDC
 	lang J, "オーキドはかせの　ひょうか"
 	lang E, "PROF.OAK's RATING"
 	; Rework in other languages
-	lang D, "EICHs BERICHT"
+	lang D, "EICHs BEWERTUNG"
 	lang F, "RAPPORT DE CHEN"
 	lang I, "RAPPORTO DI OAK"
 	lang S, "?"
@@ -736,7 +742,7 @@ ENDC
 	lang_line E, "Here's the rating!"
 ; TODO: Rework in other languages
 	
-	lang      D, "Die Bewertung"
+	lang      D, "Zur Bewertung"
 	lang_line D, "deiner Antworten!"
 	
 	lang      F, "Faites le quiz et"

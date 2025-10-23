@@ -110,7 +110,7 @@ MACRO minigame_start
 	lang_cont D, "mein Quiz heraus-"
 	lang_cont D, "zufordern, hm?"
 	
-	lang_para D, "Mein Quiz hat"
+	lang_para D, "Mein Quiz bietet"
 	lang_line D, "Fragen, die du nie"
 	lang_cont D, "beantworten wirst,"
 	lang_cont D, "egal, wie weit du"
@@ -818,7 +818,7 @@ ENDM
 	
 	lang_para E, "…"
 	
-	; English
+	; German
 	lang_text D, "BLAU: Wie hast du"
 	lang_line D, "abgeschnitten?"
 	lang_cont D, "Mal sehen!"
@@ -1314,7 +1314,7 @@ ENDC
 	lang_line D, "auf dich sein."
 	
 	lang_para D, ""
-IF DEF(_LANG_E)
+IF DEF(_LANG_D)
 	nts_start
 	nts_player_name 0
 	nts_end

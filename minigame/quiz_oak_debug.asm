@@ -623,7 +623,7 @@ ENDC
 .menuItemText
 	lang J, "オーキドはかせの　ひょうか"
 	lang E, "PROF.OAK's RATING"
-	lang D, "EICHs BERICHT"
+	lang D, "EICHs BEWERTUNG"
 	lang F, "RAPPORT DE CHEN"
 	lang I, "RAPPORTO DI OAK"
 	lang S, "?"
@@ -687,7 +687,7 @@ ENDC
 	lang_line E, "Here's the rating!"
 ; TODO: potentially revise, and match in other languages
 	
-	lang      D, "Die Bewertung"
+	lang      D, "Zur Bewertung"
 	lang_line D, "deiner Antworten!"
 	
 	lang      F, "Faites le quiz et"

@@ -68,7 +68,12 @@ MACRO minigame_start
 	lang_para E, "something some-"
 	lang_line E, "thing time travel"
 	
-	lang_text D, "?"
+	lang_text D, "MAISY: nuschel"
+	lang_line D, "nuschel AZALEA"
+	lang_para D, "nuschel nuschel"
+	lang_line D, "KURTs Enkelin"
+	lang_para D, "nuschel nuschel"
+	lang_line D, "Zeitreise"
 	
 	lang_text F, "?"
 	
@@ -82,7 +87,7 @@ ENDM
 MACRO minigame_name
 	lang J, "ときをこえたプレゼント"
 	lang E, "A TIMELESS GIFT"
-	lang D, "?"
+	lang D, "ZEITLOSES GESCHENK"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -125,7 +130,8 @@ MinigameStart::
 	lang J, "は"
 	lang      E, " rolled"
 	lang_next E, "a"
-	lang D, "?"
+	lang D,      " würfelt"
+	lang_next D, "eine"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -141,7 +147,7 @@ MinigameStart::
 	
 	lang_next J, "チエコの　ロール？"
 	lang_next E, "MAIZIE will roll…"
-	lang_next D, "?"
+	lang_next D, "MAISY würfelt…"
 	lang_next F, "?"
 	lang_next I, "?"
 	lang_next S, "?"
@@ -245,7 +251,7 @@ MinigameStart::
 .menuHigherText
 	lang J, "うえ"
 	lang E, "HIGHER"
-	lang D, "?"
+	lang D, "HÖHER"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -254,7 +260,7 @@ MinigameStart::
 .menuLowerText
 	lang J, "した"
 	lang E, "LOWER"
-	lang D, "?"
+	lang D, "NIEDRIGER"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -269,7 +275,8 @@ MinigameStart::
 ;	lang J, ""
 ;	lang E, " rolled"
 ;	lang_line E, "a "
-;	lang D, "?"
+;	lang D,      " würfelt"
+;   lang_line D, "eine "
 ;	lang F, "?"
 ;	lang I, "?"
 ;	lang S, "?"
@@ -296,7 +303,7 @@ MinigameStart::
 	lang J, "チエコは"
 	lang      E, "MAIZIE rolled a"
 	;lang_next E, "a"
-	lang D, "?"
+	lang D, "MAISY würfelt eine"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -342,7 +349,8 @@ MinigameStart::
 .jankenTieText
 	lang_text J, "チエコ『ひきわけ"
 	lang_text E, "MAIZIE: We tied…"
-	lang_text D, "?"
+	lang_text D, "MAISY: Unent-"
+	lang_line D, "schieden…"
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -359,7 +367,8 @@ MinigameStart::
 .jankenLoseText
 	lang_text J, "チエコ『あたしの　かち"
 	lang_text E, "MAIZIE: I win!"
-	lang_text D, "?"
+	lang_text D, "MAISY: Ich"
+	lang_line D, "gewinne!"
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -376,7 +385,8 @@ MinigameStart::
 .jankenWinText
 	lang_text J, "チエコ『あなたの　かち"
 	lang_text E, "MAIZIE: You win!"
-	lang_text D, "?"
+	lang_text D, "MAISY: Du"
+	lang_line D, "gewinnst!"
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -445,7 +455,7 @@ MinigameStart::
 .menuItemYesText
 	lang J, "はい"
 	lang E, "YES"
-	lang D, "?"
+	lang D, "JA"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -454,7 +464,7 @@ MinigameStart::
 .menuItemNoText
 	lang J, "いいえ"
 	lang E, "NO"
-	lang D, "?"
+	lang D, "NEIN"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -519,8 +529,11 @@ ENDM
 	lang_next E, "in the GOLDENROD"
 	lang_next E, "UNDERGROUND?"
 	
-	lang D,      "?"
-	
+	lang D,      "Gibt es im UNTER-"
+	lang_next D, "GRUND von DUKATIA"
+	lang_next D, "CITY genau vier"
+	lang_next D, "Geschäftsleute?"
+
 	lang F,      "?"
 	
 	lang I,      "?"
@@ -538,7 +551,10 @@ ENDM
 	lang_next E, "in the radio show"
 	lang_next E, "BUENA'S PASSWORD?"
 	
-	lang D,      "?"
+	lang D,      "Ist WEBARAK eines"
+	lang_next D, "der Passwörter in"
+	lang_next D, "BUENAs PASSWORT-"
+	lang_next D, "SENDUNG?"
 	
 	lang F,      "?"
 	
@@ -557,8 +573,10 @@ ENDM
 	lang_next E, "at the NATIONAL"
 	lang_next E, "PARK?"
 	
-	lang D,      "?"
-	
+	lang D,      "Gibt es im"
+	lang_next D, "NATIONALPARK"
+	lang_next D, "blühende Blumen?"
+
 	lang F,      "?"
 	
 	lang I,      "?"
@@ -575,8 +593,11 @@ ENDM
 	lang_next E, "OLIVINE LIGHTHOUSE"
 	lang_next E, "5F?"
 	
-	lang D,      "?"
-	
+	lang D,      "Befand sich AMPHI"
+	lang_next D, "im 5. Obergeschoss"
+	lang_next D, "des LEUCHTTURMs"
+	lang_next D, "von OLIVIANA CITY?"
+
 	lang F,      "?"
 	
 	lang I,      "?"
@@ -592,8 +613,9 @@ ENDM
 	lang_next E, "a RAGECANDYBAR"
 	lang_next E, "¥400?"
 	
-	lang D,      "?"
-	
+	lang D,      "Kostet ein WUTKEKS"
+	lang_next D, "¥400?"
+
 	lang F,      "?"
 	
 	lang I,      "?"
@@ -613,7 +635,11 @@ ENDM
 	lang_next E, "boss's room in the"
 	lang_next E, "ROCKET HIDEOUT?"
 	
-	lang D,      "?"
+	lang D,      "Sind FLEGMONRUTE"
+	lang_next D, "und WIESORRUTE die"
+	lang_next D, "Passwörter für das"
+	lang_next D, "Büro vom Boss im"
+	lang_next D, "ROCKET-VERSTECK?"
 	
 	lang F,      "?"
 	
@@ -631,7 +657,10 @@ ENDM
 	lang_next E, "backwards after"
 	lang_next E, "using WATERFALL?"
 	
-	lang D,      "?"
+	lang D,      "Blickst du nach"
+	lang_next D, "dem Einsatz von"
+	lang_next D, "KASKADE nach"
+	lang_next D, "unten?"
 	
 	lang F,      "?"
 	
@@ -649,7 +678,10 @@ ENDM
 	lang_next E, "GYM LEADER to use"
 	lang_next E, "four #MON?"
 	
-	lang D,      "?"
+	lang D,      "Ist JENS der ein-"
+	lang_next D, "zige ARENALEITER,"
+	lang_next D, "der vier #MON"
+	lang_next D, "einsetzt?"
 	
 	lang F,      "?"
 	
@@ -723,7 +755,7 @@ ENDC
 .menuItemText
 	lang J, "チエコのひょうか"
 	lang E, "MAIZIE's RATING"
-	lang D, "?"
+	lang D, "MAISYs BEWERTUNG"
 	lang F, "?"
 	lang I, "?"
 	lang S, "?"
@@ -814,7 +846,8 @@ ENDC
 	lang_text E, "MAIZIE:"
 	lang_line E, "quiz failed text"
 	
-	lang_text D, "?"
+	lang_text D, "MAISY: Du hast"
+	lang_line D, "nicht bestanden."
 	
 	lang_text F, "?"
 	
@@ -832,7 +865,8 @@ ENDC
 	lang_text E, "MAIZIE:"
 	lang_line E, "quiz passed text"
 	
-	lang_text D, "?"
+	lang_text D, "MAISY: Du hast"
+	lang_line D, "bestanden!"
 	
 	lang_text F, "?"
 	
@@ -860,7 +894,8 @@ ENDC
 .textTryAgain
 	lang_text J, "チエコ『？"
 	lang_text E, "MAIZIE: ?"
-	lang_text D, "?"
+	lang_text D, "MAISY: Versuche es"
+	lang_line D, "noch einmal!"
 	lang_text F, "?"
 	lang_text I, "?"
 	lang_text S, "?"
@@ -896,6 +931,14 @@ ENDC
 	lang_line E, "TM22."
 	
 	lang_text D, "?"
+	lang_para D, ""
+IF DEF(_LANG_D)
+	nts_start
+	nts_player_name 0
+	nts_end
+ENDC
+	lang      D, " erhält"
+	lang_line D, "TM22."
 	
 	lang_text F, "?"
 	

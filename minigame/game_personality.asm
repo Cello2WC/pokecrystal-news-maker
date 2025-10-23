@@ -1,3 +1,17 @@
+; This is a RE-CREATION based on records
+; from the time and first-hand accounts,
+; NOT actual recovered news data!
+; 
+; See: https://www2u.biglobe.ne.jp/~kakeru/pokemon2/mobile/news/02_10.htm
+; Thanks to nohm for providing their first-hand account of this minigame!
+; 
+; Re-creation script written by Cello2WC
+; English localization by DS
+; German localization by Lesserkuma
+; French localization TODO
+; Italian localization TODO
+; Spanish localization TODO
+
 IF DEF(_MINIGAME_H)
 
 DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 1
@@ -22,52 +36,52 @@ MACRO minigame_start
 
 .gameIntroText
 	; Japanese
-	lang_text J, "トレーナーしんだんを　はじめます！"
-	lang_para J, "さいしょの　１かい　だけ　しんだんが"
-	lang_line J, "おわると　プレゼントが　もらえます！"
-	lang_para J, "けっかに　よって　プレゼントが"
-	lang_line J, "ちがうので　きをつけてね！"
-	lang_para J, "それでは　スタート！"
+	lang J, text "トレーナーしんだんを　はじめます！"
+	lang J, para "さいしょの　１かい　だけ　しんだんが"
+	lang J, line "おわると　プレゼントが　もらえます！"
+	lang J, para "けっかに　よって　プレゼントが"
+	lang J, line "ちがうので　きをつけてね！"
+	lang J, para "それでは　スタート！"
 	
 	; English
-	lang_text E, "Starting your"
-	lang_line E, "<TRAINER> CHECKUP!"
+	lang E, text "Starting your"
+	lang E, line "<TRAINER> CHECKUP!"
 
-	lang_para E, "You'll only get"
-	lang_line E, "a gift after your"
-	lang_cont E, "first checkup!"
+	lang E, para "You'll only get"
+	lang E, line "a gift after your"
+	lang E, cont "first checkup!"
 	
-	lang_para E, "The gift differs"
-	lang_line E, "based on your"
-	lang_cont E, "results, so be"
-	lang_cont E, "careful!"
+	lang E, para "The gift differs"
+	lang E, line "based on your"
+	lang E, cont "results, so be"
+	lang E, cont "careful!"
 	
-	lang_para E, "Alright, let's"
-	lang_line E, "get started!"
+	lang E, para "Alright, let's"
+	lang E, line "get started!"
 	
 	; German
-	lang_text D, "Beginnen wir mit"
-	lang_line D, "dem <TRAINER>-"
-	lang_cont D, "CHECK-UP!"
+	lang D, text "Beginnen wir mit"
+	lang D, line "dem <TRAINER>-"
+	lang D, cont "CHECK-UP!"
 
-	lang_para D, "Du erhältst nach"
-	lang_line D, "nur deinem ersten"
-	lang_cont D, "Check-Up ein"
-	lang_cont D, "Geschenk!"
+	lang D, para "Du erhältst nach"
+	lang D, line "nur deinem ersten"
+	lang D, cont "Check-Up ein"
+	lang D, cont "Geschenk!"
 	
-	lang_para D, "Das Ergebnis be-"
-	lang_line D, "einflusst die Art"
-	lang_cont D, "deines Geschenks,"
-	lang_cont D, "also pass gut auf!"
+	lang D, para "Das Ergebnis be-"
+	lang D, line "einflusst die Art"
+	lang D, cont "deines Geschenks,"
+	lang D, cont "also pass gut auf!"
 	
-	lang_para D, "Und damit geht's"
-	lang_line D, "jetzt los!"
+	lang D, para "Und damit geht's"
+	lang D, line "jetzt los!"
 
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 
 	done
 	
@@ -75,28 +89,28 @@ ENDM
 
 MACRO minigame_name
 	; Japanese
-	lang J, "<TRAINER> しんだん！"
+	lang J, db "<TRAINER> しんだん！"
 	; English
-	lang E, "<TRAINER> CHECKUP!"
+	lang E, db "<TRAINER> CHECKUP!"
 	; German
-	lang D, "<TRAINER>-CHECK-UP!"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "<TRAINER>-CHECK-UP!"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 ENDM
 
 MACRO minigame_desc
-	lang      J, "?"
+	lang J, db   "?"
 	
-	lang      E, "?"
+	lang E, db   "?"
 	
-	lang      D, "?"
+	lang D, db   "?"
 	
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 ENDM
 
 ELSE
@@ -168,30 +182,30 @@ MinigameStart::
 	nsc_ret
 
 .menuItemAnswer1Text
-	lang J, "はい"
-	lang E, "YES"
-	lang D, "JA"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "はい"
+	lang E, db "YES"
+	lang D, db "JA"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 
 .menuItemAnswer2Text
-	lang J, "いいえ"
-	lang E, "NO"
-	lang D, "NEIN"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "いいえ"
+	lang E, db "NO"
+	lang D, db "NEIN"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 
 .menuItemQuitText
-	lang J, "やめる"
-	lang E, "QUIT"
-	lang D, "ZUR."
-	lang F, "RET"
-	lang I, "ESCI"
-	lang S, "?"
+	lang J, db "やめる"
+	lang E, db "QUIT"
+	lang D, db "ZUR."
+	lang F, db "RET"
+	lang I, db "ESCI"
+	lang S, db "?"
 	db "@"
 	
 	
@@ -235,425 +249,425 @@ ENDM
 
 .page1
 	; Japanese
-	lang      J, "ポケモンを　つかまえたら"
-	lang_next J, "かならず　ニックネームを　つける"
+	lang J, db   "ポケモンを　つかまえたら"
+	lang J, next "かならず　ニックネームを　つける"
 	
 	; English
-	lang      E, "Whenever I catch"
-	lang_next E, "a #MON,"
-	lang_next E, "I always give it a"
-	lang_next E, "nickname."	
+	lang E, db   "Whenever I catch"
+	lang E, next "a #MON,"
+	lang E, next "I always give it a"
+	lang E, next "nickname."	
 	
 	; German
-	lang      D, "Ich gebe jedem"
-	lang_next D, "meiner #MON"
-	lang_next D, "sofort einen"
-	lang_next D, "Spitznamen."
+	lang D, db   "Ich gebe jedem"
+	lang D, next "meiner #MON"
+	lang D, next "sofort einen"
+	lang D, next "Spitznamen."
 	
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	db "@"
 
 .page2
 	; Japanese
-	lang      J, "ポケモンの　なまえを　よぶときは"
-	lang_next J, "「ちゃん」を　つけて　よんでしまう"
+	lang J, db   "ポケモンの　なまえを　よぶときは"
+	lang J, next "「ちゃん」を　つけて　よんでしまう"
 	
 	; English
-	lang      E, "When I call my"
-	lang_next E, "#MON's name,"
-	lang_next E, "I always end up"
-	lang_next E, "adding “darling”."
+	lang E, db   "When I call my"
+	lang E, next "#MON's name,"
+	lang E, next "I always end up"
+	lang E, next "adding “darling”."
 	
 	; German
-	lang      D, "Wenn ich den"
-	lang_next D, "Namen meines"
-	lang_next D, "#MON rufe, füge"
-	lang_next D, "ich immer ein"
-	lang_next D, "“-lein” oder ein"
-	lang_next D, "“-chen” hinzu."
+	lang D, db   "Wenn ich den"
+	lang D, next "Namen meines"
+	lang D, next "#MON rufe, füge"
+	lang D, next "ich immer ein"
+	lang D, next "“-lein” oder ein"
+	lang D, next "“-chen” hinzu."
 	
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	db "@"
 
 .page3
 	; Japanese
-	lang      J, "ポケモンに　おぼえさせる　わざは"
-	lang_next J, "ポケモンの　イメージに　あっていれば"
-	lang_next J, "つよく　なくても　きにしない"
+	lang J, db   "ポケモンに　おぼえさせる　わざは"
+	lang J, next "ポケモンの　イメージに　あっていれば"
+	lang J, next "つよく　なくても　きにしない"
 	
 	; English
-	lang      E, "As long as a move"
-	lang_next E, "matches my"
-	lang_next E, "#MON's image,"
-	lang_next E, "I don't care if"
-	lang_next E, "it's not strong."
+	lang E, db   "As long as a move"
+	lang E, next "matches my"
+	lang E, next "#MON's image,"
+	lang E, next "I don't care if"
+	lang E, next "it's not strong."
 	
 	; German
-	lang      D, "Solange eine"
-	lang_next D, "Attacke zu meinem"
-	lang_next D, "#MON passt,"
-	lang_next D, "ist es egal, ob"
-	lang_next D, "sie stark ist."
+	lang D, db   "Solange eine"
+	lang D, next "Attacke zu meinem"
+	lang D, next "#MON passt,"
+	lang D, next "ist es egal, ob"
+	lang D, next "sie stark ist."
 	
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	db "@"
 
 .page4
 	; Japanese
-	lang      J, "すきな　ポケモンは　よわくても"
-	lang_next J, "１０ひき　いじょう　あつめてしまう"
+	lang J, db   "すきな　ポケモンは　よわくても"
+	lang J, next "１０ひき　いじょう　あつめてしまう"
 	
 	; English
-	lang      E, "I'll collect more"
-	lang_next E, "than ten of my"
-	lang_next E, "favorite #MON,"
-	lang_next E, "even if they're"
-	lang_next E, "weak."
+	lang E, db   "I'll collect more"
+	lang E, next "than ten of my"
+	lang E, next "favorite #MON,"
+	lang E, next "even if they're"
+	lang E, next "weak."
 	
 	; German
-	lang      D, "Ich fange mehr als"
-	lang_next D, "zehn meiner Lieb-"
-	lang_next D, "lings-#MON,"
-	lang_next D, "selbst wenn sie"
-	lang_next D, "schwach sind."
+	lang D, db   "Ich fange mehr als"
+	lang D, next "zehn meiner Lieb-"
+	lang D, next "lings-#MON,"
+	lang D, next "selbst wenn sie"
+	lang D, next "schwach sind."
 	
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	db "@"
 
 .page5
 	; Japanese
-	lang      J, "こうげきが　つよければ"
-	lang_next J, "ぼうぎょは　あまり　きにしない"
+	lang J, db   "こうげきが　つよければ"
+	lang J, next "ぼうぎょは　あまり　きにしない"
 	
 	; English
-	lang      E, "If a #MON has"
-	lang_next E, "high attack,"
-	lang_next E, "I don't care"
-	lang_next E, "much for defense."
+	lang E, db   "If a #MON has"
+	lang E, next "high attack,"
+	lang E, next "I don't care"
+	lang E, next "much for defense."
 	
 	; German
-	lang      D, "Solange ein #-"
-	lang_next D, "MON gute Angriffs-"
-	lang_next D, "werte hat, ist mir"
-	lang_next D, "die Verteidigung"
-	lang_next D, "nicht wichtig."
+	lang D, db   "Solange ein #-"
+	lang D, next "MON gute Angriffs-"
+	lang D, next "werte hat, ist mir"
+	lang D, next "die Verteidigung"
+	lang D, next "nicht wichtig."
 	
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	db "@"
 
 .page6
 	; Japanese
-	lang      J, "じぶんより　よわい　あいてに"
-	lang_next J, "かつと　きもちがいい？"
+	lang J, db   "じぶんより　よわい　あいてに"
+	lang J, next "かつと　きもちがいい？"
 	
 	; English
-	lang      E, "Winning against a"
-	lang_next E, "weaker opponent"
-	lang_next E, "feels great!"
+	lang E, db   "Winning against a"
+	lang E, next "weaker opponent"
+	lang E, next "feels great!"
 	
 	; German
-	lang      D, "Es fühlt sich gut"
-	lang_next D, "an, gegen schwä-"
-	lang_next D, "chere Gegner zu"
-	lang_next D, "gewinnen!"
+	lang D, db   "Es fühlt sich gut"
+	lang D, next "an, gegen schwä-"
+	lang D, next "chere Gegner zu"
+	lang D, next "gewinnen!"
 	
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	db "@"
 
 .page7
 	; Japanese
-	lang      J, "だいじに　そだてた　ポケモンでも"
-	lang_next J, "たかい　おかねでなら　うってもいい"
+	lang J, db   "だいじに　そだてた　ポケモンでも"
+	lang J, next "たかい　おかねでなら　うってもいい"
 	
 	; English
-	lang      E, "I'd sell even the"
-	lang_next E, "#MON I've"
-	lang_next E, "raised with care"
-	lang_next E, "if the price was"
-	lang_next E, "high enough."		
+	lang E, db   "I'd sell even the"
+	lang E, next "#MON I've"
+	lang E, next "raised with care"
+	lang E, next "if the price was"
+	lang E, next "high enough."		
 	
 	; German
-	lang      D, "Solange der Preis"
-	lang_next D, "stimmt, würde ich"
-	lang_next D, "auch #MON ver-"
-	lang_next D, "kaufen, um die"
-	lang_next D, "ich mich lange"
-	lang_next D, "gekümmert habe."
+	lang D, db   "Solange der Preis"
+	lang D, next "stimmt, würde ich"
+	lang D, next "auch #MON ver-"
+	lang D, next "kaufen, um die"
+	lang D, next "ich mich lange"
+	lang D, next "gekümmert habe."
 	
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	db "@"
 
 .page8
 	; Japanese
-	lang      J, "わざマシンの　わざの　しゅるいを"
-	lang_next J, "なにも　みないで"
-	lang_next J, "３０こ　いじょう　いえる"
+	lang J, db   "わざマシンの　わざの　しゅるいを"
+	lang J, next "なにも　みないで"
+	lang J, next "３０こ　いじょう　いえる"
 	
 	; English
-	lang      E, "I can name thirty"
-	lang_next E, "or more different"
-	lang_next E, "kinds of TM moves"	
-	lang_next E, "without looking."
+	lang E, db   "I can name thirty"
+	lang E, next "or more different"
+	lang E, next "kinds of TM moves"	
+	lang E, next "without looking."
 	
 	; German
-	lang      D, "Ich kann dreißig"
-	lang_next D, "oder mehr Arten"
-	lang_next D, "von TM-Attacken"
-	lang_next D, "aus dem Gedächtnis"
-	lang_next D, "aufzählen."
+	lang D, db   "Ich kann dreißig"
+	lang D, next "oder mehr Arten"
+	lang D, next "von TM-Attacken"
+	lang D, next "aus dem Gedächtnis"
+	lang D, next "aufzählen."
 		
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	db "@"
 
 .page9
 	; Japanese
-	lang      J, "てにいれた　わざマシンは"
-	lang_next J, "そのとき　もっている　ポケモンに"
-	lang_next J, "すぐに　つかってしまう"
+	lang J, db   "てにいれた　わざマシンは"
+	lang J, next "そのとき　もっている　ポケモンに"
+	lang J, next "すぐに　つかってしまう"
 	
 	; English
-	lang      E, "When I get a TM,"
-	lang_next E, "I teach it to"
-	lang_next E, "my #MON right" 
-	lang_next E, "away!"
+	lang E, db   "When I get a TM,"
+	lang E, next "I teach it to"
+	lang E, next "my #MON right" 
+	lang E, next "away!"
 	
 	; German
-	lang      D, "Sobald ich eine"
-	lang_next D, "TM erhalte, bringe"
-	lang_next D, "ich sie sofort"
-	lang_next D, "meinem #MON"
-	lang_next D, "bei."
+	lang D, db   "Sobald ich eine"
+	lang D, next "TM erhalte, bringe"
+	lang D, next "ich sie sofort"
+	lang D, next "meinem #MON"
+	lang D, next "bei."
 
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	db "@"
 
 .page10
 	; Japanese
-	lang      J, "いつも　くすりは　おおめに"
-	lang_next J, "もちあるく　ように　している"
+	lang J, db   "いつも　くすりは　おおめに"
+	lang J, next "もちあるく　ように　している"
 	
 	; English
-	lang      E, "I always try to"
-	lang_next E, "carry plenty of"
-	lang_next E, "medicine with me."
+	lang E, db   "I always try to"
+	lang E, next "carry plenty of"
+	lang E, next "medicine with me."
 	
 	; German
-	lang      D, "Ich habe immer"
-	lang_next D, "eine große Menge"
-	lang_next D, "Medizin bei mir."
+	lang D, db   "Ich habe immer"
+	lang D, next "eine große Menge"
+	lang D, next "Medizin bei mir."
 
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	db "@"
 
 .page11
 	; Japanese
-	lang      J, "すきな　どうぐは　やっぱり"
-	lang_next J, "きせきのみ　より　きあいのハチマキ！"
+	lang J, db   "すきな　どうぐは　やっぱり"
+	lang J, next "きせきのみ　より　きあいのハチマキ！"
 	
 	; English
-	lang      E, "When it comes to"
-	lang_next E, "items, I prefer"
-	lang_next E, "a FOCUS BAND over"
-	lang_next E, "a MIRACLEBERRY!"
+	lang E, db   "When it comes to"
+	lang E, next "items, I prefer"
+	lang E, next "a FOCUS BAND over"
+	lang E, next "a MIRACLEBERRY!"
 	
 	; German
-	lang      D, "Ich bevorzuge"
-	lang_next D, "bei Items"
-	lang_next D, "ein FOKUSBAND"
-	lang_next D, "gegenüber einer"
-	lang_next D, "WUNDERBEERE!"
+	lang D, db   "Ich bevorzuge"
+	lang D, next "bei Items"
+	lang D, next "ein FOKUSBAND"
+	lang D, next "gegenüber einer"
+	lang D, next "WUNDERBEERE!"
 	
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	db "@"
 
 .page12
 	; Japanese
-	lang      J, "たいりょくが　あと　すこし　でも"
-	lang_next J, "つぎの　こうげきで　かてそうなら"
-	lang_next J, "かいふくは　しない"
+	lang J, db   "たいりょくが　あと　すこし　でも"
+	lang J, next "つぎの　こうげきで　かてそうなら"
+	lang J, next "かいふくは　しない"
 	
 	; English
-	lang      E, "Even if my #MON"
-	lang_next E, "has low HP,"
-	lang_next E, "I won't heal if"
-	lang_next E, "I think I can win"
-	lang_next E, "next turn."
+	lang E, db   "Even if my #MON"
+	lang E, next "has low HP,"
+	lang E, next "I won't heal if"
+	lang E, next "I think I can win"
+	lang E, next "next turn."
 	
 	; German
-	lang      D, "Auch wenn mein"
-	lang_next D, "#MON kaum noch"
-	lang_next D, "KP übrig hat,"
-	lang_next D, "heile ich es"
-	lang_next D, "nicht, wenn ich"
-	lang_next D, "die nächste Runde"
-	lang_next D, "gewinnen könnte."
+	lang D, db   "Auch wenn mein"
+	lang D, next "#MON kaum noch"
+	lang D, next "KP übrig hat,"
+	lang D, next "heile ich es"
+	lang D, next "nicht, wenn ich"
+	lang D, next "die nächste Runde"
+	lang D, next "gewinnen könnte."
 	
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	db "@"
 
 .page13
 	; Japanese
-	lang      J, "ともだちが　あまり　つかわないような"
-	lang_next J, "ポケモンを　つかうのが　だいすきだ"
+	lang J, db   "ともだちが　あまり　つかわないような"
+	lang J, next "ポケモンを　つかうのが　だいすきだ"
 	
 	; English
-	lang      E, "I love using"
-	lang_next E, "#MON that my"
-	lang_next E, "friends don't"
-	lang_next E, "often use."
+	lang E, db   "I love using"
+	lang E, next "#MON that my"
+	lang E, next "friends don't"
+	lang E, next "often use."
 	
 	; German
-	lang      D, "Ich mag es sehr,"
-	lang_next D, "#MON einzu-"
-	lang_next D, "setzen, die von"
-	lang_next D, "Freunden nicht oft"
-	lang_next D, "eingesetzt werden."
+	lang D, db   "Ich mag es sehr,"
+	lang D, next "#MON einzu-"
+	lang D, next "setzen, die von"
+	lang D, next "Freunden nicht oft"
+	lang D, next "eingesetzt werden."
 	
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	db "@"
 
 .page14
 	; Japanese
-	lang      J, "しらない　まちに　ついたら　まずは"
-	lang_next J, "ポケモンセンターで　かいふくする"
+	lang J, db   "しらない　まちに　ついたら　まずは"
+	lang J, next "ポケモンセンターで　かいふくする"
 	
 	; English
-	lang      E, "When I arrive in"
-	lang_next E, "a new town, the"
-	lang_next E, "first thing I do"
-	lang_next E, "is heal at a"	
-	lang_next E, "#MON CENTER."
+	lang E, db   "When I arrive in"
+	lang E, next "a new town, the"
+	lang E, next "first thing I do"
+	lang E, next "is heal at a"	
+	lang E, next "#MON CENTER."
 	
 	; German
-	lang      D, "In einer neuen"
-	lang_next D, "Stadt besuche ich"
-	lang_next D, "als allererstes"
-	lang_next D, "das #MON-"
-	lang_next D, "CENTER zum Heilen."
+	lang D, db   "In einer neuen"
+	lang D, next "Stadt besuche ich"
+	lang D, next "als allererstes"
+	lang D, next "das #MON-"
+	lang D, next "CENTER zum Heilen."
 	
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	db "@"
 
 .page15
 	; Japanese
-	lang      J, "どうくつの　なかを　たんけんするより"
-	lang_next J, "へやで　ゆっくり　さくせんを"
-	lang_next J, "ねる　ほうが　すきだ"
+	lang J, db   "どうくつの　なかを　たんけんするより"
+	lang J, next "へやで　ゆっくり　さくせんを"
+	lang J, next "ねる　ほうが　すきだ"
 	
 	; English
-	lang      E, "I'd rather plan"
-	lang_next E, "strategies in my"
-	lang_next E, "room than go out"
-	lang_next E, "exploring caves."
+	lang E, db   "I'd rather plan"
+	lang E, next "strategies in my"
+	lang E, next "room than go out"
+	lang E, next "exploring caves."
 	
 	; German
-	lang      D, "Lieber plane ich"
-	lang_next D, "daheim in Ruhe"
-	lang_next D, "meine Taktik,"
-	lang_next D, "statt draußen Höh-"
-	lang_next D, "len zu erkunden."
+	lang D, db   "Lieber plane ich"
+	lang D, next "daheim in Ruhe"
+	lang D, next "meine Taktik,"
+	lang D, next "statt draußen Höh-"
+	lang D, next "len zu erkunden."
 	
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	db "@"
 
 .page16
 	; Japanese
-	lang      J, "パソコンの　ボックスに"
-	lang_next J, "あずけてある　ポケモンは"
-	lang_next J, "きれいに　せいり　している"
+	lang J, db   "パソコンの　ボックスに"
+	lang J, next "あずけてある　ポケモンは"
+	lang J, next "きれいに　せいり　している"
 	
 	; English
-	lang      E, "The #MON"
-	lang_next E, "stored in my PC"
-	lang_next E, "BOXES are all"
-	lang_next E, "neatly organized."
+	lang E, db   "The #MON"
+	lang E, next "stored in my PC"
+	lang E, next "BOXES are all"
+	lang E, next "neatly organized."
 	
 	; German
-	lang      D, "Die #MON"
-	lang_next D, "in meinen PC-"
-	lang_next D, "BOXEN sind alle"
-	lang_next D, "schön geordnet."
+	lang D, db   "Die #MON"
+	lang D, next "in meinen PC-"
+	lang D, next "BOXEN sind alle"
+	lang D, next "schön geordnet."
 
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	db "@"
 
@@ -752,7 +766,6 @@ ENDC
 	nsc_ret
 ENDM
 	
-
 	quizresult 1, POKEFANM,      POKEFANF,      TM_RETURN
 	quizresult 2, GRUNTM,        GRUNTF,        TM_FRUSTRATION
 	quizresult 3, COOLTRAINERM,  COOLTRAINERF,  PP_UP
@@ -760,707 +773,666 @@ ENDM
 	quizresult 5, BLACKBELT_T,   BLACKBELT_T,   TM_ENDURE
 	quizresult 6, SCIENTIST,     SCIENTIST,     BRIGHTPOWDER
 	
-	
-	
-	
-	
-	
-	
-	
-;	nsc_waitbutton
-;	nsc_page NewsRoot
-;	nsc_ret
-	
 .menuItemText
-	lang J, "？"
-	; Guess
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang E, "'s RESULTS"
-	lang D, "s ERGEBNIS"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "？"
+	
+	; A guess
+	lang E, nts_start
+	lang E, nts_player_name 0
+	lang E, nts_end
+	lang E, db "'s RESULTS"
+	
+	lang D, nts_start
+	lang D, nts_player_name 0
+	lang D, nts_end
+	lang D, db "s ERGEBNIS"
+	
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 .menuItemDesc
 	db "@"
-	
-;.menuItemScript
-;	nsc_compare wPersonalityPage, .result1, .result2, .greater, 1, 1
-;.greater
-;	nsc_compare wPersonalityPage, .result3, .result4, .greater2, 1, 3
-;.greater2
-;	nsc_compare wPersonalityPage, .result5, .result6, .result6, 1, 5
-	
-
-	
 	
 .result1textM
 .result1textF
 	; Japanese
-	lang_text J, "あなたの　トレーナータイプは"
-	lang_line J, "だいすきクラブ　ですわ！"
+	lang J, text "あなたの　トレーナータイプは"
+	lang J, line "だいすきクラブ　ですわ！"
 	
-	lang_para J, "ポケモンちゃんを　おかしいほど"
-	lang_line J, "あいする　あなたの　おきもち"
-	lang_cont J, "しかと　つたわって　きましたわ！"
+	lang J, para "ポケモンちゃんを　おかしいほど"
+	lang J, line "あいする　あなたの　おきもち"
+	lang J, cont "しかと　つたわって　きましたわ！"
 	
-	lang_para J, "しょうぶに　まけても　かわいい"
-	lang_line J, "ポケモンちゃんを　もっている"
-	lang_cont J, "ほうが　かちよ！　わすれないでネ！"
+	lang J, para "しょうぶに　まけても　かわいい"
+	lang J, line "ポケモンちゃんを　もっている"
+	lang J, cont "ほうが　かちよ！　わすれないでネ！"
 	
 	; English
-	lang_text E, "Your <TRAINER> type"
-	lang_line E, "is #FAN!"
+	lang E, text "Your <TRAINER> type"
+	lang E, line "is #FAN!"
 	
-	lang_para E, "Your feelings of"
-	lang_line E, "adoration for your"
-	lang_cont E, "#MON are clear!"
+	lang E, para "Your feelings of"
+	lang E, line "adoration for your"
+	lang E, cont "#MON are clear!"
 	
-	lang_para E, "Even if you lose"
-	lang_line E, "in battle, having"
-	lang_cont E, "cute #MON is"
-	lang_cont E, "still a win! Don't"
-	lang_cont E, "forget that!"
+	lang E, para "Even if you lose"
+	lang E, line "in battle, having"
+	lang E, cont "cute #MON is"
+	lang E, cont "still a win! Don't"
+	lang E, cont "forget that!"
 	
 	; German
-	lang_text D, "Dein <TRAINER>-Typ"
-	lang_line D, "ist #FAN!"
+	lang D, text "Dein <TRAINER>-Typ"
+	lang D, line "ist #FAN!"
 	
-	lang_para D, "Deine Zuneigung zu"
-	lang_line D, "#MON sind klar"
-	lang_cont D, "erkennbar!"
+	lang D, para "Deine Zuneigung zu"
+	lang D, line "#MON sind klar"
+	lang D, cont "erkennbar!"
 	
-	lang_para D, "Auch wenn du einen"
-	lang_line D, "Kampf verlierst,"
-	lang_cont D, "ist es ein Sieg,"
-	lang_cont D, "ein süßes #MON"
-	lang_cont D, "zu besitzen!"
-	lang_cont D, "Vergiss das nicht!"
+	lang D, para "Auch wenn du einen"
+	lang D, line "Kampf verlierst,"
+	lang D, cont "ist es ein Sieg,"
+	lang D, cont "ein süßes #MON"
+	lang D, cont "zu besitzen!"
+	lang D, cont "Vergiss das nicht!"
 	
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 
 	
 .result1text_gift
-	lang_text J, "あなたの　ポケモンちゃんには"
-	lang_line J, "この　わざマシン２７　おんがえしが"
-	lang_cont J, "ぴったり！　つかって　くださいな！"
-	lang_para J, "わざマシン０４を　もらった！"
+	lang J, text "あなたの　ポケモンちゃんには"
+	lang J, line "この　わざマシン２７　おんがえしが"
+	lang J, cont "ぴったり！　つかって　くださいな！"
+	lang J, para "わざマシン０４を　もらった！"
 	
 	; TODO: ROUGH TRANSLATION. PLEASE REWORK
-	lang_text E, "This TM27, RETURN,"
-	lang_line E, "will be perfect"
-	lang_cont E, "for your #MON!"
-	lang_cont E, "Please use it!"
+	lang E, text "This TM27, RETURN,"
+	lang E, line "will be perfect"
+	lang E, cont "for your #MON!"
+	lang E, cont "Please use it!"
 	
-	lang_para E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "TM27."	
+	lang E, para
+	lang E, nts_start
+	lang E, nts_player_name 0
+	lang E, nts_end
+	lang E, db   " received"
+	lang E, line "TM27."	
 	
 	; German
-	lang_text D, "TM27, RÜCKKEHR,"
-	lang_line D, "passt wunderbar zu"
-	lang_cont D, "deinen #MON!"
-	lang_cont D, "Setze sie unbe-"
-	lang_cont D, "dingt ein!"
+	lang D, text "TM27, RÜCKKEHR,"
+	lang D, line "passt wunderbar zu"
+	lang D, cont "deinen #MON!"
+	lang D, cont "Setze sie unbe-"
+	lang D, cont "dingt ein!"
 	
-	lang_para D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "TM27."	
+	lang D, para
+	lang D, nts_start
+	lang D, nts_player_name 0
+	lang D, nts_end
+	lang D, db   " erhält"
+	lang D, line "TM27."	
 	
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 	
 .result2textM
 .result2textF
 	; Japanese
-	lang_text J, "アナタは　ロケットだんに"
-	lang_line J, "ふさわしい　タイプ　みたいよ！"
+	lang J, text "アナタは　ロケットだんに"
+	lang J, line "ふさわしい　タイプ　みたいよ！"
 	
-	lang_para J, "なんというか　アナタ　じぶんの"
-	lang_line J, "ことしか　かんがえて　ないのね！"
+	lang J, para "なんというか　アナタ　じぶんの"
+	lang J, line "ことしか　かんがえて　ないのね！"
 	
-	lang_para J, "いつも　そんな　わがままだと"
-	lang_line J, "しゅっせ　できないんじゃないの？"
-	lang_para J, "まあ　しょうらい　きがむいたら"
-	lang_line J, "ロケットだんに　いらっしゃい！"
+	lang J, para "いつも　そんな　わがままだと"
+	lang J, line "しゅっせ　できないんじゃないの？"
+	lang J, para "まあ　しょうらい　きがむいたら"
+	lang J, line "ロケットだんに　いらっしゃい！"
 	
 	; English
-	lang_text E, "You seem like the"
-	lang_line E, "perfect type for"
-	lang_cont E, "TEAM <ROCKET>!"
+	lang E, text "You seem like the"
+	lang E, line "perfect type for"
+	lang E, cont "TEAM <ROCKET>!"
 	
-	lang_para E, "I mean, you only"
-	lang_line E, "ever think about"
-	lang_cont E, "yourself, huh?"
+	lang E, para "I mean, you only"
+	lang E, line "ever think about"
+	lang E, cont "yourself, huh?"
 	
-	lang_para E, "If you're always"
-	lang_line E, "so selfish, you "
-	lang_cont E, "won't get far!"
+	lang E, para "If you're always"
+	lang E, line "so selfish, you "
+	lang E, cont "won't get far!"
 	
-	lang_para E, "Well, if you ever"
-	lang_line E, "change your mind,"
-	lang_para E, "come join"
-	lang_line E, "TEAM <ROCKET>!"
+	lang E, para "Well, if you ever"
+	lang E, line "change your mind,"
+	lang E, para "come join"
+	lang E, line "TEAM <ROCKET>!"
 	
 	; German
-	lang_text D, "Du scheinst der"
-	lang_line D, "perfekte Typ für"
-	lang_cont D, "TEAM <ROCKET>"
-	lang_cont D, "zu sein!"
+	lang D, text "Du scheinst der"
+	lang D, line "perfekte Typ für"
+	lang D, cont "TEAM <ROCKET>"
+	lang D, cont "zu sein!"
 	
-	lang_para D, "Ich meine, du"
-	lang_line D, "denkst eigentlich"
-	lang_cont D, "nur an dich"
-	lang_cont D, "selbst, stimmt's?"
+	lang D, para "Ich meine, du"
+	lang D, line "denkst eigentlich"
+	lang D, cont "nur an dich"
+	lang D, cont "selbst, stimmt's?"
 	
-	lang_para D, "Eine egoistische"
-	lang_line D, "Einstellung wird"
-	lang_cont D, "dich nicht weit"
-	lang_cont D, "bringen!"
+	lang D, para "Eine egoistische"
+	lang D, line "Einstellung wird"
+	lang D, cont "dich nicht weit"
+	lang D, cont "bringen!"
 	
-	lang_para D, "Tja, wenn du deine"
-	lang_line D, "Meinung änderst,"
-	lang_para D, "komm einfach zu"
-	lang_line D, "TEAM <ROCKET>!"
+	lang D, para "Tja, wenn du deine"
+	lang D, line "Meinung änderst,"
+	lang D, para "komm einfach zu"
+	lang D, line "TEAM <ROCKET>!"
 	
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 
 .result2text_gift
 	; Japanese
-	lang_text J, "ロケットだんとの　おちかづきの"
-	lang_line J, "きねんひんを　アナタにあげるわ！"
-	lang_cont J, "わざマシン２１　やつあたりよ！"
-	lang_para J, "わざマシン２１を　もらった！"
+	lang J, text "ロケットだんとの　おちかづきの"
+	lang J, line "きねんひんを　アナタにあげるわ！"
+	lang J, cont "わざマシン２１　やつあたりよ！"
+	lang J, para "わざマシン２１を　もらった！"
 	
 	; English
-	lang_text E, "Here's a gift to"
-	lang_line E, "celebrate your new"
-	lang_cont E, "friendship with"
-	lang_cont E, "TEAM <ROCKET>!"
+	lang E, text "Here's a gift to"
+	lang E, line "celebrate your new"
+	lang E, cont "friendship with"
+	lang E, cont "TEAM <ROCKET>!"
 	
-	lang_para E, "TM21, FRUSTRATION."
-	lang_line E, "Just for you!"
+	lang E, para "TM21, FRUSTRATION."
+	lang E, line "Just for you!"
 	
-	lang_para E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "TM21."	
+	lang E, para
+	lang E, nts_start
+	lang E, nts_player_name 0
+	lang E, nts_end
+	lang E, db   " received"
+	lang E, line "TM21."	
 	
 	; German
-	lang_text D, "Hier ist ein Ge-"
-	lang_line D, "schenk, um deine"
-	lang_cont D, "Freundschaft mit"
-	lang_cont D, "TEAM <ROCKET>"
-	lang_cont D, "zu feiern!"
+	lang D, text "Hier ist ein Ge-"
+	lang D, line "schenk, um deine"
+	lang D, cont "Freundschaft mit"
+	lang D, cont "TEAM <ROCKET>"
+	lang D, cont "zu feiern!"
 	
-	lang_para D, "TM21, FRUSTRATION."
-	lang_line D, "Genau das Richtige"
-	lang_cont D, "für dich!"
+	lang D, para "TM21, FRUSTRATION."
+	lang D, line "Genau das Richtige"
+	lang D, cont "für dich!"
 	
-	lang_para D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "TM21."	
+	lang D, para
+	lang D, nts_start
+	lang D, nts_player_name 0
+	lang D, nts_end
+	lang D, db   " erhält"
+	lang D, line "TM21."	
 	
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 	
 .result3textM
 .result3textF
 	; Japanese
-	lang_text J, "キミは　エリートトレーナー　タイプ！"
-	lang_line J, "ポケモンも　だいじに　しているし"
-	lang_cont J, "しょうぶ　にも　つよい　みたいだし"
+	lang J, text "キミは　エリートトレーナー　タイプ！"
+	lang J, line "ポケモンも　だいじに　しているし"
+	lang J, cont "しょうぶ　にも　つよい　みたいだし"
 	
-	lang_para J, "なんでも　しっている　キミは"
-	lang_line J, "きっと　ともだちからも"
-	lang_cont J, "そんけい　されて　いるんだろうね！"
+	lang J, para "なんでも　しっている　キミは"
+	lang J, line "きっと　ともだちからも"
+	lang J, cont "そんけい　されて　いるんだろうね！"
 	
 	; English
-	lang_text E, "You're a"
-	lang_line E, "COOLTRAINER!"
+	lang E, text "You're a"
+	lang E, line "COOLTRAINER!"
 	
-	lang_para E, "You take great"
-	lang_line E, "care of your"
-	lang_cont E, "#MON, and you"
-	lang_cont E, "seem strong in"
-	lang_cont E, "battle too."
+	lang E, para "You take great"
+	lang E, line "care of your"
+	lang E, cont "#MON, and you"
+	lang E, cont "seem strong in"
+	lang E, cont "battle too."
 	
-	lang_para E, "You know so much,"
-	lang_line E, "your friends must"
-	lang_cont E, "really look up to"
-	lang_cont E, "you!"
+	lang E, para "You know so much,"
+	lang E, line "your friends must"
+	lang E, cont "really look up to"
+	lang E, cont "you!"
 	
 	; German
-	lang_text D, "Du bist ein"
-	lang_line D, "ASS-TRAINER!"
+	lang D, text "Du bist ein"
+	lang D, line "ASS-TRAINER!"
 	
-	lang_para D, "Du kümmerst dich"
-	lang_line D, "beispielhaft um"
-	lang_cont D, "deine #MON"
-	lang_cont D, "und scheinst auch"
-	lang_cont D, "gut in Kämpfen"
-	lang_cont D, "zu sein."
+	lang D, para "Du kümmerst dich"
+	lang D, line "beispielhaft um"
+	lang D, cont "deine #MON"
+	lang D, cont "und scheinst auch"
+	lang D, cont "gut in Kämpfen"
+	lang D, cont "zu sein."
 	
-	lang_para D, "Du weißt so viel,"
-	lang_line D, "dass du sicher ein"
-	lang_cont D, "Vorbild für deine"
-	lang_cont D, "Freunde bist!"
+	lang D, para "Du weißt so viel,"
+	lang D, line "dass du sicher ein"
+	lang D, cont "Vorbild für deine"
+	lang D, cont "Freunde bist!"
 	
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 	
 .result3text_gift
 	; Japanese
-	lang_text J, "キミが　さらに　ゆうりに"
-	lang_line J, "しょうぶが　できる　ように"
-	lang_cont J, "ポイントアップを　あげるよ！"
-	lang_para J, "ポイントアップを　もらった！"
+	lang J, text "キミが　さらに　ゆうりに"
+	lang J, line "しょうぶが　できる　ように"
+	lang J, cont "ポイントアップを　あげるよ！"
+	lang J, para "ポイントアップを　もらった！"
 	
 	; English
-	lang_text E, "To help give you"
-	lang_line E, "an even bigger"
-	lang_cont E, "edge in battle,"	
-	lang_cont E, "take this PP UP!"
+	lang E, text "To help give you"
+	lang E, line "an even bigger"
+	lang E, cont "edge in battle,"	
+	lang E, cont "take this PP UP!"
 	
-	lang_para E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "PP UP."	
+	lang E, para
+	lang E, nts_start
+	lang E, nts_player_name 0
+	lang E, nts_end
+	lang E, db   " received"
+	lang E, line "PP UP."	
 	
 	; German
-	lang_text D, "Damit du noch mehr"
-	lang_line D, "Vorteile im Kampf"
-	lang_cont D, "hast, nimm dieses"
-	lang_cont D, "AP-PLUS!"
+	lang D, text "Damit du noch mehr"
+	lang D, line "Vorteile im Kampf"
+	lang D, cont "hast, nimm dieses"
+	lang D, cont "AP-PLUS!"
 	
-	lang_para D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "AP-PLUS."
+	lang D, para
+	lang D, nts_start
+	lang D, nts_player_name 0
+	lang D, nts_end
+	lang D, db   " erhält"
+	lang D, line "AP-PLUS."
 
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 	
 .result4textM
 	; NOTE: speculative
 	; Japanese
-	lang_text J, "キミは　キャンプボーイ　タイプ！"
-	lang_line J, "おんなのこ　なら　ピクニックガール！";よ
+	lang J, text "キミは　キャンプボーイ　タイプ！"
+	lang J, line "おんなのこ　なら　ピクニックガール！";よ
 	
-	lang_para J, "ポケモンとの　ぼうけんを　とても"
-	lang_line J, "たのしめる　ひと　なのね！"
+	lang J, para "ポケモンとの　ぼうけんを　とても"
+	lang J, line "たのしめる　ひと　なのね！"
 	
-	lang_para J, "キミと　いっしょに　たびを　している"
-	lang_line J, "ポケモンも　きっと　すごく"
-	lang_cont J, "たのしいって　おもって　いるはずよ！"
+	lang J, para "キミと　いっしょに　たびを　している"
+	lang J, line "ポケモンも　きっと　すごく"
+	lang J, cont "たのしいって　おもって　いるはずよ！"
 	
 	; English
-	lang_text E, "You're a CAMPER!"
-	lang_line E, "If you were a"
-	lang_cont E, "girl, you'd be a"
-	lang_cont E, "PICKNICKER!"
+	lang E, text "You're a CAMPER!"
+	lang E, line "If you were a"
+	lang E, cont "girl, you'd be a"
+	lang E, cont "PICKNICKER!"
 	
-	lang_para E, "You really enjoy"
-	lang_line E, "adventuring with"
-	lang_cont E, "your #MON!"
+	lang E, para "You really enjoy"
+	lang E, line "adventuring with"
+	lang E, cont "your #MON!"
 	
-	lang_para E, "Your #MON must"
-	lang_line E, "have a great time"
-	lang_cont E, "traveling with"
-	lang_cont E, "you!"
+	lang E, para "Your #MON must"
+	lang E, line "have a great time"
+	lang E, cont "traveling with"
+	lang E, cont "you!"
 	
 	; German
-	lang_text D, "Du bist wie ein"
-	lang_line D, "CAMPER! Als"
-	lang_cont D, "Mädchen wäre das"
-	lang_cont D, "ein PICKNICKER!"
+	lang D, text "Du bist wie ein"
+	lang D, line "CAMPER! Als"
+	lang D, cont "Mädchen wäre das"
+	lang D, cont "ein PICKNICKER!"
 	
-	lang_para D, "Du hast wirklich"
-	lang_line D, "Spaß dabei, mit"
-	lang_cont D, "deinen #MON"
-	lang_cont D, "Abenteuer zu"
-	lang_cont D, "erleben!"
+	lang D, para "Du hast wirklich"
+	lang D, line "Spaß dabei, mit"
+	lang D, cont "deinen #MON"
+	lang D, cont "Abenteuer zu"
+	lang D, cont "erleben!"
 	
-	lang_para D, "Deine #MON sind"
-	lang_line D, "sicher glücklich,"
-	lang_cont D, "mit dir zusammen"
-	lang_cont D, "zu reisen!"
+	lang D, para "Deine #MON sind"
+	lang D, line "sicher glücklich,"
+	lang D, cont "mit dir zusammen"
+	lang D, cont "zu reisen!"
 
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 .result4textF
 	; Japanese
-	lang_text J, "キミは　ピクニックガール　タイプ！"
-	lang_line J, "おとこのこ　なら　キャンプボーイよ！"
+	lang J, text "キミは　ピクニックガール　タイプ！"
+	lang J, line "おとこのこ　なら　キャンプボーイよ！"
 	
-	lang_para J, "ポケモンとの　ぼうけんを　とても"
-	lang_line J, "たのしめる　ひと　なのね！"
+	lang J, para "ポケモンとの　ぼうけんを　とても"
+	lang J, line "たのしめる　ひと　なのね！"
 	
-	lang_para J, "キミと　いっしょに　たびを　している"
-	lang_line J, "ポケモンも　きっと　すごく"
-	lang_cont J, "たのしいって　おもって　いるはずよ！"
+	lang J, para "キミと　いっしょに　たびを　している"
+	lang J, line "ポケモンも　きっと　すごく"
+	lang J, cont "たのしいって　おもって　いるはずよ！"
 	
 	; English
-	lang_text E, "You're a PICNICKER!"
-	lang_line E, "If you were a boy,"
-	lang_cont E, "you'd be a CAMPER!"
+	lang E, text "You're a PICNICKER!"
+	lang E, line "If you were a boy,"
+	lang E, cont "you'd be a CAMPER!"
 	
-	lang_para E, "You really enjoy"
-	lang_line E, "adventuring with"
-	lang_cont E, "your #MON!"
+	lang E, para "You really enjoy"
+	lang E, line "adventuring with"
+	lang E, cont "your #MON!"
 	
-	lang_para E, "Your #MON must"
-	lang_line E, "have a great time"
-	lang_cont E, "traveling with"
-	lang_cont E, "you!"
+	lang E, para "Your #MON must"
+	lang E, line "have a great time"
+	lang E, cont "traveling with"
+	lang E, cont "you!"
 	
 	; German
-	lang_text D, "Du bist wie ein"
-	lang_line D, "PICKNICKER! Als"
-	lang_cont D, "Junge wäre das"
-	lang_cont D, "ein CAMPER!"
+	lang D, text "Du bist wie ein"
+	lang D, line "PICKNICKER! Als"
+	lang D, cont "Junge wäre das"
+	lang D, cont "ein CAMPER!"
 
-	lang_para D, "Du hast wirklich"
-	lang_line D, "Spaß dabei, mit"
-	lang_cont D, "deinen #MON"
-	lang_cont D, "Abenteuer zu"
-	lang_cont D, "erleben!"
+	lang D, para "Du hast wirklich"
+	lang D, line "Spaß dabei, mit"
+	lang D, cont "deinen #MON"
+	lang D, cont "Abenteuer zu"
+	lang D, cont "erleben!"
 	
-	lang_para D, "Deine #MON sind"
-	lang_line D, "sicher glücklich,"
-	lang_cont D, "mit dir zusammen"
-	lang_cont D, "zu reisen!"
+	lang D, para "Deine #MON sind"
+	lang D, line "sicher glücklich,"
+	lang D, cont "mit dir zusammen"
+	lang D, cont "zu reisen!"
 
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 
 .result4text_gift
 	; Japanese
-	lang_text J, "それと　プレゼントを　あげちゃうわ！"
-	lang_line J, "ぎんのこな　よ！"
-	lang_cont J, "これからも　がんばってね！"
-	lang_para J, "ぎんのこなを　もらった！"
+	lang J, text "それと　プレゼントを　あげちゃうわ！"
+	lang J, line "ぎんのこな　よ！"
+	lang J, cont "これからも　がんばってね！"
+	lang J, para "ぎんのこなを　もらった！"
 	
 	; English
-	lang_text E, "Also, here's"
-	lang_line E, "a gift for you!"
+	lang E, text "Also, here's"
+	lang E, line "a gift for you!"
 	
-	lang_para E, "It's SILVERPOWDER!"
-	lang_line E, "Keep up the great"
-	lang_cont E, "work from here on"
-	lang_cont E, "out!"
+	lang E, para "It's SILVERPOWDER!"
+	lang E, line "Keep up the great"
+	lang E, cont "work from here on"
+	lang E, cont "out!"
 	
-	lang_para E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "SILVERPOWDER."	
+	lang E, para ""
+	lang E, nts_start
+	lang E, nts_player_name 0
+	lang E, nts_end
+	lang E, db   " received"
+	lang E, line "SILVERPOWDER."	
 	
 	; German
-	lang_text D, "Hier ist noch ein"
-	lang_line D, "Geschenk für dich!"
+	lang D, text "Hier ist noch ein"
+	lang D, line "Geschenk für dich!"
 	
-	lang_para D, "Es ist"
-	lang_line D, "SILBERSTAUB!"
-	lang_cont D, "Mach weiter so!"
+	lang D, para "Es ist"
+	lang D, line "SILBERSTAUB!"
+	lang D, cont "Mach weiter so!"
 	
-	lang_para D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "SILBERSTAUB."	
+	lang D, para
+	lang D, nts_start
+	lang D, nts_player_name 0
+	lang D, nts_end
+	lang D, db   " erhält"
+	lang D, line "SILBERSTAUB."	
 	
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 	
 .result5textM
 .result5textF
 	; Japanese
-	lang_text J, "ウッス！"
-	lang_line J, "きみは　からておう　タイプッス！"
+	lang J, text "ウッス！"
+	lang J, line "きみは　からておう　タイプッス！"
 	
-	lang_para J, "その　だいたんな　たたかいっぷり"
-	lang_line J, "すごく　かっこいいッス！"
+	lang J, para "その　だいたんな　たたかいっぷり"
+	lang J, line "すごく　かっこいいッス！"
 	
-	lang_para J, "これからも　がんがん"
-	lang_line J, "あせくさい　しょうぶを　して"
-	lang_cont J, "つよく　なって　くださいッス！"
+	lang J, para "これからも　がんがん"
+	lang J, line "あせくさい　しょうぶを　して"
+	lang J, cont "つよく　なって　くださいッス！"
 	
 	; English
-	lang_text E, "Grunt!"
-	lang_line E, "You're the"
-	lang_cont E, "BLACKBELT type!"
+	lang E, text "Grunt!"
+	lang E, line "You're the"
+	lang E, cont "BLACKBELT type!"
 	
-	lang_para E, "Your bold fighting"
-	lang_line E, "style is seriously"
-	lang_cont E, "cool!"
+	lang E, para "Your bold fighting"
+	lang E, line "style is seriously"
+	lang E, cont "cool!"
 	
-	lang_para E, "Keep charging into"
-	lang_line E, "battle and get"
-	lang_cont E, "even stronger!"
+	lang E, para "Keep charging into"
+	lang E, line "battle and get"
+	lang E, cont "even stronger!"
 	
 	; German
-	lang_text D, "Hu-ha!"
-	lang_line D, "Du bist wie ein"
-	lang_cont D, "SCHWARZGURT!"
+	lang D, text "Hu-ha!"
+	lang D, line "Du bist wie ein"
+	lang D, cont "SCHWARZGURT!"
 	
-	lang_para D, "Dein kühner Kampf-"
-	lang_line D, "stil ist wahrlich"
-	lang_cont D, "cool!"
+	lang D, para "Dein kühner Kampf-"
+	lang D, line "stil ist wahrlich"
+	lang D, cont "cool!"
 	
-	lang_para D, "Bleib dabei, dich"
-	lang_line D, "schweißtreibenden"
-	lang_cont D, "Kämpfen auszu-"
-	lang_cont D, "setzen und werde"
-	lang_cont D, "noch stärker!"
+	lang D, para "Bleib dabei, dich"
+	lang D, line "schweißtreibenden"
+	lang D, cont "Kämpfen auszu-"
+	lang D, cont "setzen und werde"
+	lang D, cont "noch stärker!"
 	
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 
 .result5text_gift
 	; Japanese
-	lang_text J, "わざマシン２０　あげるッス！"
-	lang_line J, "こらえるッス！　カンバレッス！"
-	lang_para J, "わざマシン２０を　もらった！"
+	lang J, text "わざマシン２０　あげるッス！"
+	lang J, line "こらえるッス！　カンバレッス！"
+	lang J, para "わざマシン２０を　もらった！"
 	
 	; English
-	lang_text E, "You can have TM20!"
-	lang_line E, "It teaches ENDURE!"
-	lang_cont E, "Hang in there!"
+	lang E, text "You can have TM20!"
+	lang E, line "It teaches ENDURE!"
+	lang E, cont "Hang in there!"
 	
-	lang_para E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "TM20."	
+	lang E, para ""
+	lang E, nts_start
+	lang E, nts_player_name 0
+	lang E, nts_end
+	lang E, db   " received"
+	lang E, line "TM20."	
 	
 	; German
-	lang_text D, "Dir wird die TM20"
-	lang_line D, "verliehen! Sie"
-	lang_line D, "lehrt AUSDAUER!"
-	lang_cont D, "Gib dein Bestes!"
+	lang D, text "Dir wird die TM20"
+	lang D, line "verliehen! Sie"
+	lang D, line "lehrt AUSDAUER!"
+	lang D, cont "Gib dein Bestes!"
 	
-	lang_para D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "TM20."	
+	lang D, para
+	lang D, nts_start
+	lang D, nts_player_name 0
+	lang D, nts_end
+	lang D, db   " erhält"
+	lang D, line "TM20."	
 		
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 	
 .result6textM
 .result6textF
 	; Japanese
-	lang_text J, "…オマエの　トレーナータイプは…"
-	lang_line J, "はぐれけんきゅういん…"
+	lang J, text "…オマエの　トレーナータイプは…"
+	lang J, line "はぐれけんきゅういん…"
 	
-	lang_para J, "オマエ　まわりから　いつも"
-	lang_line J, "ヘンな　やつって　いわれてるだろ…"
+	lang J, para "オマエ　まわりから　いつも"
+	lang J, line "ヘンな　やつって　いわれてるだろ…"
 	
-	lang_para J, "きにするな　いわせておけば　いいのさ"
-	lang_line J, "そして　なんと　いわれようが"
-	lang_cont J, "すきな　こに　ふられようが"
-	lang_cont J, "そのまま　じぶんを　つらぬいてくれ…"
+	lang J, para "きにするな　いわせておけば　いいのさ"
+	lang J, line "そして　なんと　いわれようが"
+	lang J, cont "すきな　こに　ふられようが"
+	lang J, cont "そのまま　じぶんを　つらぬいてくれ…"
 	
 	; NOTE: this text works better with the JP name
 	;       of this class, "researcher gone astray"
 	; English
-	lang_text E, "Your <TRAINER> type"
-	lang_line E, "is SCIENTIST…"
+	lang E, text "Your <TRAINER> type"
+	lang E, line "is SCIENTIST…"
 
-	lang_para E, "People probably"
-	lang_line E, "call you weird"
-	lang_cont E, "sometimes."
+	lang E, para "People probably"
+	lang E, line "call you weird"
+	lang E, cont "sometimes."
 
-	lang_para E, "Don't let it"
-	lang_line E, "bother you."
-	lang_cont E, "Let them talk."
+	lang E, para "Don't let it"
+	lang E, line "bother you."
+	lang E, cont "Let them talk."
 
-	lang_para E, "No matter what"
-	lang_line E, "anyone says-"
+	lang E, para "No matter what"
+	lang E, line "anyone says-"
 
-	lang_para E, "even if your"
-	lang_line E, "crush rejects you,"
+	lang E, para "even if your"
+	lang E, line "crush rejects you,"
 
-	lang_para E, "stay true to"
-	lang_line E, "yourself…"
+	lang E, para "stay true to"
+	lang E, line "yourself…"
 	
 	; German
-	lang_text D, "Dein <TRAINER>-Typ"
-	lang_line D, "lautet FORSCHERIN…"
+	lang D, text "Dein <TRAINER>-Typ"
+	lang D, line "lautet FORSCHERIN…"
 
-	lang_para D, "Manchmal hält man"
-	lang_line D, "dich vielleicht"
-	lang_cont D, "für sonderbar."
+	lang D, para "Manchmal hält man"
+	lang D, line "dich vielleicht"
+	lang D, cont "für sonderbar."
 
-	lang_para D, "Störe dich aber"
-	lang_line D, "nicht daran."
-	lang_cont D, "Lass sie reden."
+	lang D, para "Störe dich aber"
+	lang D, line "nicht daran."
+	lang D, cont "Lass sie reden."
 
-	lang_para D, "Egal, was irgend-"
-	lang_line D, "wer sagt…"
+	lang D, para "Egal, was irgend-"
+	lang D, line "wer sagt…"
 
-	lang_para D, "Und selbst wenn"
-	lang_line D, "dein Schwarm dir"
-	lang_cont D, "einen Korb gibt…"
+	lang D, para "Und selbst wenn"
+	lang D, line "dein Schwarm dir"
+	lang D, cont "einen Korb gibt…"
 
-	lang_para D, "Bleib einfach"
-	lang_line D, "du selbst…"
+	lang D, para "Bleib einfach"
+	lang D, line "du selbst…"
 	
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 	
 .result6text_gift
 	; Japanese
-	lang_text J, "きれいな　ひかりのこなを　やるから"
-	lang_line J, "これでも　みて　オマエの　こどくを"
-	lang_cont J, "まぎらわせたら　いいさ…"
-	lang_para J, "ひかりのこなを　もらった！"
+	lang J, text "きれいな　ひかりのこなを　やるから"
+	lang J, line "これでも　みて　オマエの　こどくを"
+	lang J, cont "まぎらわせたら　いいさ…"
+	lang J, para "ひかりのこなを　もらった！"
 	
 	; English
-	lang_text E, "Here, take this"
-	lang_line E, "BRIGHTPOWDER."
+	lang E, text "Here, take this"
+	lang E, line "BRIGHTPOWDER."
 	
-	lang_para E, "Try using it to"
-	lang_line E, "distract you from"
-	lang_cont E, "your loneliness…"
+	lang E, para "Try using it to"
+	lang E, line "distract you from"
+	lang E, cont "your loneliness…"
 	
-	lang_para E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "BRIGHTPOWDER."	
+	lang E, para
+	lang E, nts_start
+	lang E, nts_player_name 0
+	lang E, nts_end
+	lang E, db   " received"
+	lang E, line "BRIGHTPOWDER."	
 	
 	; German
-	lang_text D, "Hier, nimm dieses"
-	lang_line D, "BLENDPUDER."
+	lang D, text "Hier, nimm dieses"
+	lang D, line "BLENDPUDER."
 	
-	lang_para D, "Nutze es, um dich"
-	lang_line D, "von deiner Einsam-"
-	lang_cont D, "keit abzulenken…"
+	lang D, para "Nutze es, um dich"
+	lang D, line "von deiner Einsam-"
+	lang D, cont "keit abzulenken…"
 	
-	lang_para D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "BLENDPUDER."	
+	lang D, para
+	lang D, nts_start
+	lang D, nts_player_name 0
+	lang D, nts_end
+	lang D, db   " erhält"
+	lang D, line "BLENDPUDER."	
 		
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 	

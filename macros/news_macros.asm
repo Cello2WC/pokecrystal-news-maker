@@ -1,82 +1,38 @@
 MACRO trans_string
-IF DEF(_LANG_J)
-	db \1
-ENDC
-IF DEF(_LANG_E)
-	db \2
-ENDC
-IF DEF(_LANG_D)
-	db \3
-ENDC
-IF DEF(_LANG_F)
-	db \4
-ENDC
-IF DEF(_LANG_I)
-	db \5
-ENDC
-IF DEF(_LANG_S)
-	db \6
-ENDC
+WARN "the 'trans' macro family is deprecated. use 'lang' instead."
 ENDM
 
 MACRO trans_text
-	text
-	trans_string \1, \2, \3, \4, \5, \6
+WARN "the 'trans' macro family is deprecated. use 'lang' instead."
 ENDM
 
 MACRO trans_line
-	line
-	trans_string \1, \2, \3, \4, \5, \6
+WARN "the 'trans' macro family is deprecated. use 'lang' instead."
 ENDM
 
 MACRO trans_next
-	next
-	trans_string \1, \2, \3, \4, \5, \6
+WARN "the 'trans' macro family is deprecated. use 'lang' instead."
 ENDM
 
 MACRO trans_para
-	para
-	trans_string \1, \2, \3, \4, \5, \6
+WARN "the 'trans' macro family is deprecated. use 'lang' instead."
 ENDM
 
 MACRO trans_cont
-	cont
-	trans_string \1, \2, \3, \4, \5, \6
+WARN "the 'trans' macro family is deprecated. use 'lang' instead."
 ENDM
 
 MACRO lang
 IF DEF(_LANG_\1)
-	db \2
+SHIFT
+	\#
 ENDC
 ENDM
 
-MACRO lang_text
-IF DEF(_LANG_\1)
-	text \2
-ENDC
-ENDM
-
-MACRO lang_line
-IF DEF(_LANG_\1)
-	line \2
-ENDC
-ENDM
-
-MACRO lang_next
-IF DEF(_LANG_\1)
-	next \2
-ENDC
-ENDM
-
-MACRO lang_para
-IF DEF(_LANG_\1)
-	para \2
-ENDC
-ENDM
-
-MACRO lang_cont
-IF DEF(_LANG_\1)
-	cont \2
+MACRO notlang
+IF !DEF(_LANG_\1)
+SHIFT
+	\#
 ENDC
 ENDM
 

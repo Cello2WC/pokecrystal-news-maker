@@ -1,6 +1,5 @@
-
-
-
+dbuser ?=
+dbpass ?=
 
 # accpeted ranking IDs include:
 #
@@ -46,30 +45,23 @@
 # LONGEST_MAGIKARP
 # SHORTEST_MAGIKARP
 # BUG_CONTEST_SCORE
+
 RANKING_1 ?= BATTLE_TOWER_WINS
 RANKING_2 ?= BUG_CONTEST_SCORE
 RANKING_3 ?= LONGEST_MAGIKARP
-MINIGAME  ?= minigame/game_hi_lo.asm
-
-
-
-
+MINIGAME  ?= minigame/pkmnquiz_oak_debug.asm
 
 RGBDS ?=
 RGBASM  ?= $(RGBDS)rgbasm
 RGBLINK ?= $(RGBDS)rgblink
 
-
-
 all: j e d f i s
 
 push:
 	cp bin/* /var/lib/mysql/tmp/
-	./push.sh $(RANKING_1) $(RANKING_2) $(RANKING_3)
-	
+	./push.sh "$(dbuser)" "$(dbpass)" $(RANKING_1) $(RANKING_2) $(RANKING_3)	
 
 andpush: all push
-	
 
 define compile_news
 	$(RGBASM) issue.asm -o issue.o -D RANKING_1="$(RANKING_1)" -D RANKING_2="$(RANKING_2)" -D RANKING_3="$(RANKING_3)" -D MINIGAME_FILE="$(MINIGAME)" -D _LANG_$(shell echo '$1' | tr '[:lower:]' '[:upper:]')

@@ -42,12 +42,12 @@ ENDC
 	
 	news_def_strings
 	news_string	1, 2, ""
-	lang J, "トレーナーランキング"
-	lang E, "<TRAINER> RANKINGS"
-	lang D, "BESTENLISTE"
-	lang F, "CLASSEMENT"
-	lang I, "CLASSIFICA ALLEN."
-	lang S, "?"
+	lang J, db "トレーナーランキング"
+	lang E, db "<TRAINER> RANKINGS"
+	lang D, db "BESTENLISTE"
+	lang F, db "CLASSEMENT"
+	lang I, db "CLASSIFICA ALLEN."
+	lang S, db "?"
 	db "@"
 	
 	news_menu 2, 5, 1, 4, 0, 2, $10, $04, $07, $04, SHOW_DESCRIPTIONS, $04
@@ -89,39 +89,39 @@ ENDC
 	nsc_ret
 
 .menuViewRankingsText
-	lang J, "ランキング　<WO>みる"
-	lang E, "VIEW RANKINGS"
-	lang D, "BETRACHTEN"
-	lang F, "VOIR CLASSEMENT"
-	lang I, "VEDI CLASSIFICHE"
-	lang S, "?"
+	lang J, db "ランキング　<WO>みる"
+	lang E, db "VIEW RANKINGS"
+	lang D, db "BETRACHTEN"
+	lang F, db "VOIR CLASSEMENT"
+	lang I, db "VEDI CLASSIFICHE"
+	lang S, db "?"
 	db "@"
 
 .menuUpdateRankingsText
-	lang J, "ランキング　<NO>こうしん"
-	lang E, "UPDATE RANKINGS"
-	lang D, "ÜBERTRAGEN"
-	lang F, "MàJ CLASSEMENT"
-	lang I, "AGG. CLASSIFICHE"
-	lang S, "?"
+	lang J, db "ランキング　<NO>こうしん"
+	lang E, db "UPDATE RANKINGS"
+	lang D, db "ÜBERTRAGEN"
+	lang F, db "MàJ CLASSEMENT"
+	lang I, db "AGG. CLASSIFICHE"
+	lang S, db "?"
 	db "@"
 
 .menuRankingsDescriptionText
-	lang J, "ランキング　<NO>せつめい"
-	lang E, "RANKING INFO"
-	lang D, "BESTENL.-INFO"
-	lang F, "INFO CLASSEMENT"
-	lang I, "INFO CLASSIFICA"
-	lang S, "?"
+	lang J, db "ランキング　<NO>せつめい"
+	lang E, db "RANKING INFO"
+	lang D, db "BESTENL.-INFO"
+	lang F, db "INFO CLASSEMENT"
+	lang I, db "INFO CLASSIFICA"
+	lang S, db "?"
 	db "@"
 	
 .menuReturnText
-	lang J, "やめる"
-	lang E, "CANCEL"
-	lang D, "ZURÜCK"
-	lang F, "RETOUR"
-	lang I, "ESCI"
-	lang S, "?"
+	lang J, db "やめる"
+	lang E, db "CANCEL"
+	lang D, db "ZURÜCK"
+	lang F, db "RETOUR"
+	lang I, db "ESCI"
+	lang S, db "?"
 	db "@"
 
 .menuViewRankingsScript
@@ -159,82 +159,82 @@ ENDC
 	nsc_ret
 
 .rankingsUpdatedText
-	lang_text J, "ランキング<NO>こうしんを"
-	lang_line J, "しました！"
+	lang J, text "ランキング<NO>こうしんを"
+	lang J, line "しました！"
 	
-	lang_text E, "Rankings update"
-	lang_line E, "was successful!"
+	lang E, text "Rankings update"
+	lang E, line "was successful!"
 	
-	lang_text D, "Bestenlisten wur-"
-	lang_line D, "den übertragen!"
+	lang D, text "Bestenlisten wur-"
+	lang D, line "den übertragen!"
 	
-	lang_text F, "Mise à jour du"
-	lang_line F, "classement"
-	lang_cont F, "réussie!"
+	lang F, text "Mise à jour du"
+	lang F, line "classement"
+	lang F, cont "réussie!"
 	
-	lang_text I, "Classifiche"
-	lang_line I, "aggiornate!"
+	lang I, text "Classifiche"
+	lang I, line "aggiornate!"
 	
-	lang_text S, "?"
-	lang_line S, "?"
+	lang S, text "?"
+	lang S, line "?"
 	
 	done
 
 .rankingsUpdateCancelledText
-	lang_text J, "ランキング<NO>こうしんを"
-	lang_line J, "やめました"
+	lang J, text "ランキング<NO>こうしんを"
+	lang J, line "やめました"
 
-	lang_text E, "Rankings update"
-	lang_line E, "was stopped."
+	lang E, text "Rankings update"
+	lang E, line "was stopped."
 	
-	lang_text D, "Die Übertragung"
-	lang_line D, "wurde abgebrochen."
+	lang D, text "Die Übertragung"
+	lang D, line "wurde abgebrochen."
 	
-	lang_text F, "Mise à jour du"
-	lang_line F, "classement"
-	lang_cont F, "arrêtée!"
+	lang F, text "Mise à jour du"
+	lang F, line "classement"
+	lang F, cont "arrêtée!"
 	
-	lang_text I, "Aggiornam. classi-"
-	lang_line I, "fiche interrotto."
+	lang I, text "Aggiornam. classi-"
+	lang I, line "fiche interrotto."
 	
-	lang_text S, "?"
-	lang_line S, "?"
+	lang S, text "?"
+	lang S, line "?"
 	
 	done
 
 .rankingsUpdateFailedText
-	lang_text J, "ランキング<NO>こうしんに"
-	lang_line J, "しっぱい⋯"
-	lang_para J, "あたらしい　ニュースを"
-	lang_line J, "よみこんで　ください"
+	lang J, text "ランキング<NO>こうしんに"
+	lang J, line "しっぱい⋯"
+	lang J, para "あたらしい　ニュースを"
+	lang J, line "よみこんで　ください"
 
-	lang_text E, "Rankings update"
-	lang_line E, "has failed…"
-	lang_para E, "Please download"
-	lang_line E, "the latest NEWS."
+	lang E, text "Rankings update"
+	lang E, line "has failed…"
+	lang E, para "Please download"
+	lang E, line "the latest NEWS."
 	
-	lang_text D, "Die Übertragung"
-	lang_line D, "schlug fehl…"
-	lang_para D, "Die NACHRICHTEN"
-	lang_line D, "bitte neu laden."
+	lang D, text "Die Übertragung"
+	lang D, line "schlug fehl…"
+	lang D, para "Die NACHRICHTEN"
+	lang D, line "bitte neu laden."
 	
-	lang_text F, "Mise à jour du"
-	lang_line F, "classement"
-	lang_cont F, "échouée..."
-	lang_para F, "Télécharger les"
-	lang_line F, "dernières INFOS"
-	lang_cont F, "s.v.p."
+	lang F, text "Mise à jour du"
+	lang F, line "classement"
+	lang F, cont "échouée..."
+	lang F, para "Télécharger les"
+	lang F, line "dernières INFOS"
+	lang F, cont "s.v.p."
 	
-	lang_text I, "Aggiornamento"
-	lang_line I, "classifiche…"
-	lang_cont I, "fallito…"
-	lang_para I, "Riscarica le"
-	lang_line I, "NOTIZIE."
+	lang I, text "Aggiornamento"
+	lang I, line "classifiche…"
+	lang I, cont "fallito…"
+	lang I, para "Riscarica le"
+	lang I, line "NOTIZIE."
 	
-	lang_text S, "?"
-	lang_line S, "?"
-	lang_para S, "?"
-	lang_line S, "?"
+	lang S, text "?"
+	lang S, line "?"
+	lang S, para "?"
+	lang S, line "?"
 	
 	
 	done
@@ -251,139 +251,139 @@ ENDC
 
 .rankingsDescriptionText
 	text "{RANKING_{RANKING_1}_FULLNAME}"
-	lang J, "は"
+	lang J, db "は"
 	describe_ranking_{RANKING_1}
 	; matching weirdness in JP issue 1
 	para "{RANKING_{RANKING_3}_FULLNAME}"
-	lang J, "は"
+	lang J, db "は"
 	describe_ranking_{RANKING_3}
 
 	para "{RANKING_{RANKING_2}_FULLNAME}"
-	lang J, "は"
+	lang J, db "は"
 	describe_ranking_{RANKING_2}
 
 	;para "{RANKING_{RANKING_3}_FULLNAME}"
-	;lang J, "は"
+	;lang J, db "は"
 	;describe_ranking_{RANKING_3}
 	done
 
 .noRankingsDataText
-	lang_text J, "ランキングデータ<GA>ありません"
-	lang_line J, "ランキング<NO>こうしん<WO>すれば"
-	lang_cont J, "みること<GA>できます"
+	lang J, text "ランキングデータ<GA>ありません"
+	lang J, line "ランキング<NO>こうしん<WO>すれば"
+	lang J, cont "みること<GA>できます"
 	
-	lang_text E, "There is no"
-	lang_line E, "ranking data."
-	lang_para E, "Link to obtain" 
-	lang_line E, "ranking data."
+	lang E, text "There is no"
+	lang E, line "ranking data."
+	lang E, para "Link to obtain" 
+	lang E, line "ranking data."
 	
-	lang_text D, "Keine Daten zur"
-	lang_line D, "Bestenliste vor-"
-	lang_cont D, "handen."
-	lang_para D, "Aktualisiere die"
-	lang_line D, "die Daten, um die"
-	lang_para D, "Bestenliste zu"
-	lang_line D, "betrachten."
+	lang D, text "Keine Daten zur"
+	lang D, line "Bestenliste vor-"
+	lang D, cont "handen."
+	lang D, para "Aktualisiere die"
+	lang D, line "die Daten, um die"
+	lang D, para "Bestenliste zu"
+	lang D, line "betrachten."
 	
-	lang_text F, "Il n'y a aucune"
-	lang_line F, "données"
-	lang_cont F, "de classement."
-	lang_para F, "Connectez-vous"
-	lang_line F, "pour obtenir"
-	lang_cont F, "les données"
-	lang_cont F, "de classement."
+	lang F, text "Il n'y a aucune"
+	lang F, line "données"
+	lang F, cont "de classement."
+	lang F, para "Connectez-vous"
+	lang F, line "pour obtenir"
+	lang F, cont "les données"
+	lang F, cont "de classement."
 	
-	lang_text I, "Dati classifiche"
-	lang_line I, "assenti."
-	lang_para I, "Collegati per" 
-	lang_line I, "ottenere i dati."
+	lang I, text "Dati classifiche"
+	lang I, line "assenti."
+	lang I, para "Collegati per" 
+	lang I, line "ottenere i dati."
 	
-	lang_text S, "?"
-	lang_line S, "?"
-	lang_cont S, "?"
+	lang S, text "?"
+	lang S, line "?"
+	lang S, cont "?"
 	
 	para
 	done
 
 .menuViewRankingsDesc
-	lang      J, "いろいろな　ランキングが"
-	lang_line J, "みれます"
+	lang J, db   "いろいろな　ランキングが"
+	lang J, line "みれます"
 	
-	lang      E, "View the various"
-	lang_line E, "rankings."
+	lang E, db   "View the various"
+	lang E, line "rankings."
 	
-	lang      D, "Betrachte versch."
-	lang_line D, "Bestenlisten."
+	lang D, db   "Betrachte versch."
+	lang D, line "Bestenlisten."
 	
-	lang      F, "Voir les diffé-"
-	lang_line F, "rents classements."
+	lang F, db   "Voir les diffé-"
+	lang F, line "rents classements."
 	
-	lang      I, "Guarda le varie"
-	lang_line I, "classifiche."
+	lang I, db   "Guarda le varie"
+	lang I, line "classifiche."
 	
-	lang      S, "?"
-	lang_line S, "?"
+	lang S, db   "?"
+	lang S, line "?"
 	
 	db "@"
 
 .menuUpdateRankingsDesc
-	lang      J, "ランキング<WO>よみこみなおします"
-	lang_line J,  "あなた<NO>せいせきも　かわります"
+	lang J, db   "ランキング<WO>よみこみなおします"
+	lang J, line  "あなた<NO>せいせきも　かわります"
 	
-	lang      E, "Reload rankings to"
-	lang_line E, "update your score."
+	lang E, db   "Reload rankings to"
+	lang E, line "update your score."
 	
-	lang      D, "Übertrage und em-"
-	lang_line D, "pfange Daten."
+	lang D, db   "Übertrage und em-"
+	lang D, line "pfange Daten."
 	
-	lang      F, "MàJ du classement"
-	lang_line F, "et de vos scores."
+	lang F, db   "MàJ du classement"
+	lang F, line "et de vos scores."
 	
-	lang      I, "Ricarica classi-"
-	lang_line I, "fiche e punteggi."
+	lang I, db   "Ricarica classi-"
+	lang I, line "fiche e punteggi."
 	
-	lang      S, "?"
-	lang_line S, "?"
+	lang S, db   "?"
+	lang S, line "?"
 	
 	db "@"
 
 .menuRankingsDescriptionDesc
-	lang      J, "こんかい<NO>ランキングの"
-	lang_line J,  "テーマ<NI>ついて　せつめいします"
+	lang J, db   "こんかい<NO>ランキングの"
+	lang J, line  "テーマ<NI>ついて　せつめいします"
 	
-	lang      E, "An explanation of"
-	lang_line E, "ranking themes."
+	lang E, db   "An explanation of"
+	lang E, line "ranking themes."
 	
-	lang      D, "Eine Erklärung zu"
-	lang_line D, "einzelnen Listen."
+	lang D, db   "Eine Erklärung zu"
+	lang D, line "einzelnen Listen."
 	
-	lang      F, "Infos sur les thé-"
-	lang_line F, "mes de classement."
+	lang F, db   "Infos sur les thé-"
+	lang F, line "mes de classement."
 	
-	lang      I, "Spiegazione temi"
-	lang_line I, "classifiche."
+	lang I, db   "Spiegazione temi"
+	lang I, line "classifiche."
 	
-	lang      S, "?"
-	lang_line S, "?"
+	lang S, db   "?"
+	lang S, line "?"
 	
 	db "@"
 
 .menuReturnDesc
-	lang      J, "さいしょ<NO>ぺージ<NI>もどります"
+	lang J, db   "さいしょ<NO>ぺージ<NI>もどります"
 	
-	lang      E, "Return to the"
-	lang_line E, "first page."
+	lang E, db   "Return to the"
+	lang E, line "first page."
 	
-	lang      D, "Zurück zur ersten"
-	lang_line D, "Seite."
+	lang D, db   "Zurück zur ersten"
+	lang D, line "Seite."
 	
-	lang      F, "Retourner à la"
-	lang_line F, "première page."
+	lang F, db   "Retourner à la"
+	lang F, line "première page."
 	
-	lang      I, "Torna alla"
-	lang_line I, "prima pagina."
+	lang I, db   "Torna alla"
+	lang I, line "prima pagina."
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	db "@"
 
@@ -397,12 +397,12 @@ ENDC
 
 	news_def_strings
 	news_string	1, 2, ""
-	lang J, "トレーナーランキング"
-	lang E, "<TRAINER> RANKINGS"
-	lang D, "BESTENLISTE"
-	lang F, "CLASSEMENT"
-	lang I, "CLASSIFICA ALLEN."
-	lang S, "?"
+	lang J, db "トレーナーランキング"
+	lang E, db "<TRAINER> RANKINGS"
+	lang D, db "BESTENLISTE"
+	lang F, db "CLASSEMENT"
+	lang I, db "CLASSIFICA ALLEN."
+	lang S, db "?"
 	db "@"
 	
 	news_menu 2, 5, 1, 4, 0, 2, $10, $04, $07, $04, SHOW_DESCRIPTIONS, $04
@@ -450,12 +450,12 @@ ENDC
 .menuitem3_name
 	db "{RANKING_{RANKING_3}_NAME}@"
 .menuitem4_name
-	lang J, "もどる"
-	lang E, "CANCEL"
-	lang D, "ZURÜCK"
-	lang F, "RETOUR"
-	lang I, "ESCI"
-	lang S, "?"
+	lang J, db "もどる"
+	lang E, db "CANCEL"
+	lang D, db "ZURÜCK"
+	lang F, db "RETOUR"
+	lang I, db "ESCI"
+	lang S, db "?"
 	db "@"
 	
 .menuitem1_script
@@ -478,23 +478,23 @@ ENDC
 .menuitem2_desc
 .menuitem3_desc
 .menuitem4_desc
-	lang      J, "みたい　ランキングを"
-	lang_line J, "えらんで　ください"
+	lang J, db   "みたい　ランキングを"
+	lang J, line "えらんで　ください"
 	
-	lang      E, "Please choose a"
-	lang_line E, "RANKING to view."
+	lang E, db   "Please choose a"
+	lang E, line "RANKING to view."
 	
-	lang      D, "Bitte wähle eine"
-	lang_line D, "Bestenliste."
+	lang D, db   "Bitte wähle eine"
+	lang D, line "Bestenliste."
 	
-	lang      F, "Choisir le classe-"
-	lang_line F, "ment à voir s.v.p."
+	lang F, db   "Choisir le classe-"
+	lang F, line "ment à voir s.v.p."
 	
-	lang      I, "Scegli quale"
-	lang_line I, "classifica vedere."
+	lang I, db   "Scegli quale"
+	lang I, line "classifica vedere."
 	
-	lang      S, "?"
-	lang_line S, "?"
+	lang S, db   "?"
+	lang S, line "?"
 	
 	db "@"
 	
@@ -547,44 +547,44 @@ ENDC
 	nsc_ret
 
 .menuitem1_name
-	lang J, "ぜんこく　<NO>ランキング"
-	lang E, "NATIONAL RANKINGS"
-	lang D, "LANDESLISTE"
-	lang F, "CLASSEMENT NATIO."
-	lang I, "CLASSIFICA NAZ."
-	lang S, "?"
+	lang J, db "ぜんこく　<NO>ランキング"
+	lang E, db "NATIONAL RANKINGS"
+	lang D, db "LANDESLISTE"
+	lang F, db "CLASSEMENT NATIO."
+	lang I, db "CLASSIFICA NAZ."
+	lang S, db "?"
 	db "@"
 .menuitem2_name
 	nts_start
 	nts_player_region_backup
 	nts_end
-	lang J, "　<NO>ランキング"
-	lang E, " RANKINGS"
-	lang D, "-LISTE"
-	lang F, "CLASSEMENT" ; TODO; should there be a space here?
-	lang I, " CLASSIFICA"
-	lang S, "?"
+	lang J, db "　<NO>ランキング"
+	lang E, db " RANKINGS"
+	lang D, db "-LISTE"
+	lang F, db "CLASSEMENT" ; TODO; should there be a space here?
+	lang I, db " CLASSIFICA"
+	lang S, db "?"
 	db "@"
 .menuitem3_name
-	lang J, "■" ; post code symbol
+	lang J, db "■" ; post code symbol
 	nts_start
 	nts_player_zip_backup 3
 	nts_end
-	lang J, "　<NO>ランキング"
-	lang E, "×× RANKINGS"
-	lang D, "-LISTE"
-	lang F, "CLASSEMENT" ; TODO; should there be a space here?
-	lang I, " CLASSIFICA"
-	lang S, "?"
+	lang J, db "　<NO>ランキング"
+	lang E, db "×× RANKINGS"
+	lang D, db "-LISTE"
+	lang F, db "CLASSEMENT" ; TODO; should there be a space here?
+	lang I, db " CLASSIFICA"
+	lang S, db "?"
 	db "@"
 	
 .menuitem4_name
-	lang J, "もどる"
-	lang E, "CANCEL"
-	lang D, "ZURÜCK"
-	lang F, "RETOUR"
-	lang I, "ESCI"
-	lang S, "?"
+	lang J, db "もどる"
+	lang E, db "CANCEL"
+	lang D, db "ZURÜCK"
+	lang F, db "RETOUR"
+	lang I, db "ESCI"
+	lang S, db "?"
 	db "@"
 	
 .menuitem1_script
@@ -612,23 +612,23 @@ ENDC
 .menuitem2_desc
 .menuitem3_desc
 .menuitem4_desc
-	lang      J, "みたい　ちいき　を"
-	lang_line J, "えらんで　ください"
+	lang J, db   "みたい　ちいき　を"
+	lang J, line "えらんで　ください"
 	
-	lang      E, "Choose an area to"
-	lang_line E, "view the RANKINGS."
+	lang E, db   "Choose an area to"
+	lang E, line "view the RANKINGS."
 	
-	lang      D, "Für welche Region"
-	lang_line D, "anzeigen?"
+	lang D, db   "Für welche Region"
+	lang D, line "anzeigen?"
 	
-	lang      F, "Choisir la zone de"
-	lang_line F, "classement à voir."
+	lang F, db   "Choisir la zone de"
+	lang F, line "classement à voir."
 	
-	lang      I, "Scegli dove ved-"
-	lang_line I, "ere la classifica."
+	lang I, db   "Scegli dove ved-"
+	lang I, line "ere la classifica."
 	
-	lang      S, "?"
-	lang_line S, "?"
+	lang S, db   "?"
+	lang S, line "?"
 	
 	db "@"
 .ranking1_label
@@ -651,20 +651,17 @@ ENDC
 	nts_start
 	nts_switch wRankingsCategory, .ranking1_title, .ranking2_title, .ranking3_title
 	nts_end
-IF DEF(_LANG_J)
-	news_string 2, 5, ""
-ELSE
-	news_string 2, 4, ""
-ENDC
+	
+	lang J, news_string 2, 5, ""
+	notlang J, news_string 2, 4, ""
+	
 	nts_start
 	nts_switch wRankingsType, .national_top_10_string, .prefectural_top_10_string, .local_top_10_string
 	nts_end
 
-IF DEF(_LANG_J)
-	news_menu 2, 7, 1, 3, 0, 2, 16, 4, 7, 3, SHOW_DESCRIPTIONS, $03
-ELSE
-	news_menu 2, 6, 1, 3, 0, 2, 16, 4, 7, 3, SHOW_DESCRIPTIONS, $03
-ENDC
+
+	lang    J, news_menu 2, 7, 1, 3, 0, 2, 16, 4, 7, 3, SHOW_DESCRIPTIONS, $03
+	notlang J, news_menu 2, 6, 1, 3, 0, 2, 16, 4, 7, 3, SHOW_DESCRIPTIONS, $03
 	
 	news_buttonscript .a_button
 	news_buttonscript .b_button
@@ -713,11 +710,12 @@ ENDR
 .menuitems_name
 	nts_start
 	nts_switch wRankingsCategory, .menuitems_ranking1, .menuitems_ranking2, .menuitems_ranking3
-	nts_end
+	db "@"
 	
 .menuitems_ranking1
 	nts_start
 	nts_placement 2, 3
+	
 IF DEF(_LANG_J)
 	nts_ranking_string $0000, 6, 5+{RANKING_{RANKING_1}_SPACING};6
 	nts_ranking_number $0018, {RANKING_{RANKING_1}_FMT}
@@ -725,12 +723,14 @@ ELSE
 	nts_ranking_string $0000, 8, SCREEN_WIDTH+{RANKING_{RANKING_1}_SPACING}
 	nts_ranking_number $0014, {RANKING_{RANKING_1}_FMT} ; compensating for smaller EZChat messages
 ENDC
+	
 	nts_end
 	db "{RANKING_{RANKING_1}_UNIT}@"
 	
 .menuitems_ranking2
 	nts_start
 	nts_placement 2, 3
+	
 IF DEF(_LANG_J)
 	nts_ranking_string $0000, 6, 5+{RANKING_{RANKING_2}_SPACING}
 	nts_ranking_number $0018, {RANKING_{RANKING_2}_FMT}
@@ -738,12 +738,14 @@ ELSE
 	nts_ranking_string $0000, 8, SCREEN_WIDTH+{RANKING_{RANKING_2}_SPACING};20
 	nts_ranking_number $0014, {RANKING_{RANKING_2}_FMT} ; compensating for smaller EZChat messages
 ENDC
+	
 	nts_end
 	db "{RANKING_{RANKING_2}_UNIT}@"
 	
 .menuitems_ranking3
 	nts_start
 	nts_placement 2, 3
+
 IF DEF(_LANG_J)
 	nts_ranking_string $0000, 6, 5+{RANKING_{RANKING_3}_SPACING}
 	nts_ranking_number $0018, {RANKING_{RANKING_3}_FMT}
@@ -751,20 +753,21 @@ ELSE
 	nts_ranking_string $0000, 8, SCREEN_WIDTH+{RANKING_{RANKING_3}_SPACING}
 	nts_ranking_number $0014, {RANKING_{RANKING_3}_FMT} ; compensating for smaller EZChat messages
 ENDC
+	
 	nts_end
 	db "{RANKING_{RANKING_3}_UNIT}@"
 .lastmenuitem_name
-	lang F, "RANG de "
-	lang I, "GRADO di "
+	lang F, db "RANG de "
+	lang I, db "GRADO di "
 	nts_start
 	nts_player_name 0
 	nts_end
-	lang J, "　<NO>じゅんい"
-	lang E, "'s RANK"
-	lang D, "s RANG"
-	lang F, ":"
-	lang I, ":"
-	lang S, "?"
+	lang J, db "　<NO>じゅんい"
+	lang E, db "'s RANK"
+	lang D, db "s RANG"
+	lang F, db ":"
+	lang I, db ":"
+	lang S, db "?"
 	db "@"
 .menuitems_script
 	nsc_compareram wNewsMenuOption, 1, wNumListedPlayers, .less, .notless, .notless
@@ -780,23 +783,23 @@ ENDC
 	nsc_ret
 
 .no_one_is_ranked_here_text
-	lang      J, "ここに<WA>だれも"
-	lang_next J, "ランクイン　してません"
+	lang J, db   "ここに<WA>だれも"
+	lang J, next "ランクイン　してません"
 	
-	lang      E, "No one is"
-	lang_next E, "ranked here."
+	lang E, db   "No one is"
+	lang E, next "ranked here."
 	
-	lang      D, "Hier gibt es"
-	lang_next D, "keinen Eintrag."
+	lang D, db   "Hier gibt es"
+	lang D, next "keinen Eintrag."
 	
-	lang      F, "Il n'y a personne"
-	lang_next F, "de classé ici."
+	lang F, db   "Il n'y a personne"
+	lang F, next "de classé ici."
 	
-	lang      I, "Nessun classi-"
-	lang_next I, "ficato qui."
+	lang I, db   "Nessun classi-"
+	lang I, next "ficato qui."
 	
-	lang      S, "?"
-	lang_next S, "?"
+	lang S, db   "?"
+	lang S, next "?"
 	
 	para   "@"
 	
@@ -823,51 +826,51 @@ ENDC
 	nsc_ret
 	
 .gs_ball_present_text
-	lang_text J, "ランキングで　トップ<WO>とった"
-	lang_next J, "あなたに⋯"
-	lang_cont J, "すてきな　プレゼント<GA>あります"
-	lang_cont J, "おたのしみに！"
+	lang J, text "ランキングで　トップ<WO>とった"
+	lang J, next "あなたに⋯"
+	lang J, cont "すてきな　プレゼント<GA>あります"
+	lang J, cont "おたのしみに！"
 	
-	lang_text E, "For receiving such"
-	lang_next E, "a high rank,"
-	lang_para E, "we have a nice"
-	lang_line E, "gift for you."
-	lang_cont E, "Enjoy!"
+	lang E, text "For receiving such"
+	lang E, next "a high rank,"
+	lang E, para "we have a nice"
+	lang E, line "gift for you."
+	lang E, cont "Enjoy!"
 	
-	lang_text D, "Wer so einen hohen"
-	lang_next D, "Rang erreicht,"
-	lang_para D, "verdient ein"
-	lang_line D, "tolles Geschenk."
-	lang_cont D, "Bitte schön!"
+	lang D, text "Wer so einen hohen"
+	lang D, next "Rang erreicht,"
+	lang D, para "verdient ein"
+	lang D, line "tolles Geschenk."
+	lang D, cont "Bitte schön!"
 	
-	lang_text F, "Pour avoir atteint"
-	lang_next F, "un rang si haut,"
-	lang_para F, "voici un beau"
-	lang_line F, "cadeau pour vous."
-	lang_cont F, "Profitez-en bien!"
+	lang F, text "Pour avoir atteint"
+	lang F, next "un rang si haut,"
+	lang F, para "voici un beau"
+	lang F, line "cadeau pour vous."
+	lang F, cont "Profitez-en bien!"
 	
-	lang_text I, "Per aver ricevuto"
-	lang_next I, "un grado così"
-	lang_cont I, "alto,"
-	lang_para I, "ecco un regalo"
-	lang_line I, "per te."
-	lang_cont I, "Buon divertimento!"
+	lang I, text "Per aver ricevuto"
+	lang I, next "un grado così"
+	lang I, cont "alto,"
+	lang I, para "ecco un regalo"
+	lang I, line "per te."
+	lang I, cont "Buon divertimento!"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 .ranked_player_info
 ;IF DEF(_LANG_J)
 	nts_start 
 	nts_ranking_gender $000B, 4
-	nts_ranking_number $000A, 1, 3, 4 
+	nts_ranking_number $000A, 1, 3, 4  ; prints one additional space after this number
 	nts_end
-	lang J, "さい　"
-	lang E, "yrs. "
-	lang D, " Jahre"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "さい　"
+	lang E, db "yrs. "
+	lang D, db "Jahre"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	nts_start
 	nts_ranking_region $0007, $7, 
 	nts_end
@@ -875,19 +878,19 @@ ENDC
 ;	nts_start 
 ;	nts_ranking_number $000A, 1, 3, 3
 ;	nts_end
-;	lang E, "-year-old "
-;	lang D, "-jährig "
-;	lang F, ""
-;	lang I, ""
-;	lang S, ""
+;	lang E, db "-year-old "
+;	lang D, db "-jährig "
+;	lang F, db ""
+;	lang I, db ""
+;	lang S, db ""
 ;	nts_start
 ;	nts_ranking_gender $000B, 4, 
 ;	nts_end
-;	lang_line E, "from "
-;	lang_line D, "aus "
-;	lang_line F, ""
-;	lang_line I, ""
-;	lang_line S, ""
+;	lang E, line "from "
+;	lang D, line "aus "
+;	lang F, line ""
+;	lang I, line ""
+;	lang S, line ""
 ;	nts_start
 ;	nts_ranking_region $0007, $7, 
 ;	nts_end
@@ -899,88 +902,166 @@ ENDC
 	nts_end
 	para "@"
 .players_ranking_placed
+	; print score in this category, first
 	nts_start
 	nts_switch wRankingsCategory, .players_ranking1, .players_ranking2, .players_ranking3
-	lang F, "Le RANG de "
-	lang I, "GRADO di "
-	nts_start
-	nts_player_name, 0
-	nts_end
-	lang J, "　<NO>じゅんいは⋯"
-	lang E, "'s RANK is…"
-	lang D, "s RANG ist…"
-	lang F, "<NEXT>est…"
-	lang I, "è…"
-	lang S, "?"
-	para
-	lang E, "RANK "
-	nts_start
-	nts_number wOwnRank, 4, 4
-	nts_end
-	lang      J, "　ばん　<NI>ランクイン！"
-	lang_line J, "おめでとう！"
 	
-	lang      E, "!"
-	lang_line E, "Congratulations!"
+	; then, show player their rank!
+	lang J, nts_start
+	lang J, nts_player_name, 0
+	lang J, nts_end
+	lang J, db "　<NO>じゅんいは⋯"
+	lang J, para
+	lang J, nts_start
+	lang J, nts_number wOwnRank, 4, 4
+	lang J, nts_end
+	lang J, db   "　ばん　<NI>ランクイン！"
+	lang J, line "おめでとう！"
 	
-	lang      D, "!"
-	lang_line D, "Glückwunsch!"
+	lang E, nts_start
+	lang E, nts_player_name, 0
+	lang E, nts_end
+	lang E, db "'s RANK is…"
+	lang E, para
+	lang E, db "RANK "
+	lang E, nts_start
+	lang E, nts_number wOwnRank, 4, 4
+	lang E, nts_end
+	lang E, db   "!"
+	lang E, line "Congratulations!"
 	
-	lang      F, "!"
-	lang_line F, "Félicitations!"
+	lang D, nts_start
+	lang D, nts_player_name, 0
+	lang D, nts_end
+	lang D, db "s RANG ist…"
+	lang D, para
+	lang D, nts_start
+	lang D, nts_number wOwnRank, 4, 4
+	lang D, nts_end
+	lang D, db   "!"
+	lang D, line "Glückwunsch!"
 	
-	lang      I, "!"
-	lang_line I, "Complimenti!"
+	lang F, db "Le RANG de "
+	lang F, nts_start
+	lang F, nts_player_name, 0
+	lang F, nts_end
+	lang F, next "est…"
+	lang F, para
+	lang F, nts_start
+	lang F, nts_number wOwnRank, 4, 4
+	lang F, nts_end
+	lang F, db   "!"
+	lang F, line "Félicitations!"
 	
-	lang      S, "?"
-	lang_line S, "?"
+	lang I, db "GRADO di "
+	lang I, nts_start
+	lang I, nts_player_name, 0
+	lang I, nts_end
+	lang I, db "è…"
+	lang I, para
+	lang I, nts_start
+	lang I, nts_number wOwnRank, 4, 4
+	lang I, nts_end
+	lang I, db   "!"
+	lang I, line "Complimenti!"
+	
+	lang S, nts_start
+	lang S, nts_player_name, 0
+	lang S, nts_end
+	lang S, db "?"
+	lang S, para
+	lang S, nts_start
+	lang S, nts_number wOwnRank, 4, 4
+	lang S, nts_end
+	lang S, db   "?"
+	lang S, line "?"
+	
 	para "@"
 .players_ranking
+	; print score in this category, first
 	nts_start
 	nts_switch wRankingsCategory, .players_ranking1, .players_ranking2, .players_ranking3 
-	lang F, "Le RANG de "
-	lang I, "GRADO di "
-	nts_start
-	nts_player_name, 0
-	nts_end
-	lang      J, "　<NO>じゅんいは⋯"
-	lang_para J,  "ランクイン　しなかった⋯"
-	lang_line J, "ざんねん⋯"
 	
-	lang E,      "'s RANK is…"
-	lang_para E, "Not currently in"
-	lang_line E, "the RANKINGS."
+	; then, tell them the news...
+	lang J, nts_start
+	lang J, nts_player_name, 0
+	lang J, nts_end
+	lang J, db   "　<NO>じゅんいは⋯"
+	lang J, para  "ランクイン　しなかった⋯"
+	lang J, line "ざんねん⋯"
 	
-	lang      D, "s RANG ist…"
-	lang_para D, "leider außerhalb"
-	lang_line D, "der Bestenliste."
+	lang E, nts_start
+	lang E, nts_player_name, 0
+	lang E, nts_end
+	lang E, db   "'s RANK is…"
+	lang E, para "Not currently in"
+	lang E, line "the RANKINGS."
 	
-	lang      F, "<NEXT>est…"
-	lang_para F, "Absent du"
-	lang_line F, "classement."
+	lang D, nts_start
+	lang D, nts_player_name, 0
+	lang D, nts_end
+	lang D, db   "s RANG ist…"
+	lang D, para "leider außerhalb"
+	lang D, line "der Bestenliste."
 	
-	lang      I, "è…"
-	lang_para I, "Attualmente non"
-	lang_line I, "in classifica."
+	lang F, db "Le RANG de "
+	lang F, nts_start
+	lang F, nts_player_name, 0
+	lang F, nts_end
+	lang F, next "est…"
+	lang F, para "Absent du"
+	lang F, line "classement."
 	
-	lang      S, "?"
-	lang_para S, "?"
-	lang_line S, "?"
+	lang I, db "GRADO di "
+	lang I, nts_start
+	lang I, nts_player_name, 0
+	lang I, nts_end
+	lang I, db   "è…"
+	lang I, para "Attualmente non"
+	lang I, line "in classifica."
+	
+	lang S, nts_start
+	lang S, nts_player_name, 0
+	lang S, nts_end
+	lang S, db   "?"
+	lang S, para "?"
+	lang S, line "?"
 	para "@"
 	
 .players_ranking1
-	lang F, "SCORE de "
-	lang I, "PUNTEG. di "
-	nts_start
-	nts_player_name 0 
-	nts_end
-	lang J, "　<NO>せいせきは"
-	lang E, "'s SCORE:"
-	lang D, "s PUNKTZAHL:"
-	lang F, ":"
-	lang I, ":"
-	lang S, "?"
-	line ""
+	lang J, nts_start
+	lang J, nts_player_name 0 
+	lang J, nts_end
+	lang J, db "　<NO>せいせきは"
+	
+	lang E, nts_start
+	lang E, nts_player_name 0 
+	lang E, nts_end
+	lang E, db "'s SCORE:"
+	
+	lang D, nts_start
+	lang D, nts_player_name 0 
+	lang D, nts_end
+	lang D, db "s PUNKTZAHL:"
+	
+	lang F, db "SCORE de "
+	lang F, nts_start
+	lang F, nts_player_name 0 
+	lang F, nts_end
+	lang F, db ":"
+	
+	lang I, db "PUNTEG. di "
+	lang I, nts_start
+	lang I, nts_player_name 0 
+	lang I, nts_end
+	lang I, db ":"
+	
+	lang S, nts_start
+	lang S, nts_player_name 0 
+	lang S, nts_end
+	lang S, db "?"
+	
+	line
 	nts_start
 	nts_number {RANKING_{RANKING_1}_ADDR}, {RANKING_{RANKING_1}_FMT_PLAYER}
 	nts_end
@@ -988,17 +1069,38 @@ ENDC
 	para "@" 
 	
 .players_ranking2
-	lang F, "SCORE de "
-	lang I, "PUNTEG. di "
-	nts_start
-	nts_player_name 0 
-	nts_end
-	lang J, "　<NO>せいせきは"
-	lang E, "'s SCORE:"
-	lang D, "s PUNKTZAHL:"
-	lang F, ":"
-	lang I, ":"
-	lang S, "?"
+	lang J, nts_start
+	lang J, nts_player_name 0 
+	lang J, nts_end
+	lang J, db "　<NO>せいせきは"
+	
+	lang E, nts_start
+	lang E, nts_player_name 0 
+	lang E, nts_end
+	lang E, db "'s SCORE:"
+	
+	lang D, nts_start
+	lang D, nts_player_name 0 
+	lang D, nts_end
+	lang D, db "s PUNKTZAHL:"
+	
+	lang F, db "SCORE de "
+	lang F, nts_start
+	lang F, nts_player_name 0 
+	lang F, nts_end
+	lang F, db ":"
+	
+	lang I, db "PUNTEG. di "
+	lang I, nts_start
+	lang I, nts_player_name 0 
+	lang I, nts_end
+	lang I, db ":"
+	
+	lang S, nts_start
+	lang S, nts_player_name 0 
+	lang S, nts_end
+	lang S, db "?"
+	
 	line
 	nts_start
 	nts_number {RANKING_{RANKING_2}_ADDR}, {RANKING_{RANKING_2}_FMT_PLAYER}
@@ -1007,17 +1109,38 @@ ENDC
 	para "@"
 	
 .players_ranking3
-	lang F, "SCORE de "
-	lang I, "PUNTEG. di "
-	nts_start
-	nts_player_name 0 
-	nts_end
-	lang J, "　<NO>せいせきは"
-	lang E, "'s SCORE:"
-	lang D, "s PUNKTZAHL:" ; TODO; check about PUNKTZAHL vs REKORD
-	lang F, ":"
-	lang I, ":"
-	lang S, "?"
+	lang J, nts_start
+	lang J, nts_player_name 0 
+	lang J, nts_end
+	lang J, db "　<NO>せいせきは"
+	
+	lang E, nts_start
+	lang E, nts_player_name 0 
+	lang E, nts_end
+	lang E, db "'s SCORE:"
+	
+	lang D, nts_start
+	lang D, nts_player_name 0 
+	lang D, nts_end
+	lang D, db "s PUNKTZAHL:" ; TODO; check about PUNKTZAHL vs REKORD
+	
+	lang F, db "SCORE de "
+	lang F, nts_start
+	lang F, nts_player_name 0 
+	lang F, nts_end
+	lang F, db ":"
+	
+	lang I, db "PUNTEG. di "
+	lang I, nts_start
+	lang I, nts_player_name 0 
+	lang I, nts_end
+	lang I, db ":"
+	
+	lang S, nts_start
+	lang S, nts_player_name 0 
+	lang S, nts_end
+	lang S, db "?"
+	
 	line
 	nts_start
 	nts_number {RANKING_{RANKING_3}_ADDR}, {RANKING_{RANKING_3}_FMT_PLAYER}
@@ -1026,26 +1149,26 @@ ENDC
 	para "@"
 .menuitems_desc
 	; cry quiz debug issue text
-;	lang      J, "えらんだ　ひと<NO>データを"
-;	lang_line J, "みること<GA>できます"
+;	lang J, db   "えらんだ　ひと<NO>データを"
+;	lang J, line "みること<GA>できます"
 	; first issue text
-	lang      J, "えらんだ　ひと<NO>プロフィールを"
-	lang_line J, "みること<GA>できます"
+	lang J, db   "えらんだ　ひと<NO>プロフィールを"
+	lang J, line "みること<GA>できます"
 	
-	lang      E, "View the profile"
-	lang_line E, "of this <TRAINER>."
+	lang E, db   "View the profile"
+	lang E, line "of this <TRAINER>."
 	
-	lang      D, "Profil des"
-	lang_line D, "<TRAINER>s anzeigen."
+	lang D, db   "Profil des"
+	lang D, line "<TRAINER>s anzeigen."
 	
-	lang      F, "Voir le profil"
-	lang_line F, "de ce DRESSEUR."
+	lang F, db   "Voir le profil"
+	lang F, line "de ce DRESSEUR."
 	
-	lang      I, "Guarda il profilo"
-	lang_line I, "di questo ALLEN."
+	lang I, db   "Guarda il profilo"
+	lang I, line "di questo ALLEN."
 	
-	lang      S, "?"
-	lang_line S, "?"
+	lang S, db   "?"
+	lang S, line "?"
 	
 	db "@"
 .ranking1_title
@@ -1055,33 +1178,33 @@ ENDC
 .ranking3_title
 	db "{RANKING_{RANKING_3}_NAME}@"
 .national_top_10_string
-	lang J, "ぜんこく　<NO>トップ１０！"
-	lang E, "NATIONAL TOP 10!"
-	lang D, "LANDES-TOP-10!"
-	lang F, "TOP 10 NATIONAL!"
-	lang I, "TOP 10 NAZIONALE"
-	lang S, "?"
+	lang J, db "ぜんこく　<NO>トップ１０！"
+	lang E, db "NATIONAL TOP 10!"
+	lang D, db "LANDES-TOP-10!"
+	lang F, db "TOP 10 NATIONAL!"
+	lang I, db "TOP 10 NAZIONALE"
+	lang S, db "?"
 	db "@" 
 .prefectural_top_10_string
 	nts_start
 	nts_player_region_backup
 	nts_end
-	lang J, "　<NO>トップ１０！"
-	lang E, " TOP 10!"
-	lang D, " TOP-10!"
-	lang F, " TOP 10!"
-	lang I, " TOP 10!"
-	lang S, "?"
+	lang J, db "　<NO>トップ１０！"
+	lang E, db " TOP 10!"
+	lang D, db " TOP-10!"
+	lang F, db " TOP 10!"
+	lang I, db " TOP 10!"
+	lang S, db "?"
 	db "@"
 .local_top_10_string
-	lang J, "■" ; post code symbol
+	lang J, db "■" ; post code symbol
 	nts_start
 	nts_player_zip_backup 3
 	nts_end
-	lang J, "　<NO>トップ１０！"
-	lang E, "×× TOP 10!"
-	lang D, " TOP-10!"
-	lang F, " TOP 10!"
-	lang I, " TOP 10!"
-	lang S, "?"
+	lang J, db "　<NO>トップ１０！"
+	lang E, db "×× TOP 10!"
+	lang D, db " TOP-10!"
+	lang F, db " TOP 10!"
+	lang I, db " TOP 10!"
+	lang S, db "?"
 	db "@"

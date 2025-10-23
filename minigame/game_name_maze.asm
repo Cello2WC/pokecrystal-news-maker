@@ -1,3 +1,17 @@
+; This is a RE-CREATION based on records
+; from the time and first-hand accounts,
+; NOT actual recovered news data!
+; 
+; See: https://www2u.biglobe.ne.jp/~kakeru/pokemon2/mobile/news/02_06.htm
+; Thanks to nohm for providing their first-hand account of this minigame!
+; 
+; Re-creation script written by Cello2WC
+; English localization by DS
+; German localization by Lesserkuma
+; French localization TODO
+; Italian localization TODO
+; Spanish localization TODO
+
 IF DEF(_MINIGAME_H)
 
 DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 1
@@ -15,155 +29,141 @@ MACRO minigame_start
 	nsc_textbox 1, 14, .gameIntroText
 	nsc_waitbutton
 .noIntro
-
-
-
 	nsc_set wSolutionInvalid, 0
 	nsc_set wCurrentPuzzle, 0
-	;nsc_set wQuizScore, 0
 	nsc_page MinigameStart
-	
-	
 	
 .gameIntroText
 	; Japanese
-	lang_text J, "じゅうじボタンを　つかって"
-	lang_line J, "さんかく　の　カーソルを　うごかし"
-	lang_cont J, "がめんに　ばらばらに　ならんだ"
-	lang_cont J, "ポケモンの　なまえの　もじを"
-	lang_cont J, "ただしい　なまえの　じゅんばんで"
-	lang_cont J, "たどって　いきます"
+	lang J, text "じゅうじボタンを　つかって"
+	lang J, line "さんかく　の　カーソルを　うごかし"
+	lang J, cont "がめんに　ばらばらに　ならんだ"
+	lang J, cont "ポケモンの　なまえの　もじを"
+	lang J, cont "ただしい　なまえの　じゅんばんで"
+	lang J, cont "たどって　いきます"
 
-	lang_para J, "なまえが　とちゅうで　きれたり"
-	lang_line J, "おなじ　もじを　２ど　とおったり"
-	lang_cont J, "しないように　ちゅうい　してね！"
+	lang J, para "なまえが　とちゅうで　きれたり"
+	lang J, line "おなじ　もじを　２ど　とおったり"
+	lang J, cont "しないように　ちゅうい　してね！"
 
-	lang_para J, "スタートのマークの　×　から"
-	lang_line J, "ゴールのマークの　！　に　いけたら"
-	lang_cont J, "エーボタンを　おして"
-	lang_cont J, "こたえあわせを　して　みよう"
-	lang_cont J, "それでは　スタート！"
+	lang J, para "スタートのマークの　×　から"
+	lang J, line "ゴールのマークの　！　に　いけたら"
+	lang J, cont "エーボタンを　おして"
+	lang J, cont "こたえあわせを　して　みよう"
+	lang J, cont "それでは　スタート！"
 	
 	; English
-	lang_text E, "Use the Control" 
-	lang_line E, "Pad to move the" 
-	lang_cont E, "cursor."
+	lang E, text "Use the Control" 
+	lang E, line "Pad to move the" 
+	lang E, cont "cursor."
 
-	lang_para E, "Trace the letters"
-	lang_line E, "of a #MON name"
-	lang_cont E, "in the correct"
-	lang_cont E, "order."
+	lang E, para "Trace the letters"
+	lang E, line "of a #MON name"
+	lang E, cont "in the correct"
+	lang E, cont "order."
 
-	lang_para E, "Be careful not"
-	lang_line E, "to stop halfway"
-	lang_cont E, "through a name or"
-	lang_cont E, "go over the same"
-	lang_cont E, "space twice!"
+	lang E, para "Be careful not"
+	lang E, line "to stop halfway"
+	lang E, cont "through a name or"
+	lang E, cont "go over the same"
+	lang E, cont "space twice!"
 
-	lang_para E, "Start at the ×"
-	lang_line E, "mark and go to"
-	lang_cont E, "the ! mark to"
-	lang_cont E, "reach the goal."
+	lang E, para "Start at the ×"
+	lang E, line "mark and go to"
+	lang E, cont "the ! mark to"
+	lang E, cont "reach the goal."
 
-	lang_para E, "Press the A Button"
-	lang_line E, "to check your "
-	lang_cont E, "answer."
+	lang E, para "Press the A Button"
+	lang E, line "to check your "
+	lang E, cont "answer."
 
-	lang_para E, "Let's get started!"
+	lang E, para "Let's get started!"
 
 	; German
-	lang_text D, "Bewege dich mit"
-	lang_line D, "dem Steuerkreuz"
-	lang_cont D, "über die Buchsta-"
-	lang_cont D, "ben in richtiger"
-	lang_cont D, "Reihenfolge, um"
-	lang_cont D, "den #MON-Namen"
-	lang_cont D, "zu bilden."
+	lang D, text "Bewege dich mit"
+	lang D, line "dem Steuerkreuz"
+	lang D, cont "über die Buchsta-"
+	lang D, cont "ben in richtiger"
+	lang D, cont "Reihenfolge, um"
+	lang D, cont "den #MON-Namen"
+	lang D, cont "zu bilden."
 
-	lang_para D, "Du darfst dabei"
-	lang_line D, "nicht stehen blei-"
-	lang_cont D, "ben oder dich"
-	lang_cont D, "zurück bewegen!"
+	lang D, para "Du darfst dabei"
+	lang D, line "nicht stehen blei-"
+	lang D, cont "ben oder dich"
+	lang D, cont "zurück bewegen!"
 
-	lang_para D, "Beginne beim × und"
-	lang_line D, "bewege dich bis"
-	lang_cont D, "zum !-Zeichen,"
-	lang_cont D, "um das Ziel zu"
-	lang_cont D, "erreichen."
+	lang D, para "Beginne beim × und"
+	lang D, line "bewege dich bis"
+	lang D, cont "zum !-Zeichen,"
+	lang D, cont "um das Ziel zu"
+	lang D, cont "erreichen."
 
-	lang_para D, "Drücke den A-"
-	lang_line D, "Knopf, um deine"
-	lang_cont D, "Lösung zu prüfen."
+	lang D, para "Drücke den A-"
+	lang D, line "Knopf, um deine"
+	lang D, cont "Lösung zu prüfen."
 
-	lang_para D, "Und los geht's!"
+	lang D, para "Und los geht's!"
 		
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
-
-	
-;	nsc_clear 1, 13, 18, 4
-;	nsc_textbox 1, 14, PokemonMazeEasy.introText
 ENDM
 
 MACRO minigame_start_2
 	nsc_set wSolutionInvalid, 0
 	nsc_set wCurrentPuzzle, 0
-	;nsc_set wQuizScore, 0
 	nsc_page PokemonMazeHard
-	
-;	nsc_clear 1, 13, 18, 4
-;	nsc_textbox 1, 14, PokemonMazeEasy.introText
 ENDM
 
 MACRO minigame_name
-	lang J, "ポケモンもじめいろ　かんたん"
-	lang E, "EASY #MON MAZE"
-	lang D, "LEICHTES LABYRINTH"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "ポケモンもじめいろ　かんたん"
+	lang E, db "EASY #MON MAZE"
+	lang D, db "LEICHTES LABYRINTH"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 ENDM
 
 MACRO minigame_name_2
-	lang J, "ポケモンもじめいろ　むずかしい"
-	lang E, "HARD #MON MAZE"
-	lang D, "SCHWERES LABYRINTH"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "ポケモンもじめいろ　むずかしい"
+	lang E, db "HARD #MON MAZE"
+	lang D, db "SCHWERES LABYRINTH"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 ENDM
 
 MACRO minigame_desc
-	lang      J, "？"
+	lang J, db   "？"
 	
-	lang      E, "?"
+	lang E, db   "?"
 	
-	lang      D, "?"
+	lang D, db   "?"
 	
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang S, "?"
+	lang S, db "?"
 ENDM
 
 MACRO minigame_desc_2
-	lang      J, "？"
+	lang J, db   "？"
 	
-	lang      E, "?"
+	lang E, db   "?"
 	
-	lang      D, "?"
+	lang D, db   "?"
 	
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang S, "?"
+	lang S, db "?"
 ENDM
 
 ELSE
@@ -183,11 +183,8 @@ MinigameStart::
 	news_def_strings
 	news_string 0, 0, "@" ; potentially label or instructions here
 	
-IF DEF(_LANG_J)
-	news_menu  6, 4, 4, 4, 2, 2, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
-ELSE
-	news_menu  3, 4, 4, 4, 4, 2, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
-ENDC
+	lang    J, news_menu  6, 4, 4, 4, 2, 2, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
+	notlang J, news_menu  3, 4, 4, 4, 4, 2, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
 	
 	news_buttonscript .checkEasy   ; script pointer a button
 	news_buttonscript Quit        ; script pointer b button
@@ -289,219 +286,213 @@ ENDR
 	; d-pad button press.
 	nsc_playsound SFX_STOP_SLOT
 	nsc_ret
-	
-MACRO lang_def
-IF DEF(_LANG_\1)
-DEF \2 EQUS \3
-ENDC
-ENDM
 
 .textMARILL
-	lang J, "『マリル』"
-	lang E, "MARILL"
-	lang D, "MARILL"
-	lang F, "MARILL"
-	lang I, "MARILL"
-	lang S, "MARILL"
+	lang J, db "『マリル』"
+	lang E, db "MARILL"
+	lang D, db "MARILL"
+	lang F, db "MARILL"
+	lang I, db "MARILL"
+	lang S, db "MARILL"
 	db "@"
 	
-	lang_def J, PUZZLE1_MON, "MARILL"
-	lang_def E, PUZZLE1_MON, "MARILL"
-	lang_def D, PUZZLE1_MON, "MARILL"
-	lang_def F, PUZZLE1_MON, "MARILL"
-	lang_def I, PUZZLE1_MON, "MARILL"
-	lang_def S, PUZZLE1_MON, "MARILL"
+	lang J, DEF PUZZLE1_MON EQUS "MARILL"
+	lang E, DEF PUZZLE1_MON EQUS "MARILL"
+	lang D, DEF PUZZLE1_MON EQUS "MARILL"
+	lang F, DEF PUZZLE1_MON EQUS "MARILL"
+	lang I, DEF PUZZLE1_MON EQUS "MARILL"
+	lang S, DEF PUZZLE1_MON EQUS "MARILL"
 	
-	lang_def J, MARILL_MA, "マ"
-	lang_def E, MARILL_MA, "MA"
-	lang_def D, MARILL_MA, "MA"
-	lang_def F, MARILL_MA, "MA"
-	lang_def I, MARILL_MA, "MA"
-	lang_def S, MARILL_MA, "MA"
+	lang J, DEF MARILL_MA EQUS "マ"
+	lang E, DEF MARILL_MA EQUS "MA"
+	lang D, DEF MARILL_MA EQUS "MA"
+	lang F, DEF MARILL_MA EQUS "MA"
+	lang I, DEF MARILL_MA EQUS "MA"
+	lang S, DEF MARILL_MA EQUS "MA"
 	
-	lang_def J, MARILL_RI, "リ"
-	lang_def E, MARILL_RI, "RI"
-	lang_def D, MARILL_RI, "RI"
-	lang_def F, MARILL_RI, "RI"
-	lang_def I, MARILL_RI, "RI"
-	lang_def S, MARILL_RI, "RI"
+	lang J, DEF MARILL_RI EQUS "リ"
+	lang E, DEF MARILL_RI EQUS "RI"
+	lang D, DEF MARILL_RI EQUS "RI"
+	lang F, DEF MARILL_RI EQUS "RI"
+	lang I, DEF MARILL_RI EQUS "RI"
+	lang S, DEF MARILL_RI EQUS "RI"
 
-	lang_def J, MARILL_LL, "ル"
-	lang_def E, MARILL_LL, "LL"
-	lang_def D, MARILL_LL, "LL"
-	lang_def F, MARILL_LL, "LL"
-	lang_def I, MARILL_LL, "LL"
-	lang_def S, MARILL_LL, "LL"
+	lang J, DEF MARILL_LL EQUS "ル"
+	lang E, DEF MARILL_LL EQUS "LL"
+	lang D, DEF MARILL_LL EQUS "LL"
+	lang F, DEF MARILL_LL EQUS "LL"
+	lang I, DEF MARILL_LL EQUS "LL"
+	lang S, DEF MARILL_LL EQUS "LL"
 	
 
 .textMUUMA
-	lang J, "『ムウマ』"
-	lang E, "GASTLY"
-	lang D, "NEBULAK"
-	lang F, "FEUFOREVE"
-	lang I, "GASTLY"
-	lang S, "GASTLY"
+	lang J, db "『ムウマ』"
+	lang E, db "GASTLY"
+	lang D, db "NEBULAK"
+	lang F, db "FEUFOREVE"
+	lang I, db "GASTLY"
+	lang S, db "GASTLY"
 	db "@"
 
-	lang_def J, PUZZLE2_MON, "MISDREAVUS"
-	lang_def E, PUZZLE2_MON, "GASTLY"
-	lang_def D, PUZZLE2_MON, "GASTLY"
-	lang_def F, PUZZLE2_MON, "MISDREAVUS"
-	lang_def I, PUZZLE2_MON, "GASTLY"
-	lang_def S, PUZZLE2_MON, "GASTLY"
+	lang J, DEF PUZZLE2_MON EQUS "MISDREAVUS"
+	lang E, DEF PUZZLE2_MON EQUS "GASTLY"
+	lang D, DEF PUZZLE2_MON EQUS "GASTLY"
+	lang F, DEF PUZZLE2_MON EQUS "MISDREAVUS"
+	lang I, DEF PUZZLE2_MON EQUS "GASTLY"
+	lang S, DEF PUZZLE2_MON EQUS "GASTLY"
 	
-	lang_def J, MUUMA_MU, "ム"
-	lang_def E, MUUMA_MU, "GA"
-	lang_def D, MUUMA_MU, "NE"
-	lang_def F, MUUMA_MU, "FEU"
-	lang_def I, MUUMA_MU, "GA"
-	lang_def S, MUUMA_MU, "GA"
+	lang J, DEF MUUMA_MU EQUS "ム"
+	lang E, DEF MUUMA_MU EQUS "GA"
+	lang D, DEF MUUMA_MU EQUS "NE"
+	lang F, DEF MUUMA_MU EQUS "FEU"
+	lang I, DEF MUUMA_MU EQUS "GA"
+	lang S, DEF MUUMA_MU EQUS "GA"
 
-	lang_def J, MUUMA_UU, "ウ"
-	lang_def E, MUUMA_UU, "ST"
-	lang_def D, MUUMA_UU, "BU"
-	lang_def F, MUUMA_UU, "FOR"
-	lang_def I, MUUMA_UU, "ST"
-	lang_def S, MUUMA_UU, "ST"
+	lang J, DEF MUUMA_UU EQUS "ウ"
+	lang E, DEF MUUMA_UU EQUS "ST"
+	lang D, DEF MUUMA_UU EQUS "BU"
+	lang F, DEF MUUMA_UU EQUS "FOR"
+	lang I, DEF MUUMA_UU EQUS "ST"
+	lang S, DEF MUUMA_UU EQUS "ST"
 
-	lang_def J, MUUMA_MA, "マ"
-	lang_def E, MUUMA_MA, "LY"
-	lang_def D, MUUMA_MA, "LAK"
-	lang_def F, MUUMA_MA, "EVE"
-	lang_def I, MUUMA_MA, "LY"
-	lang_def S, MUUMA_MA, "LY"
+	lang J, DEF MUUMA_MA EQUS "マ"
+	lang E, DEF MUUMA_MA EQUS "LY"
+	lang D, DEF MUUMA_MA EQUS "LAK"
+	lang F, DEF MUUMA_MA EQUS "EVE"
+	lang I, DEF MUUMA_MA EQUS "LY"
+	lang S, DEF MUUMA_MA EQUS "LY"
 
 .textMOKOKO
-	lang J, "『モココ』"
-	lang E, "RATTATA"
-	lang D, "SMOGMOG"
-	lang F, "RATTATA"
-	lang I, "RATTATA"
-	lang S, "RATTATA"
+	lang J, db "『モココ』"
+	lang E, db "RATTATA"
+	lang D, db "SMOGMOG"
+	lang F, db "RATTATA"
+	lang I, db "RATTATA"
+	lang S, db "RATTATA"
 	db "@"
 
-	lang_def J, PUZZLE3_MON, "FLAAFFY"
-	lang_def E, PUZZLE3_MON, "RATTATA"
-	lang_def D, PUZZLE3_MON, "WEEZING"
-	lang_def F, PUZZLE3_MON, "RATTATA"
-	lang_def I, PUZZLE3_MON, "RATTATA"
-	lang_def S, PUZZLE3_MON, "RATTATA"
+	lang J, DEF PUZZLE3_MON EQUS "FLAAFFY"
+	lang E, DEF PUZZLE3_MON EQUS "RATTATA"
+	lang D, DEF PUZZLE3_MON EQUS "WEEZING"
+	lang F, DEF PUZZLE3_MON EQUS "RATTATA"
+	lang I, DEF PUZZLE3_MON EQUS "RATTATA"
+	lang S, DEF PUZZLE3_MON EQUS "RATTATA"
 
-	lang_def J, MOKOKO_MO, "モ"
-	lang_def E, MOKOKO_MO, "RAT"
-	lang_def D, MOKOKO_MO, "S"
-	lang_def F, MOKOKO_MO, "RAT"
-	lang_def I, MOKOKO_MO, "RAT"
-	lang_def S, MOKOKO_MO, "RAT"
+	lang J, DEF MOKOKO_MO EQUS "モ"
+	lang E, DEF MOKOKO_MO EQUS "RAT"
+	lang D, DEF MOKOKO_MO EQUS "S"
+	lang F, DEF MOKOKO_MO EQUS "RAT"
+	lang I, DEF MOKOKO_MO EQUS "RAT"
+	lang S, DEF MOKOKO_MO EQUS "RAT"
 
-	lang_def J, MOKOKO_KO, "コ"
-	lang_def E, MOKOKO_KO, "TA"
-	lang_def D, MOKOKO_KO, "MOG"
-	lang_def F, MOKOKO_KO, "TA"
-	lang_def I, MOKOKO_KO, "TA"
-	lang_def S, MOKOKO_KO, "TA"
+	lang J, DEF MOKOKO_KO EQUS "コ"
+	lang E, DEF MOKOKO_KO EQUS "TA"
+	lang D, DEF MOKOKO_KO EQUS "MOG"
+	lang F, DEF MOKOKO_KO EQUS "TA"
+	lang I, DEF MOKOKO_KO EQUS "TA"
+	lang S, DEF MOKOKO_KO EQUS "TA"
 	
 ; old DODRIO version
 ;.textPUTERA
-;	lang J, "『プテラ』"
-;	lang E, "DODRIO"
-;	lang D, "?"
-;	lang F, "DODRIO"
-;	lang I, "DODRIO"
-;	lang S, "DODRIO"
+;	lang J, db "『プテラ』"
+;	lang E, db "DODRIO"
+;	lang D, db "?"
+;	lang F, db "DODRIO"
+;	lang I, db "DODRIO"
+;	lang S, db "DODRIO"
 ;	db "@"
 ;.textPUTERA_PU
-;	lang J, "プ"
-;	lang E, "DO"
-;	lang D, "1?"
-;	lang F, "DO"
-;	lang I, "DO"
-;	lang S, "DO"
+;	lang J, db "プ"
+;	lang E, db "DO"
+;	lang D, db "1?"
+;	lang F, db "DO"
+;	lang I, db "DO"
+;	lang S, db "DO"
 ;	db "@"
 ;.textPUTERA_TE
-;	lang J, "テ"
-;	lang E, "DR"
-;	lang D, "2?"
-;	lang F, "DR"
-;	lang I, "DR"
-;	lang S, "DR"
+;	lang J, db "テ"
+;	lang E, db "DR"
+;	lang D, db "2?"
+;	lang F, db "DR"
+;	lang I, db "DR"
+;	lang S, db "DR"
 ;	db "@"
 ;.textPUTERA_RA
-;	lang J, "ラ"
-;	lang E, "IO"
-;	lang D, "3?"
-;	lang F, "IO"
-;	lang I, "IO"
-;	lang S, "IO"
+;	lang J, db "ラ"
+;	lang E, db "IO"
+;	lang D, db "3?"
+;	lang F, db "IO"
+;	lang I, db "IO"
+;	lang S, db "IO"
 ;	db "@"
 
 ; new SUDOWOODO version
 .textPUTERA
-	lang J, "『プテラ』"
-	lang E, "SUDOWOODO"
-	lang D, "KEIFEL"
-	lang F, "LIPPOUTOU"
-	lang I, "SUDOWOODO"
-	lang S, "SUDOWOODO"
+	lang J, db "『プテラ』"
+	lang E, db "SUDOWOODO"
+	lang D, db "KEIFEL"
+	lang F, db "LIPPOUTOU"
+	lang I, db "SUDOWOODO"
+	lang S, db "SUDOWOODO"
 	db "@"
 
-	lang_def J, PUZZLE4_MON, "AERODACTYL"
-	lang_def E, PUZZLE4_MON, "SUDOWOODO"
-	lang_def D, PUZZLE4_MON, "PILOSWINE"
-	lang_def F, PUZZLE4_MON, "JYNX"
-	lang_def I, PUZZLE4_MON, "SUDOWOODO"
-	lang_def S, PUZZLE4_MON, "SUDOWOODO"
+	lang J, DEF PUZZLE4_MON EQUS "AERODACTYL"
+	lang E, DEF PUZZLE4_MON EQUS "SUDOWOODO"
+	lang D, DEF PUZZLE4_MON EQUS "PILOSWINE"
+	lang F, DEF PUZZLE4_MON EQUS "JYNX"
+	lang I, DEF PUZZLE4_MON EQUS "SUDOWOODO"
+	lang S, DEF PUZZLE4_MON EQUS "SUDOWOODO"
 	
-	lang_def J, PUTERA_PU, "プ"
-	lang_def E, PUTERA_PU, "SUD"
-	lang_def D, PUTERA_PU, "KE"
-	lang_def F, PUTERA_PU, "LIP"
-	lang_def I, PUTERA_PU, "SUD"
-	lang_def S, PUTERA_PU, "SUD"
+	lang J, DEF PUTERA_PU EQUS "プ"
+	lang E, DEF PUTERA_PU EQUS "SUD"
+	lang D, DEF PUTERA_PU EQUS "KE"
+	lang F, DEF PUTERA_PU EQUS "LIP"
+	lang I, DEF PUTERA_PU EQUS "SUD"
+	lang S, DEF PUTERA_PU EQUS "SUD"
 	
-	lang_def J, PUTERA_TE, "テ"
-	lang_def E, PUTERA_TE, "OWO"
-	lang_def D, PUTERA_TE, "IF"
-	lang_def F, PUTERA_TE, "POU"
-	lang_def I, PUTERA_TE, "OWO"
-	lang_def S, PUTERA_TE, "OWO"
+	lang J, DEF PUTERA_TE EQUS "テ"
+	lang E, DEF PUTERA_TE EQUS "OWO"
+	lang D, DEF PUTERA_TE EQUS "IF"
+	lang F, DEF PUTERA_TE EQUS "POU"
+	lang I, DEF PUTERA_TE EQUS "OWO"
+	lang S, DEF PUTERA_TE EQUS "OWO"
 	
-	lang_def J, PUTERA_RA, "ラ"
-	lang_def E, PUTERA_RA, "ODO"
-	lang_def D, PUTERA_RA, "EL"
-	lang_def F, PUTERA_RA, "TOU"
-	lang_def I, PUTERA_RA, "ODO"
-	lang_def S, PUTERA_RA, "ODO"
+	lang J, DEF PUTERA_RA EQUS "ラ"
+	lang E, DEF PUTERA_RA EQUS "ODO"
+	lang D, DEF PUTERA_RA EQUS "EL"
+	lang F, DEF PUTERA_RA EQUS "TOU"
+	lang I, DEF PUTERA_RA EQUS "ODO"
+	lang S, DEF PUTERA_RA EQUS "ODO"
 	
 .textPIPPI
-	lang J, "『ピッピ』"
-	lang E, "EEVEE"
-	lang D, "PIEPI"
-	lang F, "TETARTE"
-	lang I, "EEVEE"
-	lang S, "EEVEE"
+	lang J, db "『ピッピ』"
+	lang E, db "EEVEE"
+	lang D, db "PIEPI"
+	lang F, db "TETARTE"
+	lang I, db "EEVEE"
+	lang S, db "EEVEE"
 	db "@"
 
-	lang_def J, PUZZLE5_MON, "CLEFAIRY"
-	lang_def E, PUZZLE5_MON, "EEVEE"
-	lang_def D, PUZZLE5_MON, "CLEFAIRY"
-	lang_def F, PUZZLE5_MON, "POLIWHIRL"
-	lang_def I, PUZZLE5_MON, "EEVEE"
-	lang_def S, PUZZLE5_MON, "EEVEE"
+	lang J, DEF PUZZLE5_MON EQUS "CLEFAIRY"
+	lang E, DEF PUZZLE5_MON EQUS "EEVEE"
+	lang D, DEF PUZZLE5_MON EQUS "CLEFAIRY"
+	lang F, DEF PUZZLE5_MON EQUS "POLIWHIRL"
+	lang I, DEF PUZZLE5_MON EQUS "EEVEE"
+	lang S, DEF PUZZLE5_MON EQUS "EEVEE"
 	
-	lang_def J, PIPPI_PI, "ピ"
-	lang_def E, PIPPI_PI, "EE"
-	lang_def D, PIPPI_PI, "PI"
-	lang_def F, PIPPI_PI, "TE"
-	lang_def I, PIPPI_PI, "EE"
-	lang_def S, PIPPI_PI, "EE"
+	lang J, DEF PIPPI_PI EQUS "ピ"
+	lang E, DEF PIPPI_PI EQUS "EE"
+	lang D, DEF PIPPI_PI EQUS "PI"
+	lang F, DEF PIPPI_PI EQUS "TE"
+	lang I, DEF PIPPI_PI EQUS "EE"
+	lang S, DEF PIPPI_PI EQUS "EE"
 	
-	lang_def J, PIPPI_PP, "ッ"
-	lang_def E, PIPPI_PP, "V"
-	lang_def D, PIPPI_PP, "E"
-	lang_def F, PIPPI_PP, "TAR"
-	lang_def I, PIPPI_PP, "V"
-	lang_def S, PIPPI_PP, "V"
+	lang J, DEF PIPPI_PP EQUS "ッ"
+	lang E, DEF PIPPI_PP EQUS "V"
+	lang D, DEF PIPPI_PP EQUS "E"
+	lang F, DEF PIPPI_PP EQUS "TAR"
+	lang I, DEF PIPPI_PP EQUS "V"
+	lang S, DEF PIPPI_PP EQUS "V"
 
 DEF PUZZLE_COUNT = 0
 
@@ -650,32 +641,28 @@ ENDM
 	nsc_page NewsRoot
 	
 .getGiftText
-	lang_text J, "わざマシン０４を　もらった！"
+	lang J, text "わざマシン０４を　もらった！"
 	
-	lang_text E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "TM04."
+	lang E, text
+	lang E, nts_start
+	lang E, nts_player_name 0
+	lang E, nts_end
+	lang E, db   " received"
+	lang E, line "TM04."
 	
 	; German
-	lang_text D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "TM04."
+	lang D, text
+	lang D, nts_start
+	lang D, nts_player_name 0
+	lang D, nts_end
+	lang D, db   " erhält"
+	lang D, line "TM04."
 	
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 	
@@ -715,26 +702,20 @@ ENDC
 	db "@"
 
 
-
+lang    J, DEF puzzle_tile_width = 2
+notlang J, DEF puzzle_tile_width = 4
 DEF puzzleindex = 1
 REPT 5
 .puzzle{d:puzzleindex}GFX
 DEF loopindex = 1
-IF DEF(_LANG_J)
-	db "× "
-ELSE
-	db "×   "
-ENDC
+	lang    J, db "× "
+	notlang J, db "×   "
 REPT (4*4) - 2
 	db "{{PUZZLE{d:puzzleindex}_GFX{02d:loopindex}}}"
 IF loopindex % 4 != 3
-IF DEF(_LANG_J)
-	db " "
-ELSE
-REPT 4 - STRLEN("{{PUZZLE{d:puzzleindex}_GFX{02d:loopindex}}}")
+REPT puzzle_tile_width - STRLEN("{{PUZZLE{d:puzzleindex}_GFX{02d:loopindex}}}")
 	db " "
 ENDR
-ENDC
 ELSE
 	next
 ENDC
@@ -888,240 +869,240 @@ ENDR
 	
 
 .textPIKACHU
-	lang J, "『ピカチュウ』"
-	lang E, "PICHU"
-	lang D, "PICHU"
-	lang F, "PICHU"
-	lang I, "PICHU"
-	lang S, "PICHU"
+	lang J, db "『ピカチュウ』"
+	lang E, db "PICHU"
+	lang D, db "PICHU"
+	lang F, db "PICHU"
+	lang I, db "PICHU"
+	lang S, db "PICHU"
 	db "@"
 
-	lang_def J, HPUZZLE1_MON, "PIKACHU"
-	lang_def E, HPUZZLE1_MON, "PICHU"
-	lang_def D, HPUZZLE1_MON, "PICHU"
-	lang_def F, HPUZZLE1_MON, "PICHU"
-	lang_def I, HPUZZLE1_MON, "PICHU"
-	lang_def S, HPUZZLE1_MON, "PICHU"
+	lang J, DEF HPUZZLE1_MON EQUS "PIKACHU"
+	lang E, DEF HPUZZLE1_MON EQUS "PICHU"
+	lang D, DEF HPUZZLE1_MON EQUS "PICHU"
+	lang F, DEF HPUZZLE1_MON EQUS "PICHU"
+	lang I, DEF HPUZZLE1_MON EQUS "PICHU"
+	lang S, DEF HPUZZLE1_MON EQUS "PICHU"
 	
-	lang_def J, PIKACHU_P, "ピ"
-	lang_def E, PIKACHU_P, "P"
-	lang_def D, PIKACHU_P, "P"
-	lang_def F, PIKACHU_P, "P"
-	lang_def I, PIKACHU_P, "P"
-	lang_def S, PIKACHU_P, "P"
+	lang J, DEF PIKACHU_P EQUS "ピ"
+	lang E, DEF PIKACHU_P EQUS "P"
+	lang D, DEF PIKACHU_P EQUS "P"
+	lang F, DEF PIKACHU_P EQUS "P"
+	lang I, DEF PIKACHU_P EQUS "P"
+	lang S, DEF PIKACHU_P EQUS "P"
 	
-	lang_def J, PIKACHU_I, "カ"
-	lang_def E, PIKACHU_I, "I"
-	lang_def D, PIKACHU_I, "I"
-	lang_def F, PIKACHU_I, "I"
-	lang_def I, PIKACHU_I, "I"
-	lang_def S, PIKACHU_I, "I"
+	lang J, DEF PIKACHU_I EQUS "カ"
+	lang E, DEF PIKACHU_I EQUS "I"
+	lang D, DEF PIKACHU_I EQUS "I"
+	lang F, DEF PIKACHU_I EQUS "I"
+	lang I, DEF PIKACHU_I EQUS "I"
+	lang S, DEF PIKACHU_I EQUS "I"
 	
-	lang_def J, PIKACHU_C, "チ"
-	lang_def E, PIKACHU_C, "C"
-	lang_def D, PIKACHU_C, "C"
-	lang_def F, PIKACHU_C, "C"
-	lang_def I, PIKACHU_C, "C"
-	lang_def S, PIKACHU_C, "C"
+	lang J, DEF PIKACHU_C EQUS "チ"
+	lang E, DEF PIKACHU_C EQUS "C"
+	lang D, DEF PIKACHU_C EQUS "C"
+	lang F, DEF PIKACHU_C EQUS "C"
+	lang I, DEF PIKACHU_C EQUS "C"
+	lang S, DEF PIKACHU_C EQUS "C"
 	
-	lang_def J, PIKACHU_H, "ュ"
-	lang_def E, PIKACHU_H, "H"
-	lang_def D, PIKACHU_H, "H"
-	lang_def F, PIKACHU_H, "H"
-	lang_def I, PIKACHU_H, "H"
-	lang_def S, PIKACHU_H, "H"
+	lang J, DEF PIKACHU_H EQUS "ュ"
+	lang E, DEF PIKACHU_H EQUS "H"
+	lang D, DEF PIKACHU_H EQUS "H"
+	lang F, DEF PIKACHU_H EQUS "H"
+	lang I, DEF PIKACHU_H EQUS "H"
+	lang S, DEF PIKACHU_H EQUS "H"
 	
-	lang_def J, PIKACHU_U, "ウ"
-	lang_def E, PIKACHU_U, "U"
-	lang_def D, PIKACHU_U, "U"
-	lang_def F, PIKACHU_U, "U"
-	lang_def I, PIKACHU_U, "U"
-	lang_def S, PIKACHU_U, "U"
+	lang J, DEF PIKACHU_U EQUS "ウ"
+	lang E, DEF PIKACHU_U EQUS "U"
+	lang D, DEF PIKACHU_U EQUS "U"
+	lang F, DEF PIKACHU_U EQUS "U"
+	lang I, DEF PIKACHU_U EQUS "U"
+	lang S, DEF PIKACHU_U EQUS "U"
 	
 	
 
 .textKIRINRIKI
-	lang J, "『キリンリキ』"
-	lang E, "HO-OH"
-	lang D, "HO-OH"
-	lang F, "HO-OH"
-	lang I, "HO-OH"
-	lang S, "HO-OH"
+	lang J, db "『キリンリキ』"
+	lang E, db "HO-OH"
+	lang D, db "HO-OH"
+	lang F, db "HO-OH"
+	lang I, db "HO-OH"
+	lang S, db "HO-OH"
 	db "@"
 
-	lang_def J, HPUZZLE2_MON, "GIRAFARIG"
-	lang_def E, HPUZZLE2_MON, "HO_OH"
-	lang_def D, HPUZZLE2_MON, "HO_OH"
-	lang_def F, HPUZZLE2_MON, "HO_OH"
-	lang_def I, HPUZZLE2_MON, "HO_OH"
-	lang_def S, HPUZZLE2_MON, "HO_OH"
+	lang J, DEF HPUZZLE2_MON EQUS "GIRAFARIG"
+	lang E, DEF HPUZZLE2_MON EQUS "HO_OH"
+	lang D, DEF HPUZZLE2_MON EQUS "HO_OH"
+	lang F, DEF HPUZZLE2_MON EQUS "HO_OH"
+	lang I, DEF HPUZZLE2_MON EQUS "HO_OH"
+	lang S, DEF HPUZZLE2_MON EQUS "HO_OH"
 
-	lang_def J, KIRINRIKI_H, "キ"
-	lang_def E, KIRINRIKI_H, "H"
-	lang_def D, KIRINRIKI_H, "H"
-	lang_def F, KIRINRIKI_H, "H"
-	lang_def I, KIRINRIKI_H, "H"
-	lang_def S, KIRINRIKI_H, "H"
+	lang J, DEF KIRINRIKI_H EQUS "キ"
+	lang E, DEF KIRINRIKI_H EQUS "H"
+	lang D, DEF KIRINRIKI_H EQUS "H"
+	lang F, DEF KIRINRIKI_H EQUS "H"
+	lang I, DEF KIRINRIKI_H EQUS "H"
+	lang S, DEF KIRINRIKI_H EQUS "H"
 	
-	lang_def J, KIRINRIKI_O, "リ"
-	lang_def E, KIRINRIKI_O, "O"
-	lang_def D, KIRINRIKI_O, "O"
-	lang_def F, KIRINRIKI_O, "O"
-	lang_def I, KIRINRIKI_O, "O"
-	lang_def S, KIRINRIKI_O, "O"
+	lang J, DEF KIRINRIKI_O EQUS "リ"
+	lang E, DEF KIRINRIKI_O EQUS "O"
+	lang D, DEF KIRINRIKI_O EQUS "O"
+	lang F, DEF KIRINRIKI_O EQUS "O"
+	lang I, DEF KIRINRIKI_O EQUS "O"
+	lang S, DEF KIRINRIKI_O EQUS "O"
 	
-	lang_def J, KIRINRIKI__, "ン"
-	lang_def E, KIRINRIKI__, "-"
-	lang_def D, KIRINRIKI__, "-"
-	lang_def F, KIRINRIKI__, "-"
-	lang_def I, KIRINRIKI__, "-"
-	lang_def S, KIRINRIKI__, "-"
+	lang J, DEF KIRINRIKI__ EQUS "ン"
+	lang E, DEF KIRINRIKI__ EQUS "-"
+	lang D, DEF KIRINRIKI__ EQUS "-"
+	lang F, DEF KIRINRIKI__ EQUS "-"
+	lang I, DEF KIRINRIKI__ EQUS "-"
+	lang S, DEF KIRINRIKI__ EQUS "-"
 	
 
 
 .textYANMA
-	lang J, "『ヤンヤンマ』"
-	lang E, "DODUO"
-	lang D, "KOKOWEI"
-	lang F, "DODUO"
-	lang I, "DODUO"
-	lang S, "DODUO"
+	lang J, db "『ヤンヤンマ』"
+	lang E, db "DODUO"
+	lang D, db "KOKOWEI"
+	lang F, db "DODUO"
+	lang I, db "DODUO"
+	lang S, db "DODUO"
 	db "@"
 
-	lang_def J, HPUZZLE3_MON, "YANMA"
-	lang_def E, HPUZZLE3_MON, "DODUO"
-	lang_def D, HPUZZLE3_MON, "EXEGGUTOR"
-	lang_def F, HPUZZLE3_MON, "DODUO"
-	lang_def I, HPUZZLE3_MON, "DODUO"
-	lang_def S, HPUZZLE3_MON, "DODUO"
+	lang J, DEF HPUZZLE3_MON EQUS "YANMA"
+	lang E, DEF HPUZZLE3_MON EQUS "DODUO"
+	lang D, DEF HPUZZLE3_MON EQUS "EXEGGUTOR"
+	lang F, DEF HPUZZLE3_MON EQUS "DODUO"
+	lang I, DEF HPUZZLE3_MON EQUS "DODUO"
+	lang S, DEF HPUZZLE3_MON EQUS "DODUO"
 	
-	lang_def J, YANMA_M, "ヤ"
-	lang_def E, YANMA_D, "D"
-	lang_def D, YANMA_K, "K"
-	lang_def F, YANMA_D, "D"
-	lang_def I, YANMA_D, "D"
-	lang_def S, YANMA_D, "D"
+	lang J, DEF YANMA_M EQUS "ヤ"
+	lang E, DEF YANMA_D EQUS "D"
+	lang D, DEF YANMA_K EQUS "K"
+	lang F, DEF YANMA_D EQUS "D"
+	lang I, DEF YANMA_D EQUS "D"
+	lang S, DEF YANMA_D EQUS "D"
 	
-	lang_def J, YANMA_U, "ン"
-	lang_def E, YANMA_O, "O"
-	lang_def D, YANMA_O, "O"
-	lang_def F, YANMA_O, "O"
-	lang_def I, YANMA_O, "O"
-	lang_def S, YANMA_O, "O"
+	lang J, DEF YANMA_U EQUS "ン"
+	lang E, DEF YANMA_O EQUS "O"
+	lang D, DEF YANMA_O EQUS "O"
+	lang F, DEF YANMA_O EQUS "O"
+	lang I, DEF YANMA_O EQUS "O"
+	lang S, DEF YANMA_O EQUS "O"
 	
-	lang_def J, YANMA_K, "マ"
-	lang_def E, YANMA_U, "U"
-	lang_def D, YANMA_W, "W"
-	lang_def F, YANMA_U, "U"
-	lang_def I, YANMA_U, "U"
-	lang_def S, YANMA_U, "U"
+	lang J, DEF YANMA_K EQUS "マ"
+	lang E, DEF YANMA_U EQUS "U"
+	lang D, DEF YANMA_W EQUS "W"
+	lang F, DEF YANMA_U EQUS "U"
+	lang I, DEF YANMA_U EQUS "U"
+	lang S, DEF YANMA_U EQUS "U"
 	
-	lang_def D, YANMA_E, "E"
-	lang_def D, YANMA_I, "I"
+	lang D, DEF YANMA_E EQUS "E"
+	lang D, DEF YANMA_I EQUS "I"
 	
 
 .textHARIISEN
-	lang J, "『ハリーセン』"
-	lang E, "ZUBAT"
-	lang D, "ZUBAT"
-	lang F, "QUAXO"
-	lang I, "ZUBAT"
-	lang S, "ZUBAT"
+	lang J, db "『ハリーセン』"
+	lang E, db "ZUBAT"
+	lang D, db "ZUBAT"
+	lang F, db "QUAXO"
+	lang I, db "ZUBAT"
+	lang S, db "ZUBAT"
 	db "@"
 
-	lang_def J, HPUZZLE4_MON, "QWILFISH"
-	lang_def E, HPUZZLE4_MON, "ZUBAT"
-	lang_def D, HPUZZLE4_MON, "ZUBAT"
-	lang_def F, HPUZZLE4_MON, "POLITOED"
-	lang_def I, HPUZZLE4_MON, "ZUBAT"
-	lang_def S, HPUZZLE4_MON, "ZUBAT"
+	lang J, DEF HPUZZLE4_MON EQUS "QWILFISH"
+	lang E, DEF HPUZZLE4_MON EQUS "ZUBAT"
+	lang D, DEF HPUZZLE4_MON EQUS "ZUBAT"
+	lang F, DEF HPUZZLE4_MON EQUS "POLITOED"
+	lang I, DEF HPUZZLE4_MON EQUS "ZUBAT"
+	lang S, DEF HPUZZLE4_MON EQUS "ZUBAT"
 	
-	lang_def J, HARIISEN_Z, "ハ"
-	lang_def E, HARIISEN_Z, "Z"
-	lang_def D, HARIISEN_Z, "Z"
-	lang_def F, HARIISEN_Z, "Q"
-	lang_def I, HARIISEN_Z, "Z"
-	lang_def S, HARIISEN_Z, "Z"
+	lang J, DEF HARIISEN_Z EQUS "ハ"
+	lang E, DEF HARIISEN_Z EQUS "Z"
+	lang D, DEF HARIISEN_Z EQUS "Z"
+	lang F, DEF HARIISEN_Z EQUS "Q"
+	lang I, DEF HARIISEN_Z EQUS "Z"
+	lang S, DEF HARIISEN_Z EQUS "Z"
 	
-	lang_def J, HARIISEN_U, "リ"
-	lang_def E, HARIISEN_U, "U"
-	lang_def D, HARIISEN_U, "U"
-	lang_def F, HARIISEN_U, "U"
-	lang_def I, HARIISEN_U, "U"
-	lang_def S, HARIISEN_U, "U"
+	lang J, DEF HARIISEN_U EQUS "リ"
+	lang E, DEF HARIISEN_U EQUS "U"
+	lang D, DEF HARIISEN_U EQUS "U"
+	lang F, DEF HARIISEN_U EQUS "U"
+	lang I, DEF HARIISEN_U EQUS "U"
+	lang S, DEF HARIISEN_U EQUS "U"
 	
-	lang_def J, HARIISEN_B, "ー"
-	lang_def E, HARIISEN_B, "B"
-	lang_def D, HARIISEN_B, "B"
-	lang_def F, HARIISEN_B, "A"
-	lang_def I, HARIISEN_B, "B"
-	lang_def S, HARIISEN_B, "B"
+	lang J, DEF HARIISEN_B EQUS "ー"
+	lang E, DEF HARIISEN_B EQUS "B"
+	lang D, DEF HARIISEN_B EQUS "B"
+	lang F, DEF HARIISEN_B EQUS "A"
+	lang I, DEF HARIISEN_B EQUS "B"
+	lang S, DEF HARIISEN_B EQUS "B"
 	
-	lang_def J, HARIISEN_A, "セ"
-	lang_def E, HARIISEN_A, "A"
-	lang_def D, HARIISEN_A, "A"
-	lang_def F, HARIISEN_A, "X"
-	lang_def I, HARIISEN_A, "A"
-	lang_def S, HARIISEN_A, "A"
+	lang J, DEF HARIISEN_A EQUS "セ"
+	lang E, DEF HARIISEN_A EQUS "A"
+	lang D, DEF HARIISEN_A EQUS "A"
+	lang F, DEF HARIISEN_A EQUS "X"
+	lang I, DEF HARIISEN_A EQUS "A"
+	lang S, DEF HARIISEN_A EQUS "A"
 	
-	lang_def J, HARIISEN_T, "ン"
-	lang_def E, HARIISEN_T, "T"
-	lang_def D, HARIISEN_T, "T"
-	lang_def F, HARIISEN_T, "O"
-	lang_def I, HARIISEN_T, "T"
-	lang_def S, HARIISEN_T, "T"
+	lang J, DEF HARIISEN_T EQUS "ン"
+	lang E, DEF HARIISEN_T EQUS "T"
+	lang D, DEF HARIISEN_T EQUS "T"
+	lang F, DEF HARIISEN_T EQUS "O"
+	lang I, DEF HARIISEN_T EQUS "T"
+	lang S, DEF HARIISEN_T EQUS "T"
 	
 
 .textWINDY
-	lang J, "『ウインディ』"
-	lang E, "ARBOK"
-	lang D, "ARBOK"
-	lang F, "ARBOK"
-	lang I, "ARBOK"
-	lang S, "ARBOK"
+	lang J, db "『ウインディ』"
+	lang E, db "ARBOK"
+	lang D, db "ARBOK"
+	lang F, db "ARBOK"
+	lang I, db "ARBOK"
+	lang S, db "ARBOK"
 	db "@"
 
-	lang_def J, HPUZZLE5_MON, "ARCANINE"
-	lang_def E, HPUZZLE5_MON, "ARBOK"
-	lang_def D, HPUZZLE5_MON, "ARBOK"
-	lang_def F, HPUZZLE5_MON, "ARBOK"
-	lang_def I, HPUZZLE5_MON, "ARBOK"
-	lang_def S, HPUZZLE5_MON, "ARBOK"
+	lang J, DEF HPUZZLE5_MON EQUS "ARCANINE"
+	lang E, DEF HPUZZLE5_MON EQUS "ARBOK"
+	lang D, DEF HPUZZLE5_MON EQUS "ARBOK"
+	lang F, DEF HPUZZLE5_MON EQUS "ARBOK"
+	lang I, DEF HPUZZLE5_MON EQUS "ARBOK"
+	lang S, DEF HPUZZLE5_MON EQUS "ARBOK"
 
-	lang_def J, WINDY_A, "ウ"
-	lang_def E, WINDY_A, "A"
-	lang_def D, WINDY_A, "A"
-	lang_def F, WINDY_A, "A"
-	lang_def I, WINDY_A, "A"
-	lang_def S, WINDY_A, "A"
+	lang J, DEF WINDY_A EQUS "ウ"
+	lang E, DEF WINDY_A EQUS "A"
+	lang D, DEF WINDY_A EQUS "A"
+	lang F, DEF WINDY_A EQUS "A"
+	lang I, DEF WINDY_A EQUS "A"
+	lang S, DEF WINDY_A EQUS "A"
 	
-	lang_def J, WINDY_R, "イ"
-	lang_def E, WINDY_R, "R"
-	lang_def D, WINDY_R, "R"
-	lang_def F, WINDY_R, "R"
-	lang_def I, WINDY_R, "R"
-	lang_def S, WINDY_R, "R"
+	lang J, DEF WINDY_R EQUS "イ"
+	lang E, DEF WINDY_R EQUS "R"
+	lang D, DEF WINDY_R EQUS "R"
+	lang F, DEF WINDY_R EQUS "R"
+	lang I, DEF WINDY_R EQUS "R"
+	lang S, DEF WINDY_R EQUS "R"
 	
-	lang_def J, WINDY_B, "ン"
-	lang_def E, WINDY_B, "B"
-	lang_def D, WINDY_B, "B"
-	lang_def F, WINDY_B, "B"
-	lang_def I, WINDY_B, "B"
-	lang_def S, WINDY_B, "B"
+	lang J, DEF WINDY_B EQUS "ン"
+	lang E, DEF WINDY_B EQUS "B"
+	lang D, DEF WINDY_B EQUS "B"
+	lang F, DEF WINDY_B EQUS "B"
+	lang I, DEF WINDY_B EQUS "B"
+	lang S, DEF WINDY_B EQUS "B"
 	
-	lang_def J, WINDY_O, "デ"
-	lang_def E, WINDY_O, "O"
-	lang_def D, WINDY_O, "O"
-	lang_def F, WINDY_O, "O"
-	lang_def I, WINDY_O, "O"
-	lang_def S, WINDY_O, "O"
+	lang J, DEF WINDY_O EQUS "デ"
+	lang E, DEF WINDY_O EQUS "O"
+	lang D, DEF WINDY_O EQUS "O"
+	lang F, DEF WINDY_O EQUS "O"
+	lang I, DEF WINDY_O EQUS "O"
+	lang S, DEF WINDY_O EQUS "O"
 	
-	lang_def J, WINDY_K, "ィ"
-	lang_def E, WINDY_K, "K"
-	lang_def D, WINDY_K, "K"
-	lang_def F, WINDY_K, "K"
-	lang_def I, WINDY_K, "K"
-	lang_def S, WINDY_K, "K"
+	lang J, DEF WINDY_K EQUS "ィ"
+	lang E, DEF WINDY_K EQUS "K"
+	lang D, DEF WINDY_K EQUS "K"
+	lang F, DEF WINDY_K EQUS "K"
+	lang I, DEF WINDY_K EQUS "K"
+	lang S, DEF WINDY_K EQUS "K"
 	
 
 DEF PUZZLE_COUNT = 0
@@ -1313,32 +1294,28 @@ ENDC
 	
 .getGiftText
 	; TODO: potentially the wrong string? plz check
-	lang_text J, "あおそらメールを　もらった！"
+	lang J, text "あおそらメールを　もらった！"
 	
-	lang_text E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "BLUESKY MAIL."
+	lang E, text
+	lang E, nts_start
+	lang E, nts_player_name 0
+	lang E, nts_end
+	lang E, db   " received"
+	lang E, line "BLUESKY MAIL."
 	
 	; German
-	lang_text D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "KOBALTBRIEF."
+	lang D, text
+	lang D, nts_start
+	lang D, nts_player_name 0
+	lang D, nts_end
+	lang D, db   " erhält"
+	lang D, line "KOBALTBRIEF."
 		
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 	
@@ -1427,25 +1404,25 @@ ENDR
 	
 	
 CorrectText:
-	lang_text J, "せいかい！！"
-	lang_text E, "Correct!"
-	lang_text D, "Richtig!"
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
+	lang J, text "せいかい！！"
+	lang E, text "Correct!"
+	lang D, text "Richtig!"
+	lang F, text "?"
+	lang I, text "?"
+	lang S, text "?"
 	done
 
 IncorrectText:
 	; Japanese
-	lang_text J, "ざんねん…まちがえちゃった！"
+	lang J, text "ざんねん…まちがえちゃった！"
 	; English
-	lang_text E, "Oops…"
-	lang_line E, "You messed up!"
-	lang_text D, "Schade… Das war"
-	lang_line D, "nicht richtig!"
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
+	lang E, text "Oops…"
+	lang E, line "You messed up!"
+	lang D, text "Schade… Das war"
+	lang D, line "nicht richtig!"
+	lang F, text "?"
+	lang I, text "?"
+	lang S, text "?"
 	done
 	
 	

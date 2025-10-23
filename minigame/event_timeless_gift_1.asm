@@ -1,3 +1,17 @@
+; This is a RE-CREATION based on records
+; from the time and first-hand accounts,
+; NOT actual recovered news data!
+; 
+; See: https://web.archive.org/web/20080208123820/http://www.geocities.co.jp/Playtown-Darts/9915/serebi.htm
+; Thanks to nohm for providing their first-hand account of this minigame!
+; 
+; Re-creation script written by Cello2WC
+; English localization by DS
+; German localization by Lesserkuma
+; French localization TODO
+; Italian localization TODO
+; Spanish localization TODO
+
 ; Janken variant
 
 IF DEF(_MINIGAME_H)
@@ -10,9 +24,6 @@ DEF wQuizScore      EQUS "wNewsScratch3"
 
 
 MACRO minigame_abuttonhook
-;	nsc_drawbox 0,  3, 20, 10, NEWSBORDER_INVERTED, 3
-;	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
-
 	nsc_clear 1, 4, 18, 8
 	nsc_clear 1, 13, 18, 4
 	nsc_drawtrainer 6, 4, COOLTRAINERF, 7
@@ -20,6 +31,9 @@ ENDM
 
 MACRO minigame_start
 	; fake page transition
+	
+	; this is probably the wrong music
+	; but we don't know the right music...
 	nsc_playmusic MUSIC_AZALEA_TOWN
 	nsc_set wQuizQuestionNo, 0
 	nsc_set wQuizScore, 0
@@ -30,56 +44,57 @@ MACRO minigame_start
 	
 .maizieIntroText
 	; TODO: PLACEHOLDER TEXT
-	lang_text J, "チエコ『かくかくしかじか 　ヒワダ"
-	lang_line J, "タウン　かくかくしかじか　ガンテツ"
-	lang_cont J, "かくかくしかじか　タイムトラベル"
+	;       none of maizie's dialogue was preserved...
+	lang J, text "チエコ『かくかくしかじか 　ヒワダ"
+	lang J, line "タウン　かくかくしかじか　ガンテツ"
+	lang J, cont "かくかくしかじか　タイムトラベル"
 	
-	lang_text E, "MAIZIE: something"
-	lang_line E, "something AZALEA"
-	lang_para E, "something some-"
-	lang_line E, "thing KURT's"
-	lang_cont E, "granddaughter"
-	lang_para E, "something some-"
-	lang_line E, "thing time travel"
+	lang E, text "MAIZIE: something"
+	lang E, line "something AZALEA"
+	lang E, para "something some-"
+	lang E, line "thing KURT's"
+	lang E, cont "granddaughter"
+	lang E, para "something some-"
+	lang E, line "thing time travel"
 	
-	lang_text D, "MAISY: nuschel"
-	lang_line D, "nuschel AZALEA"
-	lang_para D, "nuschel nuschel"
-	lang_line D, "KURTs Enkelin"
-	lang_para D, "nuschel nuschel"
-	lang_line D, "Zeitreise"
+	lang D, text "MAISY: nuschel"
+	lang D, line "nuschel AZALEA"
+	lang D, para "nuschel nuschel"
+	lang D, line "KURTs Enkelin"
+	lang D, para "nuschel nuschel"
+	lang D, line "Zeitreise"
 	
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 
 	done
 ENDM
 	
 
 MACRO minigame_name
-	lang J, "ときをこえたプレゼント"
-	lang E, "A TIMELESS GIFT"
-	lang D, "ZEITLOSES GESCHENK"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "ときをこえたプレゼント"
+	lang E, db "A TIMELESS GIFT"
+	lang D, db "ZEITLOSES GESCHENK"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 ENDM
 
 MACRO minigame_desc
-	lang      J, "?"
+	lang J, db   "?"
 	
-	lang      E, "?"
+	lang E, db   "?"
 	
-	lang      D, "?"
+	lang D, db   "?"
 	
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 ENDM
 
 ELSE
@@ -92,7 +107,7 @@ MinigameStart::
 	news_box 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	;news_box 4,  4, 12,  8, NEWSBORDER_BLOCKY,   3
 	news_def_strings
-	news_string 0, 0, "@" ; ......why?
+	news_string 0, 0, "@" ; at least one string must be specified, else game crashes
 	news_menu 6, 6,   1, 3,   0, 2,   -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
 	
 	news_buttonscript .aButton    ; script pointer a button
@@ -152,30 +167,30 @@ MinigameStart::
 	
 	
 .menuRockText
-	lang J, "グー"
-	lang E, "ROCK"
-	lang D, "STEIN"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "グー"
+	lang E, db "ROCK"
+	lang D, db "STEIN"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 	
 .menuPaperText
-	lang J, "パー"
-	lang E, "PAPER"
-	lang D, "PAPIER"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "パー"
+	lang E, db "PAPER"
+	lang D, db "PAPIER"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 	
 .menuScissorsText
-	lang J, "チョキ"
-	lang E, "SCISSORS"
-	lang D, "SCHERE"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "チョキ"
+	lang E, db "SCISSORS"
+	lang D, db "SCHERE"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 .menuDummyDesc
 	db "@"
 	
@@ -187,30 +202,30 @@ MinigameStart::
 	done
 	
 .textChieRock
-	lang J, "チエコ『グー"
-	lang E, "MAIZIE: ROCK"
-	lang D, "MAISY: STEIN"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "チエコ『グー"
+	lang E, db "MAIZIE: ROCK"
+	lang D, db "MAISY: STEIN"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 	
 .textChiePaper
-	lang J, "チエコ『パー"
-	lang E, "MAIZIE: PAPER"
-	lang D, "MAISY: PAPIER"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "チエコ『パー"
+	lang E, db "MAIZIE: PAPER"
+	lang D, db "MAISY: PAPIER"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 	
 .textChieScissors
-	lang J, "チエコ『チョキ"
-	lang E, "MAIZIE: SCISSORS"
-	lang D, "MAISY: SCHERE"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "チエコ『チョキ"
+	lang E, db "MAIZIE: SCISSORS"
+	lang D, db "MAISY: SCHERE"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 
 .menuRockScript
@@ -230,13 +245,13 @@ MinigameStart::
 	nsc_ret
 .jankenTieText
 	; TODO: PLACEHOLDER TEXT
-	lang_text J, "チエコ『ひきわけ"
-	lang_text E, "MAIZIE: We tied…"
-	lang_text D, "MAISY: Unent-"
-	lang_line D, "schieden…"
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
+	lang J, text "チエコ『ひきわけ"
+	lang E, text "MAIZIE: We tied…"
+	lang D, text "MAISY: Unent-"
+	lang D, line "schieden…"
+	lang F, text "?"
+	lang I, text "?"
+	lang S, text "?"
 	done
 	
 .jankenLose
@@ -247,13 +262,13 @@ MinigameStart::
 	nsc_ret
 .jankenLoseText
 	; TODO: PLACEHOLDER TEXT
-	lang_text J, "チエコ『あたしの　かち"
-	lang_text E, "MAIZIE: I win!"
-	lang_text D, "MAISY: Ich"
-	lang_line D, "gewinne!"
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
+	lang J, text "チエコ『あたしの　かち"
+	lang E, text "MAIZIE: I win!"
+	lang D, text "MAISY: Ich"
+	lang D, line "gewinne!"
+	lang F, text "?"
+	lang I, text "?"
+	lang S, text "?"
 	done
 		
 .jankenWin
@@ -264,13 +279,13 @@ MinigameStart::
 	nsc_ret
 .jankenWinText
 	; TODO: PLACEHOLDER TEXT
-	lang_text J, "チエコ『あなたの　かち"
-	lang_text E, "MAIZIE: You win!"
-	lang_text D, "MAISY: Du"
-	lang_line D, "gewinnst!"
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
+	lang J, text "チエコ『あなたの　かち"
+	lang E, text "MAIZIE: You win!"
+	lang D, text "MAISY: Du"
+	lang D, line "gewinnst!"
+	lang F, text "?"
+	lang I, text "?"
+	lang S, text "?"
 	done
 
 	news_screen PokemonQuiz, MUSIC_GAME_CORNER
@@ -331,30 +346,30 @@ MinigameStart::
 	nsc_ret
 
 .menuItemYesText
-	lang J, "はい"
-	lang E, "YES"
-	lang D, "JA"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "はい"
+	lang E, db "YES"
+	lang D, db "JA"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 
 .menuItemNoText
-	lang J, "いいえ"
-	lang E, "NO"
-	lang D, "NEIN"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "いいえ"
+	lang E, db "NO"
+	lang D, db "NEIN"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 
 .menuItemQuitText
-	lang J, "やめる"
-	lang E, "QUIT"
-	lang D, "ZUR."
-	lang F, "RET"
-	lang I, "ESCI"
-	lang S, "?"
+	lang J, db "やめる"
+	lang E, db "QUIT"
+	lang D, db "ZUR."
+	lang F, db "RET"
+	lang I, db "ESCI"
+	lang S, db "?"
 	db "@"
 
 	
@@ -398,119 +413,119 @@ ENDM
 	db "@"
 	
 .question1Text
-	lang J,      "ポケモンはしたし　いがいのひとでも"
-	lang_next J, "まもった りすけたり　してくれる？"
+	lang J, db   "ポケモンはしたし　いがいのひとでも"
+	lang J, next "まもった りすけたり　してくれる？"
 	
-	lang E,      "Can #MON help"
-	lang_next E, "and protect people" 
-	lang_next E, "other than their"
-	lang_next E, "<TRAINER>S?"
+	lang E, db   "Can #MON help"
+	lang E, next "and protect people" 
+	lang E, next "other than their"
+	lang E, next "<TRAINER>S?"
 	
-	lang D,      "Können #MON"
-	lang_next D, "auch Leuten, die"
-	lang_next D, "nicht ihr <TRAINER>"
-	lang_next D, "sind, helfen?"
+	lang D, db   "Können #MON"
+	lang D, next "auch Leuten, die"
+	lang D, next "nicht ihr <TRAINER>"
+	lang D, next "sind, helfen?"
 	
-	lang F,      "?"
+	lang F, db   "?"
 	
-	lang I,      "?"
+	lang I, db   "?"
 	
-	lang S,      "?"
+	lang S, db   "?"
 
 	next "@"
 	
 .question2Text
-	lang J,      "にんげんを　こわがる"
-	lang_next J, "ポケモンがいれば"
-	lang_next J, "それはにんげんのせい？"
+	lang J, db   "にんげんを　こわがる"
+	lang J, next "ポケモンがいれば"
+	lang J, next "それはにんげんのせい？"
 
-	lang E,      "If #MON are"
-	lang_next E, "afraid of humans,"
-	lang_next E, "is that the fault"
-	lang_next E, "of humans?"
+	lang E, db   "If #MON are"
+	lang E, next "afraid of humans,"
+	lang E, next "is that the fault"
+	lang E, next "of humans?"
 	
-	lang D,      "Wenn #MON Angst"
-	lang_next D, "vor Menschen ha-"
-	lang_next D, "ben, sind die Men-"
-	lang_next D, "schen schuld?"
+	lang D, db   "Wenn #MON Angst"
+	lang D, next "vor Menschen ha-"
+	lang D, next "ben, sind die Men-"
+	lang D, next "schen schuld?"
 
-	lang F,      "?"
+	lang F, db   "?"
 	
-	lang I,      "?"
+	lang I, db   "?"
 	
-	lang S,      "?"
+	lang S, db   "?"
 	
 	next "@"
 	
 .question3Text
-	lang J,      "ポケモンをすきなひとが"
-	lang_next J, "ポケモントレーナー　いがいに"
-	lang_next J, "めざすものはある？"
+	lang J, db   "ポケモンをすきなひとが"
+	lang J, next "ポケモントレーナー　いがいに"
+	lang J, next "めざすものはある？"
 	
-	lang E,      "Can people who"
-	lang_next E, "love #MON be"
-	lang_next E, "something aside"
-	lang_next E, "from a #MON"
-	lang_next E, "<TRAINER>?"
+	lang E, db   "Can people who"
+	lang E, next "love #MON be"
+	lang E, next "something aside"
+	lang E, next "from a #MON"
+	lang E, next "<TRAINER>?"
 	
-	lang D,      "Können Menschen,"
-	lang_next D, "#MON lieben"
-	lang_next D, "noch etwas anderes"
-	lang_next D, "sein, als ein"
-	lang_next D, "#MON-<TRAINER>?"
+	lang D, db   "Können Menschen,"
+	lang D, next "#MON lieben"
+	lang D, next "noch etwas anderes"
+	lang D, next "sein, als ein"
+	lang D, next "#MON-<TRAINER>?"
 	
-	lang F,      "?"
+	lang F, db   "?"
 	
-	lang I,      "?"
+	lang I, db   "?"
 	
-	lang S,      "?"
+	lang S, db   "?"
 	
 	next "@"
 	
 .question4Text
-	lang J,      "こどものトレーナーは"
-	lang_next J, "やっぱりおとなのトレーナー"
-	lang_next J, "より　よわい？"
+	lang J, db   "こどものトレーナーは"
+	lang J, next "やっぱりおとなのトレーナー"
+	lang J, next "より　よわい？"
 	
-	lang E,      "Are young <TRAINER>S"
-	lang_next E, "weaker than adult"
-	lang_next E, "<TRAINER>S?"
+	lang E, db   "Are young <TRAINER>S"
+	lang E, next "weaker than adult"
+	lang E, next "<TRAINER>S?"
 	
-	lang D,      "Sind junge <TRAINER>"
-	lang_next D, "schwächer als er-"
-	lang_next D, "wachsene <TRAINER>?"
+	lang D, db   "Sind junge <TRAINER>"
+	lang D, next "schwächer als er-"
+	lang D, next "wachsene <TRAINER>?"
 
-	lang F,      "?"
+	lang F, db   "?"
 	
-	lang I,      "?"
+	lang I, db   "?"
 	
-	lang S,      "?"
+	lang S, db   "?"
 	
 	next "@"
 	
 .question5Text
-	lang J,      "むかしからの　いいつたえは"
-	lang_next J, "すべてウソだとおもう？"
+	lang J, db   "むかしからの　いいつたえは"
+	lang J, next "すべてウソだとおもう？"
 	
-	lang E,      "Do you think the" 
-	lang_next E, "legends of old"
-	lang_next E, "are made-up?"
+	lang E, db   "Do you think the" 
+	lang E, next "legends of old"
+	lang E, next "are made-up?"
 	
-	lang D,      "Glaubst du, die"
-	lang_next D, "alten Legenden"
-	lang_next D, "sind alle frei"
-	lang_next D, "erfunden?"
+	lang D, db   "Glaubst du, die"
+	lang D, next "alten Legenden"
+	lang D, next "sind alle frei"
+	lang D, next "erfunden?"
 	
-	lang F,      "?"
+	lang F, db   "?"
 	
-	lang I,      "?"
+	lang I, db   "?"
 	
-	lang S,      "?"
+	lang S, db   "?"
 	
 	next "@"
-
 	
-	
+	; this is probably the wrong music
+	; but we don't know the right music...
 	news_screen QuizScoreEvaluation, MUSIC_AZALEA_TOWN
 
 	news_def_pals
@@ -521,12 +536,10 @@ ENDM
 	
 	
 	news_def_strings
-	news_string 0, 0, "@" ; ......why?
-IF DEF(_LANG_J)
-	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
-ELSE
-	news_menu  3, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
-ENDC
+	news_string 0, 0, "@" ; at least one string must be specified, else game crashes
+	
+	lang J, news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
+	notlang J, news_menu  3, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
 	
 	news_buttonscript .aButton ; script pointer a button
 	news_buttonscript .aButton ; script pointer b button
@@ -554,8 +567,6 @@ ENDC
 	nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, .textNotAllCorrect
 	nsc_yesno 13, 7, .restartQuiz, .giveUp
-;	nsc_page NewsRoot
-;	nsc_ret
 
 .restartQuiz
 	nsc_clear 1, 13, 18, 4
@@ -570,12 +581,12 @@ ENDC
 	nsc_ret
 	
 .menuItemText
-	lang J, "チエコのひょうか"
-	lang E, "MAIZIE's RATING"
-	lang D, "MAISYs BEWERTUNG"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "チエコのひょうか"
+	lang E, db "MAIZIE's RATING"
+	lang D, db "MAISYs BEWERTUNG"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 	
 .menuItemScript
@@ -631,32 +642,32 @@ ENDC
 
 
 .menuItemDescription
-	lang      J, "？"
+	lang J, db   "？"
 
-	lang      E, "?"
+	lang E, db   "?"
 	
-	lang      D, "?"
+	lang D, db   "?"
 	
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	db "@"
 	
 .textScoreIntro
-	lang_text J, "チエコ『？"
+	lang J, text "チエコ『？"
 	
-	lang_text E, "MAIZIE: ?"
+	lang E, text "MAIZIE: ?"
 	
-	lang_text D, "MAISY: ?"
+	lang D, text "MAISY: ?"
 	
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	
 	para "<……>　<……>　<……>"
@@ -665,110 +676,106 @@ ENDC
 	done
 .textFail
 	; TODO: PLACEHOLDER TEXT
-	lang_text J, "チエコ『すべる"
+	lang J, text "チエコ『すべる"
 	
-	lang_text E, "MAIZIE:"
-	lang_line E, "quiz failed text"
+	lang E, text "MAIZIE:"
+	lang E, line "quiz failed text"
 	
-	lang_text D, "MAISY: Du hast"
-	lang_line D, "nicht bestanden."
+	lang D, text "MAISY: Du hast"
+	lang D, line "nicht bestanden."
 	
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 
 	done
 
 	
 .textPass
 	; TODO: PLACEHOLDER TEXT
-	lang_text J, "チエコ『ごうかく"
+	lang J, text "チエコ『ごうかく"
 	
-	lang_text E, "MAIZIE:"
-	lang_line E, "quiz passed text"
+	lang E, text "MAIZIE:"
+	lang E, line "quiz passed text"
 	
-	lang_text D, "MAISY: Du hast"
-	lang_line D, "bestanden!"
+	lang D, text "MAISY: Du hast"
+	lang D, line "bestanden!"
 	
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 
 .textNotAllCorrect
-	lang_text J, "？"
+	lang J, text "？"
 	
-	lang_text E, "?"
+	lang E, text "?"
 	
-	lang_text D, "?"
+	lang D, text "?"
 	
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 
 .textTryAgain
-	lang_text J, "チエコ『？"
-	lang_text E, "MAIZIE: ?"
-	lang_text D, "MAISY: Versuche es"
-	lang_line D, "noch einmal!"
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
+	lang J, text "チエコ『？"
+	lang E, text "MAIZIE: ?"
+	lang D, text "MAISY: Versuche es"
+	lang D, line "noch einmal!"
+	lang F, text "?"
+	lang I, text "?"
+	lang S, text "?"
 	done
 
 .textGiveGift
-	lang_text J, "？"
+	lang J, text "？"
 	
-	lang_text E, "?"
+	lang E, text "?"
 	
-	lang_text D, "?"
+	lang D, text "?"
 	
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 	
 .textGiveTMGift
-	lang_text J, "？"
-	lang_para J, "わざマシン２２を　もらった！"
+	lang J, text "？"
+	lang J, para "わざマシン２２を　もらった！"
 	
-	lang_text E, "?"
-	lang_para E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "TM22."
+	lang E, text "?"
+	lang E, para ""
+	lang E, nts_start
+	lang E, nts_player_name 0
+	lang E, nts_end
+	lang E, db   " received"
+	lang E, line "TM22."
 	
-	lang_text D, "?"
-	lang_para D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "TM22."
+	lang D, text "?"
+	lang D, para ""
+	lang D, nts_start
+	lang D, nts_player_name 0
+	lang D, nts_end
+	lang D, db   " erhält"
+	lang D, line "TM22."
 
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 

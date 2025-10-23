@@ -1,3 +1,17 @@
+; This is a RE-CREATION based on records
+; from the time and first-hand accounts,
+; NOT actual recovered news data!
+; 
+; See: https://www2u.biglobe.ne.jp/~kakeru/pokemon2/mobile/news/02_08.htm
+; Thanks to nohm for providing their first-hand account of this minigame!
+; 
+; Re-creation script written by Cello2WC
+; English localization by DS
+; German localization by Lesserkuma
+; French localization TODO
+; Italian localization TODO
+; Spanish localization TODO
+
 IF DEF(_MINIGAME_H)
 
 DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 1
@@ -14,20 +28,32 @@ DEF wCurDirection  EQUS "wNumListedPlayers"
 DEF wMathScratch   EQUS "wOwnRank"
 DEF wMathScratch2  EQUS "wNumRankedPlayers"
 
+DEF GIFTINDEX_BERRY        EQU 0
+DEF GIFTINDEX_POKE_DOLL    EQU 1
+DEF GIFTINDEX_PEARL        EQU 2
+DEF GIFTINDEX_BIG_PEARL    EQU 3
+DEF GIFTINDEX_STARDUST     EQU 4
+DEF GIFTINDEX_TM_REST      EQU 5
+DEF GIFTINDEX_PNK_APRICORN EQU 6
+DEF GIFTINDEX_GRN_APRICORN EQU 7
+DEF GIFTINDEX_YLW_APRICORN EQU 8
+DEF wGiftIndex     EQUS "wNewsScratch2"
+
+
 MACRO minigame_start
 	nsc_page CrySetSelect
 ENDM
 
 MACRO minigame_name
 	; Japanese
-	lang J, "ポケモン　つづくかな？"
+	lang J, db "ポケモン　つづくかな？"
 	
 	; English
-	lang E, "#RAP IT UP!"
-	lang D, "#MON-PLAUDEREI!"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang E, db "#RAP IT UP!"
+	lang D, db "#MON-PLAUDEREI!"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 ENDM
 
 ; deprecating this, at least for now, 
@@ -88,44 +114,44 @@ MinigameStart::
 	nsc_ret
 	
 .menuCrySet1Name
-	lang J, "なきごえセット　１"
-	lang E, "CRY SET 1"
-	lang D, "RUF-SET 1"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "なきごえセット　１"
+	lang E, db "CRY SET 1"
+	lang D, db "RUF-SET 1"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .menuCrySet2Name
-	lang J, "なきごえセット　２"
-	lang E, "CRY SET 2"
-	lang D, "RUF-SET 2"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "なきごえセット　２"
+	lang E, db "CRY SET 2"
+	lang D, db "RUF-SET 2"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .menuCrySet3Name
-	lang J, "なきごえセット　３"
-	lang E, "CRY SET 3"
-	lang D, "RUF-SET 3"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "なきごえセット　３"
+	lang E, db "CRY SET 3"
+	lang D, db "RUF-SET 3"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .menuGameInstructionName
-	lang J, "ゲームの　せつめい"
-	lang E, "GAME EXPLANATION"
-	lang D, "SPIELREGELN"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "ゲームの　せつめい"
+	lang E, db "GAME EXPLANATION"
+	lang D, db "SPIELREGELN"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .menuCancelName
-	lang J, "もどる"
-	lang E, "CANCEL"
-	lang D, "ZURÜCK"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "もどる"
+	lang E, db "CANCEL"
+	lang D, db "ZURÜCK"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 	
 MACRO def_cryset
@@ -164,123 +190,124 @@ ENDM
 	
 .menuGameInstructionScript
 	nsc_clear 1, 13, 18, 4
+	nsc_delay 1
 	nsc_textbox 1, 14, .gameInstructionText
 	nsc_ret
 
 .gameInstructionText
 	; Japanese
-	lang_text J, "まず　ゲームに　つかうための"
-	lang_line J, "すきな　なきごえの　セットを"
-	lang_cont J, "えらんで　ください"
+	lang J, text "まず　ゲームに　つかうための"
+	lang J, line "すきな　なきごえの　セットを"
+	lang J, cont "えらんで　ください"
 	
-	lang_para J, "えらぶと　ゲームが　はじまります"
-	lang_line J, "がめんの　まんなかから　みて"
-	lang_cont J, "うえ・した・ひだり・みぎの　どこかに"
-	lang_cont J, "ポケモンが　あらわれて　なきます"
+	lang J, para "えらぶと　ゲームが　はじまります"
+	lang J, line "がめんの　まんなかから　みて"
+	lang J, cont "うえ・した・ひだり・みぎの　どこかに"
+	lang J, cont "ポケモンが　あらわれて　なきます"
 	
-	lang_para J, "そのあと　ポケモンが　がめんの"
-	lang_line J, "どこに　あらわれたか"
-	lang_cont J, "じゅうじボタンで　まちがわず"
-	lang_cont J, "おすことが　できたら　せいかいです"
+	lang J, para "そのあと　ポケモンが　がめんの"
+	lang J, line "どこに　あらわれたか"
+	lang J, cont "じゅうじボタンで　まちがわず"
+	lang J, cont "おすことが　できたら　せいかいです"
 	
-	lang_para J, "ポケモンの　あらわれる　かずは"
-	lang_line J, "だんだん　おおく　なって　いくので"
-	lang_cont J, "じゅんばんを　おぼえて"
-	lang_cont J, "じゅうじボタンで"
-	lang_cont J, "くりかえして　いきましょう"
+	lang J, para "ポケモンの　あらわれる　かずは"
+	lang J, line "だんだん　おおく　なって　いくので"
+	lang J, cont "じゅんばんを　おぼえて"
+	lang J, cont "じゅうじボタンで"
+	lang J, cont "くりかえして　いきましょう"
 	
-	lang_para J, "ぜんぶで　２０かい　じゅんばんを"
-	lang_line J, "ただしく　くりかえせば　クリア！"
-	lang_cont J, "それでは　はじめよう！"
+	lang J, para "ぜんぶで　２０かい　じゅんばんを"
+	lang J, line "ただしく　くりかえせば　クリア！"
+	lang J, cont "それでは　はじめよう！"
 	
 	; English
-	lang_text E, "First, choose a"
-	lang_line E, "cry set to use."
+	lang E, text "First, choose a"
+	lang E, line "cry set to use."
 
-	lang_para E, "Pick the one"
-	lang_line E, "you like best."
+	lang E, para "Pick the one"
+	lang E, line "you like best."
 
-	lang_para E, "Once chosen, the"
-	lang_line E, "game will begin!"
+	lang E, para "Once chosen, the"
+	lang E, line "game will begin!"
 
-	lang_para E, "Watch the center"
-	lang_line E, "of the screen."
+	lang E, para "Watch the center"
+	lang E, line "of the screen."
 
-	lang_para E, "A #MON will let"
-	lang_line E, "out a loud cry!"
+	lang E, para "A #MON will let"
+	lang E, line "out a loud cry!"
 
-	lang_para E, "It will come from"
-	lang_line E, "up, down, left or"
-	lang_cont E, "right--so listen"
-	lang_cont E, "up!"
+	lang E, para "It will come from"
+	lang E, line "up, down, left or"
+	lang E, cont "right--so listen"
+	lang E, cont "up!"
 
-	lang_para E, "Press the matching"
-	lang_line E, "direction on the"
-	lang_cont E, "Control Pad."
+	lang E, para "Press the matching"
+	lang E, line "direction on the"
+	lang E, cont "Control Pad."
 
-	lang_para E, "Get it right and"
-	lang_line E, "you'll move ahead!"
+	lang E, para "Get it right and"
+	lang E, line "you'll move ahead!"
 
-	lang_para E, "More #MON will"
-	lang_line E, "show up each round"
-	lang_cont E, "so try to remember"
-	lang_cont E, "how they appear!"
+	lang E, para "More #MON will"
+	lang E, line "show up each round"
+	lang E, cont "so try to remember"
+	lang E, cont "how they appear!"
 
-	lang_para E, "Wrap up twenty"
-	lang_line E, "rounds in a row"
-	lang_cont E, "to win the game!"
+	lang E, para "Wrap up twenty"
+	lang E, line "rounds in a row"
+	lang E, cont "to win the game!"
 
-	lang_para E, "Let's get started!"
+	lang E, para "Let's get started!"
 	
 	; German
-	lang_text D, "Wähle zunächst"
-	lang_line D, "ein Ruf-Set aus."
+	lang D, text "Wähle zunächst"
+	lang D, line "ein Ruf-Set aus."
 
-	lang_para D, "Wähle dein"
-	lang_line D, "Favoriten-Set."
+	lang D, para "Wähle dein"
+	lang D, line "Favoriten-Set."
 
-	lang_para D, "Danach beginnt"
-	lang_line D, "das Spiel!"
+	lang D, para "Danach beginnt"
+	lang D, line "das Spiel!"
 
-	lang_para D, "Konzentriere dich"
-	lang_line D, "auf die Bild-"
-	lang_cont D, "schirmmitte."
+	lang D, para "Konzentriere dich"
+	lang D, line "auf die Bild-"
+	lang D, cont "schirmmitte."
 
-	lang_para D, "Ein #MON stößt"
-	lang_line D, "seinen Ruf aus!"
+	lang D, para "Ein #MON stößt"
+	lang D, line "seinen Ruf aus!"
 
-	lang_para D, "Es kann von oben,"
-	lang_line D, "unten, links oder"
-	lang_cont D, "rechts kommen."
-	lang_cont D, "Also hör gut zu!"
+	lang D, para "Es kann von oben,"
+	lang D, line "unten, links oder"
+	lang D, cont "rechts kommen."
+	lang D, cont "Also hör gut zu!"
 
-	lang_para D, "Drücke die"
-	lang_line D, "passende Richtung"
-	lang_cont D, "auf dem"
-	lang_cont D, "Steuerkreuz."
+	lang D, para "Drücke die"
+	lang D, line "passende Richtung"
+	lang D, cont "auf dem"
+	lang D, cont "Steuerkreuz."
 
-	lang_para D, "Liegst du richtig,"
-	lang_line D, "geht es in die"
-	lang_cont D, "nächste Runde!"
+	lang D, para "Liegst du richtig,"
+	lang D, line "geht es in die"
+	lang D, cont "nächste Runde!"
 
-	lang_para D, "Mit jeder Runde"
-	lang_line D, "erscheinen mehr"
-	lang_cont D, "#MON. Versuche,"
-	lang_cont D, "dir die Reihen-"
-	lang_cont D, "folge einzuprägen."
+	lang D, para "Mit jeder Runde"
+	lang D, line "erscheinen mehr"
+	lang D, cont "#MON. Versuche,"
+	lang D, cont "dir die Reihen-"
+	lang D, cont "folge einzuprägen."
 
-	lang_para D, "Schaffst du es,"
-	lang_line D, "20 Runden durch-"
-	lang_cont D, "zuhalten, gewinnst"
-	lang_cont D, "du das Spiel!"
+	lang D, para "Schaffst du es,"
+	lang D, line "20 Runden durch-"
+	lang D, cont "zuhalten, gewinnst"
+	lang D, cont "du das Spiel!"
 
-	lang_para D, "Und los geht's!"
+	lang D, para "Und los geht's!"
 		
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang S,      "?"
+	lang S, db   "?"
 
 	para ""
 	done
@@ -325,31 +352,29 @@ ENDM
 	news_norankingstable
 	
 	news_menuitem_names   .pressStartText,  .menuDummyName,   .menuDummyName,   .menuDummyName, .menuDummyName
-	news_menuitem_scripts .cry_up,          .cry_down,        .cry_left,        .cry_right,     .checkNextDir
+	news_menuitem_scripts .cry_up,          .cry_down,        .cry_left,        .cry_right,     .checkNextDir, .drawTextBox
 	news_menuitem_descs   .menuDummyName,   .menuDummyName,   .menuDummyName,   .menuDummyName, .menuDummyName
 	
 	; no record of this text actually existing.
 	; maybe the whole game worked differently??
 .pressStartText
-;	lang J, "スタートボタンを　おして！"
-;	lang E, "PRESS START!"
-;	lang D, "Drücke START!"
-;	lang F, "?"
-;	lang I, "?"
-;	lang S, "?"
+;	lang J, db "スタートボタンを　おして！"
+;	lang E, db "PRESS START!"
+;	lang D, db "Drücke START!"
+;	lang F, db "?"
+;	lang I, db "?"
+;	lang S, db "?"
 
-	lang J, "なきごえセット"
-	lang E, "CRY SET"
-	lang D, "RUF-SET"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "なきごえセット"
+	lang E, db "CRY SET"
+	lang D, db "RUF-SET"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	
 	nts_start
 	nts_number wCurrentCrySet, 1, 2
 	nts_end
-	
-	
 .menuDummyName
 	db "@"
 	
@@ -357,6 +382,12 @@ ENDM
 	nsc_playsound SFX_MENU
 	nsc_page CrySetSelect
 .nothing
+	nsc_ret
+	
+.drawTextBox
+	;nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
+	;nsc_delay 1
+	;nsc_compare wCurrentIndex, .nothing, .nothing, .nothing, 1, 0
 	nsc_ret
 	
 DEF UP_BITS    EQU %00_00_00_00
@@ -381,7 +412,6 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_drawmon  6, 1, CRYSET1_UP_MON, ANIM_MON_NORMAL, 7
 	nsc_clear    6, 1, 7, 7
 	nsc_ret
-;	nsc_delay 3
 .cryset2_up
 	nsc_drawmon  6, 1, CRYSET2_UP_MON, ANIM_MON_NORMAL, 7
 	nsc_clear    6, 1, 7, 7
@@ -481,6 +511,10 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_select
 	
 	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
+	;nsc_set wNewsMenuOption, 5
+	;nsc_select
+	
+	nsc_delay 1
 	nsc_textbox 1, 14, .thisSetText
 	nsc_yesno 13, 7, .useThisSet, .notThisSet
 .notThisSet
@@ -538,13 +572,13 @@ ENDR
 .cry20
 .yourTurn
 
-;IF DEF(_LANG_J)
-;	nsc_printstring 3, 8, .textYourTurn
-;ELSE
-;	nsc_printstring 2, 8, .textYourTurn
-;ENDC
+;	lang    J, nsc_printstring 3, 8, .textYourTurn
+;	notlang J, nsc_printstring 2, 8, .textYourTurn
 
 	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
+	;nsc_set wNewsMenuOption, 5
+	;nsc_select
+	
 	nsc_printstring 1, 14, .textYourTurn
 
 	nsc_playsound SFX_TWINKLE;SFX_HIT_END_OF_EXP_BAR;SFX_TWO_PC_BEEPS
@@ -649,12 +683,21 @@ ENDR
 	nsc_compareram wCurDirection, 1, wMathScratch2, .sequenceWrong, .sequenceRight, .sequenceWrong
 	
 .sequenceWrong
+	; TODO: fix "wawawawawawawa" (return and do prize text on a-script?)
 	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
-	nsc_textbox 1, 14, .textWrong
+	
+	;nsc_delay 1
+	nsc_printstring 1, 14, .textWrong
 	nsc_playsound SFX_WRONG
-	nsc_waitbutton
+	;nsc_waitbutton
 	
 	; intermediate rewards
+	
+	nsc_set wNumListedPlayers, 16
+	;nsc_set wNewsMenuOption, 5
+	;nsc_select
+	nsc_set wNewsMenuOption, 0
+	
 	nsc_compare wCurrentStreak, .prizeDone, .prize5, .prizeGreater1, 1, 5
 .prizeGreater1
 	nsc_compare wCurrentStreak, .prize5, .prize10, .prizeGreater2, 1, 10
@@ -663,7 +706,10 @@ ENDR
 .prize5
 	nsc_giveitem BERRY, .doPrize5, .prizeDone
 .doPrize5
+	nsc_waitbutton
 	nsc_clear 1, 13, 18, 4
+	nsc_delay 1
+	nsc_set wGiftIndex, GIFTINDEX_BERRY
 	nsc_textbox 1, 14, .textPresent1
 	nsc_playsound SFX_ITEM
 	nsc_waitbutton
@@ -672,7 +718,10 @@ ENDR
 .prize10
 	nsc_giveitem POKE_DOLL, .doPrize10, .prizeDone
 .doPrize10
+	nsc_waitbutton
 	nsc_clear 1, 13, 18, 4
+	nsc_delay 1
+	nsc_set wGiftIndex, GIFTINDEX_POKE_DOLL
 	nsc_textbox 1, 14, .textPresent2
 	nsc_playsound SFX_ITEM
 	nsc_waitbutton
@@ -681,11 +730,15 @@ ENDR
 .prize15
 	nsc_giveitem PEARL, .doPrize15, .prizeDone
 .doPrize15
+	nsc_waitbutton
 	nsc_clear 1, 13, 18, 4
+	nsc_delay 1
+	nsc_set wGiftIndex, GIFTINDEX_PEARL
 	nsc_textbox 1, 14, .textPresent3
 	nsc_playsound SFX_ITEM
-	nsc_waitbutton
+	;nsc_waitbutton
 .prizeDone
+	nsc_waitbutton
 	nsc_playmusic MUSIC_SHOW_ME_AROUND
 	nsc_page CrySetSelect
 	
@@ -696,8 +749,13 @@ ENDR
 	
 
 	nsc_add wCurrentStreak, 1
+	
 	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
-	nsc_textbox 1, 14, .textRight
+	;nsc_set wNewsMenuOption, 5
+	;nsc_select
+	
+	;nsc_delay 1
+	nsc_printstring 1, 14, .textRight
 	nsc_playsound SFX_LEVEL_UP
 	;nsc_waitbutton
 	nsc_compare wCurrentStreak, .nextSequence, .allClear, .allClear, 1, 20
@@ -709,7 +767,10 @@ ENDR
 	nsc_ret
 .allClear
 	nsc_clear 1, 13, 18, 4
+	nsc_delay 1
 	nsc_textbox 1, 14, .textAllClear
+	nsc_set wNumListedPlayers, 16
+	nsc_set wNewsMenuOption, 0
 	nsc_waitbutton
 	nsc_compare wCurrentCrySet, .allClearCrySet1, .allClearCrySet2, .allClearCrySet3, 1, 2
 .allClearCrySet1
@@ -719,6 +780,8 @@ ENDR
 .doPrize20_1_1
 	nsc_flagop_newsvar sMinigameFlag, 0, FLAG_SET
 	nsc_clear 1, 13, 18, 4
+	nsc_delay 1
+	nsc_set wGiftIndex, GIFTINDEX_BIG_PEARL
 	nsc_textbox 1, 14, .textPresent4A1
 	nsc_playsound SFX_ITEM
 	nsc_waitbutton
@@ -728,6 +791,8 @@ ENDR
 	nsc_giveitem CRYSET1_BIG_PRIZE_2, 5, .doPrize20_1_2, .prizeDone
 .doPrize20_1_2
 	nsc_clear 1, 13, 18, 4
+	nsc_delay 1
+	nsc_set wGiftIndex, GIFTINDEX_PNK_APRICORN
 	nsc_textbox 1, 14, .textPresent4A2
 	nsc_playsound SFX_ITEM
 	nsc_waitbutton
@@ -740,6 +805,8 @@ ENDR
 .doPrize20_2_1
 	nsc_flagop_newsvar sMinigameFlag, 1, FLAG_SET
 	nsc_clear 1, 13, 18, 4
+	nsc_delay 1
+	nsc_set wGiftIndex, GIFTINDEX_STARDUST
 	nsc_textbox 1, 14, .textPresent4B1
 	nsc_playsound SFX_ITEM
 	nsc_waitbutton
@@ -749,6 +816,8 @@ ENDR
 	nsc_giveitem CRYSET2_BIG_PRIZE_2, 5, .doPrize20_2_2, .prizeDone
 .doPrize20_2_2
 	nsc_clear 1, 13, 18, 4
+	nsc_delay 1
+	nsc_set wGiftIndex, GIFTINDEX_GRN_APRICORN
 	nsc_textbox 1, 14, .textPresent4B2
 	nsc_playsound SFX_ITEM
 	nsc_waitbutton
@@ -761,6 +830,8 @@ ENDR
 .doPrize20_3_1
 	nsc_flagop_newsvar sMinigameFlag, 2, FLAG_SET
 	nsc_clear 1, 13, 18, 4
+	nsc_delay 1
+	nsc_set wGiftIndex, GIFTINDEX_TM_REST
 	nsc_textbox 1, 14, .textPresent4C1
 	nsc_playsound SFX_ITEM
 	nsc_waitbutton
@@ -770,6 +841,8 @@ ENDR
 	nsc_giveitem CRYSET3_BIG_PRIZE_2, 5, .doPrize20_3_2, .prizeDone
 .doPrize20_3_2
 	nsc_clear 1, 13, 18, 4
+	nsc_delay 1
+	nsc_set wGiftIndex, GIFTINDEX_YLW_APRICORN
 	nsc_textbox 1, 14, .textPresent4C2
 	nsc_playsound SFX_ITEM
 	nsc_waitbutton
@@ -779,102 +852,110 @@ ENDR
 	
 .thisSetText
 	; Japanese
-	lang_text J, "このなきごえセットを　つかいますか？"
+	lang J, text "このなきごえセットを　つかいますか？"
 	
 	; English
-	lang_text E, "Do you want to use"
-	lang_line E, "this cry set?"
+	lang E, text "Do you want to use"
+	lang E, line "this cry set?"
+	
 	; German
-	lang_text D, "Möchtest du dieses"
-	lang_line D, "Ruf-Set auswählen?"
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
+	lang D, text "Möchtest du dieses"
+	lang D, line "Ruf-Set auswählen?"
+	lang F, text "?"
+	lang I, text "?"
+	lang S, text "?"
 	done
 	
 ; center-aligned version
 ;.textYourTurn
-;	lang J,      "　　あなたの　ばんです！"
-;	lang_next J, "じゅうじボタンを　おしてね！"
+;	lang J, db   "　　あなたの　ばんです！"
+;	lang J, next "じゅうじボタンを　おしてね！"
 ;	
-;	lang E,      " Your turn! Use"
-;	lang_next E, "the Control Pad!"
+;	lang E, db   " Your turn! Use"
+;	lang E, next "the Control Pad!"
 ;	
-;	lang D,      "  Du bist dran!"
-;   lang_next D, "   Drücke das"
-;   lang_next D, "  Steuerkreuz!"
+;	lang D, db   "  Du bist dran!"
+;   lang D, next "   Drücke das"
+;   lang D, next "  Steuerkreuz!"
 ;	
-;	lang F,      "?"
+;	lang F, db   "?"
 ;	
-;	lang I,      "?"
+;	lang I, db   "?"
 ;	
-;	lang S,      "?"
+;	lang S, db   "?"
 ;	
 ;	db "@"
 	
 ; left-aligned version
 .textYourTurn
 	; Japanese
-	lang J,      "あなたの　ばんです！"
-	lang_next J, "じゅうじボタンを　おしてね！"
+	lang J, db   "あなたの　ばんです！"
+	lang J, next "じゅうじボタンを　おしてね！"
 	
 	; English
-	lang E,      "Your turn! Use"
-	lang_next E, "the Control Pad!"
+	lang E, db   "Your turn! Use"
+	lang E, next "the Control Pad!"
 	
 	; German
-	lang D,      "Du bist dran!"
-	lang_next D, "Drücke das"
-	lang_next D, "Steuerkreuz!"
+	lang D, db   "Du bist dran!"
+	lang D, next "Drücke das"
+	lang D, next "Steuerkreuz!"
 	
-	lang F,      "?"
+	lang F, db   "?"
 	
-	lang I,      "?"
+	lang I, db   "?"
 	
-	lang S,      "?"
+	lang S, db   "?"
 	
 	db "@"
 
 .textRight
 	; Japanese
-	lang_text J, "せいかい！！"
+	lang J, db   "せいかい！！"
 	
 	; English
-	lang_text E, "Correct!"
-	lang_text D, "Richtig!"
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
-	done
+	lang E, db   "Correct!"
+	
+	; German
+	lang D, db   "Richtig!"
+	
+	lang F, db   "?"
+	lang I, db   "?"
+	lang S, db   "?"
+	db "@"
 	
 .textWrong
 	; Japanese
-	lang_text J, "ざんねん…まちがえちゃった！"
+	lang J, db   "ざんねん…まちがえちゃった！"
 	
 	; English
-	lang_text E, "Oops…"
-	lang_line E, "You messed up!"
+	lang E, db   "Oops…"
+	lang E, next "You messed up!"
+	
 	; German
-	lang_text D, "Schade… Das war"
-	lang_line D, "nicht richtig!"
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
-	done
+	lang D, db   "Schade… Das war"
+	lang D, next "nicht richtig!"
+	
+	lang F, db   "?"
+	lang I, db   "?"
+	lang S, db   "?"
+	db "@"
 	
 .textAllClear
 	; Japanese
-	lang_text J, "２０もんクリア！　おめでとう！"
+	lang J, text "２０もんクリア！　おめでとう！"
 	
 	; English
-	lang_text E, "You wrapped up all"
-	lang_line E, "twenty! Well done!"
+	lang E, text "You wrapped up all"
+	lang E, line "twenty! Well done!"
+	
 	; German
-	lang_text D, "20 Runden ge-"
-	lang_line D, "schafft! Klasse!"
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
+	lang D, text "20 Runden ge-"
+	lang D, line "schafft! Klasse!"
+	
+	lang F, text "?"
+	lang I, text "?"
+	lang S, text "?"
 	done
 	
 	
@@ -882,391 +963,262 @@ ENDR
 	;       as in the minigame title. literally it would be smth like
 	;       "since you continued × times", if the minigame's name is "will it continue?"
 .textPresent1
-	; Japanese
-	lang_text J, "５かい　いじょう　つづいたので"
-	lang_line J, "きのみを　プレゼント！"
-	lang_para J, "きのみを　もらった！"
-	
-	; English
-	lang_text E, "You wrapped up"
-	lang_line E, "five rounds!"
-	
-	lang_para E, "Here! Take this"
-	lang_line E, "BERRY as a gift!"
-	lang_para E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "BERRY."
-	
-	; German
-	lang_text D, "Du hast fünf Run-"
-	lang_line D, "den durchgehalten!"
-	
-	lang_para D, "Hier! Nimm diese"
-	lang_line D, "BEERE als"
-	lang_cont D, "Geschenk!"
-	lang_para D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "BEERE."
-	
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
-	done
-	
 .textPresent2
-	; Japanese
-	lang_text J, "１０かい　いじょう　つづいたので"
-	lang_line J, "ピッピにんぎょうを　プレゼント！"
-	lang_para J, "ピッピにんぎょうを　もらった！"
-	
-	; English
-	lang_text E, "You wrapped up"
-	lang_line E, "ten rounds!"
-	
-	lang_para E, "Here! Take this"
-	lang_line E, "# DOLL as a"
-	lang_cont E, "gift!"
-	lang_para E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "# DOLL."
-	
-	; German
-	lang_text D, "Du hast zehn Run-"
-	lang_line D, "den durchgehalten!"
-	
-	lang_para D, "Hier! Nimm diese"
-	lang_line D, "#PUPPE als"
-	lang_cont D, "Geschenk!"
-	lang_para D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "#PUPPE."
-	
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
-	done
-
 .textPresent3
-	; Japanese
-	lang_text J, "１５かい　いじょう　つづいたので"
-	lang_line J, "しんじゅを　プレゼント！"
-	lang_para J, "しんじゅを　もらった！"
-	
-	; English
-	lang_text E, "You wrapped up"
-	lang_line E, "fifteen rounds!"
-	
-	lang_para E, "Here! Take this"
-	lang_line E, "PEARL as a"
-	lang_cont E, "gift!"
-	lang_para E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "PEARL."
-	
-	; German
-	lang_text D, "Du hast 15 Runden"
-	lang_line D, "durchgehalten!"
-	
-	lang_para D, "Hier! Nimm diese"
-	lang_line D, "PERLE als"
-	lang_cont D, "Geschenk!"
-	lang_para D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "PERLE."
-
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
-	done
-	
 .textPresent4A1
-	; Japanese
-	lang_text J, "２０かい　いじょう　つづいたので"
-	lang_line J, "おおきなしんじゅを　プレゼント！"
-	lang_para J, "おおきなしんじゅを　もらった！"
-	
-	; English
-	lang_text E, "You wrapped up"
-	lang_line E, "twenty rounds!"
-	
-	lang_para E, "Here! Take this"
-	lang_line E, "BIG PEARL as a"
-	lang_cont E, "gift!"	
-	lang_para E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "BIG PEARL."
-	
-	; German
-	lang_text D, "Du hast 20 Runden"
-	lang_line D, "durchgehalten!"
-	
-	lang_para D, "Hier! Nimm diese"
-	lang_line D, "RIESENPERLE als"
-	lang_cont D, "Geschenk!"
-	lang_para D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "RIESENPERLE."
-
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
-	done
-	
 .textPresent4A2
-	; Japanese
-	lang_text J, "２０かい　いじょう　つづいたので"
-	lang_line J, "ももぼんぐりを　プレゼント！"
-	lang_para J, "ももぼんぐりを　もらった！"
-	
-	; English
-	lang_text E, "You wrapped up"
-	lang_line E, "twenty rounds!"
-	
-	lang_para E, "Here! Take this"
-	lang_line E, "PNK APRICORN"
-	lang_cont E, "as a gift!"
-	lang_para E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "PNK APRICORN."
-	
-	; German
-	lang_text D, "Du hast 20 Runden"
-	lang_line D, "durchgehalten!"
-	
-	lang_para D, "Hier! Nimm diese"
-	lang_line D, "APRIKOKO PNK"
-	lang_cont D, "als Geschenk!"
-	lang_para D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "APRIKOKO PNK."
-	
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
-	done
-	
-	
 .textPresent4B1
+.textPresent4B2
+.textPresent4C1
+.textPresent4C2
+.textPresent
 	; Japanese
-	lang_text J, "２０かい　いじょう　つづいたので"
-	lang_line J, "ほしのすなを　プレゼント！"
-	lang_para J, "ほしのすなを　もらった！"
+	lang J, text
+	lang J, nts_start
+	lang J, nts_number wCurrentStreak, 1, 2, 2
+	lang J, nts_end
+	lang J, text "かい　いじょう　つづいたので"
+	lang J, line 
+	lang J, nts_start
+	lang J, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
+	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
+	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
+	lang J, db   "を　プレゼント！"
+	
+	lang J, para
+	lang J, nts_start
+	lang J, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
+	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
+	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
+	lang J, db "を　もらった！"
 	
 	; English
-	lang_text E, "You wrapped up"
-	lang_line E, "twenty rounds!"
+	lang E, text "You wrapped up"
+	lang E, line
+	lang E, nts_start
+	lang E, nts_number wCurrentStreak, 1, 2, 3
+	lang E, nts_end
+	lang E, db   "rounds!"
 	
-	lang_para E, "Here! Take this"
-	lang_line E, "STARDUST as a"
-	lang_cont E, "gift!"
-	lang_para E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "STARDUST."
+	lang E, para "Here! Take"
+	lang E, line "this "
+	lang E, nts_start
+	lang E, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
+	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
+	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
+	;lang E, nts_end
+	lang E, cont   "as a gift!"
 	
-	; German
-	lang_text D, "Du hast 20 Runden"
-	lang_line D, "durchgehalten!"
-	
-	lang_para D, "Hier! Nimm diesen"
-	lang_line D, "STERNENSTAUB als"
-	lang_cont D, "Geschenk!"
-	lang_para D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "STERNENSTAUB."
-	
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
-	done
-	
-.textPresent4B2
-	; Japanese
-	lang_text J, "２０かい　いじょう　つづいたので"
-	lang_line J, "みどぼんぐりを　プレゼント！"
-	lang_para J, "みどぼんぐりを　もらった！"
-
-	; English	
-	lang_text E, "You wrapped up"
-	lang_line E, "twenty rounds!"
-	
-	lang_para E, "Here! Take this"
-	lang_line E, "GRN APRICORN"
-	lang_cont E, "as a gift!"
-	lang_para E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "GRN APRICORN."
-
-	; German
-	lang_text D, "Du hast 20 Runden"
-	lang_line D, "durchgehalten!"
-	
-	lang_para D, "Hier! Nimm diese"
-	lang_line D, "APRIKOKO GRN"
-	lang_cont D, "als Geschenk!"
-	lang_para D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "APRIKOKO GRN."
-	
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
-	done
-	
-	
-.textPresent4C1
-	; Japanese
-	lang_text J, "２０かい　いじょう　つづいたので"
-	lang_line J, "わざマシン４４を　プレゼント！"
-	lang_para J, "わざマシン４４を　もらった！"
-
-	; English	
-	lang_text E, "You wrapped up"
-	lang_line E, "twenty rounds!"
-	
-	lang_para E, "Here! Take this"
-	lang_line E, "TM44 as a gift!"
-	lang_para E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "TM44."
+	lang E, para
+	lang E, nts_start
+	lang E, nts_player_name 0
+	lang E, nts_end
+	lang E, db   " received"
+	lang E, line
+	lang E, nts_start
+	lang E, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
+	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
+	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
+	;lang E, nts_end
+	lang E, db   "."
 	
 	; German
-	lang_text D, "Du hast 20 Runden"
-	lang_line D, "durchgehalten!"
+	lang D, text "Du hast "
+	lang D, nts_start
+	lang D, nts_number wCurrentStreak, 1, 2, 3
+	lang D, nts_end
+	lang D, db   " Run-"
+	lang D, line "den durchgehalten!"
 	
-	lang_para D, "Hier! Nimm diese"
-	lang_line D, "TM44 als"
-	lang_cont D, "Geschenk!"
-	lang_para D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "TM44."
+	lang D, para "Hier! Nimm diese"
+	lang D, line
+	lang D, nts_start
+	lang D, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
+	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
+	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
+	;lang D, nts_end
+	lang D, db   " als"
+	lang D, cont "Geschenk!"
 	
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
+	lang D, para
+	lang D, nts_start
+	lang D, nts_player_name 0
+	lang D, nts_end
+	lang D, db   " erhält"
+	lang D, line
+	lang D, nts_start
+	lang D, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
+	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
+	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
+	;lang D, nts_end
+	lang D, db   "."
+	
+	; French
+	lang F, text "?"
+	lang F, nts_start
+	lang F, nts_number wCurrentStreak, 1, 2, 3
+	lang F, nts_end
+	lang F, db   "?"
+	
+	lang F, para "?"
+	lang F, nts_start
+	lang F, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
+	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
+	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
+	;lang F, nts_end
+	lang F, db   "?"
+	
+	lang F, para
+	lang F, nts_start
+	lang F, nts_player_name 0
+	lang F, nts_end
+	lang F, db   "?"
+	lang F, line
+	lang F, nts_start
+	lang F, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
+	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
+	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
+	;lang F, nts_end
+	lang F, db   "?"
+	
+	; Italian
+	lang I, text "?"
+	lang I, nts_start
+	lang I, nts_number wCurrentStreak, 1, 2, 3
+	lang I, nts_end
+	lang I, db   "?"
+	
+	lang I, para "?"
+	lang I, nts_start
+	lang I, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
+	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
+	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
+	;lang I, nts_end
+	lang I, db   "?"
+	
+	lang I, para
+	lang I, nts_start
+	lang I, nts_player_name 0
+	lang I, nts_end
+	lang I, db   "?"
+	lang I, line
+	lang I, nts_start
+	lang I, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
+	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
+	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
+	;lang I, nts_end
+	lang I, db   "?"
+	
+	; Spanish
+	lang S, text "?"
+	lang S, nts_start
+	lang S, nts_number wCurrentStreak, 1, 2, 3
+	lang S, nts_end
+	lang S, db   "?"
+	
+	lang S, para "?"
+	lang S, nts_start
+	lang S, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
+	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
+	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
+	;lang S, nts_end
+	lang S, db   "?"
+	
+	lang S, para
+	lang S, nts_start
+	lang S, nts_player_name 0
+	lang S, nts_end
+	lang S, db   "?"
+	lang S, line
+	lang S, nts_start
+	lang S, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
+	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
+	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
+	;lang S, nts_end
+	lang S, db   "?"
+	
 	done
 	
-.textPresent4C2
-	; Japanese
-	lang_text J, "２０かい　いじょう　つづいたので"
-	lang_line J, "きぼんぐりを　プレゼント！"
-	lang_para J, "きぼんぐりを　もらった！"
-
-	; English		
-	lang_text E, "You wrapped up"
-	lang_line E, "twenty rounds!"
 	
-	lang_para E, "Here! Take this"
-	lang_line E, "YLW APRICORN"
-	lang_cont E, "as a gift!"
-	lang_para E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "YLW APRICORN."
+.itemName_BERRY
+	lang J, db "きのみ"
+	lang E, db "BERRY"
+	lang D, db "BEERE"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
+	db "@"
 	
-	; German
-	lang_text D, "Du hast 20 Runden"
-	lang_line D, "durchgehalten!"
+.itemName_POKE_DOLL
+	lang J, db "ピッピにんぎょう"
+	lang E, db "# DOLL"
+	lang D, db "#PUPPE"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
+	db "@"
 	
-	lang_para D, "Hier! Nimm diese"
-	lang_line D, "APRIKOKO GLB"
-	lang_cont D, "als Geschenk!"
-	lang_para D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "APRIKOKO GLB."
+.itemName_PEARL
+	lang J, db "しんじゅ"
+	lang E, db "PEARL"
+	lang D, db "PERLE"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
+	db "@"
 	
-	lang_text F, "?"
-	lang_text I, "?"
-	lang_text S, "?"
-	done
+.itemName_BIG_PEARL
+	lang J, db "おおきなしんじゅ"
+	lang E, db "BIG PEARL"
+	lang D, db "RIESENPERLE"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
+	db "@"
 	
+.itemName_STARDUST
+	lang J, db "ほしのすな"
+	lang E, db "STARDUST"
+	lang D, db "STERNENSTAUB"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
+	db "@"
+	
+.itemName_TM_REST
+	lang J, db "わざマシン４４"
+	lang E, db "TM44"
+	lang D, db "TM44"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
+	db "@"
+	
+.itemName_PNK_APRICORN
+	lang J, db "ももぼんぐり"
+	lang E, db "PNK APRICORN"
+	lang D, db "APRIKOKO PNK"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
+	db "@"
+	
+.itemName_GRN_APRICORN
+	lang J, db "みどぼんぐり"
+	lang E, db "GRN APRICORN"
+	lang D, db "APRIKOKO GRN"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
+	db "@"
+	
+.itemName_YLW_APRICORN
+	lang J, db "きぼんぐり"
+	lang E, db "YLW APRICORN"
+	lang D, db "APRIKOKO GLB"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
+	db "@"
 
 ENDC

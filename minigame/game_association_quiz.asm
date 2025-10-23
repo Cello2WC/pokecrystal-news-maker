@@ -1,3 +1,17 @@
+; This is a RE-CREATION based on records
+; from the time and first-hand accounts,
+; NOT actual recovered news data!
+; 
+; See: https://www2u.biglobe.ne.jp/~kakeru/pokemon2/mobile/news/02_09.htm
+; Thanks to nohm for providing their first-hand account of this minigame!
+; 
+; Re-creation script written by Cello2WC
+; English localization by DS
+; German localization by Lesserkuma
+; French localization TODO
+; Italian localization TODO
+; Spanish localization TODO
+
 IF DEF(_MINIGAME_H)
 
 DEF PERSISTENT_MINIGAME_DATA_SIZE EQU 1
@@ -11,14 +25,12 @@ DEF wChain EQUS "wNewsScratch4"
 MACRO minigame_start
 	nsc_set wChain, 0
 	
-	
 	nsc_clear 1, 13, 18, 4
 	nsc_compare_newsvar sMinigameFlag, .noIntro, .doIntro, .noIntro, 1, 0
 .doIntro
 	nsc_textbox 1, 14, .gameIntroText
 	nsc_waitbutton
 .noIntro
-	
 	; TODO: this is a bodge...
 	nsc_ramcopy hRandomAdd, wHint1, 1
 	nsc_flagop wHint1, 3, FLAG_CLEAR
@@ -94,75 +106,76 @@ MACRO minigame_start
 	
 .gameIntroText
 	; Japanese
-	lang_text J, "がめんの　ひだりがわに"
-	lang_line J, "３つの　ヒントが　でます"
+	lang J, text "がめんの　ひだりがわに"
+	lang J, line "３つの　ヒントが　でます"
 	
-	lang_para J, "ヒントに　あてはまる　ポケモンを"
-	lang_line J, "がめんの　みぎがわから　えらんで"
-	lang_cont J, "エーボタンで　こたえて　ください"
+	lang J, para "ヒントに　あてはまる　ポケモンを"
+	lang J, line "がめんの　みぎがわから　えらんで"
+	lang J, cont "エーボタンで　こたえて　ください"
 	
-	lang_para J, "５もん　つづけて　あたれば　クリア！"
-	lang_line J, "それでは　はじめよう！"
+	lang J, para "５もん　つづけて　あたれば　クリア！"
+	lang J, line "それでは　はじめよう！"
 	
 	; English
-	lang_text E, "Three hints will"
-	lang_line E, "appear at the top"
-	lang_cont E, "of the screen."
+	lang E, text "Three hints will"
+	lang E, line "appear at the top"
+	lang E, cont "of the screen."
 	
-	lang_para E, "Pick the #MON"
-	lang_line E, "that fits the"
-	lang_cont E, "hints."
+	lang E, para "Pick the #MON"
+	lang E, line "that fits the"
+	lang E, cont "hints."
 	
-	lang_para E, "Choose from the" 
-	lang_line E, "bottom and Press A"
-	lang_cont E, "to answer."	
+	lang E, para "Choose from the" 
+	lang E, line "bottom and Press A"
+	lang E, cont "to answer."	
 	
-	lang_para E, "Get five right in"
-	lang_line E, "a row to clear"
-	lang_cont E, "the quiz!"
+	lang E, para "Get five right in"
+	lang E, line "a row to clear"
+	lang E, cont "the quiz!"
 	
-	lang_para E, "Let's get started!"
+	lang E, para "Let's get started!"
 	
 	; German
-	lang_text D, "Du erhältst drei"
-	lang_line D, "Hinweise am oberen"
-	lang_cont D, "Bildschirmrand."
+	lang D, text "Du erhältst drei"
+	lang D, line "Hinweise am oberen"
+	lang D, cont "Bildschirmrand."
 
-	lang_para D, "Wähle das #MON,"
-	lang_line D, "das zu den"
-	lang_cont D, "Hinweisen passt."
+	lang D, para "Wähle das #MON,"
+	lang D, line "das zu den"
+	lang D, cont "Hinweisen passt."
 
-	lang_para D, "Wähle unten deine"
-	lang_line D, "Antwort und drücke"
-	lang_cont D, "dann den A-Knopf."
+	lang D, para "Wähle unten deine"
+	lang D, line "Antwort und drücke"
+	lang D, cont "dann den A-Knopf."
 
-	lang_para D, "Um zu gewinnen,"
-	lang_line D, "musst du fünf Mal"
-	lang_cont D, "hintereinander"
-	lang_cont D, "richtig liegen."
+	lang D, para "Um zu gewinnen,"
+	lang D, line "musst du fünf Mal"
+	lang D, cont "hintereinander"
+	lang D, cont "richtig liegen."
 
-	lang_para D, "Und los geht's!"
+	lang D, para "Und los geht's!"
 	
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 ENDM
 
 MACRO minigame_name
 	; Japanese
-	lang J, "#　れんそうクイズ！"
+	lang J, db "#　れんそうクイズ！"
 	
 	; English
-	lang E, "#MON WORD QUIZ"
+	lang E, db "#MON WORD QUIZ"
+	
 	; German
-	lang D, "#MON WORT-QUIZ"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "#MON WORT-QUIZ"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 ENDM
 
 ; deprecating this, at least for now, 
@@ -180,54 +193,30 @@ MinigameStart::
 	;news_box  0,  0, 20, 18, {NEWS_MAIN_BORDER}
 ;	news_box  0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	
-IF DEF(_LANG_J)
 	news_def_strings
-	news_string 1, 2, ""
+	lang    J, news_string 1, 2, ""
+	notlang J, news_string 1, 2, ""
 	nts_start
 	nts_switch wHint1, .textHintA1, .textHintA2, .textHintA3, .textHintA4
 	nts_end
-	;next
-	news_string 1, 4, ""
+	
+	lang    J, news_string 1, 4, ""
+	notlang J, news_string 1, 4, ""
 	nts_start
 	nts_switch wHint2, .textHintB1, .textHintB2, .textHintB3, .textHintB4,\
 					   .textHintB5, .textHintB6, .textHintB7, .textHintB8
 	nts_end
-	;next
-	news_string 1, 6, ""
+	
+	lang    J, news_string 1, 6, ""
+	notlang J, news_string 1, 6, ""
 	nts_start
 	nts_switch wHint3, .textHintC01, .textHintC02, .textHintC03, .textHintC04,\
 	                   .textHintC05, .textHintC06, .textHintC07, .textHintC08,\
 	                   .textHintC09, .textHintC10, .textHintC11, .textHintC12
 	nts_end
-	;db "@"
 	
-	news_menu 13, 2, 1, 8, 0, 2, 5, 1, 16, 8, 0, 8
-	;news_menu 11, 2, 1, 8, 0, 2, 5, 4, 7, 4, 0, 4
-	;news_menu 2, 5, 1, 4, 0, 2, 16, $04, $07, $04, SHOW_ARROWS | SHOW_DESCRIPTIONS, $04
-ELSE
-	news_def_strings
-	news_string 1, 2, ""
-	nts_start
-	nts_switch wHint1, .textHintA1, .textHintA2, .textHintA3, .textHintA4
-	nts_end
-	;next
-	news_string 1, 4, ""
-	nts_start
-	nts_switch wHint2, .textHintB1, .textHintB2, .textHintB3, .textHintB4,\
-					   .textHintB5, .textHintB6, .textHintB7, .textHintB8
-	nts_end
-	;next
-	news_string 1, 6, ""
-	nts_start
-	nts_switch wHint3, .textHintC01, .textHintC02, .textHintC03, .textHintC04,\
-	                   .textHintC05, .textHintC06, .textHintC07, .textHintC08,\
-	                   .textHintC09, .textHintC10, .textHintC11, .textHintC12
-	nts_end
-	;db "@"
-	
-	news_menu 5, 10, 1, 4, 0, 2, 10, 9, 7, 3, SHOW_ARROWS, 8
-	;news_menu 2, 5, 1, 4, 0, 2, 16, $04, $07, $04, SHOW_ARROWS | SHOW_DESCRIPTIONS, $04
-ENDC
+	lang    J, news_menu 13, 2, 1, 8, 0, 2, 5, 1, 16, 8, 0, 8
+	notlang J, news_menu 5, 10, 1, 4, 0, 2, 10, 9, 7, 3, SHOW_ARROWS, 8
 	
 	news_buttonscript .a_button
 	news_buttonscript .b_button
@@ -324,8 +313,6 @@ ENDC
 	
 	nsc_textbox 1, 14, .textRightAnswer
 	nsc_waitbutton
-	
-	;nsc_bit wChain, 0, .generate_question, .generate_question
 	; fall thru
 
 
@@ -474,12 +461,12 @@ ENDM
 	nsc_page ChainQuiz
 
 .answer1Name
-	lang J, "ケンタロス"
-	lang E, "TAUROS"
-	lang D, "TAUROS"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "ケンタロス"
+	lang E, db "TAUROS"
+	lang D, db "TAUROS"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 .answer1Desc
 .answer2Desc
 .answer3Desc
@@ -491,504 +478,482 @@ ENDM
 	db "@"
 	
 .answer2Name
-	lang J, "ワニノコ"
-	lang E, "TOTODILE"
-	lang D, "KARNIMANI"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "ワニノコ"
+	lang E, db "TOTODILE"
+	lang D, db "KARNIMANI"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 	
 .answer3Name
-	lang J, "ニューラ"
-	lang E, "SNEASEL"
-	lang D, "SNIEBEL"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "ニューラ"
+	lang E, db "SNEASEL"
+	lang D, db "SNIEBEL"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 	
 .answer4Name
-	lang J, "サンド"
-	lang E, "SANDSHREW"
-	lang D, "SANDAN"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "サンド"
+	lang E, db "SANDSHREW"
+	lang D, db "SANDAN"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 	
 .answer5Name
-	lang J, "ガラガラ"
-	lang E, "MAROWAK"
-	lang D, "KNOGGA"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "ガラガラ"
+	lang E, db "MAROWAK"
+	lang D, db "KNOGGA"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 	
 .answer6Name
-	lang J, "スリーパー"
-	lang E, "HYPNO"
-	lang D, "HYPNO"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "スリーパー"
+	lang E, db "HYPNO"
+	lang D, db "HYPNO"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 	
 .answer7Name
-	lang J, "ヤドン"
-	lang E, "SLOWPOKE"
-	lang D, "FLEGMON"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "ヤドン"
+	lang E, db "SLOWPOKE"
+	lang D, db "FLEGMON"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 	
 .answer8Name
-	lang J, "カモネギ"
-	lang E, "FARFETCH'D"
-	lang D, "PORENTA"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "カモネギ"
+	lang E, db "FARFETCH'D"
+	lang D, db "PORENTA"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
-	
-; this is a bodge...
-;.questionPreset1
-;	db 3, 0,  7, TAUROS
-;.questionPreset2
-;	db 1, 2,  0, TOTODILE
-;.questionPreset3
-;	db 0, 0,  0, SNEASEL
-;.questionPreset4
-;	db 2, 1,  7, SANDSHREW
-;.questionPreset5
-;	db 3, 4,  9, MAROWAK
-;.questionPreset6
-;	db 0, 5,  5, HYPNO
-;.questionPreset7
-;	db 0, 7, 10, SLOWPOKE
-;.questionPreset8
-;	db 2, 6, 11, FARFETCH_D
-
-
 
 .textHintA1
 	; Japanese
-	lang J, "ノーマル　ではない"
-	lang E, "Not NORMAL type."
-	lang D, "Kein NORMAL-Typ."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "ノーマル　ではない"
+	lang E, db "Not NORMAL type."
+	lang D, db "Kein NORMAL-Typ."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintA2
 	; Japanese
-	lang J, "ひこう　ではない"
+	lang J, db "ひこう　ではない"
 	
 	; English
-	lang E, "Not FLYING type."
+	lang E, db "Not FLYING type."
 	; German
-	lang D, "Kein FLUG-Typ."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Kein FLUG-Typ."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintA3
 	; Japanese
-	lang J, "こおり　ではない"
+	lang J, db "こおり　ではない"
 	
 	; English
-	lang E, "Not ICE type."
+	lang E, db "Not ICE type."
 	; German
-	lang D, "Kein EIS-Typ."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Kein EIS-Typ."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintA4
 	; Japanese
-	lang J, "あく　ではない"
+	lang J, db "あく　ではない"
 	
 	; English
-	lang E, "Not DARK type."
+	lang E, db "Not DARK type."
 	; German
-	lang D, "Kein UNLICHT-Typ."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Kein UNLICHT-Typ."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 
 .textHintB1
 	; Japanese
-	lang J, "しっぽが　わかれてる"
+	lang J, db "しっぽが　わかれてる"
 	
 	; English
-	lang E, "Its tail is split."
+	lang E, db "Its tail is split."
 	; German
-	lang D, "Schweif gespalten."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Schweif gespalten."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintB2
 	; Japanese
-	lang J, "みみが　とがっている"
+	lang J, db "みみが　とがっている"
 	
 	; English
-	lang E, "Has pointy ears."
+	lang E, db "Has pointy ears."
 	; German
-	lang D, "Spitze Ohren."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Spitze Ohren."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintB3
 	; Japanese
-	lang J, "きばが　ある"
+	lang J, db "きばが　ある"
 	
 	; English
-	lang E, "Has pointy teeth."
+	lang E, db "Has pointy teeth."
 	; German
-	lang D, "Spitze Zähne."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Spitze Zähne."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintB4
 	; Japanese
-	lang J, "しんか　できる"
+	lang J, db "しんか　できる"
 	
 	; English
-	lang E, "It evolves."
+	lang E, db "It evolves."
 	; German
-	lang D, "Entwickelt sich."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Entwickelt sich."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintB5
 	; Japanese
-	lang J, "なにか　かぶっている"
+	lang J, db "なにか　かぶっている"
 	
 	; English
-	lang E, "Wears a headpiece."
+	lang E, db "Wears a headpiece."
 	; German
-	lang D, "Hat Kopfbedeckung."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Hat Kopfbedeckung."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintB6
 	; Japanese
-	lang J, "なにか　もっている"
+	lang J, db "なにか　もっている"
 	
 	; English
-	lang E, "Holds something."
+	lang E, db "Holds something."
 	; German
-	lang D, "Trägt etwas."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Trägt etwas."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintB7
 	; Japanese
-	lang J, "おでこにワンポイント"
+	lang J, db "おでこにワンポイント"
 	
 	; English
-	lang E, "Has forehead mark."
+	lang E, db "Has forehead mark."
 	; German
-	lang D, "Stirn-Markerung."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Stirn-Markerung."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintB8
 	; Japanese
-	lang J, "タマゴから　うまれる"
+	lang J, db "タマゴから　うまれる"
 	
 	; English
-	lang E, "Comes from an EGG."
+	lang E, db "Comes from an EGG."
 	; German
-	lang D, "Schlüpft aus EI."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Schlüpft aus EI."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 
 .textHintC01
 	; Japanese
-	lang J, "いあいぎり　できる"
+	lang J, db "いあいぎり　できる"
 	
 	; English
-	lang E, "Can use CUT."
+	lang E, db "Can use CUT."
 	; German
-	lang D, "Kann ZERSCHNEIDER."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Kann ZERSCHNEIDER."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintC02 ; NOTE: Not recorded as existing
 	; Japanese
-	lang J, "いあいぎり　できない"
+	lang J, db "いあいぎり　できない"
 	
 	; English
-	lang E, "Can't use CUT."
+	lang E, db "Can't use CUT."
 	; German
-	lang D, "Kein ZERSCHNEIDER."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Kein ZERSCHNEIDER."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintC03
 	; Japanese
-	lang J, "なみのり　できる"
+	lang J, db "なみのり　できる"
 	
 	; English
-	lang E, "Can use SURF."
+	lang E, db "Can use SURF."
 	; German
-	lang D, "Kann SURFER."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Kann SURFER."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintC04
 	; Japanese
-	lang J, "なみのり　できない"
+	lang J, db "なみのり　できない"
 	
 	; English
-	lang E, "Can't use SURF."
+	lang E, db "Can't use SURF."
 	; German
-	lang D, "Kein SURFER."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Kein SURFER."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintC05
 	; Japanese
-	lang J, "かいりき　できる"
+	lang J, db "かいりき　できる"
 	
 	; English
-	lang E, "Can use STRENGTH."
+	lang E, db "Can use STRENGTH."
 	; German
-	lang D, "Kann STÄRKE."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Kann STÄRKE."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintC06
 	; Japanese
-	lang J, "かいりき　できない"
+	lang J, db "かいりき　できない"
 	
 	; English
-	lang E, "Can't use STRENGTH."
+	lang E, db "Can't use STRENGTH."
 	; German
-	lang D, "Kein STÄRKE."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Kein STÄRKE."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintC07
 	; Japanese
-	lang J, "フラッシュ　できる"
+	lang J, db "フラッシュ　できる"
 	
 	; English
-	lang E, "Can use FLASH."
+	lang E, db "Can use FLASH."
 	; German
-	lang D, "Kann BLITZ."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Kann BLITZ."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintC08
 	; Japanese
-	lang J, "フラッシュ　できない"
+	lang J, db "フラッシュ　できない"
 	
 	; English
-	lang E, "Can't use FLASH."
+	lang E, db "Can't use FLASH."
 	; German
-	lang D, "Kein BLITZ."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Kein BLITZ."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintC09
 	; Japanese
-	lang J, "うずしお　できる"
+	lang J, db "うずしお　できる"
 	
 	; English
-	lang E, "Can use WHIRLPOOL."
+	lang E, db "Can use WHIRLPOOL."
 	; German
-	lang D, "Kann KASKADE."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Kann KASKADE."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintC10 ; NOTE: Not recorded as existing
 	; Japanese
-	lang J, "うずしお　できない"
+	lang J, db "うずしお　できない"
 	
 	; English
-	lang E, "Can't use"
-	lang_next E, "WHIRLPOOL."
+	lang E, db "Can't use"
+	lang E, next "WHIRLPOOL."
 	; German
-	lang D, "Kein KASKADE."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Kein KASKADE."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintC11
 	; Japanese
-	lang J, "たいあたり　できる"
+	lang J, db "たいあたり　できる"
 	
 	; English
-	lang E, "Can use TACKLE."
+	lang E, db "Can use TACKLE."
 	; German
-	lang D, "Kann TACKLE."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Kann TACKLE."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 .textHintC12 ; NOTE: Not recorded as existing
 	; Japanese
-	lang J, "たいあたり　できない"
+	lang J, db "たいあたり　できない"
 	
 	; English
-	lang E, "Can't use TACKLE."
+	lang E, db "Can't use TACKLE."
 	; German
-	lang D, "Kein TACKLE."
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang D, db "Kein TACKLE."
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 	
 	
 	
 .textWrongAnswer
 	; Japanese
-	lang_text J, "ざんねん！　はずれだよ…"
+	lang J, text "ざんねん！　はずれだよ…"
 	
 	; English	
-	lang_text E, "Too bad…"
-	lang_line E, "That was wrong!"
+	lang E, text "Too bad…"
+	lang E, line "That was wrong!"
 	
 	; German
-	lang_text D, "Schade…"
-	lang_line D, "Falsche Antwort!"
+	lang D, text "Schade…"
+	lang D, line "Falsche Antwort!"
 	
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 .textRightAnswer
 	; Japanese
-	lang_text J, "せいかい！"
-	lang_line J, "つぎの　もんだい　だよ"
+	lang J, text "せいかい！"
+	lang J, line "つぎの　もんだい　だよ"
 	
 	; English
-	lang_text E, "Correct! "
-	lang_line E, "Next question!"
+	lang E, text "Correct! "
+	lang E, line "Next question!"
 	
 	; German
-	lang_text D, "Richtig!"
-	lang_line D, "Nächste Frage!"
+	lang D, text "Richtig!"
+	lang D, line "Nächste Frage!"
 	
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 .textChainComplete
 	; Japanese
-	lang_text J, "５もんせいかい　おめでとう！"
-	lang_line J, "わざマシン３５を　プレゼント！"
-	lang_para J, "わざマシン３５を　もらった！"
+	lang J, text "５もんせいかい　おめでとう！"
+	lang J, line "わざマシン３５を　プレゼント！"
+	
+	lang J, para "わざマシン３５を　もらった！"
 	
 	; English
-	lang_text E, "Five in a row!"
-	lang_line E, "Congratulations!"
+	lang E, text "Five in a row!"
+	lang E, line "Congratulations!"
 	
-	lang_para E, "Here's TM35 as"
-	lang_line E, "a gift!"
-	lang_para E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "TM35."
+	lang E, para "Here's TM35 as"
+	lang E, line "a gift!"
+	
+	lang E, para
+	lang E, nts_start
+	lang E, nts_player_name 0
+	lang E, nts_end
+	lang E, db   " received"
+	lang E, line "TM35."
 	
 	; German
-	lang_text D, "Fünf Richtige!"
-	lang_line D, "Glückwunsch!"
+	lang D, text "Fünf Richtige!"
+	lang D, line "Glückwunsch!"
 	
-	lang_para D, "Du erhältst TM35"
-	lang_line D, "als Geschenk!"
-	lang_para D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "TM35."
+	lang D, para "Du erhältst TM35"
+	lang D, line "als Geschenk!"
 	
-	lang_text F, "?"
+	lang D, para
+	lang D, nts_start
+	lang D, nts_player_name 0
+	lang D, nts_end
+	lang D, db   " erhält"
+	lang D, line "TM35."
 	
-	lang_text I, "?"
+	lang F, text "?"
 	
-	lang_text S, "?"
+	lang I, text "?"
+	
+	lang S, text "?"
 	
 	done
 	
 .textChainComplete2
 	; Japanese
-	lang_text J, "５もんせいかい　おめでとう！"
-	lang_line J, "すごいキズぐすりを　プレゼント！"
-	lang_para J, "すごいキズぐすりを　もらった！"
+	lang J, text "５もんせいかい　おめでとう！"
+	lang J, line "すごいキズぐすりを　プレゼント！"
+	
+	lang J, para "すごいキズぐすりを　もらった！"
 	
 	; English
-	lang_text E, "Five in a row!"
-	lang_line E, "Congratulations!"
+	lang E, text "Five in a row!"
+	lang E, line "Congratulations!"
 	
-	lang_para E, "Here's a HYPER"
-	lang_line E, "POTION as a gift!"
-	lang_para E, ""
-IF DEF(_LANG_E)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      E, " received"
-	lang_line E, "HYPER POTION."
+	lang E, para "Here's a HYPER"
+	lang E, line "POTION as a gift!"
+	
+	lang E, para
+	lang E, nts_start
+	lang E, nts_player_name 0
+	lang E, nts_end
+	lang E, db   " received"
+	lang E, line "HYPER POTION."
 	
 	; German
-	lang_text D, "Fünf Richtige!"
-	lang_line D, "Glückwunsch!"
+	lang D, text "Fünf Richtige!"
+	lang D, line "Glückwunsch!"
 	
-	lang_para D, "Du erhältst einen"
-	lang_line D, "HYPERTRANK"
-	lang_cont D, "als Geschenk!"
-	lang_para D, ""
-IF DEF(_LANG_D)
-	nts_start
-	nts_player_name 0
-	nts_end
-ENDC
-	lang      D, " erhält"
-	lang_line D, "HYPERTRANK."
+	lang D, para "Du erhältst einen"
+	lang D, line "HYPERTRANK"
+	lang D, cont "als Geschenk!"
 	
-	lang_text F, "?"
+	lang D, para
+	lang D, nts_start
+	lang D, nts_player_name 0
+	lang D, nts_end
+	lang D, db   " erhält"
+	lang D, line "HYPERTRANK."
 	
-	lang_text I, "?"
+	lang F, text "?"
 	
-	lang_text S, "?"
+	lang I, text "?"
+	
+	lang S, text "?"
 	
 	done
 	

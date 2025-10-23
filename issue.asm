@@ -30,23 +30,23 @@ SECTION "Download Text", ROM0[$2000]
 
 	db PERSISTENT_MINIGAME_DATA_SIZE
 	
-	lang      J, "ディバグ　はっこう！"
-	lang_line J, "{d:__UTC_YEAR__}とし　{d:__UTC_MONTH__}がつ　{d:__UTC_DAY__}にち"
+	lang J, db   "ディバグ　はっこう！"
+	lang J, line "{d:__UTC_YEAR__}とし　{d:__UTC_MONTH__}がつ　{d:__UTC_DAY__}にち"
 	
-	lang      E, "Debug Issue"
-	lang_line E, __DATE__
+	lang E, db   "Debug Issue"
+	lang E, line __DATE__
 	
-	lang      D, "Debug-Ausgabe"
-	lang_line D, __DATE__
+	lang D, db   "Debug-Ausgabe"
+	lang D, line __DATE__
 	
-	lang F, ""
-	lang_line F, __DATE__
+	lang F, db ""
+	lang F, line __DATE__
 	
-	lang      I, ""
-	lang_line I, __DATE__
+	lang I, db   ""
+	lang I, line __DATE__
 	
-	lang      S, ""
-	lang_line S, __DATE__
+	lang S, db   ""
+	lang S, line __DATE__
 
 
 SECTION "News", ROM0[$0000]
@@ -63,12 +63,12 @@ SECTION "News", ROM0[$0000]
 
 	news_def_strings
 	news_string 1, 2, "";"<TRAINER> RANKING@"
-	lang J, "ポケモンニュース　そうかんごう";"ポケモンニュース"
-	lang E, "#MON NEWS No.1";"#MON NEWS No.0"
-	lang D, "NACHRICHTEN Nr. 1";"NACHRICHTEN Nr. 0"
-	lang F, "INFOS PKMN No.1";"INFOS PKMN No.0"
-	lang I, "NOTIZIE PKMN Nº1";"NOTIZIE PKMN Nº0"
-	lang S, "?"
+	lang J, db "ポケモンニュース　そうかんごう";"ポケモンニュース"
+	lang E, db "#MON NEWS No.1";"#MON NEWS No.0"
+	lang D, db "NACHRICHTEN Nr. 1";"NACHRICHTEN Nr. 0"
+	lang F, db "INFOS PKMN No.1";"INFOS PKMN No.0"
+	lang I, db "NOTIZIE PKMN Nº1";"NOTIZIE PKMN Nº0"
+	lang S, db "?"
 	db "@"
 
 	;news_menu 2, 5, 1, 4, 0, 2, $10, $04, $07, $04, $02, $04
@@ -145,21 +145,21 @@ ENDC
 	nsc_ret
 
 .menuNewsGuideName
-	lang J, "ニュースガイド"
-	lang E, "NEWS GUIDE"
-	lang D, "NACHRICHTEN-INFO"
-	lang F, "GUIDE des INFOS"
-	lang I, "GUIDA NOTIZIE"
-	lang S, "?"
+	lang J, db "ニュースガイド"
+	lang E, db "NEWS GUIDE"
+	lang D, db "NACHRICHTEN-INFO"
+	lang F, db "GUIDE des INFOS"
+	lang I, db "GUIDA NOTIZIE"
+	lang S, db "?"
 	db "@"
 	
 .menuTrainerRankingsName
-	lang J, "トレーナーランキング"
-	lang E, "TRAINER RANKINGS"
-	lang D, "BESTENLISTE"
-	lang F, "CLASSEMENTE"
-	lang I, "CLASSIFICA ALLEN."
-	lang S, "?"
+	lang J, db "トレーナーランキング"
+	lang E, db "TRAINER RANKINGS"
+	lang D, db "BESTENLISTE"
+	lang F, db "CLASSEMENTE"
+	lang I, db "CLASSIFICA ALLEN."
+	lang S, db "?"
 	db "@"
 .menuMinigameName
 	minigame_name
@@ -174,21 +174,21 @@ ENDR
 ENDC
 
 .menuAboutFeesName
-	lang J, "りょうきんについて"
-	lang E, "ABOUT FEES"
-	lang D, "GEBÜHREN-INFOS"
-	lang F, "?"
-	lang I, "?"
-	lang S, "?"
+	lang J, db "りょうきんについて"
+	lang E, db "ABOUT FEES"
+	lang D, db "GEBÜHREN-INFOS"
+	lang F, db "?"
+	lang I, db "?"
+	lang S, db "?"
 	db "@"
 
 .menuQuitName
-	lang J, "やめる"
-	lang E, "CANCEL"
-	lang D, "ZURÜCK"
-	lang F, "RETOUR"
-	lang I, "ESCI"
-	lang S, "?"
+	lang J, db "やめる"
+	lang E, db "CANCEL"
+	lang D, db "ZURÜCK"
+	lang F, db "RETOUR"
+	lang I, db "ESCI"
+	lang S, db "?"
 	db "@"
 
 .menuNewsGuideScript
@@ -226,103 +226,103 @@ ENDC
 	nsc_ret
 	
 .newsGuideText
-	lang_text J, "#ニュース　そうかんごうでは"
-	lang_line J, "<TRAINER>ランキングと"
-	lang_cont J, "#カルトクイズで"
-	lang_cont J, "おたのしみ　ください！"
-	lang_para J, "あなた<NO>ランキング<NO>せいせきは"
-	lang_line J, "ランキング<NO>こうしん<WO>すれば"
-	lang_cont J, "なんどでも　かきかえられるので"
-	lang_cont J, "がんばれば　トップ<NI>なれるかも！"
+	lang J, text "#ニュース　そうかんごうでは"
+	lang J, line "<TRAINER>ランキングと"
+	lang J, cont "#カルトクイズで"
+	lang J, cont "おたのしみ　ください！"
+	lang J, para "あなた<NO>ランキング<NO>せいせきは"
+	lang J, line "ランキング<NO>こうしん<WO>すれば"
+	lang J, cont "なんどでも　かきかえられるので"
+	lang J, cont "がんばれば　トップ<NI>なれるかも！"
 
-	lang_text E, "We hope you enjoy"
-	lang_line E, "the <TRAINER> RANK-"
-	lang_cont E, "INGS and #MON"
-	lang_cont E, "QUIZ in issue No.1"
-	lang_para E, "You can update"
-	lang_line E, "your ranking at"
-	lang_cont E, "any time."
-	lang_para E, "If you work hard"
-	lang_line E, "you can reach the"
-	lang_cont E, "top!"
+	lang E, text "We hope you enjoy"
+	lang E, line "the <TRAINER> RANK-"
+	lang E, cont "INGS and #MON"
+	lang E, cont "QUIZ in issue No.1"
+	lang E, para "You can update"
+	lang E, line "your ranking at"
+	lang E, cont "any time."
+	lang E, para "If you work hard"
+	lang E, line "you can reach the"
+	lang E, cont "top!"
 	
-	lang_text D, "Wir hoffen, dir"
-	lang_line D, "gefallen die"
-	lang_para D, "<TRAINER>-BESTEN-"
-	lang_line D, "LISTE und das"
-	lang_para D, "#MON-QUIZ in"
-	lang_line D, "Ausgabe Nr. 1!"
-	lang_para D, "Du kannst deinen"
-	lang_line D, "Rang jederzeit"
-	lang_cont D, "aktualisieren."
-	lang_para D, "Gib dein Bestes,"
-	lang_line D, "um einen hohen"
-	lang_cont D, "Rang zu erreichen!"
+	lang D, text "Wir hoffen, dir"
+	lang D, line "gefallen die"
+	lang D, para "<TRAINER>-BESTEN-"
+	lang D, line "LISTE und das"
+	lang D, para "#MON-QUIZ in"
+	lang D, line "Ausgabe Nr. 1!"
+	lang D, para "Du kannst deinen"
+	lang D, line "Rang jederzeit"
+	lang D, cont "aktualisieren."
+	lang D, para "Gib dein Bestes,"
+	lang D, line "um einen hohen"
+	lang D, cont "Rang zu erreichen!"
 	
-	lang_text F, "Nous espérons que"
-	lang_line F, "vous apprécierez"
-	lang_para F, "Le CLASSEMENT"
-	lang_line F, "et le QUIZ #-"
-	lang_cont F, "MON dans la"
-	lang_cont F, "parution No.1"
-	lang_para F, "Vous pouvez mettre"
-	lang_line F, "à jour votre"
-	lang_cont F, "classement"
-	lang_cont F, "n'importe quand."
-	lang_para F, "Si vous"
-	lang_line F, "travaillez dur"
-	lang_cont F, "vous atteindrez"
-	lang_cont F, "le sommet!"
+	lang F, text "Nous espérons que"
+	lang F, line "vous apprécierez"
+	lang F, para "Le CLASSEMENT"
+	lang F, line "et le QUIZ #-"
+	lang F, cont "MON dans la"
+	lang F, cont "parution No.1"
+	lang F, para "Vous pouvez mettre"
+	lang F, line "à jour votre"
+	lang F, cont "classement"
+	lang F, cont "n'importe quand."
+	lang F, para "Si vous"
+	lang F, line "travaillez dur"
+	lang F, cont "vous atteindrez"
+	lang F, cont "le sommet!"
 	
-	lang_text I, "Ci auguriamo che"
-	lang_line I, "la CLASSIFICA"
-	lang_para I, "ALLENATORI e il"
-	lang_line I, "QUIZ #MON"
-	lang_para I, "nella prima"
-	lang_line I, "edizione ti"
-	lang_cont I, "piacciano."
-	lang_para I, "Puoi aggiornare"
-	lang_line I, "la classifica"
-	lang_cont I, "quando vuoi."
-	lang_para I, "Se lavori sodo,"
-	lang_line I, "raggiungerai la"
-	lang_cont I, "vetta!"
+	lang I, text "Ci auguriamo che"
+	lang I, line "la CLASSIFICA"
+	lang I, para "ALLENATORI e il"
+	lang I, line "QUIZ #MON"
+	lang I, para "nella prima"
+	lang I, line "edizione ti"
+	lang I, cont "piacciano."
+	lang I, para "Puoi aggiornare"
+	lang I, line "la classifica"
+	lang I, cont "quando vuoi."
+	lang I, para "Se lavori sodo,"
+	lang I, line "raggiungerai la"
+	lang I, cont "vetta!"
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	done
 	
 .aboutFeesText
-	lang_text J, "？"
+	lang J, text "？"
 	
-	lang_text E, "?"
+	lang E, text "?"
 	
-	lang_text D, "?"
+	lang D, text "?"
 	
-	lang_text F, "?"
+	lang F, text "?"
 	
-	lang_text I, "?"
+	lang I, text "?"
 	
-	lang_text S, "?"
+	lang S, text "?"
 	
 	done
 
 .menuDesc
 	; Japanese
-	lang      J, "メニュー<WO>えらんでください"
+	lang J, db   "メニュー<WO>えらんでください"
 	; English
-	lang      E, "Please choose"
-	lang_line E, "a menu."
+	lang E, db   "Please choose"
+	lang E, line "a menu."
 	
 	; German
-	lang      D, "Bitte wähle ein"
-	lang_line D, "Menü aus."
+	lang D, db   "Bitte wähle ein"
+	lang D, line "Menü aus."
 	
-	lang      F, "?"
+	lang F, db   "?"
 	
-	lang      I, "?"
+	lang I, db   "?"
 	
-	lang      S, "?"
+	lang S, db   "?"
 	
 	db "@"
 	
@@ -331,42 +331,42 @@ ENDC
 ;       record of descriptions of minigames, etc. from published issues
 
 ;.menuNewsGuideDesc
-;	lang      J, "よみこんだ　ニュースを"
-;	lang_line J, "かんたん<NI>せつめいします"
+;	lang J, db   "よみこんだ　ニュースを"
+;	lang J, line "かんたん<NI>せつめいします"
 ;
-;	lang      E, "Read an explan-"
-;	lang_line E, "ation of the NEWS."
+;	lang E, db   "Read an explan-"
+;	lang E, line "ation of the NEWS."
 ;	
-;	lang      D, "Eine Erklärung zu"
-;	lang_line D, "den NACHRICHTEN."
+;	lang D, db   "Eine Erklärung zu"
+;	lang D, line "den NACHRICHTEN."
 ;	
-;	lang      F, "Lire les explica-"
-;	lang_line F, "tions des INFOS."
+;	lang F, db   "Lire les explica-"
+;	lang F, line "tions des INFOS."
 ;	
-;	lang      I, "Leggi la spiegazi-"
-;	lang_line I, "one delle NOTIZIE."
+;	lang I, db   "Leggi la spiegazi-"
+;	lang I, line "one delle NOTIZIE."
 ;	
-;	lang      S, "?"
+;	lang S, db   "?"
 ;	
 ;	db "@"
 	
 ;.menuTrainerRankingsDesc
-;	lang      J, "３つ<NO>テーマで"
-;	lang_line J, "ランキング<WO>します！"
+;	lang J, db   "３つ<NO>テーマで"
+;	lang J, line "ランキング<WO>します！"
 ;	
-;	lang      E, "Triple-theme"
-;	lang_line E, "<TRAINER> ranking!"
+;	lang E, db   "Triple-theme"
+;	lang E, line "<TRAINER> ranking!"
 ;	
-;	lang      D, "Dreifache Trainer-"
-;	lang_line D, "Bestenliste!"
+;	lang D, db   "Dreifache Trainer-"
+;	lang D, line "Bestenliste!"
 ;	
-;	lang      F, "Classement des"
-;	lang_line F, "dresseurs!"
+;	lang F, db   "Classement des"
+;	lang F, line "dresseurs!"
 ;	
-;	lang      I, "Classifiche allen-"
-;	lang_line I, "atore a tema."
+;	lang I, db   "Classifiche allen-"
+;	lang I, line "atore a tema."
 ;	
-;	lang      S, "?"
+;	lang S, db   "?"
 ;	
 ;	db "@"
 ;.menuMinigameDesc
@@ -383,22 +383,22 @@ ENDC
 ;ENDC
 ;	
 ;.menuQuitDesc
-;	lang      J, "ニュース<WO>みるのを"
-;	lang_line J, "やめます"
+;	lang J, db   "ニュース<WO>みるのを"
+;	lang J, line "やめます"
 ;	
-;	lang      E, "Finish reading"
-;	lang_line E, "the NEWS."
+;	lang E, db   "Finish reading"
+;	lang E, line "the NEWS."
 ;	
-;	lang      D, "Lesen der NACH-"
-;	lang_line D, "RICHTEN beenden."
+;	lang D, db   "Lesen der NACH-"
+;	lang D, line "RICHTEN beenden."
 ;	
-;	lang      F, "Arrêter de lire"
-;	lang_line F, "les INFOS."
+;	lang F, db   "Arrêter de lire"
+;	lang F, line "les INFOS."
 ;	
-;	lang      I, "Stop lettura"
-;	lang_line I, "NOTIZIE."
+;	lang I, db   "Stop lettura"
+;	lang I, line "NOTIZIE."
 ;	
-;	lang      S, "?"
+;	lang S, db   "?"
 ;	
 ;	db "@"
 

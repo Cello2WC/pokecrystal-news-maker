@@ -470,7 +470,7 @@ ENDR
 .menuitems_desc
 	lang J, db "なきごえは　どれ？"
 	lang E, db "Which cry is it?"
-	lang D, db "Wessen Ruf ist es?"
+	lang D, db "Welcher Ruf passt?"
 	lang F, db "?"
 	lang I, db "?"
 	lang S, db "?"
@@ -502,7 +502,7 @@ ENDR
 .which_cry_question_duplicate ; $04FC
 	lang J, db "なきごえは　どれ？"
 	lang E, db "Which cry is it?"
-	lang D, db "Wessen Ruf ist es?"
+	lang D, db "Welcher Ruf passt?"
 	lang F, db "?"
 	lang I, db "?"
 	lang S, db "?"

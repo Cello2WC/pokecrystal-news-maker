@@ -859,8 +859,8 @@ ENDR
 	lang E, line "this cry set?"
 	
 	; German
-	lang D, text "Möchtest du dieses"
-	lang D, line "Ruf-Set auswählen?"
+	lang D, text "Wählst du dieses"
+	lang D, line "Ruf-Set?"
 	lang F, text "?"
 	lang I, text "?"
 	lang S, text "?"
@@ -1030,7 +1030,7 @@ ENDR
 	lang D, db   " Run-"
 	lang D, line "den durchgehalten!"
 	
-	lang D, para "Hier! Nimm diese"
+	lang D, para "Hier! Nimm bitte"
 	lang D, line
 	lang D, nts_start
 	lang D, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \

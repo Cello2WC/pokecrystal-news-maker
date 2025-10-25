@@ -87,8 +87,8 @@ MACRO minigame_start
 	
 	lang D, text "MAISY: nuschel"
 	lang D, line "nuschel AZALEA"
-	lang D, para "nuschel nuschel"
-	lang D, line "KURTs Enkelin"
+	lang D, para "CITY nuschel"
+	lang D, line "nuschel KURT"
 	lang D, para "nuschel nuschel"
 	lang D, line "Zeitreise"
 	
@@ -704,10 +704,10 @@ ENDM
 	lang E, next "backwards after"
 	lang E, next "using WATERFALL?"
 	
-	lang D, db   "Blickst du nach"
-	lang D, next "dem Einsatz von"
-	lang D, next "KASKADE nach"
-	lang D, next "unten?"
+	lang D, db   "Richtet sich dein"
+	lang D, next "Blick nach dem"
+	lang D, next "Einsatz von KAS-"
+	lang D, next "KADE nach unten?"
 	
 	lang F, db   "?"
 	

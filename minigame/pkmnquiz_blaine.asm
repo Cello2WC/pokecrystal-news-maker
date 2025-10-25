@@ -306,7 +306,7 @@ ENDM
 	lang D, next "BOOTSTICKET gab?"
 	lang D, next "1. Stärker werden"
 	lang D, next "2. EICH grüßen"
-	lang D, next "3. Weiter touren"
+	lang D, next "3. Weiter reisen"
 	
 	lang F, db   "?"
 	
@@ -1166,7 +1166,7 @@ ENDM
 	lang D, cont "lich nicht zu"
 	lang D, cont "lösen sein!"
 	
-	lang D, para "Du hattest wohl"
+	lang D, para "Du hattest sicher"
 	lang D, line "einfach nur Glück!"
 	
 	lang F, text "?"
@@ -1322,8 +1322,8 @@ ENDM
 	lang D, line "Daran gibt es"
 	lang D, cont "nichts zu rütteln!"
 	
-	lang D, para "Ich gebe dir eine"
-	lang D, line "Belohnung!"
+	lang D, para "Ich überreiche dir"
+	lang D, line "eine Belohnung!"
 	
 	lang D, para "Nimm diese TM,"
 	lang D, line "sie enthält die"
@@ -1413,8 +1413,8 @@ ENDM
 	lang D, text "PYRO: Irgendwann"
 	lang D, line "kehre ich zurück,"
 	
-	lang D, para "stärker als je"
-	lang D, line "zuvor!"
+	lang D, para "noch stärker als"
+	lang D, line "je zuvor!"
 	
 	lang D, para "Hah!"
 	

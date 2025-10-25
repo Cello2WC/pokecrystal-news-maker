@@ -141,7 +141,7 @@ MACRO minigame_start
 	lang D, cont "Bildschirmrand."
 
 	lang D, para "Wähle das #MON,"
-	lang D, line "das zu den"
+	lang D, line "das genau zu den"
 	lang D, cont "Hinweisen passt."
 
 	lang D, para "Wähle unten deine"
@@ -172,7 +172,7 @@ MACRO minigame_name
 	lang E, db "#MON WORD QUIZ"
 	
 	; German
-	lang D, db "#MON WORT-QUIZ"
+	lang D, db "#MON-WORT-QUIZ"
 	lang F, db "?"
 	lang I, db "?"
 	lang S, db "?"
@@ -892,7 +892,7 @@ ENDM
 	lang E, line "TM35."
 	
 	; German
-	lang D, text "Fünf Richtige!"
+	lang D, text "Fünf Treffer!"
 	lang D, line "Glückwunsch!"
 	
 	lang D, para "Du erhältst TM35"
@@ -935,7 +935,7 @@ ENDM
 	lang E, line "HYPER POTION."
 	
 	; German
-	lang D, text "Fünf Richtige!"
+	lang D, text "Fünf Treffer!"
 	lang D, line "Glückwunsch!"
 	
 	lang D, para "Du erhältst einen"

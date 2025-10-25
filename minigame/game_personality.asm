@@ -64,10 +64,10 @@ MACRO minigame_start
 	lang D, line "dem <TRAINER>-"
 	lang D, cont "CHECK-UP!"
 
-	lang D, para "Du erhältst nach"
-	lang D, line "nur deinem ersten"
-	lang D, cont "Check-Up ein"
-	lang D, cont "Geschenk!"
+	lang D, para "Du erhältst nur"
+	lang D, line "nach deinem"
+	lang D, cont "ersten Check-Up"
+	lang D, cont "ein Geschenk!"
 	
 	lang D, para "Das Ergebnis be-"
 	lang D, line "einflusst die Art"
@@ -661,7 +661,8 @@ ENDM
 	lang D, db   "Die #MON"
 	lang D, next "in meinen PC-"
 	lang D, next "BOXEN sind alle"
-	lang D, next "schön geordnet."
+	lang D, next "sorgfältig"
+	lang D, next "geordnet."
 
 	lang F, db   "?"
 	
@@ -932,7 +933,7 @@ ENDM
 	lang D, para "Eine egoistische"
 	lang D, line "Einstellung wird"
 	lang D, cont "dich nicht weit"
-	lang D, cont "bringen!"
+	lang D, cont "voran bringen!"
 	
 	lang D, para "Tja, wenn du deine"
 	lang D, line "Meinung änderst,"
@@ -1024,7 +1025,7 @@ ENDM
 	
 	; German
 	lang D, text "Du bist ein"
-	lang D, line "ASS-TRAINER!"
+	lang D, line "ASS-<TRAINER>!"
 	
 	lang D, para "Du kümmerst dich"
 	lang D, line "beispielhaft um"
@@ -1069,7 +1070,7 @@ ENDM
 	; German
 	lang D, text "Damit du noch mehr"
 	lang D, line "Vorteile im Kampf"
-	lang D, cont "hast, nimm dieses"
+	lang D, cont "hast, nimm ein"
 	lang D, cont "AP-PLUS!"
 	
 	lang D, para
@@ -1217,7 +1218,7 @@ ENDM
 	lang D, text "Hier ist noch ein"
 	lang D, line "Geschenk für dich!"
 	
-	lang D, para "Es ist"
+	lang D, para "Es ist etwas"
 	lang D, line "SILBERSTAUB!"
 	lang D, cont "Mach weiter so!"
 	
@@ -1374,7 +1375,7 @@ ENDM
 	lang D, cont "Lass sie reden."
 
 	lang D, para "Egal, was irgend-"
-	lang D, line "wer sagt…"
+	lang D, line "jemand sagt…"
 
 	lang D, para "Und selbst wenn"
 	lang D, line "dein Schwarm dir"

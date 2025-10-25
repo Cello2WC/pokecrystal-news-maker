@@ -122,11 +122,11 @@ MACRO minigame_start
 	lang D, para "Als Hinweis zeigt"
 	lang D, line "dir die LISTE alle"
 	lang D, cont "möglichen #MON-"
-	lang D, cont "Spezies an."
+	lang D, cont "Arten an."
 	
 	lang D, para "Es zählt die im"
-	lang D, line "#DEX verzeichnete"
-	lang D, cont "Größe."
+	lang D, line "#DEX verzeich-"
+	lang D, cont "nete Größe."
 	
 	lang D, para "Um zu gewinnen,"
 	lang D, line "musst du sieben"

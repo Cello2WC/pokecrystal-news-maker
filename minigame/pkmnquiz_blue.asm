@@ -458,7 +458,7 @@ ENDM
 	; German
 	lang D, db   "Das Schild oben"
 	lang D, next "auf der PRISMANIA-"
-	lang D, next "VILLA besagt: “Ich"
+	lang D, next "VILLA besagt: “ICH"
 	lang D, next "… ALLES!”"
 	lang D, next "1. TUE 2. WEISS"
 	lang D, next "3. HABE"
@@ -823,9 +823,10 @@ ENDM
 	lang D, text "Hey, nicht eine"
 	lang D, line "richtige Antwort?"
 	
-	lang D, para "Ich wusste es,"
-	lang D, line "du bist dem nicht"
-	lang D, cont "gewachsen."
+	lang D, para "Ich wusste es!"
+	
+	lang D, para "Du bist dem nicht"
+	lang D, line "gewachsen."
 	lang D, cont "Netter Versuch!"
 
 	
@@ -932,9 +933,9 @@ ENDM
 	
 	lang D, para "Du bist möglicher-"
 	lang D, line "weise gut in"
-	lang D, cont "#MON-Kämpfen,"
+	lang D, cont "#MON-Kämpfen."
 	
-	lang D, para "aber darüber"
+	lang D, para "Aber darüber"
 	lang D, line "hinaus?"
 	lang D, cont "Nicht wirklich!"
 	
@@ -1003,14 +1004,14 @@ ENDM
 	lang D, line "wenigstens"
 	lang D, cont "anzustrengen."
 	
-	lang D, para "Na ja, immerhin"
-	lang D, line "habe ich mir das"
-	lang D, cont "alles ganz alleine"
-	lang D, cont "ausgedacht!"
+	lang D, para "Na ja, dafür habe"
+	lang D, line "ich mir das alles"
+	lang D, para "ganz alleine"
+	lang D, line "ausgedacht!"
 	
 	lang D, para "Die restlichen"
 	lang D, line "fünf Fragen waren"
-	lang D, cont "wohl zu heiß!"
+	lang D, cont "aber wohl zu heiß!"
 	
 	lang F, text "?"
 	
@@ -1074,8 +1075,8 @@ ENDM
 	
 	lang D, para "Ich hätte nicht"
 	lang D, line "erwartet, dass du"
-	lang D, cont "so viele Antworten"
-	lang D, cont "weißt…"
+	lang D, para "so viele Antworten"
+	lang D, line "weißt…"
 	
 	lang F, text "?"
 	

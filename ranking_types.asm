@@ -24,8 +24,12 @@ DEF RANKING_GAME_TIME_HOF_UNIT EQUS ""
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_GAME_TIME_HOF_NAME EQUS "LAST HOF RECORD"
+; Custom Description
 MACRO describe_ranking_GAME_TIME_HOF
-	para "?"
+	para "The amount of time"
+	line "played since the"
+	cont "last entry into"
+	cont "the HALL OF FAME."
 ENDM
 DEF RANKING_GAME_TIME_HOF_UNIT EQUS ""
 
@@ -80,8 +84,13 @@ DEF RANKING_STEP_COUNT_HOF_UNIT EQUS ""
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_STEP_COUNT_HOF_NAME EQUS "LAST HOF STEPS"
+; Custom Description
 MACRO describe_ranking_STEP_COUNT_HOF
-	para "?"
+	para "The amount of"
+	line "steps walked since"
+	cont "the last entry"
+	cont "into the HALL OF"
+	cont "FAME."
 ENDM
 DEF RANKING_STEP_COUNT_HOF_UNIT EQUS " steps"
 REDEF RANKING_STEP_COUNT_HOF_SPACING EQU -1
@@ -137,8 +146,14 @@ DEF RANKING_HEALINGS_HOF_UNIT EQUS ""
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_HEALINGS_HOF_NAME EQUS "LAST HOF HEALED"
+; Custom Description
 MACRO describe_ranking_HEALINGS_HOF
-	para "?"
+	para "The amount of"
+	line "times the party"
+	cont "has been fully"
+	cont "healed since the"
+	cont "last entry into"
+	cont "the HALL OF FAME."
 ENDM
 DEF RANKING_HEALINGS_HOF_UNIT EQUS " heals"
 REDEF RANKING_HEALINGS_HOF_SPACING EQU 1
@@ -204,8 +219,13 @@ DEF RANKING_BATTLES_HOF_UNIT EQUS "かい" ; a guess
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_BATTLES_HOF_NAME EQUS "LAST HOF BATTLES"
+; Custom Description
 MACRO describe_ranking_BATTLES_HOF
-	para "?"
+	para "The amount of"
+	line "#MON battles"
+	cont "since the last"
+	cont "entry into the"
+	cont "HALL OF FAME."
 ENDM
 DEF RANKING_BATTLES_HOF_UNIT EQUS "?"
 
@@ -260,8 +280,13 @@ DEF RANKING_STEP_COUNT_UNIT EQUS ""
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_STEP_COUNT_NAME EQUS "STEPS WALKED"
+; Custom Description
 MACRO describe_ranking_STEP_COUNT
-	para "?"
+	para "The total amount"
+	line "of steps walked"
+	cont "since you first"
+	cont "started your"
+	cont "adventure."
 ENDM
 DEF RANKING_STEP_COUNT_UNIT EQUS " steps"
 REDEF RANKING_STEP_COUNT_SPACING EQU -1
@@ -404,8 +429,11 @@ DEF RANKING_TMS_HMS_TAUGHT_UNIT EQUS "?"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_TMS_HMS_TAUGHT_NAME EQUS "TMs/HMs TAUGHT"
+; Custom Description
 MACRO describe_ranking_TMS_HMS_TAUGHT
-	para "?"
+	para "The total amount"
+	line "of TMs and HMs"
+	cont "taught to #MON."
 ENDM
 DEF RANKING_TMS_HMS_TAUGHT_UNIT EQUS " taught"
 
@@ -469,8 +497,11 @@ DEF RANKING_BATTLES_UNIT EQUS "かい"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_BATTLES_NAME EQUS "#MON BATTLES"
+; Custom Description
 MACRO describe_ranking_BATTLES
-	para "?"
+	para "The total amount"
+	line "of #MON battles"
+	cont "participated in."
 ENDM
 DEF RANKING_BATTLES_UNIT EQUS " battles"
 
@@ -534,7 +565,10 @@ DEF RANKING_WILD_BATTLES_UNIT EQUS "かい" ; a guess
 ELIF DEF(_LANG_E)
 DEF RANKING_WILD_BATTLES_NAME EQUS "#MON ENCOUNTER"
 MACRO describe_ranking_WILD_BATTLES
-	para "?"
+; Custom Description
+	para "The total amount"
+	line "of encounters"
+	cont "with wild #MON."
 ENDM
 DEF RANKING_WILD_BATTLES_UNIT EQUS " times"
 
@@ -597,8 +631,12 @@ DEF RANKING_TRAINER_BATTLES_UNIT EQUS "かい" ; a guess
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_TRAINER_BATTLES_NAME EQUS "<TRAINER> BATTLES"
+; Custom Description
 MACRO describe_ranking_TRAINER_BATTLES
-	para "?"
+	para "The total amount"
+	line "of #MON battles"
+	cont "had with other"
+	cont "trainers."	
 ENDM
 DEF RANKING_TRAINER_BATTLES_UNIT EQUS " battles"
 
@@ -709,8 +747,12 @@ DEF RANKING_HOF_ENTRIES_UNIT EQUS "?"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_HOF_ENTRIES_NAME EQUS "HOF ENTRIES"
+; Custom Description
 MACRO describe_ranking_HOF_ENTRIES
-	para "?"
+	para "The total amount"
+	line "of inductions"
+	cont "into the HALL OF"
+	cont "FAME."		
 ENDM
 DEF RANKING_HOF_ENTRIES_UNIT EQUS " entries"
 
@@ -765,8 +807,11 @@ DEF RANKING_WILD_MONS_CAUGHT_UNIT EQUS "ひき"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_WILD_MONS_CAUGHT_NAME EQUS "#MON CAUGHT"
+; Custom Description
 MACRO describe_ranking_WILD_MONS_CAUGHT
-	para "?"
+	para "The total amount"
+	line "of wild #MON"
+	cont "caught."	
 ENDM
 DEF RANKING_WILD_MONS_CAUGHT_UNIT EQUS " caught"
 
@@ -821,8 +866,12 @@ DEF RANKING_HOOKED_ENCOUNTERS_UNIT EQUS "かい"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_HOOKED_ENCOUNTERS_NAME EQUS "#MON HOOKED"
+; Custom Description
 MACRO describe_ranking_HOOKED_ENCOUNTERS
-	para "?"
+	para "The total amount"
+	line "of #MON"
+	cont "encountered while"
+	cont "fishing."	
 ENDM
 DEF RANKING_HOOKED_ENCOUNTERS_UNIT EQUS " hooked"
 
@@ -877,8 +926,12 @@ DEF RANKING_EGGS_HATCHED_UNIT EQUS "かい"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_EGGS_HATCHED_NAME EQUS "EGGS HATCHED"
+; Custom Description
 MACRO describe_ranking_EGGS_HATCHED
-	para "?"
+	para "The total amount"
+	line "of #MON that"
+	cont "have been hatched"	
+	cont "from an EGG."
 ENDM
 DEF RANKING_EGGS_HATCHED_UNIT EQUS " EGGS"
 
@@ -933,8 +986,11 @@ DEF RANKING_MONS_EVOLVED_UNIT EQUS "かい"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_MONS_EVOLVED_NAME EQUS "#MON EVOLVED"
+; Custom Description
 MACRO describe_ranking_MONS_EVOLVED
-	para "?"
+	para "The total amount"
+	line "of times #MON"
+	cont "have evolved."
 ENDM
 DEF RANKING_MONS_EVOLVED_UNIT EQUS " evolved"
 
@@ -993,8 +1049,12 @@ ELIF DEF(_LANG_E)
 ; when interacting with the berry/apricorn tree object:
 ; "It's a fruit-bearing tree."
 DEF RANKING_FRUIT_PICKED_NAME EQUS "FRUIT PICKED"
+; Custom Description
 MACRO describe_ranking_FRUIT_PICKED
-	para "?"
+	para "The total amount"
+	line "of BERRIES and"
+	cont "APRICORNS picked"
+	cont "from trees."	
 ENDM
 DEF RANKING_FRUIT_PICKED_UNIT EQUS " fruit"
 REDEF RANKING_FRUIT_PICKED_SPACING EQU 1
@@ -1060,8 +1120,12 @@ DEF RANKING_HEALINGS_UNIT EQUS "?"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_HEALINGS_NAME EQUS "PARTY HEALED"
+; Custom Description
 MACRO describe_ranking_HEALINGS
-	para "?"
+	para "The total amount"
+	line "of times the party"
+	cont "has been fully"
+	cont "healed."
 ENDM
 DEF RANKING_HEALINGS_UNIT EQUS " heals"
 REDEF RANKING_HEALINGS_SPACING EQU 1
@@ -1118,8 +1182,12 @@ DEF RANKING_MYSTERY_GIFT_UNIT EQUS "かい"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_MYSTERY_GIFT_NAME EQUS "MYSTERY GIFT USED"
+; Custom Description
 MACRO describe_ranking_MYSTERY_GIFT
-	para "?"
+	para "The total amount"
+	line "of times MYSTERY"
+	cont "GIFT has been"
+	cont "used."
 ENDM
 DEF RANKING_MYSTERY_GIFT_UNIT EQUS " gifts"
 REDEF RANKING_MYSTERY_GIFT_SPACING EQU 1
@@ -1176,8 +1244,11 @@ DEF RANKING_TRADES_UNIT EQUS "?"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_TRADES_NAME EQUS "TRADES COMPLETED"
+; Custom Description
 MACRO describe_ranking_TRADES
-	para "?"
+	para "The total amount"
+	line "of successful"
+	cont "#MON trades."
 ENDM
 DEF RANKING_TRADES_UNIT EQUS " trades"
 
@@ -1232,8 +1303,12 @@ DEF RANKING_FLY_UNIT EQUS "?"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_FLY_NAME EQUS "FLY USED"
+; Custom Description
 MACRO describe_ranking_FLY
-	para "?"
+	para "The total amount"
+	line "of times FLY was"
+	cont "used outside of"
+	cont "battle."	
 ENDM
 DEF RANKING_FLY_UNIT EQUS " times"
 
@@ -1288,8 +1363,12 @@ DEF RANKING_SURF_UNIT EQUS "?"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_SURF_NAME EQUS "SURF USED"
+; Custom Description
 MACRO describe_ranking_SURF
-	para "?"
+	para "The total amount"
+	line "of times SURF was"
+	cont "used outside of"
+	cont "battle."	
 ENDM
 DEF RANKING_SURF_UNIT EQUS " times"
 
@@ -1344,8 +1423,12 @@ DEF RANKING_WATERFALL_UNIT EQUS "?"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_WATERFALL_NAME EQUS "WATERFALL USED"
+; Custom Description
 MACRO describe_ranking_WATERFALL
-	para "?"
+	para "The total amount"
+	line "of times WATERFALL"
+	cont "was used outside"
+	cont "of battle."	
 ENDM
 DEF RANKING_WATERFALL_UNIT EQUS " times"
 
@@ -1400,8 +1483,11 @@ DEF RANKING_WHITE_OUTS_UNIT EQUS "?"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_WHITE_OUTS_NAME EQUS "TIMES WHITED OUT"
+; Custom Description
 MACRO describe_ranking_WHITE_OUTS
-	para "?"
+	para "The total amount"
+	line "of times whited"
+	cont "out from battle."	
 ENDM
 DEF RANKING_WHITE_OUTS_UNIT EQUS " times"
 
@@ -1456,8 +1542,12 @@ DEF RANKING_LUCKY_NUMBER_SHOW_UNIT EQUS "?"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_LUCKY_NUMBER_SHOW_NAME EQUS "LUCKY NUMBER WINS"
+; Custom Description
 MACRO describe_ranking_LUCKY_NUMBER_SHOW
-	para "?"
+	para "The total amount"
+	line "of LUCKY NUMBER"
+	cont "SHOW wins on the"
+	cont "LUCKY CHANNEL."	
 ENDM
 DEF RANKING_LUCKY_NUMBER_SHOW_UNIT EQUS " wins"
 
@@ -1512,8 +1602,11 @@ DEF RANKING_PHONE_CALLS_UNIT EQUS "?"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_PHONE_CALLS_NAME EQUS "TOTAL PHONE CALLS"
+; Custom Description
 MACRO describe_ranking_PHONE_CALLS
-	para "?"
+	para "The total amount"
+	line "of phone calls"
+	cont "made and received."
 ENDM
 DEF RANKING_PHONE_CALLS_UNIT EQUS " calls"
 
@@ -1624,8 +1717,13 @@ DEF RANKING_LINK_BATTLES_UNIT EQUS "かい" ; a guess
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_LINK_BATTLES_NAME EQUS "COLOSSEUM BATTLES"
+; Custom Description
 MACRO describe_ranking_LINK_BATTLES
-	para "?"
+	para "The number of"
+	line "#MON battles"
+	cont "with other"
+	cont "<TRAINER>S at the"
+	cont "COLOSSEUM."
 ENDM
 DEF RANKING_LINK_BATTLES_UNIT EQUS " battles"
 
@@ -1680,8 +1778,12 @@ DEF RANKING_SPLASH_UNIT EQUS "?"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_SPLASH_NAME EQUS "SPLASH USED"
+; Custom Description
 MACRO describe_ranking_SPLASH
-	para "?"
+	para "The total amount"
+	line "of times SPLASH"
+	cont "was used in"
+	cont "battle."	
 ENDM
 DEF RANKING_SPLASH_UNIT EQUS " times"
 
@@ -1738,8 +1840,12 @@ DEF RANKING_TREE_ENCOUNTERS_UNIT EQUS "かい"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_TREE_ENCOUNTERS_NAME EQUS "HEADBUTT USED"
+; Custom Description
 MACRO describe_ranking_TREE_ENCOUNTERS
-	para "?"
+	para "The total amount"
+	line "of times HEADBUTT"
+	cont "was used on trees"
+	cont "outside of battle."
 ENDM
 DEF RANKING_TREE_ENCOUNTERS_UNIT EQUS " times"
 REDEF RANKING_TREE_ENCOUNTERS_SPACING EQU 1
@@ -1852,8 +1958,13 @@ DEF RANKING_LINK_WINS_UNIT EQUS "かい"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_LINK_WINS_NAME EQUS "COLOSSEUM WINS"
+; Custom Description
 MACRO describe_ranking_LINK_WINS
-	para "?"
+	para "The number of"
+	line "#MON battles"
+	cont "won against other"
+	cont "<TRAINER>S at the"
+	cont "COLOSSEUM."
 ENDM
 DEF RANKING_LINK_WINS_UNIT EQUS " wins"
 
@@ -1908,8 +2019,13 @@ DEF RANKING_LINK_LOSSES_UNIT EQUS "かい" ; a guess
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_LINK_LOSSES_NAME EQUS "COLOSSEUM LOSSES"
+; Custom Description
 MACRO describe_ranking_LINK_LOSSES
-	para "?"
+	para "The number of"
+	line "#MON battles"
+	cont "lost against other"
+	cont "<TRAINER>S at the"
+	cont "COLOSSEUM."
 ENDM
 DEF RANKING_LINK_LOSSES_UNIT EQUS " losses"
 REDEF RANKING_LINK_LOSSES_SPACING EQU 0
@@ -1966,8 +2082,15 @@ DEF RANKING_LINK_DRAWS_UNIT EQUS "かい" ; a guess
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_LINK_DRAWS_NAME EQUS "COLOSSEUM DRAWS"
+; Custom Description
 MACRO describe_ranking_LINK_DRAWS
-	para "?"
+	para "The number of"
+	line "#MON battles"
+	cont "against other"
+	cont "<TRAINER>S at the"
+	cont "COLOSSEUM that"
+	cont "resulted in a"
+	cont "draw."	
 ENDM
 DEF RANKING_LINK_DRAWS_UNIT EQUS " draws"
 
@@ -2022,8 +2145,13 @@ DEF RANKING_SELFDESTRUCT_UNIT EQUS "?"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_SELFDESTRUCT_NAME EQUS "SELF-KO MOVE USED"
+; Custom Description
 MACRO describe_ranking_SELFDESTRUCT
-	para "?"
+	para "The total amount"
+	line "of times EXPLOSION"
+	cont "or SELFDESTRUCT" 
+	cont "have been used in"
+	cont "battle."		
 ENDM
 DEF RANKING_SELFDESTRUCT_UNIT EQUS " times"
 
@@ -2078,8 +2206,13 @@ DEF RANKING_CURRENT_SLOTS_STREAK_UNIT EQUS "?"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_CURRENT_SLOTS_STREAK_NAME EQUS "SLOT WIN STREAK"
+; Custom Description
 MACRO describe_ranking_CURRENT_SLOTS_STREAK
-	para "?"
+	para "The most recent"
+	line "win streak"
+	cont "achieved at the"
+	cont "SLOTS in the"
+	cont "GAME CORNER."
 ENDM
 DEF RANKING_CURRENT_SLOTS_STREAK_UNIT EQUS " wins"
 
@@ -2134,8 +2267,12 @@ DEF RANKING_LONGEST_SLOTS_STREAK_UNIT EQUS "?"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_LONGEST_SLOTS_STREAK_NAME EQUS "BEST SLOT STREAK"
+; Custom Description
 MACRO describe_ranking_LONGEST_SLOTS_STREAK
-	para "?"
+	para "The highest win"
+	line "streak achieved at"
+	cont "the SLOTS in the"
+	cont "GAME CORNER."
 ENDM
 DEF RANKING_LONGEST_SLOTS_STREAK_UNIT EQUS " wins"
 
@@ -2190,8 +2327,13 @@ DEF RANKING_COINS_EARNED_UNIT EQUS "?"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_COINS_EARNED_NAME EQUS "SLOT COINS WON"
+; Custom Description
 MACRO describe_ranking_COINS_EARNED
-	para "?"
+	para "The total amount"
+	line "of COINS won at"
+	cont "the SLOTS in the"
+	cont "GAME CORNER."
+
 ENDM
 DEF RANKING_COINS_EARNED_UNIT EQUS " coins"
 REDEF RANKING_COINS_EARNED_SPACING EQU -1
@@ -2247,8 +2389,13 @@ DEF RANKING_MONEY_EARNED_UNIT EQUS ""
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_MONEY_EARNED_NAME EQUS "TOTAL MONEY"
+; Custom Description
 MACRO describe_ranking_MONEY_EARNED
-	para "?"
+	para "The total amount"
+	line "of money earned"
+	cont "from #MON"
+	cont "battles during"
+	cont "your adventure."
 ENDM
 DEF RANKING_MONEY_EARNED_UNIT EQUS "¥"
 REDEF RANKING_MONEY_EARNED_SPACING EQU 4
@@ -2395,8 +2542,13 @@ DEF RANKING_SHORTEST_MAGIKARP_UNIT EQUS "センチ"
 ; English
 ELIF DEF(_LANG_E)
 DEF RANKING_SHORTEST_MAGIKARP_NAME EQUS "SMALLEST MAGIKARP"
+; Custom Description
 MACRO describe_ranking_SHORTEST_MAGIKARP
-	para "?"
+	para "The size of the"
+	line "smallest MAGIKARP"
+	cont "measured by the"
+	cont "FISHING GURU at"
+	cont "the LAKE OF RAGE."
 ENDM
 REDEF RANKING_SHORTEST_MAGIKARP_FMT  EQUS "1, 3\nnts_end\ndb \"'\"\nnts_start\nnts_ranking_number $0015, 1, 2"
 DEF RANKING_SHORTEST_MAGIKARP_FMT_PLAYER EQUS "1, 3\nnts_end\ndb \"'\"\nnts_start\nnts_number {RANKING_SHORTEST_MAGIKARP_ADDR_LO}, 1, 2"

@@ -27,7 +27,7 @@ DEF RANKING_GAME_TIME_HOF_NAME EQUS "LAST HOF RECORD"
 ; Custom Description
 MACRO describe_ranking_GAME_TIME_HOF
 	para "The amount of time"
-	line "played since the"
+	line "played before the"
 	cont "last entry into"
 	cont "the HALL OF FAME."
 ENDM
@@ -87,10 +87,10 @@ DEF RANKING_STEP_COUNT_HOF_NAME EQUS "LAST HOF STEPS"
 ; Custom Description
 MACRO describe_ranking_STEP_COUNT_HOF
 	para "The amount of"
-	line "steps walked since"
-	cont "the last entry"
-	cont "into the HALL OF"
-	cont "FAME."
+	line "steps walked"
+	cont "before the last"
+	cont "entry into the"
+	cont "HALL OF FAME."
 ENDM
 DEF RANKING_STEP_COUNT_HOF_UNIT EQUS " steps"
 REDEF RANKING_STEP_COUNT_HOF_SPACING EQU -1
@@ -151,7 +151,7 @@ MACRO describe_ranking_HEALINGS_HOF
 	para "The amount of"
 	line "times the party"
 	cont "has been fully"
-	cont "healed since the"
+	cont "healed before the"
 	cont "last entry into"
 	cont "the HALL OF FAME."
 ENDM
@@ -223,7 +223,7 @@ DEF RANKING_BATTLES_HOF_NAME EQUS "LAST HOF BATTLES"
 MACRO describe_ranking_BATTLES_HOF
 	para "The amount of"
 	line "#MON battles"
-	cont "since the last"
+	cont "before the last"
 	cont "entry into the"
 	cont "HALL OF FAME."
 ENDM

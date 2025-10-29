@@ -2217,6 +2217,7 @@ MACRO describe_ranking_CURRENT_SLOTS_STREAK
 	line "win streak"
 	cont "achieved at the"
 	cont "SLOTS in the"
+	cont "GOLDENROD CITY"
 	cont "GAME CORNER."
 ENDM
 DEF RANKING_CURRENT_SLOTS_STREAK_UNIT EQUS " wins"
@@ -2277,6 +2278,7 @@ MACRO describe_ranking_LONGEST_SLOTS_STREAK
 	para "The highest win"
 	line "streak achieved at"
 	cont "the SLOTS in the"
+	cont "GOLDENROD CITY"
 	cont "GAME CORNER."
 ENDM
 DEF RANKING_LONGEST_SLOTS_STREAK_UNIT EQUS " wins"
@@ -2337,6 +2339,7 @@ MACRO describe_ranking_COINS_EARNED
 	para "The total amount"
 	line "of COINS won at"
 	cont "the SLOTS in the"
+	cont "GOLDENROD CITY"
 	cont "GAME CORNER."
 
 ENDM

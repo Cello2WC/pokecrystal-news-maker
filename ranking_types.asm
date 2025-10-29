@@ -1547,6 +1547,7 @@ MACRO describe_ranking_LUCKY_NUMBER_SHOW
 	para "The total amount"
 	line "of LUCKY NUMBER"
 	cont "SHOW wins on the"
+	cont "#GEAR RADIO's"
 	cont "LUCKY CHANNEL."	
 ENDM
 DEF RANKING_LUCKY_NUMBER_SHOW_UNIT EQUS " wins"
@@ -1723,6 +1724,7 @@ MACRO describe_ranking_LINK_BATTLES
 	line "#MON battles"
 	cont "with other"
 	cont "<TRAINER>S at the"
+	cont "#COM CLUB"
 	cont "COLOSSEUM."
 ENDM
 DEF RANKING_LINK_BATTLES_UNIT EQUS " battles"
@@ -1964,6 +1966,7 @@ MACRO describe_ranking_LINK_WINS
 	line "#MON battles"
 	cont "won against other"
 	cont "<TRAINER>S at the"
+	cont "#COM CLUB"
 	cont "COLOSSEUM."
 ENDM
 DEF RANKING_LINK_WINS_UNIT EQUS " wins"
@@ -2025,6 +2028,7 @@ MACRO describe_ranking_LINK_LOSSES
 	line "#MON battles"
 	cont "lost against other"
 	cont "<TRAINER>S at the"
+	cont "#COM CLUB"
 	cont "COLOSSEUM."
 ENDM
 DEF RANKING_LINK_LOSSES_UNIT EQUS " losses"
@@ -2088,6 +2092,7 @@ MACRO describe_ranking_LINK_DRAWS
 	line "#MON battles"
 	cont "against other"
 	cont "<TRAINER>S at the"
+	cont "#COM CLUB"
 	cont "COLOSSEUM that"
 	cont "resulted in a"
 	cont "draw."	

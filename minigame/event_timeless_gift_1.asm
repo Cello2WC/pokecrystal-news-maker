@@ -445,9 +445,10 @@ ENDM
 	lang E, next "of humans?"
 	
 	lang D, db   "Wenn #MON Angst"
-	lang D, next "vor Menschen ha-"
-	lang D, next "ben, sind die Men-"
-	lang D, next "schen schuld?"
+	lang D, next "vor Menschen"
+	lang D, next "haben, sind dann"
+	lang D, next "Menschen daran"
+	lang D, next "schuld?"
 
 	lang F, db   "?"
 	
@@ -469,7 +470,7 @@ ENDM
 	lang E, next "<TRAINER>?"
 	
 	lang D, db   "Können Menschen,"
-	lang D, next "#MON lieben"
+	lang D, next "die #MON mögen,"
 	lang D, next "noch etwas anderes"
 	lang D, next "sein, als ein"
 	lang D, next "#MON-<TRAINER>?"

@@ -19,7 +19,7 @@ MACRO minigame_start
 	nsc_set wQuizScore, 0
 	nsc_page MinigameStart
 ENDM
-
+; Max 17 chars
 MACRO minigame_name
 	lang J, db "ポケモンカルト"
 	lang E, db "#MANIA QUIZ"

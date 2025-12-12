@@ -507,6 +507,7 @@ ENDR
 	lang I, db "?"
 	lang S, db "?"
 	db "@"
+; All of these are max 17 (maybe 18) chars	
 .cryquizlabel_suicune
 	lang J, db "なきごえクイズ　スイクン"
 	lang E, db "SUICUNE CRY QUIZ"

@@ -119,7 +119,7 @@ MACRO minigame_start_2
 	nsc_set wCurrentPuzzle, 0
 	nsc_page PokemonMazeHard
 ENDM
-
+; Max 17 chars
 MACRO minigame_name
 	lang J, db "ポケモンもじめいろ　かんたん"
 	lang E, db "EASY #MON MAZE"
@@ -128,7 +128,7 @@ MACRO minigame_name
 	lang I, db "?"
 	lang S, db "?"
 ENDM
-
+; Max 17 chars
 MACRO minigame_name_2
 	lang J, db "ポケモンもじめいろ　むずかしい"
 	lang E, db "HARD #MON MAZE"

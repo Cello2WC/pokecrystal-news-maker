@@ -106,7 +106,7 @@ MACRO minigame_start
 
 	done
 ENDM
-
+; Max 17 chars
 MACRO minigame_name
 	lang J, db "ポケモンクイズ！"
 	lang E, db "#MON QUIZ!"

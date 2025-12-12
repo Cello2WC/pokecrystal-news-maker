@@ -88,6 +88,7 @@ MACRO minigame_start
 ENDM
 
 MACRO minigame_name
+; Max 17 chars
 	; Japanese
 	lang J, db "<TRAINER> しんだん！"
 	; English

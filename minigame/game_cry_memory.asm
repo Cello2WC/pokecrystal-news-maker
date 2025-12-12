@@ -45,6 +45,7 @@ MACRO minigame_start
 ENDM
 
 MACRO minigame_name
+; Max 17 chars
 	; Japanese
 	lang J, db "ポケモン　つづくかな？"
 	
@@ -112,7 +113,7 @@ MinigameStart::
 .menuCancelScript
 	nsc_page NewsRoot
 	nsc_ret
-	
+; Max 17 chars	
 .menuCrySet1Name
 	lang J, db "なきごえセット　１"
 	lang E, db "CRY SET 1"

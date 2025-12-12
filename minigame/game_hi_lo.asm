@@ -144,7 +144,7 @@ MACRO minigame_start
 	
 	done
 ENDM
-
+; Max 17 chars
 MACRO minigame_name
 	lang J, db "#　たかいか　ひくいか？"
 	lang E, db "TALLER OR SHORTER"

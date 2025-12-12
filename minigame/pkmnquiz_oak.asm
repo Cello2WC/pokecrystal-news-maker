@@ -52,7 +52,7 @@ MACRO minigame_start
 	; following is filler.
 	lang E, para "<……> <……>"
 	lang E, line "<……> <……>"
-	lang E, para "２エラー"
+	lang E, para "Error 2"
 	
 	; German
 	lang D, text "EICH: Ich führe"
@@ -75,6 +75,7 @@ MACRO minigame_start
 ENDM
 
 MACRO minigame_name
+; Max 17 chars
 	lang J, db "ポケモンクイズ！"
 	lang E, db "#MON QUIZ!"
 	lang D, db "#MON-QUIZ!"

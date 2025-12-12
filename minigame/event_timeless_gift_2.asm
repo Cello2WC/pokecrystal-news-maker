@@ -92,11 +92,11 @@ MACRO minigame_start
 	lang D, para "nuschel nuschel"
 	lang D, line "Zeitreise"
 	
-	lang F, text "?"
+	lang F, text "LILA: "
 	
-	lang I, text "?"
+	lang I, text "MAISY: "
 	
-	lang S, text "?"
+	lang S, text "MILLIE: "
 
 	done
 ENDM

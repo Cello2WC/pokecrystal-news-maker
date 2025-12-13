@@ -43,7 +43,7 @@ ENDC
 	lang J, db "トレーナーランキング"
 	lang E, db "<TRAINER> RANKINGS"
 	lang D, db "BESTENLISTE"
-	lang F, db "CLASSEMENT"
+	lang F, db "CLASSEMENT DRES."
 	lang I, db "CLASSIFICA ALLEN."
 	lang S, db "?"
 	db "@"
@@ -108,7 +108,7 @@ ENDC
 	lang J, db "ランキング　<NO>せつめい"
 	lang E, db "RANKING INFO"
 	lang D, db "BESTENL.-INFO"
-	lang F, db "INFO CLASSEMENT"
+	lang F, db "INFOS CLASSEMENT"
 	lang I, db "INFO CLASSIFICA"
 	lang S, db "?"
 	db "@"
@@ -188,9 +188,9 @@ ENDC
 	lang D, text "Die Übertragung"
 	lang D, line "wurde abgebrochen."
 	
-	lang F, text "Mise à jour du"
-	lang F, line "classement"
-	lang F, cont "arrêtée!"
+	lang F, text "La mise à jour du"
+	lang F, line "classement a été"
+	lang F, cont "abandonnée."
 	
 	lang I, text "Aggiornam. classi-"
 	lang I, line "fiche interrotto."
@@ -216,9 +216,9 @@ ENDC
 	lang D, para "Die NACHRICHTEN"
 	lang D, line "bitte neu laden."
 	
-	lang F, text "Mise à jour du"
-	lang F, line "classement"
-	lang F, cont "échouée..."
+	lang F, text "Echec de la"
+	lang F, line "mise à jour"
+	lang F, cont "du classement…"
 	lang F, para "Télécharger les"
 	lang F, line "dernières INFOS"
 	lang F, cont "s.v.p."
@@ -284,12 +284,12 @@ ENDC
 	lang D, line "betrachten."
 	
 	lang F, text "Il n'y a aucune"
-	lang F, line "données"
-	lang F, cont "de classement."
+	lang F, line "donnée de"
+	lang F, cont "classement."
 	lang F, para "Connectez-vous"
-	lang F, line "pour obtenir"
-	lang F, cont "les données"
-	lang F, cont "de classement."
+	lang F, line "pour obtenir des"
+	lang F, cont "données de"
+	lang F, cont "classement."
 	
 	lang I, text "Dati classifiche"
 	lang I, line "assenti."
@@ -355,7 +355,7 @@ ENDC
 	lang D, db   "Eine Erklärung zu"
 	lang D, line "einzelnen Listen."
 	
-	lang F, db   "Infos sur les thé-"
+	lang F, db   "Infos sur les thè-"
 	lang F, line "mes de classement."
 	
 	lang I, db   "Spiegazione temi"
@@ -398,7 +398,7 @@ ENDC
 	lang J, db "トレーナーランキング"
 	lang E, db "<TRAINER> RANKINGS"
 	lang D, db "BESTENLISTE"
-	lang F, db "CLASSEMENT"
+	lang F, db "CLASSEMENT DRES."
 	lang I, db "CLASSIFICA ALLEN."
 	lang S, db "?"
 	db "@"
@@ -619,8 +619,8 @@ ENDC
 	lang D, db   "Für welche Region"
 	lang D, line "anzeigen?"
 	
-	lang F, db   "Choisir la zone de"
-	lang F, line "classement à voir."
+	lang F, db   "Voir le classement"
+	lang F, line "de quelle zone?"
 	
 	lang I, db   "Scegli dove ved-"
 	lang I, line "ere la classifica."
@@ -843,7 +843,7 @@ ENDC
 	
 	lang F, text "Pour avoir atteint"
 	lang F, next "un rang si haut,"
-	lang F, para "voici un beau"
+	lang F, para "voici un joli"
 	lang F, line "cadeau pour vous."
 	lang F, cont "Profitez-en bien!"
 	
@@ -866,19 +866,20 @@ ENDC
 	lang J, db "さい　"
 	lang E, db "yrs. "
 	lang D, db "Jahre"
-	lang F, db "?"
+	lang F, db "ans  "
 	lang I, db "?"
 	lang S, db "?"
 	nts_start
 	nts_ranking_region $0007, $7, 
 	nts_end
 ;ELSE
+;	lang F, db " âgé de "
 ;	nts_start 
 ;	nts_ranking_number $000A, 1, 3, 3
 ;	nts_end
 ;	lang E, db "-year-old "
 ;	lang D, db "-jährig "
-;	lang F, db ""
+;	lang F, db " ans "
 ;	lang I, db ""
 ;	lang S, db ""
 ;	nts_start
@@ -886,7 +887,7 @@ ENDC
 ;	nts_end
 ;	lang E, line "from "
 ;	lang D, line "aus "
-;	lang F, line ""
+;	lang F, line "de "
 ;	lang I, line ""
 ;	lang S, line ""
 ;	nts_start
@@ -1160,7 +1161,7 @@ ENDC
 	lang D, line "<TRAINER>s anzeigen."
 	
 	lang F, db   "Voir le profil"
-	lang F, line "de ce DRESSEUR."
+	lang F, line "de ce <TRAINER>."
 	
 	lang I, db   "Guarda il profilo"
 	lang I, line "di questo ALLEN."

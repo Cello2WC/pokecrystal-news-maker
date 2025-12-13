@@ -46,9 +46,11 @@ DEF RANKING_GAME_TIME_HOF_UNIT EQUS ""
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_GAME_TIME_HOF_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_GAME_TIME_HOF_NAME EQUS "TEMPS PANTHEON" ; Max 17 chars
 MACRO describe_ranking_GAME_TIME_HOF
-	para "?"
+	para "Temps de jeu à la"
+	line "dernière entrée"
+	cont "au PANTHEON."
 ENDM
 DEF RANKING_GAME_TIME_HOF_UNIT EQUS ""
 
@@ -112,11 +114,14 @@ DEF RANKING_STEP_COUNT_HOF_UNIT EQUS "?"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_STEP_COUNT_HOF_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_STEP_COUNT_HOF_NAME EQUS "MARATHON PANTHEON" ; Max 17 chars
 MACRO describe_ranking_STEP_COUNT_HOF
-	para "?"
+	para "Nombre de pas"
+	line "faits avant la"
+	cont "dernière entrée"
+	cont "au PANTHEON."
 ENDM
-DEF RANKING_STEP_COUNT_HOF_UNIT EQUS "?"
+DEF RANKING_STEP_COUNT_HOF_UNIT EQUS " pas"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -180,11 +185,16 @@ REDEF RANKING_HEALINGS_HOF_SPACING EQU -3
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_HEALINGS_HOF_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_HEALINGS_HOF_NAME EQUS "SOINS PANTHEON" ; Max 17 chars
 MACRO describe_ranking_HEALINGS_HOF
-	para "?"
+	para "Nombre de fois où"
+	line "l'équipe a été"
+	cont "entièrement"
+	cont "soignée avant la"
+	cont "dernière entrée"
+	cont "au PANTHEON."
 ENDM
-DEF RANKING_HEALINGS_HOF_UNIT EQUS "?" 
+DEF RANKING_HEALINGS_HOF_UNIT EQUS " soins"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -254,9 +264,12 @@ DEF RANKING_BATTLES_HOF_UNIT EQUS "?"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_BATTLES_HOF_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_BATTLES_HOF_NAME EQUS "COMBATS PANTHEON" ; Max 17 chars
 MACRO describe_ranking_BATTLES_HOF
-	para "?"
+	para "Nombre de combats"
+	line "#MON avant la"
+	cont "dernière entrée"
+	cont "au PANTHEON."
 ENDM
 DEF RANKING_BATTLES_HOF_UNIT EQUS "?"
 
@@ -319,9 +332,12 @@ DEF RANKING_STEP_COUNT_UNIT EQUS " Schritte"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_STEP_COUNT_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_STEP_COUNT_NAME EQUS "NOMBRE DE PAS" ; Max 17 chars
 MACRO describe_ranking_STEP_COUNT
-	para "?"
+	para "Total du nombre de"
+	line "pas effectués tout"
+	cont "au long de votre"
+	cont "aventure."
 ENDM
 DEF RANKING_STEP_COUNT_UNIT EQUS " pas"
 
@@ -468,11 +484,13 @@ DEF RANKING_TMS_HMS_TAUGHT_UNIT EQUS " eingesetzt"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_TMS_HMS_TAUGHT_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_TMS_HMS_TAUGHT_NAME EQUS "CT/CS UTILISEES" ; Max 17 chars
 MACRO describe_ranking_TMS_HMS_TAUGHT
-	para "?"
+	para "Nombre total de"
+	line "CT et CS apprises"
+	cont "à des #MON."
 ENDM
-DEF RANKING_TMS_HMS_TAUGHT_UNIT EQUS "?"
+DEF RANKING_TMS_HMS_TAUGHT_UNIT EQUS " apprises"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -538,11 +556,13 @@ DEF RANKING_BATTLES_UNIT EQUS " Kämpfe"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_BATTLES_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_BATTLES_NAME EQUS "COMBATS #MON" ; Max 17 chars
 MACRO describe_ranking_BATTLES
-	para "?"
+	para "Nombre total de"
+	line "combats #MON"
+	cont "livrés."
 ENDM
-DEF RANKING_BATTLES_UNIT EQUS "?"
+DEF RANKING_BATTLES_UNIT EQUS " combats"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -608,11 +628,14 @@ DEF RANKING_WILD_BATTLES_UNIT EQUS " Mal"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_WILD_BATTLES_NAME EQUS "?" ; Max 17 chars
+; "RENCONTRES POKéMON" fait malheureusement 18 caractères u_u
+DEF RANKING_WILD_BATTLES_NAME EQUS "#MON SAUVAGES" ; Max 17 chars
 MACRO describe_ranking_WILD_BATTLES
-	para "?"
+	para "Total du nombre de"
+	line "#MON sauvages"
+	cont "rencontrés."
 ENDM
-DEF RANKING_WILD_BATTLES_UNIT EQUS "?"
+DEF RANKING_WILD_BATTLES_UNIT EQUS " rencontres" ; Sinon, "combats"?
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -662,7 +685,7 @@ MACRO describe_ranking_TRAINER_BATTLES
 	para "The total amount"
 	line "of #MON battles"
 	cont "had with other"
-	cont "trainers."	
+	cont "trainers."
 ENDM
 DEF RANKING_TRAINER_BATTLES_UNIT EQUS " battles"
 
@@ -680,11 +703,14 @@ DEF RANKING_TRAINER_BATTLES_UNIT EQUS " Kämpfe"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_TRAINER_BATTLES_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_TRAINER_BATTLES_NAME EQUS "COMBATS <TRAINER>" ; Max 17 chars
 MACRO describe_ranking_TRAINER_BATTLES
-	para "?"
+	para "Total du nombre de"
+	line "combats #MON"
+	cont "livrés contre"
+	cont "d'autres dresseurs." ; "d'" = 1 caractère !
 ENDM
-DEF RANKING_TRAINER_BATTLES_UNIT EQUS "?"
+DEF RANKING_TRAINER_BATTLES_UNIT EQUS " combats"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -782,7 +808,7 @@ MACRO describe_ranking_HOF_ENTRIES
 	para "The total amount"
 	line "of inductions"
 	cont "into the HALL OF"
-	cont "FAME."		
+	cont "FAME."
 ENDM
 DEF RANKING_HOF_ENTRIES_UNIT EQUS " entries" 
 
@@ -798,11 +824,14 @@ DEF RANKING_HOF_ENTRIES_UNIT EQUS " Einträge"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_HOF_ENTRIES_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_HOF_ENTRIES_NAME EQUS "CELEBRITES" ; Max 17 chars
 MACRO describe_ranking_HOF_ENTRIES
-	para "?"
+	para "Nombre de fois où"
+	line "votre nom a été"
+	cont "inscrit au"
+	cont "PANTHEON."
 ENDM
-DEF RANKING_HOF_ENTRIES_UNIT EQUS "?"
+DEF RANKING_HOF_ENTRIES_UNIT EQUS " fois"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -843,7 +872,7 @@ DEF RANKING_WILD_MONS_CAUGHT_NAME EQUS "#MON CAUGHT" ; Max 17 chars
 MACRO describe_ranking_WILD_MONS_CAUGHT
 	para "The total amount"
 	line "of wild #MON"
-	cont "caught."	
+	cont "caught."
 ENDM
 DEF RANKING_WILD_MONS_CAUGHT_UNIT EQUS " caught"
 
@@ -859,11 +888,13 @@ DEF RANKING_WILD_MONS_CAUGHT_UNIT EQUS " gefangen"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_WILD_MONS_CAUGHT_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_WILD_MONS_CAUGHT_NAME EQUS "#MON CAPTURES" ; Max 17 chars
 MACRO describe_ranking_WILD_MONS_CAUGHT
-	para "?"
+	para "Total du nombre de"
+	line "#MON sauvages"
+	cont "capturés."
 ENDM
-DEF RANKING_WILD_MONS_CAUGHT_UNIT EQUS "?"
+DEF RANKING_WILD_MONS_CAUGHT_UNIT EQUS " capturés"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -921,11 +952,13 @@ DEF RANKING_HOOKED_ENCOUNTERS_UNIT EQUS " geangelt"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_HOOKED_ENCOUNTERS_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_HOOKED_ENCOUNTERS_NAME EQUS "#MON FERRES" ; Max 17 chars
 MACRO describe_ranking_HOOKED_ENCOUNTERS
-	para "?"
+	para "Total du nombre de"
+	line "#MON ferrés"
+	cont "par CANNE."
 ENDM
-DEF RANKING_HOOKED_ENCOUNTERS_UNIT EQUS "?"
+DEF RANKING_HOOKED_ENCOUNTERS_UNIT EQUS " ferrés"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -966,7 +999,7 @@ DEF RANKING_EGGS_HATCHED_NAME EQUS "EGGS HATCHED" ; Max 17 chars
 MACRO describe_ranking_EGGS_HATCHED
 	para "The total amount"
 	line "of #MON that"
-	cont "have been hatched"	
+	cont "have been hatched"
 	cont "from an EGG."
 ENDM
 DEF RANKING_EGGS_HATCHED_UNIT EQUS " EGGS"
@@ -983,11 +1016,13 @@ DEF RANKING_EGGS_HATCHED_UNIT EQUS " EIER"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_EGGS_HATCHED_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_EGGS_HATCHED_NAME EQUS "OEUFS ECLOS" ; Max 17 chars
 MACRO describe_ranking_EGGS_HATCHED
-	para "?"
+	para "Total du nombre de"
+	line "#MON sortis"
+	cont "d'un OEUF."
 ENDM
-DEF RANKING_EGGS_HATCHED_UNIT EQUS "?"
+DEF RANKING_EGGS_HATCHED_UNIT EQUS " OEUFS"
 
 ; Italian
 ELIF DEF(_LANG_I)

@@ -157,7 +157,7 @@ ENDC
 	lang J, db "トレーナーランキング"
 	lang E, db "TRAINER RANKINGS"
 	lang D, db "BESTENLISTE"
-	lang F, db "CLASSEMENTE"
+	lang F, db "CLASSEMENT"
 	lang I, db "CLASSIFICA ALLEN."
 	lang S, db "?"
 	db "@"
@@ -177,7 +177,7 @@ ENDC
 	lang J, db "りょうきんについて"
 	lang E, db "ABOUT FEES"
 	lang D, db "GEBÜHREN-INFOS"
-	lang F, db "?"
+	lang F, db "INFOS TARIFS"
 	lang I, db "?"
 	lang S, db "?"
 	db "@"
@@ -236,7 +236,7 @@ ENDC
 	lang J, cont "がんばれば　トップ<NI>なれるかも！"
 
 	lang E, text "We hope you enjoy"
-	lang E, line "the <TRAINER> RANK-"
+	lang E, line "the <TRAINER> RANK-" ; Check out the commented `.menuTrainerRankingsDesc` further below for official translations.
 	lang E, cont "INGS and #MON"
 	lang E, cont "QUIZ in issue No.1"
 	lang E, para "You can update"
@@ -260,18 +260,17 @@ ENDC
 	lang D, cont "Rang zu erreichen!"
 	
 	lang F, text "Nous espérons que"
-	lang F, line "vous apprécierez"
-	lang F, para "Le CLASSEMENT"
-	lang F, line "et le QUIZ #-"
-	lang F, cont "MON dans la"
-	lang F, cont "parution No.1"
+	lang F, line "vous apprécierez" ; Temps futur utilisé ailleurs dans le jeu.
+	lang F, para "le CLASSEMENT des"
+	lang F, line "<TRAINER>S et le"
+	lang F, cont "QUIZ #MON dans"
+	lang F, cont "la parution no. 1!" ; Numéro abrégé ainsi ailleurs ; la majuscule n'est cependant pas uniforme, mais grammaticalement incorrecte ici.
 	lang F, para "Vous pouvez mettre"
 	lang F, line "à jour votre"
-	lang F, cont "classement"
-	lang F, cont "n'importe quand."
-	lang F, para "Si vous"
-	lang F, line "travaillez dur"
-	lang F, cont "vous atteindrez"
+	lang F, cont "classement quand"
+	lang F, cont "vous le souhaitez."
+	lang F, para "Travaillez dur"
+	lang F, line "et vous atteindrez"
 	lang F, cont "le sommet!"
 	
 	lang I, text "Ci auguriamo che"
@@ -318,7 +317,8 @@ ENDC
 	lang D, db   "Bitte wähle ein"
 	lang D, line "Menü aus."
 	
-	lang F, db   "?"
+	lang F, db   "Veuillez choisir"
+	lang F, line "un menu."
 	
 	lang I, db   "?"
 	

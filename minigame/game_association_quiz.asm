@@ -626,7 +626,7 @@ ENDM
 	lang J, db "なにか　かぶっている"
 	lang E, db "Wears a headpiece."
 	lang D, db "Hat Kopfbedeckung."
-	lang F, db "Tête couverte."
+	lang F, db "Tête couverte." ; TODO : meh...
 	lang I, db "?"
 	lang S, db "?"
 	db "@"

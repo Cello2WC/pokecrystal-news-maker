@@ -1,14 +1,14 @@
 ; This is a RE-CREATION based on records
 ; from the time and first-hand accounts,
 ; NOT actual recovered news data!
-; 
+;
 ; See: https://www2u.biglobe.ne.jp/~kakeru/pokemon2/mobile/news/02_08.htm
 ; Thanks to nohm for providing their first-hand account of this minigame!
-; 
+;
 ; Re-creation script written by Cello2WC
 ; English localization by DS
 ; German localization by Lesserkuma
-; French localization TODO
+; French localization by ISSOtm
 ; Italian localization TODO
 ; Spanish localization TODO
 
@@ -48,7 +48,7 @@ MACRO minigame_name
 ; Max 17 chars
 	; Japanese
 	lang J, db "ポケモン　つづくかな？"
-	
+
 	; English
 	lang E, db "#RAP IT UP!"
 	lang D, db "#MON-PLAUDEREI!"
@@ -57,7 +57,7 @@ MACRO minigame_name
 	lang S, db "?"
 ENDM
 
-; deprecating this, at least for now, 
+; deprecating this, at least for now,
 ; as it seems it might not have existed.
 
 ;MACRO minigame_desc
@@ -67,36 +67,36 @@ ELSE
 MinigameStart::
 	news_screen CrySetSelect, MUSIC_SHOW_ME_AROUND
 	news_def_pals
-	
+
 	news_def_boxes
 	news_box  0,  3, 20, 10, {NEWS_MAIN_BORDER}
 	news_box  0, 12, 20,  6, {NEWS_TEXT_BORDER}
-	
+
 	news_def_strings
 	news_string 1, 2, ""
 	minigame_name
 	db "@"
-	
+
 	news_menu 2, 5, 1, 4, 0, 2, 16, 4, 7, 4, SHOW_DESCRIPTIONS | SHOW_ARROWS, 4
-	
+
 	news_buttonscript .a_button
 	news_buttonscript .b_button
-	news_buttonscript 
+	news_buttonscript
 	news_buttonscript .start_button
 	news_buttonscript
 	news_buttonscript
 	news_buttonscript .up_button
 	news_buttonscript .down_button
-	
+
 	news_def_menuitems
 	news_menudescription 1, 14, 18, 4
-	
+
 	news_norankingstable
-	
+
 	news_menuitem_names   .menuGameInstructionName,   .menuCrySet1Name,   .menuCrySet2Name,   .menuCrySet3Name,   .menuCancelName
 	news_menuitem_scripts .menuGameInstructionScript, .menuCrySet1Script, .menuCrySet2Script, .menuCrySet3Script, .menuCancelScript
 	news_menuitem_descs   .menuGameInstructionDesc,   .menuCrySet1Desc,   .menuCrySet2Desc,   .menuCrySet3Desc,   .menuCancelDesc
-	
+
 .a_button
 	nsc_playsound SFX_READ_TEXT
 	nsc_select
@@ -113,12 +113,12 @@ MinigameStart::
 .menuCancelScript
 	nsc_page NewsRoot
 	nsc_ret
-; Max 17 chars	
+; Max 17 chars
 .menuCrySet1Name
 	lang J, db "なきごえセット　１"
 	lang E, db "CRY SET 1"
 	lang D, db "RUF-SET 1"
-	lang F, db "?"
+	lang F, db "GROUPE DE CRIS 1"
 	lang I, db "?"
 	lang S, db "?"
 	db "@"
@@ -126,7 +126,7 @@ MinigameStart::
 	lang J, db "なきごえセット　２"
 	lang E, db "CRY SET 2"
 	lang D, db "RUF-SET 2"
-	lang F, db "?"
+	lang F, db "GROUPE DE CRIS 2"
 	lang I, db "?"
 	lang S, db "?"
 	db "@"
@@ -134,7 +134,7 @@ MinigameStart::
 	lang J, db "なきごえセット　３"
 	lang E, db "CRY SET 3"
 	lang D, db "RUF-SET 3"
-	lang F, db "?"
+	lang F, db "GROUPE DE CRIS 3"
 	lang I, db "?"
 	lang S, db "?"
 	db "@"
@@ -142,7 +142,7 @@ MinigameStart::
 	lang J, db "ゲームの　せつめい"
 	lang E, db "GAME EXPLANATION"
 	lang D, db "SPIELREGELN"
-	lang F, db "?"
+	lang F, db "REGLES DU JEU"
 	lang I, db "?"
 	lang S, db "?"
 	db "@"
@@ -150,11 +150,11 @@ MinigameStart::
 	lang J, db "もどる"
 	lang E, db "CANCEL"
 	lang D, db "ZURÜCK"
-	lang F, db "?"
+	lang F, db "RETOUR"
 	lang I, db "?"
 	lang S, db "?"
 	db "@"
-	
+
 MACRO def_cryset
 DEF CRYSET\1_UP_MON      EQU \2
 DEF CRYSET\1_DOWN_MON    EQU \3
@@ -163,18 +163,18 @@ DEF CRYSET\1_RIGHT_MON   EQU \5
 DEF CRYSET\1_BIG_PRIZE   EQU \6
 DEF CRYSET\1_BIG_PRIZE_2 EQU \7
 ENDM
-	
+
 	def_cryset 1, IGGLYBUFF, TOGEPI,   CLEFFA,     PICHU,     BIG_PEARL, PNK_APRICORN
 	def_cryset 2, BULBASAUR, PIKACHU,  CHARMANDER, SQUIRTLE,  STARDUST,  GRN_APRICORN
 	def_cryset 3, POLIWAG,   POLITOED, POLIWRATH,  POLIWHIRL, TM_REST,   YLW_APRICORN
-	
+
 .menuCrySet1Script
 	nsc_set wCurrentCrySet, 1
 	nsc_set wCurrentIndex, -2
 	nsc_set wNumListedPlayers, 16
 	nsc_page CryGame
 	nsc_ret
-	
+
 .menuCrySet2Script
 	nsc_set wCurrentCrySet, 2
 	nsc_set wCurrentIndex, -2
@@ -187,8 +187,8 @@ ENDM
 	nsc_set wNumListedPlayers, 16
 	nsc_page CryGame
 	nsc_ret
-	
-	
+
+
 .menuGameInstructionScript
 	nsc_clear 1, 13, 18, 4
 	nsc_delay 1
@@ -200,27 +200,27 @@ ENDM
 	lang J, text "まず　ゲームに　つかうための"
 	lang J, line "すきな　なきごえの　セットを"
 	lang J, cont "えらんで　ください"
-	
+
 	lang J, para "えらぶと　ゲームが　はじまります"
 	lang J, line "がめんの　まんなかから　みて"
 	lang J, cont "うえ・した・ひだり・みぎの　どこかに"
 	lang J, cont "ポケモンが　あらわれて　なきます"
-	
+
 	lang J, para "そのあと　ポケモンが　がめんの"
 	lang J, line "どこに　あらわれたか"
 	lang J, cont "じゅうじボタンで　まちがわず"
 	lang J, cont "おすことが　できたら　せいかいです"
-	
+
 	lang J, para "ポケモンの　あらわれる　かずは"
 	lang J, line "だんだん　おおく　なって　いくので"
 	lang J, cont "じゅんばんを　おぼえて"
 	lang J, cont "じゅうじボタンで"
 	lang J, cont "くりかえして　いきましょう"
-	
+
 	lang J, para "ぜんぶで　２０かい　じゅんばんを"
 	lang J, line "ただしく　くりかえせば　クリア！"
 	lang J, cont "それでは　はじめよう！"
-	
+
 	; English
 	lang E, text "First, choose a"
 	lang E, line "cry set to use."
@@ -259,7 +259,7 @@ ENDM
 	lang E, cont "to win the game!"
 
 	lang E, para "Let's get started!"
-	
+
 	; German
 	lang D, text "Wähle zunächst"
 	lang D, line "ein Ruf-Set aus."
@@ -303,16 +303,61 @@ ENDM
 	lang D, cont "du das Spiel!"
 
 	lang D, para "Und los geht's!"
-		
-	lang F, text "?"
-	
+
+	; French
+	lang F, text "D'abord, choisis"
+	lang F, line "un groupe de cris."
+
+	lang F, para "Prends celui"
+	lang F, line "que préfères."
+
+	lang F, para "Une fois choisi,"
+	lang F, line "le jeu commencera!"
+
+	lang F, para "Regarde bien le"
+	lang F, line "centre de l'écran."
+
+	lang F, para "Un #MON va"
+	lang F, line "pousser son cri!"
+
+	lang F, para "Il viendra de la"
+	lang F, line "gauche, d'en haut,"
+	lang F, cont "de la droite, ou"
+	lang F, cont "d'en bas--sois" ; Le double tiret est utilisé deux fois dans le jeu de base.
+	lang F, cont "attentif!"
+
+	lang F, para "Appuie sur la"
+	lang F, line "bonne direction"
+	lang F, cont "avec la manette." ; "manette" est utilisé dans le jeu de base (pour les instructions de réglage du RTC, je crois).
+
+	lang F, para "Réussis et tu"
+	lang F, line "passeras au niveau"
+	lang F, cont "suivant!"
+
+	; TODO: check actual behaviour for whether that description is suitable
+	lang F, para "Plus de #MON"
+	lang F, line "apparaissent plus"
+	lang F, cont "le niveau est"
+	lang F, cont "élevé, donc essaye"
+	lang F, cont "de mémoriser leurs"
+	lang F, cont "apparitions!"
+
+	lang F, para "Remporte vingt"
+	lang F, line "niveaux d'affilée"
+	lang F, cont "pour gagner"
+	lang F, cont "la partie!"
+
+	lang F, para "C'est parti!"
+
+	; Italian
 	lang I, text "?"
-	
+
+	; Spanish
 	lang S, db   "?"
 
 	para ""
 	done
-	
+
 ; TODO: did this text even exist?
 .menuCrySet1Desc
 .menuCrySet2Desc
@@ -320,77 +365,77 @@ ENDM
 .menuGameInstructionDesc
 .menuCancelDesc
 	db "?@"
-	
-	
 
-	
-	
+
+
+
+
 	news_screen CryGame, MUSIC_SHOW_ME_AROUND;MUSIC_VIRIDIAN_CITY
 	news_def_pals
-	
+
 	news_def_boxes
 	news_box  0,  0, 20, 18, {NEWS_MAIN_BORDER}
 	news_box  0, 12, 20,  6, {NEWS_TEXT_BORDER}
-	
+
 	news_def_strings
 	news_string 0, 0, "@"
-	
+
 	;news_menu 4, 9, 1, 1, 0, 0, -1, 0, 0, 0, 0, 0
 	news_menu 2, 14, 1, 1, 0, 0, -1, 0, 0, 0, 0, 0
-	
+
 	news_buttonscript .a_button
 	news_buttonscript .b_button
-	news_buttonscript 
+	news_buttonscript
 	news_buttonscript .start_button
 	news_buttonscript .right_button
 	news_buttonscript .left_button
 	news_buttonscript .up_button
 	news_buttonscript .down_button
-	
+
 	news_def_menuitems
 	news_menudescription 1, 14, 18, 4
-	
+
 	news_norankingstable
-	
+
 	news_menuitem_names   .pressStartText,  .menuDummyName,   .menuDummyName,   .menuDummyName, .menuDummyName
 	news_menuitem_scripts .cry_up,          .cry_down,        .cry_left,        .cry_right,     .checkNextDir, .drawTextBox
 	news_menuitem_descs   .menuDummyName,   .menuDummyName,   .menuDummyName,   .menuDummyName, .menuDummyName
-	
+
 	; no record of this text actually existing.
 	; maybe the whole game worked differently??
 .pressStartText
 ;	lang J, db "スタートボタンを　おして！"
 ;	lang E, db "PRESS START!"
 ;	lang D, db "Drücke START!"
-;	lang F, db "?"
+;	lang F, db "Appuyer sur START!"
 ;	lang I, db "?"
 ;	lang S, db "?"
 
 	lang J, db "なきごえセット"
 	lang E, db "CRY SET"
 	lang D, db "RUF-SET"
-	lang F, db "?"
+	lang F, db "GROUPE DE CRIS"
 	lang I, db "?"
 	lang S, db "?"
-	
+
 	nts_start
 	nts_number wCurrentCrySet, 1, 2
 	nts_end
 .menuDummyName
 	db "@"
-	
+
 .b_button
 	nsc_playsound SFX_MENU
 	nsc_page CrySetSelect
 .nothing
 	nsc_ret
-	
+
 .drawTextBox
 	;nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	;nsc_delay 1
 	;nsc_compare wCurrentIndex, .nothing, .nothing, .nothing, 1, 0
 	nsc_ret
-	
+
 DEF UP_BITS    EQU %00_00_00_00
 DEF DOWN_BITS  EQU %01_01_01_01
 DEF LEFT_BITS  EQU %10_10_10_10
@@ -406,7 +451,7 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_set wNewsMenuOption, 4
 	nsc_select
 	nsc_ret
-	
+
 .cry_up
 	nsc_compare wCurrentCrySet, .cryset1_up, .cryset2_up, .cryset3_up, 1, 2
 .cryset1_up
@@ -421,7 +466,7 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_drawmon  6, 1, CRYSET3_UP_MON, ANIM_MON_NORMAL, 7
 	nsc_clear    6, 1, 7, 7
 	nsc_ret
-	
+
 .down_button
 	nsc_compare wCurrentIndex, .down_button_continue, .nothing, .nothing, 1, -2
 .down_button_continue
@@ -432,7 +477,7 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_set wNewsMenuOption, 4
 	nsc_select
 	nsc_ret
-	
+
 .cry_down
 	nsc_compare wCurrentCrySet, .cryset1_down, .cryset2_down, .cryset3_down, 1, 2
 .cryset1_down
@@ -447,7 +492,7 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_drawmon  6, 9, CRYSET3_DOWN_MON, ANIM_MON_NORMAL, 7
 	nsc_clear    6, 9, 7, 7
 	nsc_ret
-	
+
 .left_button
 	nsc_compare wCurrentIndex, .left_button_continue, .nothing, .nothing, 1, -2
 .left_button_continue
@@ -458,7 +503,7 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_set wNewsMenuOption, 4
 	nsc_select
 	nsc_ret
-	
+
 .cry_left
 	nsc_compare wCurrentCrySet, .cryset1_left, .cryset2_left, .cryset3_left, 1, 2
 .cryset1_left
@@ -473,7 +518,7 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_drawmon  1, 5, CRYSET3_LEFT_MON, ANIM_MON_NORMAL, 7
 	nsc_clear    1, 5, 7, 7
 	nsc_ret
-	
+
 .right_button
 	nsc_compare wCurrentIndex, .right_button_continue, .nothing, .nothing, 1, -2
 .right_button_continue
@@ -484,7 +529,7 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_set wNewsMenuOption, 4
 	nsc_select
 	nsc_ret
-	
+
 .cry_right
 	nsc_compare wCurrentCrySet, .cryset1_right, .cryset2_right, .cryset3_right, 1, 2
 .cryset1_right
@@ -499,7 +544,7 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_drawmon  11, 5, CRYSET3_RIGHT_MON, ANIM_MON_NORMAL, 7
 	nsc_clear    11, 5, 7, 7
 	nsc_ret
-	
+
 .preview
 	nsc_drawbox 0, 0, 20, 18, {NEWS_MAIN_BORDER}
 	nsc_set wNewsMenuOption, 0
@@ -510,17 +555,17 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_select
 	nsc_set wNewsMenuOption, 3
 	nsc_select
-	
+
 	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	;nsc_set wNewsMenuOption, 5
 	;nsc_select
-	
+
 	nsc_delay 1
 	nsc_textbox 1, 14, .thisSetText
 	nsc_yesno 13, 7, .useThisSet, .notThisSet
 .notThisSet
 	nsc_page CrySetSelect
-	
+
 .useThisSet
 	nsc_set wCurrentStreak, 0
 	nsc_set wCurrentIndex, -1
@@ -532,16 +577,16 @@ DEF RIGHT_BITS EQU %11_11_11_11
 	nsc_ramcopy hRandomAdd, wCrySequence3, 2
 	nsc_delay 1 ; wait for new RNG rolls
 	nsc_ramcopy hRandomAdd, wCrySequence5, 1
-	
+
 	nsc_playmusic MUSIC_VIRIDIAN_CITY
-	
+
 	; fall thru
 .a_button
 .start_button
 	nsc_compare wCurrentIndex, .nothing, .preview, .start_button_continue, 1, -2
 .start_button_continue
 	nsc_drawbox 0, 0, 20, 18, {NEWS_MAIN_BORDER}
-		
+
 DEF cryindex = 0
 REPT 20
 DEF crysequencebyte = (cryindex/4)+1
@@ -579,20 +624,20 @@ ENDR
 	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	;nsc_set wNewsMenuOption, 5
 	;nsc_select
-	
+
 	nsc_printstring 1, 14, .textYourTurn
 
 	nsc_playsound SFX_TWINKLE;SFX_HIT_END_OF_EXP_BAR;SFX_TWO_PC_BEEPS
 	nsc_set wCurrentIndex, 0
 	nsc_ret
-	
-	
-	
+
+
+
 .checkNextDir
 	nsc_ramcopy wCurrentIndex, wMathScratch, 1
 	nsc_flagop wMathScratch, FLAG_CLEAR, 0
 	nsc_flagop wMathScratch, FLAG_CLEAR, 1
-	
+
 	nsc_compare wMathScratch, .sequence00to03, .sequence04to07, .higher, 1, 1 << 2
 .higher
 	nsc_compare wMathScratch, .sequence08to11, .sequence12to15, .sequence16to19, 1, 3 << 2
@@ -618,7 +663,7 @@ ENDR
 	nsc_flagop wMathScratch, FLAG_CLEAR, 5
 	nsc_flagop wMathScratch, FLAG_CLEAR, 6
 	nsc_flagop wMathScratch, FLAG_CLEAR, 7
-	
+
 	nsc_bit wMathScratch, 0, .sequence_odd, .sequence_even
 .sequence_odd
 	nsc_bit wMathScratch, 1, .sequence03, .sequence01
@@ -682,23 +727,23 @@ ENDR
 .sequenceCheckRejoin2
 	; the big moment!!!!
 	nsc_compareram wCurDirection, 1, wMathScratch2, .sequenceWrong, .sequenceRight, .sequenceWrong
-	
+
 .sequenceWrong
 	; TODO: fix "wawawawawawawa" (return and do prize text on a-script?)
 	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
-	
+
 	;nsc_delay 1
 	nsc_printstring 1, 14, .textWrong
 	nsc_playsound SFX_WRONG
 	;nsc_waitbutton
-	
+
 	; intermediate rewards
-	
+
 	nsc_set wNumListedPlayers, 16
 	;nsc_set wNewsMenuOption, 5
 	;nsc_select
 	nsc_set wNewsMenuOption, 0
-	
+
 	nsc_compare wCurrentStreak, .prizeDone, .prize5, .prizeGreater1, 1, 5
 .prizeGreater1
 	nsc_compare wCurrentStreak, .prize5, .prize10, .prizeGreater2, 1, 10
@@ -742,19 +787,19 @@ ENDR
 	nsc_waitbutton
 	nsc_playmusic MUSIC_SHOW_ME_AROUND
 	nsc_page CrySetSelect
-	
+
 .sequenceRight
 
 	nsc_compareram wCurrentIndex, 1, wCurrentStreak, .keepGoing, .sequenceComplete, .sequenceComplete
 .sequenceComplete
-	
+
 
 	nsc_add wCurrentStreak, 1
-	
+
 	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	;nsc_set wNewsMenuOption, 5
 	;nsc_select
-	
+
 	;nsc_delay 1
 	nsc_printstring 1, 14, .textRight
 	nsc_playsound SFX_LEVEL_UP
@@ -849,117 +894,149 @@ ENDR
 	nsc_waitbutton
 	nsc_playmusic MUSIC_SHOW_ME_AROUND
 	nsc_page CrySetSelect
-	
-	
+
+
 .thisSetText
 	; Japanese
 	lang J, text "このなきごえセットを　つかいますか？"
-	
+
 	; English
 	lang E, text "Do you want to use"
 	lang E, line "this cry set?"
-	
+
 	; German
 	lang D, text "Wählst du dieses"
 	lang D, line "Ruf-Set?"
-	lang F, text "?"
+
+	; French
+	lang F, text "Utiliser ce groupe"
+	lang F, line "de cris?"
+
+	; Italian
 	lang I, text "?"
+
+	; Spanish
 	lang S, text "?"
 	done
-	
+
 ; center-aligned version
 ;.textYourTurn
 ;	lang J, db   "　　あなたの　ばんです！"
 ;	lang J, next "じゅうじボタンを　おしてね！"
-;	
+;
 ;	lang E, db   " Your turn! Use"
 ;	lang E, next "the Control Pad!"
-;	
+;
 ;	lang D, db   "  Du bist dran!"
 ;   lang D, next "   Drücke das"
 ;   lang D, next "  Steuerkreuz!"
-;	
-;	lang F, db   "?"
-;	
+;
+;	lang F, db   "   A ton tour!"
+;	lang F, next "     Utilise"
+;	lang F, next "   la manette!"
+;
 ;	lang I, db   "?"
-;	
+;
 ;	lang S, db   "?"
-;	
+;
 ;	db "@"
-	
+
 ; left-aligned version
 .textYourTurn
 	; Japanese
 	lang J, db   "あなたの　ばんです！"
 	lang J, next "じゅうじボタンを　おしてね！"
-	
+
 	; English
 	lang E, db   "Your turn! Use"
 	lang E, next "the Control Pad!"
-	
+
 	; German
 	lang D, db   "Du bist dran!"
 	lang D, next "Drücke das"
 	lang D, next "Steuerkreuz!"
-	
-	lang F, db   "?"
-	
+
+	lang F, db   "A ton tour!"
+	lang F, next "Utilise"
+	lang F, next "la manette!"
+
 	lang I, db   "?"
-	
+
 	lang S, db   "?"
-	
+
 	db "@"
 
 .textRight
 	; Japanese
 	lang J, db   "せいかい！！"
-	
+
 	; English
 	lang E, db   "Correct!"
-	
+
 	; German
 	lang D, db   "Richtig!"
-	
-	lang F, db   "?"
+
+	; French
+	lang F, db   "Bravo!"
+
+	; Italian
 	lang I, db   "?"
+
+	; Spanish
 	lang S, db   "?"
+
 	db "@"
-	
+
 .textWrong
 	; Japanese
 	lang J, db   "ざんねん…まちがえちゃった！"
-	
+
 	; English
 	lang E, db   "Oops…"
 	lang E, next "You messed up!"
-	
+
 	; German
 	lang D, db   "Schade… Das war"
 	lang D, next "nicht richtig!"
-	
-	lang F, db   "?"
+
+	; French
+	lang F, db   "Dommage..."
+	lang F, next "C'est raté!"
+
+	; Italian
 	lang I, db   "?"
+
+	; Spanish
 	lang S, db   "?"
+
 	db "@"
-	
+
 .textAllClear
 	; Japanese
 	lang J, text "２０もんクリア！　おめでとう！"
-	
+
 	; English
 	lang E, text "You wrapped up all"
 	lang E, line "twenty! Well done!"
-	
+
 	; German
 	lang D, text "20 Runden ge-"
 	lang D, line "schafft! Klasse!"
-	
-	lang F, text "?"
+
+	; French
+	lang F, text "Tu as réussi tous"
+	lang F, line "les vingt!"
+	lang F, cont "Félicitations!"
+
+	; Italian
 	lang I, text "?"
+
+	; Spanish
 	lang S, text "?"
+
 	done
-	
-	
+
+
 	; NOTE: the japanese text uses the same verb in this text
 	;       as in the minigame title. literally it would be smth like
 	;       "since you continued × times", if the minigame's name is "will it continue?"
@@ -979,20 +1056,20 @@ ENDR
 	lang J, nts_number wCurrentStreak, 1, 2, 2
 	lang J, nts_end
 	lang J, text "かい　いじょう　つづいたので"
-	lang J, line 
+	lang J, line
 	lang J, nts_start
 	lang J, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
 	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
 	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
 	lang J, db   "を　プレゼント！"
-	
+
 	lang J, para
 	lang J, nts_start
 	lang J, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
 	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
 	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
 	lang J, db "を　もらった！"
-	
+
 	; English
 	lang E, text "You wrapped up"
 	lang E, line
@@ -1000,7 +1077,7 @@ ENDR
 	lang E, nts_number wCurrentStreak, 1, 2, 3
 	lang E, nts_end
 	lang E, db   "rounds!"
-	
+
 	lang E, para "Here! Take"
 	lang E, line "this "
 	lang E, nts_start
@@ -1009,7 +1086,7 @@ ENDR
 	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
 	;lang E, nts_end
 	lang E, cont   "as a gift!"
-	
+
 	lang E, para
 	lang E, nts_start
 	lang E, nts_player_name 0
@@ -1022,7 +1099,7 @@ ENDR
 	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
 	;lang E, nts_end
 	lang E, db   "."
-	
+
 	; German
 	lang D, text "Du hast "
 	lang D, nts_start
@@ -1030,7 +1107,7 @@ ENDR
 	lang D, nts_end
 	lang D, db   " Run-"
 	lang D, line "den durchgehalten!"
-	
+
 	lang D, para "Hier! Nimm bitte"
 	lang D, line
 	lang D, nts_start
@@ -1040,7 +1117,7 @@ ENDR
 	;lang D, nts_end
 	lang D, db   " als"
 	lang D, cont "Geschenk!"
-	
+
 	lang D, para
 	lang D, nts_start
 	lang D, nts_player_name 0
@@ -1053,42 +1130,45 @@ ENDR
 	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
 	;lang D, nts_end
 	lang D, db   "."
-	
+
 	; French
-	lang F, text "?"
+	lang F, text "Tu as réussi"
 	lang F, nts_start
 	lang F, nts_number wCurrentStreak, 1, 2, 3
 	lang F, nts_end
-	lang F, db   "?"
-	
-	lang F, para "?"
+	lang F, db   "niveaux!"
+
+	lang F, para "Tiens! Voici"
+	lang F, line
 	lang F, nts_start
-	lang F, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
-	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
-	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
+	lang F, nts_switch wGiftIndex, .itemName_BERRY_pronoun, .itemName_POKE_DOLL_pronoun, .itemName_PEARL_pronoun, \
+	                               .itemName_BIG_PEARL_pronoun, .itemName_STARDUST_pronoun, .itemName_TM_REST_pronoun, \
+	                               .itemName_PNK_APRICORN_pronoun, .itemName_GRN_APRICORN_pronoun, .itemName_YLW_APRICORN_pronoun
 	;lang F, nts_end
-	lang F, db   "?"
-	
+	lang F, cont "en cadeau!"
+
 	lang F, para
 	lang F, nts_start
 	lang F, nts_player_name 0
 	lang F, nts_end
-	lang F, db   "?"
+	lang F, db   "reçoit"
 	lang F, line
 	lang F, nts_start
+	; Les messages d'obtention n'utilisent pas d'article en général ;
+	; ici, on pourrait, mais préférons rester cohérents avec le jeu de base.
 	lang F, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
 	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
 	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
 	;lang F, nts_end
-	lang F, db   "?"
-	
+	lang F, db   "."
+
 	; Italian
 	lang I, text "?"
 	lang I, nts_start
 	lang I, nts_number wCurrentStreak, 1, 2, 3
 	lang I, nts_end
 	lang I, db   "?"
-	
+
 	lang I, para "?"
 	lang I, nts_start
 	lang I, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
@@ -1096,7 +1176,7 @@ ENDR
 	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
 	;lang I, nts_end
 	lang I, db   "?"
-	
+
 	lang I, para
 	lang I, nts_start
 	lang I, nts_player_name 0
@@ -1109,14 +1189,14 @@ ENDR
 	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
 	;lang I, nts_end
 	lang I, db   "?"
-	
+
 	; Spanish
 	lang S, text "?"
 	lang S, nts_start
 	lang S, nts_number wCurrentStreak, 1, 2, 3
 	lang S, nts_end
 	lang S, db   "?"
-	
+
 	lang S, para "?"
 	lang S, nts_start
 	lang S, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
@@ -1124,7 +1204,7 @@ ENDR
 	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
 	;lang S, nts_end
 	lang S, db   "?"
-	
+
 	lang S, para
 	lang S, nts_start
 	lang S, nts_player_name 0
@@ -1137,10 +1217,12 @@ ENDR
 	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
 	;lang S, nts_end
 	lang S, db   "?"
-	
+
 	done
-	
-	
+
+
+.itemName_BERRY_pronoun
+	lang F, db "une "
 .itemName_BERRY
 	lang J, db "きのみ"
 	lang E, db "BERRY"
@@ -1149,7 +1231,9 @@ ENDR
 	lang I, db "BACCA"
 	lang S, db "BAYA"
 	db "@"
-	
+
+.itemName_POKE_DOLL_pronoun
+	lang F, db "une "
 .itemName_POKE_DOLL
 	lang J, db "ピッピにんぎょう"
 	lang E, db "# DOLL"
@@ -1158,7 +1242,9 @@ ENDR
 	lang I, db "# BAMBOLA"
 	lang S, db "# MUÑECO"
 	db "@"
-	
+
+.itemName_PEARL_pronoun
+	lang F, db "une "
 .itemName_PEARL
 	lang J, db "しんじゅ"
 	lang E, db "PEARL"
@@ -1167,7 +1253,9 @@ ENDR
 	lang I, db "PERLA"
 	lang S, db "PERLA"
 	db "@"
-	
+
+.itemName_BIG_PEARL_pronoun
+	lang F, db "une "
 .itemName_BIG_PEARL
 	lang J, db "おおきなしんじゅ"
 	lang E, db "BIG PEARL"
@@ -1176,7 +1264,9 @@ ENDR
 	lang I, db "?"
 	lang S, db "?"
 	db "@"
-	
+
+.itemName_STARDUST_pronoun
+	lang F, db "une "
 .itemName_STARDUST
 	lang J, db "ほしのすな"
 	lang E, db "STARDUST"
@@ -1185,7 +1275,9 @@ ENDR
 	lang I, db "GRANDE PERLA"
 	lang S, db "PERLA GRANDE"
 	db "@"
-	
+
+.itemName_TM_REST_pronoun
+	lang F, db "la "
 .itemName_TM_REST
 	lang J, db "わざマシン４４"
 	lang E, db "TM44"
@@ -1194,16 +1286,20 @@ ENDR
 	lang I, db "MT44"
 	lang S, db "MT44"
 	db "@"
-	
+
+.itemName_PNK_APRICORN_pronoun
+	lang F, db "un "
 .itemName_PNK_APRICORN
 	lang J, db "ももぼんぐり"
 	lang E, db "PNK APRICORN"
 	lang D, db "APRIKOKO PNK"
-	lang F, db "NOIGRUME ROS"
+	lang F, db "NOIGRUME ROS" ; Le nom est utilisé tronqué sur la Route 35.
 	lang I, db "GHICOC.ROSA"
 	lang S, db "BONGURI ROS"
 	db "@"
-	
+
+.itemName_GRN_APRICORN_pronoun
+	lang F, db "un "
 .itemName_GRN_APRICORN
 	lang J, db "みどぼんぐり"
 	lang E, db "GRN APRICORN"
@@ -1212,7 +1308,9 @@ ENDR
 	lang I, db "GHICOC.VERDE"
 	lang S, db "BONGURI VER"
 	db "@"
-	
+
+.itemName_YLW_APRICORN_pronoun
+	lang F, db "un "
 .itemName_YLW_APRICORN
 	lang J, db "きぼんぐり"
 	lang E, db "YLW APRICORN"

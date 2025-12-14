@@ -202,7 +202,7 @@ DEF RANKING_HEALINGS_HOF_NAME EQUS "?" ; Max 17 chars
 MACRO describe_ranking_HEALINGS_HOF
 	para "?"
 ENDM
-DEF RANKING_HEALINGS_HOF_UNIT EQUS "?" ; 
+DEF RANKING_HEALINGS_HOF_UNIT EQUS "?" ;
 
 ; Spanish
 ELIF DEF(_LANG_S)
@@ -335,8 +335,8 @@ ELIF DEF(_LANG_F)
 DEF RANKING_STEP_COUNT_NAME EQUS "NOMBRE DE PAS" ; Max 17 chars
 MACRO describe_ranking_STEP_COUNT
 	para "Total du nombre de"
-	line "pas effectués tout"
-	cont "au long de votre"
+	line "pas effectués au"
+	cont "cours de votre"
 	cont "aventure."
 ENDM
 DEF RANKING_STEP_COUNT_UNIT EQUS " pas"
@@ -810,7 +810,7 @@ MACRO describe_ranking_HOF_ENTRIES
 	cont "into the HALL OF"
 	cont "FAME."
 ENDM
-DEF RANKING_HOF_ENTRIES_UNIT EQUS " entries" 
+DEF RANKING_HOF_ENTRIES_UNIT EQUS " entries"
 
 ; German
 ELIF DEF(_LANG_D)
@@ -936,7 +936,7 @@ MACRO describe_ranking_HOOKED_ENCOUNTERS
 	para "The total amount"
 	line "of #MON"
 	cont "encountered while"
-	cont "fishing."	
+	cont "fishing."
 ENDM
 DEF RANKING_HOOKED_ENCOUNTERS_UNIT EQUS " hooked"
 
@@ -1080,11 +1080,13 @@ DEF RANKING_MONS_EVOLVED_UNIT EQUS " entwickelt"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_MONS_EVOLVED_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_MONS_EVOLVED_NAME EQUS "EVOLUTIONS #MON" ; Max 17 chars
 MACRO describe_ranking_MONS_EVOLVED
-	para "?"
+	para "Total du nombre de"
+	line "#MON qui ont"
+	cont "évolué."
 ENDM
-DEF RANKING_MONS_EVOLVED_UNIT EQUS "?"
+DEF RANKING_MONS_EVOLVED_UNIT EQUS " évolutions"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -1130,7 +1132,7 @@ MACRO describe_ranking_FRUIT_PICKED
 	para "The total amount"
 	line "of BERRIES and"
 	cont "APRICORNS picked"
-	cont "from trees."	
+	cont "from trees."
 ENDM
 DEF RANKING_FRUIT_PICKED_UNIT EQUS " fruit"
 REDEF RANKING_FRUIT_PICKED_SPACING EQU 1
@@ -1152,9 +1154,12 @@ REDEF RANKING_FRUIT_PICKED_SPACING EQU 1
 ELIF DEF(_LANG_F)
 DEF RANKING_FRUIT_PICKED_NAME EQUS "?" ; Max 17 chars
 MACRO describe_ranking_FRUIT_PICKED
-	para "?"
+	para "Total du nombre de"
+	line "BAIES et NOIGRUMES"
+	cont "ramassées sur des"
+	cont "arbres."
 ENDM
-DEF RANKING_FRUIT_PICKED_UNIT EQUS "?"
+DEF RANKING_FRUIT_PICKED_UNIT EQUS " fruits"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -1222,11 +1227,14 @@ REDEF RANKING_HEALINGS_SPACING EQU -3
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_HEALINGS_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_HEALINGS_NAME EQUS "SOINS D'EQUIPE" ; Max 17 chars
 MACRO describe_ranking_HEALINGS
-	para "?"
+	para "Total du nombre de"
+	line "fois où l'équipe a"
+	cont "été entièrement"
+	cont "soignée."
 ENDM
-DEF RANKING_HEALINGS_UNIT EQUS "?"
+DEF RANKING_HEALINGS_UNIT EQUS " soins"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -1287,11 +1295,13 @@ REDEF RANKING_MYSTERY_GIFT_SPACING EQU 3
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_MYSTERY_GIFT_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_MYSTERY_GIFT_NAME EQUS "CADEAUX MYSTERE" ; Max 17 chars
 MACRO describe_ranking_MYSTERY_GIFT
-	para "?"
+	para "Total du nombre"
+	line "d'utilisations du"
+	cont "CADEAU MYSTERE."
 ENDM
-DEF RANKING_MYSTERY_GIFT_UNIT EQUS "?"
+DEF RANKING_MYSTERY_GIFT_UNIT EQUS " fois"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -1349,11 +1359,14 @@ DEF RANKING_TRADES_UNIT EQUS " Mal"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_TRADES_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_TRADES_NAME EQUS "ECHANGES TERMINES" ; Max 17 chars
 MACRO describe_ranking_TRADES
-	para "?"
+	para "Total du nombre"
+	line "d'échanges"
+	cont "effectués"
+	cont "avec succès."
 ENDM
-DEF RANKING_TRADES_UNIT EQUS "?"
+DEF RANKING_TRADES_UNIT EQUS " échanges"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -1395,7 +1408,7 @@ MACRO describe_ranking_FLY
 	para "The total amount"
 	line "of times FLY was"
 	cont "used outside of"
-	cont "battle."	
+	cont "battle."
 ENDM
 DEF RANKING_FLY_UNIT EQUS " times"
 
@@ -1412,11 +1425,13 @@ DEF RANKING_FLY_UNIT EQUS " Mal"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_FLY_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_FLY_NAME EQUS "VOL HORS COMBAT" ; Max 17 chars
 MACRO describe_ranking_FLY
-	para "?"
+	para "Total du nombre"
+	line "d'utilisations de"
+	cont "VOL hors combat."
 ENDM
-DEF RANKING_FLY_UNIT EQUS "?"
+DEF RANKING_FLY_UNIT EQUS " fois"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -1458,7 +1473,7 @@ MACRO describe_ranking_SURF
 	para "The total amount"
 	line "of times SURF was"
 	cont "used outside of"
-	cont "battle."	
+	cont "battle."
 ENDM
 DEF RANKING_SURF_UNIT EQUS " times"
 
@@ -1475,11 +1490,13 @@ DEF RANKING_SURF_UNIT EQUS " Mal"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_SURF_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_SURF_NAME EQUS "SURF HORS COMBAT" ; Max 17 chars
 MACRO describe_ranking_SURF
-	para "?"
+	para "Total du nombre"
+	line "d'utilisations de"
+	cont "SURF hors combat."
 ENDM
-DEF RANKING_SURF_UNIT EQUS "?"
+DEF RANKING_SURF_UNIT EQUS " fois"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -1521,7 +1538,7 @@ MACRO describe_ranking_WATERFALL
 	para "The total amount"
 	line "of times WATERFALL"
 	cont "was used outside"
-	cont "of battle."	
+	cont "of battle."
 ENDM
 DEF RANKING_WATERFALL_UNIT EQUS " times"
 
@@ -1538,11 +1555,14 @@ DEF RANKING_WATERFALL_UNIT EQUS " Mal"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_WATERFALL_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_WATERFALL_NAME EQUS "CASCADE H. COMBAT" ; Max 17 chars
 MACRO describe_ranking_WATERFALL
-	para "?"
+	para "Total du nombre"
+	line "d'utilisations"
+	cont "de CASCADE"
+	cont "hors combat."
 ENDM
-DEF RANKING_WATERFALL_UNIT EQUS "?"
+DEF RANKING_WATERFALL_UNIT EQUS " fois"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -1583,7 +1603,7 @@ DEF RANKING_WHITE_OUTS_NAME EQUS "TIMES WHITED OUT" ; Max 17 chars
 MACRO describe_ranking_WHITE_OUTS
 	para "The total amount"
 	line "of times whited"
-	cont "out from battle."	
+	cont "out from battle."
 ENDM
 DEF RANKING_WHITE_OUTS_UNIT EQUS " times"
 
@@ -1600,11 +1620,13 @@ DEF RANKING_WHITE_OUTS_UNIT EQUS " Mal"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_WHITE_OUTS_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_WHITE_OUTS_NAME EQUS "DEFAITES COMBAT" ; Max 17 chars
 MACRO describe_ranking_WHITE_OUTS
-	para "?"
+	para "Total du nombre de"
+	line "hors-jeu subis"
+	cont "en combat."
 ENDM
-DEF RANKING_WHITE_OUTS_UNIT EQUS "?"
+DEF RANKING_WHITE_OUTS_UNIT EQUS " fois"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -1647,7 +1669,7 @@ MACRO describe_ranking_LUCKY_NUMBER_SHOW
 	line "of LUCKY NUMBER"
 	cont "SHOW wins on the"
 	cont "#GEAR RADIO's"
-	cont "LUCKY CHANNEL."	
+	cont "LUCKY CHANNEL."
 ENDM
 DEF RANKING_LUCKY_NUMBER_SHOW_UNIT EQUS " wins"
 
@@ -1664,11 +1686,15 @@ DEF RANKING_LUCKY_NUMBER_SHOW_UNIT EQUS " Gewinne"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_LUCKY_NUMBER_SHOW_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_LUCKY_NUMBER_SHOW_NAME EQUS "GAINS BON NUMERO" ; Max 17 chars
 MACRO describe_ranking_LUCKY_NUMBER_SHOW
-	para "?"
+	para "Total du nombre de"
+	lien "prix remportés au"
+	cont "BON NUMERO de"
+	cont "l'ANTENNE LA CHANCE"
+	cont "du #MATOS."
 ENDM
-DEF RANKING_LUCKY_NUMBER_SHOW_UNIT EQUS "?"
+DEF RANKING_LUCKY_NUMBER_SHOW_UNIT EQUS " prix"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -1726,11 +1752,13 @@ DEF RANKING_PHONE_CALLS_UNIT EQUS " Anrufe"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_PHONE_CALLS_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_PHONE_CALLS_NAME EQUS "APPELS TELEPHONE" ; Max 17 chars
 MACRO describe_ranking_PHONE_CALLS
-	para "?"
+	para "Total du nombre de"
+	line "coups de fil"
+	cont "passés et reçus."
 ENDM
-DEF RANKING_PHONE_CALLS_UNIT EQUS "?"
+DEF RANKING_PHONE_CALLS_UNIT EQUS " appels"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -1848,11 +1876,15 @@ DEF RANKING_LINK_BATTLES_UNIT EQUS " Kämpfe"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_LINK_BATTLES_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_LINK_BATTLES_NAME EQUS "COMBATS COLISEE" ; Max 17 chars
 MACRO describe_ranking_LINK_BATTLES
-	para "?"
+	para "Nombre de combats"
+	line "livrés contre"
+	cont "d'autres <TRAINER>S"
+	cont "au COLISEE du"
+	cont "CLUB #COM."
 ENDM
-DEF RANKING_LINK_BATTLES_UNIT EQUS "?"
+DEF RANKING_LINK_BATTLES_UNIT EQUS " combats"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -1894,7 +1926,7 @@ MACRO describe_ranking_SPLASH
 	para "The total amount"
 	line "of times SPLASH"
 	cont "was used in"
-	cont "battle."	
+	cont "battle."
 ENDM
 DEF RANKING_SPLASH_UNIT EQUS " times"
 
@@ -1912,11 +1944,14 @@ DEF RANKING_SPLASH_UNIT EQUS " Mal"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_SPLASH_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_SPLASH_NAME EQUS "TREMPETTE FAITES" ; Max 17 chars
 MACRO describe_ranking_SPLASH
-	para "?"
+	para "Total du nombre de"
+	line "fois où TREMPETTE"
+	cont "a été utilisée"
+	cont "en combat."
 ENDM
-DEF RANKING_SPLASH_UNIT EQUS "?"
+DEF RANKING_SPLASH_UNIT EQUS " fois"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -1980,11 +2015,15 @@ REDEF RANKING_TREE_ENCOUNTERS_SPACING EQU 3
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_TREE_ENCOUNTERS_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_TREE_ENCOUNTERS_NAME EQUS "COUPS D'BOULE" ; Max 17 chars
 MACRO describe_ranking_TREE_ENCOUNTERS
-	para "?"
+	para "Total du nombre"
+	line "d'utilisations de"
+	cont "COUP D'BOULE sur"
+	cont "des arbres"
+	cont "hors combat."
 ENDM
-DEF RANKING_TREE_ENCOUNTERS_UNIT EQUS "?"
+DEF RANKING_TREE_ENCOUNTERS_UNIT EQUS " fois"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -2103,11 +2142,15 @@ DEF RANKING_LINK_WINS_UNIT EQUS " Siege"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_LINK_WINS_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_LINK_WINS_NAME EQUS "VICTOIRES COLISEE" ; Max 17 chars
 MACRO describe_ranking_LINK_WINS
-	para "?"
+	para "Nombre de combats"
+	line "gagnés contre"
+	cont "d'autres <TRAINER>S"
+	cont "au COLISEE du"
+	cont "CLUB #COM."
 ENDM
-DEF RANKING_LINK_WINS_UNIT EQUS "?"
+DEF RANKING_LINK_WINS_UNIT EQUS " victoires"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -2172,11 +2215,15 @@ REDEF RANKING_LINK_LOSSES_SPACING EQU -5
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_LINK_LOSSES_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_LINK_LOSSES_NAME EQUS "DEFAITES COLISEE" ; Max 17 chars
 MACRO describe_ranking_LINK_LOSSES
-	para "?"
+	para "Nombre de combats"
+	line "perdus contre"
+	cont "d'autres <TRAINER>S"
+	cont "au COLISEE du"
+	cont "CLUB #COM."
 ENDM
-DEF RANKING_LINK_LOSSES_UNIT EQUS "?"
+DEF RANKING_LINK_LOSSES_UNIT EQUS " défaites"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -2222,7 +2269,7 @@ MACRO describe_ranking_LINK_DRAWS
 	cont "#COM CLUB"
 	cont "COLOSSEUM that"
 	cont "resulted in a"
-	cont "draw."	
+	cont "draw."
 ENDM
 DEF RANKING_LINK_DRAWS_UNIT EQUS " draws"
 
@@ -2242,11 +2289,17 @@ DEF RANKING_LINK_DRAWS_UNIT EQUS " Remis"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_LINK_DRAWS_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_LINK_DRAWS_NAME EQUS "EGALITES COLISEE" ; Max 17 chars
 MACRO describe_ranking_LINK_DRAWS
-	para "?"
+	para "Nombre de combats"
+	line "livrés contre"
+	cont "d'autres <TRAINER>S"
+	cont "au COLISEE du"
+	cont "CLUB #COM qui se"
+	cont "sont conclus par"
+	cont "une égalité."
 ENDM
-DEF RANKING_LINK_DRAWS_UNIT EQUS "?"
+DEF RANKING_LINK_DRAWS_UNIT EQUS " égalités"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -2287,9 +2340,9 @@ DEF RANKING_SELFDESTRUCT_NAME EQUS "SELF-KO MOVE USED" ; Max 17 chars
 MACRO describe_ranking_SELFDESTRUCT
 	para "The total amount"
 	line "of times EXPLOSION"
-	cont "or SELFDESTRUCT" 
+	cont "or SELFDESTRUCT"
 	cont "have been used in"
-	cont "battle."		
+	cont "battle."
 ENDM
 DEF RANKING_SELFDESTRUCT_UNIT EQUS " times"
 
@@ -2306,11 +2359,16 @@ DEF RANKING_SELFDESTRUCT_UNIT EQUS " Mal"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_SELFDESTRUCT_NAME EQUS "?" ; Max 17 chars
+; "ATTAQUES SUICIDE" rend mieux, mais le S-word serait probablement rejeté dans un jeu Pokémon.
+DEF RANKING_SELFDESTRUCT_NAME EQUS "ATQ. AUTO-DESTRUC" ; Max 17 chars
 MACRO describe_ranking_SELFDESTRUCT
-	para "?"
+	para "Total du nombre"
+	line "d'utilisations de"
+	cont "DESTRUCTION ou"
+	cont "d'EXPLOSION"
+	cont "en combat."
 ENDM
-DEF RANKING_SELFDESTRUCT_UNIT EQUS "?"
+DEF RANKING_SELFDESTRUCT_UNIT EQUS " fois"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -2373,11 +2431,17 @@ DEF RANKING_CURRENT_SLOTS_STREAK_UNIT EQUS " Gewinne"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_CURRENT_SLOTS_STREAK_NAME EQUS "?" ; Max 17 chars
+; "Consécutive" est trop long pour rentrer, donc "série" fera l'affaire.
+DEF RANKING_CURRENT_SLOTS_STREAK_NAME EQUS "SERIE AU CASINO" ; Max 17 chars
 MACRO describe_ranking_CURRENT_SLOTS_STREAK
-	para "?"
+	para "La dernière série"
+	line "de victoires"
+	cont "consécutives aux"
+	cont "machines à sous"
+	cont "du CASINO de"
+	cont "DOUBLONVILLE."
 ENDM
-DEF RANKING_CURRENT_SLOTS_STREAK_UNIT EQUS "?"
+DEF RANKING_CURRENT_SLOTS_STREAK_UNIT EQUS " victoires"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -2439,11 +2503,16 @@ DEF RANKING_LONGEST_SLOTS_STREAK_UNIT EQUS " Gewinne"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_LONGEST_SLOTS_STREAK_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_LONGEST_SLOTS_STREAK_NAME EQUS "MEILLEURE SERIE" ; Max 17 chars
 MACRO describe_ranking_LONGEST_SLOTS_STREAK
-	para "?"
+	para "La meilleure série"
+	line "de victoires"
+	cont "consécutives aux"
+	cont "machines à sous"
+	cont "du CASINO de"
+	cont "DOUBLONVILLE."
 ENDM
-DEF RANKING_LONGEST_SLOTS_STREAK_UNIT EQUS "?"
+DEF RANKING_LONGEST_SLOTS_STREAK_UNIT EQUS " victoires"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -2507,11 +2576,15 @@ DEF RANKING_COINS_EARNED_UNIT EQUS " Münzen"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_COINS_EARNED_NAME EQUS "?"; Max 17 chars
+DEF RANKING_COINS_EARNED_NAME EQUS "JETONS GAGNES"; Max 17 chars
 MACRO describe_ranking_COINS_EARNED
-	para "?"
+	para "Total du nombre de"
+	line "JETONS gagnés aux"
+	cont "machines à sous"
+	cont "du CASINO de"
+	cont "DOUBLONVILLE."
 ENDM
-DEF RANKING_COINS_EARNED_UNIT EQUS "?"
+DEF RANKING_COINS_EARNED_UNIT EQUS " jetons"
 
 ; Italian
 ELIF DEF(_LANG_I)
@@ -2574,9 +2647,13 @@ REDEF RANKING_MONEY_EARNED_SPACING EQU 4
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_MONEY_EARNED_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_MONEY_EARNED_NAME EQUS "ARGENT REMPORTE" ; Max 17 chars
 MACRO describe_ranking_MONEY_EARNED
-	para "?"
+	para "Total d'argent"
+	line "obtenu lors de"
+	cont "combats #MON au"
+	cont "cours de votre"
+	cont "aventure."
 ENDM
 DEF RANKING_MONEY_EARNED_UNIT EQUS "¥"
 
@@ -2734,9 +2811,13 @@ DEF RANKING_SHORTEST_MAGIKARP_UNIT EQUS " cm"
 
 ; French
 ELIF DEF(_LANG_F)
-DEF RANKING_SHORTEST_MAGIKARP_NAME EQUS "?" ; Max 17 chars
+DEF RANKING_SHORTEST_MAGIKARP_NAME EQUS "MINI MAGICARPE" ; Max 17 chars
 MACRO describe_ranking_SHORTEST_MAGIKARP
-	para "?"
+	para "La taille du plus"
+	line "petit MAGICARPE"
+	cont "mesuré par le"
+	cont "MAITRE PECHEUR"
+	cont "au LAC COLERE."
 ENDM
 ; uncomment to print with a ',' as the decimal separator
 ;REDEF RANKING_SHORTEST_MAGIKARP_FMT  EQUS "PRINTNUM_LEADINGZEROS | 2, 4, 5, 4, \",\""

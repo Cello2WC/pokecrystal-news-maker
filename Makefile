@@ -59,14 +59,15 @@ all: j e d f i s
 
 push:
 	cp bin/* /var/lib/mysql/tmp/
-	./push.sh "$(dbuser)" "$(dbpass)" $(RANKING_1) $(RANKING_2) $(RANKING_3)	
+	./push.sh "$(dbuser)" "$(dbpass)" $(RANKING_1) $(RANKING_2) $(RANKING_3)
 
 andpush: all push
 
 define compile_news
+	@mkdir -p bin
 	$(RGBASM) issue.asm -o issue.o -D RANKING_1="$(RANKING_1)" -D RANKING_2="$(RANKING_2)" -D RANKING_3="$(RANKING_3)" -D MINIGAME_FILE="$(MINIGAME)" -D _LANG_$(shell echo '$1' | tr '[:lower:]' '[:upper:]')
 	$(RGBLINK) issue.o -l pokecrystal/layout.link -o bin/issue_$(1).bin
-	python3 newschecksum.py bin/issue_$(1).bin 
+	python3 newschecksum.py bin/issue_$(1).bin
 endef
 
 j:

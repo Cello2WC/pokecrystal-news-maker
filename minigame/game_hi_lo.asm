@@ -1,14 +1,14 @@
 ; This is a RE-CREATION based on records
 ; from the time and first-hand accounts,
 ; NOT actual recovered news data!
-; 
+;
 ; See: https://www2u.biglobe.ne.jp/~kakeru/pokemon2/mobile/news/02_12.htm
 ; Thanks to nohm for providing their first-hand account of this minigame!
-; 
+;
 ; Re-creation script written by Cello2WC
 ; English localization by DS
 ; German localization by Lesserkuma
-; French localization TODO
+; French localization by ISSOtm
 ; Italian localization TODO
 ; Spanish localization TODO
 
@@ -36,7 +36,7 @@ ENDM
 MACRO minigame_start
 	nsc_set wChain, 0
 	nsc_set wCurrentMon, -1
-	
+
 	nsc_clear 1, 13, 18, 4
 	nsc_compare_newsvar sMinigameFlag, .noIntro, .doIntro, .noIntro, 1, 0
 .doIntro
@@ -44,8 +44,8 @@ MACRO minigame_start
 	nsc_waitbutton
 .noIntro
 	nsc_page MinigameStart
-	
-	
+
+
 .gameIntroText
 	; Japanese
 	lang J, text "ゲームを　はじめると　まず"
@@ -66,21 +66,21 @@ MACRO minigame_start
 	lang J, cont "７かい　つづけて　あたれば"
 	lang J, cont "ゲーム　クリアです！"
 	lang J, cont "それでは　はじめよう！"
-	
+
 	; English
 	lang E, text "When the game"
 	lang E, line "starts, a #MON"
 	lang E, cont "will be shown."
-	
+
 	lang E, para "Then, another"
 	lang E, line "appears!"
-	
+
 	lang E, para "Guess whether the"
 	lang E, line "next #MON will"
 	lang E, cont "be taller or"
 	lang E, cont "shorter than the"
 	lang E, cont "one before!"
-	
+
 	lang E, para "Only twelve kinds"
 	lang E, line "of #MON can"
 	lang E, cont "appear in this"
@@ -90,30 +90,30 @@ MACRO minigame_start
 	lang E, line "them at any time."
 	lang E, cont "That may help you"
 	lang E, cont "guess the answer."
-	
+
 	lang E, para "#DEX height is"
 	lang E, line "used when making"
 	lang E, cont "a decision."
-	
+
 	lang E, para "Get seven right"
 	lang E, line "in a row to win!"
-	
+
 	lang E, para "Let's get started!"
-	
+
 	; German
 	lang D, text "Bei Spielbeginn"
 	lang D, line "wird dir ein"
 	lang D, cont "#MON gezeigt."
-	
+
 	lang D, para "Danach erscheint"
 	lang D, line "ein weiteres!"
-	
+
 	lang D, para "Errate, ob das"
 	lang D, line "nächste #MON"
 	lang D, cont "größer oder"
 	lang D, cont "kleiner ist als"
 	lang D, cont "das vorherige!"
-	
+
 	lang D, para "Nur zwölf ver-"
 	lang D, line "schiedene #MON"
 	lang D, cont "tauchen in"
@@ -123,11 +123,11 @@ MACRO minigame_start
 	lang D, line "dir die LISTE alle"
 	lang D, cont "möglichen #MON-"
 	lang D, cont "Arten an."
-	
+
 	lang D, para "Es zählt die im"
 	lang D, line "#DEX verzeich-"
 	lang D, cont "nete Größe."
-	
+
 	lang D, para "Um zu gewinnen,"
 	lang D, line "musst du sieben"
 	lang D, cont "Mal hintereinander"
@@ -135,13 +135,49 @@ MACRO minigame_start
 
 	lang D, para "Und los geht's!"
 
+	; French
+	lang F, text "Au début du jeu,"
+	lang F, line "un #MON va être"
+	lang F, cont "présenté."
 
-	lang F, text "?"
-	
+	lang F, para "Ensuite, un autre"
+	lang F, line "va apparaître!"
+
+	lang F, para "Le but: deviner"
+	lang F, line "si le prochain"
+	lang F, cont "#MON sera plus"
+	lang F, cont "petit ou plus grand"
+	lang F, cont "que celui affiché"
+	lang F, cont "à l'écran!"
+
+	lang F, para "Seules douze"
+	lang F, line "espèces de #MON"
+	lang F, cont "peuvent apparaître"
+	lang F, cont "dans ce jeu."
+
+	lang F, para "Pour vous aider,"
+	lang F, line "la liste est"
+	lang F, cont "disponible à tout"
+	lang F, cont "moment via l'option"
+	lang F, cont "du même nom."
+
+	lang F, para "La taille utilisée"
+	lang F, line "pour comparer est"
+	lang F, cont "celle indiquée"
+	lang F, cont "par le #DEX."
+
+	lang F, para "Touchez juste"
+	lang F, line "sept fois d'affilée"
+	lang F, cont "pour gagner!"
+
+	lang F, para "C'est parti!"
+
+	; Italian
 	lang I, text "?"
-	
+
+	; Spanish
 	lang S, text "?"
-	
+
 	done
 ENDM
 ; Max 17 chars
@@ -149,12 +185,12 @@ MACRO minigame_name
 	lang J, db "#　たかいか　ひくいか？"
 	lang E, db "TALLER OR SHORTER"
 	lang D, db "GRÖSSER? KLEINER?"
-	lang F, db "?"
+	lang F, db "+ GRAND OU + PETIT"
 	lang I, db "?"
 	lang S, db "?"
 ENDM
 
-; deprecating this, at least for now, 
+; deprecating this, at least for now,
 ; as it seems it might not have existed.
 
 ;MACRO minigame_desc
@@ -164,18 +200,18 @@ ELSE
 MinigameStart::
 	news_screen PokemonHiLo, MUSIC_VIRIDIAN_CITY;MUSIC_GAME_CORNER
 	news_def_pals
-	
+
 	news_def_boxes
 	news_box 0,  0, 20, 15, {NEWS_MAIN_BORDER}
 	lang    J, news_box 0, 14, 20,  4, {NEWS_TEXT_BORDER}
 	notlang J, news_box 0, 12, 20,  6, {NEWS_TEXT_BORDER}
-	
+
 	news_def_strings
 	news_string 0, 0, "@"
 
 	lang    J, news_menu  2, 16, 4, 1,  4, 2, -1, 0, 0, 0, 0, $04
 	notlang J, news_menu  2, 14, 2, 2, 10, 2, -1, 0, 0, 0, 0, $04
-	
+
 	news_buttonscript .aButton     ; a button
 	news_buttonscript .bButton     ; b button
 	news_buttonscript              ; select button
@@ -186,11 +222,11 @@ MinigameStart::
 	notlang J, news_buttonscript .upButton    ; up button
 	lang    J, news_buttonscript
 	notlang J, news_buttonscript .downButton  ; down button
-	
+
 	news_def_menuitems
 	news_menudescription 1, 14, 18, 4
 	news_norankingstable
-	
+
 	news_menuitem_names   .menuHiText,   .menuLoText,   .menuListText, .menuQuitText;.pressStartText, .dummyDescription, .dummyDescription;
 	news_menuitem_scripts .menuHiScript, .menuLoScript, .menuListScript, .menuQuitScript
 	news_menuitem_descs   .dummyDescription, .dummyDescription, .dummyDescription, .dummyDescription
@@ -207,8 +243,8 @@ IF !DEF(_LANG_J)
 	nsc_down
 	nsc_ret
 ENDC
-	
-	
+
+
 .rightButton
 	nsc_compare wCurrentMon, .rightButton_ingame, .nothing, .nothing, 1, -1
 .rightButton_ingame
@@ -225,7 +261,7 @@ ENDC
 	nsc_playsound SFX_MENU
 	nsc_page NewsRoot
 	nsc_ret
-	
+
 .aButton
 	nsc_compare wCurrentMon, .abutton_ingame, .startGame, .startGame, 1, -1
 
@@ -233,11 +269,11 @@ ENDC
 .abutton_ingame
 	nsc_playsound SFX_READ_TEXT
 	;nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
-	
+
 	;nsc_clear 6, 5, 7, 7
-	
-	
-	
+
+
+
 	nsc_compare wNewsMenuOption, .rollNextMon, .rollNextMon, .noRoll, 1, 1
 .startGame
 	lang    J, nsc_printstring 2, 2, .textQuestion
@@ -276,7 +312,7 @@ ENDR
 	lang J, nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	nsc_select
 	nsc_set wCurrentMon, -1 ; kinda hacky code flow...
-	
+
 .aButtonSelect
 	nsc_compare wCurrentMon, .actually_do, .actually_dont, .actually_dont, 1, -1
 .actually_do
@@ -285,16 +321,16 @@ ENDR
 .actually_dont
 	nsc_ramcopy wNextMon, wCurrentMon, 1
 .aButtonDone
-	
+
 	;nsc_drawbox 0,  0, 20, 15, {NEWS_MAIN_BORDER}
 	;nsc_drawbox 0, 14, 20,  4, {NEWS_TEXT_BORDER}
-	
+
 
 
 
 	nsc_set wNewsMenuOption, 0
 	nsc_set wNewsMenuCursorX, 1
-	
+
 	lang J, nsc_printstring 0, 12, .textEraseLine
 	lang J, nsc_printstring 0, 13, .textEraseLine
 	lang J, nsc_drawbox 0, 14, 20,  4, {NEWS_TEXT_BORDER}
@@ -305,10 +341,10 @@ ENDR
 	notlang J, nsc_printstring 1, 14, .textAnswers
 
 	nsc_ret
-	
 
-	
-	
+
+
+
 .menuLoScript
 	nsc_compareram wNextMon, 1, wCurrentMon, .correct, .correct, .incorrect ; wNextMon and wCurrentMon should never be equal here
 .menuHiScript
@@ -331,7 +367,7 @@ ENDR
 	nsc_delay 1
 	nsc_textbox 1, 14, .textCorrect
 	nsc_waitbutton
-	
+
 	nsc_compare wChain, .keepGoing, .gift, .gift, 1, 7
 .gift
 	nsc_compare_newsvar sMinigameFlag, .noGift, .doGift, .noGift, 1, 0
@@ -351,7 +387,7 @@ ENDR
 	nsc_page NewsRoot
 .keepGoing
 	nsc_ret
-	
+
 .menuListScript
 	notlang J, nsc_clear 1, 13, 18, 4
 	nsc_delay 1
@@ -359,7 +395,7 @@ ENDR
 	nsc_waitbutton
 	nsc_clear 1, 13, 18, 4
 	nsc_ret
-	
+
 .listText
 	; Japanese
 	lang J, text "でてくる　ポケモンは"
@@ -367,15 +403,15 @@ ENDR
 	lang J, cont "ダグトリオ　メタモン　ギャラドス"
 	lang J, cont "アーボック　ハクリュー　ブラッキー"
 	lang J, cont "ツボツボ　ラフレシア　イワーク　です"
-	
-	; English	
+
+	; English
 	lang E, text "The #MON shown:"
 	lang E, line "NATU, ARBOK, ONIX,"
-	lang E, cont "GYARADOS, FURRET," 
-	lang E, cont "DUGTRIO, SHUCKLE," 
-	lang E, cont "SNORLAX, UMBREON," 
+	lang E, cont "GYARADOS, FURRET,"
+	lang E, cont "DUGTRIO, SHUCKLE,"
+	lang E, cont "SNORLAX, UMBREON,"
 	lang E, cont "DITTO & DRAGONAIR."
-	
+
 	; German
 	lang D, text "Erscheinen werden:"
 	lang D, line "NATU RELAXO DIGDRI"
@@ -383,30 +419,40 @@ ENDR
 	lang D, cont "GARADOS ARBOK ONIX"
 	lang D, cont "DRAGONIR NACHTARA"
 	lang D, cont "POTTROTT GIFLOR"
-	
-	lang F, db   "?"
-	
-	lang I, db   "?"
-	
-	lang S, db   "?"
-	
+
+	; French
+	lang F, text "#MON possibles:"
+	lang F, line "ARBOK, CARATROC,"
+	lang F, cont "FOUINAR, LEVIATOR,"
+	lang F, cont "NATU, TRIOPIQUEUR,"
+	lang F, cont "ONIX, METAMORPH,"
+	lang F, cont "RONFLEX, NOCTALI,"
+	lang F, cont "et enfin DRACO."
+
+	; Italian
+	lang I, text "?"
+
+	; Spanish
+	lang S, text "?"
+
 	done
-	
+
+; Note: all of these must match the block of text below!
 .menuHiText
 	lang J, db "たかい"
 	lang E, db "TALLER"
 	lang D, db "GRÖSSER"
-	lang F, db "?"
+	lang F, db "+ GRAND"
 	lang I, db "?"
 	lang S, db "?"
 .dummyDescription
 	db "@"
-	
+
 .menuLoText
 	lang J, db "ひくい"
 	lang E, db "SHORTER"
 	lang D, db "KLEINER"
-	lang F, db "?"
+	lang F, db "+ PETIT"
 	lang I, db "?"
 	lang S, db "?"
 	db "@"
@@ -415,11 +461,11 @@ ENDR
 	lang J, db "リスト"
 	lang E, db "LIST"
 	lang D, db "LISTE"
-	lang F, db "?"
+	lang F, db "LISTE"
 	lang I, db "?"
 	lang S, db "?"
 	db "@"
-	
+
 .menuQuitText
 	lang J, db "やめる"
 	lang E, db "CANCEL"
@@ -428,7 +474,7 @@ ENDR
 	lang I, db "ESCI"
 	lang S, db "?"
 	db "@"
-	
+
 	; this is a bodge and i know it...
 .textAnswers
 	lang J, db "▶たかい　ひくい　リスト　やめる"
@@ -436,11 +482,14 @@ ENDR
 	lang E, next " LIST      CANCEL"
 	lang D, db   "▶GRÖSSER   KLEINER"
 	lang D, next " LISTE     ZURÜCK"
-	lang F, db "▶?"
-	lang I, db "▶?"
-	lang S, db "▶?"
+	lang F, db   "▶+ GRAND   + PETIT"
+	lang F, next " LISTE     RETOUR"
+	lang I, db   "▶?"
+	lang I, next " ?"
+	lang S, db   "▶?"
+	lang S, next " ?"
 	db "@"
-	
+
 	; as is this
 IF DEF(_LANG_J)
 .textEraseLine
@@ -451,53 +500,45 @@ ENDR
 	db $B4
 	db "@"
 ENDC
-	
+
 .textQuestion
 	; Japanese
 	lang J, db   "この　あとに　でる　ポケモンは"
 	lang J, next "これより　たかいか　ひくいか？"
-	
+
 	; English
 	lang E, db   "Is the next one"
 	lang E, next "taller or shorter?"
-	
+
 	; German
 	lang D, db   "Wie groß ist wohl"
 	lang D, next "das nächste PKMN?"
-	
-	lang F, db   "?"
-	
+
+	; French
+	lang F, db   "Le prochain, plus"
+	lang F, next "grand ou petit?"
+
+	; Italian
 	lang I, db   "?"
-	
+
+	; Spanish
 	lang S, db   "?"
-	
+
 	db "@"
-	
+
 .textCorrect
-	; Japanese
 	lang J, text "あたり！"
-	
-	; English
 	lang E, text "Correct!"
-	
-	; German
 	lang D, text "Richtig!"
-	
-	lang F, text "?"
+	lang F, text "Bravo!"
 	lang I, text "?"
 	lang S, text "?"
 	done
 .textIncorrect
-	; Japanese
 	lang J, text "はずれ！"
-	
-	; English
 	lang E, text "Incorrect!"
-	
-	; German
 	lang D, text "Leider falsch!"
-	
-	lang F, text "?"
+	lang F, text "Eh non..."
 	lang I, text "?"
 	lang S, text "?"
 	done
@@ -509,22 +550,22 @@ ENDC
 	lang J, cont "ほしのかけらを　プレゼント！"
 
 	lang J, para "ほしのかけらを　もらった！"
-	
+
 	; English
 	lang E, text "Congratulations!"
-	
+
 	lang E, para "As a reward for"
 	lang E, line "getting seven in"
 	lang E, cont "a row, take this"
 	lang E, cont "STAR PIECE!"
-	
+
 	lang E, para
 	lang E, nts_start
 	lang E, nts_player_name 0
 	lang E, nts_end
 	lang E, db   " received"
 	lang E, line "STAR PIECE."
-	
+
 	; German
 	lang D, text "Glückwunsch!"
 
@@ -532,7 +573,7 @@ ENDC
 	lang D, line "in Folge gewinnst"
 	lang D, cont "du dieses"
 	lang D, cont "STERNENSTÜCK!"
-	
+
 	lang D, para
 	lang D, nts_start
 	lang D, nts_player_name 0
@@ -540,12 +581,27 @@ ENDC
 	lang D, db   " erhält"
 	lang D, line "STERNENSTÜCK."
 
-	lang F, text "?"
-	
+	; French
+	lang F, text "Félicitations!"
+
+	lang F, para "Pour avoir réussi"
+	lang F, line "sept fois"
+	lang F, cont "d'affilée, voici"
+	lang F, cont "un MORC. ETOILE!"
+
+	lang F, para
+	lang F, nts_start
+	lang F, nts_player_name 0
+	lang F, nts_end
+	lang F, db   " reçoit"
+	lang F, line "MORC. ETOILE."
+
+	; Italian
 	lang I, text "?"
-	
+
+	; Spanish
 	lang S, text "?"
-	
+
 	done
-	
+
 ENDC

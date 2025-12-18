@@ -906,7 +906,7 @@ ENDM
 
 	; French
 	lang F, db   "Fin du quiz!"
-	lang F, line "Voici ta note!"
+	lang F, line "Voici le résultat!"
 
 	; Italian
 	lang I, db   "Fai il quiz per"

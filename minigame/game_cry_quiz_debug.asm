@@ -29,7 +29,7 @@ MACRO minigame_name
 	lang D, db "#MON-RUFE-QUIZ"
 	lang F, db "QUIZ DES CRIS"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "TEST GRITO #MON"
 ENDM
 
 MACRO minigame_desc
@@ -46,7 +46,8 @@ MACRO minigame_desc
 
 	lang I, db   "?"
 
-	lang S, db   "?"
+	lang S, db   "¡Adivina el"
+	lang S, line "grito #MON!"
 ENDM
 
 ELSE
@@ -116,7 +117,7 @@ ENDR
 	lang D, db "SUICUNE"
 	lang F, db "SUICUNE"
 	lang I, db "SUICUNE"
-	lang S, db "SUICUNE"
+	lang S, db "GRITO 1"
 	db "@"
 .menuitem2_name
 	lang J, db "ピッピ"
@@ -124,7 +125,7 @@ ENDR
 	lang D, db "PIEPI"
 	lang F, db "MELOFEE"
 	lang I, db "CLEFAIRY"
-	lang S, db "CLEFAIRY"
+	lang S, db "GRITO 2"
 	db "@"
 .menuitem3_name
 	lang J, db "オニスズメ"
@@ -132,7 +133,7 @@ ENDR
 	lang D, db "HABITAK"
 	lang F, db "PIAFABEC"
 	lang I, db "SPEAROW"
-	lang S, db "SPEAROW"
+	lang S, db "GRITO 3"
 	db "@"
 .menuitem4_name
 	lang J, db "ゴース"
@@ -140,7 +141,7 @@ ENDR
 	lang D, db "NEBULAK"
 	lang F, db "FANTOMINUS"
 	lang I, db "GASTLY"
-	lang S, db "GASTLY"
+	lang S, db "SALIR"
 	db "@"
 .menuitem5_name
 	lang J, db "トゲピー"
@@ -196,7 +197,7 @@ ENDR
 	lang D, db "ZURÜCK"
 	lang F, db "RETOUR"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "SALIR"
 	db "@"
 
 .menuitem1_script
@@ -268,8 +269,8 @@ ENDR
 
 	lang I, db   "?"
 
-	lang S, db   "?"
-
+	lang S, db   "¡Elige el grito"
+	lang S, line "de este #MON!"
 	db "@"
 
 .lastmenuitem_desc
@@ -283,7 +284,7 @@ ENDR
 
 	lang I, db   "?"
 
-	lang S, db   "?"
+	lang S, db   "Salir del test."
 	db "@"
 
 
@@ -353,7 +354,7 @@ ENDR
 	lang D, db "RUF 1"
 	lang F, db "CRI 1"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "GRITO 1"
 	db "@"
 .menuitem2_name
 	lang J, db "なきごえ２"
@@ -361,7 +362,7 @@ ENDR
 	lang D, db "RUF 2"
 	lang F, db "CRI 2"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "GRITO 2"
 	db "@"
 .menuitem3_name
 	lang J, db "なきごえ３"
@@ -369,7 +370,7 @@ ENDR
 	lang D, db "RUF 3"
 	lang F, db "CRI 3"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "GRITO 3"
 	db "@"
 .menuitem4_name
 	lang J, db "もどる"
@@ -377,7 +378,7 @@ ENDR
 	lang D, db "ZURÜCK"
 	lang F, db "RETOUR"
 	lang I, db "ESCI"
-	lang S, db "?"
+	lang S, db "SALIR"
 	db "@"
 
 
@@ -470,7 +471,7 @@ ENDR
 	lang D, db "Welcher Ruf passt?"
 	lang F, db "Quel cri est-ce?"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "¿Qué grito es ese?"
 	db "@"
 .this_cry_question ; $04E2
 	lang J, db "この　なきごえ　ですか？"
@@ -478,7 +479,7 @@ ENDR
 	lang D, db "Ist es dieser Ruf?"
 	lang F, db "Est-ce celui-ci?"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "¿Es este grito?"
 	db "@"
 .correct ; $04EF
 	lang J, db "あたり！！！"
@@ -486,7 +487,7 @@ ENDR
 	lang D, db "Richtig!"
 	lang F, db "Bravo!"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "¡Correcto!"
 	db "@"
 .incorrect ; $04F6
 	lang J, db "はずれ<……>⋯"
@@ -494,7 +495,7 @@ ENDR
 	lang D, db "Leider falsch…"
 	lang F, db "Eh non..."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "Incorrecto…"
 	db "@"
 .which_cry_question_duplicate ; $04FC
 	lang J, db "なきごえは　どれ？"
@@ -502,7 +503,7 @@ ENDR
 	lang D, db "Welcher Ruf passt?"
 	lang F, db "Quel cri est-ce?"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "¿Qué grito es ese?"
 	db "@"
 ; All of these are max 17 (maybe 18) chars
 .cryquizlabel_suicune
@@ -511,7 +512,7 @@ ENDR
 	lang D, db "RUFE-QUIZ SUICUNE"
 	lang F, db "CRI DE SUICUNE"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "TEST GRITO SUICUNE"
 	db "@"
 .cryquizlabel_clefairy
 	lang J, db "なきごえクイズ　ピッピ"
@@ -519,7 +520,7 @@ ENDR
 	lang D, db "RUFE-QUIZ PIEPI"
 	lang F, db "CRI DE MELOFEE"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "T. GRITO CLEFAIRY"
 	db "@"
 .cryquizlabel_spearow
 	lang J, db "なきごえクイズ　オニスズメ"
@@ -527,7 +528,7 @@ ENDR
 	lang D, db "RUFE-QUIZ HABITAK"
 	lang F, db "CRI DE PIAFABEC"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "TEST GRITO SPEAROW"
 	db "@"
 .cryquizlabel_gastly
 	lang J, db "なきごえクイズ　ゴース"
@@ -535,7 +536,7 @@ ENDR
 	lang D, db "RUFE-QUIZ NEBULAK"
 	lang F, db "CRI DE FANTOMINUS"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "TEST GRITO GASTLY"
 	db "@"
 .cryquizlabel_togepi
 	lang J, db "なきごえクイズ　トゲピー"
@@ -543,7 +544,7 @@ ENDR
 	lang D, db "RUFE-QUIZ TOGEPI"
 	lang F, db "CRI DE TOGEPI"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "TEST GRITO TOGEPI"
 	db "@"
 .cryquizlabel_zubat
 	lang J, db "なきごえクイズ　ズバット"
@@ -551,7 +552,7 @@ ENDR
 	lang D, db "RUFE-QUIZ ZUBAT"
 	lang F, db "CRI DE NOSFERAPTI"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "TEST GRITO ZUBAT"
 	db "@"
 .cryquizlabel_jynx
 	lang J, db "なきごえクイズ　ルージュラ"
@@ -559,7 +560,7 @@ ENDR
 	lang D, db "RUFE-QUIZ ROSSANA"
 	lang F, db "CRI DE LIPPOUTOU"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "TEST GRITO JYNX"
 	db "@"
 .cryquizlabel_espeon
 	lang J, db "なきごえクイズ　エーフィ"
@@ -567,7 +568,7 @@ ENDR
 	lang D, db "RUF-QUIZ PSIANA"
 	lang F, db "CRI DE MENTALI"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "TEST GRITO ESPEON"
 	db "@"
 .cryquizlabel_mewtwo
 	lang J, db "なきごえクイズ　ミュウツー"
@@ -575,7 +576,7 @@ ENDR
 	lang D, db "RUFE-QUIZ MEWTU"
 	lang F, db "CRI DE MEWTWO"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "TEST GRITO MEWTWO"
 	db "@"
 .cryquizlabel_dunsparce
 	lang J, db "なきごえクイズ　ノコッチ"
@@ -583,7 +584,7 @@ ENDR
 	lang D, db "RUFE-QUIZ DUMMISEL"
 	lang F, db "CRI D'INSOLOURDO"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "T. GRITO DUNSPARCE"
 	db "@"
 
 ENDC

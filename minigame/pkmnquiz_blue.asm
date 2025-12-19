@@ -123,9 +123,28 @@ MACRO minigame_start
 
 	; Italian
 	lang I, text "?"
+	
+	lang S, text "AZUL: ¡Hola!"
+	lang S, line "Así que has"
+	lang S, cont "venido a hacer"	
+	lang S, cont "mi test, ¿eh?"
+	
+	lang S, para "Mi test tiene cosas"
+	lang S, line "que no sabrás,"
+	lang S, cont "no importa cuanto"
+	lang S, cont "hayas viajado."
 
-	; Spanish
-	lang S, text "?"
+	lang S, para "Después de todo,"
+	lang S, line "es sobre cosas de"
+	lang S, cont "hace tres años."
+	
+	lang S, para "En fin, vamos a"
+	lang S, line "empezar."
+	
+	lang S, para "¡Hay diez"
+	lang S, line "preguntas en total!"
+	
+	lang S, para "¡Vamos allá!"
 
 	done
 ENDM
@@ -136,7 +155,7 @@ MACRO minigame_name
 	lang D, db "#MON-QUIZ!"
 	lang F, db "QUIZ #MON!"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "Acertijo #MON"
 ENDM
 
 MACRO minigame_desc
@@ -156,9 +175,9 @@ MACRO minigame_desc
 	; Italian
 	lang I, db   "Quiz dei ricordi"
 	lang I, line "sull'avventura!"
-
-	; Spanish
-	lang S, db "?"
+	
+	lang S, db   "Prueba tu memoria"
+	lang S, line "de tu aventura!"
 ENDM
 
 ELSE
@@ -257,7 +276,7 @@ MinigameStart::
 	lang D, db "ZUR."
 	lang F, db "RET"
 	lang I, db "ESCI"
-	lang S, db "?"
+	lang S, db "SALIR"
 	db "@"
 
 
@@ -336,9 +355,13 @@ ENDM
 
 	; Italian
 	lang I, db   "?"
-
-	; Spanish
-	lang S, db   "?"
+	
+	lang S, db   "Donde en PUEBLO"
+	lang S, next "PALETA curas"
+	lang S, next "a tus #MON?"
+	lang S, next "1. LABORATORIO OAK"
+	lang S, next "2. CASA DE ROJO"
+	lang S, next "3. CASA DE AZUL"
 
 	next "@"
 
@@ -376,10 +399,14 @@ ENDM
 
 	; Italian
 	lang I, db   "?"
-
-	; Spanish
-	lang S, db   "?"
-
+	
+	lang S, db   "Cómo se llama"
+	lang S, next "el SPEAROW de"
+	lang S, next "CIUDAD VERDE?"
+	lang S, next "1. SPEARY"
+	lang S, next "2. ROWEY"
+	lang S, next "3. SPIKEY"
+	
 	next "@"
 
 .question3Text
@@ -416,10 +443,14 @@ ENDM
 
 	; Italian
 	lang I, db   "?"
-
-	; Spanish
-	lang S, db   "?"
-
+	
+	lang S, db   "¿Cuánto cuesta la"
+	lang S, next "entrada al MUSEO"
+	lang S, next "DE LA CIENCIA"
+	lang S, next "CIUDAD PLATEADA?"
+	lang S, next "1. ¥50   2. ¥100"
+	lang S, next "3. ¥200"
+	
 	next "@"
 
 .question4Text
@@ -457,10 +488,14 @@ ENDM
 
 	; Italian
 	lang I, db   "?"
-
-	; Spanish
-	lang S, db   "?"
-
+	
+    lang S, db   "Conociste a BILL"
+    lang S, next "en la CASA DEL MAR"
+    lang S, next "¿qué pasó?"
+    lang S, next "1. Fusión #MON"
+    lang S, next "2. Estaba enfermo"
+    lang S, next "3. #MON robado"
+	
 	next "@"
 
 .question5Text
@@ -498,10 +533,14 @@ ENDM
 
 	; Italian
 	lang I, db   "?"
-
-	; Spanish
-	lang S, db   "?"
-
+	
+	lang S, db   "En TORRE #MON"
+	lang S, next "Qué dijo»"
+	lang S, next "GHOST en"
+	lang S, next "el combate?"
+	lang S, next "1. Fuera  2. Vete"
+	lang S, next "3. Lárgate"
+	
 	next "@"
 
 .question6Text
@@ -539,10 +578,14 @@ ENDM
 
 	; Italian
 	lang I, db   "?"
-
-	; Spanish
-	lang S, db   "?"
-
+	
+	lang S, db   "El letrero en el"
+	lang S, next "tejado del MANSIÓN"
+	lang S, next "AZULONA dice"
+	lang S, next "“¡LO … TODO!”"
+	lang S, next "1. HAGO 2. SÉ"
+	lang S, next "3. TENGO"	
+	
 	next "@"
 
 .question7Text
@@ -580,10 +623,14 @@ ENDM
 
 	; Italian
 	lang I, db   "?"
-
-	; Spanish
-	lang S, db   "?"
-
+	
+	lang S, db   "En el DOJO-KARATE"
+	lang S, next "CIUDAD AZAFRÁN el"
+	lang S, next "grito batalla del"
+	lang S, next "MAESTRO KARATEKA"
+	lang S, next "1. ¡Fuaaa! 2. Ja."
+	lang S, next "3. ¡Jia!"
+	
 	next "@"
 
 .question8Text
@@ -620,10 +667,14 @@ ENDM
 
 	; Italian
 	lang I, db   "?"
-
-	; Spanish
-	lang S, db   "?"
-
+	
+	lang S, db   "¿Cuál es secreto"
+	lang S, next "del GUARDA de"
+	lang S, next "la ZONA SAFARI?"
+	lang S, next "1. Una peluca"
+	lang S, next "2. Dentadura"
+	lang S, next "3. Miedo insectos"
+	
 	next "@"
 
 .question9Text
@@ -661,10 +712,14 @@ ENDM
 
 	; Italian
 	lang I, db   "?"
-
-	; Spanish
-	lang S, db   "?"
-
+	
+	lang S, db   "¿Qué se dice si"
+	lang S, next "intentas HUIR de"
+	lang S, next "la LIGA #MON?"
+	lang S, next "1.¡No puedes huir!"
+	lang S, next "2. ¿Huyes?"
+	lang S, next "3. ¡No huyas!"
+	
 	next "@"
 
 .question10Text
@@ -702,10 +757,14 @@ ENDM
 
 	; Italian
 	lang I, db   "?"
-
-	; Spanish
-	lang S, db   "?"
-
+	
+	lang S, db   "Qué le pasa a"
+	lang S, next "ROJO cuando sus"
+	lang S, next "#MON se debilitan?"
+	lang S, next "1. Se desmayó"
+	lang S, next "2. Perdió conoc."
+	lang S, next "3. Se ha mareado"
+	
 	next "@"
 
 
@@ -771,7 +830,7 @@ ENDM
 	lang D, db "BLAUs BEWERTUNG"
 	lang F, db "?"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "EVALUACIÓN DE AZUL"
 	db "@"
 
 .menuItemScript
@@ -876,10 +935,10 @@ ENDM
 	; Italian
 	lang I, db   "Fai il quiz per"
 	lang I, line "una valutazione!"
-
-	; Spanish
-	lang S, db "?"
-
+	
+	lang S, db   "¡Listo!"
+	lang S, line "¡Tu puntuación!"
+	
 	db "@"
 
 .textScoreIntro
@@ -910,10 +969,12 @@ ENDM
 
 	; Italian
 	lang I, text "?"
-
-	; Spanish
-	lang S, text "?"
-
+	
+	lang S, text "BLUE: ¿Cómo fue?"
+	lang S, line "¡Déjame ver!"
+	
+	lang S, para "…"
+	
 	para ""
 	done
 .textScore0
@@ -953,9 +1014,13 @@ ENDM
 
 	; Italian
 	lang I, text "?"
-
-	; Spanish
-	lang S, text "?"
+	
+	lang S, text "Oye, ni siquiera"
+	lang S, line "una ¿verdad?"
+	
+	lang S, para "Lo sabía,"
+	lang S, line "no podías hacerlo."
+	lang S, cont "¡Buena esa!"
 
 	done
 
@@ -1001,10 +1066,16 @@ ENDM
 
 	; Italian
 	lang I, text "?"
-
-	; Spanish
-	lang S, text "?"
-
+	
+	lang S, text "¡Una correcta!"
+	
+	lang S, para "Pero acertar solo"
+	lang S, line "una es lo mismo" 
+	lang S, cont "que no"
+	lang S, cont "saber nada."
+	
+	lang S, para "Inténtalo nuevo."
+	
 	done
 
 .textScore2
@@ -1045,10 +1116,15 @@ ENDM
 
 	; Italian
 	lang I, text "?"
-
-	; Spanish
-	lang S, text "?"
-
+	
+	lang S, text "¡Dos correctas!"
+	
+	lang S, para "Oye, ¿estás"
+	lang S, line "esforzándote?"
+	
+	lang S, para "¡Sigues sin"
+	lang S, line "estar a mi altura!"
+	
 	done
 
 .textScore3
@@ -1092,10 +1168,16 @@ ENDM
 
 	; Italian
 	lang I, text "?"
-
-	; Spanish
-	lang S, text "?"
-
+	
+	lang S, text "¡Tres correctas!"
+	
+	lang S, para "Quizás seas bueno"
+	lang S, line "en combates #MON,"
+	
+	lang S, para "¿pero aparte de"
+	lang S, line "eso?"
+	lang S, cont "¡No tanto!"
+	
 	done
 
 .textScore4
@@ -1128,10 +1210,13 @@ ENDM
 
 	; Italian
 	lang I, text "?"
-
-	; Spanish
-	lang S, text "?"
-
+	
+	lang S, text "¡Cuatro correctas!"
+	
+	lang S, para "¡Tantas respuestas"
+	lang S, line "con suerte"
+	lang S, cont "es impresionante!"
+	
 	done
 
 .textScore5
@@ -1187,10 +1272,19 @@ ENDM
 
 	; Italian
 	lang I, text "?"
-
-	; Spanish
-	lang S, text "?"
-
+	
+	lang S, text "¡Cinco correctas!"
+	
+	lang S, para "Parece que si"
+	lang S, line "estás intentando."
+	
+	lang S, para "Se me"
+	lang S, line "ocurrieron estas"
+	lang S, cont "preguntas solo!"
+	
+	lang S, para "¡Las próximas"
+	lang S, line "serán mas dif.!"
+	
 	done
 
 .textScore6
@@ -1229,10 +1323,14 @@ ENDM
 
 	; Italian
 	lang I, text "?"
-
-	; Spanish
-	lang S, text "?"
-
+	
+	lang S, text "¡Seis correctas!"
+	
+	lang S, para "No está mal,"
+	
+	lang S, para "Pero estás lejos"
+	lang S, line "de mi nivel!"
+	
 	done
 
 .textScore7
@@ -1267,10 +1365,13 @@ ENDM
 
 	; Italian
 	lang I, text "?"
-
-	; Spanish
-	lang S, text "?"
-
+	
+	lang S, text "¡Siete correctas!"
+	
+	lang S, para "No pensé"
+	lang S, line "que conseguirías"
+	lang S, cont "bastantes…"
+	
 	done
 
 .textScore8
@@ -1310,10 +1411,15 @@ ENDM
 
 	; Italian
 	lang I, text "?"
-
-	; Spanish
-	lang S, text "?"
-
+	
+	lang S, text "¡Ocho correctas!"
+	
+	lang S, para "No está nada mal."
+	
+	lang S, para "¡Tu memoria es"
+	lang S, line "casi tan buena"
+	lang S, cont "como la mía!"
+	
 	done
 
 .textScore9
@@ -1361,10 +1467,16 @@ ENDM
 
 	; Italian
 	lang I, text "?"
-
-	; Spanish
-	lang S, text "?"
-
+	
+	lang S, text "¡Vaya, nueve"
+	lang S, line "correctas!"
+	
+	lang S, para "¡Una más"
+	lang S, line "y habrías acertado"
+	lang S, cont "todas!"
+	
+	lang S, para "¡Inténtalo nuevo!"
+	
 	done
 
 .textScore10
@@ -1414,10 +1526,18 @@ ENDM
 
 	; Italian
 	lang I, text "?"
+	
+	lang S, text "Todo correcto…!"
+	
+	lang S, para "Eres increíble."
+	
+	lang S, para "Recordar todo"
+	lang S, line "eso de hace tres"
+	lang S, cont "años!"
 
-	; Spanish
-	lang S, text "?"
-
+	lang S, para "Estoy totalmente"
+	lang S, line "hecho polvo!"
+	
 	done
 
 .textNotAllCorrect
@@ -1467,10 +1587,18 @@ ENDM
 
 	; Italian
 	lang I, text "?"
+	
+	lang S, text "AZUL: ¿Y bien? Mi"
+	lang S, line "test es difícil,"
+	lang S, cont "¿no es así?"
+	
+	lang S, para "Supongo que te"
+	lang S, line "daré otra"
+	lang S, cont "oportunidad…"
 
-	; Spanish
-	lang S, text "?"
-
+	lang S, para "¿Qué me dices?"
+	lang S, line "¿Reintentar?"
+	
 	done
 
 .textGiveUp
@@ -1482,7 +1610,7 @@ ENDM
 	lang D, text "Ciao!"
 	lang F, text "Bye-bye!"
 	lang I, text "?"
-	lang S, text "?"
+	lang S, text "¡Nos vemos!"
 	done
 
 .textGiveGift
@@ -1540,17 +1668,19 @@ ENDM
 	lang I, nts_end
 	lang I, db   "?"
 	lang I, line "TM26."
-
-	; Spanish
-	lang S, text "?"
-
+	
+	lang S, text "¡Bien hecho!"
+	
+	lang S, para "Deberías estar"
+	lang S, line "orgulloso de ti ."
+	
 	lang S, para
 	lang S, nts_start
 	lang S, nts_player_name 0
 	lang S, nts_end
-	lang S, db   "?"
-	lang S, line "TM26."
-
+	lang S, db   " recibido"
+	lang S, line "MT26."
+	
 	done
 
 ENDC

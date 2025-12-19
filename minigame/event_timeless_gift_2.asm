@@ -101,8 +101,13 @@ MACRO minigame_start
 
 	lang I, text "MAISY: "
 
-	lang S, text "MILLIE: "
-
+	lang S, text "MILLIE: bla bla"
+	lang S, line "bla bla AZALEA"
+	lang S, para "bla bla nieta de"
+	lang S, line "CÉSAR"
+	lang S, cont "bla bla"
+	lang S, para "bla bla viaje"
+	lang S, line "temporal"
 	done
 ENDM
 
@@ -112,7 +117,7 @@ MACRO minigame_name
 	lang D, db "ZEITLOSES GESCHENK"
 	lang F, db "CADEAU INTEMPOREL"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "REGALO ATEMPORAL"
 ENDM
 
 MACRO minigame_desc
@@ -200,13 +205,14 @@ MinigameStart::
 	lang S, nts_start
 	lang S, nts_player_name 0
 	lang S, nts_end
-	lang S, db "?"
+	lang S, db "tirado"
+	lang S, next "un"
 	lang S, nts_start
 	lang S, nts_number wPlayersRoll, 1, 2
 	lang S, nts_end
 	lang S, db   "!"
-	lang S, next "?"
-
+	lang S, next "MILLIE tirará"
+	
 	db "@"
 
 
@@ -309,7 +315,7 @@ MinigameStart::
 	lang D, db "HÖHER"
 	lang F, db "PLUS"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "MÁS ALTO"
 	db "@"
 
 .menuLowerText
@@ -318,7 +324,7 @@ MinigameStart::
 	lang D, db "NIEDRIGER"
 	lang F, db "MOINS"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "MÁS BAJO"
 .menuDummyDesc
 	db "@"
 
@@ -364,12 +370,12 @@ MinigameStart::
 	lang I, nts_end
 	lang I, db "!"
 
-	lang S, db "?"
+	lang S, db "MILLIE obtuvo un"
 	lang S, nts_start
 	lang S, nts_number wChiekosRoll, 1, 2
 	lang S, nts_end
 	lang S, db "!"
-
+	
 	db "@"
 
 
@@ -406,7 +412,7 @@ MinigameStart::
 	lang D, line "schieden…"
 	lang F, text "LILA: Egalité..."
 	lang I, text "?"
-	lang S, text "?"
+	lang S, text "MILLIE: Empate..."
 	done
 
 .jankenLose
@@ -424,7 +430,7 @@ MinigameStart::
 	lang D, line "gewinne!"
 	lang F, text "LILA: J'ai gagné!"
 	lang I, text "?"
-	lang S, text "?"
+	lang S, text "MILLIE: ¡Yo gano!"
 	done
 
 .jankenWin
@@ -442,7 +448,7 @@ MinigameStart::
 	lang D, line "gewinnst!"
 	lang F, text "LILA: Tu as gagné!"
 	lang I, text "?"
-	lang S, text "?"
+	lang S, text "MILLIE: ¡Tú ganas!"
 	done
 
 	news_screen PokemonQuiz, MUSIC_GAME_CORNER
@@ -511,7 +517,7 @@ MinigameStart::
 	lang D, db "JA"
 	lang F, db "OUI"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "SI"
 	db "@"
 
 .menuItemNoText
@@ -520,7 +526,7 @@ MinigameStart::
 	lang D, db "NEIN"
 	lang F, db "NON"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "NO"
 	db "@"
 
 .menuItemQuitText
@@ -529,7 +535,7 @@ MinigameStart::
 	lang D, db "ZUR."
 	lang F, db "RET"
 	lang I, db "ESCI"
-	lang S, db "?"
+	lang S, db "SALIR"
 	db "@"
 
 
@@ -594,7 +600,11 @@ ENDM
 
 	lang I, db   "?"
 
-	lang S, db   "?"
+	lang S, db   "¿Hay un total"
+	lang S, next "de cuatro personas"
+	lang S, next "haciendo negocios"
+	lang S, next "en el SUBTERRÁNEO?"
+	lang S, next "de TRÍGAL?"
 
 	next "@"
 
@@ -620,8 +630,11 @@ ENDM
 
 	lang I, db   "?"
 
-	lang S, db   "?"
-
+	lang S, db   "¿Es SPINARAK una"
+	lang S, next "de las contraseñas"
+	lang S, next "del programa radio"
+	lang S, next "CONTRASEÑAS BUENA?"
+	
 	next "@"
 
 .question3Text
@@ -643,8 +656,11 @@ ENDM
 
 	lang I, db   "?"
 
-	lang S, db   "?"
-
+	lang S, db   "¿Hay alguna"
+	lang S, next "flor en plena"
+	lang S, next "floración en el"
+	lang S, next "PARQUE NACIONAL?"
+	
 	next "@"
 
 .question4Text
@@ -666,10 +682,10 @@ ENDM
 
 	lang I, db   "?"
 
-	lang S, db   "?"
-
-	next "@"
-
+	lang S, db   "¿Está AMPHY en"
+	lang S, next "el FARO de"
+	lang S, next "CIUDAD OLIVO"
+	lang S, next "en el 5º piso?"
 .question5Text
 	lang J, db   "いかりまんじゅうのねだんは４００円"
 
@@ -685,8 +701,10 @@ ENDM
 
 	lang I, db   "?"
 
-	lang S, db   "?"
-
+	lang S, db   "¿Es el precio de"
+	lang S, next "un CARAM. FURIA"
+	lang S, next "es de 400¥?"
+	
 	next "@"
 
 .question6Text
@@ -716,8 +734,13 @@ ENDM
 
 	lang I, db   "?"
 
-	lang S, db   "?"
-
+	lang S, db   "¿Son COLASLOWPOKE"
+	lang S, next "y COLASENTRET"
+	lang S, next "las contraseñas"
+	lang S, next "utilizadsa acceder"
+	lang S, next "a la sala del jefe"
+	lang S, next "GUARIDA ROCKET?"
+	
 	next "@"
 
 .question7Text
@@ -740,8 +763,10 @@ ENDM
 
 	lang I, db   "?"
 
-	lang S, db   "?"
-
+	lang S, db   "¿Te encuentras"
+	lang S, next "del revés"
+	lang S, next "tras usar CASCADA?"
+	
 	next "@"
 
 .question8Text
@@ -764,8 +789,10 @@ ENDM
 
 	lang I, db   "?"
 
-	lang S, db   "?"
-
+	lang S, db   "¿Es MORTI el único"
+	lang S, next "LÍDER de GIMNASIO"
+	lang S, next "con cuatro #MON?"
+	
 	next "@"
 
 	; this is probably the wrong music
@@ -832,7 +859,7 @@ ENDM
 	lang D, db "MAISYs BEWERTUNG"
 	lang F, db "JUGEMENT de LILA" ; TODO: ajuster en fonction du texte lui-même.
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "NOTA DE MILLIE"
 	db "@"
 
 .menuItemScript
@@ -894,7 +921,7 @@ ENDM
 	lang I, db   "?"
 
 	lang S, db   "?"
-
+	
 	db "@"
 
 .textScoreIntro
@@ -908,7 +935,7 @@ ENDM
 
 	lang I, text "?"
 
-	lang S, text "?"
+	lang S, text "MILLIE: ¿?"
 
 	para "<……>　<……>　<……>"
 	para ""
@@ -927,7 +954,8 @@ ENDM
 
 	lang I, text "?"
 
-	lang S, text "?"
+	lang S, text "MILLIE:"
+	lang S, line "prueba fallida"
 
 	done
 
@@ -946,8 +974,9 @@ ENDM
 
 	lang I, text "?"
 
-	lang S, text "?"
-
+	lang S, text "MILLIE:"
+	lang S, line "prueba superada"
+	
 	done
 
 .textNotAllCorrect
@@ -963,7 +992,7 @@ ENDM
 	lang I, text "?"
 
 	lang S, text "?"
-
+	
 	done
 
 .textTryAgain
@@ -974,7 +1003,7 @@ ENDM
 	lang F, text "LILA: Essaye"
 	lang F, line "encore!"
 	lang I, text "?"
-	lang S, text "?"
+	lang S, text "MILLIE: ¿?"
 	done
 
 .textGiveGift
@@ -989,7 +1018,7 @@ ENDM
 	lang I, text "?"
 
 	lang S, text "?"
-
+	
 	done
 
 .textGiveTMGift
@@ -1017,7 +1046,13 @@ ENDM
 	lang I, text "?"
 
 	lang S, text "?"
-
+	lang S, para ""
+	lang S, nts_start
+	lang S, nts_player_name 0
+	lang S, nts_end
+	lang S, db   " recibido"
+	lang S, line "MT22."
+	
 	done
 
 ENDC

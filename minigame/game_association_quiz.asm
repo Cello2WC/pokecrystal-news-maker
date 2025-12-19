@@ -178,8 +178,24 @@ MACRO minigame_start
 	lang I, text "?"
 
 	; Spanish
-	lang S, text "?"
-
+	lang S, text "Verás tres pistas"
+	lang S, line "arriba"
+	lang S, cont "de la pantalla."
+	
+	lang S, para "Elige el #MON"
+	lang S, line "que encaje con"
+	lang S, cont "las pistas."
+	
+	lang S, para "Elige desde abajo" 
+	lang S, line "y pulsa A"
+	lang S, cont "para responder."	
+	
+	lang S, para "¡Acierta cinco"
+	lang S, line "para superar"
+	lang S, cont "el cuestionario!"
+	
+	lang S, para "¡Empecemos!"
+	
 	done
 ENDM
 
@@ -189,7 +205,7 @@ MACRO minigame_name
 	lang D, db "#MON-WORT-QUIZ"
 	lang F, db "DEVINE LE #MON" ; "Guess the Pokémon", since "QUIZ MOT #MON" sounds awkward.
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "PALABRA #MON"
 ENDM
 
 ; deprecating this, at least for now,
@@ -480,7 +496,7 @@ ENDM
 	lang D, db "TAUROS"
 	lang F, db "TAUROS"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "TAUROS"
 .answer1Desc
 .answer2Desc
 .answer3Desc
@@ -563,7 +579,7 @@ ENDM
 	lang D, db "Kein NORMAL-Typ."
 	lang F, db "Pas type NORMAL."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "No es tipo NORMAL"
 	db "@"
 .textHintA2
 	lang J, db "ひこう　ではない"
@@ -571,7 +587,7 @@ ENDM
 	lang D, db "Kein FLUG-Typ."
 	lang F, db "Pas type VOL."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "No es tipo VOLADOR"
 	db "@"
 .textHintA3
 	lang J, db "こおり　ではない"
@@ -579,7 +595,7 @@ ENDM
 	lang D, db "Kein EIS-Typ."
 	lang F, db "Pas type GLACE."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "No es tipo HIELO"
 	db "@"
 .textHintA4
 	lang J, db "あく　ではない"
@@ -587,7 +603,7 @@ ENDM
 	lang D, db "Kein UNLICHT-Typ."
 	lang F, db "Pas type TENEBRES."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "No tipo SINIESTRO"
 	db "@"
 
 .textHintB1
@@ -596,7 +612,7 @@ ENDM
 	lang D, db "Schweif gespalten."
 	lang F, db "Queue fourchue."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "Su cola está rota"
 	db "@"
 .textHintB2
 	lang J, db "みみが　とがっている"
@@ -604,7 +620,7 @@ ENDM
 	lang D, db "Spitze Ohren."
 	lang F, db "Oreilles pointues."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "Tiene orejas"
 	db "@"
 .textHintB3
 	lang J, db "きばが　ある"
@@ -612,7 +628,7 @@ ENDM
 	lang D, db "Spitze Zähne."
 	lang F, db "Dents pointues."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "Tiene dientes"
 	db "@"
 .textHintB4
 	lang J, db "しんか　できる"
@@ -620,7 +636,7 @@ ENDM
 	lang D, db "Entwickelt sich."
 	lang F, db "Peut évoluer."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "Evoluciona."
 	db "@"
 .textHintB5
 	lang J, db "なにか　かぶっている"
@@ -628,7 +644,7 @@ ENDM
 	lang D, db "Hat Kopfbedeckung."
 	lang F, db "Tête couverte." ; TODO : meh...
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "Adorno en cabeza."
 	db "@"
 .textHintB6
 	lang J, db "なにか　もっている"
@@ -636,7 +652,7 @@ ENDM
 	lang D, db "Trägt etwas."
 	lang F, db "Tient un truc."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "Sostiene algo"
 	db "@"
 .textHintB7
 	lang J, db "おでこにワンポイント"
@@ -644,7 +660,7 @@ ENDM
 	lang D, db "Stirn-Markerung."
 	lang F, db "Signe sur le front." ; TODO: 19 chars, but maybe that's fine?
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "Frente marcada."
 	db "@"
 .textHintB8
 	lang J, db "タマゴから　うまれる"
@@ -652,7 +668,7 @@ ENDM
 	lang D, db "Schlüpft aus EI."
 	lang F, db "Eclot d'un OEUF."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "Proviene de HUEVO"
 	db "@"
 
 .textHintC01
@@ -661,7 +677,7 @@ ENDM
 	lang D, db "Kann ZERSCHNEIDER."
 	lang F, db "Apte à COUPE."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "Puede usar CORTE."
 	db "@"
 .textHintC02 ; NOTE: Not recorded as existing
 	lang J, db "いあいぎり　できない"
@@ -669,7 +685,7 @@ ENDM
 	lang D, db "Kein ZERSCHNEIDER."
 	lang F, db "Inapte à COUPE."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "No usa CORTE"
 	db "@"
 .textHintC03
 	lang J, db "なみのり　できる"
@@ -677,7 +693,7 @@ ENDM
 	lang D, db "Kann SURFER."
 	lang F, db "Apte à SURF."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "Puede usar SURF."
 	db "@"
 .textHintC04
 	lang J, db "なみのり　できない"
@@ -685,7 +701,7 @@ ENDM
 	lang D, db "Kein SURFER."
 	lang F, db "Inapte à SURF."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "No puede usar SURF"
 	db "@"
 .textHintC05
 	lang J, db "かいりき　できる"
@@ -693,7 +709,7 @@ ENDM
 	lang D, db "Kann STÄRKE."
 	lang F, db "Apte à FORCE."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "Puede usar FUERZA"
 	db "@"
 .textHintC06
 	lang J, db "かいりき　できない"
@@ -701,7 +717,7 @@ ENDM
 	lang D, db "Kein STÄRKE."
 	lang F, db "Inapte à FORCE."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "No usa FUERZA"
 	db "@"
 .textHintC07
 	lang J, db "フラッシュ　できる"
@@ -709,7 +725,7 @@ ENDM
 	lang D, db "Kann BLITZ."
 	lang F, db "Apte à FLASH."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "Usa DESTELLO"
 	db "@"
 .textHintC08
 	lang J, db "フラッシュ　できない"
@@ -717,7 +733,7 @@ ENDM
 	lang D, db "Kein BLITZ."
 	lang F, db "Inapte à FLASH."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "No usa DESTELLO"
 	db "@"
 .textHintC09
 	lang J, db "うずしお　できる"
@@ -725,7 +741,7 @@ ENDM
 	lang D, db "Kann KASKADE."
 	lang F, db "Apte à CASCADE."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "Usa CASCADA"
 	db "@"
 .textHintC10 ; NOTE: Not recorded as existing
 	lang J, db "うずしお　できない"
@@ -733,7 +749,7 @@ ENDM
 	lang D, db "Kein KASKADE."
 	lang F, db "Inapte à CASCADE."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "No usa CASCADA"
 	db "@"
 .textHintC11
 	lang J, db "たいあたり　できる"
@@ -741,7 +757,7 @@ ENDM
 	lang D, db "Kann TACKLE."
 	lang F, db "Apte à CHARGE."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "Puede usar PLACAJE"
 	db "@"
 .textHintC12 ; NOTE: Not recorded as existing
 	lang J, db "たいあたり　できない"
@@ -749,7 +765,7 @@ ENDM
 	lang D, db "Kein TACKLE."
 	lang F, db "Incompat. CHARGE."
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "No usa PLACAJE"
 	db "@"
 
 
@@ -772,8 +788,9 @@ ENDM
 
 	lang I, text "?"
 
-	lang S, text "?"
-
+	lang S, text "Qué pena…"
+	lang S, line "¡Fallaste!"
+	
 	done
 .textRightAnswer
 	; Japanese
@@ -794,8 +811,9 @@ ENDM
 
 	lang I, text "?"
 
-	lang S, text "?"
-
+	lang S, text "¡Correcto! "
+	lang S, line "¡Siguiente"
+	
 	done
 .textChainComplete
 	; Japanese
@@ -850,8 +868,19 @@ ENDM
 	lang I, text "?"
 
 	; Spanish
-	lang S, text "?"
-
+	lang S, text "¡Cinco seguidos!"
+	lang S, line "¡Enhorabuena!"
+	
+	lang S, para "¡Aquí tienes MT35"
+	lang S, line "como regalo!"
+	
+	lang S, para
+	lang S, nts_start
+	lang S, nts_player_name 0
+	lang S, nts_end
+	lang S, db   " recibido"
+	lang S, line "MT35."
+	
 	done
 
 .textChainComplete2
@@ -909,8 +938,19 @@ ENDM
 	lang I, text "?"
 
 	; Spanish
-	lang S, text "?"
-
+	lang S, text "¡Cinco seguidos!"
+	lang S, line "¡Enhorabuena!"
+	
+	lang S, para "¡Aquí tienes HÍPER"
+	lang S, line "POCIÓN como"
+	
+	lang S, para
+	lang S, nts_start
+	lang S, nts_player_name 0
+	lang S, nts_end
+	lang S, db   " recibido"
+	lang S, line "HÍPER POCIÓN."
+	
 	done
 
 ENDC

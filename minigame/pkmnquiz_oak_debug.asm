@@ -26,7 +26,7 @@ MACRO minigame_name
 	lang D, db "#MANIAC-QUIZ"
 	lang F, db "QUIZ #MANIA"
 	lang I, db "QUIZ #FANATICO"
-	lang S, db "?"
+	lang S, db "TEST #MANÍATICO"
 ENDM
 
 MACRO minigame_desc
@@ -44,8 +44,9 @@ MACRO minigame_desc
 
 	lang I, db   "Quiz dei ricordi"
 	lang I, line "sull'avventura!"
-
-	lang S, db "?"
+	
+	lang S, db   "Prueba tu memoria"
+	lang S, line "de tu aventura!"
 ENDM
 
 ELSE
@@ -143,7 +144,7 @@ MinigameStart::
 	lang D, db "ZUR."
 	lang F, db "RET"
 	lang I, db "ESCI"
-	lang S, db "?"
+	lang S, db "SALIR"
 	db "@"
 
 
@@ -222,8 +223,13 @@ ENDM
 	lang I, next "1. TOTODILE"
 	lang I, next "2. CYNDAQUIL"
 	lang I, next "3. CHIKORITA"
-
-	lang S, db   "?"
+	
+	lang S, db   "¿Quién estaba en"
+	lang S, next "medio las #BALL"
+	lang S, next "LAB del PROF.ELM?"
+	lang S, next "1. TOTODILE"
+	lang S, next "2. CYNDAQUIL"
+	lang S, next "3. CHIKORITA"
 
 	next "@"
 
@@ -263,9 +269,14 @@ ENDM
 	lang I, next "1. AVANZI"
 	lang I, next "2. BOTTIGLIA VUOTA"
 	lang I, next "3. CARTA SNACK"
-
-	lang S, db   "?"
-
+	
+	lang S, db   "¿Qué contiene"
+	lang S, next "la papelera"
+	lang S, next "junto al PROF.ELM?"
+	lang S, next "1. RESTOS"
+	lang S, next "2. BOTELLA DE ZUMO"
+	lang S, next "3. ENVOL."
+	
 	next "@"
 
 .question3Text
@@ -303,9 +314,14 @@ ENDM
 	lang I, next "ha insegnato a"
 	lang I, next "catturare #MON?"
 	lang I, next "1. 1  2. 2  3. 3"
-
-	lang S, db   "?"
-
+	
+	lang S, db   "Cuantas POCIONES"
+	lang S, next "tenía el AMIGO que"
+	lang S, next "te enseñó a"
+	lang S, next "atrapar #MON"
+	lang S, next "en su mochila?"
+	lang S, next "1. 1  2. 2  3. 3"
+	
 	next "@"
 
 .question4Text
@@ -380,9 +396,13 @@ ENDM
 	lang I, next "gli parli a quando"
 	lang I, next "va nell'ACCADEMIA?"
 	lang I, next "1. 5  2. 6  3. 7"
-
-	lang S, db   "?"
-
+	
+	lang S, db   "El plato especial"
+	lang S, next "de MAMÁ es el"
+	lang S, next "VOLCÁN CANELA ?"
+	lang S, next "1. HAMBURGUESA"
+	lang S, next "2. CURRY"
+	lang S, next "3. TALLARINES"
 	next "@"
 
 .question6Text
@@ -419,9 +439,14 @@ ENDM
 	lang I, next "1. X ATTACCO"
 	lang I, next "2. ANTIPARALISI"
 	lang I, next "3. POZIONE"
-
-	lang S, db   "?"
-
+	
+	lang S, db   "Cuántas veces"
+	lang S, next "gira PRIMO"
+	lang S, next "desde que hablamos"
+	lang S, next "con él hasta entra"
+	lang S, next "en la ACADEMIA?"
+	lang S, next "1. 5  2. 6  3. 7"
+	
 	next "@"
 
 .question7Text
@@ -459,9 +484,14 @@ ENDM
 	lang I, next "a FARFETCH'D per"
 	lang I, next "acchiapparlo?"
 	lang I, next "1. 3  2. 4  3. 5"
-
-	lang S, db   "?"
-
+	
+	lang S, db   "Cuál de estos"
+	lang S, next "objetos no está"
+	lang S, next "en la CUEVA UNIÓN?"
+	lang S, next "1. ATAQUE X"
+	lang S, next "2. ANTIPARALIZ"
+	lang S, next "3. POCIÓN"
+	
 	next "@"
 
 .question8Text
@@ -499,9 +529,14 @@ ENDM
 	lang I, next "SLOWPOKE quando"
 	lang I, next "li hai salvati?"
 	lang I, next "1. 2  2. 3  3. 4"
-
-	lang S, db   "?"
-
+	
+	lang S, db   "Cuál es la menor"
+	lang S, next "cantidad de veces"
+	lang S, next "que debes hablar"
+	lang S, next "con FARFETCH'd"
+	lang S, next "detenerlo?"
+	lang S, next "1. 3  2. 4  3. 5"
+	
 	next "@"
 
 .question9Text
@@ -539,9 +574,14 @@ ENDM
 	lang I, next "di FIORPESCOPOLI?"
 	lang I, next "1. 3º  2. 4º "
 	lang I, next "3. 5º"
-
-	lang S, db   "?"
-
+	
+	lang S, db   "¿Cuántos SLOWPOKE"
+	lang S, next "había en la cueva"
+	lang S, next "cuando rescataste"
+	lang S, next "en el POZO"
+	lang S, next "SLOWPOKE?"
+	lang S, next "1. 2  2. 3  3. 4"
+	
 	next "@"
 
 .question10Text
@@ -579,9 +619,14 @@ ENDM
 	lang I, next "1. MONETE"
 	lang I, next "2. FRANCOBOLLO"
 	lang I, next "3. RIVISTA"
-
-	lang S, db   "?"
-
+	
+	lang S, db   "¿Cuál es la parada"
+	lang S, next "mar el recorrido"
+	lang S, next "del GUÍA alrededor"
+	lang S, next "de CIUDAD CEREZO?"
+	lang S, next "1. 3era  2. 4ta "
+	lang S, next "3. 5ta"
+	
 	next "@"
 
 
@@ -633,7 +678,14 @@ ENDM
 	lang D, db "EICHs BEWERTUNG"
 	lang F, db "EVALUATION de CHEN"
 	lang I, db "RAPPORTO DI OAK"
-	lang S, db "?"
+	
+	lang S, db   "¿Cuál de estos"
+	lang S, next "objetos"
+	lang S, next "no se encuentra."
+	lang S, next "CASA SR. #MON?"
+	lang S, next "1.MONEDA 2.SELLO"
+	lang S, next "3. REVISTAS"
+	
 	db "@"
 
 .menuItemScript
@@ -702,9 +754,7 @@ ENDM
 
 	lang I, db   "Fai il quiz per"
 	lang I, line "una valutazione!"
-
-	lang S, db "?"
-
+	lang S, db "EVALUACIÓN DE OAK"
 	db "@"
 
 .textScoreLow
@@ -749,8 +799,19 @@ ENDM
 	lang I, cont "che non hanno"
 	lang I, cont "nemmeno bisogno"
 	lang I, cont "di ricordare!"
-
-	lang S, db   "?"
+	
+	lang S, db   "¡Listo!"
+	lang S, line "¡Tu puntuación!"
+	
+	
+	lang S, text "No basta con"
+	lang S, cont "memorizar cosas."
+	lang S, para "¡Un verdadero"
+	lang S, line "#MANÍACO"
+	lang S, cont "puede memorizar"
+	lang S, cont "cosas que"
+	lang S, cont "ni siquiera"
+	lang S, cont "necesita recordar!"
 
 	done
 
@@ -800,9 +861,15 @@ ENDM
 	lang I, para "Assicurati di"
 	lang I, line "guardare in ogni"
 	lang I, cont "angolo!"
-
-	lang S, db   "?"
-
+	
+	lang S, text "Todavía te queda"
+	lang S, line "mucho por hacer."
+	lang S, cont "¡Los #MANÍACOS"
+	lang S, cont "son más pasión!"
+	lang S, para "¡mira en"
+	lang S, line "cada rincón"
+	lang S, cont "y esquina!"
+	
 	done
 
 .textScoreGood
@@ -865,9 +932,18 @@ ENDM
 
 	lang I, para "È dura farcela"
 	lang I, line "da soli!"
-
-	lang S, db   "?"
-
+	
+	lang S, text "Estás cerca"
+	lang S, line "Puedo notarlo."
+	lang S, para "De veras que estás"
+	lang S, line "empezando ganarte"
+	lang S, cont "el título de" 
+	lang S, cont "#MANÍACO!"
+	lang S, para "¿Estás hablándolo"
+	lang S, line "con tus amigos?"
+	lang S, para "¡Es difícil" 
+	lang S, line "hacer esto solo!"
+	
 	done
 
 .textScoreGreat
@@ -901,9 +977,14 @@ ENDM
 
 	lang I, para "ficcare il naso"
 	lang I, line "dappertutto!"
-
-	lang S, db   "?"
-
+	
+	lang S, text "¡Excelente! Te"
+	lang S, line "debe gustar mucho"
+	lang S, para "husmear en"
+	lang S, line "rincones y"
+	lang S, cont "recovecos, ¿no"
+	lang S, cont "es así?"
+	
 	done
 
 .textScoreBest
@@ -940,8 +1021,11 @@ ENDM
 	lang I, para "È sempre stato il"
 	lang I, line "mio sogno."
 	lang I, cont "Complimenti!"
-
-	lang S, db   "?"
-
+	
+	lang S, text "¡Vaya! ¡Perfecto!"
+	lang S, line "#MANÍACO! ¡He"
+	lang S, para "soñado con esto!"
+	lang S, line "¡Enhorabuena!"
+	
 	done
 ENDC

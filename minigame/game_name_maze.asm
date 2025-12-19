@@ -137,8 +137,32 @@ MACRO minigame_start
 	lang I, text "?"
 
 	; Spanish
-	lang S, text "?"
+	lang S, text "Usa el panel" 
+	lang S, line "direccional para" 
+	lang S, cont "mover el cursor."
 
+	lang S, para "Traza las letras"
+	lang S, line "del nombre #MON"
+	lang S, cont "en el orden"
+	lang S, cont "correcto."
+
+	lang S, para "No pares a medio"
+	lang S, line "camino, ni a"
+	lang S, cont "traves del nombre"
+	lang S, cont "ni por el mismo"
+	lang S, cont "espacio dos veces!"
+
+	lang S, para "Empieza en la ×"
+	lang S, line "y ve a la marca !"
+	lang S, cont "para alcanzar"
+	lang S, cont "la meta."
+
+	lang S, para "Pulsa el botón A"
+	lang S, line "para comprobar tu "
+	lang S, cont "respuesta."
+
+	lang S, para "¡Empecemos!"
+	
 	done
 ENDM
 
@@ -154,7 +178,7 @@ MACRO minigame_name
 	lang D, db "LEICHTES LABYRINTH"
 	lang F, db "LABYRINTHE FACILE"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "LABERINTO #MON"
 ENDM
 ; Max 17 chars
 MACRO minigame_name_2
@@ -163,7 +187,7 @@ MACRO minigame_name_2
 	lang D, db "SCHWERES LABYRINTH"
 	lang F, db "LABYRINTHE DIFFICILE"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "LABERINTO #MON"
 ENDM
 
 MACRO minigame_desc
@@ -191,7 +215,7 @@ MACRO minigame_desc_2
 
 	lang I, db   "?"
 
-	lang S, db   "?"
+	lang S, db "?"
 ENDM
 
 ELSE
@@ -330,14 +354,14 @@ ENDR
 	lang F, DEF PUZZLE1_MON EQUS "MARILL"
 	lang I, DEF PUZZLE1_MON EQUS "MARILL"
 	lang S, DEF PUZZLE1_MON EQUS "MARILL"
-
+	
 	lang J, DEF MARILL_MA EQUS "マ"
 	lang E, DEF MARILL_MA EQUS "MA"
 	lang D, DEF MARILL_MA EQUS "MA"
 	lang F, DEF MARILL_MA EQUS "MA"
 	lang I, DEF MARILL_MA EQUS "MA"
 	lang S, DEF MARILL_MA EQUS "MA"
-
+	
 	lang J, DEF MARILL_RI EQUS "リ"
 	lang E, DEF MARILL_RI EQUS "RI"
 	lang D, DEF MARILL_RI EQUS "RI"
@@ -351,7 +375,7 @@ ENDR
 	lang F, DEF MARILL_LL EQUS "LL"
 	lang I, DEF MARILL_LL EQUS "LL"
 	lang S, DEF MARILL_LL EQUS "LL"
-
+	
 
 .textMUUMA
 	lang J, db "『ムウマ』"
@@ -368,7 +392,7 @@ ENDR
 	lang F, DEF PUZZLE2_MON EQUS "MISDREAVUS"
 	lang I, DEF PUZZLE2_MON EQUS "GASTLY"
 	lang S, DEF PUZZLE2_MON EQUS "GASTLY"
-
+	
 	lang J, DEF MUUMA_MU EQUS "ム"
 	lang E, DEF MUUMA_MU EQUS "GA"
 	lang D, DEF MUUMA_MU EQUS "NE"
@@ -419,7 +443,7 @@ ENDR
 	lang F, DEF MOKOKO_KO EQUS "TA"
 	lang I, DEF MOKOKO_KO EQUS "TA"
 	lang S, DEF MOKOKO_KO EQUS "TA"
-
+	
 ; old DODRIO version
 ;.textPUTERA
 ;	lang J, db "『プテラ』"
@@ -470,28 +494,28 @@ ENDR
 	lang F, DEF PUZZLE4_MON EQUS "JYNX"
 	lang I, DEF PUZZLE4_MON EQUS "SUDOWOODO"
 	lang S, DEF PUZZLE4_MON EQUS "SUDOWOODO"
-
+	
 	lang J, DEF PUTERA_PU EQUS "プ"
 	lang E, DEF PUTERA_PU EQUS "SUD"
 	lang D, DEF PUTERA_PU EQUS "KE"
 	lang F, DEF PUTERA_PU EQUS "LIP"
 	lang I, DEF PUTERA_PU EQUS "SUD"
 	lang S, DEF PUTERA_PU EQUS "SUD"
-
+	
 	lang J, DEF PUTERA_TE EQUS "テ"
 	lang E, DEF PUTERA_TE EQUS "OWO"
 	lang D, DEF PUTERA_TE EQUS "IF"
 	lang F, DEF PUTERA_TE EQUS "POU"
 	lang I, DEF PUTERA_TE EQUS "OWO"
 	lang S, DEF PUTERA_TE EQUS "OWO"
-
+	
 	lang J, DEF PUTERA_RA EQUS "ラ"
 	lang E, DEF PUTERA_RA EQUS "ODO"
 	lang D, DEF PUTERA_RA EQUS "EL"
 	lang F, DEF PUTERA_RA EQUS "TOU"
 	lang I, DEF PUTERA_RA EQUS "ODO"
 	lang S, DEF PUTERA_RA EQUS "ODO"
-
+	
 .textPIPPI
 	lang J, db "『ピッピ』"
 	lang E, db "EEVEE"
@@ -507,14 +531,14 @@ ENDR
 	lang F, DEF PUZZLE5_MON EQUS "POLIWHIRL"
 	lang I, DEF PUZZLE5_MON EQUS "EEVEE"
 	lang S, DEF PUZZLE5_MON EQUS "EEVEE"
-
+	
 	lang J, DEF PIPPI_PI EQUS "ピ"
 	lang E, DEF PIPPI_PI EQUS "EE"
 	lang D, DEF PIPPI_PI EQUS "PI"
 	lang F, DEF PIPPI_PI EQUS "TE"
 	lang I, DEF PIPPI_PI EQUS "EE"
 	lang S, DEF PIPPI_PI EQUS "EE"
-
+	
 	lang J, DEF PIPPI_PP EQUS "ッ"
 	lang E, DEF PIPPI_PP EQUS "V"
 	lang D, DEF PIPPI_PP EQUS "E"
@@ -695,8 +719,13 @@ ENDM
 
 	lang I, text "?"
 
-	lang S, text "?"
-
+	lang S, text
+	lang S, nts_start
+	lang S, nts_player_name 0
+	lang S, nts_end
+	lang S, db   " recibido"
+	lang S, line "MT04."
+	
 	done
 
 
@@ -916,43 +945,43 @@ ENDR
 	lang F, DEF HPUZZLE1_MON EQUS "PICHU"
 	lang I, DEF HPUZZLE1_MON EQUS "PICHU"
 	lang S, DEF HPUZZLE1_MON EQUS "PICHU"
-
+	
 	lang J, DEF PIKACHU_P EQUS "ピ"
 	lang E, DEF PIKACHU_P EQUS "P"
 	lang D, DEF PIKACHU_P EQUS "P"
 	lang F, DEF PIKACHU_P EQUS "P"
 	lang I, DEF PIKACHU_P EQUS "P"
 	lang S, DEF PIKACHU_P EQUS "P"
-
+	
 	lang J, DEF PIKACHU_I EQUS "カ"
 	lang E, DEF PIKACHU_I EQUS "I"
 	lang D, DEF PIKACHU_I EQUS "I"
 	lang F, DEF PIKACHU_I EQUS "I"
 	lang I, DEF PIKACHU_I EQUS "I"
 	lang S, DEF PIKACHU_I EQUS "I"
-
+	
 	lang J, DEF PIKACHU_C EQUS "チ"
 	lang E, DEF PIKACHU_C EQUS "C"
 	lang D, DEF PIKACHU_C EQUS "C"
 	lang F, DEF PIKACHU_C EQUS "C"
 	lang I, DEF PIKACHU_C EQUS "C"
 	lang S, DEF PIKACHU_C EQUS "C"
-
+	
 	lang J, DEF PIKACHU_H EQUS "ュ"
 	lang E, DEF PIKACHU_H EQUS "H"
 	lang D, DEF PIKACHU_H EQUS "H"
 	lang F, DEF PIKACHU_H EQUS "H"
 	lang I, DEF PIKACHU_H EQUS "H"
 	lang S, DEF PIKACHU_H EQUS "H"
-
+	
 	lang J, DEF PIKACHU_U EQUS "ウ"
 	lang E, DEF PIKACHU_U EQUS "U"
 	lang D, DEF PIKACHU_U EQUS "U"
 	lang F, DEF PIKACHU_U EQUS "U"
 	lang I, DEF PIKACHU_U EQUS "U"
 	lang S, DEF PIKACHU_U EQUS "U"
-
-
+	
+	
 
 .textKIRINRIKI
 	lang J, db "『キリンリキ』"
@@ -976,21 +1005,21 @@ ENDR
 	lang F, DEF KIRINRIKI_H EQUS "H"
 	lang I, DEF KIRINRIKI_H EQUS "H"
 	lang S, DEF KIRINRIKI_H EQUS "H"
-
+	
 	lang J, DEF KIRINRIKI_O EQUS "リ"
 	lang E, DEF KIRINRIKI_O EQUS "O"
 	lang D, DEF KIRINRIKI_O EQUS "O"
 	lang F, DEF KIRINRIKI_O EQUS "O"
 	lang I, DEF KIRINRIKI_O EQUS "O"
 	lang S, DEF KIRINRIKI_O EQUS "O"
-
+	
 	lang J, DEF KIRINRIKI__ EQUS "ン"
 	lang E, DEF KIRINRIKI__ EQUS "-"
 	lang D, DEF KIRINRIKI__ EQUS "-"
 	lang F, DEF KIRINRIKI__ EQUS "-"
 	lang I, DEF KIRINRIKI__ EQUS "-"
 	lang S, DEF KIRINRIKI__ EQUS "-"
-
+	
 
 
 .textYANMA
@@ -1008,28 +1037,28 @@ ENDR
 	lang F, DEF HPUZZLE3_MON EQUS "DODUO"
 	lang I, DEF HPUZZLE3_MON EQUS "DODUO"
 	lang S, DEF HPUZZLE3_MON EQUS "DODUO"
-
+	
 	lang J, DEF YANMA_M EQUS "ヤ"
 	lang E, DEF YANMA_D EQUS "D"
 	lang D, DEF YANMA_K EQUS "K"
 	lang F, DEF YANMA_D EQUS "D"
 	lang I, DEF YANMA_D EQUS "D"
 	lang S, DEF YANMA_D EQUS "D"
-
+	
 	lang J, DEF YANMA_U EQUS "ン"
 	lang E, DEF YANMA_O EQUS "O"
 	lang D, DEF YANMA_O EQUS "O"
 	lang F, DEF YANMA_O EQUS "O"
 	lang I, DEF YANMA_O EQUS "O"
 	lang S, DEF YANMA_O EQUS "O"
-
+	
 	lang J, DEF YANMA_K EQUS "マ"
 	lang E, DEF YANMA_U EQUS "U"
 	lang D, DEF YANMA_W EQUS "W"
 	lang F, DEF YANMA_U EQUS "U"
 	lang I, DEF YANMA_U EQUS "U"
 	lang S, DEF YANMA_U EQUS "U"
-
+	
 	lang D, DEF YANMA_E EQUS "E"
 	lang D, DEF YANMA_I EQUS "I"
 
@@ -1049,42 +1078,42 @@ ENDR
 	lang F, DEF HPUZZLE4_MON EQUS "POLITOED"
 	lang I, DEF HPUZZLE4_MON EQUS "ZUBAT"
 	lang S, DEF HPUZZLE4_MON EQUS "ZUBAT"
-
+	
 	lang J, DEF HARIISEN_Z EQUS "ハ"
 	lang E, DEF HARIISEN_Z EQUS "Z"
 	lang D, DEF HARIISEN_Z EQUS "Z"
 	lang F, DEF HARIISEN_Z EQUS "Q"
 	lang I, DEF HARIISEN_Z EQUS "Z"
 	lang S, DEF HARIISEN_Z EQUS "Z"
-
+	
 	lang J, DEF HARIISEN_U EQUS "リ"
 	lang E, DEF HARIISEN_U EQUS "U"
 	lang D, DEF HARIISEN_U EQUS "U"
 	lang F, DEF HARIISEN_U EQUS "U"
 	lang I, DEF HARIISEN_U EQUS "U"
 	lang S, DEF HARIISEN_U EQUS "U"
-
+	
 	lang J, DEF HARIISEN_B EQUS "ー"
 	lang E, DEF HARIISEN_B EQUS "B"
 	lang D, DEF HARIISEN_B EQUS "B"
 	lang F, DEF HARIISEN_B EQUS "A"
 	lang I, DEF HARIISEN_B EQUS "B"
 	lang S, DEF HARIISEN_B EQUS "B"
-
+	
 	lang J, DEF HARIISEN_A EQUS "セ"
 	lang E, DEF HARIISEN_A EQUS "A"
 	lang D, DEF HARIISEN_A EQUS "A"
 	lang F, DEF HARIISEN_A EQUS "X"
 	lang I, DEF HARIISEN_A EQUS "A"
 	lang S, DEF HARIISEN_A EQUS "A"
-
+	
 	lang J, DEF HARIISEN_T EQUS "ン"
 	lang E, DEF HARIISEN_T EQUS "T"
 	lang D, DEF HARIISEN_T EQUS "T"
 	lang F, DEF HARIISEN_T EQUS "O"
 	lang I, DEF HARIISEN_T EQUS "T"
 	lang S, DEF HARIISEN_T EQUS "T"
-
+	
 
 .textWINDY
 	lang J, db "『ウインディ』"
@@ -1108,35 +1137,35 @@ ENDR
 	lang F, DEF WINDY_A EQUS "A"
 	lang I, DEF WINDY_A EQUS "A"
 	lang S, DEF WINDY_A EQUS "A"
-
+	
 	lang J, DEF WINDY_R EQUS "イ"
 	lang E, DEF WINDY_R EQUS "R"
 	lang D, DEF WINDY_R EQUS "R"
 	lang F, DEF WINDY_R EQUS "R"
 	lang I, DEF WINDY_R EQUS "R"
 	lang S, DEF WINDY_R EQUS "R"
-
+	
 	lang J, DEF WINDY_B EQUS "ン"
 	lang E, DEF WINDY_B EQUS "B"
 	lang D, DEF WINDY_B EQUS "B"
 	lang F, DEF WINDY_B EQUS "B"
 	lang I, DEF WINDY_B EQUS "B"
 	lang S, DEF WINDY_B EQUS "B"
-
+	
 	lang J, DEF WINDY_O EQUS "デ"
 	lang E, DEF WINDY_O EQUS "O"
 	lang D, DEF WINDY_O EQUS "O"
 	lang F, DEF WINDY_O EQUS "O"
 	lang I, DEF WINDY_O EQUS "O"
 	lang S, DEF WINDY_O EQUS "O"
-
+	
 	lang J, DEF WINDY_K EQUS "ィ"
 	lang E, DEF WINDY_K EQUS "K"
 	lang D, DEF WINDY_K EQUS "K"
 	lang F, DEF WINDY_K EQUS "K"
 	lang I, DEF WINDY_K EQUS "K"
 	lang S, DEF WINDY_K EQUS "K"
-
+	
 
 DEF PUZZLE_COUNT = 0
 
@@ -1348,8 +1377,13 @@ ENDC
 
 	lang I, text "?"
 
-	lang S, text "?"
-
+	lang S, text
+	lang S, nts_start
+	lang S, nts_player_name 0
+	lang S, nts_end
+	lang S, db   " recibido"
+	lang S, line "CARTACELESTE."
+	
 	done
 
 
@@ -1424,6 +1458,7 @@ DEF loopindex = 0
 REPT (9*5) - 1
 .scr{02d:loopindex}
 	nsc_compare wCurrentPuzzle, HPUZZLE1_ANSWER{02d:loopindex}, HPUZZLE2_ANSWER{02d:loopindex}, .scr{02d:loopindex}greater, 1, 1
+	lang S, text "¡Correcto!"
 .scr{02d:loopindex}greater
 	nsc_compare wCurrentPuzzle, HPUZZLE3_ANSWER{02d:loopindex}, HPUZZLE4_ANSWER{02d:loopindex}, HPUZZLE5_ANSWER{02d:loopindex}, 1, 3
 DEF loopindex = loopindex + 1
@@ -1442,7 +1477,7 @@ CorrectText:
 	lang D, text "Richtig!"
 	lang F, text "?"
 	lang I, text "?"
-	lang S, text "?"
+	lang S, text "¡Correcto!"
 	done
 
 IncorrectText:
@@ -1455,7 +1490,8 @@ IncorrectText:
 	lang D, line "nicht richtig!"
 	lang F, text "?"
 	lang I, text "?"
-	lang S, text "?"
+	lang S, text "Uy…"
+	lang S, line "¡Te equivocaste!"
 	done
 
 

@@ -176,8 +176,38 @@ MACRO minigame_start
 	lang I, text "?"
 
 	; Spanish
-	lang S, text "?"
+	lang S, text "Al iniciar el"
+	lang S, line "juego, sale un"
+	lang S, cont "#MON."
 
+	lang S, para "Luego sale"
+	lang S, line "otro #MON."
+
+	lang S, para "Adivina si"
+	lang S, line "el próximo #MON"
+	lang S, cont "es más alto o"
+	lang S, cont "más bajo que el"
+	lang S, cont "anterior."
+
+	lang S, para "Solo aparecen"
+	lang S, line "doce tipos de"
+	lang S, cont "#MON en este."
+	lang S, cont "juego."
+
+	lang S, para "Elige LISTA"
+	lang S, line "para verlos "
+	lang S, cont "cuando quieras."
+	lang S, cont "Te ayudará."
+
+	lang S, para "La altura de"
+	lang S, line "la #DEX se usa"
+	lang S, cont "para decidir."
+
+	lang S, para "Acierta siete"
+	lang S, line "seguidos y ganas!"
+
+	lang S, para "¡Empecemos!"
+	lang S, db "MÁS ALTO MÁS BAJO"
 	done
 ENDM
 ; Max 17 chars
@@ -187,7 +217,7 @@ MACRO minigame_name
 	lang D, db "GRÖSSER? KLEINER?"
 	lang F, db "+ GRAND OU + PETIT"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "MÁS ALTO MÁS BAJO"
 ENDM
 
 ; deprecating this, at least for now,
@@ -433,8 +463,13 @@ ENDR
 	lang I, text "?"
 
 	; Spanish
-	lang S, text "?"
-
+	lang S, text "#MON mostrado:"
+	lang S, line "NATU, ARBOK, ONIX,"
+	lang S, cont "GYARADOS, FURRET," 
+	lang S, cont "DUGTRIO, SHUCKLE," 
+	lang S, cont "SNORLAX, UMBREON," 
+	lang S, cont "DITTO y DRAGONAIR."
+	
 	done
 
 ; Note: all of these must match the block of text below!
@@ -444,7 +479,7 @@ ENDR
 	lang D, db "GRÖSSER"
 	lang F, db "+ GRAND"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "MÁS ALTO"
 .dummyDescription
 	db "@"
 
@@ -454,7 +489,7 @@ ENDR
 	lang D, db "KLEINER"
 	lang F, db "+ PETIT"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "MÁS BAJO"
 	db "@"
 
 .menuListText
@@ -463,7 +498,7 @@ ENDR
 	lang D, db "LISTE"
 	lang F, db "LISTE"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "LISTA"
 	db "@"
 
 .menuQuitText
@@ -472,7 +507,7 @@ ENDR
 	lang D, db "ZURÜCK"
 	lang F, db "RETOUR"
 	lang I, db "ESCI"
-	lang S, db "?"
+	lang S, db "SALIR"
 	db "@"
 
 	; this is a bodge and i know it...
@@ -486,8 +521,8 @@ ENDR
 	lang F, next " LISTE     RETOUR"
 	lang I, db   "▶?"
 	lang I, next " ?"
-	lang S, db   "▶?"
-	lang S, next " ?"
+	lang S, db   "▶MÁS ALTO MÁS BAJO"
+	lang S, next "▶LISTA     SALIR"
 	db "@"
 
 	; as is this
@@ -522,8 +557,8 @@ ENDC
 	lang I, db   "?"
 
 	; Spanish
-	lang S, db   "?"
-
+	lang S, db   "¿El siguiente es"
+	lang S, next "más alto o bajo?"
 	db "@"
 
 .textCorrect
@@ -532,7 +567,7 @@ ENDC
 	lang D, text "Richtig!"
 	lang F, text "Bravo!"
 	lang I, text "?"
-	lang S, text "?"
+	lang S, text "¡Correcto!"
 	done
 .textIncorrect
 	lang J, text "はずれ！"
@@ -540,7 +575,7 @@ ENDC
 	lang D, text "Leider falsch!"
 	lang F, text "Eh non..."
 	lang I, text "?"
-	lang S, text "?"
+	lang S, text "¡Incorrecto!"
 	done
 
 .textGift
@@ -600,8 +635,21 @@ ENDC
 	lang I, text "?"
 
 	; Spanish
-	lang S, text "?"
+	; Spanish
+	; Spanish
+	lang S, text "¡Felicidades!"
 
+	lang S, para "Por acertar"
+	lang S, line "siete seguidos,"
+	lang S, cont "toma este"
+	lang S, cont "TROZO ESTRELLA!"
+
+	lang S, para
+	lang S, nts_start
+	lang S, nts_player_name 0
+	lang S, nts_end
+	lang S, db   " recibió"
+	lang S, line "TROZO ESTRELLA."
 	done
 
 ENDC

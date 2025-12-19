@@ -54,7 +54,7 @@ MACRO minigame_name
 	lang D, db "#MON-PLAUDEREI!"
 	lang F, db "?"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "¡#RAPÉALO!"
 ENDM
 
 ; deprecating this, at least for now,
@@ -120,7 +120,7 @@ MinigameStart::
 	lang D, db "RUF-SET 1"
 	lang F, db "GROUPE DE CRIS 1"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "SET DE GRITOS 1"
 	db "@"
 .menuCrySet2Name
 	lang J, db "なきごえセット　２"
@@ -128,7 +128,7 @@ MinigameStart::
 	lang D, db "RUF-SET 2"
 	lang F, db "GROUPE DE CRIS 2"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "SET DE GRITOS 2"
 	db "@"
 .menuCrySet3Name
 	lang J, db "なきごえセット　３"
@@ -136,7 +136,7 @@ MinigameStart::
 	lang D, db "RUF-SET 3"
 	lang F, db "GROUPE DE CRIS 3"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "SET DE GRITOS 3"
 	db "@"
 .menuGameInstructionName
 	lang J, db "ゲームの　せつめい"
@@ -144,7 +144,7 @@ MinigameStart::
 	lang D, db "SPIELREGELN"
 	lang F, db "REGLES DU JEU"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "EXPLICACIÓN JUEGO"
 	db "@"
 .menuCancelName
 	lang J, db "もどる"
@@ -152,7 +152,7 @@ MinigameStart::
 	lang D, db "ZURÜCK"
 	lang F, db "RETOUR"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "SALIR"
 	db "@"
 
 MACRO def_cryset
@@ -353,9 +353,44 @@ ENDM
 	lang I, text "?"
 
 	; Spanish
-	lang S, db   "?"
-
-	para ""
+	; Spanish
+	lang S, text "Primero elige un"
+	lang S, line "set de gritos."
+	
+	lang S, para "El que más te"
+	lang S, line "guste."
+	
+	lang S, para "Al elegirlo,"
+	lang S, line "¡empieza el juego!"
+	
+	lang S, para "Mira el centro"
+	lang S, line "de la pantalla."
+	
+	lang S, para "Un #MON gritará"
+	lang S, line "muy fuerte."
+	
+	lang S, para "Vendrá de"
+	lang S, line "arriba, abajo,"
+	lang S, cont "izquierda o"
+	lang S, cont "derecha. ¡Oye!"
+	
+	lang S, para "Pulsa la dirección"
+	lang S, line "correcta en la"
+	lang S, cont "Cruceta."
+	
+	lang S, para "Si aciertas,"
+	lang S, line "¡avanzas!"
+	
+	lang S, para "Cada turno sale"
+	lang S, line "otro #MON,"
+	lang S, cont "recuerda el orden."
+	lang S, cont "en que salen."
+	
+	lang S, para "Supera veinte"
+	lang S, line "turnos seguidos"
+	lang S, cont "y ganarás."
+	
+	lang S, para "¡Empecemos!"
 	done
 
 ; TODO: did this text even exist?
@@ -409,14 +444,14 @@ ENDM
 ;	lang D, db "Drücke START!"
 ;	lang F, db "Appuyer sur START!"
 ;	lang I, db "?"
-;	lang S, db "?"
+;	lang S, db "PULSA START"
 
 	lang J, db "なきごえセット"
 	lang E, db "CRY SET"
 	lang D, db "RUF-SET"
 	lang F, db "GROUPE DE CRIS"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "SET DE GRITOS"
 
 	nts_start
 	nts_number wCurrentCrySet, 1, 2
@@ -916,7 +951,9 @@ ENDR
 	lang I, text "?"
 
 	; Spanish
-	lang S, text "?"
+	; Spanish
+	lang S, text "¿Usar este set"
+	lang S, line "de gritos?"
 	done
 
 ; center-aligned version
@@ -937,7 +974,8 @@ ENDR
 ;
 ;	lang I, db   "?"
 ;
-;	lang S, db   "?"
+;	lang E, db   " ¡Tu turno! Usa"
+;	lang E, next "la cruceta.!"
 ;
 ;	db "@"
 
@@ -962,8 +1000,9 @@ ENDR
 
 	lang I, db   "?"
 
-	lang S, db   "?"
-
+	; Spanish
+	lang S, db   "¡Tu turno! Usa"
+	lang S, next "la cruceta!"
 	db "@"
 
 .textRight
@@ -983,7 +1022,7 @@ ENDR
 	lang I, db   "?"
 
 	; Spanish
-	lang S, db   "?"
+	lang S, db   "¡Correcto!"
 
 	db "@"
 
@@ -1007,8 +1046,9 @@ ENDR
 	lang I, db   "?"
 
 	; Spanish
-	lang S, db   "?"
-
+	; Spanish
+	lang S, db   "Uy…"
+	lang S, next "¡Te equivocaste!"
 	db "@"
 
 .textAllClear
@@ -1032,8 +1072,9 @@ ENDR
 	lang I, text "?"
 
 	; Spanish
-	lang S, text "?"
-
+	; Spanish
+	lang S, text "¡Has completado"
+	lang S, line "las veinte! ¡Bien!"
 	done
 
 
@@ -1191,33 +1232,31 @@ ENDR
 	lang I, db   "?"
 
 	; Spanish
-	lang S, text "?"
+	; Spanish
+	lang S, text "Has terminado"
+	lang S, line
 	lang S, nts_start
 	lang S, nts_number wCurrentStreak, 1, 2, 3
 	lang S, nts_end
-	lang S, db   "?"
-
-	lang S, para "?"
+	lang S, db   "rondas!"
+	lang S, para "¡Toma!"
+	lang S, line "este "
 	lang S, nts_start
 	lang S, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
 	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
 	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
-	;lang S, nts_end
-	lang S, db   "?"
-
+	lang S, cont "de regalo!"
 	lang S, para
 	lang S, nts_start
 	lang S, nts_player_name 0
 	lang S, nts_end
-	lang S, db   "?"
+	lang S, db   " recibió"
 	lang S, line
 	lang S, nts_start
 	lang S, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
 	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
 	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
-	;lang S, nts_end
-	lang S, db   "?"
-
+	lang S, db   "."
 	done
 
 
@@ -1260,9 +1299,9 @@ ENDR
 	lang J, db "おおきなしんじゅ"
 	lang E, db "BIG PEARL"
 	lang D, db "RIESENPERLE"
-	lang F, db "?"
-	lang I, db "?"
-	lang S, db "?"
+	lang F, db "GRANDE PERLE"
+	lang I, db "GRANDE PERLA"
+	lang S, db "PERLA GRANDE"
 	db "@"
 
 .itemName_STARDUST_pronoun
@@ -1271,9 +1310,9 @@ ENDR
 	lang J, db "ほしのすな"
 	lang E, db "STARDUST"
 	lang D, db "STERNENSTAUB"
-	lang F, db "GRANDE PERLE"
-	lang I, db "GRANDE PERLA"
-	lang S, db "PERLA GRANDE"
+	lang F, db "POUSS.ETOILE"
+	lang I, db "POLVOSTELLA"
+	lang S, db "POLVOESTELAR"
 	db "@"
 
 .itemName_TM_REST_pronoun
@@ -1293,7 +1332,7 @@ ENDR
 	lang J, db "ももぼんぐり"
 	lang E, db "PNK APRICORN"
 	lang D, db "APRIKOKO PNK"
-	lang F, db "NOIGRUME ROS" ; Le nom est utilisé tronqué sur la Route 35.
+	lang F, db "NOIGRUME ROS"
 	lang I, db "GHICOC.ROSA"
 	lang S, db "BONGURI ROS"
 	db "@"

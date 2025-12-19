@@ -45,7 +45,7 @@ ENDC
 	lang D, db "BESTENLISTE"
 	lang F, db "CLASSEMENT DRES."
 	lang I, db "CLASSIFICA ALLEN."
-	lang S, db "?"
+	lang S, db "CLASIFICACIÓN"
 	db "@"
 	
 	news_menu 2, 5, 1, 4, 0, 2, $10, $04, $07, $04, SHOW_DESCRIPTIONS, $04
@@ -92,7 +92,7 @@ ENDC
 	lang D, db "BETRACHTEN"
 	lang F, db "VOIR CLASSEMENT"
 	lang I, db "VEDI CLASSIFICHE"
-	lang S, db "?"
+	lang S, db "VER CLASIFICACIÓN"
 	db "@"
 
 .menuUpdateRankingsText
@@ -101,7 +101,7 @@ ENDC
 	lang D, db "ÜBERTRAGEN"
 	lang F, db "MàJ CLASSEMENT"
 	lang I, db "AGG. CLASSIFICHE"
-	lang S, db "?"
+	lang S, db "ACT. CLASIFICACIÓN"
 	db "@"
 
 .menuRankingsDescriptionText
@@ -110,7 +110,7 @@ ENDC
 	lang D, db "BESTENL.-INFO"
 	lang F, db "INFOS CLASSEMENT"
 	lang I, db "INFO CLASSIFICA"
-	lang S, db "?"
+	lang S, db "INFO CLASIFICACIÓN"
 	db "@"
 	
 .menuReturnText
@@ -119,7 +119,7 @@ ENDC
 	lang D, db "ZURÜCK"
 	lang F, db "RETOUR"
 	lang I, db "ESCI"
-	lang S, db "?"
+	lang S, db "SALIR"
 	db "@"
 
 .menuViewRankingsScript
@@ -173,8 +173,8 @@ ENDC
 	lang I, text "Classifiche"
 	lang I, line "aggiornate!"
 	
-	lang S, text "?"
-	lang S, line "?"
+	lang S, text "Act. clasificación"
+	lang S, line "completa."
 	
 	done
 
@@ -195,8 +195,8 @@ ENDC
 	lang I, text "Aggiornam. classi-"
 	lang I, line "fiche interrotto."
 	
-	lang S, text "?"
-	lang S, line "?"
+	lang S, text "Act. clasificación"
+	lang S, line "detenida."
 	
 	done
 
@@ -229,10 +229,10 @@ ENDC
 	lang I, para "Riscarica le"
 	lang I, line "NOTIZIE."
 	
-	lang S, text "?"
-	lang S, line "?"
-	lang S, para "?"
-	lang S, line "?"
+	lang S, text "Act. clasificación"
+	lang S, line "fallida…"
+	lang S, para "Descarga de nuevo"
+	lang S, line "NOTICIAS al día."
 	
 	
 	done
@@ -296,9 +296,10 @@ ENDC
 	lang I, para "Collegati per" 
 	lang I, line "ottenere i dati."
 	
-	lang S, text "?"
-	lang S, line "?"
-	lang S, cont "?"
+	lang S, text "Sin datos de"
+	lang S, line "clasificación."
+	lang S, para "Conéctese para"
+	lang S, cont "obtener los datos."
 	
 	para
 	done
@@ -319,8 +320,8 @@ ENDC
 	lang I, db   "Guarda le varie"
 	lang I, line "classifiche."
 	
-	lang S, db   "?"
-	lang S, line "?"
+	lang S, db   "Ver distintas"
+	lang S, line "clasificaciones."
 	
 	db "@"
 
@@ -340,8 +341,8 @@ ENDC
 	lang I, db   "Ricarica classi-"
 	lang I, line "fiche e punteggi."
 	
-	lang S, db   "?"
-	lang S, line "?"
+	lang S, db   "Act. tabla cl."
+	lang S, line "para subir punt."
 	
 	db "@"
 
@@ -361,8 +362,8 @@ ENDC
 	lang I, db   "Spiegazione temi"
 	lang I, line "classifiche."
 	
-	lang S, db   "?"
-	lang S, line "?"
+	lang S, db   "Explicación de"
+	lang S, line "la clasificación."
 	
 	db "@"
 
@@ -381,7 +382,8 @@ ENDC
 	lang I, db   "Torna alla"
 	lang I, line "prima pagina."
 	
-	lang S, db   "?"
+	lang S, db   "Volver a la"
+	lang S, line "página uno."
 	
 	db "@"
 
@@ -400,7 +402,7 @@ ENDC
 	lang D, db "BESTENLISTE"
 	lang F, db "CLASSEMENT DRES."
 	lang I, db "CLASSIFICA ALLEN."
-	lang S, db "?"
+	lang S, db "CLASIFICACIÓN"
 	db "@"
 	
 	news_menu 2, 5, 1, 4, 0, 2, $10, $04, $07, $04, SHOW_DESCRIPTIONS, $04
@@ -453,7 +455,7 @@ ENDC
 	lang D, db "ZURÜCK"
 	lang F, db "RETOUR"
 	lang I, db "ESCI"
-	lang S, db "?"
+	lang S, db "SALIR"
 	db "@"
 	
 .menuitem1_script
@@ -491,8 +493,8 @@ ENDC
 	lang I, db   "Scegli quale"
 	lang I, line "classifica vedere."
 	
-	lang S, db   "?"
-	lang S, line "?"
+	lang S, db   "Elija una clasif."
+	lang S, line "para verla."
 	
 	db "@"
 	
@@ -550,7 +552,7 @@ ENDC
 	lang D, db "LANDESLISTE"
 	lang F, db "CLASSEMENT NATIO."
 	lang I, db "CLASSIFICA NAZ."
-	lang S, db "?"
+	lang S, db "CLASIFICACIÓN"
 	db "@"
 .menuitem2_name
 	nts_start
@@ -561,7 +563,7 @@ ENDC
 	lang D, db "-LISTE"
 	lang F, db "CLASSEMENT" ; TODO; should there be a space here?
 	lang I, db " CLASSIFICA"
-	lang S, db "?"
+	lang S, db "CLASIFICACIÓN"
 	db "@"
 .menuitem3_name
 	lang J, db "■" ; post code symbol
@@ -573,7 +575,7 @@ ENDC
 	lang D, db "-LISTE"
 	lang F, db "CLASSEMENT" ; TODO; should there be a space here?
 	lang I, db " CLASSIFICA"
-	lang S, db "?"
+	lang S, db "×× CLASIFICACIÓN"
 	db "@"
 	
 .menuitem4_name
@@ -582,7 +584,7 @@ ENDC
 	lang D, db "ZURÜCK"
 	lang F, db "RETOUR"
 	lang I, db "ESCI"
-	lang S, db "?"
+	lang S, db "SALIR"
 	db "@"
 	
 .menuitem1_script
@@ -625,8 +627,8 @@ ENDC
 	lang I, db   "Scegli dove ved-"
 	lang I, line "ere la classifica."
 	
-	lang S, db   "?"
-	lang S, line "?"
+	lang S, db   "Elige para ver"
+	lang S, line "la clasificación."
 	
 	db "@"
 .ranking1_label
@@ -765,7 +767,7 @@ ENDC
 	lang D, db "s RANG"
 	lang F, db ":"
 	lang I, db ":"
-	lang S, db "?"
+	lang S, db "RANGO"
 	db "@"
 .menuitems_script
 	nsc_compareram wNewsMenuOption, 1, wNumListedPlayers, .less, .notless, .notless
@@ -796,8 +798,8 @@ ENDC
 	lang I, db   "Nessun classi-"
 	lang I, next "ficato qui."
 	
-	lang S, db   "?"
-	lang S, next "?"
+	lang S, db   "Aquí no hay"
+	lang S, next "clasificados."
 	
 	para   "@"
 	
@@ -854,7 +856,11 @@ ENDC
 	lang I, line "per te."
 	lang I, cont "Buon divertimento!"
 	
-	lang S, text "?"
+	lang S, text "Por alcanzar tal"
+	lang S, next "alto rango,"
+	lang S, para "Hay un regalo"
+	lang S, line "para ti."
+	lang S, cont "¡Disfrútalo!"
 	
 	done
 .ranked_player_info
@@ -868,7 +874,7 @@ ENDC
 	lang D, db "Jahre"
 	lang F, db "ans  "
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "años"
 	nts_start
 	nts_ranking_region $0007, $7, 
 	nts_end
@@ -964,16 +970,17 @@ ENDC
 	lang I, db   "!"
 	lang I, line "Complimenti!"
 	
+	lang S, db "El rango de"
 	lang S, nts_start
 	lang S, nts_player_name, 0
 	lang S, nts_end
-	lang S, db "?"
+	lang S, db "es"
 	lang S, para
 	lang S, nts_start
 	lang S, nts_number wOwnRank, 4, 4
 	lang S, nts_end
-	lang S, db   "?"
-	lang S, line "?"
+	lang S, db   "!"
+	lang S, line "¡Enhorabuena!"
 	
 	para "@"
 .players_ranking
@@ -1022,9 +1029,9 @@ ENDC
 	lang S, nts_start
 	lang S, nts_player_name, 0
 	lang S, nts_end
-	lang S, db   "?"
-	lang S, para "?"
-	lang S, line "?"
+	lang S, db   " tiene el RANGO…"
+	lang S, para "No está en la"
+	lang S, line "CLASIFICACIÓN."
 	para "@"
 	
 .players_ranking1
@@ -1055,10 +1062,11 @@ ENDC
 	lang I, nts_end
 	lang I, db ":"
 	
-	lang S, nts_start
-	lang S, nts_player_name 0 
-	lang S, nts_end
-	lang S, db "?"
+	lang S, db "PUNTOS de "
+    lang S, nts_start
+    lang S, nts_player_name 0 
+    lang S, nts_end
+    lang S, db ":"
 	
 	line
 	nts_start
@@ -1095,10 +1103,11 @@ ENDC
 	lang I, nts_end
 	lang I, db ":"
 	
+	lang S, db "PUNTOS de "
 	lang S, nts_start
 	lang S, nts_player_name 0 
 	lang S, nts_end
-	lang S, db "?"
+	lang S, db ":"
 	
 	line
 	nts_start
@@ -1135,10 +1144,11 @@ ENDC
 	lang I, nts_end
 	lang I, db ":"
 	
+	lang S, db "PUNTOS de "
 	lang S, nts_start
 	lang S, nts_player_name 0 
 	lang S, nts_end
-	lang S, db "?"
+	lang S, db ":"
 	
 	line
 	nts_start
@@ -1166,8 +1176,8 @@ ENDC
 	lang I, db   "Guarda il profilo"
 	lang I, line "di questo ALLEN."
 	
-	lang S, db   "?"
-	lang S, line "?"
+	lang S, db   "Ver perfil"
+	lang S, line "de este <TRAINER>."
 	
 	db "@"
 .ranking1_title
@@ -1182,7 +1192,7 @@ ENDC
 	lang D, db "LANDES-TOP-10!"
 	lang F, db "TOP 10 NATIONAL!"
 	lang I, db "TOP 10 NAZIONALE"
-	lang S, db "?"
+	lang S, db "¡TOP 10 NACIÓN!"
 	db "@" 
 .prefectural_top_10_string
 	nts_start
@@ -1193,7 +1203,7 @@ ENDC
 	lang D, db " TOP-10!"
 	lang F, db " TOP 10!"
 	lang I, db " TOP 10!"
-	lang S, db "?"
+	lang S, db "¡TOP 10!"
 	db "@"
 .local_top_10_string
 	lang J, db "■" ; post code symbol
@@ -1205,5 +1215,5 @@ ENDC
 	lang D, db " TOP-10!"
 	lang F, db " TOP 10!"
 	lang I, db " TOP 10!"
-	lang S, db "?"
+	lang S, db " TOP 10!"
 	db "@"

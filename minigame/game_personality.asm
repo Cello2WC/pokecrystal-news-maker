@@ -96,7 +96,21 @@ MACRO minigame_start
 	lang I, text "?"
 
 	; Spanish
-	lang S, text "?"
+	lang S, text "¡Iniciando tu"
+	lang S, line "EVALUACIÓN DE"
+	lang S, cont "<TRAINER>!"
+
+	lang S, para "¡Solo recibirás"
+	lang S, line "un premio tras tu"
+	lang S, cont "primera prueba!"
+	
+	lang S, para "El regalo varía"
+	lang S, line "en función de tus"
+	lang S, cont "resultados, ¡así"
+	lang S, cont "que ten cuidado!"
+	
+	lang S, para "Muy bien, ¡vamos a"
+	lang S, line "empezar!"
 
 	done
 
@@ -109,7 +123,7 @@ MACRO minigame_name
 	lang D, db "<TRAINER>-CHECK-UP!"
 	lang F, db "BILAN <TRAINER>!"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "¡EVA. <TRAINER>!"
 ENDM
 
 MACRO minigame_desc
@@ -195,7 +209,7 @@ MinigameStart::
 	lang D, db "JA"
 	lang F, db "OUI"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "SI"
 	db "@"
 
 .menuItemAnswer2Text
@@ -204,7 +218,7 @@ MinigameStart::
 	lang D, db "NEIN"
 	lang F, db "NON"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "NO"
 	db "@"
 
 .menuItemQuitText
@@ -213,7 +227,7 @@ MinigameStart::
 	lang D, db "ZUR."
 	lang F, db "RET"
 	lang I, db "ESCI"
-	lang S, db "?"
+	lang S, db "SALIR"
 	db "@"
 
 
@@ -281,8 +295,11 @@ ENDM
 	lang I, db   "?"
 
 	; Spanish
-	lang S, db   "?"
-
+	lang S, db   "Cuando atrapo"
+	lang S, next "un #MON,"
+	lang S, next "siempre le pongo"
+	lang S, next "un mote."
+	
 	db "@"
 
 .page2
@@ -315,8 +332,11 @@ ENDM
 	lang I, db   "?"
 
 	; Spanish
-	lang S, db   "?"
-
+	lang S, db   "Cuando llamo a mi"
+	lang S, next "#MON su nombre,"
+	lang S, next "siempre acabo"
+	lang S, next "diciéndole moni"
+	
 	db "@"
 
 .page3
@@ -350,8 +370,12 @@ ENDM
 	lang I, db   "?"
 
 	; Spanish
-	lang S, db   "?"
-
+	lang S, db   "Un movimiento que"
+	lang S, next "no coincida con"
+	lang S, next "mi imagen #MON,"
+	lang S, next "no me importa si"
+	lang S, next "no es fuerte."
+	
 	db "@"
 
 .page4
@@ -384,8 +408,12 @@ ENDM
 	lang I, db   "?"
 
 	; Spanish
-	lang S, db   "?"
-
+	lang S, db   "Me haré con más"
+	lang S, next "de diez de mis"
+	lang S, next "#MON favoritos,"
+	lang S, next "aunque sean"
+	lang S, next "débiles."
+	
 	db "@"
 
 .page5
@@ -416,8 +444,11 @@ ENDM
 	lang I, db   "?"
 
 	; Spanish
-	lang S, db   "?"
-
+	lang S, db   "Con un #MON con"
+	lang S, next "un ataque alto,"
+	lang S, next "no me preocupo"
+	lang S, next "mucho la defensa."
+	
 	db "@"
 
 .page6
@@ -445,8 +476,10 @@ ENDM
 	lang I, db   "?"
 
 	; Spanish
-	lang S, db   "?"
-
+	lang S, db   "¡Ganar contra un"
+	lang S, next "rival más débil"
+	lang S, next "sienta increíble!"
+	
 	db "@"
 
 .page7
@@ -480,8 +513,12 @@ ENDM
 	lang I, db   "?"
 
 	; Spanish
-	lang S, db   "?"
-
+	lang S, db   "Vendería incluso"
+	lang S, next "#MON que he"
+	lang S, next "criado con esmero"
+	lang S, next "si el precio fuera"
+	lang S, next "suficiente"	
+	
 	db "@"
 
 .page8
@@ -513,8 +550,11 @@ ENDM
 	lang I, db   "?"
 
 	; Spanish
-	lang S, db   "?"
-
+	lang S, db   "Puedo nombrar 30"
+	lang S, next "o más clases"
+	lang S, next "de movimientos MT"	
+	lang S, next "sin mirar."
+	
 	db "@"
 
 .page9
@@ -546,8 +586,11 @@ ENDM
 	lang I, db   "?"
 
 	; Italian
-	lang S, db   "?"
-
+	lang S, db   "Cuando consigo MT,"
+	lang S, next "¡se lo enseño a"
+	lang S, next "mi #MON" 
+	lang S, next "del tirón!"
+	
 	db "@"
 
 .page10
@@ -575,8 +618,10 @@ ENDM
 	lang I, db   "?"
 
 	; Spanish
-	lang S, db   "?"
-
+	lang S, db   "Siempre intento"
+	lang S, next "llevar conmigo"
+	lang S, next "muchas medicinas."
+	
 	db "@"
 
 .page11
@@ -607,8 +652,11 @@ ENDM
 	lang I, db   "?"
 
 	; Spanish
-	lang S, db   "?"
-
+	lang S, db   "En lo que respecta"
+	lang S, next "los objetos,"
+	lang S, next "CINTA-FOCUS antes"
+	lang S, next "una BAYA MILAGRO!"
+	
 	db "@"
 
 .page12
@@ -646,8 +694,12 @@ ENDM
 	lang I, db   "?"
 
 	; Spanish
-	lang S, db   "?"
-
+	lang S, db   "Aunque mi #MON"
+	lang S, next "tenga pocos PV,"
+	lang S, next "no lo curaré si"
+	lang S, next "creo puedo ganar"
+	lang S, next "siguiente turno."
+	
 	db "@"
 
 .page13
@@ -678,8 +730,11 @@ ENDM
 	lang I, db   "?"
 
 	; Spanish
-	lang S, db   "?"
-
+	lang S, db   "Me encanta usar"
+	lang S, next "#MON que mis"
+	lang S, next "amigos no"
+	lang S, next "suelen usar."
+	
 	db "@"
 
 .page14
@@ -713,8 +768,12 @@ ENDM
 	lang I, db   "?"
 
 	; Spanish
-	lang S, db   "?"
-
+	lang S, db   "Cuando llego a"
+	lang S, next "una ciudad nueva,"
+	lang S, next "primero que hago"
+	lang S, next "es curarme en un"	
+	lang S, next "CENTRO #MON."
+	
 	db "@"
 
 .page15
@@ -748,8 +807,11 @@ ENDM
 	lang I, db   "?"
 
 	; Spanish
-	lang S, db   "?"
-
+	lang S, db   "Prefiero estrat."
+	lang S, next "en mi habitación"
+	lang S, next "a salir"
+	lang S, next "a explorar cuevas."
+	
 	db "@"
 
 .page16
@@ -781,8 +843,11 @@ ENDM
 	lang I, db   "?"
 
 	; Spanish
-	lang S, db   "?"
-
+	lang S, db   "Los #MON"
+	lang S, next "en las CAJAS de"
+	lang S, next "mi PC, estan"
+	lang S, next "ordenadisimos"
+	
 	db "@"
 
 
@@ -914,7 +979,7 @@ ENDM
 	lang S, nts_start
 	lang S, nts_player_name 0
 	lang S, nts_end
-	lang S, db "?"
+	lang S, db " RESULTADOS"
 .menuItemDesc
 	db "@"
 
@@ -980,8 +1045,19 @@ ENDM
 	lang I, text "?"
 
 	; Spanish
-	lang S, text "?"
-
+	lang S, text "¡Tu tipo <TRAINER>"
+	lang S, line "es #FAN!"
+	
+	lang S, para "¡Tus sentimientos"
+	lang S, line "adoración por tu"
+	lang S, cont "#MONs brillan!"
+	
+	lang S, para "Incluso si pierdes"
+	lang S, line "en combate, tener"
+	lang S, cont "#MON adorable"
+	lang S, cont "es una victoria"
+	lang S, cont "¡No lo olvides!"
+	
 	done
 
 
@@ -1042,14 +1118,18 @@ ENDM
 	lang I, db   "?"
 
 	; Spanish
-	lang S, text "?"
-
+	lang S, text "MT27, RETROCESO,"
+	lang S, line "será perfecta"
+	lang S, cont "para tu #MON!"
+	lang S, cont "¡Úsala, por favor!"
+	
 	lang S, para
 	lang S, nts_start
 	lang S, nts_player_name 0
 	lang S, nts_end
-	lang S, db   "?"
-
+	lang S, db   " recibido"
+	lang S, line "MT27."	
+	
 	done
 
 .result2textM
@@ -1127,8 +1207,23 @@ ENDM
 	lang I, text "?"
 
 	; Spanish
-	lang S, text "?"
-
+	lang S, text "Pareces el"
+	lang S, line "tipo perfecto para"
+	lang S, cont "el TEAM <ROCKET>!"
+	
+	lang S, para "Quiero decir, solo"
+	lang S, line "piensas en"
+	lang S, cont "ti mismo, ¿eh?"
+	
+	lang S, para "Si siempre eres"
+	lang S, line "tan egoísta, ¡no"
+	lang S, cont "llegarás lejos!"
+	
+	lang S, para "Bueno, alguna vez"
+	lang S, line "cambias opinión,"
+	lang S, para "¡únete al"
+	lang S, line "TEAM <ROCKET>!"
+	
 	done
 
 .result2text_gift
@@ -1200,15 +1295,21 @@ ENDM
 	lang I, line "TM21."
 
 	; Spanish
-	lang S, text "?"
-
+	lang S, text "Aquí tienes,"
+	lang S, line "celebra tu nueva"
+	lang S, cont "amistad con"
+	lang S, cont "el TEAM <ROCKET>!"
+	
+	lang S, para "MT21, FRUSTRACIÓN."
+	lang S, line "¡Solo para ti!"
+	
 	lang S, para
 	lang S, nts_start
 	lang S, nts_player_name 0
 	lang S, nts_end
-	lang S, db   "?"
-	lang S, line "TM21."
-
+	lang S, db   " recibido"
+	lang S, line "MT21."	
+	
 	done
 
 .result3textM
@@ -1272,8 +1373,20 @@ ENDM
 	lang I, text "?"
 
 	; Spanish
-	lang S, text "?"
-
+	lang S, text "Eres un"
+	lang S, line "ENTRE.GUAY!"
+	
+	lang S, para "Cuidas muy bien"
+	lang S, line "de tu #MON,"
+	lang S, cont "y tú tambien"
+	lang S, cont "pareces fuerte"
+	lang S, cont "en combate."
+	
+	lang S, para "¡Sabes tanto,"
+	lang S, line "que amigos deben"
+	lang S, cont "admirarte mucho"
+	lang S, cont "a ti!"
+	
 	done
 
 .result3text_gift
@@ -1334,15 +1447,18 @@ ENDM
 	lang I, line "PP UP."
 
 	; Spanish
-	lang S, text "?"
-
+	lang S, text "¡Consigue"
+	lang S, line "una ventaja mayor"
+	lang S, cont "en los combates,"	
+	lang S, cont "coge este MÁS PP!"
+	
 	lang S, para
 	lang S, nts_start
 	lang S, nts_player_name 0
 	lang S, nts_end
-	lang S, db   "?"
-	lang S, line "PP UP."
-
+	lang S, db   " recibido"
+	lang S, line "MÁS PP."	
+	
 	done
 
 .result4textM
@@ -1408,8 +1524,20 @@ ENDM
 	lang I, text "?"
 
 	; Spanish
-	lang S, text "?"
-
+	lang S, text "¡Eres un CAMPISTA!"
+	lang S, line "Si fueras una"
+	lang S, cont "chica, serías una"
+	lang S, cont "DOMINGUERA!"
+	
+	lang S, para "¡Te encanta"
+	lang S, line "ir de aventura con"
+	lang S, cont "tu #MON!"
+	
+	lang S, para "¡Tu #MON debe"
+	lang S, line "pasarlo genial"
+	lang S, cont "viajando con"
+	lang S, cont "ti!"
+	
 	done
 .result4textF
 	; Japanese
@@ -1472,8 +1600,19 @@ ENDM
 	lang I, text "?"
 
 	; Spanish
-	lang S, text "?"
-
+	lang S, text "Eres DOMINGUERA!"
+	lang S, line "Si fueras chico,"
+	lang S, cont "serías CAMPISTA!"
+	
+	lang S, para "¡Te encanta"
+	lang S, line "ir de aventura con"
+	lang S, cont "tu #MON!"
+	
+	lang S, para "¡Tu #MON debe"
+	lang S, line "pasarlo genial"
+	lang S, cont "viajando con"
+	lang S, cont "ti!"
+	
 	done
 
 .result4text_gift
@@ -1540,15 +1679,21 @@ ENDM
 	lang I, line "SILVERPOWDER."
 
 	; Spanish
-	lang S, text "?"
-
-	lang S, para
+	lang S, text "Y, aquí tienes"
+	lang S, line "para ti"
+	
+	lang S, para "¡Es POLVO PLATA!"
+	lang S, line "Sigue así"
+	lang S, cont "¡trabaja así de"
+	lang S, cont "aquí en adelante!"
+	
+	lang S, para ""
 	lang S, nts_start
 	lang S, nts_player_name 0
 	lang S, nts_end
-	lang S, db   "?"
-	lang S, line "SILVERPOWDER."
-
+	lang S, db   " recibido"
+	lang S, line "POLVO PLATA."
+	
 	done
 
 .result5textM
@@ -1610,8 +1755,18 @@ ENDM
 	lang I, text "?"
 
 	; Spanish
-	lang S, text "?"
-
+	lang S, text "¡Recluta!"
+	lang S, line "Eres el"
+	lang S, cont "CINT. NEGRO!"
+	
+	lang S, para "estilo lucha audaz"
+	lang S, line "es realmente"
+	lang S, cont "¡chulo!"
+	
+	lang S, para "«¡Sigue lanzándote"
+	lang S, line "combate y hazte"
+	lang S, cont "aún más fuerte!"
+	
 	done
 
 .result5text_gift
@@ -1669,15 +1824,17 @@ ENDM
 	lang I, line "TM20."
 
 	; Spanish
-	lang S, text "?"
-
-	lang S, para
+	lang S, text "¡Puedes quedarte"
+	lang S, line "enseña AGUANTE!"
+	lang S, cont "¡Aguanta!"
+	
+	lang S, para ""
 	lang S, nts_start
 	lang S, nts_player_name 0
 	lang S, nts_end
-	lang S, db   "?"
-	lang S, line "TM20."
-
+	lang S, db   " recibido"
+	lang S, line "MT20."	
+	
 	done
 
 .result6textM
@@ -1768,8 +1925,26 @@ ENDM
 	lang I, text "?"
 
 	; Spanish
-	lang S, text "?"
+	lang S, text "Tu tipo de <TRAINER>"
+	lang S, line "es CIENTÍFICO…"
 
+	lang S, para "Quizá la gente"
+	lang S, line "llame excéntrico"
+	lang S, cont "a veces."
+
+	lang S, para "No dejes que"
+	lang S, line "te moleste."
+	lang S, cont "Deja que hablen."
+
+	lang S, para "No importa lo que"
+	lang S, line "diga nadie…"
+
+	lang S, para "incluso si tu amor"
+	lang S, line "platónico rechaza,"
+
+	lang S, para "sé fiel a"
+	lang S, line "ti mismo…"
+	
 	done
 
 .result6text_gift
@@ -1836,15 +2011,20 @@ ENDM
 	lang I, line "BRIGHTPOWDER."
 
 	; Spanish
-	lang S, text "?"
-
+	lang S, text "Toma, coge esto"
+	lang S, line "POLVO BRILLO."
+	
+	lang S, para "Intenta usarlo"
+	lang S, line "distráete de"
+	lang S, cont "tu soledad…"
+	
 	lang S, para
 	lang S, nts_start
 	lang S, nts_player_name 0
 	lang S, nts_end
-	lang S, db   "?"
-	lang S, line "BRIGHTPOWDER."
-
+	lang S, db   " recibido"
+	lang S, line "POLVO BRILLO."
+	
 	done
 
 ENDC

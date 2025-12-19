@@ -73,7 +73,13 @@ MACRO minigame_start
 
 	lang I, text "?"
 
-	lang S, text "?"
+	lang S, text "MILLIE: algo"
+	lang S, line "algo de AZALEA"
+	lang S, para "algo alg-"
+	lang S, line "algo de CÉSAR"
+	lang S, cont "nieta"
+	lang S, para "algo alg-"
+	lang S, line "viajar el tiempo"
 
 	done
 ENDM
@@ -85,7 +91,7 @@ MACRO minigame_name
 	lang D, db "ZEITLOSES GESCHENK"
 	lang F, db "CADEAU INTEMPOREL"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "REGALO ATEMPORAL"
 ENDM
 
 MACRO minigame_desc
@@ -177,7 +183,7 @@ MinigameStart::
 	lang D, db "STEIN"
 	lang F, db "PIERRE"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "PIEDRA"
 	db "@"
 
 .menuPaperText
@@ -186,7 +192,7 @@ MinigameStart::
 	lang D, db "PAPIER"
 	lang F, db "PAPIER" ; Sentez-vous libre de débattre sur "FEUILLE" à la place :)
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "PAPEL"
 	db "@"
 
 .menuScissorsText
@@ -195,7 +201,7 @@ MinigameStart::
 	lang D, db "SCHERE"
 	lang F, db "CISEAUX"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "TIJERAS"
 .menuDummyDesc
 	db "@"
 
@@ -212,7 +218,7 @@ MinigameStart::
 	lang D, db "MAISY: STEIN"
 	lang F, db "LILA: PIERRE"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "MILLIE: PIEDRA"
 	db "@"
 
 .textChiePaper
@@ -221,7 +227,7 @@ MinigameStart::
 	lang D, db "MAISY: PAPIER"
 	lang F, db "LILA: PAPIER" ; Même remarque que pour le joueur.
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "MILLIE: PAPEL"
 	db "@"
 
 .textChieScissors
@@ -230,7 +236,7 @@ MinigameStart::
 	lang D, db "MAISY: SCHERE"
 	lang F, db "LILA: CISEAUX"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "MILLIE: TIJERAS"
 	db "@"
 
 .menuRockScript
@@ -256,7 +262,7 @@ MinigameStart::
 	lang D, line "schieden…"
 	lang F, text "LILA: Egalité..."
 	lang I, text "?"
-	lang S, text "?"
+	lang S, text "MILLIE: Empate..."
 	done
 
 .jankenLose
@@ -273,7 +279,7 @@ MinigameStart::
 	lang D, line "gewinne!"
 	lang F, text "LILA: J'ai gagné!"
 	lang I, text "?"
-	lang S, text "?"
+	lang S, text "MILLIE: ¡Yo gano!"
 	done
 
 .jankenWin
@@ -290,7 +296,7 @@ MinigameStart::
 	lang D, line "gewinnst!"
 	lang F, text "LILA: Tu as gagné!"
 	lang I, text "?"
-	lang S, text "?"
+	lang S, text "MILLIE: ¡TÚ GANAS!"
 	done
 
 	news_screen PokemonQuiz, MUSIC_GAME_CORNER
@@ -356,7 +362,7 @@ MinigameStart::
 	lang D, db "JA"
 	lang F, db "OUI"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "SI"
 	db "@"
 
 .menuItemNoText
@@ -365,7 +371,7 @@ MinigameStart::
 	lang D, db "NEIN"
 	lang F, db "NON"
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "NO"
 	db "@"
 
 .menuItemQuitText
@@ -374,7 +380,7 @@ MinigameStart::
 	lang D, db "ZUR."
 	lang F, db "RET"
 	lang I, db "ESCI"
-	lang S, db "?"
+	lang S, db "SALIR"
 	db "@"
 
 
@@ -439,7 +445,10 @@ ENDM
 
 	lang I, db   "?"
 
-	lang S, db   "?"
+	lang S, db   "¿Los #MON"
+	lang S, next "protegen personas" 
+	lang S, next "distintas de sus"
+	lang S, next "<TRAINER>ES?"
 
 	next "@"
 
@@ -466,8 +475,11 @@ ENDM
 
 	lang I, db   "?"
 
-	lang S, db   "?"
-
+	lang S, db   "Los #MON temen"
+	lang S, next "a los humanos,"
+	lang S, next "¿es eso culpa"
+	lang S, next "de los humanos?"
+	
 	next "@"
 
 .question3Text
@@ -495,10 +507,11 @@ ENDM
 
 	lang I, db   "?"
 
-	lang S, db   "?"
-
-	next "@"
-
+	lang S, db   "¿Pueden quienes"
+	lang S, next "aman los #MON"
+	lang S, next "ser algo aparte"
+	lang S, next "de <TRAINER> #MON"
+	lang S, next "?"
 .question4Text
 	lang J, db   "こどものトレーナーは"
 	lang J, next "やっぱりおとなのトレーナー"
@@ -520,8 +533,11 @@ ENDM
 
 	lang I, db   "?"
 
-	lang S, db   "?"
-
+	lang S, db   "¿Son los jóvenes"
+	lang S, next "<TRAINER>ES"
+	lang S, next "más débiles los"
+	lang S, next "<TRAINER>ES adultos?"
+	
 	next "@"
 
 .question5Text
@@ -544,8 +560,10 @@ ENDM
 
 	lang I, db   "?"
 
-	lang S, db   "?"
-
+	lang S, db   "¿Crees que las" 
+	lang S, next "antiguas leyendas"
+	lang S, next "son falsas?"
+	
 	next "@"
 
 	; this is probably the wrong music
@@ -610,7 +628,7 @@ ENDM
 	lang D, db "MAISYs BEWERTUNG"
 	lang F, db "JUGEMENT de LILA" ; TODO: ajuster en fonction du texte lui-même.
 	lang I, db "?"
-	lang S, db "?"
+	lang S, db "NOTA DE MILLIE"
 	db "@"
 
 .menuItemScript
@@ -677,7 +695,7 @@ ENDM
 	lang I, db   "?"
 
 	lang S, db   "?"
-
+	
 	db "@"
 
 .textScoreIntro
@@ -691,9 +709,9 @@ ENDM
 
 	lang I, text "?"
 
-	lang S, text "?"
-
-
+	lang S, text "MILLIE: ¿?"
+	
+	
 	para "<……>　<……>　<……>"
 
 	para ""
@@ -712,7 +730,8 @@ ENDM
 
 	lang I, text "?"
 
-	lang S, text "?"
+	lang S, text "MILLIE:"
+	lang S, line "prueba fallida"
 
 	done
 
@@ -732,8 +751,9 @@ ENDM
 
 	lang I, text "?"
 
-	lang S, text "?"
-
+	lang S, text "MILLIE:"
+	lang S, line "prueba superada"
+	
 	done
 
 .textNotAllCorrect
@@ -748,7 +768,7 @@ ENDM
 	lang I, text "?"
 
 	lang S, text "?"
-
+	
 	done
 
 .textTryAgain
@@ -759,7 +779,7 @@ ENDM
 	lang F, text "LILA: Essaye"
 	lang F, line "encore!"
 	lang I, text "?"
-	lang S, text "?"
+	lang S, text "MILLIE: ¿?"
 	done
 
 .textGiveGift
@@ -774,7 +794,7 @@ ENDM
 	lang I, text "?"
 
 	lang S, text "?"
-
+	
 	done
 
 .textGiveTMGift
@@ -808,7 +828,12 @@ ENDM
 	lang I, text "?"
 
 	lang S, text "?"
-
+	lang S, para ""
+	lang S, nts_start
+	lang S, nts_player_name 0
+	lang S, nts_end
+	lang S, db   " recibió"
+	lang S, line "MT22."
 	done
 
 ENDC

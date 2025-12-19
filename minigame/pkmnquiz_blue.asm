@@ -439,7 +439,7 @@ ENDM
 	; French
 	lang F, db   "Combien coûte un"
 	lang F, next "ticket enfant au"
-	lang F, next "MUSEE DE SCIENCES"
+	lang F, next "MUSEE DES SCIENCES"
 	lang F, next "d'ARGENTA?"
 	lang F, next "1. 50¥   2. 100¥"
 	lang F, next "3. 200¥"
@@ -580,7 +580,7 @@ ENDM
 	lang F, next "panneau dit"
 	lang F, next "“JE … TOUT!”"
 	lang F, next "1. FAIS 2. SAIS"
-	lang F, next "3. VEUT"	
+	lang F, next "3. VEUX"	
 
 	; Italian
 	lang I, db   "?"
@@ -980,7 +980,7 @@ ENDM
 	lang F, line "sorti comment?"
 	lang F, cont "Voyons ça!"
 
-	lang F, para "…"
+	lang F, para "..."
 
 	; Italian
 	lang I, text "?"

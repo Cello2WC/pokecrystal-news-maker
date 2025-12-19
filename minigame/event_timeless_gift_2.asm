@@ -622,10 +622,10 @@ ENDM
 	lang D, next "BUENAs PASSWORT-"
 	lang D, next "SENDUNG?"
 
-	lang F, db   "MIMGAL est-il l'un"
-	lang F, next "des mots de passe"
-	lang F, next "de l'émission du"
-	lang F, next "MOT DE PASSE"
+	lang F, db   "MIMIGAL fait-il"
+	lang F, next "partie des mots de"
+	lang F, next "passe de l'émission" ; "l'" is one character!
+	lang F, next "du MOT DE PASSE"
 	lang F, next "de BUENA?"
 
 	lang I, db   "?"
@@ -857,7 +857,7 @@ ENDM
 	lang J, db "チエコのひょうか"
 	lang E, db "MAIZIE's RATING"
 	lang D, db "MAISYs BEWERTUNG"
-	lang F, db "JUGEMENT de LILA" ; TODO: ajuster en fonction du texte lui-même.
+	lang F, db "EVALUATION de LILA"
 	lang I, db "?"
 	lang S, db "NOTA DE MILLIE"
 	db "@"

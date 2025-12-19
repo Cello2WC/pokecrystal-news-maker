@@ -573,7 +573,7 @@ ENDC
 	lang J, text "はずれ！"
 	lang E, text "Incorrect!"
 	lang D, text "Leider falsch!"
-	lang F, text "Et non..."
+	lang F, text "Eh non..."
 	lang I, text "?"
 	lang S, text "¡Incorrecto!"
 	done

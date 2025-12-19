@@ -64,7 +64,15 @@ MACRO minigame_start
 	lang D, line "<……> <……>"
 	lang D, para "Fehler 2"
 
-	lang F, text "?"
+	; French
+	lang F, text "CHEN: Laisse-moi"
+	lang F, line "t'aider avec cette"
+	lang F, cont "partie!"
+	; this dialogue has not been recovered past this point.
+	; following is filler.
+	lang F, para "<……> <……>"
+	lang F, line "<……> <……>"
+	lang F, para "Erreur 2"
 
 	lang I, text "?"
 	
@@ -346,7 +354,7 @@ ENDM
 	lang J, next "１．１こ　　　２．２こ"
 	lang J, next "３．３こ"
 
-	lang E, db   "How many POTIONs"
+	lang E, db   "How many POTIONS"
 	lang E, next "did the DUDE who"
 	lang E, next "taught you to"
 	lang E, next "catch #MON have"
@@ -360,7 +368,7 @@ ENDM
 	lang D, next "beigebracht hat?"
 	lang D, next "1. 1  2. 2  3. 3"
 
-	lang F, db   "Combien de POTIONs"
+	lang F, db   "Combien de POTIONS"
 	lang F, next "le COPAIN qui t'a"
 	lang F, next "appris à attraper"
 	lang F, next "des #MON avait-"
@@ -393,7 +401,7 @@ ENDM
 
 	lang E, db   "MOM's specialty"
 	lang E, next "dish is the"
-	lang E, next "CINNABAR VOLCANO ?"
+	lang E, next "CINNABAR VOLCANO…?"
 	lang E, next "1. BURGER"
 	lang E, next "2. CURRY"
 	lang E, next "3. NOODLES"
@@ -407,7 +415,7 @@ ENDM
 
 	lang F, db   "Le plat style"
 	lang F, next "CRAMOIS'ILE"
-	lang F, next "de MAMAN est..."
+	lang F, next "de MAMAN est...?"
 	lang F, next "1. un BURGER"
 	lang F, next "2. un CURRY"
 	lang F, next "3. des NOUILLES"
@@ -620,10 +628,11 @@ ENDM
 	lang D, next ""
 	lang D, next "1. 3. 2. 4. 3. 5."
 
-	lang F, db   "Au bout de combien"
-	lang F, next "d'arrêts le GUIDE"
-	lang F, next "de VILLE GRIOTTE"
-	lang F, next "montre-t'il la mer?" ; Il faudrait un tiret, mais ça fait UN caractère de trop......
+	lang F, db   "Lors de sa visite"
+	lang F, next "de VILLE GRIOTTE,"
+	lang F, next "le GUIDE s'arrête"
+	lang F, next "contempler la mer."
+	lang F, next "Mais à quel arrêt?"
 	lang F, next "1. 3ème  2. 4ème"
 	lang F, next "3. 5ème"
 
@@ -1072,11 +1081,11 @@ ENDM
 	lang D, para "Perfekt! Herzli-"
 	lang D, line "chen Glückwunsch!"
 
-	lang F, text "Whaou! Un #MA-"
-	lang F, line "NIAC parfait!"
+	lang F, text "Waouh! Un parfait"
+	lang F, line "#MANIAC!"
 
-	lang F, para "Mon rêve"
-	lang F, line "devient réalité!"
+	lang F, para "J'avais rêvé de ce"
+	lang F, line "moment!"
 	lang F, cont "Bravo! Bravo!"
 
 	lang I, text "Ma questo è un"

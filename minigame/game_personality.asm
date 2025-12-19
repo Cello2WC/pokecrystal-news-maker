@@ -1105,7 +1105,7 @@ ENDM
 	lang F, nts_start
 	lang F, nts_player_name 0
 	lang F, nts_end
-	lang F, db   " obtient"
+	lang F, db   " reçoit"
 	lang F, line "CT27."
 
 	; Italian
@@ -1665,7 +1665,7 @@ ENDM
 	lang F, nts_start
 	lang F, nts_player_name 0
 	lang F, nts_end
-	lang F, db   "?"
+	lang F, db   " reçoit"
 	lang F, line "POUDRE ARG."
 
 	; Italian

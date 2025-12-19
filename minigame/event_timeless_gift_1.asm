@@ -626,7 +626,7 @@ ENDM
 	lang J, db "チエコのひょうか"
 	lang E, db "MAIZIE's RATING"
 	lang D, db "MAISYs BEWERTUNG"
-	lang F, db "JUGEMENT de LILA" ; TODO: ajuster en fonction du texte lui-même.
+	lang F, db "EVALUATION de LILA"
 	lang I, db "?"
 	lang S, db "NOTA DE MILLIE"
 	db "@"

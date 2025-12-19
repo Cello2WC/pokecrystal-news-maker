@@ -155,7 +155,7 @@ MACRO minigame_start
 
 	lang D, para "Und los geht's!"
 
-	; Baguette^WFrench
+	; French
 	lang F, text "Trois indices vont"
 	lang F, line "s'afficher en haut"
 	lang F, cont "de l'écran."
@@ -547,7 +547,7 @@ ENDM
 	lang J, db "スリーパー"
 	lang E, db "HYPNO"
 	lang D, db "HYPNO"
-	lang F, db "HYPNO"
+	lang F, db "HYPNOMADE"
 	lang I, db "HYPNO"
 	lang S, db "HYPNO"
 	db "@"
@@ -642,7 +642,7 @@ ENDM
 	lang J, db "なにか　かぶっている"
 	lang E, db "Wears a headpiece."
 	lang D, db "Hat Kopfbedeckung."
-	lang F, db "Tête couverte." ; TODO : meh...
+	lang F, db "A un couvre-chef."
 	lang I, db "?"
 	lang S, db "Adorno en cabeza."
 	db "@"
@@ -658,7 +658,7 @@ ENDM
 	lang J, db "おでこにワンポイント"
 	lang E, db "Has forehead mark."
 	lang D, db "Stirn-Markerung."
-	lang F, db "Signe sur le front." ; TODO: 19 chars, but maybe that's fine?
+	lang F, db "Truc sur le front."
 	lang I, db "?"
 	lang S, db "Frente marcada."
 	db "@"
@@ -855,14 +855,14 @@ ENDM
 	lang F, line "Félicitations!"
 
 	lang F, para "En récompense,"
-	lang F, line "voici la TM35!"
+	lang F, line "voici la CT35!"
 
 	lang D, para
 	lang D, nts_start
 	lang D, nts_player_name 0
 	lang D, nts_end
 	lang D, db   " reçoit"
-	lang D, line "TM35."
+	lang D, line "CT35."
 
 	; Italian
 	lang I, text "?"
@@ -932,7 +932,7 @@ ENDM
 	lang F, nts_player_name 0
 	lang F, nts_end
 	lang F, db   " reçoit"
-	lang F, line "une HYPER POTION."
+	lang F, line "HYPER POTION."
 
 	; Italian
 	lang I, text "?"

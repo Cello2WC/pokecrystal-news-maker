@@ -131,7 +131,7 @@ MACRO minigame_start
 	lang F, line "vérifier votre"
 	lang F, cont "tentative."
 
-	lang F, para "C;est parti!"
+	lang F, para "C'est parti!"
 
 	; Italian
 	lang I, text "?"
@@ -185,7 +185,7 @@ MACRO minigame_name_2
 	lang J, db "ポケモンもじめいろ　むずかしい"
 	lang E, db "HARD #MON MAZE"
 	lang D, db "SCHWERES LABYRINTH"
-	lang F, db "LABYRINTHE DIFFICILE"
+	lang F, db "LABYRINTHE EXPERT"
 	lang I, db "?"
 	lang S, db "LABERINTO #MON"
 ENDM
@@ -1067,7 +1067,7 @@ ENDR
 	lang J, db "『ハリーセン』"
 	lang E, db "ZUBAT"
 	lang D, db "ZUBAT"
-	lang F, db "QUAXO"
+	lang F, db "DRACO"
 	lang I, db "ZUBAT"
 	lang S, db "ZUBAT"
 	db "@"
@@ -1075,21 +1075,21 @@ ENDR
 	lang J, DEF HPUZZLE4_MON EQUS "QWILFISH"
 	lang E, DEF HPUZZLE4_MON EQUS "ZUBAT"
 	lang D, DEF HPUZZLE4_MON EQUS "ZUBAT"
-	lang F, DEF HPUZZLE4_MON EQUS "POLITOED"
+	lang F, DEF HPUZZLE4_MON EQUS "DRAGONAIR"
 	lang I, DEF HPUZZLE4_MON EQUS "ZUBAT"
 	lang S, DEF HPUZZLE4_MON EQUS "ZUBAT"
 	
 	lang J, DEF HARIISEN_Z EQUS "ハ"
 	lang E, DEF HARIISEN_Z EQUS "Z"
 	lang D, DEF HARIISEN_Z EQUS "Z"
-	lang F, DEF HARIISEN_Z EQUS "Q"
+	lang F, DEF HARIISEN_Z EQUS "D"
 	lang I, DEF HARIISEN_Z EQUS "Z"
 	lang S, DEF HARIISEN_Z EQUS "Z"
 	
 	lang J, DEF HARIISEN_U EQUS "リ"
 	lang E, DEF HARIISEN_U EQUS "U"
 	lang D, DEF HARIISEN_U EQUS "U"
-	lang F, DEF HARIISEN_U EQUS "U"
+	lang F, DEF HARIISEN_U EQUS "R"
 	lang I, DEF HARIISEN_U EQUS "U"
 	lang S, DEF HARIISEN_U EQUS "U"
 	
@@ -1103,7 +1103,7 @@ ENDR
 	lang J, DEF HARIISEN_A EQUS "セ"
 	lang E, DEF HARIISEN_A EQUS "A"
 	lang D, DEF HARIISEN_A EQUS "A"
-	lang F, DEF HARIISEN_A EQUS "X"
+	lang F, DEF HARIISEN_A EQUS "C"
 	lang I, DEF HARIISEN_A EQUS "A"
 	lang S, DEF HARIISEN_A EQUS "A"
 	
@@ -1373,7 +1373,13 @@ ENDC
 	lang D, db   " erhält"
 	lang D, line "KOBALTBRIEF."
 
-	lang F, text "?"
+	; French
+	lang F, text
+	lang F, nts_start
+	lang F, nts_player_name 0
+	lang F, nts_end
+	lang F, db   " reçoit"
+	lang F, line "LETRCIELBLEU."
 
 	lang I, text "?"
 
@@ -1475,7 +1481,7 @@ CorrectText:
 	lang J, text "せいかい！！"
 	lang E, text "Correct!"
 	lang D, text "Richtig!"
-	lang F, text "?"
+	lang F, text "Correct!"
 	lang I, text "?"
 	lang S, text "¡Correcto!"
 	done
@@ -1488,7 +1494,8 @@ IncorrectText:
 	lang E, line "You messed up!"
 	lang D, text "Schade… Das war"
 	lang D, line "nicht richtig!"
-	lang F, text "?"
+	lang F, text "Dommage..."
+	lang F, line "C'est raté!"
 	lang I, text "?"
 	lang S, text "Uy…"
 	lang S, line "¡Te equivocaste!"

@@ -561,7 +561,7 @@ ENDC
 	lang J, db "　<NO>ランキング"
 	lang E, db " RANKINGS"
 	lang D, db "-LISTE"
-	lang F, db "CLASSEMENT" ; TODO; should there be a space here?
+	lang F, db " CLASSEMENT"
 	lang I, db " CLASSIFICA"
 	lang S, db "CLASIFICACIÓN"
 	db "@"
@@ -573,7 +573,7 @@ ENDC
 	lang J, db "　<NO>ランキング"
 	lang E, db "×× RANKINGS"
 	lang D, db "-LISTE"
-	lang F, db "CLASSEMENT" ; TODO; should there be a space here?
+	lang F, db " CLASSEMENT"
 	lang I, db " CLASSIFICA"
 	lang S, db "×× CLASIFICACIÓN"
 	db "@"

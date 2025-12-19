@@ -217,8 +217,8 @@ ENDC
 	lang D, line "bitte neu laden."
 	
 	lang F, text "Echec de la"
-	lang F, line "mise à jour"
-	lang F, cont "du classement…"
+	lang F, line "mise à jour du"
+	lang F, cont "classement..."
 	lang F, para "Télécharger les"
 	lang F, line "dernières INFOS"
 	lang F, cont "s.v.p."
@@ -944,7 +944,7 @@ ENDC
 	lang F, nts_start
 	lang F, nts_player_name, 0
 	lang F, nts_end
-	lang F, next "est…"
+	lang F, next "est..."
 	lang F, para
 	lang F, nts_start
 	lang F, nts_number wOwnRank, 4, 4
@@ -1007,7 +1007,7 @@ ENDC
 	lang F, nts_start
 	lang F, nts_player_name, 0
 	lang F, nts_end
-	lang F, next "est…"
+	lang F, next "est..."
 	lang F, para "Absent du"
 	lang F, line "classement."
 	

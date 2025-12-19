@@ -1014,7 +1014,7 @@ ENDC
 	lang F, nts_start
 	lang F, nts_player_name, 0
 	lang F, nts_end
-	lang F, next "est..."
+	lang F, db "est..."
 	lang F, para "Absent du"
 	lang F, line "classement."
 	
@@ -1026,11 +1026,13 @@ ENDC
 	lang I, para "Attualmente non"
 	lang I, line "in classifica."
 	
+	lang S, db   "El RANGO de"
+	lang S, line ""
 	lang S, nts_start
 	lang S, nts_player_name, 0
-	lang S, nts_end
-	lang S, db   " tiene el RANGO…"
-	lang S, para "No está en la"
+	lang S, nts_end	
+	lang I, db   "es…"
+	lang S, para "No está"
 	lang S, line "CLASIFICACIÓN."
 	para "@"
 	

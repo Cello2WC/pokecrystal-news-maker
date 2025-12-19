@@ -690,8 +690,7 @@ ENDM
 	lang F, next "le PRESIDENT du"
 	lang F, next "FAN CLUB #MON"
 	lang F, next "a-t-il élevé?"
-	lang F, next "1. 150"
-	lang F, next "2. 250"
+	lang D, next "1. 150   2. 250"
 	lang F, next "3. 1000"
 
 	; Italian
@@ -735,7 +734,6 @@ ENDM
 	lang F, db   "Où la peluche de"
 	lang F, next "la COPIEUSE était-"
 	lang F, next "elle abîmée?"
-	lang F, next ""
 	lang F, next "1. Aile droite"
 	lang F, next "2. Oreille gauche"
 	lang F, next "3. Jambe droite"
@@ -859,7 +857,7 @@ ENDM
 	lang J, db "カツラのひょうか"
 	lang E, db "BLAINE's RATING"
 	lang D, db "PYROs BEWERTUNG"
-	lang F, db "La note d'AUGUSTE"
+	lang F, db "EVAL. d'AUGUSTE"
 	lang I, db "?"
 	lang S, db "EVALUACIÓN BLAINE"
 	db "@"
@@ -1341,7 +1339,7 @@ ENDM
 	lang D, cont "ein Remis!"
 
 	; French
-	lang F, text "AUGUSTE: Wahou!"
+	lang F, text "AUGUSTE: Waouh!"
 	lang F, line "Cinq bonnes"
 	lang F, cont "réponses!"
 
@@ -1845,7 +1843,7 @@ ENDM
 	lang F, nts_start
 	lang F, nts_player_name 0
 	lang F, nts_end
-	lang F, db   " erhält"
+	lang F, db   " reçoit"
 	lang F, line "CT38."
 
 	; Italian

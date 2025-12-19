@@ -417,7 +417,7 @@ ENDR
 .textMOKOKO
 	lang J, db "『モココ』"
 	lang E, db "RATTATA"
-	lang D, db "SMOGOGO"
+	lang D, db "SMOGMOG"
 	lang F, db "RATTATA"
 	lang I, db "RATTATA"
 	lang S, db "RATTATA"
@@ -432,14 +432,14 @@ ENDR
 
 	lang J, DEF MOKOKO_MO EQUS "モ"
 	lang E, DEF MOKOKO_MO EQUS "RAT"
-	lang D, DEF MOKOKO_MO EQUS "SMO"
+	lang D, DEF MOKOKO_MO EQUS "S"
 	lang F, DEF MOKOKO_MO EQUS "RAT"
 	lang I, DEF MOKOKO_MO EQUS "RAT"
 	lang S, DEF MOKOKO_MO EQUS "RAT"
 
 	lang J, DEF MOKOKO_KO EQUS "コ"
 	lang E, DEF MOKOKO_KO EQUS "TA"
-	lang D, DEF MOKOKO_KO EQUS "GO"
+	lang D, DEF MOKOKO_KO EQUS "MOG"
 	lang F, DEF MOKOKO_KO EQUS "TA"
 	lang I, DEF MOKOKO_KO EQUS "TA"
 	lang S, DEF MOKOKO_KO EQUS "TA"

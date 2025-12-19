@@ -52,7 +52,7 @@ MACRO minigame_name
 	; English
 	lang E, db "#RAP IT UP!"
 	lang D, db "#MON-PLAUDEREI!"
-	lang F, db "?"
+	lang F, db "POKERAP MOI CA!"
 	lang I, db "?"
 	lang S, db "¡#RAPÉALO!"
 ENDM
@@ -442,7 +442,7 @@ ENDM
 ;	lang J, db "スタートボタンを　おして！"
 ;	lang E, db "PRESS START!"
 ;	lang D, db "Drücke START!"
-;	lang F, db "Appuyer sur START!"
+;	lang F, db "Appuie sur START!"
 ;	lang I, db "?"
 ;	lang S, db "PULSA START"
 
@@ -965,8 +965,8 @@ ENDR
 ;	lang E, next "the Control Pad!"
 ;
 ;	lang D, db   "  Du bist dran!"
-;   lang D, next "   Drücke das"
-;   lang D, next "  Steuerkreuz!"
+;	lang D, next "   Drücke das"
+;	lang D, next "  Steuerkreuz!"
 ;
 ;	lang F, db   "   A ton tour!"
 ;	lang F, next "     Utilise"
@@ -994,6 +994,7 @@ ENDR
 	lang D, next "Drücke das"
 	lang D, next "Steuerkreuz!"
 
+	; French
 	lang F, db   "A ton tour!"
 	lang F, next "Utilise"
 	lang F, next "la manette!"

@@ -1025,7 +1025,7 @@ ENDM
 	lang F, line "de juste?"
 
 	lang F, para "Je l'savais, t'as"
-	lang F, line "pas le niveau!"
+	lang F, line "pas le niveau."
 	lang F, cont "Bien essayé!"
 
 	; Italian

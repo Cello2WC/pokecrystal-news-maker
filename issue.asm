@@ -1,4 +1,4 @@
-include "pokecrystal/constants.asm"
+Truinclude "pokecrystal/constants.asm"
 
 include "macros/news_macros.asm"
 include "macros/news_script_commands.asm"
@@ -357,7 +357,7 @@ ENDC
 ;	lang E, db   "Triple-theme"
 ;	lang E, line "<TRAINER> ranking!"
 ;	
-;	lang D, db   "Dreifache Trainer-"
+;	lang D, db   "Dreifache Trainer"
 ;	lang D, line "Bestenliste!"
 ;	
 ;	lang F, db   "Classement des"
@@ -366,7 +366,8 @@ ENDC
 ;	lang I, db   "Classifiche allen-"
 ;	lang I, line "atore a tema."
 ;	
-;	lang S, db   "?"
+;	lang S, db   "¡Ranking triple de"
+;	lang S, line "entrenadores!"	
 ;	
 ;	db "@"
 ;.menuMinigameDesc

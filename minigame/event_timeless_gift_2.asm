@@ -114,7 +114,7 @@ ENDM
 MACRO minigame_name
 	lang J, db "ときをこえたプレゼント"
 	lang E, db "A TIMELESS GIFT"
-	lang D, db "ZEITLOSES GESCHENK"
+	lang D, db "ZEITLOSE GABE"
 	lang F, db "CADEAU INTEMPOREL"
 	lang I, db "?"
 	lang S, db "REGALO ATEMPORAL"

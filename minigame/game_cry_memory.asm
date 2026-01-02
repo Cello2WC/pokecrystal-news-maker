@@ -51,7 +51,7 @@ MACRO minigame_name
 
 	; English
 	lang E, db "#RAP IT UP!"
-	lang D, db "#MON-PLAUDEREI!"
+	lang D, db "PKMN-PLAUDEREI!"
 	lang F, db "#RAP MOI CA!"
 	lang I, db "?"
 	lang S, db "¡#RAPÉALO!"

@@ -9,7 +9,7 @@
 ; English localization by DS
 ; German localization by Lesserkuma
 ; French localization by ISSOtm
-; Italian localization TODO
+; Italian localization by svp
 ; Spanish localization TODO
 
 IF DEF(_MINIGAME_H)
@@ -175,7 +175,24 @@ MACRO minigame_start
 	lang F, para "C'est parti!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Tre indizi compa-"
+	lang I, line "riranno in cima"
+	lang I, cont "allo schermo."
+
+	lang I, para "Scegli il #MON"
+	lang I, line "che corrisponde"
+	lang I, cont "agli indizi."
+	
+	lang I, para "Scegli in fondo"
+	lang I, line "e premi A per"
+	lang I, cont "rispondere."
+	
+	lang I, para "Indovina cinque"
+	lang I, line "volte di fila per"
+	lang I, cont "vincere il quiz!"
+
+	lang I, para "Cominciamo!"
+
 
 	; Spanish
 	lang S, text "Verás tres pistas"
@@ -204,7 +221,7 @@ MACRO minigame_name
 	lang E, db "#MON WORD QUIZ"
 	lang D, db "#MON-WORT-QUIZ"
 	lang F, db "DEVINE LE #MON" ; "Guess the Pokémon", since "QUIZ MOT #MON" sounds awkward.
-	lang I, db "?"
+	lang I, db "#MON QUIZ" ; i tried with a thesaurus, it just isn't meant to be
 	lang S, db "PALABRA #MON"
 ENDM
 
@@ -495,7 +512,7 @@ ENDM
 	lang E, db "TAUROS"
 	lang D, db "TAUROS"
 	lang F, db "TAUROS"
-	lang I, db "?"
+	lang I, db "TAUROS"
 	lang S, db "TAUROS"
 .answer1Desc
 .answer2Desc
@@ -578,7 +595,7 @@ ENDM
 	lang E, db "Not NORMAL type."
 	lang D, db "Kein NORMAL-Typ."
 	lang F, db "Pas type NORMAL."
-	lang I, db "?"
+	lang I, db "Non è tipo NORMALE"
 	lang S, db "No es tipo NORMAL"
 	db "@"
 .textHintA2
@@ -586,7 +603,7 @@ ENDM
 	lang E, db "Not FLYING type."
 	lang D, db "Kein FLUG-Typ."
 	lang F, db "Pas type VOL."
-	lang I, db "?"
+	lang I, db "Non è tipo VOLANTE"
 	lang S, db "No es tipo VOLADOR"
 	db "@"
 .textHintA3
@@ -594,7 +611,7 @@ ENDM
 	lang E, db "Not ICE type."
 	lang D, db "Kein EIS-Typ."
 	lang F, db "Pas type GLACE."
-	lang I, db "?"
+	lang I, db "Non è tipo GHIACC."
 	lang S, db "No es tipo HIELO"
 	db "@"
 .textHintA4
@@ -602,7 +619,7 @@ ENDM
 	lang E, db "Not DARK type."
 	lang D, db "Kein UNLICHT-Typ."
 	lang F, db "Pas type TENEBRES."
-	lang I, db "?"
+	lang I, db "Non è tipo BUIO."
 	lang S, db "No tipo SINIESTRO"
 	db "@"
 
@@ -611,7 +628,7 @@ ENDM
 	lang E, db "Its tail is split."
 	lang D, db "Schweif gespalten."
 	lang F, db "Queue fourchue."
-	lang I, db "?"
+	lang I, db "La coda è divisa."
 	lang S, db "Su cola está rota"
 	db "@"
 .textHintB2
@@ -619,7 +636,7 @@ ENDM
 	lang E, db "Has pointy ears."
 	lang D, db "Spitze Ohren."
 	lang F, db "Oreilles pointues."
-	lang I, db "?"
+	lang I, db "Orecchie a punta."
 	lang S, db "Tiene orejas"
 	db "@"
 .textHintB3
@@ -627,7 +644,7 @@ ENDM
 	lang E, db "Has pointy teeth."
 	lang D, db "Spitze Zähne."
 	lang F, db "Dents pointues."
-	lang I, db "?"
+	lang I, db "Denti appuntiti."
 	lang S, db "Tiene dientes"
 	db "@"
 .textHintB4
@@ -635,7 +652,7 @@ ENDM
 	lang E, db "It evolves."
 	lang D, db "Entwickelt sich."
 	lang F, db "Peut évoluer."
-	lang I, db "?"
+	lang I, db "Si evolve."
 	lang S, db "Evoluciona."
 	db "@"
 .textHintB5
@@ -643,7 +660,7 @@ ENDM
 	lang E, db "Wears a headpiece."
 	lang D, db "Hat Kopfbedeckung."
 	lang F, db "A un couvre-chef."
-	lang I, db "?"
+	lang I, db "Ha un copricapo."
 	lang S, db "Adorno en cabeza."
 	db "@"
 .textHintB6
@@ -651,7 +668,7 @@ ENDM
 	lang E, db "Holds something."
 	lang D, db "Trägt etwas."
 	lang F, db "Tient un truc."
-	lang I, db "?"
+	lang I, db "Tiene qualcosa."
 	lang S, db "Sostiene algo"
 	db "@"
 .textHintB7
@@ -659,7 +676,7 @@ ENDM
 	lang E, db "Has forehead mark."
 	lang D, db "Stirn-Markerung."
 	lang F, db "Truc sur le front."
-	lang I, db "?"
+	lang I, db "Segno sulla fronte"
 	lang S, db "Frente marcada."
 	db "@"
 .textHintB8
@@ -667,7 +684,7 @@ ENDM
 	lang E, db "Comes from an EGG."
 	lang D, db "Schlüpft aus EI."
 	lang F, db "Eclot d'un OEUF."
-	lang I, db "?"
+	lang I, db "Esce da un UOVO."
 	lang S, db "Proviene de HUEVO"
 	db "@"
 
@@ -676,7 +693,7 @@ ENDM
 	lang E, db "Can use CUT."
 	lang D, db "Kann ZERSCHNEIDER."
 	lang F, db "Apte à COUPE."
-	lang I, db "?"
+	lang I, db "Può usare TAGLIO."
 	lang S, db "Puede usar CORTE."
 	db "@"
 .textHintC02 ; NOTE: Not recorded as existing
@@ -684,7 +701,7 @@ ENDM
 	lang E, db "Can't use CUT."
 	lang D, db "Kein ZERSCHNEIDER."
 	lang F, db "Inapte à COUPE."
-	lang I, db "?"
+	lang I, db "Non impara TAGLIO." ; "can't learn cut, fits char limit better
 	lang S, db "No usa CORTE"
 	db "@"
 .textHintC03
@@ -692,7 +709,7 @@ ENDM
 	lang E, db "Can use SURF."
 	lang D, db "Kann SURFER."
 	lang F, db "Apte à SURF."
-	lang I, db "?"
+	lang I, db "Può usare SURF."
 	lang S, db "Puede usar SURF."
 	db "@"
 .textHintC04
@@ -700,7 +717,7 @@ ENDM
 	lang E, db "Can't use SURF."
 	lang D, db "Kein SURFER."
 	lang F, db "Inapte à SURF."
-	lang I, db "?"
+	lang I, db "Non impara SURF."
 	lang S, db "No puede usar SURF"
 	db "@"
 .textHintC05
@@ -708,7 +725,7 @@ ENDM
 	lang E, db "Can use STRENGTH."
 	lang D, db "Kann STÄRKE."
 	lang F, db "Apte à FORCE."
-	lang I, db "?"
+	lang I, db "Può usare FORZA."
 	lang S, db "Puede usar FUERZA"
 	db "@"
 .textHintC06
@@ -716,7 +733,7 @@ ENDM
 	lang E, db "Can't use STRENGTH."
 	lang D, db "Kein STÄRKE."
 	lang F, db "Inapte à FORCE."
-	lang I, db "?"
+	lang I, db "Non impara FORZA."
 	lang S, db "No usa FUERZA"
 	db "@"
 .textHintC07
@@ -724,7 +741,7 @@ ENDM
 	lang E, db "Can use FLASH."
 	lang D, db "Kann BLITZ."
 	lang F, db "Apte à FLASH."
-	lang I, db "?"
+	lang I, db "Può usare FLASH."
 	lang S, db "Usa DESTELLO"
 	db "@"
 .textHintC08
@@ -732,31 +749,31 @@ ENDM
 	lang E, db "Can't use FLASH."
 	lang D, db "Kein BLITZ."
 	lang F, db "Inapte à FLASH."
-	lang I, db "?"
+	lang I, db "Non impara FLASH."
 	lang S, db "No usa DESTELLO"
 	db "@"
 .textHintC09
 	lang J, db "うずしお　できる"
 	lang E, db "Can use WHIRLPOOL."
-	lang D, db "Kann KASKADE."
-	lang F, db "Apte à CASCADE."
-	lang I, db "?"
-	lang S, db "Usa CASCADA"
+	lang D, db "Kann WHIRLPOOL."
+	lang F, db "Apte à SIPHON."
+	lang I, db "Impara MULINELLO."  ; being the longest-named HM move does NOT help at all
+	lang S, db "Usa TORBELLINO"
 	db "@"
 .textHintC10 ; NOTE: Not recorded as existing
 	lang J, db "うずしお　できない"
-	lang E, db "Can't use"
-	lang D, db "Kein KASKADE."
-	lang F, db "Inapte à CASCADE."
-	lang I, db "?"
-	lang S, db "No usa CASCADA"
+	lang E, db "Can't do WHIRLPOOL" 
+	lang D, db "Kein WHIRLPOOL."
+	lang F, db "Inapte à SIPHON."
+	lang I, db "Non imp. MULINELLO" ; ugh
+	lang S, db "No usa TORBELLINO."
 	db "@"
 .textHintC11
 	lang J, db "たいあたり　できる"
 	lang E, db "Can use TACKLE."
 	lang D, db "Kann TACKLE."
 	lang F, db "Apte à CHARGE."
-	lang I, db "?"
+	lang I, db "Può usare AZIONE."
 	lang S, db "Puede usar PLACAJE"
 	db "@"
 .textHintC12 ; NOTE: Not recorded as existing
@@ -764,7 +781,7 @@ ENDM
 	lang E, db "Can't use TACKLE."
 	lang D, db "Kein TACKLE."
 	lang F, db "Incompat. CHARGE."
-	lang I, db "?"
+	lang I, db "Non impara AZIONE."
 	lang S, db "No usa PLACAJE"
 	db "@"
 
@@ -786,7 +803,8 @@ ENDM
 	lang F, text "Dommage..."
 	lang F, line "Mauvaise réponse!"
 
-	lang I, text "?"
+	lang I, text "Peccato…"
+	lang I, line "Hai sbagliato!"
 
 	lang S, text "Qué pena…"
 	lang S, line "¡Fallaste!"
@@ -809,7 +827,8 @@ ENDM
 	lang F, text "Bravo!"
 	lang F, line "Question suivante!"
 
-	lang I, text "?"
+	lang I, text "Esatto!"
+	lang I, text "Prossima domanda!"
 
 	lang S, text "¡Correcto! "
 	lang S, line "¡Siguiente"
@@ -857,16 +876,27 @@ ENDM
 	lang F, para "En récompense,"
 	lang F, line "voici la CT35!"
 
-	lang D, para
-	lang D, nts_start
-	lang D, nts_player_name 0
-	lang D, nts_end
-	lang D, db   " reçoit"
-	lang D, line "CT35."
+	lang F, para
+	lang F, nts_start
+	lang F, nts_player_name 0
+	lang F, nts_end
+	lang F, db   " reçoit"
+	lang F, line "CT35."
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Cinque di fila!"
+	lang I, line "Congratulazioni!"
 
+	lang I, para "Come premio,"
+	lang I, line "ecco una MT35!"
+
+	lang I, para
+	lang I, nts_start
+	lang I, nts_player_name 0
+	lang I, nts_end
+	lang I, db   " riceve"
+	lang I, line "MT35."
+	
 	; Spanish
 	lang S, text "¡Cinco seguidos!"
 	lang S, line "¡Enhorabuena!"
@@ -935,7 +965,20 @@ ENDM
 	lang F, line "HYPER POTION."
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Cinque di fila!"
+	lang I, line "Congratulazioni!"
+
+	lang I, para "Come premio,"
+	lang I, line "ecco una"
+	lang I, cont "IPERPOZIONE!"
+
+	lang I, para
+	lang I, nts_start
+	lang I, nts_player_name 0
+	lang I, nts_end
+	lang I, db   " riceve"
+	lang I, line "IPERPOZIONE."
+	
 
 	; Spanish
 	lang S, text "¡Cinco seguidos!"

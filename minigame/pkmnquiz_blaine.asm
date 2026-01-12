@@ -9,7 +9,7 @@
 ; English localization by DS
 ; German localization by Lesserkuma
 ; French localization by ISSOtm
-; Italian localization TODO
+; Italian localization by svp
 ; Spanish localization TODO
 
 IF DEF(_MINIGAME_H)
@@ -131,7 +131,32 @@ MACRO minigame_start
 	lang F, para "Waaah!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "BLAINE: Hah!"
+
+	lang I, para "Sono il maestro"
+	lang I, line "rovente dei quiz!"
+
+	lang I, para "Dall'ISOLA CANN…"
+	lang I, line "no, dalle"
+	lang I, cont "ISOLE SPUMARINE!!"
+
+	lang I, para "Sono BLAINE, il"
+	lang I, line "CAPOPALESTRA!"
+
+	lang I, para "È un mistero il"
+	lang I, line "perché non abbia"
+	lang I, cont "avuto il mio turno"
+	lang I, cont "prima!"
+
+	lang I, para "Quando si tratta"
+	lang I, line "di quiz, devo"
+	lang I, cont "essere in testa!"
+
+	lang I, para "Questo è il quiz"
+	lang I, line "di un uomo rovente!"
+
+	lang I, para "Hah!"
+
 	
 	lang S, text "BLAINE: ¡Ja!"
 	
@@ -168,7 +193,7 @@ MACRO minigame_name
 	lang E, db "#MON QUIZ!"
 	lang D, db "#MON-QUIZ!"
 	lang F, db "QUIZ #MON!"
-	lang I, db "?"
+	lang I, db "#MON QUIZ!"
 	lang S, db "Acertijo #MON"
 ENDM
 
@@ -368,7 +393,14 @@ ENDM
 	lang F, next "3. Essaye le train"
 
 	;Italian
-	lang I, db   "?"
+	lang I, db   "Quando ELM ti ha"
+	lang I, next "dato il BIGLIETTO"
+	lang I, next "NAVE, ti ha detto"
+	lang I, next "“... a KANTO!"
+	lang I, next "1. Rinforzati"
+	lang I, next "2. Salutami OAK"
+	lang I, next "3. Prova il treno"
+
 	
 	lang S, db   "Cuando ELM te dio"
 	lang S, next "el TICKET BARCO te"
@@ -415,7 +447,13 @@ ENDM
 	lang F, next "3. Une cabine"
 
 	;Italian
-	lang I, db   "?"
+	lang I, db   "Da dove appare il"
+	lang I, next "nonno della bimba"
+	lang I, next "persa sulla"
+	lang I, next "M/N Aqua?"
+	lang I, next "1. Da un lato"
+	lang I, next "2. Dall'alto"
+	lang I, next "3. Da una stanza"
 	
 	lang S, db   "¿De donde apareció"
 	lang S, next "el abuelo perdido"
@@ -462,7 +500,13 @@ ENDM
 	lang F, next "3. SOUTERRAIN"
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Dove bivaccava"	
+	lang I, next "all'inizio la"
+	lang I, next "FEDERAZIONE"
+	lang I, next "#MON di KANTO?"
+	lang I, next "1. GROTTA DIGLETT"
+	lang I, next "2. PISTA CICLAB."
+	lang I, next "3. VIA SOTTERR."
 	
 	lang S, db   "¿Dónde se reunía"
 	lang S, next "la FEDERACIÓN"
@@ -507,7 +551,14 @@ ENDM
 	lang F, next "3. Ombre sinistre"
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Quando ricevesti"
+	lang I, next "il VELOPURO," 
+	lang I, next "cosa ti stava"
+	lang I, next "apparendo vicino?"
+	lang I, next "1. #MON Spettro"
+	lang I, next "2. Spirito maligno"
+	lang I, next "3. Ombra sinistra"
+	
 	
 	lang S, db   "Cuando encontraste"
 	lang S, next "el AMULETO ¿qué"
@@ -554,7 +605,14 @@ ENDM
 	lang F, next "3. La TEAM <ROCKET>"
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Per quale motivo"
+	lang I, next "l'uomo in fondo"
+	lang I, next "al PONTE PEPITA"
+	lang I, next "ti ha sfidato?"
+	lang I, next "1. Vincere facile"
+	lang I, next "2. Rubare soldi"
+	lang I, next "3. Per TEAM ROCKET"
+	
 	
 	lang S, db   "¿Qué motivación"
 	lang S, next "tenía el último"
@@ -601,7 +659,13 @@ ENDM
 	lang F, next "3. Devant lui"
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "MISTY e il suo"
+	lang I, next "fidanzato come"
+	lang I, next "erano seduti al"
+	lang I, next "loro appuntamento?"
+	lang I, next "1. Fianco a fianco"
+	lang I, next "2. Faccia a faccia"
+	lang I, next "3. MISTY davanti"
 	
 	lang S, db   "¿Cómo se sentaron"
 	lang S, next "MISTY y su novio"
@@ -648,7 +712,14 @@ ENDM
 	lang F, next "3. Si beau"
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Il DIRETTORE della"
+	lang I, next "CENTRALE ELETTRICA"
+	lang I, next "come chiamava il"
+	lang I, next "generatore?"
+	lang I, next "1. Importantissimo" 
+	lang I, next "2. Il mio"	 ; they changed the dialogue :(
+	lang I, next "3. Carino"
+	
 	
 	lang S, db   "¿DIRECTOR dijo"
 	lang S, next "CENTRAL ENERGÍA"
@@ -694,7 +765,12 @@ ENDM
 	lang F, next "3. 1000"
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Quanti #MON"
+	lang I, next "ha allevato il"
+	lang I, next "PRESIDENTE del"
+	lang I, next "#MON FAN CLUB?"
+	lang I, next "1. 150 2. 250"
+	lang I, next "3. 1000"
 	
 	lang S, db   "¿Cuántos #MON"
 	lang S, next "tiene PRESIDENTE"
@@ -739,7 +815,13 @@ ENDM
 	lang F, next "3. Jambe droite"
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Dove era rovinata"
+	lang I, next "la BAMBOLA"
+	lang I, next "CLEFAIRY di"
+	lang I, next "COPIONA?"
+	lang I, next "1. Ala destra"
+	lang I, next "2. Orecchio sin."
+	lang I, next "3. Gamba destra"
 	
 	lang S, db   "¿Dónde estaba el"
 	lang S, next "descosido MUÑECO"
@@ -787,7 +869,12 @@ ENDM
 	lang F, next "3. Ferme les yeux"
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "L'ABRA alla LEGA"
+	lang I, next "#MON ti trasporta"
+	lang I, next "a casa se"
+	lang I, next "1. Lo tocchi"
+	lang I, next "2. Immagini casa"
+	lang I, next "3. Chiudi gli occhi"
 	
 	lang S, db   "El Abra de la"
 	lang S, next "LIGA #MON te"
@@ -858,7 +945,7 @@ ENDM
 	lang E, db "BLAINE's RATING"
 	lang D, db "PYROs BEWERTUNG"
 	lang F, db "EVAL. d'AUGUSTE"
-	lang I, db "?"
+	lang I, db "VALUTAZ. di BLAINE"
 	lang S, db "EVALUACIÓN BLAINE"
 	db "@"
 
@@ -971,8 +1058,8 @@ ENDM
 	lang F, line "Voici le résultat!"
 
 	; Italian
-	lang I, db   "Fai il quiz per"
-	lang I, line "una valutazione!"
+	lang I, db   "Quiz terminato!"
+	lang I, line "Ecco i risultati!"
 	
 	lang S, db   "¡Listo!"
 	lang S, line "¡Tu evaluación!"
@@ -1028,8 +1115,21 @@ ENDM
 	lang F, line "réponses justes?"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "BLAINE: Ben fatto!"
+		
+	lang I, para "I miei quiz sono"
+	lang I, line "in una lega più"
+	lang I, cont "alta in difficoltà"
+
+	lang I, para "Scommetto che hai"
+	lang I, line "spremuto le"
+	lang I, cont "meningi!"
 	
+	lang I, para "Quindi, quante ne"
+	lang I, line "hai azzeccate?"
+
+
+	; Spanish	
 	lang S, text "BLAINE: ¡Bien!"
 	
 	lang S, para "Mis acertijos son"
@@ -1082,8 +1182,14 @@ ENDM
 	lang F, cont "insurmontable!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "BLAINE: Hahaha!"
+
+	lang I, para "Zero risposte"
+	lang I, line "esatte! Il mio"
+	lang I, cont "quiz è proprio"
+	lang I, cont "imbattibile!"
 	
+	; Spanish
 	lang S, text "BLAINE: ¡Jajaja!"
 	
 	lang S, para "¡Cero respuestas"
@@ -1137,8 +1243,17 @@ ENDM
 	lang F, cont "tout faux!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "BLAINE: Solo una"
+	lang I, line "risposta esatta?"
 	
+	lang I, para "Mettici più"
+	lang I, line "impegno!"
+	
+	lang I, para "Praticamente le"
+	lang I, line "hai sbagliate"
+	lang I, cont "quasi tutte!"
+	
+	; spanish
 	lang S, text "BLAINE: ¡Solo has"
 	lang S, line "acertado una sola!"
 	
@@ -1193,7 +1308,16 @@ ENDM
 	lang F, line "es sans espoir!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "BLAINE: Due"
+	lang I, line "risposte esatte!"
+
+	lang I, para "Questo significa"
+	lang I, line "che ne hai"
+	lang I, cont "sbagliate otto!"
+
+	lang I, para "In poche parole,"
+	lang I, line "sei proprio senza"
+	lang I, cont "speranza!"
 	
 	lang S, text "BLAINE: ¡Dos"
 	lang S, line "correctas!"
@@ -1250,8 +1374,17 @@ ENDM
 	lang F, para "Hahaha!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "BLAINE: Tre"
+	lang I, line "risposte esatte!"
+
+	lang I, para "Non è granché!"
+
+	lang I, para "Nulla di speciale!"
+
+	lang I, para "Hahaha!"
+
 	
+	; Spanish
 	lang S, text "BLAINE: ¡Tres"
 	lang S, line "aciertos!"
 	
@@ -1295,7 +1428,12 @@ ENDM
 	lang F, cont "diésirer!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "BLAINE: Quattro"
+	lang I, line "risposte esatte!"
+	
+	lang I, para "Il tuo spirito"
+	lang I, line "combattivo è"
+	lang I, cont "ancora scarso!"
 	
 	lang S, text "BLAINE: Cuatro"
 	lang S, line "¡aciertos!"
@@ -1351,8 +1489,20 @@ ENDM
 	lang F, cont "une égalité!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "BLAINE: Woah!"
+	lang I, line "Cinque risposte"
+	lang I, cont "esatte!"
+
+	lang I, para "Dritto nel"
+	lang I, line "bersaglio--"
+	lang I, cont "esattamente a"
+	lang I, cont "metà!"
+
+	lang I, para "In una lotta"
+	lang I, line "#MON, sarebbe"
+	lang I, cont "un pareggio!"
 	
+	; spanish
 	lang S, text "BLAINE: ¡Guau!"
 	lang S, line "¡Cinco respuestas"
 	lang S, cont "correctas!"
@@ -1397,8 +1547,15 @@ ENDM
 	lang F, cont "continue comme ça!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "BLAINE: Sei"
+	lang I, line "risposte esatte!"
+
+	lang I, para "Il modo rovente in"
+	lang I, line "cui hai risposto"
+	lang I, cont "era buono!"
 	
+
+	; spanish
 	lang S, text "BLAINE: Seis"
 	lang S, line "aciertos!"
 	
@@ -1461,8 +1618,21 @@ ENDM
 	lang F, cont "faire, à mon avis!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "BLAINE: Sette"
+	lang I, line "risposte esatte!"
+
+	lang I, para "La tua memoria non"
+	lang I, line "è affatto male!"
+
+	lang I, para "Ehi! Non montarti"
+	lang I, line "la testa!"
 	
+	lang I, para "Per come la vedo"
+	lang I, line "io, hai ancora"
+	lang I, cont "molta strada da"
+	lang I, cont "fare!"
+	
+	;spanish
 	lang S, text "BLAINE: ¡Siete"
 	lang S, line "aciertos!"
 	
@@ -1521,7 +1691,17 @@ ENDM
 	lang F, line "accident!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "BLAINE: Otto"
+	lang I, line "risposte esatte!"
+	
+	lang I, para "Il mio quiz non"
+	lang I, line "dovrebbe essere"
+	lang I, cont "così facile!"
+
+	lang I, para "Dev'essere stata"
+	lang I, line "solo fortuna!"
+
+	;spanish
 	
 	lang S, text "BLAINE: ¡Ocho"
 	lang S, line "aciertos!"
@@ -1578,7 +1758,18 @@ ENDM
 	lang F, para "Tu y es presque!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "BLAINE: Oh!"
+	lang I, line "Ne hai azzeccate"
+	lang I, cont "nove!"
+
+	lang I, para "Ah... solo una"
+	lang I, line "risposta giusta"
+	lang I, cont "in più per un"
+	lang I, cont "punteggio pieno!"
+
+	lang I, para "C'eri quasi!"
+
+	;spanish
 	
 	lang S, text "BLAINE: ¡Oh!"
 	lang S, line "¡Tienes nueve"
@@ -1626,7 +1817,11 @@ ENDM
 	lang F, cont "refroidi..."
 
 	; Italian
-	lang I, text "?"
+	lang I, text "BLAINE: Oh!"
+	lang I, line "Un punteggio pieno?!"
+
+	lang I, para "Wow... ben fatto!"
+	lang I, line "Ora sono bruciato…"
 	
 	lang S, text "BLAINE: ¡¿Una "
 	lang S, line "nota perfecta?!"
@@ -1668,7 +1863,15 @@ ENDM
 	lang F, line "pour réessayer?"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "BLAINE: Quindi?"
+	lang I, line "Com'era?"
+
+	lang I, para "Senti il tuo"
+	lang I, line "fuoco sopito?"
+	
+	lang I, para "Vuoi riprovare?"
+
+	;spanish
 	
 	lang S, text "BLAINE: ¿Que te"
 	lang S, line "ha parecido?"
@@ -1690,7 +1893,7 @@ ENDM
 	; French
 	lang F, text "AUGUSTE: Allons-y!"
 	; Italian
-	lang I, text "?"
+	lang I, text "BLAINE: Andiamo!"
 	lang S, text "¡Vamos!"
 	done
 
@@ -1761,14 +1964,21 @@ ENDM
 	lang F, line "CT28."
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Ho perso, è"
+	lang I, line "inutile negarlo."
+	
+	lang I, para "Ti darò una"
+	lang I, line "ricompensa!"
+	
+	lang I, para "Prendi questa MT,"
+	lang I, line "contiene FOSSA!"
 
 	lang I, para
 	lang I, nts_start
 	lang I, nts_player_name 0
 	lang I, nts_end
-	lang I, db   "?"
-	lang I, line "TM28."
+	lang I, db   " riceve"
+	lang I, line "MT28."
 	
 	lang S, text "He perdido, ¡es"
 	lang S, line "inútil resistirse!"
@@ -1851,14 +2061,14 @@ ENDM
 	lang I, para "<……><……><……>"
 	lang I, line "<……><……><……>"
 
-	lang I, para "?"
+	lang I, para "Scherzo! Ecco!"
 
 	lang I, para
 	lang I, nts_start
 	lang I, nts_player_name 0
 	lang I, nts_end
-	lang I, db   "?"
-	lang I, line "TM38."
+	lang I, db   " riceve"
+	lang I, line "MT38."
 	
 	lang S, text "BLAINE: <……><……><……>"
 	lang S, para "<……><……><……>"
@@ -1910,7 +2120,11 @@ ENDM
 	lang F, para "Waaah!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "BLAINE: Tornerò,"
+	lang I, line "prima o poi,"
+	
+	lang I, para "più forte che mai!"
+	lang I, line "Hah!"
 	
 	lang S, text "BLAINE: Estaré de"
 	lang S, line "vuelta algún día,"

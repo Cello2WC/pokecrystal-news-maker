@@ -42,7 +42,7 @@ SECTION "Download Text", ROM0[$2000]
 	lang F, db ""
 	lang F, line __DATE__
 	
-	lang I, db   ""
+	lang I, db   "Numero Debug"
 	lang I, line __DATE__
 	
 	lang S, db   ""
@@ -178,7 +178,7 @@ ENDC
 	lang E, db "ABOUT FEES"
 	lang D, db "GEBÜHREN-INFOS"
 	lang F, db "INFOS TARIFS"
-	lang I, db "?"
+	lang I, db "INFO COSTI"
 	lang S, db "?"
 	db "@"
 
@@ -320,7 +320,8 @@ ENDC
 	lang F, db   "Veuillez choisir"
 	lang F, line "un menu."
 	
-	lang I, db   "?"
+	lang I, db   "Selezionare un"
+	lang I, line "menù, per favore."
 	
 	lang S, db   "?"
 	
@@ -363,8 +364,8 @@ ENDC
 ;	lang F, db   "Classement des"
 ;	lang F, line "dresseurs!"
 ;	
-;	lang I, db   "Classifiche allen-"
-;	lang I, line "atore a tema."
+;	lang I, db   "Classifiche alle-"
+;	lang I, line "natore a tema."
 ;	
 ;	lang S, db   "¡Ranking triple de"
 ;	lang S, line "entrenadores!"	

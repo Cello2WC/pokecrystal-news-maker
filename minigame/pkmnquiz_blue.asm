@@ -9,7 +9,7 @@
 ; English localization by DS
 ; German localization by Lesserkuma
 ; French localization by ISSOtm
-; Italian localization TODO
+; Italian localization by svp
 ; Spanish localization TODO
 
 IF DEF(_MINIGAME_H)
@@ -121,8 +121,29 @@ MACRO minigame_start
 
 	lang F, para "Allons-y!"
 
-	; Italian
-	lang I, text "?"
+	; Italian     ------------------
+	lang I, text "BLU: Eccoti!" 	; blue in viridian greets you
+	lang I, line "Quindi hai deciso"; by immediately pointing out
+	lang I, cont "di provare il mio"; we took forever. not even a
+	lang I, cont "quiz, eh?"	; yo, ice cold...
+
+	lang I, para "Il mio quiz ha"
+	lang I, line "domande che di"
+	lang I, cont "certo non saprai,"
+	lang I, cont "neanche per quanto"
+	lang I, cont "tu abbia viaggiato"
+
+	lang I, para "Dopotutto, queste"
+	lang I, line "sono cose di tre"
+	lang I, cont "anni fa."
+	
+	lang I, para "Ad ogni modo, co-"
+	lang I, line "minciamo."
+	
+	lang I, para "In tutto ci sono"
+	lang I, line "dieci domande!"
+	
+	lang I, para "Si comincia!"
 
 	; Spanish
 	lang S, text "AZUL: ¡Hola!"
@@ -155,7 +176,7 @@ MACRO minigame_name
 	lang E, db "#MON QUIZ!"
 	lang D, db "#MON-QUIZ!"
 	lang F, db "QUIZ #MON!"
-	lang I, db "?"
+	lang I, db "#MON QUIZ!"
 	lang S, db "Acertijo #MON"
 ENDM
 
@@ -354,8 +375,13 @@ ENDM
 	lang F, next "2. Chez RED"
 	lang F, next "3. Chez BLUE"
 
-	; Italian
-	lang I, db   "?"
+	; Italian     ------------------
+	lang I, db   "A BIANCAVILLA, "
+	lang I, next "dove puoi curare"
+	lang I, next "i tuoi #MON?"
+	lang I, next "1. LABORATORIO OAK"
+	lang I, next "2. CASA DI ROSSO"
+	lang I, next "3. CASA DI BLU"
 
 	; Spanish
 	lang S, db   "Donde en PUEBLO"
@@ -400,7 +426,12 @@ ENDM
 	lang F, next "3. CONDOR"
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Come si chiama"
+	lang I, next "lo SPEAROW da"
+	lang I, next "SMERALDOPOLI?"
+	lang I, next "1. SPEARY"
+	lang I, next "2. ROWEY"
+	lang I, next "3. ROSTO" ;if spikey is made up im taking some artistic licensing here
 
 	; Spanish
 	lang S, db   "Cómo se llama"
@@ -444,8 +475,14 @@ ENDM
 	lang F, next "1. 50¥   2. 100¥"
 	lang F, next "3. 200¥"
 
-	; Italian
-	lang I, db   "?"
+	; Italian     ------------------
+	lang I, db   "Quanto costa l'"
+	lang I, next "ingresso al MUSEO"
+	lang I, next "della SCIENZA di"
+	lang I, next "PLUMBEOPOLI?"
+	lang I, next "1. ¥50   2. ¥100"
+	lang I, next "3. ¥200"
+	
 
 	; Spanish
 	lang S, db   "¿Cuánto cuesta la"
@@ -490,8 +527,15 @@ ENDM
 	lang F, next "2. Maladie"
 	lang F, next "3. #MON volé"
 
-	; Italian
-	lang I, db   "?"
+	; Italian     ------------------
+	lang I, db   "Quale era il pro-"
+	lang I, next "blema che BILL"
+	lang I, next "aveva quando lo"
+	lang I, next "incontrasti a"
+	lang I, next "MIRAMARE?"	; i cant believe they named the real life place after the pokemon location...
+	lang I, next "1. Fuso a #MON"
+	lang I, next "2. Era malato"
+	lang I, next "3. #MON rubato"
 
 	; Spanish
 	lang S, db   "Conociste a BILL"
@@ -536,8 +580,14 @@ ENDM
 	lang F, next "1. Houu  2. Pars" ; Le texte pré-combat dit "Fuis... Impudent...".
 	lang F, next "3. Dehors" ; Le texte en combat dit "Va-t-en... dehors...".
 
-	; Italian
-	lang I, db   "?"
+	; Italian     ------------------
+	lang I, db   "Nella TORRE"
+	lang I, next "#MON, lo SPETTRO"
+	lang I, next "non identificato"
+	lang I, next "cosa diceva in"
+	lang I, next "lotta?"
+	lang I, next "1. Uuuh 2. Via…"
+	lang I, next "3. Fuori…"
 
 	; Spanish
 	lang S, db   "En TORRE #MON"
@@ -582,8 +632,14 @@ ENDM
 	lang F, next "1. FAIS 2. SAIS"
 	lang F, next "3. VEUX"	
 
-	; Italian
-	lang I, db   "?"
+	; Italian     ------------------
+	lang I, db   "Il cartello sul"
+	lang I, next "tetto del CENTRO"
+	lang I, next "COMMERCIALE di"
+	lang I, next "AZZURROPOLI diceva"
+	lang I, next "IO … TUTTO!"
+	lang I, next "1. DO 2. SO"
+	lang I, next "3. HO"
 	
 	; Spanish
 	lang S, db   "El letrero en el"
@@ -628,8 +684,15 @@ ENDM
 	lang F, next "1. Ayaaaaa! 2. Hm!"
 	lang F, next "3. Seiiyahh!"
 
-	; Italian
-	lang I, db   "?"
+	; Italian     ------------------
+	lang I, db   "Nel DOJO KARATE"
+	lang I, next "a ZAFFERANOPOLI,"
+	lang I, next "quale è il grido"
+	lang I, next "di lotta del RE"
+	lang I, next "del KARATE?"
+	lang I, next "1. Fuaaa! 2. Hiah!"
+	lang I, next "3. Ho-ha!"
+	
 
 	; Spanish
 	lang S, db   "En el DOJO-KARATE"
@@ -674,8 +737,13 @@ ENDM
 	lang F, next "2. Un dentier"
 	lang F, next "3. Un doudou"
 
-	; Italian
-	lang I, db   "?"
+	; Italian     ------------------
+	lang I, db   "Quale è il segreto"
+	lang I, next "del GUARDIANO del-"
+	lang I, next "la ZONA SAFARI?"
+	lang I, next "1. Parrucca"
+	lang I, next "2. Dentiera"
+	lang I, next "3. Insettofobia"
 
 	; Spanish
 	lang S, db   "¿Cuál es secreto"
@@ -721,7 +789,14 @@ ENDM
 	lang F, next "3. Ne fuis pas!"
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Cosa viene detto"
+	lang I, next "quando cerchi di"
+	lang I, next "darti alla FUGA"
+	lang I, next "alla LEGA #MON?"
+	lang I, next "1. Non si scappa!"
+	lang I, next "2. Scappi via?"
+	lang I, next "3. Non scappare!"
+	
 
 	; Spanish
 	lang S, db   "¿Qué se dice si"
@@ -766,8 +841,14 @@ ENDM
 	lang F, next "2. Hors-jeu"
 	lang F, next "3. Mal de crâne"
 
-	; Italian
-	lang I, db   "?"
+	; Italian     ------------------
+	lang I, db   "Cosa succede a"
+	lang I, next "ROSSO quando i"
+	lang I, next "suoi #MON sono"
+	lang I, next "tutti esausti?"
+	lang I, next "1. Non ci vede più"
+	lang I, next "2. Crolla"
+	lang I, next "3. È alle strette"
 
 	; Spanish
 	lang S, db   "Qué le pasa a"
@@ -841,7 +922,7 @@ ENDM
 	lang E, db "BLUE's RATING"
 	lang D, db "BLAUs BEWERTUNG"
 	lang F, db "EVALUATION de BLUE"
-	lang I, db "?"
+	lang I, db "VALUTAZIONE di BLU"
 	lang S, db "EVALUACIÓN DE AZUL"
 	db "@"
 
@@ -945,8 +1026,8 @@ ENDM
 	lang F, line "Voici le résultat!"
 
 	; Italian
-	lang I, db   "Fai il quiz per"
-	lang I, line "una valutazione!"
+	lang I, db   "Quiz completato!"
+	lang I, line "Ecco i risultati!"
 
 	; Spanish
 	lang S, db   "¡Listo!"
@@ -983,7 +1064,10 @@ ENDM
 	lang F, para "..."
 
 	; Italian
-	lang I, text "?"
+	lang I, text "BLU: Com'è andata?"
+	lang I, line "Fammi vedere!"
+
+	lang I, para "…"
 
 	; Spanish
 	lang S, text "BLUE: ¿Cómo fue?"
@@ -1029,7 +1113,12 @@ ENDM
 	lang F, cont "Bien essayé!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Ehi, neanche una"
+	lang I, line "risposta giusta?"
+
+	lang I, para "Lo sapevo, non"
+	lang I, line "ce l'hai fatta."
+	lang I, cont "Bel tentativo!"
 
 	; Spanish
 	lang S, text "Oye, ni siquiera"
@@ -1082,7 +1171,12 @@ ENDM
 	lang F, para "Retente."
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Una giusta!"
+	lang I, para "Ma solo una ris-"
+	lang I, line "posta giusta è"
+	lang I, cont "come non saperne"
+	lang I, cont "nessuna."
+	lang I, para "Riprova."
 
 	; Spanish
 	lang S, text "¡Una correcta!"
@@ -1134,7 +1228,13 @@ ENDM
 	lang F, cont "cheville!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Due giuste!"
+	lang I, line "Ehi, ma fai sul"
+	lang I, cont "serio?"
+
+	lang I, para "Hai ancora molta"
+	lang I, line "strada prima di"
+	lang I, cont "raggiungermi!"
 
 	; Spanish
 	lang S, text "¡Dos correctas!"
@@ -1187,7 +1287,15 @@ ENDM
 	lang F, line "Pas grand-chose!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Tre giuste!"
+
+	lang I, para "Magari te la cavi"
+	lang I, line "bene con le lotte"
+	lang I, cont "#MON…"
+
+	lang I, para "Ma per il resto?"
+	lang I, line "Non ne sono tanto"
+	lang I, cont "sicuro!"
 
 	; Spanish
 	lang S, text "¡Tres correctas!"
@@ -1230,7 +1338,13 @@ ENDM
 	lang F, cont "impressionnant!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Quattro giuste!"
+
+	lang I, para "Avere fortuna per"
+	lang I, line "tutte queste volte"
+	lang I, cont "è degno di nota!"
+
+
 
 	lang S, text "¡Cuatro correctas!"
 
@@ -1292,7 +1406,19 @@ ENDM
 	lang F, cont "cinq prochaines!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Cinque giuste!"
+
+	lang I, para "Sembra che tu ci"
+	lang I, line "stia provando sul"
+	lang I, cont "serio."
+
+	lang I, para "Beh, dopotutto ho"
+	lang I, line "ideato io queste"
+	lang I, cont "domande!"
+
+	lang I, para "Le altre cinque"
+	lang I, line "ti daranno molto"
+	lang I, cont "filo da torcere!"
 
 	; Spanish
 	lang S, text "¡Cinco correctas!"
@@ -1344,7 +1470,13 @@ ENDM
 	lang F, line "est loin du mien!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Sei giuste!"
+	
+	lang I, para "Hm. Non male."
+
+	lang I, para "Ma ne hai di"
+	lang I, line "strada da fare"
+	lang I, cont "per raggiungermi!"
 
 	; Spanish
 	lang S, text "¡Seis correctas!"
@@ -1387,7 +1519,10 @@ ENDM
 	lang F, cont "verais autant..."
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Sette giuste!"
+	lang I, para "Non pensavo che"
+	lang I, line "ne azzeccassi"
+	lang I, cont "così tante…"
 
 	; Spanish
 	lang S, text "¡Siete correctas!"
@@ -1434,7 +1569,13 @@ ENDM
 	lang F, cont "ne que la mienne!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Otto giuste!"
+
+	lang I, para "Niente male!"
+
+	lang I, para "La tua memoria è"
+	lang I, line "buona quasi quanto"
+	lang I, cont "la mia!"
 
 	; Spanish
 	lang S, text "¡Ocho correctas!"
@@ -1491,7 +1632,14 @@ ENDM
 	lang F, para "Retente!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Wow, nove giuste!"
+
+	lang I, para "C'eri quasi! Solo"
+	lang I, line "un'altra e le"
+	lang I, cont "avresti azzeccate"
+	lang I, cont "tutte!"
+	
+	lang I, para "Prova ancora!"
 
 	; Spanish
 	lang S, text "¡Vaya, nueve"
@@ -1551,7 +1699,15 @@ ENDM
 	lang F, para "Je m'avoue vaincu!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Tutte giuste!"
+
+	lang I, para "Fantastico!"
+
+	lang I, para "Ti ricordi tutto"
+	lang I, line "questo da tre"
+	lang I, cont "anni fa!"
+
+	lang I, para "Mi arrendo!"
 
 	; Spanish
 	lang S, text "Todo correcto…!"
@@ -1613,7 +1769,17 @@ ENDM
 	lang F, line "remets une couche?"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "BLU: Beh? Il mio"
+	lang I, line "quiz è proprio"
+	lang I, cont "tosto, nevvero?"
+
+	lang I, para "Vorrà dire che ti"
+	lang I, line "potrei concedere"
+	lang I, cont "un altro tenta-"
+	lang I, cont "tivo…"
+
+	lang I, para "Che ne dici?"
+	lang I, line "Vuoi riprovare?"
 
 	; Spanish
 	lang S, text "AZUL: ¿Y bien? Mi"
@@ -1637,7 +1803,7 @@ ENDM
 	lang E, text "See ya!"
 	lang D, text "Ciao!"
 	lang F, text "Bye-bye!"
-	lang I, text "?"
+	lang I, text "Ci vediamo!"
 	lang S, text "¡Nos vemos!"
 	done
 
@@ -1688,14 +1854,17 @@ ENDM
 	lang F, line "CT26."
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Ben fatto!"
+
+	lang I, para "Dovresti essere" 
+	lang I, line "fiero di te!"	; todo: find a way to make this gender neutral
 
 	lang I, para
 	lang I, nts_start
 	lang I, nts_player_name 0
 	lang I, nts_end
-	lang I, db   "?"
-	lang I, line "TM26."
+	lang I, db   " riceve"
+	lang I, line "MT26."
 
 	; Spanish
 	lang S, text "¡Bien hecho!"

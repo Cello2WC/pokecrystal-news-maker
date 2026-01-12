@@ -93,7 +93,17 @@ MACRO minigame_start
 	lang F, para "OK, allons-y!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Iniziamo la tua"
+	lang I, line "VALUTAZIONE DA"
+	lang I, cont "ALLENATORE!"
+
+	lang I, para "Otterrai un dono"
+	lang I, line "solo con il tuo"
+	lang I, cont "primo risultato,"
+	lang I, cont "fai attenzione!"
+
+	lang I, para "Va bene,"
+	lang I, line "cominciamo!"
 
 	; Spanish
 	lang S, text "¡Iniciando tu"
@@ -122,7 +132,7 @@ MACRO minigame_name
 	lang E, db "<TRAINER> CHECKUP!"
 	lang D, db "<TRAINER>-CHECK-UP!"
 	lang F, db "BILAN <TRAINER>!"
-	lang I, db "?"
+	lang I, db "VALUT. ALLENATORE!"
 	lang S, db "¡EVA. <TRAINER>!"
 ENDM
 
@@ -208,7 +218,7 @@ MinigameStart::
 	lang E, db "YES"
 	lang D, db "JA"
 	lang F, db "OUI"
-	lang I, db "?"
+	lang I, db "SÌ"
 	lang S, db "SI"
 	db "@"
 
@@ -217,7 +227,7 @@ MinigameStart::
 	lang E, db "NO"
 	lang D, db "NEIN"
 	lang F, db "NON"
-	lang I, db "?"
+	lang I, db "NO"
 	lang S, db "NO"
 	db "@"
 
@@ -292,7 +302,10 @@ ENDM
 	lang F, next "que je capture."
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Quando catturo"
+	lang I, next "un #MON, dò"
+	lang I, next "sempre un"
+	lang I, next "sorpannome."
 
 	; Spanish
 	lang S, db   "Cuando atrapo"
@@ -329,7 +342,10 @@ ENDM
 	lang F, next "d'ajouter “chéri”."
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Quando chiamo il"
+	lang I, next "nome del mio"
+	lang I, next "#MON, aggiungo"
+	lang I, next "sempre “tesoro”."
 
 	; Spanish
 	lang S, db   "Cuando llamo a mi"
@@ -367,7 +383,12 @@ ENDM
 	lang F, next "elle est faible."
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Se una mossa si"
+	lang I, next "sposa bene con la"
+	lang I, next "immagine del mio"
+	lang I, next "#MON, non mi"
+	lang I, next "importa se non è"
+	lang I, next "forte."
 
 	; Spanish
 	lang S, db   "Un movimiento que"
@@ -405,7 +426,11 @@ ENDM
 	lang F, next "faibles."
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Otterrei più di"
+	lang I, next "dieci del mio"
+	lang I, next "#MON preferito,"
+	lang I, next "anche se non"
+	lang I, next "fosse forte.
 
 	; Spanish
 	lang S, db   "Me haré con más"
@@ -441,7 +466,10 @@ ENDM
 	lang F, next "attaque est forte."
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Se un #MON ha"
+	lang I, next "un forte attacco,"
+	lang I, next "non mi preoccupo"
+	lang I, next "della sua difesa."
 
 	; Spanish
 	lang S, db   "Con un #MON con"
@@ -473,7 +501,10 @@ ENDM
 	lang F, next "adversaire faible!"
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Vincere contro un"
+	lang I, next "avversario più"
+	lang I, next "debole è fantas-"	
+	lang I, next "tico!"
 
 	; Spanish
 	lang S, db   "¡Ganar contra un"
@@ -510,7 +541,11 @@ ENDM
 	lang F, next "un très bon prix."
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Venderei anche il"
+	lang I, next "#MON che ho"
+	lang I, next "cresciuto con"
+	lang I, next "amore se il prezzo"
+	lang I, next "è abbastanza alto."
 
 	; Spanish
 	lang S, db   "Vendería incluso"
@@ -547,7 +582,10 @@ ENDM
 	lang F, next "de mémoire."
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "So recitare a"
+	lang I, next "memoria i nomi di"
+	lang I, next "una trentina di MT"
+	lang I, next "o anche di più."
 
 	; Spanish
 	lang S, db   "Puedo nombrar 30"
@@ -583,7 +621,10 @@ ENDM
 	lang F, next "l'ai obtenue!"
 
 	; Spanish
-	lang I, db   "?"
+	lang I, db   "Quando ottengo una"
+	lang I, next "MT, la insegno"
+	lang I, next "subito al mio"
+	lang I, next "#MON!"
 
 	; Italian
 	lang S, db   "Cuando consigo MT,"
@@ -615,7 +656,8 @@ ENDM
 	lang F, next "de soin sur moi."
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Porto sempre con"
+	lang I, next "me molti rimedi."
 
 	; Spanish
 	lang S, db   "Siempre intento"
@@ -649,7 +691,11 @@ ENDM
 	lang F, next "BAIE MIRACLE!"
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Quando si tratta di"
+	lang I, next "strumenti, prefe-"
+	lang I, next "risco una BANDANA"
+	lang I, next "ad una"
+	lang I, next "BACCA MIRAC."
 
 	; Spanish
 	lang S, db   "En lo que respecta"
@@ -691,7 +737,12 @@ ENDM
 	lang F, next "prochain tour."
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Anche se il mio"
+	lang I, next "#MON ha pochi"
+	lang I, next "PS, non lo cure-"
+	lang I, next "rei se sapessi"
+	lang I, next "di vincere nel"
+	lang I, next "prossimo turno."
 
 	; Spanish
 	lang S, db   "Aunque mi #MON"
@@ -727,7 +778,9 @@ ENDM
 	lang F, next "sent rarement."
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Amo usare #MON"
+	lang I, next "che i miei amici"
+	lang I, next "non usano spesso."
 
 	; Spanish
 	lang S, db   "Me encanta usar"
@@ -765,7 +818,12 @@ ENDM
 	lang F, next "CENTRE #MON."
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Appena arrivo in"
+	lang I, next "una nuova città,"
+	lang I, next "la prima cosa che"
+	lang I, next "faccio è curare"
+	lang I, next "la mia squadra al"
+	lang I, next "CENTRO #MON."
 
 	; Spanish
 	lang S, db   "Cuando llego a"
@@ -804,7 +862,11 @@ ENDM
 	lang F, next "grottes."
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Prferisco pianifi-"
+	lang I, next "care una strategia"
+	lang I, next "in camera mia in-"
+	lang I, next "vece che uscire a"
+	lang I, next "esplorare caverne"
 
 	; Spanish
 	lang S, db   "Prefiero estrat."
@@ -840,7 +902,9 @@ ENDM
 	lang F, next "arrangés joliment."
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "I #MON nel"
+	lang I, next "miei BOX sono"
+	lang I, next "tutti organizzati."
 
 	; Spanish
 	lang S, db   "Los #MON"
@@ -971,10 +1035,10 @@ ENDM
 	lang F, nts_player_name 0
 	lang F, nts_end
 
+	lang I, db "RISULTATI di"
 	lang I, nts_start
 	lang I, nts_player_name 0
 	lang I, nts_end
-	lang I, db "?"
 
 	lang S, nts_start
 	lang S, nts_player_name 0
@@ -1042,7 +1106,21 @@ ENDM
 	lang F, cont "Souviens-t'en!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Il tuo tipo di"
+	lang I, line "allenatore è…"
+	lang I, cont "#FAN!"
+
+	lang I, para "I tuoi sentimenti"
+	lang I, line "di adorazione per"
+	lang I, cont "i tuoi #MON"
+	lang I, cont "sono evidenti!"
+
+	lang I, para "Anche se perdi in"
+	lang I, line "lotta, avere dei"
+	lang I, cont "#MON carini è"
+	lang I, cont "comunque una vit-"
+	lang I, cont "toria!"
+	lang I, cont "Non dimenticarlo!"
 
 	; Spanish
 	lang S, text "¡Tu tipo <TRAINER>"
@@ -1109,13 +1187,17 @@ ENDM
 	lang F, line "CT27."
 
 	; Italian
-	lang I, text "?"
+	lang I, text "La MT27, RITORNO,"
+	lang I, line "sarà perfetta per"
+	lang I, cont "i tuoi #MON!"
+	lang I, cont "Usala, per favore!"
 
 	lang I, para
 	lang I, nts_start
 	lang I, nts_player_name 0
 	lang I, nts_end
-	lang I, db   "?"
+	lang I, db   " riceve"
+	lang I, line "MT27."
 
 	; Spanish
 	lang S, text "MT27, RETROCESO,"
@@ -1204,7 +1286,24 @@ ENDM
 	lang F, cont "TEAM <ROCKET>!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Sembri il tipo di"
+	lang I, line "persona perfetto"
+	lang I, cont "per far parte del"
+	lang I, cont "TEAM <ROCKET>!"
+	
+	lang I, para "Insomma, pensi"
+	lang I, line "solo ai tuoi inte-"
+	lang I, cont "ressi, vero?"
+
+	lang I, para "Non andrai lontano"
+	lang I, line "con questa tua"
+	lang I, cont "noncuranza per i"
+	lang I, cont "tuoi #MON!"
+
+	lang I, para "Beh, se mai cambi-"
+	lang I, line "assi idea, vieni a"
+	lang I, cont "unirti a"
+	lang I, cont "TEAM <ROCKET>!"
 
 	; Spanish
 	lang S, text "Pareces el"
@@ -1285,14 +1384,19 @@ ENDM
 	lang F, line "TM21."
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Celebriamo la tua"
+	lang I, line "nuova affiliazione"
+	lang I, cont "con TEAM <ROCKET>!"
+
+	lang I, para "MT21, FRUSTRAZIONE."
+	lang I, line "Solo per te!"
 
 	lang I, para
 	lang I, nts_start
 	lang I, nts_player_name 0
 	lang I, nts_end
-	lang I, db   "?"
-	lang I, line "TM21."
+	lang I, db   " riceve"
+	lang I, line "MT21."
 
 	; Spanish
 	lang S, text "Aquí tienes,"
@@ -1370,7 +1474,20 @@ ENDM
 	lang F, cont "t'admirer!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Il tuo tipo di"  ; what has this to do with the
+	lang I, line "ALLENATORE è..." ; original text? simple, we can
+	lang I, cont "FANTALLEN.!"     ; avoid gendering thanks to 
+				       ; gen2 naming :^)
+	lang I, para "Ti prendi molta"
+	lang I, line "cura dei tuoi"
+	lang I, cont "#MON, e sembri"
+	lang I, cont "molto forte in"
+	lang I, cont "lotta."
+
+	lang I, para "Sai molte cose,"
+	lang I, line "i tuoi amici"
+	lang I, cont "devono sicuramente"
+	lang I, cont "ammirarti!"
 
 	; Spanish
 	lang S, text "Eres un"
@@ -1437,14 +1554,18 @@ ENDM
 	lang F, line "PP PLUS."
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Per darti un"
+	lang I, line "vantaggio ancora"
+	lang I, cont "più importante in"
+	lang I, cont "lotta, prendi"
+	lang I, cont "questo PP-SÙ!"
 
 	lang I, para
 	lang I, nts_start
 	lang I, nts_player_name 0
 	lang I, nts_end
-	lang I, db   "?"
-	lang I, line "PP UP."
+	lang I, db   " riceve"
+	lang I, line "PP-SÙ."
 
 	; Spanish
 	lang S, text "¡Consigue"
@@ -1521,7 +1642,20 @@ ENDM
 	lang F, cont "avec toi!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Sei un"
+	lang I, line "CAMPEGGISTA!" 	 ;gen 2 spelling
+	lang I, cont "Se fossi stato una"
+	lang I, cont "bambina, saresti"
+	lang I, cont "una PICNIC GIRL!"
+	
+	lang I, para "Ti piace molto"
+	lang I, line "avveturarti con i"
+	lang I, cont "tuoi #MON!"
+
+	lang I, para "I tuoi #MON si"
+	lang I, line "divertono molto"
+	lang I, cont "ad avventurarsi"
+	lang I, cont "con te!"
 
 	; Spanish
 	lang S, text "¡Eres un CAMPISTA!"
@@ -1597,7 +1731,20 @@ ENDM
 	lang F, cont "avec toi!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Sei una PICNIC"
+	lang I, line "GIRL!" 	 
+	lang I, cont "Se fossi stata un"
+	lang I, cont "bambino, saresti"
+	lang I, cont "un CAMPEGGISTA!"
+	
+	lang I, para "Ti piace molto"
+	lang I, line "avveturarti con i"
+	lang I, cont "tuoi #MON!"
+
+	lang I, para "I tuoi #MON si"
+	lang I, line "divertono molto"
+	lang I, cont "ad avventurarsi"
+	lang I, cont "con te!"
 
 	; Spanish
 	lang S, text "Eres DOMINGUERA!"
@@ -1669,14 +1816,20 @@ ENDM
 	lang F, line "POUDRE ARG."
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Quindi, ecco un"
+	lang I, line "dono per te!"
+		
+	lang I, para "È ARGENPOLVERE!"
+	lang I, line "Continua con il"
+	lang I, cont "tuo buon lavoro"
+	lang I, cont "d'ora in avanti!"
 
 	lang I, para
 	lang I, nts_start
 	lang I, nts_player_name 0
 	lang I, nts_end
-	lang I, db   "?"
-	lang I, line "SILVERPOWDER."
+	lang I, db   " riceve"
+	lang I, line "ARGENPOLVERE."
 
 	; Spanish
 	lang S, text "Y, aquí tienes"
@@ -1752,7 +1905,16 @@ ENDM
 	lang F, cont "plus fort!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Hrm!"
+	lang I, line "Sei CINTURANERA!"
+	
+	lang I, para "Il tuo stile di"	
+	lang I, line "lotta audace è"
+	lang I, cont "davvero forte!"
+	
+	lang I, para "Vai alla carica"
+	lang I, line "in lotta e diven-"
+	lang I, cont "ta più forte!"
 
 	; Spanish
 	lang S, text "¡Recluta!"
@@ -1814,14 +1976,16 @@ ENDM
 	lang F, line "CT20."
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Prendi questa MT20!"
+	lang I, line "Insegna RESISTENZA!"
+	lang I, cont "Resisti!"
 
 	lang I, para
 	lang I, nts_start
 	lang I, nts_player_name 0
 	lang I, nts_end
-	lang I, db   "?"
-	lang I, line "TM20."
+	lang I, db   " riceve"
+	lang I, line "MT20."
 
 	; Spanish
 	lang S, text "¡Puedes quedarte"
@@ -1922,7 +2086,27 @@ ENDM
 	lang F, line "toi-même..."
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Il tuo tipo di"
+	lang I, line "<TRAINER> è"
+	lang I, conf "SCIENZIATO…"
+
+	lang I, para "Le persone pro-"
+	lang I, line "babilmente ti"
+	lang I, cont "chiamano strano"
+	lang I, cont "a volte."
+
+	lang I, para "Non lasciare che"
+	lang I, line "ti infastidisca."
+	lang I, cont "Lasciali parlare."
+
+	lang I, para "Non importa cosa"
+	lang I, line "ti dicono-"
+
+	lang I, para "anche se la tua"
+	lang I, line "cotta ti rifiuta,"
+
+	lang I, para "rimani te stesso…"
+
 
 	; Spanish
 	lang S, text "Tu tipo de <TRAINER>"
@@ -2001,14 +2185,20 @@ ENDM
 	lang F, line "POUDRECLAIRE."
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Ecco, prendi"
+	lang I, line "LUMINPOLVERE."
+
+	lang I, para "Prova ad usarla"
+	lang I, line "per distrarti"
+	lang I, cont "dalla solitudine…"
 
 	lang I, para
 	lang I, nts_start
 	lang I, nts_player_name 0
 	lang I, nts_end
-	lang I, db   "?"
-	lang I, line "BRIGHTPOWDER."
+	lang I, db   " riceve"
+	lang I, line "LUMINPOLVERE."
+
 
 	; Spanish
 	lang S, text "Toma, coge esto"

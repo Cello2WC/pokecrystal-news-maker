@@ -173,7 +173,40 @@ MACRO minigame_start
 	lang F, para "C'est parti!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "All'inizio del"
+	lang I, line "gioco, un #MON"
+	lang I, cont "verrà mostrato."
+
+	lang I, para "Poi, ne apparirà"
+	lang I, line "un altro!"
+
+	lang I, para "Indovina se il"
+	lang I, line "#MON successivo"
+	lang I, cont "sarà più alto o"
+	lang I, cont "più basso di quel-"
+	lang I, cont "lo precedente!"
+
+	lang I, para "Solo dodici tipi"
+	lang I, line "di #MON possono"
+	lang I, cont "comparire in"
+	lang I, cont "questo gioco."
+
+	lang I, para "Seleziona LISTA"
+	lang I, line "per controllarli"
+	lang I, cont "in qualsiasi mo-"
+	lang I, cont "mento. Potrebbe"
+	lang I, cont "aiutarti a dedurre"
+	lang I, cont "la risposta."
+
+	lang I, para "Vengono usate le" 
+	lang I, line "altezze indicate"
+	lang I, cont "nel #DEX."
+
+	lang I, para "Vinci se indovini"
+	lang I, line "correttamente set-"
+	lang I, cont "te volte di fila."
+	
+	lang I, para "Cominciamo!"
 
 	; Spanish
 	lang S, text "Al iniciar el"
@@ -460,7 +493,12 @@ ENDR
 	lang F, cont "et enfin DRACO."
 
 	; Italian
-	lang I, text "?"
+	lang I, text "#MON mostrati:"
+	lang I, line "NATU, ARBOK, ONIX,"
+	lang I, cont "GYARADOS, FURRET,"
+	lang I, cont "DUGTRIO, SHUCKLE,"
+	lang I, cont "SNORLAX, UMBREON,"
+	lang I, cont "DITTO e DRAGONAIR."
 
 	; Spanish
 	lang S, text "#MON mostrado:"
@@ -478,7 +516,7 @@ ENDR
 	lang E, db "TALLER"
 	lang D, db "GRÖSSER"
 	lang F, db "+ GRAND"
-	lang I, db "?"
+	lang I, db "PIù ALTO"
 	lang S, db "MÁS ALTO"
 .dummyDescription
 	db "@"
@@ -488,7 +526,7 @@ ENDR
 	lang E, db "SHORTER"
 	lang D, db "KLEINER"
 	lang F, db "+ PETIT"
-	lang I, db "?"
+	lang I, db "PIù BASSO"
 	lang S, db "MÁS BAJO"
 	db "@"
 
@@ -497,7 +535,7 @@ ENDR
 	lang E, db "LIST"
 	lang D, db "LISTE"
 	lang F, db "LISTE"
-	lang I, db "?"
+	lang I, db "LISTA"
 	lang S, db "LISTA"
 	db "@"
 
@@ -519,8 +557,8 @@ ENDR
 	lang D, next " LISTE     ZURÜCK"
 	lang F, db   "▶+ GRAND   + PETIT"
 	lang F, next " LISTE     RETOUR"
-	lang I, db   "▶?"
-	lang I, next " ?"
+	lang I, db   "▶PIù ALTO  PIù BASSO"
+	lang I, next " LISTA	 ESCI"
 	lang S, db   "▶MÁS ALTO MÁS BAJO"
 	lang S, next "▶LISTA     SALIR"
 	db "@"
@@ -554,7 +592,8 @@ ENDC
 	lang F, next "grand ou petit?"
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Il prossimo sarà"
+	lang I, next "più alto o basso?"
 
 	; Spanish
 	lang S, db   "¿El siguiente es"
@@ -566,7 +605,7 @@ ENDC
 	lang E, text "Correct!"
 	lang D, text "Richtig!"
 	lang F, text "Bravo!"
-	lang I, text "?"
+	lang I, text "Giusto!"
 	lang S, text "¡Correcto!"
 	done
 .textIncorrect
@@ -574,7 +613,7 @@ ENDC
 	lang E, text "Incorrect!"
 	lang D, text "Leider falsch!"
 	lang F, text "Eh non..."
-	lang I, text "?"
+	lang I, text "Sbagliato..."
 	lang S, text "¡Incorrecto!"
 	done
 
@@ -632,7 +671,21 @@ ENDC
 	lang F, line "MORC. ETOILE."
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Congratulazioni!"
+
+	lang I, para "Come premio per"
+	lang I, line "aver risposto"
+	lang I, cont "correttamente per"
+	lang I, cont "sette volte di"
+	lang I, cont "fila, ecco a te"
+	lang I, cont "un PEZZO STELLA!"
+
+	lang I, para
+	lang I, nts_start
+	lang I, nts_player_name 0
+	lang I, nts_end
+	lang I, db   " riceve"
+	lang I, line "PEZZO STELLA."
 
 	; Spanish
 	; Spanish

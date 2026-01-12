@@ -9,7 +9,7 @@
 ; English localization by DS
 ; German localization by Lesserkuma
 ; French localization by ISSOtm
-; Italian localization TODO
+; Italian localization by svp
 ; Spanish localization TODO
 
 IF DEF(_MINIGAME_H)
@@ -134,7 +134,32 @@ MACRO minigame_start
 	lang F, para "C'est parti!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Usa il Control Pad"
+	lang I, line "per muovere il"
+	lang I, cont "cursore."
+
+	lang I, para "Traccia le lettere"
+	lang I, line "del nome di un"
+	lang I, cont "#MON nell'ordi-"
+	lang I, cont "ne giusto."
+
+	lang I, para "Attenzione a non"	
+	lang I, line "fermarti a metà"
+	lang I, cont "o ripassare sullo"
+	lang I, cont "stesso spazio"	
+	lang I, cont "due volte!"
+
+	lang I, para "Inizia dalla ×"
+	lang I, line "e procedi verso"
+	lang I, cont "il segno ! per"
+	lang I, cont "raggiungere il"
+	lang I, cont "traguardo."
+
+	lang I, para "Premi il tasto A"
+	lang I, line "per controllare"
+	lang I, cont "la tua risposta."
+
+	lang I, para "Cominciamo!"
 
 	; Spanish
 	lang S, text "Usa el panel" 
@@ -177,7 +202,7 @@ MACRO minigame_name
 	lang E, db "EASY #MON MAZE"
 	lang D, db "LEICHTES LABYRINTH"
 	lang F, db "LABYRINTHE FACILE"
-	lang I, db "?"
+	lang I, db "LABIRINTO FACILE"
 	lang S, db "LABERINTO #MON"
 ENDM
 ; Max 17 chars
@@ -186,7 +211,7 @@ MACRO minigame_name_2
 	lang E, db "HARD #MON MAZE"
 	lang D, db "SCHWERES LABYRINTH"
 	lang F, db "LABYRINTHE EXPERT"
-	lang I, db "?"
+	lang I, db "LABIRINTO ESPERTO"
 	lang S, db "LABERINTO #MON"
 ENDM
 
@@ -717,7 +742,12 @@ ENDM
 	lang F, db   " reçoit"
 	lang F, line "CT04."
 
-	lang I, text "?"
+	lang I, text
+	lang I, nts_start
+	lang I, nts_player_name 0
+	lang I, nts_end
+	lang I, db " riceve"
+	lang I, line "MT04."
 
 	lang S, text
 	lang S, nts_start
@@ -1381,7 +1411,12 @@ ENDC
 	lang F, db   " reçoit"
 	lang F, line "LETRCIELBLEU."
 
-	lang I, text "?"
+	lang I, text
+	lang I, nts_start
+	lang I, nts_player_name 0
+	lang I, nts_end
+	lang I, db " riceve"
+	lang I, line "MESS. CIELO."
 
 	lang S, text
 	lang S, nts_start
@@ -1482,7 +1517,7 @@ CorrectText:
 	lang E, text "Correct!"
 	lang D, text "Richtig!"
 	lang F, text "Correct!"
-	lang I, text "?"
+	lang I, text "Giusto!"
 	lang S, text "¡Correcto!"
 	done
 
@@ -1496,7 +1531,8 @@ IncorrectText:
 	lang D, line "nicht richtig!"
 	lang F, text "Dommage..."
 	lang F, line "C'est raté!"
-	lang I, text "?"
+	lang I, text "Ups…"
+	lang I, line "Hai sbagliato!"
 	lang S, text "Uy…"
 	lang S, line "¡Te equivocaste!"
 	done

@@ -9,7 +9,7 @@
 ; English localization by DS
 ; German localization by Lesserkuma
 ; French localization by ISSOtm
-; Italian localization TODO
+; Italian localization by svp
 ; Spanish localization TODO
 
 IF DEF(_MINIGAME_H)
@@ -53,7 +53,7 @@ MACRO minigame_name
 	lang E, db "#RAP IT UP!"
 	lang D, db "PKMN-PLAUDEREI!"
 	lang F, db "#RAP MOI CA!"
-	lang I, db "?"
+	lang I, db "SEGUI IL #RAP!"
 	lang S, db "¡#RAPÉALO!"
 ENDM
 
@@ -119,7 +119,7 @@ MinigameStart::
 	lang E, db "CRY SET 1"
 	lang D, db "RUF-SET 1"
 	lang F, db "GROUPE DE CRIS 1"
-	lang I, db "?"
+	lang I, db "GRUPPO VERSI 1"
 	lang S, db "SET DE GRITOS 1"
 	db "@"
 .menuCrySet2Name
@@ -127,7 +127,7 @@ MinigameStart::
 	lang E, db "CRY SET 2"
 	lang D, db "RUF-SET 2"
 	lang F, db "GROUPE DE CRIS 2"
-	lang I, db "?"
+	lang I, db "GRUPPO VERSI 2"
 	lang S, db "SET DE GRITOS 2"
 	db "@"
 .menuCrySet3Name
@@ -135,7 +135,7 @@ MinigameStart::
 	lang E, db "CRY SET 3"
 	lang D, db "RUF-SET 3"
 	lang F, db "GROUPE DE CRIS 3"
-	lang I, db "?"
+	lang I, db "GRUPPO VERSI 3"
 	lang S, db "SET DE GRITOS 3"
 	db "@"
 .menuGameInstructionName
@@ -143,7 +143,7 @@ MinigameStart::
 	lang E, db "GAME EXPLANATION"
 	lang D, db "SPIELREGELN"
 	lang F, db "REGLES DU JEU"
-	lang I, db "?"
+	lang I, db "SPIEGAZIONE GIOCO"
 	lang S, db "EXPLICACIÓN JUEGO"
 	db "@"
 .menuCancelName
@@ -151,7 +151,7 @@ MinigameStart::
 	lang E, db "CANCEL"
 	lang D, db "ZURÜCK"
 	lang F, db "RETOUR"
-	lang I, db "?"
+	lang I, db "ESCI"
 	lang S, db "SALIR"
 	db "@"
 
@@ -350,9 +350,48 @@ ENDM
 	lang F, para "C'est parti!"
 
 	; Italian
-	lang I, text "?"
-
-	; Spanish
+	lang I, text "Prima di tutto,"
+	lang I, line "scegli il gruppo"
+	lang I, line "di versi."
+	
+	lang I, para "Scegli quello che"
+	lang I, line "ti piace di più."
+	
+	lang I, para "Appena hai scelto,"
+	lang I, line "il gioco inizia!"
+	
+	lang I, para "Osserva il centro"
+	lang I, line "dello schermo."
+	
+	lang I, para "Un #MON griderà"
+	lang I, line "il suo verso!"
+	
+	lang I, para "Proverrà dall'"
+	lang I, line "alto, dal basso,"
+	lang I, cont "da destra o si-"
+	lang I, cont "nistra, presta"
+	lang I, cont "attenzione!"
+	
+	lang I, para "Premi la direzione"
+	lang I, line "giusta sul"
+	lang I, cont "Control Pad."
+	
+	lang I, para "Rispondi corretta-"
+	lang I, line "mente per"
+	lang I, cont "proseguire!"
+	
+	lang I, para "A ogni round appa-"
+	lang I, line "riranno sempre più"
+	lang I, cont "#MON, quindi"
+	lang I, cont "cerca di ricordare"
+	lang I, cont "il loro ordine!"
+	
+	lang I, para "Completa venti"
+	lang I, line "round di fila"
+	lang I, cont "per vincere!"
+	
+	lang I, para "Cominciamo!"
+	
 	; Spanish
 	lang S, text "Primero elige un"
 	lang S, line "set de gritos."
@@ -443,14 +482,14 @@ ENDM
 ;	lang E, db "PRESS START!"
 ;	lang D, db "Drücke START!"
 ;	lang F, db "Appuie sur START!"
-;	lang I, db "?"
+;	lang I, db "Premi START!"
 ;	lang S, db "PULSA START"
 
 	lang J, db "なきごえセット"
 	lang E, db "CRY SET"
 	lang D, db "RUF-SET"
 	lang F, db "GROUPE DE CRIS"
-	lang I, db "?"
+	lang I, db "GRUPPO DI VERSI"
 	lang S, db "SET DE GRITOS"
 
 	nts_start
@@ -948,7 +987,8 @@ ENDR
 	lang F, line "de cris?"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Vuoi usare questo"
+	lang I, line "gruppo di versi?"
 
 	; Spanish
 	; Spanish
@@ -972,7 +1012,8 @@ ENDR
 ;	lang F, next "     Utilise"
 ;	lang F, next "   la manette!"
 ;
-;	lang I, db   "?"
+;	lang I, db   "  Tocca a te! Usa "
+;	lang I, next "  il Control Pad! "
 ;
 ;	lang E, db   " ¡Tu turno! Usa"
 ;	lang E, next "la cruceta.!"
@@ -999,7 +1040,8 @@ ENDR
 	lang F, next "Utilise"
 	lang F, next "la manette!"
 
-	lang I, db   "?"
+	lang I, db   "Tocca a te! Usa"
+	lang I, next "il Control Pad!"
 
 	; Spanish
 	lang S, db   "¡Tu turno! Usa"
@@ -1020,7 +1062,7 @@ ENDR
 	lang F, db   "Bravo!"
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Giusto!"
 
 	; Spanish
 	lang S, db   "¡Correcto!"
@@ -1044,7 +1086,8 @@ ENDR
 	lang F, next "C'est raté!"
 
 	; Italian
-	lang I, db   "?"
+	lang I, db   "Ups…"
+	lang I, db   "Hai sbagliato!"
 
 	; Spanish
 	; Spanish
@@ -1070,7 +1113,10 @@ ENDR
 	lang F, cont "Félicitations!"
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Hai completato"
+	lang I, line "tutti e venti i"
+	lang I, cont "round!"
+	lang I, cont "Ben fatto!"
 
 	; Spanish
 	; Spanish
@@ -1205,32 +1251,33 @@ ENDR
 	lang F, db   "."
 
 	; Italian
-	lang I, text "?"
+	lang I, text "Hai completato"
 	lang I, nts_start
 	lang I, nts_number wCurrentStreak, 1, 2, 3
 	lang I, nts_end
-	lang I, db   "?"
+	lang I, db   "round!"
 
-	lang I, para "?"
+	lang I, para "Ecco a te, prendi"
+	lang I, line "questa"
 	lang I, nts_start
 	lang I, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
 	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
 	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
 	;lang I, nts_end
-	lang I, db   "?"
+	lang I, db   "come premio!"
 
 	lang I, para
 	lang I, nts_start
 	lang I, nts_player_name 0
 	lang I, nts_end
-	lang I, db   "?"
+	lang I, db   " riceve"
 	lang I, line
 	lang I, nts_start
 	lang I, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
 	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
 	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
 	;lang I, nts_end
-	lang I, db   "?"
+	lang I, db   "."
 
 	; Spanish
 	; Spanish

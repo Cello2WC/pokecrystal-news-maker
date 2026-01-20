@@ -9,7 +9,7 @@
 ; English localization by DS
 ; German localization by Lesserkuma
 ; French localization by ISSOtm
-; Italian localization TODO
+; Italian localization by svp
 ; Spanish localization TODO
 
 ; Janken variant
@@ -71,7 +71,12 @@ MACRO minigame_start
 	lang F, para "bla bla voyage"
 	lang F, line "temporel"
 
-	lang I, text "?"
+	lang I, text "MAISY: qualcosa"
+	lang I, line "qualcosa AZALINA"
+	lang I, para "qualcosa qualcosa"
+	lang I, line "la nipote di KURT"
+	lang I, para "qualcosa qualcosa"
+	lang I, line "viaggio nel tempo"
 
 	lang S, text "MILLIE: algo"
 	lang S, line "algo de AZALEA"
@@ -90,7 +95,7 @@ MACRO minigame_name
 	lang E, db "A TIMELESS GIFT"
 	lang D, db "ZEITLOSE GABE"
 	lang F, db "CADEAU INTEMPOREL"
-	lang I, db "?"
+	lang I, db "DONO SENZA TEMPO"
 	lang S, db "REGALO ATEMPORAL"
 ENDM
 
@@ -182,7 +187,7 @@ MinigameStart::
 	lang E, db "ROCK"
 	lang D, db "STEIN"
 	lang F, db "PIERRE"
-	lang I, db "?"
+	lang I, db "SASSO"
 	lang S, db "PIEDRA"
 	db "@"
 
@@ -191,7 +196,7 @@ MinigameStart::
 	lang E, db "PAPER"
 	lang D, db "PAPIER"
 	lang F, db "PAPIER" ; Sentez-vous libre de débattre sur "FEUILLE" à la place :)
-	lang I, db "?"
+	lang I, db "CARTA"
 	lang S, db "PAPEL"
 	db "@"
 
@@ -200,7 +205,7 @@ MinigameStart::
 	lang E, db "SCISSORS"
 	lang D, db "SCHERE"
 	lang F, db "CISEAUX"
-	lang I, db "?"
+	lang I, db "FORBICI"
 	lang S, db "TIJERAS"
 .menuDummyDesc
 	db "@"
@@ -217,7 +222,7 @@ MinigameStart::
 	lang E, db "MAIZIE: ROCK"
 	lang D, db "MAISY: STEIN"
 	lang F, db "LILA: PIERRE"
-	lang I, db "?"
+	lang I, db "MAISY: SASSO"
 	lang S, db "MILLIE: PIEDRA"
 	db "@"
 
@@ -226,7 +231,7 @@ MinigameStart::
 	lang E, db "MAIZIE: PAPER"
 	lang D, db "MAISY: PAPIER"
 	lang F, db "LILA: PAPIER" ; Même remarque que pour le joueur.
-	lang I, db "?"
+	lang I, db "MAISY: CARTA"
 	lang S, db "MILLIE: PAPEL"
 	db "@"
 
@@ -235,7 +240,7 @@ MinigameStart::
 	lang E, db "MAIZIE: SCISSORS"
 	lang D, db "MAISY: SCHERE"
 	lang F, db "LILA: CISEAUX"
-	lang I, db "?"
+	lang I, db "MAISY: FORBICI"
 	lang S, db "MILLIE: TIJERAS"
 	db "@"
 
@@ -261,7 +266,7 @@ MinigameStart::
 	lang D, text "MAISY: Unent-"
 	lang D, line "schieden…"
 	lang F, text "LILA: Egalité..."
-	lang I, text "?"
+	lang I, text "MAISY: Siamo pari…"
 	lang S, text "MILLIE: Empate..."
 	done
 
@@ -278,7 +283,7 @@ MinigameStart::
 	lang D, text "MAISY: Ich"
 	lang D, line "gewinne!"
 	lang F, text "LILA: J'ai gagné!"
-	lang I, text "?"
+	lang I, text "MAISY: Ho vinto!"
 	lang S, text "MILLIE: ¡Yo gano!"
 	done
 
@@ -295,7 +300,7 @@ MinigameStart::
 	lang D, text "MAISY: Du"
 	lang D, line "gewinnst!"
 	lang F, text "LILA: Tu as gagné!"
-	lang I, text "?"
+	lang I, text "MAISY: Hai vinto!"
 	lang S, text "MILLIE: ¡TÚ GANAS!"
 	done
 
@@ -361,7 +366,7 @@ MinigameStart::
 	lang E, db "YES"
 	lang D, db "JA"
 	lang F, db "OUI"
-	lang I, db "?"
+	lang I, db "Sì"
 	lang S, db "SI"
 	db "@"
 
@@ -370,7 +375,7 @@ MinigameStart::
 	lang E, db "NO"
 	lang D, db "NEIN"
 	lang F, db "NON"
-	lang I, db "?"
+	lang I, db "NO"
 	lang S, db "NO"
 	db "@"
 
@@ -443,7 +448,11 @@ ENDM
 	lang F, next "gens que leurs"
 	lang F, next "<TRAINER>S?"
 
-	lang I, db   "?"
+	lang I, db   "I #MON possono"
+	lang I, next "aiutare e pro-"	
+	lang I, next "teggere persone"
+	lang I, next "che non sono i"
+	lang I, next "loro ALLENATORI?"
 
 	lang S, db   "¿Los #MON"
 	lang S, next "protegen personas" 
@@ -473,7 +482,10 @@ ENDM
 	lang F, next "est-ce la faute"
 	lang F, next "des humains?"
 
-	lang I, db   "?"
+	lang I, db   "Se i #MON hanno"
+	lang I, next "paura degli umani,"
+	lang I, next "la colpa è degli"
+	lang I, next "umani?"
 
 	lang S, db   "Los #MON temen"
 	lang S, next "a los humanos,"
@@ -505,7 +517,11 @@ ENDM
 	lang F, next "chose qu'un"
 	lang F, next "<TRAINER> #MON?"
 
-	lang I, db   "?"
+	lang I, db   "Le persone che"
+	lang I, next "amano i #MON"
+	lang I, next "possono non essere"
+	lang I, next "degli ALLENATORI"
+	lang I, next "di #MON?"
 
 	lang S, db   "¿Pueden quienes"
 	lang S, next "aman los #MON"
@@ -531,7 +547,10 @@ ENDM
 	lang F, next "les <TRAINER>S"
 	lang F, next "adultes?"
 
-	lang I, db   "?"
+	lang I, db   "Gli ALLENATORI più"
+	lang I, next "giovani sono più"
+	lang I, next "deboli degli ALLE-"
+	lang I, next "NATORI adulti?"
 
 	lang S, db   "¿Son los jóvenes"
 	lang S, next "<TRAINER>ES"
@@ -558,7 +577,9 @@ ENDM
 	lang F, next "ne soient que"
 	lang F, next "que des histoires?" ; "Véridiques" collerait très bien, mais inverse le sens de la question !!
 
-	lang I, db   "?"
+	lang I, db   "Pensi che le leg-"
+	lang I, next "gende antiche"
+	lang I, next "siano inventate?"
 
 	lang S, db   "¿Crees que las" 
 	lang S, next "antiguas leyendas"
@@ -627,7 +648,7 @@ ENDM
 	lang E, db "MAIZIE's RATING"
 	lang D, db "MAISYs BEWERTUNG"
 	lang F, db "EVALUATION de LILA"
-	lang I, db "?"
+	lang I, db "VALUTAZ. di MAISY"
 	lang S, db "NOTA DE MILLIE"
 	db "@"
 
@@ -707,7 +728,7 @@ ENDM
 
 	lang F, text "LILA: ?"
 
-	lang I, text "?"
+	lang I, text "MAISY: ?"
 
 	lang S, text "MILLIE: ¿?"
 	
@@ -728,7 +749,8 @@ ENDM
 
 	lang F, text "LILA: c'est non"
 
-	lang I, text "?"
+	lang I, text "MAISY:"
+	lang I, line "Quiz fallito."
 
 	lang S, text "MILLIE:"
 	lang S, line "prueba fallida"
@@ -749,7 +771,8 @@ ENDM
 	lang F, text "LILA: pouce en"
 	lang F, line "l'air"
 
-	lang I, text "?"
+	lang I, text "MAISY:"
+	lang I, line "Quiz superato!"
 
 	lang S, text "MILLIE:"
 	lang S, line "prueba superada"
@@ -778,7 +801,7 @@ ENDM
 	lang D, line "noch einmal!"
 	lang F, text "LILA: Essaye"
 	lang F, line "encore!"
-	lang I, text "?"
+	lang I, text "MAISY: Riprova!"
 	lang S, text "MILLIE: ¿?"
 	done
 
@@ -826,6 +849,12 @@ ENDM
 	lang F, line "CT22." ; La moitié du temps c'est traduit avec le pronom, l'autre moiitié sans. x_x
 
 	lang I, text "?"
+	lang I, para ""
+	lang I, nts_start
+	lang I, nts_player_name 0
+	lang I, nts_end
+	lang I, db   " riceve"
+	lang I, line "MT22."
 
 	lang S, text "?"
 	lang S, para ""

@@ -9,7 +9,7 @@
 ; English localization by DS
 ; German localization by Lesserkuma
 ; French localization by ISSOtm
-; Italian localization TODO
+; Italian localization by svp
 ; Spanish localization TODO
 
 ; Dice variant
@@ -99,7 +99,12 @@ MACRO minigame_start
 	lang F, para "bla bla voyage"
 	lang F, line "temporel"
 
-	lang I, text "MAISY: "
+	lang I, text "MAISY: qualcosa"
+	lang I, line "qualcosa AZALINA"
+	lang I, para "qualcosa qualcosa"
+	lang I, line "la nipote di KURT"
+	lang I, para "qualcosa qualcosa"
+	lang I, line "viaggio nel tempo"
 
 	lang S, text "MILLIE: bla bla"
 	lang S, line "bla bla AZALEA"
@@ -116,7 +121,7 @@ MACRO minigame_name
 	lang E, db "A TIMELESS GIFT"
 	lang D, db "ZEITLOSE GABE"
 	lang F, db "CADEAU INTEMPOREL"
-	lang I, db "?"
+	lang I, db "DONO SENZA TEMPO"
 	lang S, db "REGALO ATEMPORAL"
 ENDM
 
@@ -195,12 +200,13 @@ MinigameStart::
 	lang I, nts_start
 	lang I, nts_player_name 0
 	lang I, nts_end
-	lang I, db "?"
+	lang I, db " tira"
+	lang I, next "un"
 	lang I, nts_start
 	lang I, nts_number wPlayersRoll, 1, 2
 	lang I, nts_end
 	lang I, db   "!"
-	lang I, next "?"
+	lang I, next "MAISY tirerà..."
 
 	lang S, nts_start
 	lang S, nts_player_name 0
@@ -314,7 +320,7 @@ MinigameStart::
 	lang E, db "HIGHER"
 	lang D, db "HÖHER"
 	lang F, db "PLUS"
-	lang I, db "?"
+	lang I, db "PIù ALTO"
 	lang S, db "MÁS ALTO"
 	db "@"
 
@@ -323,7 +329,7 @@ MinigameStart::
 	lang E, db "LOWER"
 	lang D, db "NIEDRIGER"
 	lang F, db "MOINS"
-	lang I, db "?"
+	lang I, db "PIù BASSO"
 	lang S, db "MÁS BAJO"
 .menuDummyDesc
 	db "@"
@@ -364,7 +370,7 @@ MinigameStart::
 	lang F, nts_end
 	lang F, db "!"
 
-	lang I, db "?"
+	lang I, db "MAISY tira un"
 	lang I, nts_start
 	lang I, nts_number wChiekosRoll, 1, 2
 	lang I, nts_end
@@ -411,7 +417,7 @@ MinigameStart::
 	lang D, text "MAISY: Unent-"
 	lang D, line "schieden…"
 	lang F, text "LILA: Egalité..."
-	lang I, text "?"
+	lang I, text "MAISY: Siamo pari…"
 	lang S, text "MILLIE: Empate..."
 	done
 
@@ -429,7 +435,7 @@ MinigameStart::
 	lang D, text "MAISY: Ich"
 	lang D, line "gewinne!"
 	lang F, text "LILA: J'ai gagné!"
-	lang I, text "?"
+	lang I, text "MAISY: Ho vinto!"
 	lang S, text "MILLIE: ¡Yo gano!"
 	done
 
@@ -447,7 +453,7 @@ MinigameStart::
 	lang D, text "MAISY: Du"
 	lang D, line "gewinnst!"
 	lang F, text "LILA: Tu as gagné!"
-	lang I, text "?"
+	lang I, text "MAISY: Hai vinto!"
 	lang S, text "MILLIE: ¡Tú ganas!"
 	done
 
@@ -516,7 +522,7 @@ MinigameStart::
 	lang E, db "YES"
 	lang D, db "JA"
 	lang F, db "OUI"
-	lang I, db "?"
+	lang I, db "Sì"
 	lang S, db "SI"
 	db "@"
 
@@ -525,7 +531,7 @@ MinigameStart::
 	lang E, db "NO"
 	lang D, db "NEIN"
 	lang F, db "NON"
-	lang I, db "?"
+	lang I, db "NO"
 	lang S, db "NO"
 	db "@"
 
@@ -598,7 +604,11 @@ ENDM
 	lang F, next "le SOUTERRAIN de"
 	lang F, next "DOUBLONVILLE?"
 
-	lang I, db   "?"
+	lang I, db   "Ci sono in tutto"
+	lang I, next "in tutto quattro"
+	lang I, next "commercianti nel"
+	lang I, next "SOTTERRANEO di"
+	lang I, next "FIORDOROPOLI?"
 
 	lang S, db   "¿Hay un total"
 	lang S, next "de cuatro personas"
@@ -628,7 +638,11 @@ ENDM
 	lang F, next "du MOT DE PASSE"
 	lang F, next "de BUENA?"
 
-	lang I, db   "?"
+	lang I, db   "SPINARAK è una"
+	lang I, next "delle password"
+	lang I, next "che appare nel"
+	lang I, next "PASSWORD SHOW di"
+	lang I, next "BUENA alla radio?"
 
 	lang S, db   "¿Es SPINARAK una"
 	lang S, next "de las contraseñas"
@@ -654,7 +668,9 @@ ENDM
 	lang F, next "elles fleuri au"
 	lang F, next "PARC NATIONAL?"
 
-	lang I, db   "?"
+	lang I, db   "Ci sono dei fiori"
+	lang I, next "già sbocciati nel"
+	lang I, next "PARCO NAZIONALE?
 
 	lang S, db   "¿Hay alguna"
 	lang S, next "flor en plena"
@@ -680,7 +696,9 @@ ENDM
 	lang F, next "au 4ème étage du"
 	lang F, next "PHARE d'OLIVILLE?"
 
-	lang I, db   "?"
+	lang I, db   "AMPHY si trova al"
+	lang I, next "4° piano del"
+	lang I, next "FARO OLIVINOPOLI?"
 
 	lang S, db   "¿Está AMPHY en"
 	lang S, next "el FARO de"
@@ -699,7 +717,8 @@ ENDM
 	lang F, db   "Un BONBON RAGE"
 	lang F, next "coûte-t-il 400¥?"
 
-	lang I, db   "?"
+	lang I, db   "Una IRAMELLA costa"
+	lang I, next "¥400?"
 
 	lang S, db   "¿Es el precio de"
 	lang S, next "un CARAM. FURIA"
@@ -732,7 +751,12 @@ ENDM
 	lang F, next "QUEUERAMOLOS et"
 	lang F, next "QUEUE FOUINETTE?"
 
-	lang I, db   "?"
+	lang I, db   "Le password per la"
+	lang I, next "stanza del capo"
+	lang I, next "nel COVO TEAM"
+	lang I, next "ROCKET sono"
+	lang I, next "CODASLOWPOKE e"
+	lang I, next "CODASENTRET?"
 
 	lang S, db   "¿Son COLASLOWPOKE"
 	lang S, next "y COLASENTRET"
@@ -761,7 +785,10 @@ ENDM
 	lang F, next "avoir utilisé"
 	lang F, next "CASCADE?"
 
-	lang I, db   "?"
+	lang I, db   "Dopo aver usato"
+	lang I, next "CASCATA finisci"
+	lang I, next "guardando all'"
+	lang I, next "indietro?
 
 	lang S, db   "¿Te encuentras"
 	lang S, next "del revés"
@@ -787,7 +814,10 @@ ENDM
 	lang F, next "d'ARENE à utiliser"
 	lang F, next "quatre #MON?"
 
-	lang I, db   "?"
+	lang I, db   "ANGELO è l'unico"
+	lang I, next "CAPOPALESTRA che"
+	lang I, next "usa quattro"
+	lang I, next "#MON?"
 
 	lang S, db   "¿Es MORTI el único"
 	lang S, next "LÍDER de GIMNASIO"
@@ -858,7 +888,7 @@ ENDM
 	lang E, db "MAIZIE's RATING"
 	lang D, db "MAISYs BEWERTUNG"
 	lang F, db "EVALUATION de LILA"
-	lang I, db "?"
+	lang I, db "VALUTAZ. di MAISY"
 	lang S, db "NOTA DE MILLIE"
 	db "@"
 
@@ -933,7 +963,7 @@ ENDM
 
 	lang F, text "LILA: ?"
 
-	lang I, text "?"
+	lang I, text "MAISY: ?"
 
 	lang S, text "MILLIE: ¿?"
 
@@ -952,7 +982,8 @@ ENDM
 
 	lang F, text "LILA: c'est non"
 
-	lang I, text "?"
+	lang I, text "MAISY:"
+	lang I, line "Quiz fallito."
 
 	lang S, text "MILLIE:"
 	lang S, line "prueba fallida"
@@ -972,7 +1003,8 @@ ENDM
 
 	lang F, text "?"
 
-	lang I, text "?"
+	lang I, text "MAISY:"	
+	lang I, text "Quiz superato!"
 
 	lang S, text "MILLIE:"
 	lang S, line "prueba superada"
@@ -1002,7 +1034,7 @@ ENDM
 	lang D, line "noch einmal!"
 	lang F, text "LILA: Essaye"
 	lang F, line "encore!"
-	lang I, text "?"
+	lang I, text "MAISY: Riprova!"
 	lang S, text "MILLIE: ¿?"
 	done
 
@@ -1044,6 +1076,12 @@ ENDM
 	lang F, text "?"
 
 	lang I, text "?"
+	lang I, para ""
+	lang I, nts_start
+	lang I, nts_player_name 0
+	lang I, nts_end
+	lang I, db   " riceve"
+	lang I, line "MT22."
 
 	lang S, text "?"
 	lang S, para ""

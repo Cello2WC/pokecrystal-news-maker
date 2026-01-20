@@ -74,7 +74,13 @@ MACRO minigame_start
 	lang F, line "<……> <……>"
 	lang F, para "Erreur 2"
 
-	lang I, text "?"
+	lang I, text "OAK: Ti guiderò"
+	lang I, line "io per ora!"
+	; this dialogue has not been recovered past this point.
+	; following is filler.
+	lang I, para "<……> <……>"	
+	lang I, line "<……> <……>"	
+	lang I, para "Errore 2"
 	
 	; Spanish
 	lang S, text "OAK: Te guiaré"
@@ -426,6 +432,13 @@ ENDM
 	lang I, next "1. MINESTRONE"
 	lang I, next "2. CURRY"
 	lang I, next "3. NOODLE"
+	
+	lang S, db   "El plato especial"
+	lang S, next "de MAMÁ es el"
+	lang S, next "VOLCÁN CANELA ?"
+	lang S, next "1. HAMBURGUESA"
+	lang S, next "2. CURRY"
+	lang S, next "3. TALLARINES"
 
 	next "@"
 
@@ -464,12 +477,12 @@ ENDM
 	lang I, next "va nell'ACCADEMIA?"
 	lang I, next "1. 5  2. 6  3. 7"
 	
-	lang S, db   "El plato especial"
-	lang S, next "de MAMÁ es el"
-	lang S, next "VOLCÁN CANELA ?"
-	lang S, next "1. HAMBURGUESA"
-	lang S, next "2. CURRY"
-	lang S, next "3. TALLARINES"
+	lang S, db   "Cuántas veces"
+	lang S, next "gira PRIMO"
+	lang S, next "desde que hablamos"
+	lang S, next "con él hasta entra"
+	lang S, next "en la ACADEMIA?"
+	lang S, next "1. 5  2. 6  3. 7"
 	next "@"
 
 .question6Text
@@ -507,12 +520,12 @@ ENDM
 	lang I, next "2. ANTIPARALISI"
 	lang I, next "3. POZIONE"
 	
-	lang S, db   "Cuántas veces"
-	lang S, next "gira PRIMO"
-	lang S, next "desde que hablamos"
-	lang S, next "con él hasta entra"
-	lang S, next "en la ACADEMIA?"
-	lang S, next "1. 5  2. 6  3. 7"
+	lang S, db   "Cuál de estos"
+	lang S, next "objetos no está"
+	lang S, next "en la CUEVA UNIÓN?"
+	lang S, next "1. ATAQUE X"
+	lang S, next "2. ANTIPARALIZ"
+	lang S, next "3. POCIÓN"
 	
 	next "@"
 
@@ -552,12 +565,12 @@ ENDM
 	lang I, next "acchiapparlo?"
 	lang I, next "1. 3  2. 4  3. 5"
 	
-	lang S, db   "Cuál de estos"
-	lang S, next "objetos no está"
-	lang S, next "en la CUEVA UNIÓN?"
-	lang S, next "1. ATAQUE X"
-	lang S, next "2. ANTIPARALIZ"
-	lang S, next "3. POCIÓN"
+	lang S, db   "Cuál es la menor"
+	lang S, next "cantidad de veces"
+	lang S, next "que debes hablar"
+	lang S, next "con FARFETCH'd"
+	lang S, next "detenerlo?"
+	lang S, next "1. 3  2. 4  3. 5"
 	
 	next "@"
 
@@ -597,12 +610,12 @@ ENDM
 	lang I, next "li hai salvati?"
 	lang I, next "1. 2  2. 3  3. 4"
 	
-	lang S, db   "Cuál es la menor"
-	lang S, next "cantidad de veces"
-	lang S, next "que debes hablar"
-	lang S, next "con FARFETCH'd"
-	lang S, next "detenerlo?"
-	lang S, next "1. 3  2. 4  3. 5"
+	lang S, db   "¿Cuántos SLOWPOKE"
+	lang S, next "había en la cueva"
+	lang S, next "cuando rescataste"
+	lang S, next "en el POZO"
+	lang S, next "SLOWPOKE?"
+	lang S, next "1. 2  2. 3  3. 4"
 	
 	next "@"
 
@@ -643,12 +656,12 @@ ENDM
 	lang I, next "1. 3º  2. 4º "
 	lang I, next "3. 5º"
 	
-	lang S, db   "¿Cuántos SLOWPOKE"
-	lang S, next "había en la cueva"
-	lang S, next "cuando rescataste"
-	lang S, next "en el POZO"
-	lang S, next "SLOWPOKE?"
-	lang S, next "1. 2  2. 3  3. 4"
+	lang S, db   "¿Cuál es la parada"
+	lang S, next "mar el recorrido"
+	lang S, next "del GUÍA alrededor"
+	lang S, next "de CIUDAD CEREZO?"
+	lang S, next "1. 3era  2. 4ta "
+	lang S, next "3. 5ta"
 	
 	next "@"
 
@@ -688,12 +701,12 @@ ENDM
 	lang I, next "2. FRANCOBOLLO"
 	lang I, next "3. RIVISTA"
 	
-	lang S, db   "¿Cuál es la parada"
-	lang S, next "mar el recorrido"
-	lang S, next "del GUÍA alrededor"
-	lang S, next "de CIUDAD CEREZO?"
-	lang S, next "1. 3era  2. 4ta "
-	lang S, next "3. 5ta"
+	lang S, db   "¿Cuál de estos"
+	lang S, next "objetos"
+	lang S, next "no se encuentra."
+	lang S, next "CASA SR. #MON?"
+	lang S, next "1.MONEDA 2.SELLO"
+	lang S, next "3. REVISTAS"
 	
 	next "@"
 
@@ -747,13 +760,7 @@ ENDM
 	lang D, db "EICHs BEWERTUNG"
 	lang F, db "EVALUATION de CHEN"
 	lang I, db "RAPPORTO DI OAK"
-	
-	lang S, db   "¿Cuál de estos"
-	lang S, next "objetos"
-	lang S, next "no se encuentra."
-	lang S, next "CASA SR. #MON?"
-	lang S, next "1.MONEDA 2.SELLO"
-	lang S, next "3. REVISTAS"
+	lang S, db "EVALUACIÓN DE OAK"
 	
 	db "@"
 
@@ -823,7 +830,10 @@ ENDM
 
 	lang I, db   "Fai il quiz per"
 	lang I, line "una valutazione!"
-	lang S, db "EVALUACIÓN DE OAK"
+
+	lang S, db   "¡Listo!"
+	lang S, line "¡Tu evaluación!"
+
 	db "@"
 
 .textScoreLow

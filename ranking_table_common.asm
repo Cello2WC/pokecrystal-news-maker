@@ -224,7 +224,7 @@ ENDC
 	lang F, cont "s.v.p."
 	
 	lang I, text "Aggiornamento"
-	lang I, line "classifiche…"
+	lang I, line "classifiche"
 	lang I, cont "fallito…"
 	lang I, para "Riscarica le"
 	lang I, line "NOTIZIE."
@@ -624,8 +624,8 @@ ENDC
 	lang F, db   "Voir le classement"
 	lang F, line "de quelle zone?"
 	
-	lang I, db   "Scegli dove ved-"
-	lang I, line "ere la classifica."
+	lang I, db   "Scegli dove vede-"
+	lang I, line "re la classifica."
 	
 	lang S, db   "Elige para ver"
 	lang S, line "la clasificación."
@@ -873,7 +873,7 @@ ENDC
 	lang E, db "yrs. "
 	lang D, db "Jahre"
 	lang F, db "ans  "
-	lang I, db "?"
+	lang I, db "anni"
 	lang S, db "años"
 	nts_start
 	nts_ranking_region $0007, $7, 
@@ -886,7 +886,7 @@ ENDC
 ;	lang E, db "-year-old "
 ;	lang D, db "-jährig "
 ;	lang F, db " ans "
-;	lang I, db ""
+;	lang I, db "enne"
 ;	lang S, db ""
 ;	nts_start
 ;	nts_ranking_gender $000B, 4, 
@@ -894,7 +894,7 @@ ENDC
 ;	lang E, line "from "
 ;	lang D, line "aus "
 ;	lang F, line "de "
-;	lang I, line ""
+;	lang I, line "da "
 ;	lang S, line ""
 ;	nts_start
 ;	nts_ranking_region $0007, $7, 
@@ -958,7 +958,7 @@ ENDC
 	lang F, db   "!"
 	lang F, line "Félicitations!"
 	
-	lang I, db "GRADO di "
+	lang I, db "Il GRADO di "
 	lang I, nts_start
 	lang I, nts_player_name, 0
 	lang I, nts_end
@@ -1018,7 +1018,7 @@ ENDC
 	lang F, para "Absent du"
 	lang F, line "classement."
 	
-	lang I, db "GRADO di "
+	lang I, db "Il GRADO di "
 	lang I, nts_start
 	lang I, nts_player_name, 0
 	lang I, nts_end
@@ -1031,7 +1031,7 @@ ENDC
 	lang S, nts_start
 	lang S, nts_player_name, 0
 	lang S, nts_end	
-	lang I, db   "es…"
+	lang S, db   "es…"
 	lang S, para "No está"
 	lang S, line "CLASIFICACIÓN."
 	para "@"
@@ -1058,7 +1058,7 @@ ENDC
 	lang F, nts_end
 	lang F, db ":"
 	
-	lang I, db "PUNTEG. di "
+	lang I, db "PUNTEGG. di "
 	lang I, nts_start
 	lang I, nts_player_name 0 
 	lang I, nts_end
@@ -1099,7 +1099,7 @@ ENDC
 	lang F, nts_end
 	lang F, db ":"
 	
-	lang I, db "PUNTEG. di "
+	lang I, db "PUNTEGG. di "
 	lang I, nts_start
 	lang I, nts_player_name 0 
 	lang I, nts_end
@@ -1140,7 +1140,7 @@ ENDC
 	lang F, nts_end
 	lang F, db ":"
 	
-	lang I, db "PUNTEG. di "
+	lang I, db "PUNTEGG. di "
 	lang I, nts_start
 	lang I, nts_player_name 0 
 	lang I, nts_end

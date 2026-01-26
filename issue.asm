@@ -68,7 +68,7 @@ SECTION "News", ROM0[$0000]
 	lang D, db "NACHRICHTEN Nr. 1";"NACHRICHTEN Nr. 0"
 	lang F, db "INFOS PKMN No.1";"INFOS PKMN No.0"
 	lang I, db "NOTIZIE PKMN Nº1";"NOTIZIE PKMN Nº0"
-	lang S, db "?"
+	lang S, db "NOTICIA PKMN N.º1"
 	db "@"
 
 	;news_menu 2, 5, 1, 4, 0, 2, $10, $04, $07, $04, $02, $04
@@ -150,7 +150,7 @@ ENDC
 	lang D, db "NACHRICHTEN-INFO"
 	lang F, db "GUIDE des INFOS"
 	lang I, db "GUIDA NOTIZIE"
-	lang S, db "?"
+	lang S, db "GUÍA DE NOTICIAS"
 	db "@"
 	
 .menuTrainerRankingsName
@@ -159,7 +159,7 @@ ENDC
 	lang D, db "BESTENLISTE"
 	lang F, db "CLASSEMENT"
 	lang I, db "CLASSIFICA ALLEN."
-	lang S, db "?"
+	lang S, db "CLASIF. ENTRE."
 	db "@"
 .menuMinigameName
 	minigame_name
@@ -179,7 +179,7 @@ ENDC
 	lang D, db "GEBÜHREN-INFOS"
 	lang F, db "INFOS TARIFS"
 	lang I, db "INFO COSTI"
-	lang S, db "?"
+	lang S, db "INFO. DE TARIFAS"
 	db "@"
 
 .menuQuitName
@@ -188,7 +188,7 @@ ENDC
 	lang D, db "ZURÜCK"
 	lang F, db "RETOUR"
 	lang I, db "ESCI"
-	lang S, db "?"
+	lang S, db "SALIR"
 	db "@"
 
 .menuNewsGuideScript
@@ -323,7 +323,8 @@ ENDC
 	lang I, db   "Selezionare un"
 	lang I, line "menù, per favore."
 	
-	lang S, db   "?"
+	lang S, db   "Por favor, elija"
+	lang S, line "un menú."
 	
 	db "@"
 	

@@ -571,11 +571,11 @@ ENDC
 	nts_player_zip_backup 3
 	nts_end
 	lang J, db "　<NO>ランキング"
-	lang E, db "×× RANKINGS"
+	lang E, db " RANKINGS"
 	lang D, db "-LISTE"
 	lang F, db " CLASSEMENT"
 	lang I, db " CLASSIFICA"
-	lang S, db "×× CLASIFICACIÓN"
+	lang S, db " CLASIFICACIÓN"
 	db "@"
 	
 .menuitem4_name

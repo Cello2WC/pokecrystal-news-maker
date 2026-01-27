@@ -591,7 +591,7 @@ ENDM
 
 	; Spanish
 	lang S, db   "En TORRE #MON"
-	lang S, next "Qué dijo»"
+	lang S, next "Qué dijo"
 	lang S, next "GHOST en"
 	lang S, next "el combate?"
 	lang S, next "1. Fuera  2. Vete"

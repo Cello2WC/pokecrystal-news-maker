@@ -2180,7 +2180,7 @@ DEF RANKING_TREE_ENCOUNTERS_SPACING EQU 0
 IF DEF(_LANG_J)
 DEF RANKING_TREE_ENCOUNTERS_NAME EQUS "ずつきを　した　かいすう"; Max 17 chars
 MACRO describe_ranking_TREE_ENCOUNTERS
-	db   "これまでに　木に　ずつきわざを"
+	db   "これまでに　きに　ずつきわざを"
 	cont "たたかっていない　ときで"
 	cont "つかった　かいすう　なのです。"
 ENDM

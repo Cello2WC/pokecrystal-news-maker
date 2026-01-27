@@ -200,7 +200,7 @@ ENDM
 MACRO minigame_name
 	lang J, db "ポケモンもじめいろ　かんたん"
 	lang E, db "EASY #MON MAZE"
-	lang D, db "LEICHTES LABYRINTH"
+	lang D, db "LABYRINTH LEICHT"
 	lang F, db "LABYRINTHE FACILE"
 	lang I, db "LABIRINTO FACILE"
 	lang S, db "LABERINTO #MON"
@@ -209,7 +209,7 @@ ENDM
 MACRO minigame_name_2
 	lang J, db "ポケモンもじめいろ　むずかしい"
 	lang E, db "HARD #MON MAZE"
-	lang D, db "SCHWERES LABYRINTH"
+	lang D, db "LABYRINTH SCHWER"
 	lang F, db "LABYRINTHE EXPERT"
 	lang I, db "LABIRINTO ESPERTO"
 	lang S, db "LABERINTO #MON"

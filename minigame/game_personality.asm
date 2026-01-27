@@ -430,7 +430,7 @@ ENDM
 	lang I, next "dieci del mio"
 	lang I, next "#MON preferito,"
 	lang I, next "anche se non"
-	lang I, next "fosse forte.
+	lang I, next "fosse forte."
 
 	; Spanish
 	lang S, db   "Me haré con más"

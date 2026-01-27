@@ -240,7 +240,6 @@ MACRO minigame_start
 	lang S, line "seguidos y ganas!"
 
 	lang S, para "¡Empecemos!"
-	lang S, db "MÁS ALTO MÁS BAJO"
 	done
 ENDM
 ; Max 17 chars
@@ -249,10 +248,9 @@ MACRO minigame_name
 	lang E, db "TALLER OR SHORTER"
 	lang D, db "GRÖSSER? KLEINER?"
 	lang F, db "+ GRAND OU + PETIT"
-	lang I, db "?"
+	lang I, db "PIÙ O MENO ALTO?"
 	lang S, db "MÁS ALTO MÁS BAJO"
 ENDM
-
 ; deprecating this, at least for now,
 ; as it seems it might not have existed.
 
@@ -550,14 +548,14 @@ ENDR
 
 	; this is a bodge and i know it...
 .textAnswers
-	lang J, db "▶たかい　ひくい　リスト　やめる"
+	lang J, db "たかい　ひくい　リスト　やめる"
 	lang E, db   " TALLER    SHORTER"
 	lang E, next " LIST      CANCEL"
 	lang D, db   " GRÖSSER   KLEINER"
 	lang D, next " LISTE     ZURÜCK"
 	lang F, db   " + GRAND   + PETIT"
 	lang F, next " LISTE     RETOUR"
-	lang I, db   " PIù ALTO PIù BASSO"
+	lang I, db   " + ALTO    - ALTO"
 	lang I, next " LISTA     ESCI"
 	lang S, db   " MÁS ALTO MÁS BAJO"
 	lang S, next " LISTA     SALIR"

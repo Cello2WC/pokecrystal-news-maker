@@ -55,7 +55,7 @@ MACRO minigame_start
 	; English
 	lang E, text "BLAINE: Hah!"
 
-	lang E, para "I'm the hotheaded"
+	lang E, para "I'm the hot-headed"
 	lang E, line "quiz master!"
 
 	lang E, para "From CINNABAR…"

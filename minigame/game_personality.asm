@@ -995,7 +995,7 @@ MACRO quizresult
 	nsc_textbox 1, 14, .result\1text_gift
 	nsc_giveitem \4, .result\1gotGift, .result\1noGift
 .result\1gotGift
-IF STRCMP(STRSLICE("\4", 0, 3), "TM_") == 0
+IF !STRCMP(STRSUB("\4", 1, 3), "TM_")
 	nsc_playsound SFX_GET_TM
 ELSE
 	nsc_playsound SFX_ITEM
@@ -1925,7 +1925,7 @@ ENDM
 	lang S, line "es realmente"
 	lang S, cont "¡chulo!"
 	
-	lang S, para "«¡Sigue lanzándote"
+	lang S, para "¡Sigue lanzándote"
 	lang S, line "combate y hazte"
 	lang S, cont "aún más fuerte!"
 	

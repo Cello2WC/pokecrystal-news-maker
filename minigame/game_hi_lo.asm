@@ -551,16 +551,16 @@ ENDR
 	; this is a bodge and i know it...
 .textAnswers
 	lang J, db "▶たかい　ひくい　リスト　やめる"
-	lang E, db   "▶TALLER    SHORTER"
+	lang E, db   " TALLER    SHORTER"
 	lang E, next " LIST      CANCEL"
-	lang D, db   "▶GRÖSSER   KLEINER"
+	lang D, db   " GRÖSSER   KLEINER"
 	lang D, next " LISTE     ZURÜCK"
-	lang F, db   "▶+ GRAND   + PETIT"
+	lang F, db   " + GRAND   + PETIT"
 	lang F, next " LISTE     RETOUR"
-	lang I, db   "▶PIù ALTO  PIù BASSO"
-	lang I, next " LISTA	 ESCI"
-	lang S, db   "▶MÁS ALTO MÁS BAJO"
-	lang S, next "▶LISTA     SALIR"
+	lang I, db   " PIù ALTO PIù BASSO"
+	lang I, next " LISTA     ESCI"
+	lang S, db   " MÁS ALTO MÁS BAJO"
+	lang S, next " LISTA     SALIR"
 	db "@"
 
 	; as is this

@@ -1136,7 +1136,7 @@ ENDM
 	lang S, line "superiores en"
 	lang S, cont "dificultad!"
 	
-	lang S, para "«¡Debes haber"
+	lang S, para "¡Debes haber"
 	lang S, line "tenido problemas!"
 	
 	lang S, para "Entonces, ¿cuántos"
@@ -1507,7 +1507,7 @@ ENDM
 	lang S, line "¡Cinco respuestas"
 	lang S, cont "correctas!"
 	
-	lang S, para "«Justo en"
+	lang S, para "Justo en"
 	lang S, line "la mitad!"
 	
 	lang S, para "¡En un combate"

@@ -2088,7 +2088,7 @@ ENDM
 	; Italian
 	lang I, text "Il tuo tipo di"
 	lang I, line "<TRAINER> è"
-	lang I, conf "SCIENZIATO…"
+	lang I, cont "SCIENZIATO…"
 
 	lang I, para "Le persone pro-"
 	lang I, line "babilmente ti"

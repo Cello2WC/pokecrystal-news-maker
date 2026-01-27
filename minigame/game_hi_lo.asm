@@ -247,7 +247,7 @@ MACRO minigame_name
 	lang J, db "#　たかいか　ひくいか？"
 	lang E, db "TALLER OR SHORTER"
 	lang D, db "GRÖSSER? KLEINER?"
-	lang F, db "+ GRAND OU + PETIT"
+	lang F, db "+ GRAND / + PETIT"
 	lang I, db "PIÙ O MENO ALTO?"
 	lang S, db "MÁS ALTO MÁS BAJO"
 ENDM

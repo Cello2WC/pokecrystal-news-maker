@@ -1213,7 +1213,7 @@ ENDC
 	nts_player_zip_backup 3
 	nts_end
 	lang J, db "　<NO>トップ１０！"
-	lang E, db "×× TOP 10!"
+	lang E, db " TOP 10!"
 	lang D, db " TOP-10!"
 	lang F, db " TOP 10!"
 	lang I, db " TOP 10!"

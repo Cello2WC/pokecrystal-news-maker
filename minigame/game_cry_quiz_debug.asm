@@ -412,7 +412,11 @@ IF CRY_QUIZ_ANSWER_{_QUESTION_NUMBER} == \2
 ELSE
 	nsc_set wNewsScratch1, 1
 ENDC
+IF DEF(_LANG_D)
+	nsc_yesno 12, 7, .submitAnswer, .dontSubmit
+ELSE
 	nsc_yesno 13, 7, .submitAnswer, .dontSubmit
+ENDC
 	nsc_ret
 .answer{_ANSWER_NUMBER}notquestion{_QUESTION_NUMBER}
 SHIFT

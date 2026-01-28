@@ -896,8 +896,13 @@ ENDM
 
 	news_def_strings
 	news_string 0, 0, "@" ; at least one string must be specified, else game crashes
-
+IF DEF(_LANG_I)
+	news_menu  2, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
+ELIF DEF(_LANG_S)
+	news_menu  2, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
+ELSE
 	news_menu  3, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
+ENDC
 
 	news_buttonscript .aButton ; script pointer a button
 	news_buttonscript .aButton ; script pointer b button
@@ -924,7 +929,11 @@ ENDM
 	nsc_waitbutton
 	nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, .textNotAllCorrect
+IF DEF(_LANG_D)
+	nsc_yesno 12, 7, .restartQuiz, .giveUp
+ELSE
 	nsc_yesno 13, 7, .restartQuiz, .giveUp
+ENDC
 ;	nsc_page NewsRoot
 ;	nsc_ret
 

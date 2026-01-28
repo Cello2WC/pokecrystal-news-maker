@@ -438,11 +438,26 @@ ENDM
 .menuCrySet3Desc
 .menuGameInstructionDesc
 .menuCancelDesc
-	db "?@"
-
-
-
-
+	; Japanese
+	lang J, db   "メニュー<WO>えらんでください"
+	; English
+	lang E, db   "Please choose"
+	lang E, line "a menu."
+	
+	; German
+	lang D, db   "Bitte wähle ein"
+	lang D, line "Menü aus."
+	
+	lang F, db   "Veuillez choisir"
+	lang F, line "un menu."
+	
+	lang I, db   "Selezionare un"
+	lang I, line "menù, per favore."
+	
+	lang S, db   "Por favor, elija"
+	lang S, line "menù, per favore."
+	
+	db "@"
 
 	news_screen CryGame, MUSIC_SHOW_ME_AROUND;MUSIC_VIRIDIAN_CITY
 	news_def_pals
@@ -636,7 +651,11 @@ DEF RIGHT_BITS EQU %11_11_11_11
 
 	nsc_delay 1
 	nsc_textbox 1, 14, .thisSetText
+IF DEF(_LANG_D)	
+	nsc_yesno 12, 7, .useThisSet, .notThisSet
+ELSE
 	nsc_yesno 13, 7, .useThisSet, .notThisSet
+ENDC
 .notThisSet
 	nsc_page CrySetSelect
 

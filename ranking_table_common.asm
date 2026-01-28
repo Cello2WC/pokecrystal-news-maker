@@ -870,11 +870,11 @@ ENDC
 	nts_ranking_number $000A, 1, 3, 4  ; prints one additional space after this number
 	nts_end
 	lang J, db "さい　"
-	lang E, db "yrs. "
-	lang D, db "Jahre"
-	lang F, db "ans  "
-	lang I, db "anni"
-	lang S, db "años"
+	lang E, db ""
+	lang D, db ""
+	lang F, db ""
+	lang I, db ""
+	lang S, db ""
 	nts_start
 	nts_ranking_region $0007, $7, 
 	nts_end

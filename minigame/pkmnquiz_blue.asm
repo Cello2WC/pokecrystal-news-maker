@@ -873,8 +873,13 @@ ENDM
 
 	news_def_strings
 	news_string 0, 0, "@" ; at least one string must be specified, else game crashes
-
-	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
+IF DEF(_LANG_E)
+	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01 ; RATING text location		
+ELIF DEF(_LANG_D)
+	news_menu  3, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01 ; RATING text location
+ELSE	
+	news_menu  2, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
+ENDC
 
 	news_buttonscript .aButton ; script pointer a button
 	news_buttonscript .aButton ; script pointer b button
@@ -901,7 +906,11 @@ ENDM
 	nsc_waitbutton
 	nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, .textNotAllCorrect
+IF DEF(_LANG_D)
+	nsc_yesno 12, 7, .restartQuiz, .giveUp
+ELSE
 	nsc_yesno 13, 7, .restartQuiz, .giveUp
+ENDC
 ;	nsc_page NewsRoot
 ;	nsc_ret
 
@@ -1746,6 +1755,7 @@ ENDM
 
 	; German
 	lang D, text "BLAU: Und? Das"
+	lang D, line ""
 	lang D, line "war ein schweres"
 	lang D, cont "Quiz, nicht wahr?"
 

@@ -629,7 +629,11 @@ ENDM
 	nsc_waitbutton
 	nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, .textNotAllCorrect
+IF DEF(_LANG_D)
+	nsc_yesno 12, 7, .restartQuiz, .giveUp
+ELSE
 	nsc_yesno 13, 7, .restartQuiz, .giveUp
+ENDC
 
 .restartQuiz
 	nsc_clear 1, 13, 18, 4

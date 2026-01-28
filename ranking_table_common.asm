@@ -101,7 +101,7 @@ ENDC
 	lang D, db "ÜBERTRAGEN"
 	lang F, db "MàJ CLASSEMENT"
 	lang I, db "AGG. CLASSIFICHE"
-	lang S, db "ACT. CLASIFICACIÓN"
+	lang S, db "ACTUALIZER. CLASIF."
 	db "@"
 
 .menuRankingsDescriptionText
@@ -110,7 +110,7 @@ ENDC
 	lang D, db "BESTENL.-INFO"
 	lang F, db "INFOS CLASSEMENT"
 	lang I, db "INFO CLASSIFICA"
-	lang S, db "INFO CLASIFICACIÓN"
+	lang S, db "INFO CLASIF."
 	db "@"
 	
 .menuReturnText
@@ -552,7 +552,7 @@ ENDC
 	lang D, db "LANDESLISTE"
 	lang F, db "CLASSEMENT NATIO."
 	lang I, db "CLASSIFICA NAZ."
-	lang S, db "CLASIFICACIÓN"
+	lang S, db "CLASIF. NACIÓN"
 	db "@"
 .menuitem2_name
 	nts_start
@@ -563,7 +563,7 @@ ENDC
 	lang D, db "-LISTE"
 	lang F, db " CLASSEMENT"
 	lang I, db " CLASSIFICA"
-	lang S, db "CLASIFICACIÓN"
+	lang S, db " CLASIFICACIÓN"
 	db "@"
 .menuitem3_name
 	lang J, db "■" ; post code symbol
@@ -865,8 +865,18 @@ ENDC
 	done
 .ranked_player_info
 ;IF DEF(_LANG_J)
-	nts_start 
+	nts_start
+IF DEF(_LANG_J)
 	nts_ranking_gender $000B, 4
+ELIF DEF(_LANG_E)
+	nts_ranking_gender $000B, 5
+ELIF DEF(_LANG_S)	
+	nts_ranking_gender $000B, 6
+ELIF DEF(_LANG_f)
+	nts_ranking_gender $000B, 7
+ELSE
+	nts_ranking_gender $000B, 8
+ENDC
 	nts_ranking_number $000A, 1, 3, 4  ; prints one additional space after this number
 	nts_end
 	lang J, db "さい　"

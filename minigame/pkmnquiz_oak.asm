@@ -99,7 +99,7 @@ MACRO minigame_name
 	lang D, db "#MON-QUIZ!"
 	lang F, db "QUIZ #MON!"
 	lang I, db "?"
-	lang S, db "Acertijo #MON"
+	lang S, db "ACERTIJO #MON"
 ENDM
 
 MACRO minigame_desc

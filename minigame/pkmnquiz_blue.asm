@@ -177,7 +177,7 @@ MACRO minigame_name
 	lang D, db "#MON-QUIZ!"
 	lang F, db "QUIZ #MON!"
 	lang I, db "#MON QUIZ!"
-	lang S, db "Acertijo #MON"
+	lang S, db "ACERTIJO #MON"
 ENDM
 
 MACRO minigame_desc
@@ -873,8 +873,10 @@ ENDM
 
 	news_def_strings
 	news_string 0, 0, "@" ; at least one string must be specified, else game crashes
-IF DEF(_LANG_E)
-	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01 ; RATING text location		
+IF DEF(_LANG_J)
+	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01 ; RATING text location
+ELIF DEF(_LANG_E)
+	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01 ; RATING text location
 ELIF DEF(_LANG_D)
 	news_menu  3, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01 ; RATING text location
 ELSE	

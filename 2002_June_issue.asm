@@ -61,8 +61,7 @@ SECTION "News", ROM0[$0000]
 	db "@"
 
 	;news_menu 2, 5, 1, 4, 0, 2, $10, $04, $07, $04, $02, $04
-	;news_menu 2, 5, 1, 4, 0, 2, 16, 4, 7, 4, SHOW_ARROWS | SHOW_DESCRIPTIONS, $04
-	news_menu 2, 5, 1, 4, 0, 2, 16, 4, 7, 4, SHOW_DESCRIPTIONS, $04
+	news_menu 2, 5, 1, 4, 0, 2, 16, 4, 7, 4, SHOW_ARROWS | SHOW_DESCRIPTIONS, $04
 
 	news_buttonscript .a_button			; [a] script
 	news_buttonscript .b_button			; [b] script

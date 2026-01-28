@@ -730,9 +730,8 @@ ENDM
 
 	; French
 	lang F, db   "Quel est le secret"
-	lang F, next "du GARDIEN du"
-	lang F, next "PARC SAFARI?"
-	lang F, next "Il a …?"
+	lang F, next "du GARDIEN du PARC"
+	lang F, next "SAFARI? Il a …?"
 	lang F, next "1. Une perruque"
 	lang F, next "2. Un dentier"
 	lang F, next "3. Un doudou"
@@ -877,7 +876,11 @@ IF DEF(_LANG_J)
 	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01 ; RATING text location
 ELIF DEF(_LANG_E)
 	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01 ; RATING text location
+ELIF DEF(_LANG_F)
+	news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01 ; RATING text location	
 ELIF DEF(_LANG_D)
+	news_menu  3, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01 ; RATING text location
+ELIF DEF(_LANG_S)
 	news_menu  3, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01 ; RATING text location
 ELSE	
 	news_menu  2, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
@@ -932,9 +935,9 @@ ENDC
 	lang J, db "グリーンのひょうか"
 	lang E, db "BLUE's RATING"
 	lang D, db "BLAUs BEWERTUNG"
-	lang F, db "EVALUATION de BLUE"
+	lang F, db "EVAL. de BLUE"
 	lang I, db "VALUTAZIONE di BLU"
-	lang S, db "EVALUACIÓN DE AZUL"
+	lang S, db "EVALUACIÓN AZUL"
 	db "@"
 
 .menuItemScript

@@ -725,7 +725,11 @@ ENDM
 	news_string 0, 0, "@" ; at least one string must be specified, else game crashes
 
 	lang J, news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
-	notlang J, news_menu  2, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
+	lang E, news_menu  2, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
+	lang D, news_menu  3, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
+	lang F, news_menu  4, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
+	lang I, news_menu  3, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
+	lang S, news_menu  2, 10, 1, 1, 0, 0, -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
 
 	news_buttonscript .aButton ; script pointer a button
 	news_buttonscript .aButton ; script pointer b button
@@ -758,7 +762,7 @@ ENDM
 	lang E, db "PROF.OAK's RATING"
 	; TODO: Rework in other languages (check out what's used for the Dex rating)
 	lang D, db "EICHs BEWERTUNG"
-	lang F, db "EVALUATION de CHEN"
+	lang F, db "EVAL. de CHEN"
 	lang I, db "RAPPORTO DI OAK"
 	lang S, db "EVALUACIÓN DE OAK"
 	

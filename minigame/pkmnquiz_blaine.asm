@@ -385,8 +385,7 @@ ENDM
 	;French
 	lang F, db   "Après t'avoir donné"
 	lang F, next "le PASSE BATEAU,"
-	lang F, next "ORME a dit “... à"
-	lang F, next "KANTO!”:"
+	lang F, next "ORME a dit ...?"
 	lang F, next "1. Entraîne-toi"
 	lang F, next "2. Amitiés à CHEN"
 	lang F, next "3. Essaye le train"
@@ -436,10 +435,9 @@ ENDM
 	lang D, next "2. Oben  3. Kabine"
 
 	;French
-	lang F, db   "D'où est apparu"
-	lang F, next "le grand-père de"
-	lang F, next "la fille perdue"
-	lang F, next "sur l'AQUARIA?"
+	lang F, db   "D'où est apparu le"
+	lang F, next "papy de la dispa-"
+	lang F, next "rue de l'AQUARIA?"
 	lang F, next "1. Le côté"
 	lang F, next "2. En haut"
 	lang F, next "3. Une cabine"
@@ -488,10 +486,9 @@ ENDM
 	lang D, next "3. UNTERFÜHRUNG"
 
 	; French
-	lang F, db   "Où traînait la"
-	lang F, next "FEDERATION des"
+	lang F, db   "La FEDERATION des"
 	lang F, next "dresseurs de KANTO"
-	lang F, next "à ses débuts?"
+	lang F, next "jadis traînait là:"
 	lang F, next "1. CAVE TAUPIQUEUR"
 	lang F, next "2. PISTE CYCLABLE"
 	lang F, next "3. SOUTERRAIN"
@@ -592,13 +589,12 @@ ENDM
 	lang D, next "3. TEAM ROCKET"
 
 	; French
-	lang F, db   "Pourquoi l'homme"
-	lang F, next "après les six"
-	lang F, next "dresseurs vous a-"
-	lang F, next "t-il combattu?"
-	lang F, next "1. Victoire facile"
-	lang F, next "2. Voler l'argent"
-	lang F, next "3. La TEAM <ROCKET>"
+    lang F, db   "Le type louche du"
+    lang F, next "PONT PEPITE vous"
+    lang F, next "a combattu pour… ?"
+    lang F, next "1. Victoire facile"
+    lang F, next "2. Me racketter"
+    lang F, next "3. La TEAM <ROCKET>"
 
 	; Italian
 	lang I, db   "Per quale motivo"
@@ -645,10 +641,9 @@ ENDM
 	lang D, next "3. MISTY vorn"
 
 	; French
-	lang F, db   "Comment était"
-	lang F, next "placée ONDINE"
-	lang F, next "par rapport à"
-	lang F, next "son rencart?"
+	lang F, db   "ONDINE, par"
+	lang F, next "rapport à son"
+	lang F, next "rencart, était… ?"
 	lang F, next "1. Côte à côte"
 	lang F, next "2. Face à face"
 	lang F, next "3. Devant lui"
@@ -697,10 +692,9 @@ ENDM
 	lang D, next "3. ein und alles"
 
 	; French
-	lang F, db   "Comment le PATRON"
-	lang F, next "de la CENTRALE a-"
-	lang F, next "t-il parlé du"
-	lang F, next "générateur?"
+	lang F, db   "Pour le patron de"
+	lang F, next "la CENTRALE, le"
+	lang F, next "générateur est… ?"
 	lang F, next "1. Ultra important"
 	lang F, next "2. Tant aimé"
 	lang F, next "3. Si beau"
@@ -754,7 +748,7 @@ ENDM
 	lang F, next "le PRESIDENT du"
 	lang F, next "FAN CLUB #MON"
 	lang F, next "a-t-il élevé?"
-	lang D, next "1. 150   2. 250"
+	lang F, next "1. 150   2. 250"
 	lang F, next "3. 1000"
 
 	; Italian
@@ -856,8 +850,7 @@ ENDM
 	lang F, next "#MON te ramène"
 	lang F, next "chez toi si tu..."
 	lang F, next "1. Le touches"
-	lang F, next "2. Penses à ta"
-	lang F, next "   maison" ; FIXME: bleh.
+	lang F, next "2. Y penses fort"
 	lang F, next "3. Ferme les yeux"
 
 	; Italian
@@ -1426,7 +1419,7 @@ ENDC
 
 	lang F, para "Ton esprit comba-"
 	lang F, line "tif laisse à"
-	lang F, cont "diésirer!"
+	lang F, cont "désirer!"
 
 	; Italian
 	lang I, text "BLAINE: Quattro"

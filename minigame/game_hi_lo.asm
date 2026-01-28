@@ -9,8 +9,8 @@
 ; English localization by DS
 ; German localization by Lesserkuma
 ; French localization by ISSOtm
-; Italian localization TODO
-; Spanish localization TODO
+; Italian localization by svp
+; Spanish localization by cat.exe
 
 IF DEF(_MINIGAME_H)
 
@@ -245,11 +245,11 @@ ENDM
 ; Max 17 chars
 MACRO minigame_name
 	lang J, db "#　たかいか　ひくいか？"
-	lang E, db "TALLER OR SHORTER"
-	lang D, db "GRÖSSER? KLEINER?"
-	lang F, db "+ GRAND / + PETIT"
+	lang E, db "TALL OR SHORT?"
+	lang D, db "GROSS ODER KLEIN?"
+	lang F, db "GRANDE OU PETITE?"
 	lang I, db "PIÙ O MENO ALTO?"
-	lang S, db "MÁS ALTO MÁS BAJO"
+	lang S, db "¿ALTO O BAJO?"
 ENDM
 ; deprecating this, at least for now,
 ; as it seems it might not have existed.
@@ -270,7 +270,7 @@ MinigameStart::
 	news_def_strings
 	news_string 0, 0, "@"
 
-	lang    J, news_menu  2, 16, 4, 1,  4, 2, -1, 0, 0, 0, 0, $04
+	lang J, news_menu  2, 16, 4, 1,  4, 2, -1, 0, 0, 0, 0, $04
 	notlang J, news_menu  2, 14, 2, 2, 10, 2, -1, 0, 0, 0, 0, $04
 
 	news_buttonscript .aButton     ; a button
@@ -513,9 +513,9 @@ ENDR
 	lang J, db "たかい"
 	lang E, db "TALLER"
 	lang D, db "GRÖSSER"
-	lang F, db "+ GRAND"
-	lang I, db "PIù ALTO"
-	lang S, db "MÁS ALTO"
+	lang F, db "GRAND"
+	lang I, db "ALTO"
+	lang S, db "ALTO"
 .dummyDescription
 	db "@"
 
@@ -523,9 +523,9 @@ ENDR
 	lang J, db "ひくい"
 	lang E, db "SHORTER"
 	lang D, db "KLEINER"
-	lang F, db "+ PETIT"
-	lang I, db "PIù BASSO"
-	lang S, db "MÁS BAJO"
+	lang F, db "PETIT"
+	lang I, db "BASSO"
+	lang S, db "BAJO"
 	db "@"
 
 .menuListText
@@ -548,16 +548,16 @@ ENDR
 
 	; this is a bodge and i know it...
 .textAnswers
-	lang J, db "たかい　ひくい　リスト　やめる"
-	lang E, db   " TALLER    SHORTER"
+	lang J, db "▶たかい　ひくい　リスト　やめる"
+	lang E, db   "▶TALLER    SHORTER"
 	lang E, next " LIST      CANCEL"
-	lang D, db   " GRÖSSER   KLEINER"
+	lang D, db   "▶GRÖSSER   KLEINER"
 	lang D, next " LISTE     ZURÜCK"
-	lang F, db   " + GRAND   + PETIT"
+	lang F, db   "▶GRAND     PETIT"
 	lang F, next " LISTE     RETOUR"
-	lang I, db   " + ALTO    - ALTO"
+	lang I, db   "▶ALTO      BASSO"
 	lang I, next " LISTA     ESCI"
-	lang S, db   " MÁS ALTO MÁS BAJO"
+	lang S, db   "▶ALTO      BAJO"
 	lang S, next " LISTA     SALIR"
 	db "@"
 

@@ -290,7 +290,7 @@ ENDC
 
     lang F, para "#RAP MOI CA! Le"
     lang F, line "jeu où vous devez"
-    lang F, cont "vous rappelez de"
+    lang F, cont "vous rappeler de"
     lang F, cont "l'ordre dans lequel"
     lang F, cont "les #MON"
     lang F, cont "apparaissent!"

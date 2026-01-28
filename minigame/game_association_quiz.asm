@@ -10,7 +10,7 @@
 ; German localization by Lesserkuma
 ; French localization by ISSOtm
 ; Italian localization by svp
-; Spanish localization TODO
+; Spanish localization by cat.exe
 
 IF DEF(_MINIGAME_H)
 

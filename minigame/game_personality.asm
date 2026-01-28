@@ -9,8 +9,8 @@
 ; English localization by DS
 ; German localization by Lesserkuma
 ; French localization by ISSOtm
-; Italian localization TODO
-; Spanish localization TODO
+; Italian localization by svp
+; Spanish localization by cat.exe
 
 IF DEF(_MINIGAME_H)
 
@@ -175,8 +175,11 @@ MinigameStart::
 	.page15, \
 	.page16
 	nts_end
-
+IF DEF(_LANG_D)
+	news_menu  2, 16, 3, 1, 6, 2, -1, $00, $00, $00, 0, $04
+ELSE
 	news_menu  2, 16, 3, 1, 5, 2, -1, $00, $00, $00, 0, $04
+ENDC
 
 	news_buttonscript .aButton     ; script pointer a button
 	news_buttonscript .bButton     ; script pointer b button
@@ -327,12 +330,12 @@ ENDM
 	lang E, next "adding “darling”."
 
 	; German
-	lang D, db   "Wenn ich den"
-	lang D, next "Namen meines"
-	lang D, next "#MON rufe, füge"
-	lang D, next "ich immer ein"
-	lang D, next "“-lein” oder ein"
-	lang D, next "“-chen” hinzu."
+	lang D, db   "Wenn ich meine"
+	lang D, next "#MON anspreche," 
+	lang D, next "füge ich dem"
+	lang D, next "Namen immer ein"
+	lang D, next "“mein Schatz”"
+	lang D, next "hinzu."
 
 	; French
 	lang F, db   "Quand j'appelle"
@@ -345,16 +348,16 @@ ENDM
 	lang I, db   "Quando chiamo il"
 	lang I, next "nome del mio"
 	lang I, next "#MON, aggiungo"
-	lang I, next "sempre “tesoro”."
+	lang I, next "sempre “caro”."
 
 	; Spanish
-	lang S, db   "Cuando llamo a mi"
-	lang S, next "#MON su nombre,"
-	lang S, next "siempre acabo"
-	lang S, next "diciéndole moni"
+	lang S, next "siempre añado"
+    lang S, next "a mi #MON, “mi"
+    lang S, next "querido” a su"
+    lang S, next "nombre”."
 	
 	db "@"
-
+ JA____NEIN__ZUR___
 .page3
 	; Japanese
 	lang J, db   "ポケモンに　おぼえさせる　わざは"
@@ -728,14 +731,12 @@ ENDM
 	lang D, next "gewinnen könnte."
 
 	; French
-	lang F, db   "Même s'il reste"
-	lang F, next "peu de PV à mon"
-	lang F, next "#MON, je ne le"
-	lang F, next "soignerai pas si"
-	lang F, next "je pense pouvoir"
-	lang F, next "gagner au"
-	lang F, next "prochain tour."
-
+	lang F, db   "Si je pense gagner"
+	lang F, next "au prochain tour,"
+	lang F, next "je ne soignerais"
+	lang F, next "pas mon #MON,"
+	lang F, next "même s'il lui"
+	lang F, next "reste peu de PV."
 	; Italian
 	lang I, db   "Anche se il mio"
 	lang I, next "#MON ha pochi"
@@ -1030,12 +1031,12 @@ ENDM
 	lang D, nts_end
 	lang D, db "s ERGEBNIS"
 
-	lang F, db "RESULTATS de"
-	lang F, nts_start
-	lang F, nts_player_name 0
-	lang F, nts_end
+    lang F, db "BILAN de "
+    lang F, nts_start
+    lang F, nts_player_name 0
+    lang F, nts_end
 
-	lang I, db "RISULTATI di"
+	lang I, db "ESITO di "
 	lang I, nts_start
 	lang I, nts_player_name 0
 	lang I, nts_end

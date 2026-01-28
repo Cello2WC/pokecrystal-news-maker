@@ -10,7 +10,7 @@
 ; German localization by Lesserkuma
 ; French localization by ISSOtm
 ; Italian localization by svp
-; Spanish localization TODO
+; Spanish localization by cat.exe
 
 IF DEF(_MINIGAME_H)
 
@@ -1243,7 +1243,8 @@ ENDR
 	lang F, nts_start
 	lang F, nts_number wCurrentStreak, 1, 2, 3
 	lang F, nts_end
-	lang F, db   "niveaux!"
+	lang F, db   ""
+	lang F, line   "niveaux!"
 
 	lang F, para "Tiens! Voici"
 	lang F, line
@@ -1258,7 +1259,7 @@ ENDR
 	lang F, nts_start
 	lang F, nts_player_name 0
 	lang F, nts_end
-	lang F, db   "reçoit"
+	lang F, db   " reçoit"
 	lang F, line
 	lang F, nts_start
 	; Les messages d'obtention n'utilisent pas d'article en général ;

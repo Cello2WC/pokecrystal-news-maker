@@ -2180,9 +2180,8 @@ DEF RANKING_TREE_ENCOUNTERS_SPACING EQU 0
 IF DEF(_LANG_J)
 DEF RANKING_TREE_ENCOUNTERS_NAME EQUS "ずつきを　した　かいすう"; Max 17 chars
 MACRO describe_ranking_TREE_ENCOUNTERS
-	db   "これまでに　きに　ずつきわざを"
-	cont "たたかっていない　ときで"
-	cont "つかった　かいすう　なのです。"
+	db   "これまでにずつきをたたかっていない"
+	cont "ときにつかったかいすう。"
 ENDM
 DEF RANKING_TREE_ENCOUNTERS_UNIT EQUS "かい"
 
@@ -2193,8 +2192,8 @@ DEF RANKING_TREE_ENCOUNTERS_NAME EQUS "HEADBUTT USED" ; Max 17 chars
 MACRO describe_ranking_TREE_ENCOUNTERS
 	para "The total amount"
 	line "of times HEADBUTT"
-	cont "was used on trees"
-	cont "outside of battle."
+	cont "was used outside"
+	cont "of battle."
 ENDM
 DEF RANKING_TREE_ENCOUNTERS_UNIT EQUS " times"
 REDEF RANKING_TREE_ENCOUNTERS_SPACING EQU 1
@@ -2218,8 +2217,7 @@ DEF RANKING_TREE_ENCOUNTERS_NAME EQUS "COUPS D'BOULE" ; Max 17 chars
 MACRO describe_ranking_TREE_ENCOUNTERS
 	para "Total du nombre"
 	line "d'utilisations de"
-	cont "COUP D'BOULE sur"
-	cont "des arbres"
+	cont "COUP D'BOULE"
 	cont "hors combat."
 ENDM
 DEF RANKING_TREE_ENCOUNTERS_UNIT EQUS " fois"
@@ -2230,9 +2228,8 @@ DEF RANKING_TREE_ENCOUNTERS_NAME EQUS "USI BOTTINTESTA" ; Max 17 chars
 MACRO describe_ranking_TREE_ENCOUNTERS
 	para "Il numero di volte"
 	line "BOTTINTESTA è"
-	cont "stata usata su"
-	cont "alberi fuori dalla"
-	cont "lotta."
+	cont "stata usata fuori"
+	cont "dalla lotta."
 ENDM
 DEF RANKING_TREE_ENCOUNTERS_UNIT EQUS " volte"
 
@@ -2242,8 +2239,8 @@ DEF RANKING_TREE_ENCOUNTERS_NAME EQUS "GOLPE CABEZA" ; Max 17 chars
 MACRO describe_ranking_TREE_ENCOUNTERS
 	para "Cantidad total"
 	line "que GOLPE CABEZA"
-	cont "se usó en árboles"
-	cont "fuera de combate."
+	cont "se usó fuera"
+	cont "de combate."
 ENDM
 DEF RANKING_TREE_ENCOUNTERS_UNIT EQUS " veces"
 ENDC

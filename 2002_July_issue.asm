@@ -52,7 +52,7 @@ SECTION "News", ROM0[$0000]
 
 	news_def_strings
 	news_string 1, 2, "";"<TRAINER> RANKING@"
-	lang J, db "ポケモンニュース　そうかんごう";"ポケモンニュース"
+	lang J, db "ポケモンニュース　７";"ポケモンニュース"
 	lang E, db "#MON NEWS No.7";"#MON NEWS No.0"
 	lang D, db "NACHRICHTEN Nr. 7";"NACHRICHTEN Nr. 0"
 	lang F, db "INFOS PKMN No.7";"INFOS PKMN No.0"

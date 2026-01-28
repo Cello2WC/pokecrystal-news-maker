@@ -248,7 +248,7 @@ MACRO minigame_name
 	lang E, db "TALL OR SHORT?"
 	lang D, db "GROSS ODER KLEIN?"
 	lang F, db "GRANDE OU PETITE?"
-	lang I, db "PIÙ O MENO ALTO?"
+	lang I, db "ALTO O BASSO?"
 	lang S, db "¿ALTO O BAJO?"
 ENDM
 ; deprecating this, at least for now,

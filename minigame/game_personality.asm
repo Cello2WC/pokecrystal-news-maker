@@ -1018,7 +1018,11 @@ ENDM
 	quizresult 6, SCIENTIST,     SCIENTIST,     BRIGHTPOWDER
 
 .menuItemText
-	lang J, db "？"
+	lang J, nts_start
+	lang J, nts_player_name 0
+	lang J, nts_end
+	lang J, db "<NO>せいせきは"
+
 
 	; A guess
 	lang E, nts_start

@@ -490,8 +490,8 @@ ENDC
     lang S, cont "del PROF. OAK"
     lang S, cont "CIUDAD VERDE."
 
-    lang S, para "Te desafía"
-    lang S, line "al Acertijo #MON!"
+    lang S, para "Te desafía al"
+    lang S, line "Acertijo #MON!"
 
     lang S, para "El test de AZUL"
     lang S, line "es sobre hace"

@@ -63,6 +63,7 @@ SECTION "News", ROM0[$0000]
 	;news_menu 2, 5, 1, 4, 0, 2, $10, $04, $07, $04, $02, $04
 	news_menu 2, 5, 1, 4, 0, 2, 16, 4, 7, 4, SHOW_ARROWS | SHOW_DESCRIPTIONS, $04
 
+
 	news_buttonscript .a_button			; [a] script
 	news_buttonscript .b_button			; [b] script
 	news_buttonscript 					; [sel] script
@@ -421,7 +422,8 @@ ENDC
     lang S, line "de junio!"
 
     lang S, para "¡El juego de este"
-    lang S, line "mes es #palabras!"
+    lang S, line "mes es"
+	lang S, cont "#palabras!"
 
     lang S, para "Sin errar,"
     lang S, line "¿podrás seguir"
@@ -433,8 +435,9 @@ ENDC
     lang S, line "clasificatorio es:"
     lang S, cont "ENCUENTROS!"
 
-    lang S, para "¿Con cuántos #MON"
-    lang S, line "#salvajes has"
+    lang S, para "¿Con cuántos"
+    lang S, line "#MON"
+	lang S, cont "#salvajes has?"
     lang S, cont "combatido?"
 
     lang S, para "Te sorpenderá"

@@ -458,9 +458,10 @@ ENDC
     lang S, line "CENTRO DE CAMBIO!"
 
     lang S, para "¡Puedes depositar"
-    lang S, line "#MON para interc."
-    lang S, cont "hasta finales de"
-    lang S, cont "noviembre!"
+    lang S, line "#MON para"
+    lang S, cont "intercambio hasta"
+    lang S, cont "finales de"
+	lang S, cont "noviembre!"
 
     lang S, para "Recógelos antes"
     lang S, line "del 14 de dici.!"

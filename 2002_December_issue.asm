@@ -424,12 +424,10 @@ ENDC
     lang I, cont "MOBILE!"
 	
     lang S, text "Ed. de diciembre,"
-    lang S, line "de NOTICIAS"
-	lang S, cont "#MON."
+    lang S, line "NOTICIAS #MON."
 
     lang S, para "La última edición"
-    lang S, line "de NOTICIAS"
-	lang S, cont "#MON!"
+    lang S, line "NOTICIAS #MON!"
 
     lang S, para "¡Gracias por"
     lang S, line "el tiempo juntos!"

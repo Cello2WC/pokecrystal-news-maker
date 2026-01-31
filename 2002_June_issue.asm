@@ -421,9 +421,8 @@ ENDC
     lang S, para "¡Es la edición"
     lang S, line "de junio!"
 
-    lang S, para "¡El juego de este"
-    lang S, line "mes es"
-	lang S, cont "#palabras!"
+    lang S, para "¡El juego mensual"
+	lang S, line "es #palabras!"
 
     lang S, para "Sin errar,"
     lang S, line "¿podrás seguir"
@@ -435,8 +434,7 @@ ENDC
     lang S, line "clasificatorio es:"
     lang S, cont "ENCUENTROS!"
 
-    lang S, para "¿Con cuántos"
-    lang S, line "#MON"
+    lang S, para "¿Cuántos #MON"
 	lang S, cont "#salvajes has?"
     lang S, cont "combatido?"
 

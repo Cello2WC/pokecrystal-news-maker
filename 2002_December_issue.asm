@@ -274,7 +274,7 @@ ENDC
     lang E, cont "MOBILE STADIUM"
     lang E, cont "and TRADE CORNER"
     lang E, cont "pickups will end"
-    lang E, cont "on the 14th!"
+    lang E, cont "on the 14!"
 
     lang E, para "Thank you for"
     lang E, line "using the service!"
@@ -284,7 +284,7 @@ ENDC
 
 	
     lang F, text "Voici l'édition de"
-    lang F, line "décembre."
+    lang F, line "Décembre."
 
     lang F, para "Le dernier numéro"
     lang F, line "des INFOS #MON!"
@@ -329,8 +329,8 @@ ENDC
     lang D, text "Die allerletzte"
     lang D, line "Ausgabe der"
     lang D, cont "PKMN-NACHRICHTEN,"
-    lang D, cont "die Dezember-"
-    lang D, cont "Ausgabe, ist da!"
+    lang D, cont "die DEZEMBER-"
+    lang D, cont "AUSGABE, ist da!"
 
     lang D, para "Danke für alles"
     lang D, line "bis hierhin!"
@@ -362,7 +362,7 @@ ENDC
     lang D, cont "STADION und"
     lang D, cont "Abholungen an der"
     lang D, cont "TAUSCHECKE enden"
-    lang D, cont "am 14. Dezember!"
+    lang D, cont "am 14. DEZEMBER!"
 
     lang D, para "Danke, dass du den"
     lang D, line "Dienst genutzt"
@@ -374,7 +374,7 @@ ENDC
 	
     lang I, text "NOTIZIE #MON,"
     lang I, line "edizione di"
-    lang I, cont "Dicembre."
+    lang I, cont "dicembre."
 
     lang I, para "Questa è la fine"
     lang I, line "delle NOTIZIE"

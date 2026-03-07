@@ -254,7 +254,7 @@ ENDC
     lang E, cont "November!"
 
     lang E, para "Pick them up by"
-    lang E, line "December 14th!"
+    lang E, line "December 14!"
 
     lang E, para "Hurry and trade!"
 
@@ -279,8 +279,8 @@ ENDC
 
     lang E, para "The December issue"
     lang E, line "can be read from"
-    lang E, cont "November 27th"
-    lang E, cont "to December 14th!"
+    lang E, cont "November 27 to"
+    lang E, cont "December 14!"
 
     lang E, para "There's useful"
     lang E, line "information, so"
@@ -291,7 +291,7 @@ ENDC
 
 
     lang F, text "Voici l'édition"
-    lang F, line "de novembre des"
+    lang F, line "de Novembre des"
     lang F, cont "INFOS #MON!"
 
     lang F, para "Un message du"
@@ -300,10 +300,10 @@ ENDC
     lang F, para "Vous pouvez échan-"
     lang F, line "ger vos #MON"
     lang F, cont "jusqu'à la fin du"
-    lang F, cont "mois de novembre."
+    lang F, cont "mois de Novembre."
 
     lang F, para "Reprenez les avant"
-    lang F, line "le 14 décembre!"
+    lang F, line "le 14 Décembre!"
 
     lang F, para "Dépechez-vous"
     lang F, line "d'échanger!"
@@ -313,11 +313,11 @@ ENDC
     lang F, cont "pour thème votre"
     lang F, cont "aventure à KANTO!"
 
-    lang F, para "AUGUSTE vous met"
+    lang F, para "Auguste vous met"
     lang F, line "au défi!"
 
     lang F, para "L'hiver approche,"
-    lang F, line "mais AUGUSTE et"
+    lang F, line "mais Auguste et"
     lang F, cont "son questionnaire"
     lang F, cont "restent bouillant!"
 
@@ -330,9 +330,9 @@ ENDC
     lang F, cont "suivante."
 
     lang F, para "L'édition de"
-    lang F, line "décembre peut être"
-    lang F, cont "lue du 27 novembre"
-    lang F, cont "au 14 décembre!"
+    lang F, line "Décembre peut être"
+    lang F, cont "lue du 27 Novembre"
+    lang F, cont "au 14 Décembre!"
 
     lang F, para "Il y aura des info"
     lang F, line "-rmations utiles"
@@ -342,7 +342,7 @@ ENDC
     lang F, para "Restez branché!"
 
     lang D, text "Hier ist die"
-    lang D, line "November-Ausgabe"
+    lang D, line "NOVEMBER-AUSGABE"
     lang D, cont "der PKMN-NACH-"
     lang D, cont "RICHTEN!"
 
@@ -350,12 +350,12 @@ ENDC
     lang D, line "der TAUSCHECKE!"
 
     lang D, para "Du kannst noch bis"
-    lang D, line "Ende November"
+    lang D, line "Ende NOVEMBER"
     lang D, cont "#MON zum"
     lang D, cont "Tausch abgeben!"
 
     lang D, para "Nimm sie bis zum"
-    lang D, line "14. Dezember"
+    lang D, line "14. DEZEMBER"
     lang D, cont "wieder entgegen!"
 
     lang D, para "Beeile dich und"
@@ -382,10 +382,10 @@ ENDC
     lang D, cont "NACHRICHTEN wird"
     lang D, cont "die letzte sein…!"
 
-    lang D, para "Die Dezember-Aus-"
-    lang D, line "gabe kann vom"
-    lang D, cont "27. November bis"
-    lang D, cont "zum 14. Dezember"
+    lang D, para "Die DEZEMBER-AUS-"
+    lang D, line "GABE kann vom"
+    lang D, cont "27. NOVEMBER bis"
+    lang D, cont "zum 14. DEZEMBER"
     lang D, cont "gelesen werden!"
 
     lang D, para "Es erwarten dich"
@@ -397,7 +397,7 @@ ENDC
     lang D, para "Bleib dran!"
 
     lang I, text "È l'edizione di"
-    lang I, line "Novembre delle"
+    lang I, line "novembre delle"
     lang I, cont "NOTIZIE #MON!"
 
     lang I, para "Un avviso dal"
@@ -407,10 +407,10 @@ ENDC
     lang I, line "#MON da"
     lang I, cont "scambiare fino"
     lang I, cont "alla fine di"
-    lang I, cont "Novembre!"
+    lang I, cont "novembre!"
 
     lang I, para "Recuperali entro"
-    lang I, line "il 14 Dicembre!"
+    lang I, line "il 14 dicembre!"
 
     lang I, para "Sbrigati a"
     lang I, line "scambiare!"
@@ -436,10 +436,10 @@ ENDC
     lang I, cont "edizione…!"
 
     lang I, para "L'edizione di"
-    lang I, line "Dicembre potrà"
+    lang I, line "dicembre potrà"
     lang I, cont "essere letta dal"
-    lang I, cont "27 Novembre al"
-    lang I, cont "14 Dicembre!"
+    lang I, cont "27 novembre al"
+    lang I, cont "14 dicembre!"
 
     lang I, para "Ci saranno delle"
     lang I, line "informazioni"
@@ -464,7 +464,8 @@ ENDC
 	lang S, cont "noviembre!"
 
     lang S, para "Recógelos antes"
-    lang S, line "del 14 de dici.!"
+    lang S, line "del 14 de"
+	lang S, cont "diciembre!"
 
     lang S, para "¡Interca. pronto!"
 

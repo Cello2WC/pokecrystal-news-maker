@@ -270,7 +270,7 @@ ENDC
 
     lang E, para "The July issue"
     lang E, line "will be available"
-    lang E, cont "on June 26th,"
+    lang E, cont "on June 26,"
     lang E, cont "after MOBILE"
     lang E, cont "CENTER adjustments"
     lang E, cont "end."
@@ -285,7 +285,7 @@ ENDC
 
     lang F, text "Là voilà!"
 
-    lang F, para "L'édition de juin!"
+    lang F, para "L'édition de Juin!"
 
     lang F, para "Le jeu du mois?"
     lang F, line "#-LABYRINTHE!"
@@ -310,8 +310,8 @@ ENDC
     lang F, cont "même!"
 
     lang F, para "L'édition de"
-    lang F, line "juillet sera dispo"
-    lang F, cont "-nible le 26 juin,"
+    lang F, line "Juillet sera dispo"
+    lang F, cont "-nible le 26 Juin,"
     lang F, cont "après la fin des"
     lang F, cont "réparations du"
     lang F, cont "CENTRE MOBILE."
@@ -327,7 +327,7 @@ ENDC
     lang D, text "Schwuppdiwupp!"
 
     lang D, para "Hier kommt die"
-    lang D, line "Juni-Ausgabe!"
+    lang D, line "JUNI-AUSGABE!"
 
     lang D, para "Das Minispiel des"
     lang D, line "Monats ist das"
@@ -352,8 +352,8 @@ ENDC
     lang D, para "Das wird selbst"
     lang D, line "dich überraschen!"
 
-    lang D, para "Die Juli-Ausgabe"
-    lang D, line "wird am 26. Juni"
+    lang D, para "Die JULI-AUSGABE"
+    lang D, line "wird am 26. JUNI"
     lang D, cont "eintreffen - nach"
     lang D, cont "Abschluss der"
     lang D, cont "Anpassungen des"
@@ -371,7 +371,7 @@ ENDC
     lang I, text "Eccola quì!"
 
     lang I, para "È l'edizione di"
-    lang I, cont "Giugno! "
+    lang I, cont "giugno! "
 
     lang I, para "Il gioco del mese"
     lang I, line "è LABIRINTO"
@@ -399,9 +399,9 @@ ENDC
     lang I, cont "per te!"
 
     lang I, para "L'edizione di"
-    lang I, line "Luglio sarà"
+    lang I, line "luglio sarà"
     lang I, cont "disponibile il"
-    lang I, cont "26 Giugno, dopo"
+    lang I, cont "26 giugno, dopo"
     lang I, cont "che la manuten-"
     lang I, cont "zione del CENTRO"
     lang I, cont "MOBILE sarà"

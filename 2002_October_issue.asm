@@ -270,7 +270,7 @@ ENDC
     lang E, para "The next issue"
     lang E, line "of #MON NEWS"
     lang E, cont "will be available"
-    lang E, cont "on October 30th,"
+    lang E, cont "on October 30,"
     lang E, cont "after MOBILE"
     lang E, cont "CENTER adjustments"
     lang E, cont "end."
@@ -284,7 +284,7 @@ ENDC
     lang E, line "the next issue!"
 
     lang F, text "Voici l'édition"
-    lang F, line "d'octobre des"
+    lang F, line "d'Octobre des"
     lang F, cont "INFOS #MON!"
 
     lang F, para "Lors des combats"
@@ -311,7 +311,7 @@ ENDC
 
     lang F, para "L'édition suivante"
     lang F, line "sera disponible le"
-    lang F, cont "30 octobre, après"
+    lang F, cont "30 Octobre, après"
     lang F, cont "les réparations du"
     lang F, cont "CENTRE MOBILE."
 
@@ -324,8 +324,8 @@ ENDC
     lang F, line "rez dans l'édition"
     lang F, cont "suivante!"
 
-    lang D, text "Die Oktober-"
-    lang D, line "Ausgabe der"
+    lang D, text "Die OKTOBER-"
+    lang D, line "AUSGABE der"
     lang D, cont "PKMN-NACHRICHTEN"
     lang D, cont "ist da!"
 
@@ -355,7 +355,7 @@ ENDC
     lang D, para "Die nächste"
     lang D, line "PKMN-NACHRICHTEN-"
     lang D, cont "Ausgabe erscheint"
-    lang D, cont "am 30. Oktober -"
+    lang D, cont "am 30. OKTOBER -"
     lang D, cont "nach Abschluss"
     lang D, cont "der Anpassungen"
     lang D, cont "des MOBILEN"
@@ -375,7 +375,7 @@ ENDC
     lang D, para "Bleib dran!"
 
     lang I, text "È l'edizione di"
-    lang I, line "Ottobre delle"
+    lang I, line "ottobre delle"
     lang I, cont "NOTIZIE #MON!"
 
     lang I, para "Nelle lotte"
@@ -406,7 +406,7 @@ ENDC
     lang I, line "edizione delle"
     lang I, cont "NOTIZIE #MON"
     lang I, cont "sarà disponibile"
-    lang I, cont "il 30 Ottobre,"
+    lang I, cont "il 30 ottobre,"
     lang I, cont "dopo che la"
     lang I, cont "manutenzione del"
     lang I, cont "CENTRO MOBILE sarà"

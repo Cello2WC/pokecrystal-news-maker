@@ -289,7 +289,7 @@ ENDC
     lang E, para "The August issue"
     lang E, line "of #MON NEWS"
     lang E, cont "will be available"
-    lang E, cont "on July 31st,"
+    lang E, cont "on July 31,"
     lang E, cont "after MOBILE"
     lang E, cont "CENTER adjustments"
     lang E, cont "end."
@@ -304,7 +304,7 @@ ENDC
     lang F, text "Là voilà!"
 
     lang F, para "L'édition de"
-    lang F, line "juillet des"
+    lang F, line "Juillet des"
     lang F, cont "INFOS #MON!"
 
     lang F, para "Vous vous souvenez"
@@ -342,9 +342,9 @@ ENDC
     lang F, cont "que ça vous"
     lang F, cont "surprendra!"
 
-    lang F, para "L'édition d'août"
+    lang F, para "L'édition d'Août"
     lang F, line "sera disponible le"
-    lang F, cont "31 juillet, après"
+    lang F, cont "31 Juillet, après"
     lang F, cont "la fin des"
     lang F, cont "réparations du"
     lang F, cont "CENTRE MOBILE."
@@ -360,7 +360,7 @@ ENDC
     lang D, text "Schwuppdiwupp!"
   
     lang D, para "Hier ist die"
-    lang D, line "Juli-Ausgabe der"
+    lang D, line "JULI-AUSGABE der"
     lang D, cont "PKMN-NACHRICHTEN!"
 
     lang D, para "Erinnerst du dich"
@@ -401,11 +401,11 @@ ENDC
     lang D, cont "es kaum für"
     lang D, cont "möglich hält!"
 
-    lang D, para "Die August-"
-    lang D, line "Ausgabe der"
+    lang D, para "Die AUGUST-"
+    lang D, line "AUSGABE der"
     lang D, cont "PKMN-NACHRICHTEN"
     lang D, cont "trifft am 31."
-    lang D, cont "Juli ein - nach"
+    lang D, cont "JULI ein - nach"
     lang D, cont "Abschluss der"
     lang D, cont "Anpassungen des"
     lang D, cont "MOBILEN CENTERs."
@@ -422,7 +422,7 @@ ENDC
     lang I, text "Eccola quì!"
 
     lang I, para "È l'edizione di"
-    lang I, line "Luglio delle"
+    lang I, line "luglio delle"
     lang I, cont "NOTIZIE #MON!"
 
     lang I, para "Ricordi il nipote"
@@ -462,10 +462,10 @@ ENDC
     lang I, cont "sorprenderti!"
 
     lang I, para "L'edizione di"
-    lang I, line "Agosto delle"
+    lang I, line "agosto delle"
     lang I, cont "NOTIZIE #MON"
     lang I, cont "sarà disponibile"
-    lang I, cont "il 31 Luglio,"
+    lang I, cont "il 31 luglio,"
     lang I, cont "dopo che la"
     lang I, cont "manutenzione del"
     lang I, cont "CENTRO MOBILE"

@@ -277,7 +277,7 @@ ENDC
     lang E, para "The next issue"
     lang E, line "of #MON NEWS"
     lang E, cont "will be available"
-    lang E, cont "on September 25th,"
+    lang E, cont "on September 25,"
     lang E, cont "after MOBILE"
     lang E, cont "CENTER adjustments"
     lang E, cont "end."
@@ -291,7 +291,7 @@ ENDC
     lang E, para "Stay tuned!"
 
     lang F, text "Voici l'édition"
-    lang F, line "de septembre des"
+    lang F, line "de Septembre des"
     lang F, cont "INFOS #MON!"
 
     lang F, para "La thème du pro-"
@@ -325,7 +325,7 @@ ENDC
 
     lang F, para "L'édition suivante"
     lang F, line "sera disponible le"
-    lang F, cont "25 septembre,"
+    lang F, cont "25 Septembre,"
     lang F, cont "après la fin des"
     lang F, cont "réparations du"
     lang F, cont "CENTRE MOBILE."
@@ -338,8 +338,8 @@ ENDC
 
     lang F, para "Restez branché!"
 
-    lang D, text "Die September-"
-    lang D, line "Ausgabe der"
+    lang D, text "Die SEPTEMBER-"
+    lang D, line "AUSGABE der"
     lang D, cont "PKMN-NACHRICHTEN"
     lang D, cont "ist da!"
 
@@ -376,7 +376,7 @@ ENDC
     lang D, cont "falsche Fährte"
     lang D, cont "gelockt werden!"
 
-    lang D, para "Am 25. September"
+    lang D, para "Am 25. SEPTEMBER"
     lang D, line "erwartet dich die"
     lang D, cont "nächste Ausgabe"
     lang D, cont "der PKMN-"
@@ -394,7 +394,7 @@ ENDC
     lang D, para "Bleib dran!"
 
     lang I, text "È l'edizione di"
-    lang I, line "Settembre delle"
+    lang I, line "settembre delle"
     lang I, cont "NOTIZIE #MON!"
 
     lang I, para "Il tema della"
@@ -431,7 +431,7 @@ ENDC
     lang I, line "edizione delle"
     lang I, cont "NOTIZIE #MON"
     lang I, cont "sarà disponibile"
-    lang I, cont "il 25 Settembre,"
+    lang I, cont "il 25 settembre,"
     lang I, cont "dopo che la manu-"
     lang I, cont "tenzione del"
     lang I, cont "CENTRO MOBILE sarà"

@@ -272,7 +272,7 @@ ENDC
     lang E, line "issue of #MON"
     lang E, cont "NEWS will be"
     lang E, cont "available on"
-    lang E, cont "August 28th,"
+    lang E, cont "August 28,"
     lang E, cont "after MOBILE"
     lang E, cont "CENTER adjustments"
     lang E, cont "end."
@@ -285,7 +285,7 @@ ENDC
     lang E, para "Stay tuned!"
 
     lang F, text "Voici l'édition"
-    lang F, line "d'août des"
+    lang F, line "d'Août des"
     lang F, cont "INFOS #MON!"
 
     lang F, para "#RAP MOI CA! Le"
@@ -313,9 +313,9 @@ ENDC
     lang F, cont "vous surprendra!"
 
     lang F, para "L'édition de"
-    lang F, line "septembre sera"
+    lang F, line "Septembre sera"
     lang F, cont "disponible le 28"
-    lang F, cont "août, après la fin"
+    lang F, cont "Août, après la fin"
     lang F, cont "des réparations du"
     lang F, cont "CENTRE MOBILE."
 
@@ -327,7 +327,7 @@ ENDC
     lang F, para "Restez branché!"
 
     lang D, text "Hier ist die"
-    lang D, line "August-Ausgabe der"
+    lang D, line "AUGUST-AUSGABE der"
     lang D, cont "PKMN-NACHRICHTEN!"
 
     lang D, para "Im Spiel #MON-"
@@ -354,11 +354,11 @@ ENDC
     lang D, cont "es für eine Über-"
     lang D, cont "raschung sorgt!"
 
-    lang D, para "Die September-"
-    lang D, line "Ausgabe der"
+    lang D, para "Die SEPTEMBER-"
+    lang D, line "AUSGABE der"
     lang D, cont "PKMN-NACHRICHTEN"
     lang D, cont "kommt heraus am"
-    lang D, cont "28. August - nach"
+    lang D, cont "28. AUGUST - nach"
     lang D, cont "Abschluss der"
     lang D, cont "Anpassungen des"
     lang D, cont "MOBILEN CENTERs."
@@ -372,7 +372,7 @@ ENDC
     lang D, para "Bleib dran!"
 
     lang I, text "È l'edizione di"
-    lang I, line "Agosto delle"
+    lang I, line "agosto delle"
     lang I, cont "NOTIZIE #MON!"
 
     lang I, para "Il gioco CANTA IL"
@@ -400,10 +400,10 @@ ENDC
     lang I, cont "sorprenderti!"
 
     lang I, para "L'edizione di"
-    lang I, line "Settembre delle"
+    lang I, line "settembre delle"
     lang I, cont "NOTIZIE #MON"
     lang I, cont "sarà disponibile"
-    lang I, cont "il 28 Agosto, dopo"
+    lang I, cont "il 28 agosto, dopo"
     lang I, cont "che la manuten-"
     lang I, cont "zione del CENTRO"
     lang I, cont "MOBILE sarà"

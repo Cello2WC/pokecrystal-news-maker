@@ -18,8 +18,7 @@ REDEF RANKING_GAME_TIME_HOF_FMT  EQUS "PRINTNUM_LEADINGZEROS | 2, 3\nnts_end\ndb
 ;REDEF RANKING_GAME_TIME_HOF_FMT  EQUS "PRINTNUM_LEADINGZEROS | 2, 3\nnts_end\ndb $6D\nnts_start\nnts_ranking_number $001A, PRINTNUM_LEADINGZEROS | 1, 2"
 MACRO describe_ranking_GAME_TIME_HOF
 	db   "ぜんかいの　でんどういりの"
-	cont "きろくまでに　あなたの"
-	cont "プレイじかん　なのです"
+	cont "きろくまでに　プレイじかん"
 ENDM
 DEF RANKING_GAME_TIME_HOF_UNIT EQUS "じ"
 
@@ -91,8 +90,7 @@ IF DEF(_LANG_J)
 DEF RANKING_STEP_COUNT_HOF_NAME EQUS "ぜんかいの　ほすう"
 MACRO describe_ranking_STEP_COUNT_HOF
 	db   "ぜんかいの　でんどういりの"
-	cont "きろくまでに　あなたの"
-	cont "あるいた　ほすう　なのです。"
+	cont "きろくまでに　あるいた　ほすう"
 ENDM
 DEF RANKING_STEP_COUNT_HOF_UNIT EQUS "ほ・ぽ"
 
@@ -172,7 +170,7 @@ MACRO describe_ranking_HEALINGS_HOF
 	db   "ぜんかいの　でんどういりの"
 	cont "きろくまでに　あなたの　てもち"
 	cont "ポケモンに　たいりょくを　ぜん"
-	cont "かいふくした　かいすう　なのです"
+	cont "かいふくした　かいすう"
 ENDM
 DEF RANKING_HEALINGS_HOF_UNIT EQUS "かい"
 
@@ -266,7 +264,7 @@ DEF RANKING_BATTLES_HOF_NAME EQUS "ぜんかいの　しょうぶ　かいすう
 MACRO describe_ranking_BATTLES_HOF
 	db   "ぜんかいの　でんどういりの"
 	cont "きろくまでに　ポケモンたいせんを"
-	cont "しょうぶした　かいすう　なのです"
+	cont "しょうぶした　かいすう"
 ENDM
 DEF RANKING_BATTLES_HOF_UNIT EQUS "かい" ; a guess
 
@@ -341,8 +339,8 @@ DEF RANKING_STEP_COUNT_SPACING EQU 0
 IF DEF(_LANG_J)
 DEF RANKING_STEP_COUNT_NAME EQUS "ぼうけんの　ほすう" ; Max 17 chars
 MACRO describe_ranking_STEP_COUNT
-	db   "あなたの　ぼうけんの　はじまりから"
-	cont "これまでに　あるいた　ほすうなのです"
+	db   "これまでに　ぼうけんの　はじまりから"
+	cont "あるいた　ほすう"
 ENDM
 DEF RANKING_STEP_COUNT_UNIT EQUS "ほ・ぽ"
 
@@ -419,9 +417,10 @@ DEF RANKING_BATTLE_TOWER_WINS_SPACING EQU 0
 IF DEF(_LANG_J)
 DEF RANKING_BATTLE_TOWER_WINS_NAME EQUS "バトルタワーで　かった　かいすう" ; Max 17 chars
 MACRO describe_ranking_BATTLE_TOWER_WINS
-	db   "４０ばんどうろ<NO>バトルタワーで"
-	cont "あなた<GA>これまで<NI>なんにんの"
-	cont "<TRAINER>と<NO>しょうぶ<NI>かったか"
+	db   "４０ばんどうろの　バトルタワーで"
+	cont "あなたが　これまでに　なんにんの"
+	cont "<TRAINER>との　しょうぶに　かったか"
+	cont "にんずうで　きそいます"
 ENDM
 DEF RANKING_BATTLE_TOWER_WINS_UNIT EQUS "かい"
 
@@ -510,7 +509,7 @@ DEF RANKING_TMS_HMS_TAUGHT_NAME EQUS "マシンを　おしえた　かず"
 MACRO describe_ranking_TMS_HMS_TAUGHT
 	db   "わざマシンと　ひでんマシンを"
 	cont "あなたの　ポケモンに　これまでに"
-	cont "おしえた　かず　なのです"
+	cont "おしえた　かず"
 ENDM
 DEF RANKING_TMS_HMS_TAUGHT_UNIT EQUS "こ"
 
@@ -588,7 +587,7 @@ IF DEF(_LANG_J)
 DEF RANKING_BATTLES_NAME EQUS "ポケモン　せんとう　かいすう"
 MACRO describe_ranking_BATTLES
 	db   "ポケモン　せんとうを　これまでに"
-	cont "たたかった　かいすう　なのです。"
+	cont "たたかった　かいすう"
 ENDM
 DEF RANKING_BATTLES_UNIT EQUS "かい"
 
@@ -665,7 +664,7 @@ IF DEF(_LANG_J)
 DEF RANKING_WILD_BATTLES_NAME EQUS "そうぐうした　かいすう" ; Max 17 chars
 MACRO describe_ranking_WILD_BATTLES
 	db   "やせい　ポケモンと　これまでに"
-	cont "そうぐうした　かいすう　なのです。"
+	cont "そうぐうした　かいすう"
 ENDM
 DEF RANKING_WILD_BATTLES_UNIT EQUS "かい" ; a guess
 
@@ -742,9 +741,9 @@ DEF RANKING_TRAINER_BATTLES_SPACING EQU 0
 IF DEF(_LANG_J)
 DEF RANKING_TRAINER_BATTLES_NAME EQUS "トレーナーと　しょうぶした　かいすう"
 MACRO describe_ranking_TRAINER_BATTLES
-	db   "ポケモンたいせんを　あなたが"
-	cont "これまでに　なんにんの　トレーナーと"
-	cont "しょうぶした　かいすう　なのです"
+	db   "これまでに　ポケモンたいせんに"
+	cont "なんにんの　トレーナーとの"
+	cont "しょうぶした　かいすう"
 ENDM
 DEF RANKING_TRAINER_BATTLES_UNIT EQUS "かい" ; a guess
 
@@ -872,9 +871,8 @@ DEF RANKING_HOF_ENTRIES_SPACING EQU 0
 IF DEF(_LANG_J)
 DEF RANKING_HOF_ENTRIES_NAME EQUS "でんどういりの　きろく" ; Max 17 chars
 MACRO describe_ranking_HOF_ENTRIES
-	db   "あなたが　これまでに"
-	cont "でんどういりを　きろくした"
-	cont "かいすうなのです。"
+	db   "これまでに　でんどういりを"
+	cont "きろくした　かいすう"
 ENDM
 DEF RANKING_HOF_ENTRIES_UNIT EQUS "かい"
 
@@ -945,7 +943,7 @@ IF DEF(_LANG_J)
 DEF RANKING_WILD_MONS_CAUGHT_NAME EQUS "つかまえた　ポケモンの　かず" ; Max 17 chars
 MACRO describe_ranking_WILD_MONS_CAUGHT
 	db   "やせいの　ポケモンを　これまでに"
-	cont "つかまえた　かずなのです。"
+	cont "つかまえた　かず"
 ENDM
 DEF RANKING_WILD_MONS_CAUGHT_UNIT EQUS "ひき"
 
@@ -1013,7 +1011,7 @@ IF DEF(_LANG_J)
 DEF RANKING_HOOKED_ENCOUNTERS_NAME EQUS "ポケモンを　つった　かいすう" ; Max 17 chars
 MACRO describe_ranking_HOOKED_ENCOUNTERS
 	db   "ポケモンを　これまでに　つっていて"
-	cont "そうぐうした　かいすうなのです"
+	cont "そうぐうした　かいすう"
 ENDM
 DEF RANKING_HOOKED_ENCOUNTERS_UNIT EQUS "かい"
 
@@ -1081,8 +1079,8 @@ DEF RANKING_EGGS_HATCHED_SPACING EQU 0
 IF DEF(_LANG_J)
 DEF RANKING_EGGS_HATCHED_NAME EQUS "タマゴを　かえした　かいすう" ; Max 17 chars
 MACRO describe_ranking_EGGS_HATCHED
-	db   "タマゴから　ポケモンが　これまでに"
-	cont "うまれた　かいすう　なのです"
+	db   "ポケモンが　これまでに　タマゴから"
+	cont "うまれた　かいすう"
 ENDM
 DEF RANKING_EGGS_HATCHED_UNIT EQUS "かい"
 
@@ -1151,9 +1149,8 @@ DEF RANKING_MONS_EVOLVED_SPACING EQU 0
 IF DEF(_LANG_J)
 DEF RANKING_MONS_EVOLVED_NAME EQUS "ポケモンが　しんかした　かいすう" ; Max 17 chars
 MACRO describe_ranking_MONS_EVOLVED
-	db   "あなたの　ポケモンが"
-	cont "これまでに　しんかした"
-	cont "かいすう　なのです。"
+	db   "ポケモンが　これまでに"
+	cont "しんかした　かいすう"
 ENDM
 DEF RANKING_MONS_EVOLVED_UNIT EQUS "かい"
 
@@ -1222,7 +1219,8 @@ DEF RANKING_FRUIT_PICKED_SPACING EQU 0
 IF DEF(_LANG_J)
 DEF RANKING_FRUIT_PICKED_NAME EQUS "とった　きのみの　かず" ; Max 17 chars
 MACRO describe_ranking_FRUIT_PICKED
-	db   "?"
+	db   "きから　きのみと　ボングリのみを"
+	cont "これまでに　とった　かず"
 ENDM
 DEF RANKING_FRUIT_PICKED_UNIT EQUS "こ"
 
@@ -1309,9 +1307,9 @@ DEF RANKING_HEALINGS_SPACING EQU 0
 IF DEF(_LANG_J)
 DEF RANKING_HEALINGS_NAME EQUS "ぜん　かいふくした　かいすう"
 MACRO describe_ranking_HEALINGS
-	db   "あなたの　てもちポケモンに"
-	cont "たいりょくを　これまでに　ぜん"
-	cont "かいふくした　かいすう　なのです"
+	db   "これまでに　あなたの　てもちの"
+	cont "ポケモンに　たいりょくを"
+	cont "ぜん　かいふくした　かいすう"
 ENDM
 DEF RANKING_HEALINGS_UNIT EQUS "かい"
 
@@ -1384,8 +1382,7 @@ IF DEF(_LANG_J)
 DEF RANKING_MYSTERY_GIFT_NAME EQUS "ふしぎな　おくりものの　かいすう" ; Max 17 chars
 MACRO describe_ranking_MYSTERY_GIFT
 	db   "ふしぎな　おくりものを"
-	cont "これまでに　つかった"
-	cont "かいすう　なのです"
+	cont "これまでに　つかった　かいすう"
 ENDM
 DEF RANKING_MYSTERY_GIFT_UNIT EQUS "かい"
 
@@ -1457,9 +1454,8 @@ DEF RANKING_TRADES_SPACING EQU 0
 IF DEF(_LANG_J)
 DEF RANKING_TRADES_NAME EQUS "こうかんした　かいすう" ; Max 17 chars
 MACRO describe_ranking_TRADES
-	db   "ポケモン　こうかんを"
-	cont "これまでに　しゅうりょうした"
-	cont "かいすう　なのです"
+	db   "ポケモン　こうかんを　これまでに"
+	cont "しゅうりょうした　かいすう"
 ENDM
 DEF RANKING_TRADES_UNIT EQUS "かい"
 
@@ -1528,9 +1524,9 @@ DEF RANKING_FLY_SPACING EQU 0
 IF DEF(_LANG_J)
 DEF RANKING_FLY_NAME EQUS "そらをとぶを　つかった　かいすう" ; Max 17 chars
 MACRO describe_ranking_FLY
-	db   "そらをとぶ　わざを"
-	cont "たたかっていない　ときで　これまでに"
-	cont "つかった　かいすう　なのです"
+	db   "これまでに　そらをとぶ　わざを"
+	cont "たたかっていない　ときで"
+	cont "つかった　かいすう"
 ENDM
 DEF RANKING_FLY_UNIT EQUS "かい"
 
@@ -1600,9 +1596,9 @@ DEF RANKING_SURF_SPACING EQU 0
 IF DEF(_LANG_J)
 DEF RANKING_SURF_NAME EQUS "なみのりを　つかった　かいすう" ; Max 17 chars
 MACRO describe_ranking_SURF
-	db   "なみのり　わざを"
-	cont "たたかっていない　ときで　これまでに"
-	cont "つかった　かいすう　なのです"
+	db   "これまでに　なみのり　わざを"
+	cont "たたかっていない　ときで"
+	cont "つかった　かいすう"
 ENDM
 DEF RANKING_SURF_UNIT EQUS "かい"
 
@@ -1672,9 +1668,9 @@ DEF RANKING_WATERFALL_SPACING EQU 0
 IF DEF(_LANG_J)
 DEF RANKING_WATERFALL_NAME EQUS "たきのぼりを　つかった　かいすう" ; Max 17 chars
 MACRO describe_ranking_WATERFALL
-	db   "たきのぼり　わざを"
-	cont "たたかっていない　ときで　これまでに"
-	cont "つかった　かいすう　なのです"
+	db   "これまでに　たきのぼり　わざを"
+	cont "たたかっていない　ときで"
+	cont "つかった　かいすう"
 ENDM
 DEF RANKING_WATERFALL_UNIT EQUS "かい"
 
@@ -1746,9 +1742,8 @@ DEF RANKING_WHITE_OUTS_SPACING EQU 0
 IF DEF(_LANG_J)
 DEF RANKING_WHITE_OUTS_NAME EQUS "まっしろに　なった　かいすう" ; Max 17 chars
 MACRO describe_ranking_WHITE_OUTS
-	db   "あなたが　これまでに　せんとうから"
-	cont "めのまえが　まっしろに　なった"
-	cont "かいすう　なのです"
+	db   "これまでに　せんとうに　めのまえが"
+	cont "まっしろに　なった　かいすう"
 ENDM
 DEF RANKING_WHITE_OUTS_UNIT EQUS "かい"
 
@@ -1813,12 +1808,12 @@ DEF RANKING_LUCKY_NUMBER_SHOW_SPACING EQU 0
 
 ; Japanese
 IF DEF(_LANG_J)
-DEF RANKING_LUCKY_NUMBER_SHOW_NAME EQUS "ナンバー　あたった　かいすう" ; Max 17 chars
+DEF RANKING_LUCKY_NUMBER_SHOW_NAME EQUS "とうせんした　かいすう" ; Max 17 chars
 MACRO describe_ranking_LUCKY_NUMBER_SHOW
 	db   "ポケギアの　ラジオで"
 	cont "ラッキナンバーチャンネルの"
 	cont "ラッキーナンバーを　これまでに"
-	cont "あたった　かいすう　なのです"
+	cont "とうせんした　かいすう"
 ENDM
 DEF RANKING_LUCKY_NUMBER_SHOW_UNIT EQUS "かい"
 
@@ -1893,13 +1888,12 @@ DEF RANKING_PHONE_CALLS_SPACING EQU 0
 
 ; Japanese
 IF DEF(_LANG_J)
-DEF RANKING_PHONE_CALLS_NAME EQUS "でんわした　かいすう" ; Max 17 chars
+DEF RANKING_PHONE_CALLS_NAME EQUS "でんわの　そうすい" ; Max 17 chars
 MACRO describe_ranking_PHONE_CALLS
-	db   "あなたが　これまでに　でんわを"
-	cont "かけたり　うけたりした"
-	cont "かいすう　なのです"
+	db   "これまでに　はっちゃくしんした"
+	cont "でんわの　そうすう"
 ENDM
-DEF RANKING_PHONE_CALLS_UNIT EQUS "かい"
+DEF RANKING_PHONE_CALLS_UNIT EQUS "そう"
 
 ; English
 ELIF DEF(_LANG_E)
@@ -2022,10 +2016,9 @@ IF DEF(_LANG_J)
 DEF RANKING_LINK_BATTLES_NAME EQUS "コロシアムで　しょうぶした　かいすう" ; Max 17 chars
 MACRO describe_ranking_LINK_BATTLES
 	db   "ポケモンコミュニケーションセンターの"
-	cont "クラブ　コロシアムで　あなたが"
-	cont "これまでに　なんにんの　トレーナーと"
-	cont "ポケモンの　たいせんを　しょうぶした"
-	cont "かいすう　なのです"
+	cont "クラブ　コロシアムで　これまでに"
+	cont "なんにんの　トレーナーと　ポケモン"
+	cont "しょうぶした　かいすう"
 ENDM
 DEF RANKING_LINK_BATTLES_UNIT EQUS "かい" ; a guess
 
@@ -2104,9 +2097,9 @@ DEF RANKING_SPLASH_SPACING EQU 0
 IF DEF(_LANG_J)
 DEF RANKING_SPLASH_NAME EQUS "はねるを　つかった　かいすう" ; Max 17 chars
 MACRO describe_ranking_SPLASH
-	db   "はねる　わざを　たたかっている"
-	cont "ときで　これまでに　つかった"
-	cont "かいすう　なのです"
+	db   "これまでに　はねる　わざを"
+	cont "たたかっている　ときで　つかった"
+	cont "かいすう"
 ENDM
 DEF RANKING_SPLASH_UNIT EQUS "かい"
 
@@ -2180,8 +2173,9 @@ DEF RANKING_TREE_ENCOUNTERS_SPACING EQU 0
 IF DEF(_LANG_J)
 DEF RANKING_TREE_ENCOUNTERS_NAME EQUS "ずつきを　した　かいすう"; Max 17 chars
 MACRO describe_ranking_TREE_ENCOUNTERS
-	db   "これまでにずつきをたたかっていない"
-	cont "ときにつかったかいすう。"
+	db   "これまでに　きに　ずつきを"
+	cont "たたかっていない　ときで"
+	cont "つかった　かいすう"
 ENDM
 DEF RANKING_TREE_ENCOUNTERS_UNIT EQUS "かい"
 
@@ -2313,10 +2307,9 @@ IF DEF(_LANG_J)
 DEF RANKING_LINK_WINS_NAME EQUS "コロシアムで　かった　かいすう" ; Max 17 chars
 MACRO describe_ranking_LINK_WINS
 	db   "ポケモンコミュニケーションセンターの"
-	cont "クラブ　コロシアムで　あなたが"
-	cont "これまでに　なんにんの　トレーナーと"
-	cont "ポケモンの　たいせんを　かった"
-	cont "かいすう　なのです"
+	cont "クラブ　コロシアムで　これまでに"
+	cont "なんにんの　トレーナーと　ポケモン"
+	cont "たいせんに　かった　かいすう"
 ENDM
 DEF RANKING_LINK_WINS_UNIT EQUS "かい"
 
@@ -2397,10 +2390,9 @@ IF DEF(_LANG_J)
 DEF RANKING_LINK_LOSSES_NAME EQUS "コロシアムで　まけた　かいすう"
 MACRO describe_ranking_LINK_LOSSES
 	db   "ポケモンコミュニケーションセンターの"
-	cont "クラブ　コロシアムで　あなたが"
-	cont "これまでに　なんにんの　トレーナーと"
-	cont "ポケモンの　たいせんを　まけた"
-	cont "かいすう　なのです"
+	cont "クラブ　コロシアムで　これまでに"
+	cont "なんにんの　トレーナーと　ポケモン"
+	cont "たいせんに　まけた　かいすう"
 ENDM
 DEF RANKING_LINK_LOSSES_UNIT EQUS "かい" ; a guess
 
@@ -2483,10 +2475,9 @@ IF DEF(_LANG_J)
 DEF RANKING_LINK_DRAWS_NAME EQUS "コロシアムで　ひきわけた　かいすう" ; Max 17 chars
 MACRO describe_ranking_LINK_DRAWS
 	db   "ポケモンコミュニケーションセンターの"
-	cont "クラブ　コロシアムで　あなたが"
-	cont "これまでに　なんにんの　トレーナーと"
-	cont "ポケモンの　たいせんを　ひきわけた"
-	cont "かいすう　なのです"
+	cont "クラブ　コロシアムで　これまでに"
+	cont "なんにんの　トレーナーと　ポケモン"
+	cont "たいせんに　ひきわけた　かいすう"
 ENDM
 DEF RANKING_LINK_DRAWS_UNIT EQUS "かい" ; a guess
 
@@ -2572,10 +2563,9 @@ DEF RANKING_SELFDESTRUCT_SPACING EQU 0
 IF DEF(_LANG_J)
 DEF RANKING_SELFDESTRUCT_NAME EQUS "じばくを　つかった　かいすう" ; Max 17 chars
 MACRO describe_ranking_SELFDESTRUCT
-	db   "じばくと　だいばくはつの"
-	cont "わざを"
+	db   "じばくか　だいばくはつか　わざを"
 	cont "たたかっている　ときで　これまでに"
-	cont "つかった　かいすう　なのです"
+	cont "つかった　かいすう"
 ENDM
 DEF RANKING_SELFDESTRUCT_UNIT EQUS "かい"
 
@@ -2652,10 +2642,9 @@ IF DEF(_LANG_J)
 DEF RANKING_CURRENT_SLOTS_STREAK_NAME EQUS "さいしんの　れんしょう" ; Max 17 chars
 MACRO describe_ranking_CURRENT_SLOTS_STREAK
 	db   "コガネ　ゲームコーナーの　スロットで"
-	cont "さいしんの　れんしょうかいすう　です"
-	cont "…"
+	cont "たっせいした　さいしんの　れんしょう"
 ENDM
-DEF RANKING_CURRENT_SLOTS_STREAK_UNIT EQUS "れんしょう？"
+DEF RANKING_CURRENT_SLOTS_STREAK_UNIT EQUS "しょう"
 
 ; English
 ELIF DEF(_LANG_E)
@@ -2733,13 +2722,12 @@ DEF RANKING_LONGEST_SLOTS_STREAK_SPACING EQU 2
 
 ; Japanese
 IF DEF(_LANG_J)
-DEF RANKING_LONGEST_SLOTS_STREAK_NAME EQUS "さいこうの　れんしょうすう" ; Max 17 chars
+DEF RANKING_LONGEST_SLOTS_STREAK_NAME EQUS "さいこうの　れんしょう" ; Max 17 chars
 MACRO describe_ranking_LONGEST_SLOTS_STREAK
 	db   "コガネ　ゲームコーナーの　スロットで"
-	cont "さいこうの　れんしょうかいすう　です"
-	cont "…"
+	cont "たっせいした　さいこう　れんしょう"
 ENDM
-DEF RANKING_LONGEST_SLOTS_STREAK_UNIT EQUS "れんしょう？"
+DEF RANKING_LONGEST_SLOTS_STREAK_UNIT EQUS "しょう"
 
 ; English
 ELIF DEF(_LANG_E)
@@ -2817,9 +2805,8 @@ DEF RANKING_COINS_EARNED_SPACING EQU 0
 IF DEF(_LANG_J)
 DEF RANKING_COINS_EARNED_NAME EQUS "かった　コインの　まいすう" ; Max 17 chars
 MACRO describe_ranking_COINS_EARNED
-	db   "コガネ　ゲームコーナーの　スロットで"
-	cont "あそんでいて　かったの　コイン"
-	cont "まいすう　なのです"
+	db   "これまでに　コガネ　ゲームコーナーの"
+	cont "スロットで　かった　コイン　まいすう"
 ENDM
 DEF RANKING_COINS_EARNED_UNIT EQUS "まい"
 
@@ -2897,11 +2884,11 @@ DEF RANKING_MONEY_EARNED_SPACING EQU 0
 
 ; Japanese
 IF DEF(_LANG_J)
-DEF RANKING_MONEY_EARNED_NAME EQUS "しょうきんの　ごうけい" ; Max 17 chars
+DEF RANKING_MONEY_EARNED_NAME EQUS "しょうきん　ごうけい" ; Max 17 chars
 MACRO describe_ranking_MONEY_EARNED
-	db   "ぼうけんの　あいだに　これまでに"
-	cont "ポケモンしょうぶで　しょうきんを"
-	cont "てにいれたの　ごうけい　なのです"
+	db   "ぼうけん　ちゅうに　これまでに"
+	cont "ポケモンしょうぶに　しょうきんを"
+	cont "てにいれた　ごうけい"
 ENDM
 DEF RANKING_MONEY_EARNED_UNIT EQUS "¥"
 
@@ -2984,6 +2971,7 @@ MACRO describe_ranking_LONGEST_MAGIKARP
 	db   "いかりのみずうみ<NI>いる"
 	cont "つりめいじん<NI>はか<TTE>もらった"
 	cont "コイキング<NO>うち　いちばん"
+	cont "おおきかった　もので　きそいます"
 ENDM
 DEF RANKING_LONGEST_MAGIKARP_UNIT EQUS "センチ"
 

@@ -351,13 +351,13 @@ ENDM
 	lang I, next "sempre “caro”."
 
 	; Spanish
-	lang S, next "siempre añado"
+	lang S, db "siempre añado"
     lang S, next "a mi #MON, “mi"
     lang S, next "querido” a su"
     lang S, next "nombre”."
 	
 	db "@"
- JA____NEIN__ZUR___
+
 .page3
 	; Japanese
 	lang J, db   "ポケモンに　おぼえさせる　わざは"
@@ -623,13 +623,13 @@ ENDM
 	lang F, next "aussitôt que je"
 	lang F, next "l'ai obtenue!"
 
-	; Spanish
+	; Italian
 	lang I, db   "Quando ottengo una"
 	lang I, next "MT, la insegno"
 	lang I, next "subito al mio"
 	lang I, next "#MON!"
 
-	; Italian
+	; Spanish
 	lang S, db   "Cuando consigo MT,"
 	lang S, next "¡se lo enseño a"
 	lang S, next "mi #MON" 

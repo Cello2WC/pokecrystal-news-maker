@@ -670,7 +670,7 @@ ENDM
 
 	lang I, db   "Ci sono dei fiori"
 	lang I, next "già sbocciati nel"
-	lang I, next "PARCO NAZIONALE?
+	lang I, next "PARCO NAZIONALE?"
 
 	lang S, db   "¿Hay alguna"
 	lang S, next "flor en plena"
@@ -788,7 +788,7 @@ ENDM
 	lang I, db   "Dopo aver usato"
 	lang I, next "CASCATA finisci"
 	lang I, next "guardando all'"
-	lang I, next "indietro?
+	lang I, next "indietro?"
 
 	lang S, db   "¿Te encuentras"
 	lang S, next "del revés"

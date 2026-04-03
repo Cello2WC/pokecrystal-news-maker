@@ -153,7 +153,8 @@ MACRO minigame_start
 	lang I, cont "essere in testa!"
 
 	lang I, para "Questo è il quiz"
-	lang I, line "di un uomo rovente!"
+	lang I, line "di un uomo"
+	lang I, cont "rovente!"
 
 	lang I, para "Hah!"
 
@@ -393,8 +394,7 @@ ENDM
 	;Italian
 	lang I, db   "Quando ELM ti ha"
 	lang I, next "dato il BIGLIETTO"
-	lang I, next "NAVE, ti ha detto"
-	lang I, next "“... a KANTO!"
+	lang I, next "NAVE:“... a KANTO!"
 	lang I, next "1. Rinforzati"
 	lang I, next "2. Salutami OAK"
 	lang I, next "3. Prova il treno"
@@ -445,8 +445,7 @@ ENDM
 	;Italian
 	lang I, db   "Da dove appare il"
 	lang I, next "nonno della bimba"
-	lang I, next "persa sulla"
-	lang I, next "M/N Aqua?"
+	lang I, next "sulla M/N Aqua?"
 	lang I, next "1. Da un lato"
 	lang I, next "2. Dall'alto"
 	lang I, next "3. Da una stanza"
@@ -494,8 +493,7 @@ ENDM
 	lang F, next "3. SOUTERRAIN"
 
 	; Italian
-	lang I, db   "Dove bivaccava"	
-	lang I, next "all'inizio la"
+	lang I, db   "Dove bivaccava la"	
 	lang I, next "FEDERAZIONE"
 	lang I, next "#MON di KANTO?"
 	lang I, next "1. GROTTA DIGLETT"
@@ -546,9 +544,8 @@ ENDM
 
 	; Italian
 	lang I, db   "Quando ricevesti"
-	lang I, next "il VELOPURO," 
-	lang I, next "cosa ti stava"
-	lang I, next "apparendo vicino?"
+	lang I, next "il VELOPURO, cosa" 
+	lang I, next "ti stava vicino?"
 	lang I, next "1. #MON Spettro"
 	lang I, next "2. Spirito maligno"
 	lang I, next "3. Ombra sinistra"
@@ -597,10 +594,9 @@ ENDM
     lang F, next "3. La TEAM <ROCKET>"
 
 	; Italian
-	lang I, db   "Per quale motivo"
-	lang I, next "l'uomo in fondo"
-	lang I, next "al PONTE PEPITA"
-	lang I, next "ti ha sfidato?"
+	lang I, db   "Perchè in fondo al"
+	lang I, next "PONTE PEPITA ti ha"
+	lang I, next "sfidato l'uomo?"
 	lang I, next "1. Vincere facile"
 	lang I, next "2. Rubare soldi"
 	lang I, next "3. Per TEAM ROCKET"
@@ -651,8 +647,7 @@ ENDM
 	; Italian
 	lang I, db   "MISTY e il suo"
 	lang I, next "fidanzato come"
-	lang I, next "erano seduti al"
-	lang I, next "loro appuntamento?"
+	lang I, next "erano seduti?"
 	lang I, next "1. Fianco a fianco"
 	lang I, next "2. Faccia a faccia"
 	lang I, next "3. MISTY davanti"
@@ -700,12 +695,11 @@ ENDM
 	lang F, next "3. Si beau"
 
 	; Italian
-	lang I, db   "Il DIRETTORE della"
-	lang I, next "CENTRALE ELETTRICA"
-	lang I, next "come chiamava il"
-	lang I, next "generatore?"
+	lang I, db   "come Il DIR. della"
+	lang I, next "CEN.ELET. chiamava"
+	lang I, next "il generatore?"
 	lang I, next "1. Importantissimo" 
-	lang I, next "2. Il mio"	 ; they changed the dialogue :(
+	lang I, next "2. Il mio"
 	lang I, next "3. Carino"
 	
 	
@@ -803,8 +797,7 @@ ENDM
 
 	; Italian
 	lang I, db   "Dove era rovinata"
-	lang I, next "la BAMBOLA"
-	lang I, next "CLEFAIRY di"
+	lang I, next "la BAMBOLA di"
 	lang I, next "COPIONA?"
 	lang I, next "1. Ala destra"
 	lang I, next "2. Orecchio sin."
@@ -855,11 +848,11 @@ ENDM
 
 	; Italian
 	lang I, db   "L'ABRA alla LEGA"
-	lang I, next "#MON ti trasporta"
-	lang I, next "a casa se"
+	lang I, next "ti trasporta a"
+	lang I, next "casa se"
 	lang I, next "1. Lo tocchi"
 	lang I, next "2. Immagini casa"
-	lang I, next "3. Chiudi gli occhi"
+	lang I, next "3. Occhi chiusi"
 	
 	lang S, db   "El Abra de la"
 	lang S, next "LIGA #MON te"
@@ -939,7 +932,7 @@ ENDC
 	lang E, db "BLAINE's RATING"
 	lang D, db "PYROs BEWERTUNG"
 	lang F, db "EVAL. d'AUGUSTE"
-	lang I, db "VALUTAZ. di BLAINE"
+	lang I, db "VALUT. di BLAINE"
 	lang S, db "EVALUACIÓN BLAINE"
 	db "@"
 
@@ -1811,8 +1804,8 @@ ENDC
 	lang F, cont "refroidi..."
 
 	; Italian
-	lang I, text "BLAINE: Oh!"
-	lang I, line "Un punteggio pieno?!"
+	lang I, text "BLAINE: Oh! Un"
+	lang I, line "punteggio pieno?!"
 
 	lang I, para "Wow... ben fatto!"
 	lang I, line "Ora sono bruciato…"

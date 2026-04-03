@@ -134,8 +134,8 @@ MACRO minigame_start
 	lang F, para "C'est parti!"
 
 	; Italian
-	lang I, text "Usa il Control Pad"
-	lang I, line "per muovere il"
+	lang I, text "Usa il Pad per"
+	lang I, line "muovere il"
 	lang I, cont "cursore."
 
 	lang I, para "Traccia le lettere"

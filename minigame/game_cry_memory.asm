@@ -352,7 +352,7 @@ ENDM
 	; Italian
 	lang I, text "Prima di tutto,"
 	lang I, line "scegli il gruppo"
-	lang I, line "di versi."
+	lang I, cont "di versi."
 	
 	lang I, para "Scegli quello che"
 	lang I, line "ti piace di più."
@@ -373,8 +373,7 @@ ENDM
 	lang I, cont "attenzione!"
 	
 	lang I, para "Premi la direzione"
-	lang I, line "giusta sul"
-	lang I, cont "Control Pad."
+	lang I, line "giusta sul Pad."
 	
 	lang I, para "Rispondi corretta-"
 	lang I, line "mente per"
@@ -391,6 +390,7 @@ ENDM
 	lang I, cont "per vincere!"
 	
 	lang I, para "Cominciamo!"
+	lang I, para ""
 	
 	; Spanish
 	lang S, text "Primero elige un"
@@ -1060,7 +1060,7 @@ ENDR
 	lang F, next "la manette!"
 
 	lang I, db   "Tocca a te! Usa"
-	lang I, next "il Control Pad!"
+	lang I, next "il Pad!"
 
 	; Spanish
 	lang S, db   "¡Tu turno! Usa"
@@ -1106,7 +1106,7 @@ ENDR
 
 	; Italian
 	lang I, db   "Ups…"
-	lang I, db   "Hai sbagliato!"
+	lang I, next "Hai sbagliato!"
 
 	; Spanish
 	; Spanish
@@ -1271,20 +1271,20 @@ ENDR
 	lang F, db   "."
 
 	; Italian
-	lang I, text "Hai completato"
+	lang I, text "Hai completato "
 	lang I, nts_start
 	lang I, nts_number wCurrentStreak, 1, 2, 3
 	lang I, nts_end
-	lang I, db   "round!"
+	lang I, line "round!"
 
 	lang I, para "Ecco a te, prendi"
-	lang I, line "questa"
+	lang I, line ""
 	lang I, nts_start
 	lang I, nts_switch wGiftIndex, .itemName_BERRY, .itemName_POKE_DOLL, .itemName_PEARL, \
 	                               .itemName_BIG_PEARL, .itemName_STARDUST, .itemName_TM_REST, \
 	                               .itemName_PNK_APRICORN, .itemName_GRN_APRICORN, .itemName_YLW_APRICORN
 	;lang I, nts_end
-	lang I, db   "come premio!"
+	lang I, line "come premio!"
 
 	lang I, para
 	lang I, nts_start

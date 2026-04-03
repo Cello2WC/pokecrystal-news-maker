@@ -986,7 +986,7 @@ MACRO describe_ranking_WILD_MONS_CAUGHT
 	line "#MON selvatici"
 	cont "catturati."
 ENDM
-DEF RANKING_WILD_MONS_CAUGHT_UNIT EQUS " catturati"
+DEF RANKING_WILD_MONS_CAUGHT_UNIT EQUS " catt."
 
 ; Spanish
 ELIF DEF(_LANG_S)
@@ -1054,7 +1054,7 @@ MACRO describe_ranking_HOOKED_ENCOUNTERS
 	para "Il totale dei"
 	line "#MON pescati."
 ENDM
-DEF RANKING_HOOKED_ENCOUNTERS_UNIT EQUS " pescati"
+DEF RANKING_HOOKED_ENCOUNTERS_UNIT EQUS " pesc."
 
 ; Spanish
 ELIF DEF(_LANG_S)
@@ -1194,7 +1194,7 @@ MACRO describe_ranking_MONS_EVOLVED
 	line "evoluzioni dei"
 	cont "tuoi #MON."
 ENDM
-DEF RANKING_MONS_EVOLVED_UNIT EQUS " evoluti"
+DEF RANKING_MONS_EVOLVED_UNIT EQUS " evol."
 
 ; Spanish
 ELIF DEF(_LANG_S)
@@ -1426,7 +1426,8 @@ ELIF DEF(_LANG_I)
 DEF RANKING_MYSTERY_GIFT_NAME EQUS "DONI SEGRETI DATI" ; Max 17 chars
 MACRO describe_ranking_MYSTERY_GIFT
 	para "Il numero di volte"
-	line "il DONO SEGRETO è"
+	line "in cui il"
+	cont "DONO SEGRETO è"
 	cont "stato usato."
 ENDM
 DEF RANKING_MYSTERY_GIFT_UNIT EQUS " doni"
@@ -2221,9 +2222,9 @@ ELIF DEF(_LANG_I)
 DEF RANKING_TREE_ENCOUNTERS_NAME EQUS "USI BOTTINTESTA" ; Max 17 chars
 MACRO describe_ranking_TREE_ENCOUNTERS
 	para "Il numero di volte"
-	line "BOTTINTESTA è"
-	cont "stata usata fuori"
-	cont "dalla lotta."
+	line "in cui BOTTINTESTA"
+	cont "è stata usata"
+	cont "fuori dalla lotta."
 ENDM
 DEF RANKING_TREE_ENCOUNTERS_UNIT EQUS " volte"
 

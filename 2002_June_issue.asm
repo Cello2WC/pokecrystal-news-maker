@@ -371,7 +371,7 @@ ENDC
     lang I, text "Eccola quì!"
 
     lang I, para "È l'edizione di"
-    lang I, cont "giugno! "
+    lang I, line "giugno! "
 
     lang I, para "Il gioco del mese"
     lang I, line "è LABIRINTO"

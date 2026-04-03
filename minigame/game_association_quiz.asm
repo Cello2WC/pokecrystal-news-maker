@@ -828,7 +828,7 @@ ENDM
 	lang F, line "Question suivante!"
 
 	lang I, text "Esatto!"
-	lang I, text "Prossima domanda!"
+	lang I, line "Prossima domanda!"
 
 	lang S, text "¡Correcto! "
 	lang S, line "¡Siguiente"

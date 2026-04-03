@@ -968,11 +968,12 @@ ENDC
 	lang F, db   "!"
 	lang F, line "Félicitations!"
 	
-	lang I, db "Il GRADO di "
+	lang I, db "Il GRADO di"
+	lang I, line ""
 	lang I, nts_start
 	lang I, nts_player_name, 0
 	lang I, nts_end
-	lang I, db "è…"
+	lang I, db " è…"
 	lang I, para
 	lang I, nts_start
 	lang I, nts_number wOwnRank, 4, 4
@@ -1028,11 +1029,12 @@ ENDC
 	lang F, para "Absent du"
 	lang F, line "classement."
 	
-	lang I, db "Il GRADO di "
+	lang I, db "Il GRADO di"
+	lang I, line ""
 	lang I, nts_start
 	lang I, nts_player_name, 0
 	lang I, nts_end
-	lang I, db   "è…"
+	lang I, db   " è…"
 	lang I, para "Attualmente non"
 	lang I, line "in classifica."
 	
@@ -1068,7 +1070,7 @@ ENDC
 	lang F, nts_end
 	lang F, db ":"
 	
-	lang I, db "PUNTEGG. di "
+	lang I, db "PUNTI di "
 	lang I, nts_start
 	lang I, nts_player_name 0 
 	lang I, nts_end
@@ -1109,7 +1111,7 @@ ENDC
 	lang F, nts_end
 	lang F, db ":"
 	
-	lang I, db "PUNTEGG. di "
+	lang I, db "PUNTI di "
 	lang I, nts_start
 	lang I, nts_player_name 0 
 	lang I, nts_end
@@ -1150,7 +1152,7 @@ ENDC
 	lang F, nts_end
 	lang F, db ":"
 	
-	lang I, db "PUNTEGG. di "
+	lang I, db "PUNTI di "
 	lang I, nts_start
 	lang I, nts_player_name 0 
 	lang I, nts_end

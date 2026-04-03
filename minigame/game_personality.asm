@@ -132,7 +132,7 @@ MACRO minigame_name
 	lang E, db "<TRAINER> CHECKUP!"
 	lang D, db "<TRAINER>-CHECK-UP!"
 	lang F, db "BILAN <TRAINER>!"
-	lang I, db "VALUT. ALLENATORE!"
+	lang I, db "VAL. ALLENATORE!"
 	lang S, db "¡EVA. <TRAINER>!"
 ENDM
 
@@ -694,10 +694,10 @@ ENDM
 	lang F, next "BAIE MIRACLE!"
 
 	; Italian
-	lang I, db   "Quando si tratta di"
-	lang I, next "strumenti, prefe-"
-	lang I, next "risco una BANDANA"
-	lang I, next "ad una"
+	lang I, db   "Quando si tratta"
+	lang I, next "di strumenti,"
+	lang I, next "preferisco una"
+	lang I, next "BANDANA ad una"
 	lang I, next "BACCA MIRAC."
 
 	; Spanish

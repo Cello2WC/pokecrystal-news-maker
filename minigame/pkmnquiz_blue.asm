@@ -427,7 +427,7 @@ ENDM
 
 	; Italian
 	lang I, db   "Come si chiama"
-	lang I, next "lo SPEAROW da"
+	lang I, next "lo SPEAROW di"
 	lang I, next "SMERALDOPOLI?"
 	lang I, next "1. SPEARY"
 	lang I, next "2. ROWEY"
@@ -528,10 +528,8 @@ ENDM
 	lang F, next "3. #MON volé"
 
 	; Italian     ------------------
-	lang I, db   "Quale era il pro-"
-	lang I, next "blema che BILL"
-	lang I, next "aveva quando lo"
-	lang I, next "incontrasti a"
+	lang I, db   "Quale problema"
+	lang I, next "aveva BILL a"
 	lang I, next "MIRAMARE?"	; i cant believe they named the real life place after the pokemon location...
 	lang I, next "1. Fuso a #MON"
 	lang I, next "2. Era malato"
@@ -581,11 +579,10 @@ ENDM
 	lang F, next "3. Dehors" ; Le texte en combat dit "Va-t-en... dehors...".
 
 	; Italian     ------------------
-	lang I, db   "Nella TORRE"
-	lang I, next "#MON, lo SPETTRO"
-	lang I, next "non identificato"
-	lang I, next "cosa diceva in"
-	lang I, next "lotta?"
+	lang I, db   "lo SPETTRO non"
+	lang I, next "identificato nella"
+	lang I, next "TORRE #MON che"
+	lang I, next "diceva in lotta?"
 	lang I, next "1. Uuuh 2. Via…"
 	lang I, next "3. Fuori…"
 
@@ -638,8 +635,7 @@ ENDM
 	lang I, next "COMMERCIALE di"
 	lang I, next "AZZURROPOLI diceva"
 	lang I, next "IO … TUTTO!"
-	lang I, next "1. DO 2. SO"
-	lang I, next "3. HO"
+	lang I, next "1. DO 2. SO 3. HO"
 	
 	; Spanish
 	lang S, db   "El letrero en el"
@@ -688,8 +684,7 @@ ENDM
 	lang I, db   "Nel DOJO KARATE"
 	lang I, next "a ZAFFERANOPOLI,"
 	lang I, next "quale è il grido"
-	lang I, next "di lotta del RE"
-	lang I, next "del KARATE?"
+	lang I, next "del RE del KARATE?"
 	lang I, next "1. Fuaaa! 2. Hiah!"
 	lang I, next "3. Ho-ha!"
 	
@@ -790,8 +785,7 @@ ENDM
 	; Italian
 	lang I, db   "Cosa viene detto"
 	lang I, next "quando cerchi di"
-	lang I, next "darti alla FUGA"
-	lang I, next "alla LEGA #MON?"
+	lang I, next "fuggire alla LEGA?"
 	lang I, next "1. Non si scappa!"
 	lang I, next "2. Scappi via?"
 	lang I, next "3. Non scappare!"
@@ -842,9 +836,8 @@ ENDM
 
 	; Italian     ------------------
 	lang I, db   "Cosa succede a"
-	lang I, next "ROSSO quando i"
-	lang I, next "suoi #MON sono"
-	lang I, next "tutti esausti?"
+	lang I, next "ROSSO quando la"
+	lang I, next "squadra è esausta?"
 	lang I, next "1. Non ci vede più"
 	lang I, next "2. Crolla"
 	lang I, next "3. È alle strette"
@@ -936,7 +929,7 @@ ENDC
 	lang E, db "BLUE's RATING"
 	lang D, db "BLAUs BEWERTUNG"
 	lang F, db "EVAL. de BLUE"
-	lang I, db "VALUTAZIONE di BLU"
+	lang I, db "VALUTAZ. di BLU"
 	lang S, db "EVALUACIÓN AZUL"
 	db "@"
 

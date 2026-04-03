@@ -383,10 +383,10 @@ ENDC
     lang I, cont "quanti diventano"
     lang I, cont "tanti tipi di"
     lang I, cont "ALLENATORE"
-    lang I, cont "diversi, ma che"
+    lang I, cont "diversi, ma di che"
     lang I, cont "tipo sei tu?"
 
-    lang I, para "Nel CHECKUP"
+    lang I, para "Nella VALUTAZIONE"
     lang I, line "ALLENATORE lo"
     lang I, cont "scoprirai!"
 

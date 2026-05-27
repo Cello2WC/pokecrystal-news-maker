@@ -3149,6 +3149,8 @@ wStatusFlags2::
 ; bit 7: rockets in mahogany
 	db
 
+	ds $17
+	
 wMoney:: ds 3
 wMomsMoney:: ds 3
 

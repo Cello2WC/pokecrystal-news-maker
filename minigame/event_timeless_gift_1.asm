@@ -127,8 +127,8 @@ MinigameStart::
 	minigame_name
 	db "@"
 	news_string 2, 5, ""
-	lang J, db   "なにを　だす？"
-	lang J, next ""
+	lang J, db   "なにを　だす？@"
+	lang J, news_string 2, 6, ""
 	lang J, next "ひだり…グー　　　うえ　…チョキ"
 	lang J, next "みぎ　…パー　　　そのた…やめる"
 	; TODO: temp translation

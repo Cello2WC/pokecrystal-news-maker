@@ -69,29 +69,26 @@ MACRO minigame_start
 
 	nsc_waitbutton
 	nsc_page LuckTest
-
 .maizieIntroText
-	; TODO: PLACEHOLDER TEXT
-	;       none of maizie's dialogue was preserved...
-	lang J, text "チエコ『かくかくしかじか 　ヒワダ"
-	lang J, line "タウン　かくかくしかじか　ガンテツ"
-	lang J, cont "かくかくしかじか　タイムトラベル"
+	; TODO: some placeholder text
+	lang J, text "チエコ『?"
+	lang J, para "？？に ごうかくしたら"       ; screenshot 1 text
+	lang J, line "このボールを あげてもいいわ" ; screenshot 1 text
 
-	lang E, text "MAIZIE: something"
-	lang E, line "something AZALEA"
-	lang E, para "something some-"
-	lang E, line "thing KURT's"
-	lang E, cont "granddaughter"
-	lang E, para "something some-"
-	lang E, line "thing time travel"
+	lang E, text "MAIZIE: ?"
+	lang E, para "If you pass all of"
+	lang E, line "the ???, I'll give"
+	lang E, cont "you this BALL!"
 
+	; TODO
 	lang D, text "MAISY: nuschel"
 	lang D, line "nuschel AZALEA"
-	lang D, para "CITY nuschel"
-	lang D, line "nuschel KURT"
+	lang D, para "nuschel nuschel"
+	lang D, line "KURTs Enkelin"
 	lang D, para "nuschel nuschel"
 	lang D, line "Zeitreise"
 
+	; TODO
 	lang F, text "LILA: bla bla"
 	lang F, line "ECORCIA"
 	lang F, para "bla bla petite-"
@@ -99,6 +96,7 @@ MACRO minigame_start
 	lang F, para "bla bla voyage"
 	lang F, line "temporel"
 
+	; TODO
 	lang I, text "MAISY: qualcosa"
 	lang I, line "qualcosa AZALINA"
 	lang I, para "qualcosa qualcosa"
@@ -106,13 +104,15 @@ MACRO minigame_start
 	lang I, para "qualcosa qualcosa"
 	lang I, line "viaggio nel tempo"
 
-	lang S, text "MILLIE: bla bla"
-	lang S, line "bla bla AZALEA"
-	lang S, para "bla bla nieta de"
-	lang S, line "CÉSAR"
-	lang S, cont "bla bla"
-	lang S, para "bla bla viaje"
-	lang S, line "temporal"
+	; TODO
+	lang S, text "MILLIE: algo"
+	lang S, line "algo de AZALEA"
+	lang S, para "algo alg-"
+	lang S, line "algo de CÉSAR"
+	lang S, cont "nieta"
+	lang S, para "algo alg-"
+	lang S, line "viajar el tiempo"
+
 	done
 ENDM
 
@@ -424,6 +424,7 @@ MinigameStart::
 .jankenLose
 	;nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, .jankenLoseText
+	nsc_playsound SFX_DEX_FANFARE_LESS_THAN_20
 	nsc_waitbutton
 	nsc_page NewsRoot
 	nsc_ret
@@ -442,7 +443,34 @@ MinigameStart::
 .jankenWin
 	;nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, .jankenWinText
+	nsc_playsound SFX_LEVEL_UP
 	nsc_waitbutton
+	nsc_clear 1, 13, 18, 4
+	nsc_textbox 1, 14, .badgeCheckIntroText
+	nsc_waitbutton
+	
+	; check badges
+	nsc_compare wBadges, .badgeCheckFail, .badgeCheckPass, .badgeCheckPass, 2, $FF, $FF
+	
+.badgeCheckFail
+	nsc_clear 1, 13, 18, 4
+	nsc_textbox 1, 14, .badgeCheckFailText
+	nsc_playsound SFX_DEX_FANFARE_LESS_THAN_20
+	nsc_waitbutton
+	nsc_page NewsRoot
+	nsc_ret
+.badgeCheckPass
+
+	; badge pass text, quiz intro
+	nsc_clear 1, 13, 18, 4
+	nsc_textbox 1, 14, .badgeCheckPassText
+	nsc_playsound SFX_LEVEL_UP
+	nsc_waitbutton
+	
+	nsc_clear 1, 13, 18, 4
+	nsc_textbox 1, 14, .quizIntroText
+	nsc_waitbutton
+	
 	nsc_page PokemonQuiz
 	nsc_ret
 
@@ -455,6 +483,68 @@ MinigameStart::
 	lang F, text "LILA: Tu as gagné!"
 	lang I, text "MAISY: Hai vinto!"
 	lang S, text "MILLIE: ¡Tú ganas!"
+	done
+	
+.badgeCheckIntroText
+	lang J, text "つよいか たしかめるわ"     ; screenshot 3 text
+	lang J, line "リーグバッジを みせてね！" ; screenshot 3 text
+
+	lang E, text "Let's see how"
+	lang E, line "strong you are!"
+	lang E, para "Show me your"
+	lang E, line "LEAGUE BADGES!"
+	
+	lang D, text "?"
+	
+	lang F, text "?"
+	
+	lang I, text "?"
+	
+	lang S, text "¿?"
+	done
+	
+.badgeCheckPassText
+	; TODO: PLACEHOLDER TEXT
+	lang J, text "チエコ『?" ; placeholder text
+
+	
+	; TODO: Temp translation
+	lang E, text "MAIZIE: You have" ; placeholder text
+	lang E, line "all 16 BADGES!"   ; placeholder text
+	lang D, text "MAISY: ?"
+	lang F, text "LILA: ?"
+	lang I, text "MAISY: ?"
+	lang S, text "MILLIE: ?"
+	done
+
+.badgeCheckFailText
+	; TODO: PLACEHOLDER TEXT
+	lang J, text "チエコ『?"
+	
+	lang E, text "MAIZIE: You don't"
+	lang E, line "have 16 BADGES…"
+	; TODO
+	lang D, text "MAISY: ?"
+	; TODO
+	lang F, text "LILA: ?"
+	; TODO
+	lang I, text "MAISY: ?"
+	; TODO
+	lang S, text "MILLIE: ?"
+	done
+	
+.quizIntroText
+	lang J, text "さいごは あなたが ただしい"        ; screenshot 4 text
+	lang J, line "こころの もちぬしか テストするわ"  ; screenshot 4 text
+	
+	lang E, text "Finally, I'll test"
+	lang E, line "whether you have a"
+	lang E, cont "pure heart."
+	
+	lang D, text "?"
+	lang F, text "?"
+	lang I, text "?"
+	lang S, text "¿?"
 	done
 
 	news_screen PokemonQuiz, MUSIC_GAME_CORNER
@@ -704,6 +794,8 @@ ENDM
 	lang S, next "el FARO de"
 	lang S, next "CIUDAD OLIVO"
 	lang S, next "en el 5º piso?"
+	
+	next "@"
 .question5Text
 	lang J, db   "いかりまんじゅうのねだんは４００円"
 

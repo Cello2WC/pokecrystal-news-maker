@@ -193,6 +193,7 @@ ENDM
 	nsc_clear 1, 13, 18, 4
 	nsc_delay 1
 	nsc_textbox 1, 14, .gameInstructionText
+	nsc_waitbutton
 	nsc_ret
 
 .gameInstructionText

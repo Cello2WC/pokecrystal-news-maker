@@ -43,20 +43,17 @@ MACRO minigame_start
 	nsc_page LuckTest
 
 .maizieIntroText
-	; TODO: PLACEHOLDER TEXT
-	;       none of maizie's dialogue was preserved...
-	lang J, text "チエコ『かくかくしかじか 　ヒワダ"
-	lang J, line "タウン　かくかくしかじか　ガンテツ"
-	lang J, cont "かくかくしかじか　タイムトラベル"
+	; TODO: some placeholder text
+	lang J, text "チエコ『?"
+	lang J, para "？？に ごうかくしたら"       ; screenshot 1 text
+	lang J, line "このボールを あげてもいいわ" ; screenshot 1 text
 
-	lang E, text "MAIZIE: something"
-	lang E, line "something AZALEA"
-	lang E, para "something some-"
-	lang E, line "thing KURT's"
-	lang E, cont "granddaughter"
-	lang E, para "something some-"
-	lang E, line "thing time travel"
+	lang E, text "MAIZIE: ?"
+	lang E, para "If you pass all of"
+	lang E, line "the ???, I'll give"
+	lang E, cont "you this BALL!"
 
+	; TODO
 	lang D, text "MAISY: nuschel"
 	lang D, line "nuschel AZALEA"
 	lang D, para "nuschel nuschel"
@@ -64,6 +61,7 @@ MACRO minigame_start
 	lang D, para "nuschel nuschel"
 	lang D, line "Zeitreise"
 
+	; TODO
 	lang F, text "LILA: bla bla"
 	lang F, line "ECORCIA"
 	lang F, para "bla bla petite-"
@@ -71,6 +69,7 @@ MACRO minigame_start
 	lang F, para "bla bla voyage"
 	lang F, line "temporel"
 
+	; TODO
 	lang I, text "MAISY: qualcosa"
 	lang I, line "qualcosa AZALINA"
 	lang I, para "qualcosa qualcosa"
@@ -78,6 +77,7 @@ MACRO minigame_start
 	lang I, para "qualcosa qualcosa"
 	lang I, line "viaggio nel tempo"
 
+	; TODO
 	lang S, text "MILLIE: algo"
 	lang S, line "algo de AZALEA"
 	lang S, para "algo alg-"
@@ -123,36 +123,58 @@ MinigameStart::
 	news_box 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 	;news_box 4,  4, 12,  8, NEWSBORDER_BLOCKY,   3
 	news_def_strings
-	news_string 0, 0, "@" ; at least one string must be specified, else game crashes
-	news_menu 6, 6,   1, 3,   0, 2,   -1, $00, $00, $00, SHOW_DESCRIPTIONS, $01
+	news_string 1, 2, ""
+	minigame_name
+	db "@"
+	news_string 2, 5, ""
+	lang J, db   "なにを　だす？"
+	lang J, next ""
+	lang J, next "ひだり…グー　　　うえ　…チョキ"
+	lang J, next "みぎ　…パー　　　そのた…やめる"
+	; TODO: temp translation
+	lang E, db   "What to show?"
+	lang E, next "LEFT…ROCK   ELSE"
+	lang E, next "UP…SCISSORS  …"
+	lang E, next "RIGHT…PAPER BACK"
+	; TODO
+	lang D, db   "?"
+	; TODO
+	lang F, db   "?"
+	; TODO
+	lang I, db   "?"
+	; TODO
+	lang S, db   "?"
+	
+	db "@"
+	
+	; TODO: REEEEEEEEEEEALLY make sure that moving the cursor off-screen isnt corrupting memory somewhere
+	; it doesnt seem to be doing so where i'd expect it to be, from a cursory glance, but...
+	news_menu 1, 19,   1, 1,   0, 0,   -1, $00, $00, $00, $00, $00
 
-	news_buttonscript .aButton    ; script pointer a button
-	news_buttonscript .bButton    ; script pointer b button
-	news_buttonscript             ; script pointer select button
-	news_buttonscript .aButton    ; script pointer start button
-	news_buttonscript             ; script pointer right button
-	news_buttonscript             ; script pointer left button
-	news_buttonscript .upButton   ; script pointer up button
-	news_buttonscript .downButton ; script pointer down button
+	news_buttonscript .quit               ; script pointer a button
+	news_buttonscript .quit               ; script pointer b button
+	news_buttonscript .quit               ; script pointer select button
+	news_buttonscript .quit               ; script pointer start button
+	news_buttonscript .menuPaperScript    ; script pointer right button
+	news_buttonscript .menuRockScript     ; script pointer left button
+	news_buttonscript .menuScissorsScript ; script pointer up button
+	news_buttonscript .quit               ; script pointer down button
 
 	news_def_menuitems
 	news_menudescription 1, 14, 18, 4
 	news_norankingstable
 
-	news_menuitem_names   .menuRockText,   .menuPaperText,   .menuScissorsText
-	news_menuitem_scripts .menuRockScript, .menuPaperScript, .menuScissorsScript
-	news_menuitem_descs   .menuDummyDesc,  .menuDummyDesc,   .menuDummyDesc
+	news_menuitem_names   .menuDummyDesc
+	news_menuitem_scripts .rollChieko
+	news_menuitem_descs   .menuDummyDesc
 
-.bButton
+.quit
 	nsc_playsound SFX_MENU
 	nsc_page NewsRoot
 	nsc_ret
 
-.aButton
+.rollChieko
 	nsc_playsound SFX_READ_TEXT
-	nsc_clear 1,  4, 17,  8
-;	nsc_clear 1, 13, 18,  4
-	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
 
 .retry
 	; CHIE's choice
@@ -166,47 +188,44 @@ MinigameStart::
 	nsc_flagop wChiekosChoice, FLAG_CLEAR, 7 ; wChiekosChoice &= %00000011
 	nsc_compare wChiekosChoice, .continue, .retry, .retry, 1, 3 ; retry if generated a 3
 .continue
-	nsc_clear 1, 13, 18, 4
-	nsc_drawtrainer 6, 4, COOLTRAINERF, 7
 	nsc_printstring 1, 14, .textChieDeclare
 	nsc_waitbutton
-	nsc_select
 	nsc_ret
 
-.upButton
-	nsc_up
-	nsc_ret
+;.upButton
+;	nsc_up
+;	nsc_ret
+;
+;.downButton
+;	nsc_down
+;	nsc_ret
 
-.downButton
-	nsc_down
-	nsc_ret
 
-
-.menuRockText
-	lang J, db "グー"
-	lang E, db "ROCK"
-	lang D, db "STEIN"
-	lang F, db "PIERRE"
-	lang I, db "SASSO"
-	lang S, db "PIEDRA"
-	db "@"
-
-.menuPaperText
-	lang J, db "パー"
-	lang E, db "PAPER"
-	lang D, db "PAPIER"
-	lang F, db "PAPIER" ; Sentez-vous libre de débattre sur "FEUILLE" à la place :)
-	lang I, db "CARTA"
-	lang S, db "PAPEL"
-	db "@"
-
-.menuScissorsText
-	lang J, db "チョキ"
-	lang E, db "SCISSORS"
-	lang D, db "SCHERE"
-	lang F, db "CISEAUX"
-	lang I, db "FORBICI"
-	lang S, db "TIJERAS"
+;.menuRockText
+;	lang J, db "グー"
+;	lang E, db "ROCK"
+;	lang D, db "STEIN"
+;	lang F, db "PIERRE"
+;	lang I, db "SASSO"
+;	lang S, db "PIEDRA"
+;	db "@"
+;
+;.menuPaperText
+;	lang J, db "パー"
+;	lang E, db "PAPER"
+;	lang D, db "PAPIER"
+;	lang F, db "PAPIER" ; Sentez-vous libre de débattre sur "FEUILLE" à la place :)
+;	lang I, db "CARTA"
+;	lang S, db "PAPEL"
+;	db "@"
+;
+;.menuScissorsText
+;	lang J, db "チョキ"
+;	lang E, db "SCISSORS"
+;	lang D, db "SCHERE"
+;	lang F, db "CISEAUX"
+;	lang I, db "FORBICI"
+;	lang S, db "TIJERAS"
 .menuDummyDesc
 	db "@"
 
@@ -245,12 +264,27 @@ MinigameStart::
 	db "@"
 
 .menuRockScript
+	nsc_clear 1,  4, 17,  8
+	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
+	nsc_clear 1, 13, 18, 4
+	nsc_drawtrainer 6, 4, COOLTRAINERF, 7
+	nsc_select
 	nsc_compare wChiekosChoice, .jankenTie, .jankenLose, .jankenWin, 1, 1
 
 .menuPaperScript
+	nsc_clear 1,  4, 17,  8
+	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
+	nsc_clear 1, 13, 18, 4
+	nsc_drawtrainer 6, 4, COOLTRAINERF, 7
+	nsc_select
 	nsc_compare wChiekosChoice, .jankenWin, .jankenTie, .jankenLose, 1, 1
 
 .menuScissorsScript
+	nsc_clear 1,  4, 17,  8
+	nsc_drawbox 0, 12, 20,  6, {NEWS_TEXT_BORDER}
+	nsc_clear 1, 13, 18, 4
+	nsc_drawtrainer 6, 4, COOLTRAINERF, 7
+	nsc_select
 	nsc_compare wChiekosChoice, .jankenLose, .jankenWin, .jankenTie, 1, 1
 
 .jankenTie
@@ -273,6 +307,7 @@ MinigameStart::
 .jankenLose
 	nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, .jankenLoseText
+	nsc_playsound SFX_DEX_FANFARE_LESS_THAN_20
 	nsc_waitbutton
 	nsc_page NewsRoot
 	nsc_ret
@@ -288,9 +323,38 @@ MinigameStart::
 	done
 
 .jankenWin
+
+	; janken win text, badge check intro
 	nsc_clear 1, 13, 18, 4
 	nsc_textbox 1, 14, .jankenWinText
+	nsc_playsound SFX_LEVEL_UP
 	nsc_waitbutton
+	nsc_clear 1, 13, 18, 4
+	nsc_textbox 1, 14, .badgeCheckIntroText
+	nsc_waitbutton
+	
+	; check badges
+	nsc_compare wBadges, .badgeCheckFail, .badgeCheckPass, .badgeCheckPass, 2, $FF, $FF
+	
+.badgeCheckFail
+	nsc_clear 1, 13, 18, 4
+	nsc_textbox 1, 14, .badgeCheckFailText
+	nsc_playsound SFX_DEX_FANFARE_LESS_THAN_20
+	nsc_waitbutton
+	nsc_page NewsRoot
+	nsc_ret
+.badgeCheckPass
+
+	; badge pass text, quiz intro
+	nsc_clear 1, 13, 18, 4
+	nsc_textbox 1, 14, .badgeCheckPassText
+	nsc_playsound SFX_LEVEL_UP
+	nsc_waitbutton
+	
+	nsc_clear 1, 13, 18, 4
+	nsc_textbox 1, 14, .quizIntroText
+	nsc_waitbutton
+	
 	nsc_page PokemonQuiz
 	nsc_ret
 .jankenWinText
@@ -303,6 +367,69 @@ MinigameStart::
 	lang I, text "MAISY: Hai vinto!"
 	lang S, text "MILLIE: ¡TÚ GANAS!"
 	done
+	
+.badgeCheckIntroText
+	lang J, text "つよいか たしかめるわ"     ; screenshot 3 text
+	lang J, line "リーグバッジを みせてね！" ; screenshot 3 text
+
+	lang E, text "Let's see how"
+	lang E, line "strong you are!"
+	lang E, para "Show me your"
+	lang E, line "LEAGUE BADGES!"
+	
+	lang D, text "?"
+	
+	lang F, text "?"
+	
+	lang I, text "?"
+	
+	lang S, text "¿?"
+	done
+	
+.badgeCheckPassText
+	; TODO: PLACEHOLDER TEXT
+	lang J, text "チエコ『?" ; placeholder text
+
+	
+	; TODO: Temp translation
+	lang E, text "MAIZIE: You have" ; placeholder text
+	lang E, line "all 16 BADGES!"   ; placeholder text
+	lang D, text "MAISY: ?"
+	lang F, text "LILA: ?"
+	lang I, text "MAISY: ?"
+	lang S, text "MILLIE: ?"
+	done
+
+.badgeCheckFailText
+	; TODO: PLACEHOLDER TEXT
+	lang J, text "チエコ『?"
+	
+	lang E, text "MAIZIE: You don't"
+	lang E, line "have 16 BADGES…"
+	; TODO
+	lang D, text "MAISY: ?"
+	; TODO
+	lang F, text "LILA: ?"
+	; TODO
+	lang I, text "MAISY: ?"
+	; TODO
+	lang S, text "MILLIE: ?"
+	done
+	
+.quizIntroText
+	lang J, text "さいごは あなたが ただしい"        ; screenshot 4 text
+	lang J, line "こころの もちぬしか テストするわ"  ; screenshot 4 text
+	
+	lang E, text "Finally, I'll test"
+	lang E, line "whether you have a"
+	lang E, cont "pure heart."
+	
+	lang D, text "?"
+	lang F, text "?"
+	lang I, text "?"
+	lang S, text "¿?"
+	done
+	
 
 	news_screen PokemonQuiz, MUSIC_GAME_CORNER
 
@@ -528,6 +655,8 @@ ENDM
 	lang S, next "ser algo aparte"
 	lang S, next "de <TRAINER> #MON"
 	lang S, next "?"
+	
+	next "@"
 .question4Text
 	lang J, db   "こどものトレーナーは"
 	lang J, next "やっぱりおとなのトレーナー"

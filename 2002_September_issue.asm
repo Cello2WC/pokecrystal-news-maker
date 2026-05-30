@@ -30,7 +30,7 @@ SECTION "Download Text", ROM0[$2000]
 
 	db PERSISTENT_MINIGAME_DATA_SIZE
 	
-	lang J, db "ポケモンニュース　9";"ポケモンニュース"
+	lang J, db "ポケモンニュース　9がつごう";"ポケモンニュース"
 	lang E, db "#MON NEWS No.9";"#MON NEWS No.0"
 	lang D, db "NACHRICHTEN Nr. 9";"NACHRICHTEN Nr. 0"
 	lang F, db "INFOS PKMN No.9";"INFOS PKMN No.0"
@@ -52,7 +52,7 @@ SECTION "News", ROM0[$0000]
 
 	news_def_strings
 	news_string 1, 2, "";"<TRAINER> RANKING@"
-	lang J, db "ポケモンニュース　9";"ポケモンニュース"
+	lang J, db "ポケモンニュース　9がつごう";"ポケモンニュース"
 	lang E, db "#MON NEWS No.9";"#MON NEWS No.0"
 	lang D, db "NACHRICHTEN Nr. 9";"NACHRICHTEN Nr. 0"
 	lang F, db "INFOS PKMN No.9";"INFOS PKMN No.0"

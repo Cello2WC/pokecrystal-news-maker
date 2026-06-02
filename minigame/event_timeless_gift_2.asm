@@ -71,14 +71,11 @@ MACRO minigame_start
 	nsc_page LuckTest
 .maizieIntroText
 	; TODO: some placeholder text
-	lang J, text "チエコ『?"
-	lang J, para "？？に ごうかくしたら"       ; screenshot 1 text
+	lang J, text "これに ごうかくしたら"       ; screenshot 1 text
 	lang J, line "このボールを あげてもいいわ" ; screenshot 1 text
 
-	lang E, text "MAIZIE: ?"
-	lang E, para "If you pass all of"
-	lang E, line "the ???, I'll give"
-	lang E, cont "you this BALL!"
+	lang E, para "If you pass this,"
+	lang E, line "you get this BALL."
 
 	; TODO
 	lang D, text "MAISY: nuschel"
@@ -117,7 +114,7 @@ MACRO minigame_start
 ENDM
 
 MACRO minigame_name
-	lang J, db "ときをこえたプレゼント"
+	lang J, db "ときをこえた プレゼント"
 	lang E, db "A TIMELESS GIFT"
 	lang D, db "ZEITLOSE GABE"
 	lang F, db "CADEAU INTEMPOREL"

@@ -718,14 +718,37 @@ ENDR
 	
 IF DEF(_LANG_J)
 	nts_ranking_string $0000, 6, 5+{RANKING_{RANKING_1}_SPACING};6
+IF DEF(RANKING_{RANKING_1}_UNIT_PREFIX)
+IF DEF(RANKING_{RANKING_1}_UNIT_DYNAMIC_PREFIX)
+	nts_next CHARLEN("{RANKING_{RANKING_1}_UNIT}")
+ELSE
+	nts_end
+	db "{RANKING_{RANKING_1}_UNIT}"
+	nts_start
+ENDC
+ENDC
 	nts_ranking_number $0018, {RANKING_{RANKING_1}_FMT}
 ELSE
 	nts_ranking_string $0000, 8, SCREEN_WIDTH+{RANKING_{RANKING_1}_SPACING}
+IF DEF(RANKING_{RANKING_1}_UNIT_PREFIX)
+IF DEF(RANKING_{RANKING_1}_UNIT_DYNAMIC_PREFIX)
+	nts_next CHARLEN("{RANKING_{RANKING_1}_UNIT}")
+ELSE
+	nts_end
+	db "{RANKING_{RANKING_1}_UNIT}"
+	nts_start
+ENDC
+ENDC
 	nts_ranking_number $0014, {RANKING_{RANKING_1}_FMT} ; compensating for smaller EZChat messages
 ENDC
 	
+IF DEF(RANKING_{RANKING_1}_UNIT_PREFIX)
+	nts_end
+	db "@"
+ELSE
 	nts_end
 	db "{RANKING_{RANKING_1}_UNIT}@"
+ENDC
 	
 .menuitems_ranking2
 	nts_start
@@ -733,14 +756,37 @@ ENDC
 	
 IF DEF(_LANG_J)
 	nts_ranking_string $0000, 6, 5+{RANKING_{RANKING_2}_SPACING}
+IF DEF(RANKING_{RANKING_2}_UNIT_PREFIX)
+IF DEF(RANKING_{RANKING_2}_UNIT_DYNAMIC_PREFIX)
+	nts_next CHARLEN("{RANKING_{RANKING_2}_UNIT}")
+ELSE
+	nts_end
+	db "{RANKING_{RANKING_2}_UNIT}"
+	nts_start
+ENDC
+ENDC
 	nts_ranking_number $0018, {RANKING_{RANKING_2}_FMT}
 ELSE
 	nts_ranking_string $0000, 8, SCREEN_WIDTH+{RANKING_{RANKING_2}_SPACING};20
+IF DEF(RANKING_{RANKING_2}_UNIT_PREFIX)
+IF DEF(RANKING_{RANKING_2}_UNIT_DYNAMIC_PREFIX)
+	nts_next CHARLEN("{RANKING_{RANKING_2}_UNIT}")
+ELSE
+	nts_end
+	db "{RANKING_{RANKING_2}_UNIT}"
+	nts_start
+ENDC
+ENDC
 	nts_ranking_number $0014, {RANKING_{RANKING_2}_FMT} ; compensating for smaller EZChat messages
 ENDC
 	
+IF DEF(RANKING_{RANKING_2}_UNIT_PREFIX)
+	nts_end
+	db "@"
+ELSE
 	nts_end
 	db "{RANKING_{RANKING_2}_UNIT}@"
+ENDC
 	
 .menuitems_ranking3
 	nts_start
@@ -748,14 +794,37 @@ ENDC
 
 IF DEF(_LANG_J)
 	nts_ranking_string $0000, 6, 5+{RANKING_{RANKING_3}_SPACING}
+IF DEF(RANKING_{RANKING_3}_UNIT_PREFIX)
+IF DEF(RANKING_{RANKING_3}_UNIT_DYNAMIC_PREFIX)
+	nts_next CHARLEN("{RANKING_{RANKING_3}_UNIT}")
+ELSE
+	nts_end
+	db "{RANKING_{RANKING_3}_UNIT}"
+	nts_start
+ENDC
+ENDC
 	nts_ranking_number $0018, {RANKING_{RANKING_3}_FMT}
 ELSE
 	nts_ranking_string $0000, 8, SCREEN_WIDTH+{RANKING_{RANKING_3}_SPACING}
+IF DEF(RANKING_{RANKING_3}_UNIT_PREFIX)
+IF DEF(RANKING_{RANKING_3}_UNIT_DYNAMIC_PREFIX)
+	nts_next CHARLEN("{RANKING_{RANKING_3}_UNIT}")
+ELSE
+	nts_end
+	db "{RANKING_{RANKING_3}_UNIT}"
+	nts_start
+ENDC
+ENDC
 	nts_ranking_number $0014, {RANKING_{RANKING_3}_FMT} ; compensating for smaller EZChat messages
 ENDC
 	
+IF DEF(RANKING_{RANKING_3}_UNIT_PREFIX)
+	nts_end
+	db "@"
+ELSE
 	nts_end
 	db "{RANKING_{RANKING_3}_UNIT}@"
+ENDC
 .lastmenuitem_name
 	lang F, db "RANG de "
 	lang I, db "GRADO di "
@@ -1084,10 +1153,24 @@ ENDC
 	
 	line
 	nts_start
+IF DEF(RANKING_{RANKING_1}_UNIT_PREFIX)
+IF DEF(RANKING_{RANKING_1}_UNIT_DYNAMIC_PREFIX)
+	nts_next CHARLEN("{RANKING_{RANKING_1}_UNIT}")
+ELSE
+	nts_end
+	db "{RANKING_{RANKING_1}_UNIT}"
+	nts_start
+ENDC
+ENDC
 	nts_number {RANKING_{RANKING_1}_ADDR}, {RANKING_{RANKING_1}_FMT_PLAYER}
+IF DEF(RANKING_{RANKING_1}_UNIT_PREFIX)
+	nts_end
+	para "@" 
+ELSE
 	nts_end
 	db "{RANKING_{RANKING_1}_UNIT}"
 	para "@" 
+ENDC
 	
 .players_ranking2
 	lang J, nts_start
@@ -1125,10 +1208,24 @@ ENDC
 	
 	line
 	nts_start
+IF DEF(RANKING_{RANKING_2}_UNIT_PREFIX)
+IF DEF(RANKING_{RANKING_2}_UNIT_DYNAMIC_PREFIX)
+	nts_next CHARLEN("{RANKING_{RANKING_2}_UNIT}")
+ELSE
+	nts_end
+	db "{RANKING_{RANKING_2}_UNIT}"
+	nts_start
+ENDC
+ENDC
 	nts_number {RANKING_{RANKING_2}_ADDR}, {RANKING_{RANKING_2}_FMT_PLAYER}
+IF DEF(RANKING_{RANKING_2}_UNIT_PREFIX)
+	nts_end
+	para "@"
+ELSE
 	nts_end
 	db "{RANKING_{RANKING_2}_UNIT}"
 	para "@"
+ENDC
 	
 .players_ranking3
 	lang J, nts_start
@@ -1166,10 +1263,24 @@ ENDC
 	
 	line
 	nts_start
+IF DEF(RANKING_{RANKING_3}_UNIT_PREFIX)
+IF DEF(RANKING_{RANKING_3}_UNIT_DYNAMIC_PREFIX)
+	nts_next CHARLEN("{RANKING_{RANKING_3}_UNIT}")
+ELSE
+	nts_end
+	db "{RANKING_{RANKING_3}_UNIT}"
+	nts_start
+ENDC
+ENDC
 	nts_number {RANKING_{RANKING_3}_ADDR}, {RANKING_{RANKING_3}_FMT_PLAYER}
+IF DEF(RANKING_{RANKING_3}_UNIT_PREFIX)
+	nts_end 
+	para "@"
+ELSE
 	nts_end 
 	db "{RANKING_{RANKING_3}_UNIT}"
 	para "@"
+ENDC
 .menuitems_desc
 	; cry quiz debug issue text
 ;	lang J, db   "えらんだ　ひと<NO>データを"

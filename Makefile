@@ -84,45 +84,67 @@ dbpass ?=
 RGBDS ?=
 RGBASM  ?= $(RGBDS)rgbasm
 RGBLINK ?= $(RGBDS)rgblink
+PYTHON ?= python3
+REON_BXT_DIR ?= ../reon-main/app/auto-schedule/files/bxt
 
-all: j e d f i s
+.PHONY: all build-news auto-schedule install-auto-schedule push andpush j e d f i s
+
+all: install-auto-schedule
+
+build-news: j e d f i s
 
 push:
 	cp bin/* /var/lib/mysql/tmp/
 	./push.sh "$(dbuser)" "$(dbpass)" $(RANKING_1) $(RANKING_2) $(RANKING_3)
 
 andpush: all push
+install-auto-schedule: auto-schedule
+
+auto-schedule: build-news
+	@set -e; \
+	dest="$(REON_BXT_DIR)"; \
+	for mapping in j:j e:e e:p e:u d:d f:f i:i s:s; do \
+		src_lang="$${mapping%%:*}"; \
+		dest_region="$${mapping##*:}"; \
+		mkdir -p "$$dest/$$dest_region"; \
+		for month in June July August September October November December; do \
+			lower="$$(printf '%s' "$$month" | tr '[:upper:]' '[:lower:]')"; \
+			cp "bin/2002/$$month/issue_$$src_lang.bin" "$$dest/$$dest_region/$${lower}_2002.bin"; \
+			cp "bin/2002/$$month/issue_$$src_lang.bin.message" "$$dest/$$dest_region/$${lower}_2002.bin.message"; \
+		done; \
+	done
+	@echo "Installed news binaries and .message files to $(REON_BXT_DIR)"
 
 define compile_news
 	@mkdir -p bin
 	$(RGBASM) 2002_June_issue.asm -o issue.o -D RANKING_1="$(2002_JUNE_RANKING_1)" -D RANKING_2="$(2002_JUNE_RANKING_2)" -D RANKING_3="$(2002_JUNE_RANKING_3)" -D MINIGAME_FILE="$(2002_JUNE_MINIGAME)" -D _LANG_$(shell echo '$1' | tr '[:lower:]' '[:upper:]')
 	mkdir -p bin/2002/June/bin
 	$(RGBLINK) issue.o -l pokecrystal/layout.link -o bin/2002/June/issue_$(1).bin
-	python3 newschecksum.py bin/2002/June/issue_$(1).bin
+	$(PYTHON) newschecksum.py bin/2002/June/issue_$(1).bin
 	$(RGBASM) 2002_July_issue.asm -o issue.o -D RANKING_1="$(2002_JULY_RANKING_1)" -D RANKING_2="$(2002_JULY_RANKING_2)" -D RANKING_3="$(2002_JULY_RANKING_3)" -D MINIGAME_FILE="$(2002_JULY_MINIGAME)" -D _LANG_$(shell echo '$1' | tr '[:lower:]' '[:upper:]')
 	mkdir -p bin/2002/July/bin
 	$(RGBLINK) issue.o -l pokecrystal/layout.link -o bin/2002/July/issue_$(1).bin
-	python3 newschecksum.py bin/2002/July/issue_$(1).bin
+	$(PYTHON) newschecksum.py bin/2002/July/issue_$(1).bin
 	$(RGBASM) 2002_August_issue.asm -o issue.o -D RANKING_1="$(2002_AUGUST_RANKING_1)" -D RANKING_2="$(2002_AUGUST_RANKING_2)" -D RANKING_3="$(2002_AUGUST_RANKING_3)" -D MINIGAME_FILE="$(2002_AUGUST_MINIGAME)" -D _LANG_$(shell echo '$1' | tr '[:lower:]' '[:upper:]')
 	mkdir -p bin/2002/August/bin
 	$(RGBLINK) issue.o -l pokecrystal/layout.link -o bin/2002/August/issue_$(1).bin
-	python3 newschecksum.py bin/2002/August/issue_$(1).bin
+	$(PYTHON) newschecksum.py bin/2002/August/issue_$(1).bin
 	$(RGBASM) 2002_September_issue.asm -o issue.o -D RANKING_1="$(2002_SEPTEMBER_RANKING_1)" -D RANKING_2="$(2002_SEPTEMBER_RANKING_2)" -D RANKING_3="$(2002_SEPTEMBER_RANKING_3)" -D MINIGAME_FILE="$(2002_SEPTEMBER_MINIGAME)" -D _LANG_$(shell echo '$1' | tr '[:lower:]' '[:upper:]')
 	mkdir -p bin/2002/September/bin
 	$(RGBLINK) issue.o -l pokecrystal/layout.link -o bin/2002/September/issue_$(1).bin
-	python3 newschecksum.py bin/2002/September/issue_$(1).bin
+	$(PYTHON) newschecksum.py bin/2002/September/issue_$(1).bin
 	$(RGBASM) 2002_October_issue.asm -o issue.o -D RANKING_1="$(2002_OCTOBER_RANKING_1)" -D RANKING_2="$(2002_OCTOBER_RANKING_2)" -D RANKING_3="$(2002_OCTOBER_RANKING_3)" -D MINIGAME_FILE="$(2002_OCTOBER_MINIGAME)" -D _LANG_$(shell echo '$1' | tr '[:lower:]' '[:upper:]')
 	mkdir -p bin/2002/October/bin
 	$(RGBLINK) issue.o -l pokecrystal/layout.link -o bin/2002/October/issue_$(1).bin
-	python3 newschecksum.py bin/2002/October/issue_$(1).bin
+	$(PYTHON) newschecksum.py bin/2002/October/issue_$(1).bin
 	$(RGBASM) 2002_November_issue.asm -o issue.o -D RANKING_1="$(2002_NOVEMBER_RANKING_1)" -D RANKING_2="$(2002_NOVEMBER_RANKING_2)" -D RANKING_3="$(2002_NOVEMBER_RANKING_3)" -D MINIGAME_FILE="$(2002_NOVEMBER_MINIGAME)" -D _LANG_$(shell echo '$1' | tr '[:lower:]' '[:upper:]')
 	mkdir -p bin/2002/November/bin
 	$(RGBLINK) issue.o -l pokecrystal/layout.link -o bin/2002/November/issue_$(1).bin
-	python3 newschecksum.py bin/2002/November/issue_$(1).bin
+	$(PYTHON) newschecksum.py bin/2002/November/issue_$(1).bin
 	$(RGBASM) 2002_December_issue.asm -o issue.o -D RANKING_1="$(2002_DECEMBER_RANKING_1)" -D RANKING_2="$(2002_DECEMBER_RANKING_2)" -D RANKING_3="$(2002_DECEMBER_RANKING_3)" -D MINIGAME_FILE="$(2002_DECEMBER_MINIGAME)" -D _LANG_$(shell echo '$1' | tr '[:lower:]' '[:upper:]')
 	mkdir -p bin/2002/December/bin
 	$(RGBLINK) issue.o -l pokecrystal/layout.link -o bin/2002/December/issue_$(1).bin
-	python3 newschecksum.py bin/2002/December/issue_$(1).bin
+	$(PYTHON) newschecksum.py bin/2002/December/issue_$(1).bin
 
 endef
 

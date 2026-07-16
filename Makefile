@@ -46,6 +46,11 @@ dbpass ?=
 # SHORTEST_MAGIKARP
 # BUG_CONTEST_SCORE
 
+2001_JANUARY_RANKING_1 ?= BATTLE_TOWER_WINS
+2001_JANUARY_RANKING_2 ?= BUG_CONTEST_SCORE
+2001_JANUARY_RANKING_3 ?= LONGEST_MAGIKARP
+2001_JANUARY_MINIGAME  ?= minigame/pkmnquiz_oak.asm
+
 2002_JUNE_RANKING_1 ?= BATTLE_TOWER_WINS
 2002_JUNE_RANKING_2 ?= TREE_ENCOUNTERS
 2002_JUNE_RANKING_3 ?= WILD_BATTLES
@@ -107,16 +112,22 @@ auto-schedule: build-news
 		src_lang="$${mapping%%:*}"; \
 		dest_region="$${mapping##*:}"; \
 		mkdir -p "$$dest/$$dest_region"; \
-		for month in June July August September October November December; do \
+		for issue in January:2001 June:2002 July:2002 August:2002 September:2002 October:2002 November:2002 December:2002; do \
+			month="$${issue%%:*}"; \
+			year="$${issue##*:}"; \
 			lower="$$(printf '%s' "$$month" | tr '[:upper:]' '[:lower:]')"; \
-			cp "bin/2002/$$month/issue_$$src_lang.bin" "$$dest/$$dest_region/$${lower}_2002.bin"; \
-			cp "bin/2002/$$month/issue_$$src_lang.bin.message" "$$dest/$$dest_region/$${lower}_2002.bin.message"; \
+			cp "bin/$$year/$$month/issue_$$src_lang.bin" "$$dest/$$dest_region/$${lower}_$${year}.bin"; \
+			cp "bin/$$year/$$month/issue_$$src_lang.bin.message" "$$dest/$$dest_region/$${lower}_$${year}.bin.message"; \
 		done; \
 	done
 	@echo "Installed news binaries and .message files to $(REON_BXT_DIR)"
 
 define compile_news
 	@mkdir -p bin
+	$(RGBASM) 2001_January_issue.asm -o issue.o -D RANKING_1="$(2001_JANUARY_RANKING_1)" -D RANKING_2="$(2001_JANUARY_RANKING_2)" -D RANKING_3="$(2001_JANUARY_RANKING_3)" -D MINIGAME_FILE="$(2001_JANUARY_MINIGAME)" -D _LANG_$(shell echo '$1' | tr '[:lower:]' '[:upper:]')
+	mkdir -p bin/2001/January/bin
+	$(RGBLINK) issue.o -l pokecrystal/layout.link -o bin/2001/January/issue_$(1).bin
+	$(PYTHON) newschecksum.py bin/2001/January/issue_$(1).bin
 	$(RGBASM) 2002_June_issue.asm -o issue.o -D RANKING_1="$(2002_JUNE_RANKING_1)" -D RANKING_2="$(2002_JUNE_RANKING_2)" -D RANKING_3="$(2002_JUNE_RANKING_3)" -D MINIGAME_FILE="$(2002_JUNE_MINIGAME)" -D _LANG_$(shell echo '$1' | tr '[:lower:]' '[:upper:]')
 	mkdir -p bin/2002/June/bin
 	$(RGBLINK) issue.o -l pokecrystal/layout.link -o bin/2002/June/issue_$(1).bin
